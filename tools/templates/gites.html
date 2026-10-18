@@ -1,6 +1,5 @@
 {% extends "base.html" %}
 {% set g = t.gites %}
-{% set days = ['L','M','M','J','V','S','D'] | join(',') if lang == 'fr' else {'en':'M,T,W,T,F,S,S','de':'M,D,M,D,F,S,S','es':'L,M,X,J,V,S,D','pt':'S,T,Q,Q,S,S,D','nl':'M,D,W,D,V,Z,Z','zh':'一,二,三,四,五,六,日'}[lang] %}
 {% block main %}
 <div class="page-hero">{{ pic('gites/terrasse-soir', '', '100vw', eager=True, cls='bg') }}
   <div class="wrap"><div class="eyebrow" style="color:#E7C59A">{{ ui.tagline }}</div><h1>{{ g.h1 }}</h1><p class="lead">{{ g.lead }}</p></div>
@@ -27,19 +26,13 @@
 </section>
 <section class="wrap" id="dispo" style="padding-top:0">
   <div class="band"{% if lang == 'fr' %} data-note="{{ t.notes.dispo }}"{% endif %}>
-    <div class="eyebrow">{{ t.nav.reservation }}</div><h2>{{ g.dispo_h }}</h2><p class="lead" style="color:inherit;opacity:.9">{{ g.dispo_p }}</p>
-    <div class="cal-row">
-      {% for key, name, busy in [('gite-1', g.gite1_h, s.busy1), ('gite-2', g.gite2_h, s.busy2)] %}
-      <div id="{{ key }}"><h3 style="margin-bottom:10px">{{ name }}</h3>
-        <div class="cal" data-days="{{ days }}" data-busy="{{ busy }}">
-          <div class="hd"><button type="button" class="prev" aria-label="{{ ui.prev }}">‹</button><b></b><button type="button" class="next" aria-label="{{ ui.next }}">›</button></div>
-          <div class="g"></div>
-          <div class="leg"><span><i></i>{{ ui.available }}</span><span><i class="b"></i>{{ ui.booked }}</span></div>
-        </div></div>
-      {% endfor %}
+    <div class="cols" style="align-items:center">
+      <div>
+        <div class="eyebrow">{{ t.nav.reservation }}</div><h2>{{ g.dispo_h }}</h2><p class="lead" style="color:inherit;opacity:.9">{{ g.dispo_p }}</p>
+        <p style="margin:20px 0 0"><a class="btn btn-p" href="reservation.html#demande">{{ g.dispo_btn }}</a></p>
+      </div>
+      <div class="prices" style="background:var(--bg);color:var(--fg);max-width:420px">{% for l, p in t.reservation.prices %}<div><span>{{ l }}</span><b>{{ p }}</b></div>{% endfor %}</div>
     </div>
-    <div class="prices" style="background:var(--bg);color:var(--fg);max-width:420px;margin-top:22px">{% for l, p in t.reservation.prices %}<div><span>{{ l }}</span><b>{{ p }}</b></div>{% endfor %}</div>
-    <p style="margin:24px 0 0"><a class="btn btn-p" href="reservation.html#demande">{{ t.nav.book }}</a> <a class="btn btn-light" href="reservation.html">{{ t.nav.reservation }}</a></p>
   </div>
 </section>
 <section class="wrap" style="padding-top:0">

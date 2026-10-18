@@ -10,7 +10,7 @@
     ],
     "gites": [
       "Les gîtes – Domaine du Geisberg",
-      "Deux gîtes jumeaux de 60 m², 2 chambres, 5 personnes, terrasse privée, chauffage géothermique, label Tourisme & Handicap."
+      "Deux gîtes jumeaux de 60 m², 2 chambres, 4 personnes, terrasse privée, chauffage géothermique, label Tourisme & Handicap."
     ],
     "autour": [
       "Tourisme et loisirs autour de Varsberg – Domaine du Geisberg",
@@ -51,7 +51,7 @@
     "contact": "Contact",
     "book": "Réserver",
     "avis": "Avis",
-    "visite": "Visite 360°",
+    "visite": "Visite du gîte",
     "videos": "Vidéos"
   },
   "ui": {
@@ -87,28 +87,10 @@
     "address": "Adresse"
   },
   "home": {
-    "h1": "Deux gîtes au calme, entre prairie et forêt",
-    "lead": "Sur la colline qui domine Varsberg, au lieu-dit Vogelsgesang, « le chant des oiseaux ». Deux hectares de prairies en lisière de forêt, des sentiers qui partent du jardin, une terrasse pour chaque gîte.",
+    "h1": "Au cœur de la nature",
+    "lead": "Deux gîtes d'exception à proximité immédiate de la forêt, sur la colline qui domine Varsberg, au lieu-dit Vogelsgesang, « le chant des oiseaux ».",
     "cta1": "Voir les disponibilités",
     "cta2": "Découvrir les gîtes",
-    "facts": [
-      [
-        "2 gîtes",
-        "jumeaux de 60 m², entrées indépendantes"
-      ],
-      [
-        "5 pers.",
-        "par gîte : 2 par chambre, 1 dans le salon"
-      ],
-      [
-        "2 ha",
-        "de prairies en lisière de forêt"
-      ],
-      [
-        "0 route",
-        "à traverser pour partir à pied, à vélo ou à cheval"
-      ]
-    ],
     "intro_h": "Un lieu-dit qui porte bien son nom",
     "intro": [
       "Nos deux gîtes sont deux appartements aménagés au rez-de-jardin de notre maison, au cœur d'un vaste domaine de deux hectares verdoyants en lisière de forêt, dans un lieu d'exception dit « Vogelsgesang », le chant des oiseaux.",
@@ -117,18 +99,11 @@
     "intro_more": "Découvrir le domaine",
     "gites_h": "Deux gîtes jumeaux, même vue",
     "gites_lead": "Mêmes prestations de part et d'autre. Réservez l'un des deux, ou les deux pour une tribu.",
-    "gite1_sub": "60 m² · 2 chambres · 5 personnes · terrasse plein sud · parking · wifi",
-    "gite2_sub": "60 m² · 2 chambres · 5 personnes · terrasse · parking · accessible PMR",
-    "see_gite": "Voir ce gîte",
     "around_h": "À pied depuis le jardin, ou à une heure de route",
-    "around_lead": "Chemins de randonnée sans traverser de route, lac et base nautique à 3 km, Metz, la Sarre et le Luxembourg à portée de journée.",
+    "around_lead": "Chemins de randonnée sans traverser de route, lac et base nautique à 6 km, Metz, la Sarre et le Luxembourg à portée de journée.",
     "around_more": "Tout ce qu'il y a à voir",
     "hosts_h": "Agnès et Marc vous accueillent",
-    "hosts": "Labellisés Gîtes de France (3 épis) depuis 2016, Clévacances et Tourisme & Handicap. Nous parlons français, anglais et allemand.",
-    "book_h": "Réservez en direct",
-    "book_lead": "Sans commission, avec une réponse sous 24 h. Draps fournis, lits faits à l'arrivée, ménage de fin de séjour offert.",
-    "diapo_h": "Le domaine en images",
-    "diapo_p": "Chevaux dans la prairie, terrasse au soleil, neige sur la colline : laissez défiler.",
+    "hosts": "Depuis 2007, année d'ouverture de nos gîtes, nous avons aimé partager avec nos hôtes de toutes nationalités notre façon de vivre, et découvrir la leur. C'est un moyen pour nous de découvrir d'autres pays et cultures, et de faire découvrir à d'autres les richesses de notre région et de notre pays. L'usage régulier de l'allemand et de l'anglais est un exercice plaisant et dépaysant.",
     "diapo_btn": "Lancer le diaporama",
     "hero_alts": [
       "La maison sous la neige, un soir d'hiver",
@@ -138,7 +113,7 @@
     "gites_facts": [
       "60 m²",
       "2 chambres",
-      "5 personnes",
+      "4 personnes",
       "Terrasse privée",
       "Parking",
       "Wi-Fi",
@@ -165,15 +140,15 @@
   "gites": {
     "h1": "Les gîtes",
     "lead": "Deux gîtes mitoyens et similaires, en rez-de-jardin de la maison des propriétaires, avec entrée indépendante, terrasse et parking privatifs.",
-    "common": "Chaque gîte se compose d'un salon avec cuisine intégrée (four, plaques vitrocéramiques, micro-ondes, lave-vaisselle, lave-linge, congélateur), de deux chambres et d'une salle d'eau avec douche et WC, adaptée aux personnes à mobilité réduite. Le couchage comprend quatre lits de 90 cm pouvant être rapprochés dans les chambres, et un cinquième couchage dans le salon : 5 personnes par gîte. Téléviseur à écran plat, wifi, chauffage au sol par géothermie.",
+    "common": "Chaque gîte se compose d'un salon avec cuisine intégrée (four, plaques vitrocéramiques, micro-ondes, lave-vaisselle, lave-linge, congélateur), de deux chambres et d'une salle d'eau avec douche et WC, adaptée aux personnes à mobilité réduite. Le couchage comprend quatre lits de 90 cm pouvant être rapprochés dans les chambres, : 4 personnes par gîte. Téléviseur à écran plat, wifi, chauffage au sol par géothermie.",
     "desc_h": "Descriptif",
     "equip_h": "Équipements",
     "serv_h": "Services inclus",
     "desc": [
       "1 pièce à vivre avec cuisine intégrée",
-      "2 chambres (2 lits de 90 × 190 cm chacune) + 1 couchage dans le salon",
+      "2 chambres (2 lits de 90 × 190 cm chacune)",
       "1 salle d'eau avec douche et WC, accessible",
-      "5 personnes · 60 m²"
+      "4 personnes · 60 m²"
     ],
     "equip": [
       "Chauffage au sol par géothermie",
@@ -195,11 +170,9 @@
       "Gîte non fumeur"
     ],
     "gite1_h": "Gîte 1",
-    "gite1_p": "Terrasse plein sud, vue sur la prairie.",
     "gite2_h": "Gîte 2",
-    "gite2_p": "Jumeau du gîte 1, salle d'eau labellisée Tourisme & Handicap.",
     "dispo_h": "Disponibilités",
-    "dispo_p": "Le calendrier est synchronisé avec notre planning. Pour réserver, faites-nous une demande avec vos dates.",
+    "dispo_p": "Les disponibilités et la réservation en ligne sont sur la page Réservation : choisissez vos dates, nous confirmons sous 24 h.",
     "tour": "Faire la visite virtuelle à 360°",
     "identical": "Les deux gîtes sont jumeaux : mêmes pièces, mêmes équipements, même vue sur la prairie. Choisissez simplement celui qui est libre à vos dates — ou les deux pour une tribu.",
     "captions": [
@@ -210,7 +183,8 @@
       "La salle d'eau, douche à l'italienne",
       "Salle d'eau accessible (label Tourisme & Handicap)",
       "La terrasse d'un gîte, le soir"
-    ]
+    ],
+    "dispo_btn": "Voir les disponibilités et réserver"
   },
   "autour": {
     "h1": "Tourisme et loisirs",
@@ -294,32 +268,16 @@
       ]
     ],
     "included": "Inclus : draps et linge, lits faits à l'arrivée, ménage de fin de séjour, électricité et chauffage, wifi, animaux. Caution de 300 €. Taxe de séjour en sus. CB, Visa, MasterCard et chèques-vacances ANCV acceptés.",
-    "form_h": "Réserver ou nous écrire",
-    "form_p": "Une demande de réservation, une question : nous vous répondons sous 24 h, par e-mail ou par téléphone.",
-    "f_name": "Nom",
-    "f_email": "E-mail",
-    "f_phone": "Téléphone",
-    "f_in": "Arrivée",
-    "f_out": "Départ",
-    "f_gite": "Gîte",
-    "f_both": "Les deux gîtes",
-    "f_people": "Personnes",
-    "f_msg": "Message",
-    "f_send": "Envoyer la demande",
-    "f_note": "Le message est envoyé à gitevarsberg@hotmail.com. Vos données ne servent qu'à vous répondre.",
+    "form_h": "Réserver en ligne",
+    "form_p": "Choisissez vos dates et le gîte, laissez vos coordonnées : nous confirmons sous 24 h. Pour une simple question, un e-mail ou un coup de fil suffit.",
     "access_h": "Venir au Domaine du Geisberg",
     "access": [
       "Varsberg se trouve entre Saint-Avold et Creutzwald, à 40 minutes de Metz et 30 minutes de Sarrebruck.",
       "En voiture : autoroute A4 (Paris–Strasbourg), sortie Saint-Avold / Carling, puis direction Creutzwald et Varsberg.",
-      "En train : gare de Saint-Avold à 6 km (TER Metz–Forbach)."
+      "En train : gare de Saint-Avold à 15 km (TER Metz–Forbach)."
     ],
     "gps": "Coordonnées GPS",
-    "f_subject": "Objet",
-    "f_subj_book": "Demande de réservation",
-    "f_subj_q": "Question",
-    "f_ok": "Votre message a bien été envoyé. Nous vous répondons sous 24 h.",
-    "f_ko": "L'envoi n'a pas abouti. Vous pouvez nous écrire directement à",
-    "f_sending": "Envoi…"
+    "widget_ko": "Si le formulaire ne s'affiche pas, écrivez-nous à"
   },
   "diapo": {
     "h1": "Diaporama",
@@ -349,20 +307,20 @@
   },
   "notes": {
     "hero": "Photos principales : la maison sous la neige, la maison depuis la prairie, les chevaux au soir. Si vous avez une belle photo récente de la façade en été, elle remplacerait la deuxième.",
-    "h1": "Accroche : à valider ou à reformuler dans vos mots.",
-    "facts": "Chiffres validés : 60 m², 5 personnes (2 par chambre + 1 dans le salon). Reste à confirmer : distances (lac 3 ou 8 km, gare 6 ou 15 km, piscine 3 ou 8 km).",
+    "h1": "Accroche reprise de votre réponse : « Au cœur de la nature… ». À valider.",
+    "facts": "Chiffres validés par Marc : 60 m², 4 personnes (2 par chambre). Distances validées : lac 6 km, gare de Saint-Avold 15 km, piscine de Creutzwald 7 km.",
     "gites": "Photos des gîtes : 8 photos communes aux deux gîtes (ils sont identiques). Il manque une photo récente du séjour avec le canapé-lit ouvert, si vous en avez une.",
-    "hosts": "Votre photo avec le chien est en place. Relisez les deux phrases de présentation, et donnez-moi le nom du chien pour les légendes.",
-    "dispo": "Calendrier : il sera relié à Bed Booking (lien iCal à retrouver dans ses réglages). Il n'affichera que libre / occupé.",
-    "prices": "Tarifs : y a-t-il des tarifs par saison (Noël, été) ? Arrhes, conditions d'annulation, heures d'arrivée et de départ ?",
-    "reviews": "Avis : j'ai repris 6 avis publiés (Gîtes de France, Abritel). Dites-moi ceux que vous préférez, ou donnez-m'en d'autres (livre d'or).",
-    "around": "Autour : la liste vient de l'ancien site. Vos 4 incontournables ? Les temps de trajet sont-ils justes ?",
+    "hosts": "Votre texte « depuis 2007 » est en place avec la photo. Donnez-moi le nom du chien pour les légendes.",
+    "dispo": "Disponibilités et réservation : widget Nuitrésa (votre nouveau prestataire) en place, avec sa clé publique. Vérifiez qu'une demande test vous arrive bien.",
+    "prices": "Tarifs : y a-t-il des tarifs par saison (Noël, été) ? Les conditions (arrhes, annulation) sont-elles celles de Nuitrésa ?",
+    "reviews": "Avis : 6 avis publiés repris (Gîtes de France, Abritel). Le livre d'or Nuitrésa est vide pour l'instant ; je l'ajouterai quand il aura des avis.",
+    "around": "Distances mises à jour d'après votre réponse (lac 6, cimetière 15, Völklingen 28, musée 31, Pompidou 40, Bliesbruck 61 km). Zoo, Sainte-Croix et boucle de la Sarre restent à confirmer.",
     "access": "Accès : l'itinéraire est-il correct ? Une consigne pour l'arrivée (clés, heure) ?",
     "legal": "Mentions légales : SIRET et forme juridique à vérifier.",
     "diapo": "Diaporama : il enchaîne les photos du domaine puis des gîtes (5 s par photo, pause et plein écran). Dites-moi si l'ordre vous convient.",
     "domaine_txt": "Texte « Le domaine » : repris mot pour mot de l'ancien site. À garder, raccourcir ou réécrire ?",
     "autour_links": "Liens utiles : certains sites de l'ancienne liste ont changé d'adresse ; dites-moi ceux que vous voulez garder.",
-    "visite": "Visite 360° : c'est celle de 2015 (hdmedia). Elle date : la garder, la refaire, ou la retirer ?",
+    "visite": "Visite 360° (hdmedia, 2015) : onglet renommé « Visite du gîte » comme demandé. La garder telle quelle ?",
     "videos": "Vidéos : trois vidéos pour commencer, titres à valider. Si vous en avez d'autres (drone, saisons, intérieur), envoyez-les."
   },
   "extra": {

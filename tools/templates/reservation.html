@@ -4,6 +4,7 @@
 <div class="page-hero">{{ pic('hero/maison-prairie', '', '100vw', eager=True, cls='bg') }}
   <div class="wrap"><div class="eyebrow" style="color:#E7C59A">{{ ui.tagline }}</div><h1>{{ r.h1 }}</h1></div>
 </div>
+{% set nr_lang = {'fr': 'FR', 'en': 'EN', 'de': 'DE', 'es': 'ES'}.get(lang, 'EN') %}
 <section class="wrap">
   <div class="cols" style="align-items:start">
     <div{% if lang == 'fr' %} data-note="{{ t.notes.prices }}"{% endif %}>
@@ -12,28 +13,21 @@
       <p class="note">{{ r.included }}</p>
       <div class="logos" style="margin-top:18px">{% for id, name, link in s.labels %}<a href="{{ link }}" rel="noopener" target="_blank">{{ pic(id, name, "72px") }}</a>{% endfor %}</div>
     </div>
-    <div id="demande">
+    <div>
       <h2 style="margin-bottom:6px">{{ r.form_h }}</h2>
       <p class="lead" style="margin-top:0">{{ r.form_p }}</p>
-      <form class="form" id="resa" action="https://formsubmit.co/ajax/{{ s.email }}" method="POST" data-to="{{ s.email }}" data-subject="{{ r.form_h }}" data-ok="{{ r.f_ok }}" data-ko="{{ r.f_ko }}" data-sending="{{ r.f_sending }}" data-send="{{ r.f_send }}">
-        <input type="hidden" name="_subject" value="[Site] {{ r.form_h }} – {{ s.name }}">
-        <input type="hidden" name="_template" value="table">
-        <input type="hidden" name="_captcha" value="false">
-        <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
-        <label class="full">{{ r.f_subject }}<select id="f_subject" name="Objet"><option>{{ r.f_subj_book }}</option><option>{{ r.f_subj_q }}</option></select></label>
-        <label>{{ r.f_name }}<input id="f_name" name="Nom" required autocomplete="name"></label>
-        <label>{{ r.f_email }}<input id="f_email" name="Email" type="email" required autocomplete="email"></label>
-        <label>{{ r.f_phone }}<input id="f_phone" name="Téléphone" type="tel" autocomplete="tel"></label>
-        <label>{{ r.f_people }}<input id="f_people" name="Personnes" type="number" min="1" max="10" value="2"></label>
-        <label>{{ r.f_in }}<input id="f_in" name="Arrivée" type="date"></label>
-        <label>{{ r.f_out }}<input id="f_out" name="Départ" type="date"></label>
-        <label class="full">{{ r.f_gite }}<select id="f_gite" name="Gîte"><option>{{ t.gites.gite1_h }}</option><option>{{ t.gites.gite2_h }}</option><option>{{ r.f_both }}</option></select></label>
-        <label class="full">{{ r.f_msg }}<textarea id="f_msg" name="Message" required></textarea></label>
-        <div class="full"><button class="btn btn-p" type="submit" id="f_btn">{{ r.f_send }}</button></div>
-        <p class="note full" id="f_status" role="status" aria-live="polite" style="margin:0">{{ r.f_note }}</p>
-      </form>
+      <p><a class="btn btn-p" href="#demande">{{ t.nav.book }}</a></p>
     </div>
   </div>
+</section>
+<section class="wrap" id="demande" style="padding-top:0"{% if lang == 'fr' %} data-note="{{ t.notes.dispo }}"{% endif %}>
+  {# Réservation en ligne : widget Nuitrésa (prestataire de Marc). La clé est publique, le script dessine un cadre (iframe). #}
+  <div class="widget">
+    <!-- nuit-resa.com / formulaire de reservation V2 / version 01.08.2026 -->
+    <div class="nuit-resa-widget" data-nr-version="v2" data-nr-key="{{ s.nuitresa_key }}" data-nr-lang="{{ nr_lang }}"></div>
+    <script async src="{{ s.nuitresa_script }}"></script>
+  </div>
+  <p class="note" style="margin-top:14px">{{ r.widget_ko }} <a href="mailto:{{ s.email }}">{{ s.email }}</a>.</p>
 </section>
 <section class="wrap" id="acces" style="padding-top:0">
   <div class="hosts"{% if lang == 'fr' %} data-note="{{ t.notes.hosts }}"{% endif %}>

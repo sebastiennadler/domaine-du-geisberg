@@ -10,7 +10,7 @@
     ],
     "gites": [
       "Los gîtes – Domaine du Geisberg",
-      "Dos casas gemelas de 60 m², 2 dormitorios, 5 personas, terraza privada, calefacción geotérmica, sello Tourisme & Handicap."
+      "Dos casas gemelas de 60 m², 2 dormitorios, 4 personas, terraza privada, calefacción geotérmica, sello Tourisme & Handicap."
     ],
     "autour": [
       "Qué ver cerca de Varsberg – Domaine du Geisberg",
@@ -51,7 +51,7 @@
     "contact": "Contacto",
     "book": "Reservar",
     "avis": "Opiniones",
-    "visite": "Visita 360°",
+    "visite": "Visita del gîte",
     "videos": "Vídeos"
   },
   "ui": {
@@ -87,28 +87,10 @@
     "address": "Dirección"
   },
   "home": {
-    "h1": "Dos casas tranquilas entre el prado y el bosque",
-    "lead": "En la colina que domina Varsberg, en el paraje Vogelsgesang, «el canto de los pájaros». Dos hectáreas de prados junto al bosque, senderos que salen del jardín y una terraza para cada casa.",
+    "h1": "En el corazón de la naturaleza",
+    "lead": "Dos gîtes excepcionales junto al bosque, en la colina que domina Varsberg, en el paraje Vogelsgesang, «el canto de los pájaros».",
     "cta1": "Ver disponibilidad",
     "cta2": "Descubrir los gîtes",
-    "facts": [
-      [
-        "2 gîtes",
-        "gemelas de 60 m², con entradas independientes"
-      ],
-      [
-        "5 pers.",
-        "por gîte: 2 por dormitorio, 1 en el salón"
-      ],
-      [
-        "2 ha",
-        "de prados al borde del bosque"
-      ],
-      [
-        "0 carreteras",
-        "que cruzar para salir a pie, en bici o a caballo"
-      ]
-    ],
     "intro_h": "Un lugar que hace honor a su nombre",
     "intro": [
       "Nuestros dos gîtes son dos apartamentos en la planta jardín de nuestra casa, en el corazón de una gran finca de dos hectáreas verdes al borde del bosque, en un lugar excepcional llamado «Vogelsgesang», el canto de los pájaros.",
@@ -117,18 +99,11 @@
     "intro_more": "Descubrir la finca",
     "gites_h": "Dos gîtes gemelos, la misma vista",
     "gites_lead": "Las mismas prestaciones a ambos lados. Reserve una, o las dos para toda la familia.",
-    "gite1_sub": "60 m² · 2 dormitorios · 5 personas · terraza al sur · aparcamiento · wifi",
-    "gite2_sub": "60 m² · 2 dormitorios · 5 personas · terraza · aparcamiento · accesible",
-    "see_gite": "Ver este gîte",
     "around_h": "A pie desde el jardín, o a una hora en coche",
-    "around_lead": "Senderos sin cruzar carreteras, lago y base náutica a 3 km, y Metz, el Sarre y Luxemburgo a un día de excursión.",
+    "around_lead": "Senderos sin cruzar carreteras, lago y base náutica a 6 km, y Metz, el Sarre y Luxemburgo a un día de excursión.",
     "around_more": "Todo lo que hay que ver",
     "hosts_h": "Agnès y Marc le dan la bienvenida",
-    "hosts": "Gîtes de France (3 espigas) desde 2016, Clévacances y Tourisme & Handicap. Hablamos francés, inglés y alemán.",
-    "book_h": "Reserve directamente",
-    "book_lead": "Sin comisión, con respuesta en 24 h. Ropa de cama incluida, camas hechas a la llegada, limpieza final incluida.",
-    "diapo_h": "La finca en imágenes",
-    "diapo_p": "Caballos en el prado, terraza al sol, nieve en la colina: déjelo pasar.",
+    "hosts": "Desde 2007, año de apertura de nuestros gîtes, nos gusta compartir nuestra forma de vivir con huéspedes de todas las nacionalidades y descubrir la suya. Es una manera de conocer otros países y culturas, y de dar a conocer las riquezas de nuestra región y de nuestro país. Practicar con regularidad el alemán y el inglés es un ejercicio agradable que nos cambia de aires.",
     "diapo_btn": "Ver el diaporama",
     "hero_alts": [
       "La casa bajo la nieve, una tarde de invierno",
@@ -138,7 +113,7 @@
     "gites_facts": [
       "60 m²",
       "2 habitaciones",
-      "5 personas",
+      "4 personas",
       "Terraza privada",
       "Aparcamiento",
       "Wi-Fi",
@@ -165,15 +140,15 @@
   "gites": {
     "h1": "Los gîtes",
     "lead": "Dos apartamentos similares, a nivel del jardín de la casa de los propietarios, con entrada independiente, terraza y aparcamiento privados.",
-    "common": "Cada casa consta de un salón con cocina integrada (horno, vitrocerámica, microondas, lavavajillas, lavadora, congelador), dos dormitorios y un baño con ducha y WC adaptado a personas con movilidad reducida. Camas: cuatro de 90 cm en los dormitorios (pueden juntarse) más una quinta plaza en el salón: 5 personas por gîte. Televisor de pantalla plana, wifi, suelo radiante geotérmico.",
+    "common": "Cada casa consta de un salón con cocina integrada (horno, vitrocerámica, microondas, lavavajillas, lavadora, congelador), dos dormitorios y un baño con ducha y WC adaptado a personas con movilidad reducida. Camas: cuatro de 90 cm en los dormitorios (pueden juntarse): 4 personas por gîte. Televisor de pantalla plana, wifi, suelo radiante geotérmico.",
     "desc_h": "Distribución",
     "equip_h": "Equipamiento",
     "serv_h": "Servicios incluidos",
     "desc": [
       "1 salón con cocina integrada",
-      "2 dormitorios (dos camas de 90 × 190 cm cada uno) + 1 cama en el salón",
+      "2 dormitorios (dos camas de 90 × 190 cm cada uno)",
       "1 baño con ducha y WC, accesible",
-      "5 personas · 60 m²"
+      "4 personas · 60 m²"
     ],
     "equip": [
       "Suelo radiante geotérmico",
@@ -195,11 +170,9 @@
       "Alojamiento para no fumadores"
     ],
     "gite1_h": "Gîte 1",
-    "gite1_p": "Terraza orientada al sur, con vistas al prado.",
     "gite2_h": "Gîte 2",
-    "gite2_p": "Gemelo del gîte 1, baño con el sello Tourisme & Handicap.",
     "dispo_h": "Disponibilidad",
-    "dispo_p": "El calendario está sincronizado con nuestro planning. Para reservar, envíenos una solicitud con sus fechas.",
+    "dispo_p": "La disponibilidad y la reserva en línea están en la página Reserva: elija sus fechas y confirmamos en 24 h.",
     "tour": "Hacer la visita virtual 360°",
     "identical": "Los dos gîtes son gemelos: las mismas habitaciones, el mismo equipamiento, la misma vista al prado. Elija simplemente el que esté libre en sus fechas, o los dos para un grupo grande.",
     "captions": [
@@ -210,7 +183,8 @@
       "El baño con ducha a ras de suelo",
       "Baño accesible (sello Tourisme & Handicap)",
       "La terraza de un gîte, al atardecer"
-    ]
+    ],
+    "dispo_btn": "Ver disponibilidad y reservar"
   },
   "autour": {
     "h1": "Turismo y ocio",
@@ -294,32 +268,16 @@
       ]
     ],
     "included": "Incluido: ropa de cama y de casa, camas hechas a la llegada, limpieza final, electricidad y calefacción, wifi, mascotas. Fianza de 300 €. Tasa turística aparte. Se aceptan tarjetas y cheques-vacaciones franceses ANCV.",
-    "form_h": "Reservar o escribirnos",
-    "form_p": "Una solicitud de reserva o una pregunta: respondemos en 24 h, por correo o por teléfono.",
-    "f_name": "Nombre",
-    "f_email": "Correo electrónico",
-    "f_phone": "Teléfono",
-    "f_in": "Llegada",
-    "f_out": "Salida",
-    "f_gite": "Casa",
-    "f_both": "Los dos gîtes",
-    "f_people": "Personas",
-    "f_msg": "Mensaje",
-    "f_send": "Enviar la solicitud",
-    "f_note": "El mensaje se envía a gitevarsberg@hotmail.com. Sus datos solo se usan para responderle.",
+    "form_h": "Reservar en línea",
+    "form_p": "Elija sus fechas y el gîte, deje sus datos: confirmamos en 24 h. Para una simple pregunta, basta un correo o una llamada.",
     "access_h": "Cómo llegar al Domaine du Geisberg",
     "access": [
       "Varsberg está entre Saint-Avold y Creutzwald, a 40 minutos de Metz y 30 minutos de Saarbrücken.",
       "En coche: autopista A4 (París–Estrasburgo), salida Saint-Avold / Carling, luego dirección Creutzwald y Varsberg.",
-      "En tren: estación de Saint-Avold a 6 km (línea regional Metz–Forbach)."
+      "En tren: estación de Saint-Avold a 15 km (línea regional Metz–Forbach)."
     ],
     "gps": "Coordenadas GPS",
-    "f_subject": "Asunto",
-    "f_subj_book": "Solicitud de reserva",
-    "f_subj_q": "Pregunta",
-    "f_ok": "Su mensaje se ha enviado. Respondemos en 24 h.",
-    "f_ko": "No se pudo enviar el mensaje. Puede escribirnos directamente a",
-    "f_sending": "Enviando…"
+    "widget_ko": "Si el formulario no aparece, escríbanos a"
   },
   "diapo": {
     "h1": "Diaporama",

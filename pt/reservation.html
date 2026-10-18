@@ -28,7 +28,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Nunito+Sans:wght@400;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../css/style.css?v=ead6601a">
+<link rel="stylesheet" href="../css/style.css?v=240e4b3f">
 <link rel="icon" href="../img/favicon.svg" type="image/svg+xml">
 <script type="application/ld+json">{"@context": "https://schema.org", "@id": "https://www.domainedugeisberg.fr/#lodging", "@type": "LodgingBusiness", "address": {"@type": "PostalAddress", "addressCountry": "FR", "addressLocality": "Varsberg", "addressRegion": "Moselle", "postalCode": "57880", "streetAddress": "6 rue du Geisberg"}, "amenityFeature": [{"@type": "LocationFeatureSpecification", "name": "WiFi", "value": true}, {"@type": "LocationFeatureSpecification", "name": "Parking", "value": true}, {"@type": "LocationFeatureSpecification", "name": "Terrasse", "value": true}], "checkinTime": "16:00", "checkoutTime": "10:00", "description": "Duos g\u00eetes rurais (3 espigas) em Varsberg (Lorena, Fran\u00e7a), numa propriedade de 2 hectares \u00e0 beira da floresta. Terra\u00e7o privado, estacionamento, wi-fi, animais bem-vindos. Reserva direta.", "email": "gitevarsberg@hotmail.com", "founder": [{"@type": "Person", "name": "Marc Nadler"}, {"@type": "Person", "name": "Agn\u00e8s Nadler"}], "geo": {"@type": "GeoCoordinates", "latitude": 49.1712729, "longitude": 6.6259474}, "image": ["https://www.domainedugeisberg.fr/img/hero/maison-neige-soir-1280.webp", "https://www.domainedugeisberg.fr/img/gites/chambre-lit-double-1600.webp", "https://www.domainedugeisberg.fr/img/gites/sejour-table-1600.webp"], "name": "Domaine du Geisberg", "numberOfRooms": 2, "petsAllowed": true, "priceRange": "300 \u20ac \u2013 420 \u20ac", "starRating": {"@type": "Rating", "bestRating": "5", "name": "3 \u00e9pis G\u00eetes de France", "ratingValue": "3"}, "telephone": "+33789567491", "url": "https://www.domainedugeisberg.fr/"}</script>
 </head>
@@ -55,7 +55,7 @@
         <a href="gites.html">Os gîtes</a>
         <a href="videos.html">Vídeos</a>
         <a href="diaporama.html">Diaporama</a>
-        <a href="visite.html">Visita 360°</a>
+        <a href="visite.html">Visita do gîte</a>
         <a href="autour.html">Arredores</a>
         <a href="avis.html">Opiniões</a>
         <a href="reservation.html" aria-current="page">Reserva</a>
@@ -78,28 +78,20 @@
       <p class="note">Incluído: roupa de cama e de casa, camas feitas à chegada, limpeza final, eletricidade e aquecimento, wi-fi, animais. Caução de 300 €. Taxa turística à parte. Aceitamos cartões e cheques-férias franceses ANCV.</p>
       <div class="logos" style="margin-top:18px"><a href="https://www.gites-de-france.com/fr/grand-est/moselle/domaine-du-geisberg-h57g004193" rel="noopener" target="_blank"><img src="../img/logos/gite-france.webp" width="60" height="40" alt="Gîtes de France" loading="lazy" decoding="async"></a><a href="https://www.clevacances.com/fr/hebergement/11833-gite-varsberg" rel="noopener" target="_blank"><img src="../img/logos/cle-vacances.webp" width="102" height="40" alt="Clévacances" loading="lazy" decoding="async"></a><a href="https://www.tourisme-handicaps.org/" rel="noopener" target="_blank"><img src="../img/logos/tourisme-handicap.webp" width="54" height="40" alt="Tourisme &amp; Handicap" loading="lazy" decoding="async"></a></div>
     </div>
-    <div id="demande">
-      <h2 style="margin-bottom:6px">Reservar ou escrever-nos</h2>
-      <p class="lead" style="margin-top:0">Um pedido de reserva ou uma pergunta: respondemos em 24 h, por e-mail ou telefone.</p>
-      <form class="form" id="resa" action="https://formsubmit.co/ajax/gitevarsberg@hotmail.com" method="POST" data-to="gitevarsberg@hotmail.com" data-subject="Reservar ou escrever-nos" data-ok="A sua mensagem foi enviada. Respondemos em 24 h." data-ko="Não foi possível enviar a mensagem. Pode escrever-nos diretamente para" data-sending="A enviar…" data-send="Enviar o pedido">
-        <input type="hidden" name="_subject" value="[Site] Reservar ou escrever-nos – Domaine du Geisberg">
-        <input type="hidden" name="_template" value="table">
-        <input type="hidden" name="_captcha" value="false">
-        <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
-        <label class="full">Assunto<select id="f_subject" name="Objet"><option>Pedido de reserva</option><option>Pergunta</option></select></label>
-        <label>Nome<input id="f_name" name="Nom" required autocomplete="name"></label>
-        <label>E-mail<input id="f_email" name="Email" type="email" required autocomplete="email"></label>
-        <label>Telefone<input id="f_phone" name="Téléphone" type="tel" autocomplete="tel"></label>
-        <label>Pessoas<input id="f_people" name="Personnes" type="number" min="1" max="10" value="2"></label>
-        <label>Chegada<input id="f_in" name="Arrivée" type="date"></label>
-        <label>Partida<input id="f_out" name="Départ" type="date"></label>
-        <label class="full">Casa<select id="f_gite" name="Gîte"><option>Gîte 1</option><option>Gîte 2</option><option>As duos gîtes</option></select></label>
-        <label class="full">Mensagem<textarea id="f_msg" name="Message" required></textarea></label>
-        <div class="full"><button class="btn btn-p" type="submit" id="f_btn">Enviar o pedido</button></div>
-        <p class="note full" id="f_status" role="status" aria-live="polite" style="margin:0">A mensagem é enviada para gitevarsberg@hotmail.com. Os seus dados servem apenas para lhe responder.</p>
-      </form>
+    <div>
+      <h2 style="margin-bottom:6px">Reservar online</h2>
+      <p class="lead" style="margin-top:0">Escolha as suas datas e o gîte, deixe os seus contactos: confirmamos em 24 h. Para uma simples pergunta, basta um e-mail ou um telefonema.</p>
+      <p><a class="btn btn-p" href="#demande">Reservar</a></p>
     </div>
   </div>
+</section>
+<section class="wrap" id="demande" style="padding-top:0">
+  <div class="widget">
+    <!-- nuit-resa.com / formulaire de reservation V2 / version 01.08.2026 -->
+    <div class="nuit-resa-widget" data-nr-version="v2" data-nr-key="e8dc8870f783d664870e89ac71801620" data-nr-lang="EN"></div>
+    <script async src="https://public.nuit-resa.com/js/nuit-resa-widget-v2.js?v=2026080101"></script>
+  </div>
+  <p class="note" style="margin-top:14px">Se o formulário não aparecer, escreva-nos para <a href="mailto:gitevarsberg@hotmail.com">gitevarsberg@hotmail.com</a>.</p>
 </section>
 <section class="wrap" id="acces" style="padding-top:0">
   <div class="hosts">
@@ -107,7 +99,7 @@
     <div>
       <div class="eyebrow">Agnès e Marc dão-lhe as boas-vindas</div>
       <h2 style="margin-bottom:12px">Como chegar ao Domaine du Geisberg</h2>
-<p>Varsberg fica entre Saint-Avold e Creutzwald, a 40 minutos de Metz e 30 minutos de Saarbrücken.</p><p>De carro: autoestrada A4 (Paris–Estrasburgo), saída Saint-Avold / Carling, depois direção Creutzwald e Varsberg.</p><p>De comboio: estação de Saint-Avold a 6 km (linha regional Metz–Forbach).</p>      <div class="contact-box" style="margin-top:18px">
+<p>Varsberg fica entre Saint-Avold e Creutzwald, a 40 minutos de Metz e 30 minutos de Saarbrücken.</p><p>De carro: autoestrada A4 (Paris–Estrasburgo), saída Saint-Avold / Carling, depois direção Creutzwald e Varsberg.</p><p>De comboio: estação de Saint-Avold a 15 km (linha regional Metz–Forbach).</p>      <div class="contact-box" style="margin-top:18px">
         <div><small>Morada</small>6 rue du Geisberg, 57880 Varsberg</div>
         <div><small>Coordenadas GPS</small>49.1712729, 6.6259474</div>
 <div><small>Marc</small><a href="tel:+33789567491">+33 7 89 56 74 91</a></div><div><small>Agnès</small><a href="tel:+33673420589">+33 6 73 42 05 89</a></div>        <div><small>E-mail</small><a href="mailto:gitevarsberg@hotmail.com">gitevarsberg@hotmail.com</a></div>
@@ -125,6 +117,6 @@
   </div>
 </footer>
 <script>window.GEISBERG_UI={"close": "Fechar", "next": "Seguinte", "prev": "Anterior", "top": "Voltar ao topo"};</script>
-<script src="../js/site.js?v=5f00fcbf"></script>
+<script src="../js/site.js?v=0eca14ab"></script>
 </body>
 </html>

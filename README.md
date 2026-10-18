@@ -8,7 +8,8 @@ Site des deux gîtes du Domaine du Geisberg (Marc et Agnès Nadler), 6 rue du Ge
 
 Le site est **entièrement statique** : pas de base de données, pas de serveur à maintenir. Les pages HTML sont
 générées par un petit script Python à partir de textes (JSON) et de modèles (templates), puis publiées par
-GitHub Pages. Le calendrier des disponibilités se met à jour tout seul, toutes les heures.
+GitHub Pages. Les disponibilités et la réservation en ligne sont assurées par le widget Nuitrésa (le
+prestataire de Marc), intégré dans la page Réservation.
 
 ## Organisation du dépôt
 
@@ -19,7 +20,7 @@ GitHub Pages. Le calendrier des disponibilités se met à jour tout seul, toutes
 ├── gite-1.html, gite-2.html      anciennes adresses : renvoient vers gites.html (générées aussi)
 ├── sitemap.xml, robots.txt       générés aussi
 ├── css/style.css                 la feuille de styles (couleurs, mise en page, mobile, thème sombre)
-├── js/site.js                    les scripts (menu, thème, bandeau, galerie, calendrier, formulaire, notes)
+├── js/site.js                    les scripts (menu, thème, bandeau, galerie, notes, effets)
 ├── img/                          photos WebP GÉNÉRÉES par tools/photos.py : hero/, domaine/, gites/, videos/
 │                                 (affiches), plus autour/ et logos/ (taille unique)
 ├── videos/                       vidéos MP4 GÉNÉRÉES par tools/videos.py
@@ -36,10 +37,8 @@ GitHub Pages. Le calendrier des disponibilités se met à jour tout seul, toutes
 │   │   ├── shared.json           données communes à toutes les langues : adresse, téléphones, tarifs,
 │   │   │                         listes de photos (identifiants du catalogue), sites à visiter, avis…
 │   │   ├── images.json           dimensions et tailles de chaque photo (écrit par photos.py, ne pas éditer)
-│   │   ├── fr.json … zh.json     tous les TEXTES, une langue par fichier (le français sert de repli)
-│   │   └── busy.json             périodes réservées (écrit automatiquement, ne pas éditer)
+│   │   └── fr.json … zh.json     tous les TEXTES, une langue par fichier (le français sert de repli)
 │   ├── credits.json              attributions des photos et de l'audio récupérés sur Wikimedia Commons
-│   ├── fetch_ical.py             lit les calendriers iCal (Bed Booking…) → busy.json
 │   ├── fetch_commons.py          cherche des photos libres (lac, village, forêt…) sur Wikimedia Commons
 │   ├── fetch_audio.py            cherche un enregistrement libre de chants d'oiseaux
 │   └── liens-candidats.txt       liens supplémentaires à tester par le vérificateur de liens
@@ -64,7 +63,7 @@ Les textes sont dans `tools/content/<langue>.json`. Chaque fichier a la même st
 | `videos`      | page Vidéos (titres et descriptions des vidéos)                         |
 | `autour`      | page Aux alentours                                                      |
 | `extra`       | avis, infos pratiques, labels                                           |
-| `reservation` | page Réservation et formulaire de contact                               |
+| `reservation` | page Réservation (tarifs, textes autour du widget Nuitrésa, accès)      |
 | `visite`      | page Visite 3D                                                          |
 | `diapo`       | page Diaporama                                                          |
 | `legal`       | mentions légales et crédits                                             |
@@ -132,25 +131,23 @@ navigateurs rechargent toujours la dernière version.
 | Workflow               | Déclenchement          | Rôle                                                                      |
 |------------------------|------------------------|---------------------------------------------------------------------------|
 | `pages.yml`            | à chaque `push`        | publie le dépôt sur GitHub Pages                                          |
-| `calendrier.yml`       | toutes les heures      | lit les flux iCal, réécrit `busy.json`, régénère et republie si changement |
 | `liens.yml`            | chaque lundi           | teste tous les liens externes → `docs/liens-rapport.md`                   |
 | `photos-commons.yml`   | à la demande           | récupère des photos libres sur Wikimedia Commons (`tools/fetch_commons.py`) |
 | `audio-commons.yml`    | à la demande           | récupère un enregistrement libre de chants d'oiseaux (`tools/fetch_audio.py`) |
 
-### Calendrier des disponibilités
+### Disponibilités et réservation (Nuitrésa)
 
-Les adresses des flux iCal (Airbnb, Bed Booking, Gîtes de France…) sont des **secrets** du dépôt
-(`Settings → Secrets and variables → Actions`) : `ICAL_GITE1` et `ICAL_GITE2`, plusieurs adresses possibles
-séparées par des virgules. Elles n'apparaissent jamais dans le code. Seules les plages de dates occupées sont
-conservées dans `busy.json` : aucun nom de client, aucun lien.
+La page Réservation intègre le widget de réservation de Nuitrésa (`tools/content/shared.json` → `nuitresa_key`,
+clé publique fournie par Nuitrésa, et `nuitresa_script`). Calendrier, choix du gîte, coordonnées et confirmation
+sont gérés côté Nuitrésa ; le site n'héberge aucune donnée client. Pour changer de clé ou de version du script,
+modifier ces deux valeurs et régénérer. La langue du widget suit celle de la page (FR, EN, DE, ES ; anglais pour
+les autres).
 
-Pour forcer une mise à jour immédiate : onglet *Actions* → « Mettre à jour le calendrier » → *Run workflow*.
+### Contact
 
-### Formulaire de contact
-
-Le formulaire de la page Réservation envoie les messages à l'adresse des gîtes via le service FormSubmit
-(sans serveur). À la première utilisation, FormSubmit envoie un e-mail de confirmation à activer une seule fois.
-Si l'envoi échoue, le site ouvre le logiciel de messagerie du visiteur avec le message pré-rempli.
+Les coordonnées (téléphones, e-mail, adresse) sont dans `shared.json` et apparaissent sur l'accueil, la page
+Réservation et le pied de page. Il n'y a plus de formulaire maison : une question passe par e-mail ou téléphone,
+une réservation par le widget.
 
 ## Mode « Notes pour Marc »
 
@@ -171,7 +168,8 @@ Le détail, écrit pour Marc, est dans `docs/Guide-site-Domaine-du-Geisberg.pdf`
 
 ## Choix techniques (robustesse et vitesse)
 
-- Site statique, sans base de données ni dépendance JavaScript externe : rien à mettre à jour, rien qui casse.
+- Site statique, sans base de données ni dépendance JavaScript externe (hormis le widget de réservation
+  Nuitrésa, chargé uniquement sur la page Réservation) : rien à mettre à jour, rien qui casse.
 - Chaque photo existe en plusieurs tailles (`srcset`) et porte ses dimensions : un téléphone ne télécharge
   pas la version 1920 px, et la page ne « saute » pas pendant le chargement. La première photo du bandeau
   est préchargée ; toutes les autres se chargent à la demande.

@@ -7,12 +7,12 @@
   <p class="lead">{{ v.lead }}</p>
   <div class="videos"{% if lang == 'fr' %} data-note="{{ t.notes.videos }}"{% endif %}>
     {% for vid in s.videos %}{% set tx = v.clips[loop.index0] %}
-    <figure class="video{{ ' small' if vid.small }}">
-      <video controls preload="none" playsinline poster="{{ src(vid.poster) }}" width="{{ vid.w }}" height="{{ vid.h }}"{% if vid.small %} style="max-width:{{ vid.w * 2 }}px"{% endif %}>
+    <figure class="video{{ ' small' if vid.get('small') }}">
+      <video controls preload="none" playsinline poster="{{ src(vid.poster) }}" width="{{ vid.w }}" height="{{ vid.h }}"{% if vid.get('small') %} style="max-width:{{ vid.w * 2 }}px"{% endif %}>
         <source src="{{ rel }}videos/{{ vid.id }}.mp4" type="video/mp4">
         <a href="{{ rel }}videos/{{ vid.id }}.mp4">{{ v.download }}</a>
       </video>
-      <figcaption><b>{{ tx[0] }}</b><span>{{ tx[1] }}</span><small>{{ vid.duration }}{% if vid.small %} · {{ v.small_note }}{% endif %}</small></figcaption>
+      <figcaption><b>{{ tx[0] }}</b><span>{{ tx[1] }}</span><small>{{ vid.duration }}{% if vid.get('small') %} · {{ v.small_note }}{% endif %}</small></figcaption>
     </figure>
     {% endfor %}
   </div>

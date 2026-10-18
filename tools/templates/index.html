@@ -14,7 +14,7 @@
   <div class="wrap">
     <h1{{ note('h1') }}>{{ h.h1 }}</h1>
     <p>{{ h.lead }}</p>
-    <div class="cta"><a class="btn btn-p" href="gites.html#dispo">{{ h.cta1 }}</a><a class="btn btn-light" href="gites.html">{{ h.cta2 }}</a></div>
+    <div class="cta"><a class="btn btn-p" href="reservation.html#demande">{{ h.cta1 }}</a><a class="btn btn-light" href="gites.html">{{ h.cta2 }}</a></div>
   </div>
   <div class="dots" aria-hidden="true">{% for id in s.hero %}<button type="button"{{ ' aria-current="true"' if loop.first }}></button>{% endfor %}</div>
 </div>
@@ -29,7 +29,7 @@
       <h2>{{ h.gites_h }}</h2>
       <p class="lead" style="max-width:none">{{ h.gites_lead }}</p>
       <ul class="chips compact"{{ note('facts') }}>{% for f in h.gites_facts %}<li>{{ f }}</li>{% endfor %}</ul>
-      <div class="cta"><a class="btn btn-g" href="gites.html">{{ h.cta2 }}</a><a class="btn btn-o" href="gites.html#dispo">{{ h.cta1 }}</a></div>
+      <div class="cta"><a class="btn btn-g" href="gites.html">{{ h.cta2 }}</a><a class="btn btn-o" href="reservation.html#demande">{{ h.cta1 }}</a></div>
     </div>
   </div>
 </section>

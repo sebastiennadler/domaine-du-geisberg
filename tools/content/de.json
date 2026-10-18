@@ -10,7 +10,7 @@
     ],
     "gites": [
       "Die Ferienwohnungen – Domaine du Geisberg",
-      "Zwei baugleiche Ferienwohnungen mit 60 m², 2 Schlafzimmern, 5 Personen, eigener Terrasse, Erdwärmeheizung, Label Tourisme & Handicap."
+      "Zwei baugleiche Ferienwohnungen mit 60 m², 2 Schlafzimmern, 4 Personen, eigener Terrasse, Erdwärmeheizung, Label Tourisme & Handicap."
     ],
     "autour": [
       "Ausflüge rund um Varsberg – Domaine du Geisberg",
@@ -51,7 +51,7 @@
     "contact": "Kontakt",
     "book": "Buchen",
     "avis": "Bewertungen",
-    "visite": "360°-Tour",
+    "visite": "Rundgang",
     "videos": "Videos"
   },
   "ui": {
@@ -87,28 +87,10 @@
     "address": "Adresse"
   },
   "home": {
-    "h1": "Zwei ruhige Ferienwohnungen zwischen Wiese und Wald",
-    "lead": "Auf dem Hügel über Varsberg, am Ort „Vogelsgesang“. Zwei Hektar Wiesen am Waldrand, Wanderwege direkt ab dem Garten und eine eigene Terrasse für jedes Haus.",
+    "h1": "Mitten in der Natur",
+    "lead": "Zwei außergewöhnliche Ferienwohnungen direkt am Wald, auf dem Hügel über Varsberg, am Ort „Vogelsgesang“.",
     "cta1": "Verfügbarkeit prüfen",
     "cta2": "Die Ferienwohnungen entdecken",
-    "facts": [
-      [
-        "2 Wohnungen",
-        "Wohnungen, je 60 m², mit eigenem Eingang"
-      ],
-      [
-        "5 Pers.",
-        "pro Wohnung: 2 pro Schlafzimmer, 1 im Wohnzimmer"
-      ],
-      [
-        "2 ha",
-        "Wiesen am Waldrand"
-      ],
-      [
-        "0 Straßen",
-        "zu überqueren – zu Fuß, mit dem Rad oder zu Pferd"
-      ]
-    ],
     "intro_h": "Ein Ort, der seinen Namen verdient",
     "intro": [
       "Unsere beiden Ferienwohnungen liegen im Erdgeschoss eines geräumigen Hauses, inmitten eines zwei Hektar großen, grünen Anwesens am Waldrand, an einem besonderen Ort namens „Vogelsgesang“.",
@@ -117,18 +99,11 @@
     "intro_more": "Das Anwesen entdecken",
     "gites_h": "Zwei Zwillingswohnungen, derselbe Blick",
     "gites_lead": "Gleiche Ausstattung auf beiden Seiten. Buchen Sie eines – oder beide für die ganze Familie.",
-    "gite1_sub": "60 m² · 2 Schlafzimmer · 5 Personen · Südterrasse · Parkplatz · WLAN",
-    "gite2_sub": "60 m² · 2 Schlafzimmer · 5 Personen · Terrasse · Parkplatz · barrierefrei",
-    "see_gite": "Diese Wohnung ansehen",
     "around_h": "Zu Fuß ab dem Garten oder eine Autostunde entfernt",
-    "around_lead": "Wanderwege ohne Straßenüberquerung, See und Wassersportzentrum in 3 km, Metz, das Saarland und Luxemburg als Tagesausflug.",
+    "around_lead": "Wanderwege ohne Straßenüberquerung, See und Wassersportzentrum in 6 km, Metz, das Saarland und Luxemburg als Tagesausflug.",
     "around_more": "Alles, was es zu sehen gibt",
     "hosts_h": "Agnès und Marc heißen Sie willkommen",
-    "hosts": "Seit 2016 bei Gîtes de France (3 Ähren), Clévacances und Tourisme & Handicap. Wir sprechen Französisch, Englisch und Deutsch.",
-    "book_h": "Direkt buchen",
-    "book_lead": "Ohne Provision, Antwort innerhalb von 24 Stunden. Bettwäsche inklusive, Betten bei Ankunft bezogen, Endreinigung inbegriffen.",
-    "diapo_h": "Das Anwesen in Bildern",
-    "diapo_p": "Pferde auf der Wiese, Terrasse in der Sonne, Schnee auf dem Hügel: einfach laufen lassen.",
+    "hosts": "Seit 2007, dem Jahr der Eröffnung unserer Ferienwohnungen, teilen wir gern unsere Lebensart mit Gästen aus aller Welt und lernen die ihre kennen. So entdecken wir andere Länder und Kulturen und zeigen anderen die Schätze unserer Region und unseres Landes. Der regelmäßige Gebrauch von Deutsch und Englisch ist für uns eine angenehme Abwechslung.",
     "diapo_btn": "Diashow starten",
     "hero_alts": [
       "Das Haus im Schnee an einem Winterabend",
@@ -138,7 +113,7 @@
     "gites_facts": [
       "60 m²",
       "2 Schlafzimmer",
-      "5 Personen",
+      "4 Personen",
       "Eigene Terrasse",
       "Parkplatz",
       "WLAN",
@@ -165,15 +140,15 @@
   "gites": {
     "h1": "Die Ferienwohnungen",
     "lead": "Zwei baugleiche Ferienwohnungen auf Gartenniveau im Haus der Eigentümer mit eigenem Eingang, eigener Terrasse und Parkplatz.",
-    "common": "Jedes Haus hat ein Wohnzimmer mit Einbauküche (Backofen, Cerankochfeld, Mikrowelle, Geschirrspüler, Waschmaschine, Gefrierschrank), zwei Schlafzimmer und ein barrierefreies Duschbad mit WC. Schlafen: vier 90-cm-Betten in den Schlafzimmern (zusammenstellbar) plus ein fünfter Schlafplatz im Wohnzimmer: 5 Personen pro Wohnung. Flachbildfernseher, WLAN, Fußbodenheizung mit Erdwärme.",
+    "common": "Jedes Haus hat ein Wohnzimmer mit Einbauküche (Backofen, Cerankochfeld, Mikrowelle, Geschirrspüler, Waschmaschine, Gefrierschrank), zwei Schlafzimmer und ein barrierefreies Duschbad mit WC. Schlafen: vier 90-cm-Betten in den Schlafzimmern (zusammenstellbar): 4 Personen pro Wohnung. Flachbildfernseher, WLAN, Fußbodenheizung mit Erdwärme.",
     "desc_h": "Aufteilung",
     "equip_h": "Ausstattung",
     "serv_h": "Inklusive Leistungen",
     "desc": [
       "1 Wohnraum mit Einbauküche",
-      "2 Schlafzimmer (je zwei Betten 90 × 190 cm) + 1 Schlafplatz im Wohnzimmer",
+      "2 Schlafzimmer (je zwei Betten 90 × 190 cm)",
       "1 barrierefreies Duschbad mit WC",
-      "5 Personen · 60 m²"
+      "4 Personen · 60 m²"
     ],
     "equip": [
       "Fußbodenheizung mit Erdwärme",
@@ -195,11 +170,9 @@
       "Nichtraucher"
     ],
     "gite1_h": "Ferienwohnung 1",
-    "gite1_p": "Südterrasse mit Blick auf die Wiese.",
     "gite2_h": "Ferienwohnung 2",
-    "gite2_p": "Zwilling von Wohnung 1, Duschbad mit dem Label Tourisme & Handicap.",
     "dispo_h": "Verfügbarkeit",
-    "dispo_p": "Der Kalender ist mit unserem Belegungsplan synchronisiert. Senden Sie uns zum Buchen eine Anfrage mit Ihren Daten.",
+    "dispo_p": "Verfügbarkeit und Online-Buchung finden Sie auf der Seite Buchung: Daten wählen, wir bestätigen innerhalb von 24 Stunden.",
     "tour": "360°-Rundgang starten",
     "identical": "Die beiden Ferienwohnungen sind Zwillinge: gleiche Räume, gleiche Ausstattung, gleicher Blick auf die Wiese. Wählen Sie einfach die, die an Ihren Daten frei ist – oder beide für eine größere Gruppe.",
     "captions": [
@@ -210,7 +183,8 @@
       "Das Duschbad mit ebenerdiger Dusche",
       "Barrierefreies Duschbad (Label Tourisme & Handicap)",
       "Die Terrasse einer Ferienwohnung am Abend"
-    ]
+    ],
+    "dispo_btn": "Verfügbarkeit prüfen und buchen"
   },
   "autour": {
     "h1": "Ausflüge und Freizeit",
@@ -294,32 +268,16 @@
       ]
     ],
     "included": "Inklusive: Bett- und Haushaltswäsche, Betten bei Ankunft bezogen, Endreinigung, Strom und Heizung, WLAN, Haustiere. Kaution 300 €. Kurtaxe zusätzlich. Kreditkarten und französische ANCV-Urlaubsschecks werden akzeptiert.",
-    "form_h": "Buchen oder uns schreiben",
-    "form_p": "Eine Buchungsanfrage oder eine Frage: wir antworten innerhalb von 24 Stunden, per E-Mail oder Telefon.",
-    "f_name": "Name",
-    "f_email": "E-Mail",
-    "f_phone": "Telefon",
-    "f_in": "Anreise",
-    "f_out": "Abreise",
-    "f_gite": "Ferienwohnung",
-    "f_both": "Beide Wohnungen",
-    "f_people": "Personen",
-    "f_msg": "Nachricht",
-    "f_send": "Anfrage senden",
-    "f_note": "Die Nachricht geht an gitevarsberg@hotmail.com. Ihre Angaben dienen nur der Antwort.",
+    "form_h": "Online buchen",
+    "form_p": "Wählen Sie Ihre Daten und die Wohnung und hinterlassen Sie Ihre Kontaktdaten: wir bestätigen innerhalb von 24 Stunden. Für eine einfache Frage genügt eine E-Mail oder ein Anruf.",
     "access_h": "Anfahrt zur Domaine du Geisberg",
     "access": [
       "Varsberg liegt zwischen Saint-Avold und Creutzwald, 40 Minuten von Metz und 30 Minuten von Saarbrücken.",
       "Mit dem Auto: Autobahn A4 (Paris–Straßburg), Ausfahrt Saint-Avold / Carling, dann Richtung Creutzwald und Varsberg. Aus Deutschland: A6/A620 bis Saarbrücken, dann A4 oder über Creutzwald.",
-      "Mit der Bahn: Bahnhof Saint-Avold in 6 km (Regionalzug Metz–Forbach)."
+      "Mit der Bahn: Bahnhof Saint-Avold in 15 km (Regionalzug Metz–Forbach)."
     ],
     "gps": "GPS-Koordinaten",
-    "f_subject": "Betreff",
-    "f_subj_book": "Buchungsanfrage",
-    "f_subj_q": "Frage",
-    "f_ok": "Ihre Nachricht wurde gesendet. Wir antworten innerhalb von 24 Stunden.",
-    "f_ko": "Die Nachricht konnte nicht gesendet werden. Schreiben Sie uns direkt an",
-    "f_sending": "Wird gesendet…"
+    "widget_ko": "Wird das Formular nicht angezeigt, schreiben Sie uns an"
   },
   "diapo": {
     "h1": "Diashow",

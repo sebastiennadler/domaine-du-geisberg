@@ -13,7 +13,7 @@ import hashlib
 import json
 from pathlib import Path
 
-from jinja2 import Environment, FileSystemLoader, select_autoescape
+from jinja2 import Environment, FileSystemLoader, StrictUndefined, select_autoescape
 from markupsafe import Markup, escape
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -43,25 +43,18 @@ PAGES = [
     "mentions-legales",
 ]
 # anciennes adresses conservées : chacune renvoie vers la page qui la remplace
-REDIRECTS = {"gite-1": "gites.html#gite-1", "gite-2": "gites.html#gite-2"}
+REDIRECTS = {"gite-1": "gites.html", "gite-2": "gites.html"}
 
 env = Environment(
     loader=FileSystemLoader(str(TPL)),
     autoescape=select_autoescape(["html"]),
     trim_blocks=True,
     lstrip_blocks=True,
+    undefined=StrictUndefined,  # une clé absente des textes = erreur, pas un trou dans la page
 )
 
 shared = json.loads((CONTENT / "shared.json").read_text(encoding="utf-8"))
 images = json.loads((CONTENT / "images.json").read_text(encoding="utf-8"))
-busy = (
-    json.loads((CONTENT / "busy.json").read_text(encoding="utf-8"))
-    if (CONTENT / "busy.json").exists()
-    else {}
-)
-shared["busy1"] = ",".join(f"{a}/{b}" for a, b in busy.get("gite1", []))
-shared["busy2"] = ",".join(f"{a}/{b}" for a, b in busy.get("gite2", []))
-shared["busy_updated"] = busy.get("updated", "")
 contents = {}
 for code, *_ in LANGS:
     p = CONTENT / f"{code}.json"

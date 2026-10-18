@@ -28,7 +28,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Nunito+Sans:wght@400;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../css/style.css?v=ead6601a">
+<link rel="stylesheet" href="../css/style.css?v=240e4b3f">
 <link rel="icon" href="../img/favicon.svg" type="image/svg+xml">
 <script type="application/ld+json">{"@context": "https://schema.org", "@id": "https://www.domainedugeisberg.fr/#lodging", "@type": "LodgingBusiness", "address": {"@type": "PostalAddress", "addressCountry": "FR", "addressLocality": "Varsberg", "addressRegion": "Moselle", "postalCode": "57880", "streetAddress": "6 rue du Geisberg"}, "amenityFeature": [{"@type": "LocationFeatureSpecification", "name": "WiFi", "value": true}, {"@type": "LocationFeatureSpecification", "name": "Parking", "value": true}, {"@type": "LocationFeatureSpecification", "name": "Terrasse", "value": true}], "checkinTime": "16:00", "checkoutTime": "10:00", "description": "Zwei Ferienwohnungen (3 \u00c4hren) in Varsberg (Lothringen, Frankreich) auf einem 2 Hektar gro\u00dfen Anwesen am Waldrand. Eigene Terrasse, Parkplatz, WLAN, Haustiere willkommen. Direkt buchen.", "email": "gitevarsberg@hotmail.com", "founder": [{"@type": "Person", "name": "Marc Nadler"}, {"@type": "Person", "name": "Agn\u00e8s Nadler"}], "geo": {"@type": "GeoCoordinates", "latitude": 49.1712729, "longitude": 6.6259474}, "image": ["https://www.domainedugeisberg.fr/img/hero/maison-neige-soir-1280.webp", "https://www.domainedugeisberg.fr/img/gites/chambre-lit-double-1600.webp", "https://www.domainedugeisberg.fr/img/gites/sejour-table-1600.webp"], "name": "Domaine du Geisberg", "numberOfRooms": 2, "petsAllowed": true, "priceRange": "300 \u20ac \u2013 420 \u20ac", "starRating": {"@type": "Rating", "bestRating": "5", "name": "3 \u00e9pis G\u00eetes de France", "ratingValue": "3"}, "telephone": "+33789567491", "url": "https://www.domainedugeisberg.fr/"}</script>
 </head>
@@ -55,7 +55,7 @@
         <a href="gites.html">Unterkünfte</a>
         <a href="videos.html">Videos</a>
         <a href="diaporama.html">Diashow</a>
-        <a href="visite.html">360°-Tour</a>
+        <a href="visite.html">Rundgang</a>
         <a href="autour.html">Umgebung</a>
         <a href="avis.html">Bewertungen</a>
         <a href="reservation.html" aria-current="page">Buchung</a>
@@ -78,28 +78,20 @@
       <p class="note">Inklusive: Bett- und Haushaltswäsche, Betten bei Ankunft bezogen, Endreinigung, Strom und Heizung, WLAN, Haustiere. Kaution 300 €. Kurtaxe zusätzlich. Kreditkarten und französische ANCV-Urlaubsschecks werden akzeptiert.</p>
       <div class="logos" style="margin-top:18px"><a href="https://www.gites-de-france.com/fr/grand-est/moselle/domaine-du-geisberg-h57g004193" rel="noopener" target="_blank"><img src="../img/logos/gite-france.webp" width="60" height="40" alt="Gîtes de France" loading="lazy" decoding="async"></a><a href="https://www.clevacances.com/fr/hebergement/11833-gite-varsberg" rel="noopener" target="_blank"><img src="../img/logos/cle-vacances.webp" width="102" height="40" alt="Clévacances" loading="lazy" decoding="async"></a><a href="https://www.tourisme-handicaps.org/" rel="noopener" target="_blank"><img src="../img/logos/tourisme-handicap.webp" width="54" height="40" alt="Tourisme &amp; Handicap" loading="lazy" decoding="async"></a></div>
     </div>
-    <div id="demande">
-      <h2 style="margin-bottom:6px">Buchen oder uns schreiben</h2>
-      <p class="lead" style="margin-top:0">Eine Buchungsanfrage oder eine Frage: wir antworten innerhalb von 24 Stunden, per E-Mail oder Telefon.</p>
-      <form class="form" id="resa" action="https://formsubmit.co/ajax/gitevarsberg@hotmail.com" method="POST" data-to="gitevarsberg@hotmail.com" data-subject="Buchen oder uns schreiben" data-ok="Ihre Nachricht wurde gesendet. Wir antworten innerhalb von 24 Stunden." data-ko="Die Nachricht konnte nicht gesendet werden. Schreiben Sie uns direkt an" data-sending="Wird gesendet…" data-send="Anfrage senden">
-        <input type="hidden" name="_subject" value="[Site] Buchen oder uns schreiben – Domaine du Geisberg">
-        <input type="hidden" name="_template" value="table">
-        <input type="hidden" name="_captcha" value="false">
-        <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
-        <label class="full">Betreff<select id="f_subject" name="Objet"><option>Buchungsanfrage</option><option>Frage</option></select></label>
-        <label>Name<input id="f_name" name="Nom" required autocomplete="name"></label>
-        <label>E-Mail<input id="f_email" name="Email" type="email" required autocomplete="email"></label>
-        <label>Telefon<input id="f_phone" name="Téléphone" type="tel" autocomplete="tel"></label>
-        <label>Personen<input id="f_people" name="Personnes" type="number" min="1" max="10" value="2"></label>
-        <label>Anreise<input id="f_in" name="Arrivée" type="date"></label>
-        <label>Abreise<input id="f_out" name="Départ" type="date"></label>
-        <label class="full">Ferienwohnung<select id="f_gite" name="Gîte"><option>Ferienwohnung 1</option><option>Ferienwohnung 2</option><option>Beide Wohnungen</option></select></label>
-        <label class="full">Nachricht<textarea id="f_msg" name="Message" required></textarea></label>
-        <div class="full"><button class="btn btn-p" type="submit" id="f_btn">Anfrage senden</button></div>
-        <p class="note full" id="f_status" role="status" aria-live="polite" style="margin:0">Die Nachricht geht an gitevarsberg@hotmail.com. Ihre Angaben dienen nur der Antwort.</p>
-      </form>
+    <div>
+      <h2 style="margin-bottom:6px">Online buchen</h2>
+      <p class="lead" style="margin-top:0">Wählen Sie Ihre Daten und die Wohnung und hinterlassen Sie Ihre Kontaktdaten: wir bestätigen innerhalb von 24 Stunden. Für eine einfache Frage genügt eine E-Mail oder ein Anruf.</p>
+      <p><a class="btn btn-p" href="#demande">Buchen</a></p>
     </div>
   </div>
+</section>
+<section class="wrap" id="demande" style="padding-top:0">
+  <div class="widget">
+    <!-- nuit-resa.com / formulaire de reservation V2 / version 01.08.2026 -->
+    <div class="nuit-resa-widget" data-nr-version="v2" data-nr-key="e8dc8870f783d664870e89ac71801620" data-nr-lang="DE"></div>
+    <script async src="https://public.nuit-resa.com/js/nuit-resa-widget-v2.js?v=2026080101"></script>
+  </div>
+  <p class="note" style="margin-top:14px">Wird das Formular nicht angezeigt, schreiben Sie uns an <a href="mailto:gitevarsberg@hotmail.com">gitevarsberg@hotmail.com</a>.</p>
 </section>
 <section class="wrap" id="acces" style="padding-top:0">
   <div class="hosts">
@@ -107,7 +99,7 @@
     <div>
       <div class="eyebrow">Agnès und Marc heißen Sie willkommen</div>
       <h2 style="margin-bottom:12px">Anfahrt zur Domaine du Geisberg</h2>
-<p>Varsberg liegt zwischen Saint-Avold und Creutzwald, 40 Minuten von Metz und 30 Minuten von Saarbrücken.</p><p>Mit dem Auto: Autobahn A4 (Paris–Straßburg), Ausfahrt Saint-Avold / Carling, dann Richtung Creutzwald und Varsberg. Aus Deutschland: A6/A620 bis Saarbrücken, dann A4 oder über Creutzwald.</p><p>Mit der Bahn: Bahnhof Saint-Avold in 6 km (Regionalzug Metz–Forbach).</p>      <div class="contact-box" style="margin-top:18px">
+<p>Varsberg liegt zwischen Saint-Avold und Creutzwald, 40 Minuten von Metz und 30 Minuten von Saarbrücken.</p><p>Mit dem Auto: Autobahn A4 (Paris–Straßburg), Ausfahrt Saint-Avold / Carling, dann Richtung Creutzwald und Varsberg. Aus Deutschland: A6/A620 bis Saarbrücken, dann A4 oder über Creutzwald.</p><p>Mit der Bahn: Bahnhof Saint-Avold in 15 km (Regionalzug Metz–Forbach).</p>      <div class="contact-box" style="margin-top:18px">
         <div><small>Adresse</small>6 rue du Geisberg, 57880 Varsberg</div>
         <div><small>GPS-Koordinaten</small>49.1712729, 6.6259474</div>
 <div><small>Marc</small><a href="tel:+33789567491">+33 7 89 56 74 91</a></div><div><small>Agnès</small><a href="tel:+33673420589">+33 6 73 42 05 89</a></div>        <div><small>E-mail</small><a href="mailto:gitevarsberg@hotmail.com">gitevarsberg@hotmail.com</a></div>
@@ -125,6 +117,6 @@
   </div>
 </footer>
 <script>window.GEISBERG_UI={"close": "Schlie\u00dfen", "next": "Weiter", "prev": "Zur\u00fcck", "top": "Nach oben"};</script>
-<script src="../js/site.js?v=5f00fcbf"></script>
+<script src="../js/site.js?v=0eca14ab"></script>
 </body>
 </html>

@@ -10,7 +10,7 @@
     ],
     "gites": [
       "The gîtes – Domaine du Geisberg",
-      "Two twin 60 m² gîtes, 2 bedrooms, 5 guests, private terrace, geothermal heating, Tourisme & Handicap label."
+      "Two twin 60 m² gîtes, 2 bedrooms, 4 guests, private terrace, geothermal heating, Tourisme & Handicap label."
     ],
     "autour": [
       "Things to do around Varsberg – Domaine du Geisberg",
@@ -51,7 +51,7 @@
     "contact": "Contact",
     "book": "Book",
     "avis": "Reviews",
-    "visite": "360° tour",
+    "visite": "Tour of the gîte",
     "videos": "Videos"
   },
   "ui": {
@@ -87,28 +87,10 @@
     "address": "Address"
   },
   "home": {
-    "h1": "Two quiet gîtes between meadow and forest",
-    "lead": "On the hill above Varsberg, at the place called Vogelsgesang, “birdsong”. Two hectares of meadows at the edge of the forest, footpaths starting from the garden, and a terrace for each gîte.",
+    "h1": "In the heart of nature",
+    "lead": "Two exceptional gîtes right next to the forest, on the hill above Varsberg, at the place called Vogelsgesang, “birdsong”.",
     "cta1": "Check availability",
     "cta2": "Discover the gîtes",
-    "facts": [
-      [
-        "2 gîtes",
-        "twin 60 m² units with separate entrances"
-      ],
-      [
-        "5 guests",
-        "per gîte: 2 per bedroom, 1 in the living room"
-      ],
-      [
-        "2 ha",
-        "of meadows at the edge of the forest"
-      ],
-      [
-        "0 roads",
-        "to cross before setting off on foot, by bike or on horseback"
-      ]
-    ],
     "intro_h": "A place that lives up to its name",
     "intro": [
       "Our two gîtes are two apartments on the garden level of our house, in the heart of a vast two-hectare estate of green meadows at the edge of the forest, in an exceptional spot known as “Vogelsgesang”, birdsong.",
@@ -117,18 +99,11 @@
     "intro_more": "Discover the estate",
     "gites_h": "Two twin gîtes, the same view",
     "gites_lead": "The same comforts on both sides. Book one, or both for a large family.",
-    "gite1_sub": "60 m² · 2 bedrooms · 5 guests · south-facing terrace · parking · wifi",
-    "gite2_sub": "60 m² · 2 bedrooms · 5 guests · terrace · parking · wheelchair accessible",
-    "see_gite": "See this gîte",
     "around_h": "On foot from the garden, or an hour’s drive",
-    "around_lead": "Hiking trails without crossing a road, a lake and water-sports centre 3 km away, and Metz, the Saar and Luxembourg within a day trip.",
+    "around_lead": "Hiking trails without crossing a road, a lake and water-sports centre 6 km away, and Metz, the Saar and Luxembourg within a day trip.",
     "around_more": "Everything there is to see",
     "hosts_h": "Agnès and Marc welcome you",
-    "hosts": "Gîtes de France (3 ears of corn) since 2016, Clévacances and Tourisme & Handicap labels. We speak French, English and German.",
-    "book_h": "Book direct",
-    "book_lead": "No commission, with a reply within 24 hours. Linen provided, beds made on arrival, end-of-stay cleaning included.",
-    "diapo_h": "The estate in pictures",
-    "diapo_p": "Horses in the meadow, the terrace in the sun, snow on the hill: let it play.",
+    "hosts": "Since 2007, the year our gîtes opened, we have enjoyed sharing our way of life with guests of all nationalities and discovering theirs. It is a way for us to get to know other countries and cultures, and to show others the riches of our region and our country. Using German and English regularly is a pleasant change of scenery.",
     "diapo_btn": "Start the slideshow",
     "hero_alts": [
       "The house under the snow on a winter evening",
@@ -138,7 +113,7 @@
     "gites_facts": [
       "60 m²",
       "2 bedrooms",
-      "Sleeps 5",
+      "Sleeps 4",
       "Private terrace",
       "Parking",
       "Wi-Fi",
@@ -165,15 +140,15 @@
   "gites": {
     "h1": "The gîtes",
     "lead": "Two similar holiday apartments at garden level of the owners' house, each with a separate entrance, private terrace and parking.",
-    "common": "Each gîte has a living room with fitted kitchen (oven, ceramic hob, microwave, dishwasher, washing machine, freezer), two bedrooms and a shower room with WC, adapted for guests with reduced mobility. Sleeping: four 90 cm beds that can be pushed together in the bedrooms, plus a fifth bed in the living room: 5 guests per gîte. Flat-screen TV, wifi, geothermal underfloor heating.",
+    "common": "Each gîte has a living room with fitted kitchen (oven, ceramic hob, microwave, dishwasher, washing machine, freezer), two bedrooms and a shower room with WC, adapted for guests with reduced mobility. Sleeping: four 90 cm beds that can be pushed together in the bedrooms: 4 guests per gîte. Flat-screen TV, wifi, geothermal underfloor heating.",
     "desc_h": "Layout",
     "equip_h": "Equipment",
     "serv_h": "Services included",
     "desc": [
       "1 living room with fitted kitchen",
-      "2 bedrooms (two 90 × 190 cm beds each) + 1 bed in the living room",
+      "2 bedrooms (two 90 × 190 cm beds each)",
       "1 accessible shower room with WC",
-      "5 guests · 60 m²"
+      "4 guests · 60 m²"
     ],
     "equip": [
       "Geothermal underfloor heating",
@@ -195,11 +170,9 @@
       "Non-smoking"
     ],
     "gite1_h": "Gîte 1",
-    "gite1_p": "South-facing terrace, view over the meadow.",
     "gite2_h": "Gîte 2",
-    "gite2_p": "Twin of gîte 1, shower room with the Tourisme & Handicap label.",
     "dispo_h": "Availability",
-    "dispo_p": "The calendar is synchronised with our bookings. To book, send us a request with your dates.",
+    "dispo_p": "Availability and online booking are on the Booking page: pick your dates and we confirm within 24 hours.",
     "tour": "Take the 360° virtual tour",
     "identical": "The two gîtes are twins: same rooms, same equipment, same view over the meadow. Simply choose whichever is free on your dates — or both for a larger group.",
     "captions": [
@@ -210,7 +183,8 @@
       "The shower room, walk-in shower",
       "Accessible shower room (Tourisme & Handicap label)",
       "A gîte's terrace in the evening"
-    ]
+    ],
+    "dispo_btn": "Check availability and book"
   },
   "autour": {
     "h1": "Things to do",
@@ -294,32 +268,16 @@
       ]
     ],
     "included": "Included: bed and household linen, beds made on arrival, end-of-stay cleaning, electricity and heating, wifi, pets. Deposit €300. Tourist tax extra. Credit cards and French ANCV holiday vouchers accepted.",
-    "form_h": "Book or write to us",
-    "form_p": "A booking request or a question: we reply within 24 hours, by e-mail or phone.",
-    "f_name": "Name",
-    "f_email": "E-mail",
-    "f_phone": "Phone",
-    "f_in": "Arrival",
-    "f_out": "Departure",
-    "f_gite": "Gîte",
-    "f_both": "Both gîtes",
-    "f_people": "Guests",
-    "f_msg": "Message",
-    "f_send": "Send the request",
-    "f_note": "The message goes to gitevarsberg@hotmail.com. Your details are used only to reply to you.",
+    "form_h": "Book online",
+    "form_p": "Pick your dates and the gîte, leave your details: we confirm within 24 hours. For a simple question, an e-mail or a call is enough.",
     "access_h": "Getting to the Domaine du Geisberg",
     "access": [
       "Varsberg lies between Saint-Avold and Creutzwald, 40 minutes from Metz and 30 minutes from Saarbrücken.",
       "By car: A4 motorway (Paris–Strasbourg), exit Saint-Avold / Carling, then follow Creutzwald and Varsberg.",
-      "By train: Saint-Avold station 6 km away (Metz–Forbach regional line)."
+      "By train: Saint-Avold station 15 km away (Metz–Forbach regional line)."
     ],
     "gps": "GPS coordinates",
-    "f_subject": "Subject",
-    "f_subj_book": "Booking request",
-    "f_subj_q": "Question",
-    "f_ok": "Your message has been sent. We reply within 24 hours.",
-    "f_ko": "The message could not be sent. You can write to us directly at",
-    "f_sending": "Sending…"
+    "widget_ko": "If the form does not appear, write to us at"
   },
   "diapo": {
     "h1": "Slideshow",

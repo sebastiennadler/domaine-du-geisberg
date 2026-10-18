@@ -27,9 +27,9 @@
   "price_weekend": "300 €",
   "deposit": "300 €",
   "surface": "60 m²",
-  "capacity": 5,
+  "capacity": 4,
   "bedrooms": 2,
-  "beds": "4 × 90 cm + 1 salon",
+  "beds": "4 × 90 cm",
   "siret": "478 447 790 00013",
   "tva": "FR44 478447790",
   "publisher": "Marc Nadler",
@@ -66,32 +66,27 @@
   "sites": [
     [
       "creutzwald-lac",
-      "3 km",
+      "6 km",
       "https://www.creutzwald.fr/fr/cercle-de-voile.html"
     ],
     [
       "cimetiere-americain",
-      "12 km",
+      "15 km",
       "https://www.abmc.gov/Lorraine"
     ],
     [
-      "musee-mine",
-      "15 km",
-      "https://parc-explor.com/"
-    ],
-    [
       "volklingen",
-      "30 km",
+      "28 km",
       "https://voelklinger-huette.org/fr/"
     ],
     [
-      "bliesbruck",
-      "40 km",
-      "https://www.archeo57.com/"
+      "musee-mine",
+      "31 km",
+      "https://parc-explor.com/"
     ],
     [
       "pompidou-metz",
-      "47 km",
+      "40 km",
       "https://www.centrepompidou-metz.fr/"
     ],
     [
@@ -103,6 +98,11 @@
       "sainte-croix",
       "60 km",
       "https://parcsaintecroix.com/"
+    ],
+    [
+      "bliesbruck",
+      "61 km",
+      "https://www.archeo57.com/"
     ],
     [
       "boucle-sarre",
@@ -124,19 +124,19 @@
   "leisure": [
     [
       "nautique",
-      "3 km"
+      "6 km"
     ],
     [
       "piscine",
-      "3 km"
+      "7 km"
     ],
     [
       "peche",
-      "3 km"
+      "6 km"
     ],
     [
       "tennis",
-      "3 km"
+      "6 km"
     ],
     [
       "rando",
@@ -156,7 +156,7 @@
     ],
     [
       "gare",
-      "6 km"
+      "15 km"
     ],
     [
       "commerces",
@@ -385,5 +385,7 @@
       "duration": "1 min 36 s",
       "small": true
     }
-  ]
+  ],
+  "nuitresa_key": "e8dc8870f783d664870e89ac71801620",
+  "nuitresa_script": "https://public.nuit-resa.com/js/nuit-resa-widget-v2.js?v=2026080101"
 }

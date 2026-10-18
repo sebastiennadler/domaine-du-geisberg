@@ -10,7 +10,7 @@
     ],
     "gites": [
       "De gîtes – Domaine du Geisberg",
-      "Twee identieke huizen van 60 m², 2 slaapkamers, 5 personen, eigen terras, aardwarmte, label Tourisme & Handicap."
+      "Twee identieke huizen van 60 m², 2 slaapkamers, 4 personen, eigen terras, aardwarmte, label Tourisme & Handicap."
     ],
     "autour": [
       "Uitstapjes rond Varsberg – Domaine du Geisberg",
@@ -51,7 +51,7 @@
     "contact": "Contact",
     "book": "Reserveren",
     "avis": "Beoordelingen",
-    "visite": "360°-tour",
+    "visite": "Rondleiding",
     "videos": "Video's"
   },
   "ui": {
@@ -87,28 +87,10 @@
     "address": "Adres"
   },
   "home": {
-    "h1": "Twee rustige huizen tussen weide en bos",
-    "lead": "Op de heuvel boven Varsberg, op de plek Vogelsgesang, „vogelzang”. Twee hectare weiland aan de bosrand, wandelpaden die in de tuin beginnen en een eigen terras voor elk huis.",
+    "h1": "Midden in de natuur",
+    "lead": "Twee bijzondere gîtes pal naast het bos, op de heuvel boven Varsberg, op de plek Vogelsgesang, „vogelzang”.",
     "cta1": "Beschikbaarheid bekijken",
     "cta2": "De gîtes ontdekken",
-    "facts": [
-      [
-        "2 gîtes",
-        "identiek, elk 60 m², met eigen ingang"
-      ],
-      [
-        "5 pers.",
-        "per gîte: 2 per slaapkamer, 1 in de woonkamer"
-      ],
-      [
-        "2 ha",
-        "weiland aan de bosrand"
-      ],
-      [
-        "0 wegen",
-        "over te steken om te voet, per fiets of te paard te vertrekken"
-      ]
-    ],
     "intro_h": "Een plek die haar naam eer aandoet",
     "intro": [
       "Onze twee gîtes zijn twee appartementen op de tuinverdieping van ons huis, midden op een groen landgoed van twee hectare aan de bosrand, op een bijzondere plek die „Vogelsgesang” heet: vogelzang.",
@@ -117,18 +99,11 @@
     "intro_more": "Het landgoed ontdekken",
     "gites_h": "Twee identieke gîtes, hetzelfde uitzicht",
     "gites_lead": "Hetzelfde comfort aan beide kanten. Boek er één, of allebei voor de hele familie.",
-    "gite1_sub": "60 m² · 2 slaapkamers · 5 personen · terras op het zuiden · parkeerplaats · wifi",
-    "gite2_sub": "60 m² · 2 slaapkamers · 5 personen · terras · parkeerplaats · rolstoeltoegankelijk",
-    "see_gite": "Deze gîte bekijken",
     "around_h": "Te voet vanuit de tuin, of een uur rijden",
-    "around_lead": "Wandelpaden zonder een weg over te steken, meer en watersportcentrum op 3 km, en Metz, Saarland en Luxemburg als dagtocht.",
+    "around_lead": "Wandelpaden zonder een weg over te steken, meer en watersportcentrum op 6 km, en Metz, Saarland en Luxemburg als dagtocht.",
     "around_more": "Alles wat er te zien is",
     "hosts_h": "Agnès en Marc heten u welkom",
-    "hosts": "Sinds 2016 bij Gîtes de France (3 korenaren), Clévacances en Tourisme & Handicap. Wij spreken Frans, Engels en Duits.",
-    "book_h": "Rechtstreeks boeken",
-    "book_lead": "Zonder commissie, antwoord binnen 24 uur. Beddengoed inbegrepen, bedden opgemaakt bij aankomst, eindschoonmaak inbegrepen.",
-    "diapo_h": "Het landgoed in beeld",
-    "diapo_p": "Paarden in de weide, het terras in de zon, sneeuw op de heuvel: laat maar lopen.",
+    "hosts": "Sinds 2007, het jaar waarin onze gîtes opengingen, delen we graag onze manier van leven met gasten van alle nationaliteiten en ontdekken we die van hen. Zo leren we andere landen en culturen kennen en laten we anderen de rijkdommen van onze streek en ons land ontdekken. Regelmatig Duits en Engels spreken is een prettige afwisseling.",
     "diapo_btn": "Diavoorstelling starten",
     "hero_alts": [
       "Het huis in de sneeuw op een winteravond",
@@ -138,7 +113,7 @@
     "gites_facts": [
       "60 m²",
       "2 slaapkamers",
-      "5 personen",
+      "4 personen",
       "Eigen terras",
       "Parkeerplaats",
       "Wifi",
@@ -165,15 +140,15 @@
   "gites": {
     "h1": "De gîtes",
     "lead": "Twee identieke vakantieappartementen op tuinniveau in het huis van de eigenaars, elk met eigen ingang, eigen terras en parkeerplaats.",
-    "common": "Elk huis heeft een woonkamer met open keuken (oven, keramische kookplaat, magnetron, vaatwasser, wasmachine, vriezer), twee slaapkamers en een badkamer met douche en toilet, aangepast voor mensen met beperkte mobiliteit. Slapen: vier bedden van 90 cm in de slaapkamers (tegen elkaar te schuiven) plus een vijfde slaapplaats in de woonkamer: 5 personen per gîte. Flatscreen-tv, wifi, vloerverwarming op aardwarmte.",
+    "common": "Elk huis heeft een woonkamer met open keuken (oven, keramische kookplaat, magnetron, vaatwasser, wasmachine, vriezer), twee slaapkamers en een badkamer met douche en toilet, aangepast voor mensen met beperkte mobiliteit. Slapen: vier bedden van 90 cm in de slaapkamers (tegen elkaar te schuiven): 4 personen per gîte. Flatscreen-tv, wifi, vloerverwarming op aardwarmte.",
     "desc_h": "Indeling",
     "equip_h": "Uitrusting",
     "serv_h": "Inbegrepen",
     "desc": [
       "1 woonkamer met open keuken",
-      "2 slaapkamers (elk twee bedden 90 × 190 cm) + 1 slaapplaats in de woonkamer",
+      "2 slaapkamers (elk twee bedden 90 × 190 cm)",
       "1 toegankelijke badkamer met douche en toilet",
-      "5 personen · 60 m²"
+      "4 personen · 60 m²"
     ],
     "equip": [
       "Vloerverwarming op aardwarmte",
@@ -195,11 +170,9 @@
       "Rookvrij"
     ],
     "gite1_h": "Gîte 1",
-    "gite1_p": "Terras op het zuiden, uitzicht op de weide.",
     "gite2_h": "Gîte 2",
-    "gite2_p": "Tweeling van gîte 1, badkamer met het label Tourisme & Handicap.",
     "dispo_h": "Beschikbaarheid",
-    "dispo_p": "De kalender is gekoppeld aan onze planning. Stuur ons een aanvraag met uw data om te reserveren.",
+    "dispo_p": "Beschikbaarheid en online reserveren vindt u op de pagina Reserveren: kies uw data, wij bevestigen binnen 24 uur.",
     "tour": "De 360°-rondleiding bekijken",
     "identical": "De twee gîtes zijn tweelingen: dezelfde kamers, dezelfde uitrusting, hetzelfde uitzicht op de weide. Kies gewoon degene die vrij is op uw data, of allebei voor een grote groep.",
     "captions": [
@@ -210,7 +183,8 @@
       "De badkamer met inloopdouche",
       "Toegankelijke badkamer (label Tourisme & Handicap)",
       "Het terras van een gîte, 's avonds"
-    ]
+    ],
+    "dispo_btn": "Beschikbaarheid bekijken en reserveren"
   },
   "autour": {
     "h1": "Uitstapjes en vrije tijd",
@@ -294,32 +268,16 @@
       ]
     ],
     "included": "Inbegrepen: bed- en huishoudlinnen, bedden opgemaakt bij aankomst, eindschoonmaak, elektriciteit en verwarming, wifi, huisdieren. Borg € 300. Toeristenbelasting apart. Bankkaarten en Franse ANCV-vakantiecheques worden aanvaard.",
-    "form_h": "Boeken of ons schrijven",
-    "form_p": "Een boekingsaanvraag of een vraag: wij antwoorden binnen 24 uur, per e-mail of telefoon.",
-    "f_name": "Naam",
-    "f_email": "E-mail",
-    "f_phone": "Telefoon",
-    "f_in": "Aankomst",
-    "f_out": "Vertrek",
-    "f_gite": "Huis",
-    "f_both": "Beide gîtes",
-    "f_people": "Personen",
-    "f_msg": "Bericht",
-    "f_send": "Aanvraag versturen",
-    "f_note": "Het bericht gaat naar gitevarsberg@hotmail.com. Uw gegevens worden alleen gebruikt om te antwoorden.",
+    "form_h": "Online reserveren",
+    "form_p": "Kies uw data en de gîte en laat uw gegevens achter: wij bevestigen binnen 24 uur. Voor een eenvoudige vraag volstaat een e-mail of telefoontje.",
     "access_h": "Route naar het Domaine du Geisberg",
     "access": [
       "Varsberg ligt tussen Saint-Avold en Creutzwald, op 40 minuten van Metz en 30 minuten van Saarbrücken.",
       "Met de auto: snelweg A4 (Parijs–Straatsburg), afrit Saint-Avold / Carling, dan richting Creutzwald en Varsberg. Vanuit Nederland en België via Luxemburg (A31) of Saarbrücken.",
-      "Met de trein: station Saint-Avold op 6 km (regionale lijn Metz–Forbach)."
+      "Met de trein: station Saint-Avold op 15 km (regionale lijn Metz–Forbach)."
     ],
     "gps": "GPS-coördinaten",
-    "f_subject": "Onderwerp",
-    "f_subj_book": "Boekingsaanvraag",
-    "f_subj_q": "Vraag",
-    "f_ok": "Uw bericht is verzonden. Wij antwoorden binnen 24 uur.",
-    "f_ko": "Het bericht kon niet worden verzonden. U kunt ons rechtstreeks schrijven op",
-    "f_sending": "Verzenden…"
+    "widget_ko": "Verschijnt het formulier niet, schrijf ons dan op"
   },
   "diapo": {
     "h1": "Diavoorstelling",
