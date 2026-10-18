@@ -109,5 +109,23 @@
   "widths": [
    448
   ]
+ },
+ {
+  "id": "autour/panorama-geisberg",
+  "src": "autour-panorama.jpg",
+  "widths": [
+   1920,
+   1280,
+   800
+  ],
+  "pos": "50% 60%"
+ },
+ {
+  "id": "autour/champs-eolienne",
+  "src": "autour-champs-eolienne.jpg"
+ },
+ {
+  "id": "autour/chemin-hiver",
+  "src": "autour-chemin-hiver.jpg"
  }
 ]

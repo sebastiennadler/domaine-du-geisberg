@@ -678,7 +678,8 @@ body {
   padding-block: 48px 56px;
 }
 .hero h1 {
-  max-width: 14ch;
+  max-width: 16ch;
+  hyphens: auto;
   text-shadow: 0 2px 20px rgba(0, 0, 0, 0.35);
 }
 .hero p {
@@ -724,7 +725,17 @@ body {
   display: flex;
   align-items: flex-end;
   color: #fff;
-  background: #1e3a2d center 38% / cover no-repeat;
+  background: #1e3a2d;
+  overflow: hidden;
+}
+/* photo de fond en <img> (plusieurs tailles) ; le point d'intérêt vient du catalogue (object-position) */
+.page-hero img.bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 38%;
 }
 @media (max-width: 700px) {
   .page-hero {
@@ -1542,9 +1553,26 @@ html[data-theme='dark'] .list li::before {
 }
 @media (min-width: 800px) {
   .site-footer .wrap {
-    grid-template-columns: 1.3fr 1fr auto;
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+  }
+  .site-footer .logos {
+    grid-column: 1 / -1;
+    order: 3; /* adresse et copyright côte à côte, logos en dessous */
+  }
+}
+@media (min-width: 1100px) {
+  .site-footer .wrap {
+    grid-template-columns: 1.2fr minmax(230px, auto) 1.4fr;
     align-items: center;
   }
+  .site-footer .logos {
+    grid-column: auto;
+    order: 0;
+  }
+}
+.site-footer .logos a {
+  white-space: nowrap;
 }
 .site-footer b {
   color: var(--fg);
@@ -1843,8 +1871,15 @@ body.menu-open .nbtn {
   font-size: 17px;
 }
 .hosts .contact-box {
-  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); /* assez large pour l'adresse e-mail */
   gap: 12px;
+}
+.contact-box > div {
+  min-width: 0;
+}
+.contact-box a,
+.contact-box div {
+  overflow-wrap: anywhere; /* un e-mail ou un lien long se coupe au lieu de déborder sur la case voisine */
 }
 .visite {
   aspect-ratio: 16/10;
@@ -2133,6 +2168,9 @@ body.menu-open .totop {
   flex-wrap: wrap;
   gap: 14px 30px;
 }
+.links-row .more {
+  white-space: normal;
+}
 
 /* ---------- Vidéos ---------- */
 .videos {
@@ -2177,4 +2215,27 @@ body.menu-open .totop {
 .video figcaption small {
   color: var(--muted);
   font-size: 13px;
+}
+
+/* ---------- Très petits écrans : en-tête compact (après les règles de base pour les surcharger) ---------- */
+@media (max-width: 420px) {
+  .brand b {
+    font-size: 18px;
+  }
+}
+@media (max-width: 360px) {
+  .brand b {
+    font-size: 16px;
+  }
+}
+@media (max-width: 420px) {
+  .brand span {
+    display: none;
+  }
+  .mbtn span {
+    display: none;
+  }
+  .mbtn {
+    padding: 0 9px;
+  }
 }

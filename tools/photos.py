@@ -17,6 +17,7 @@ tools/fetch_commons.py, logos) sont simplement mesurées et ajoutées au même c
 """
 
 import json
+import re
 import sys
 from pathlib import Path
 
@@ -79,6 +80,8 @@ def static_entries():
     out = {}
     for d in STATIC_DIRS:
         for f in sorted((OUT / d).glob("*.webp")):
+            if re.search(r"-\d{3,4}$", f.stem):  # déjà produit par le catalogue (nom-largeur.webp)
+                continue
             with Image.open(f) as im:
                 out[f"{d}/{f.stem}"] = {"w": im.width, "h": im.height, "files": [[im.width, str(f.relative_to(OUT))]]}
     return out

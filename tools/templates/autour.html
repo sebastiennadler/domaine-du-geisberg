@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% set a = t.autour %}
 {% block main %}
-<div class="page-hero" style="background-image:url('{{ src('domaine/chemin-collines') }}')">
+<div class="page-hero">{{ pic('autour/panorama-geisberg', '', '100vw', eager=True, cls='bg') }}
   <div class="wrap"><div class="eyebrow" style="color:#E7C59A">{{ ui.tagline }}</div><h1>{{ a.h1 }}</h1><p class="lead">{{ a.lead }}</p></div>
 </div>
 <section class="wrap">

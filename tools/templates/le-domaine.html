@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% set d = t.domaine %}
 {% block main %}
-<div class="page-hero" style="background-image:url('{{ src('hero/chevaux-soir') }}')">
+<div class="page-hero">{{ pic('hero/chevaux-soir', '', '100vw', eager=True, cls='bg') }}
   <div class="wrap"><div class="eyebrow" style="color:#E7C59A">{{ ui.tagline }}</div><h1>{{ d.h1 }}</h1></div>
 </div>
 <section class="wrap">
