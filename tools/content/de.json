@@ -172,7 +172,7 @@
     "gite1_h": "Ferienwohnung 1",
     "gite2_h": "Ferienwohnung 2",
     "dispo_h": "Verfügbarkeit",
-    "dispo_p": "Verfügbarkeit und Online-Buchung finden Sie auf der Seite Buchung: Daten wählen, wir bestätigen innerhalb von 24 Stunden.",
+    "dispo_p": "Beide Kalender werden von unserem Buchungssystem in Echtzeit aktualisiert, Plattformen eingeschlossen: grüne Nächte sind frei, rote Nächte belegt. Zum Buchen gehen Sie auf die Seite Buchung.",
     "tour": "360°-Rundgang starten",
     "identical": "Die beiden Ferienwohnungen sind Zwillinge: gleiche Räume, gleiche Ausstattung, gleicher Blick auf die Wiese. Wählen Sie einfach die, die an Ihren Daten frei ist – oder beide für eine größere Gruppe.",
     "captions": [
@@ -184,7 +184,8 @@
       "Barrierefreies Duschbad (Label Tourisme & Handicap)",
       "Die Terrasse einer Ferienwohnung am Abend"
     ],
-    "dispo_btn": "Verfügbarkeit prüfen und buchen"
+    "dispo_btn": "Verfügbarkeit prüfen und buchen",
+    "cal_ko": "Werden die Kalender nicht angezeigt, schreiben Sie uns an"
   },
   "autour": {
     "h1": "Ausflüge und Freizeit",
@@ -341,7 +342,9 @@
     "avis_h1": "Bewertungen und Labels",
     "where_h": "Wo Sie uns finden",
     "where_p": "Wir sind auch auf diesen Seiten gelistet: Sie können dort buchen, aber die Direktbuchung bleibt am einfachsten und günstigsten.",
-    "labels_h": "Unsere Labels"
+    "labels_h": "Unsere Labels",
+    "guestbook_h": "Gästebuch",
+    "guestbook_p": "Bewertungen, die unsere Gäste nach ihrem Aufenthalt hinterlassen haben, gesammelt von unserem Buchungssystem."
   },
   "visite": {
     "h1": "Virtueller 360°-Rundgang",

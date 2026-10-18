@@ -172,7 +172,7 @@
     "gite1_h": "Gîte 1",
     "gite2_h": "Gîte 2",
     "dispo_h": "Disponibilidade",
-    "dispo_p": "A disponibilidade e a reserva online estão na página Reserva: escolha as suas datas e confirmamos em 24 h.",
+    "dispo_p": "Os nossos dois calendários são atualizados em tempo real pelo nosso sistema de reservas, plataformas incluídas: noites a verde livres, a vermelho ocupadas. Para reservar, vá à página Reserva.",
     "tour": "Fazer a visita virtual 360°",
     "identical": "Os dois gîtes são gémeos: as mesmas divisões, o mesmo equipamento, a mesma vista para o prado. Escolha simplesmente o que estiver livre nas suas datas, ou os dois para um grupo grande.",
     "captions": [
@@ -184,7 +184,8 @@
       "Casa de banho acessível (selo Tourisme & Handicap)",
       "O terraço de um gîte, ao entardecer"
     ],
-    "dispo_btn": "Ver disponibilidade e reservar"
+    "dispo_btn": "Ver disponibilidade e reservar",
+    "cal_ko": "Se os calendários não aparecerem, escreva-nos para"
   },
   "autour": {
     "h1": "Turismo e lazer",
@@ -341,7 +342,9 @@
     "avis_h1": "Opiniões e selos",
     "where_h": "Onde nos encontrar",
     "where_p": "Também estamos nestes sites: pode reservar lá, mas a reserva direta continua a ser a mais simples e a mais barata.",
-    "labels_h": "Os nossos selos"
+    "labels_h": "Os nossos selos",
+    "guestbook_h": "Livro de visitas",
+    "guestbook_p": "As opiniões deixadas pelos nossos hóspedes após a estadia, recolhidas pelo nosso sistema de reservas."
   },
   "visite": {
     "h1": "Visita virtual a 360°",

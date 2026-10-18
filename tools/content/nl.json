@@ -172,7 +172,7 @@
     "gite1_h": "Gîte 1",
     "gite2_h": "Gîte 2",
     "dispo_h": "Beschikbaarheid",
-    "dispo_p": "Beschikbaarheid en online reserveren vindt u op de pagina Reserveren: kies uw data, wij bevestigen binnen 24 uur.",
+    "dispo_p": "Onze twee kalenders worden in realtime bijgewerkt door ons reserveringssysteem, platforms inbegrepen: groene nachten zijn vrij, rode nachten bezet. Reserveren doet u via de pagina Reserveren.",
     "tour": "De 360°-rondleiding bekijken",
     "identical": "De twee gîtes zijn tweelingen: dezelfde kamers, dezelfde uitrusting, hetzelfde uitzicht op de weide. Kies gewoon degene die vrij is op uw data, of allebei voor een grote groep.",
     "captions": [
@@ -184,7 +184,8 @@
       "Toegankelijke badkamer (label Tourisme & Handicap)",
       "Het terras van een gîte, 's avonds"
     ],
-    "dispo_btn": "Beschikbaarheid bekijken en reserveren"
+    "dispo_btn": "Beschikbaarheid bekijken en reserveren",
+    "cal_ko": "Verschijnen de kalenders niet, schrijf ons dan op"
   },
   "autour": {
     "h1": "Uitstapjes en vrije tijd",
@@ -341,7 +342,9 @@
     "avis_h1": "Beoordelingen en labels",
     "where_h": "Waar u ons vindt",
     "where_p": "We staan ook op deze sites: u kunt daar boeken, maar rechtstreeks boeken blijft het eenvoudigst en goedkoopst.",
-    "labels_h": "Onze labels"
+    "labels_h": "Onze labels",
+    "guestbook_h": "Gastenboek",
+    "guestbook_p": "Beoordelingen die onze gasten na hun verblijf achterlieten, verzameld door ons reserveringssysteem."
   },
   "visite": {
     "h1": "Virtuele 360°-rondleiding",

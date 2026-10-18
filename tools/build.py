@@ -148,6 +148,7 @@ for code, name, flag, prefix in LANGS:
         assets=assets,
         site_url=SITE_URL,
         images=images,
+        nr_lang={"fr": "FR", "en": "EN", "de": "DE", "es": "ES"}.get(code, "EN"),  # langues des cadres Nuitrésa
         **image_helpers(rel),
     )
     for page in PAGES:

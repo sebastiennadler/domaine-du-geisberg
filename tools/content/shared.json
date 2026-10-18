@@ -387,5 +387,16 @@
     }
   ],
   "nuitresa_key": "e8dc8870f783d664870e89ac71801620",
-  "nuitresa_script": "https://public.nuit-resa.com/js/nuit-resa-widget-v2.js?v=2026080101"
+  "nuitresa_script": "https://public.nuit-resa.com/js/nuit-resa-widget-v2.js?v=2026080101",
+  "nuitresa_public": "https://public.nuit-resa.com",
+  "nuitresa_rooms": [
+    [
+      "1100",
+      "Gîte 1"
+    ],
+    [
+      "1101",
+      "Gîte 2"
+    ]
+  ]
 }

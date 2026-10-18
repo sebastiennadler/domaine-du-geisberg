@@ -1,4 +1,4 @@
-/* Domaine du Geisberg — scripts communs : menu, thème, diaporama d'accueil, galerie, calendrier, mode notes. */
+/* Domaine du Geisberg — scripts communs : menu, thème, diaporama d'accueil, galerie, calendriers Nuitrésa, mode notes. */
 (function () {
   'use strict';
   var root = document.documentElement;
@@ -232,13 +232,23 @@
     if (location.hash === '#notes') set(true);
   }
 
+  /* Calendriers Nuitrésa : le cadre envoie sa hauteur (postMessage, frameId = id du cadre) quand son contenu
+     change — mois suivant, écran étroit où les deux mois s'empilent. On n'écoute que l'origine de Nuitrésa. */
+  window.addEventListener('message', function (e) {
+    if (e.origin !== 'https://public.nuit-resa.com') return;
+    var d = e.data || {},
+      h = parseInt(d.height || d.frameHeight, 10),
+      f = d.frameId ? document.getElementById(d.frameId) : null;
+    if (h > 0 && f && f.classList.contains('nr-cal')) f.style.height = h + 20 + 'px';
+  });
+
   /* ---------- Effets discrets ---------- */
 
   /* Apparition progressive des blocs à l'entrée dans l'écran, avec un léger décalage entre voisins */
   var revealSel =
     '.sec-head, .fact, .card, .tile, .mosaic > *, .gallery > *, .reviews > *, .hosts, .diapo-teaser, ' +
     '.strip > *, .logos > *, .cols > *, .prices, .ratings > *, .chips > *, .list > li, .visite, .dispo, ' +
-    '.domaine-band, .videos > *, .links-row, .cal-row > *';
+    '.domaine-band, .videos > *, .links-row, .cal-box';
   var toReveal = Array.prototype.slice.call(document.querySelectorAll(revealSel));
   if (toReveal.length && 'IntersectionObserver' in window && !reduced) {
     toReveal.forEach(function (el) {

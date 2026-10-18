@@ -1345,6 +1345,38 @@ html[data-theme='dark'] .list li::before {
 .band .btn-p {
   color: #fff;
 }
+/* ---------- Calendriers de disponibilités (cadres Nuitrésa, un par gîte) ---------- */
+.cals {
+  display: grid;
+  gap: 18px;
+}
+@media (min-width: 760px) {
+  .cals {
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+}
+.cal-box {
+  background: var(--bg2);
+  border: 1px solid var(--line);
+  border-radius: var(--r);
+  padding: 14px 12px 6px;
+  min-width: 0;
+}
+.cal-box h3 {
+  margin: 0 0 10px;
+  font-size: 19px;
+  text-align: center;
+}
+.nr-cal,
+.nr-guestbook {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  border: 0;
+  background: #fff;
+  border-radius: 8px;
+}
 /* ---------- Réservation en ligne (widget Nuitrésa) ---------- */
 .widget {
   background: var(--bg2);
@@ -1546,6 +1578,10 @@ html.notes .nbub {
 }
 html.notes [data-note].open .ntip {
   display: block;
+}
+.ntip,
+.npanel li span {
+  white-space: pre-line; /* les notes longues gardent leurs retours à la ligne */
 }
 .ntip b {
   display: block;

@@ -4,7 +4,6 @@
 <div class="page-hero">{{ pic('hero/maison-prairie', '', '100vw', eager=True, cls='bg') }}
   <div class="wrap"><div class="eyebrow" style="color:#E7C59A">{{ ui.tagline }}</div><h1>{{ r.h1 }}</h1></div>
 </div>
-{% set nr_lang = {'fr': 'FR', 'en': 'EN', 'de': 'DE', 'es': 'ES'}.get(lang, 'EN') %}
 <section class="wrap">
   <div class="cols" style="align-items:start">
     <div{% if lang == 'fr' %} data-note="{{ t.notes.prices }}"{% endif %}>
@@ -20,11 +19,12 @@
     </div>
   </div>
 </section>
-<section class="wrap" id="demande" style="padding-top:0"{% if lang == 'fr' %} data-note="{{ t.notes.dispo }}"{% endif %}>
-  {# Réservation en ligne : widget Nuitrésa (prestataire de Marc). La clé est publique, le script dessine un cadre (iframe). #}
+<section class="wrap" id="demande" style="padding-top:0"{% if lang == 'fr' %} data-note="{{ t.notes.widget }}"{% endif %}>
+  {# Réservation en ligne : widget Nuitrésa (prestataire de Marc). La clé est publique, le script dessine un cadre (iframe).
+     data-nr-aggregate-availability : le calendrier du formulaire colore les dates d'après les deux gîtes (option du générateur Nuitrésa). #}
   <div class="widget">
     <!-- nuit-resa.com / formulaire de reservation V2 / version 01.08.2026 -->
-    <div class="nuit-resa-widget" data-nr-version="v2" data-nr-key="{{ s.nuitresa_key }}" data-nr-lang="{{ nr_lang }}"></div>
+    <div class="nuit-resa-widget" data-nr-version="v2" data-nr-key="{{ s.nuitresa_key }}" data-nr-lang="{{ nr_lang }}" data-nr-aggregate-availability="1" data-nr-param-ad="1" data-nr-params="ad=1"></div>
     <script async src="{{ s.nuitresa_script }}"></script>
   </div>
   <p class="note" style="margin-top:14px">{{ r.widget_ko }} <a href="mailto:{{ s.email }}">{{ s.email }}</a>.</p>

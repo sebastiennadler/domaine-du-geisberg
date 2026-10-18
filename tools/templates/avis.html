@@ -25,4 +25,12 @@
     </div>
   </div>
 </section>
+<section class="wrap" id="livre-d-or" style="padding-top:0">
+  {# Livre d'or public Nuitrésa : les avis recueillis par le questionnaire de satisfaction envoyé après chaque séjour. #}
+  <h2 style="margin-bottom:8px">{{ x.guestbook_h }}</h2>
+  <p class="note" style="margin:0 0 14px">{{ x.guestbook_p }}</p>
+  <div class="widget" style="min-height:0"{% if lang == 'fr' %} data-note="{{ t.notes.guestbook }}"{% endif %}>
+    <iframe class="nr-guestbook" src="{{ s.nuitresa_public }}/avis-{{ s.nuitresa_key }}.html" width="100%" height="500" loading="lazy" title="{{ x.guestbook_h }}"></iframe>
+  </div>
+</section>
 {% endblock %}

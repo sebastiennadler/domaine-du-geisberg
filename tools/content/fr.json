@@ -172,7 +172,7 @@
     "gite1_h": "Gîte 1",
     "gite2_h": "Gîte 2",
     "dispo_h": "Disponibilités",
-    "dispo_p": "Les disponibilités et la réservation en ligne sont sur la page Réservation : choisissez vos dates, nous confirmons sous 24 h.",
+    "dispo_p": "Nos deux calendriers sont mis à jour en temps réel par notre outil de réservation, plateformes comprises : en vert les nuits libres, en rouge les nuits occupées. Pour réserver, passez par la page Réservation.",
     "tour": "Faire la visite virtuelle à 360°",
     "identical": "Les deux gîtes sont jumeaux : mêmes pièces, mêmes équipements, même vue sur la prairie. Choisissez simplement celui qui est libre à vos dates — ou les deux pour une tribu.",
     "captions": [
@@ -184,7 +184,8 @@
       "Salle d'eau accessible (label Tourisme & Handicap)",
       "La terrasse d'un gîte, le soir"
     ],
-    "dispo_btn": "Voir les disponibilités et réserver"
+    "dispo_btn": "Voir les disponibilités et réserver",
+    "cal_ko": "Si les calendriers ne s'affichent pas, écrivez-nous à"
   },
   "autour": {
     "h1": "Tourisme et loisirs",
@@ -311,9 +312,9 @@
     "facts": "Chiffres validés par Marc : 60 m², 4 personnes (2 par chambre). Distances validées : lac 6 km, gare de Saint-Avold 15 km, piscine de Creutzwald 7 km.",
     "gites": "Photos des gîtes : 8 photos communes aux deux gîtes (ils sont identiques). Il manque une photo récente du séjour avec le canapé-lit ouvert, si vous en avez une.",
     "hosts": "Votre texte « depuis 2007 » est en place avec la photo. Donnez-moi le nom du chien pour les légendes.",
-    "dispo": "Disponibilités et réservation : widget Nuitrésa (votre nouveau prestataire) en place, avec sa clé publique. Vérifiez qu'une demande test vous arrive bien.",
+    "dispo": "Calendriers Nuitrésa, un par gîte (2 mois, flèches pour avancer) : ils reflètent votre planning Nuitrésa, y compris les réservations Airbnb / Belvilla synchronisées. Vérifiez qu'ils correspondent bien à votre planning.",
     "prices": "Tarifs : y a-t-il des tarifs par saison (Noël, été) ? Les conditions (arrhes, annulation) sont-elles celles de Nuitrésa ?",
-    "reviews": "Avis : 6 avis publiés repris (Gîtes de France, Abritel). Le livre d'or Nuitrésa est vide pour l'instant ; je l'ajouterai quand il aura des avis.",
+    "reviews": "Avis : 6 avis publiés repris (Gîtes de France, Abritel). Le livre d'or Nuitrésa est maintenant en bas de la page.",
     "around": "Distances mises à jour d'après votre réponse (lac 6, cimetière 15, Völklingen 28, musée 31, Pompidou 40, Bliesbruck 61 km). Zoo, Sainte-Croix et boucle de la Sarre restent à confirmer.",
     "access": "Accès : l'itinéraire est-il correct ? Une consigne pour l'arrivée (clés, heure) ?",
     "legal": "Mentions légales : SIRET et forme juridique à vérifier.",
@@ -321,7 +322,10 @@
     "domaine_txt": "Texte « Le domaine » : repris mot pour mot de l'ancien site. À garder, raccourcir ou réécrire ?",
     "autour_links": "Liens utiles : certains sites de l'ancienne liste ont changé d'adresse ; dites-moi ceux que vous voulez garder.",
     "visite": "Visite 360° (hdmedia, 2015) : onglet renommé « Visite du gîte » comme demandé. La garder telle quelle ?",
-    "videos": "Vidéos : trois vidéos pour commencer, titres à valider. Si vous en avez d'autres (drone, saisons, intérieur), envoyez-les."
+    "videos": "Vidéos : trois vidéos pour commencer, titres à valider. Si vous en avez d'autres (drone, saisons, intérieur), envoyez-les.",
+    "nuitresa": "Réglages Nuitrésa à revoir (menu Hébergements → Gîte 1 et Gîte 2). Rien n'a été modifié, sauf le point 6 :\n1. Capacité mini = 4 personnes : un couple ne peut pas réserver (« Capacité acceptée : de 4 à 5 »). Mettre 1 ou 2.\n2. Nuits minimum = 4 : un week-end est refusé. Mettre 2 si vous acceptez les week-ends.\n3. Bébés acceptés = 5 : mettre 3 (ou moins).\n4. Caution = 0 € dans Nuitrésa, 300 € sur le site : à aligner d'un côté ou de l'autre.\n5. TVA 10 % sur les nuitées : correct seulement si vous êtes assujettis à la TVA ; sinon 0 %. À voir avec votre comptable.\n6. Réservation tardive : passée à « le jour J jusqu'à 21 h » pour les deux gîtes (seule modification faite, le gîte 2 l'était déjà).\n7. Fiche de chaque gîte : « Page web détaillant cet hébergement » pointe vers l'ancien site ; à remplacer par la page Les gîtes du nouveau site à la mise en ligne.\n8. Photos et descriptif des fiches : ajouter les photos du site ; le descriptif dit « 4/5 personnes », le site dit 4.",
+    "widget": "Formulaire Nuitrésa avec l'option « estimation globale des disponibilités » : les dates où les deux gîtes sont pris apparaissent en rouge. Les demandes arrivent dans Nuitrésa (Réservations → Nouvelles demandes) et par e-mail. Faites une demande test depuis cette page.",
+    "guestbook": "Livre d'or Nuitrésa : vide pour l'instant, il se remplit avec les réponses au questionnaire de satisfaction que Nuitrésa envoie après chaque séjour (3 à envoyer actuellement). Si vous préférez le cacher tant qu'il est vide, dites-le-moi."
   },
   "extra": {
     "reviews_eyebrow": "Ils sont venus",
@@ -359,7 +363,9 @@
     "avis_h1": "Avis et labels",
     "where_h": "Où nous trouver",
     "where_p": "Nous sommes aussi présents sur ces sites : vous pouvez y réserver, mais la réservation en direct reste la plus simple et la moins chère.",
-    "labels_h": "Nos labels"
+    "labels_h": "Nos labels",
+    "guestbook_h": "Livre d'or",
+    "guestbook_p": "Les avis déposés par nos hôtes après leur séjour, recueillis par notre outil de réservation."
   },
   "visite": {
     "h1": "Visite virtuelle à 360°",

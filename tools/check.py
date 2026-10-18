@@ -55,8 +55,11 @@ def local(url):
 errors, warnings = [], []
 used_files = set()
 pages = []
+# seules les pages produites par build.py sont vérifiées (un fichier HTML déposé par ailleurs dans le dossier est ignoré)
+GENERATED = {"index", "le-domaine", "gites", "videos", "autour", "avis", "visite", "reservation", "diaporama", "mentions-legales", "gite-1", "gite-2"}
 for d in LANG_DIRS:
-    pages += sorted((ROOT / d).glob("*.html")) if d else sorted(ROOT.glob("*.html"))
+    found = sorted((ROOT / d).glob("*.html")) if d else sorted(ROOT.glob("*.html"))
+    pages += [f for f in found if f.stem in GENERATED]
 
 for page in pages:
     c = Collector()

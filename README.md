@@ -137,11 +137,24 @@ navigateurs rechargent toujours la dernière version.
 
 ### Disponibilités et réservation (Nuitrésa)
 
-La page Réservation intègre le widget de réservation de Nuitrésa (`tools/content/shared.json` → `nuitresa_key`,
-clé publique fournie par Nuitrésa, et `nuitresa_script`). Calendrier, choix du gîte, coordonnées et confirmation
-sont gérés côté Nuitrésa ; le site n'héberge aucune donnée client. Pour changer de clé ou de version du script,
-modifier ces deux valeurs et régénérer. La langue du widget suit celle de la page (FR, EN, DE, ES ; anglais pour
-les autres).
+Tout vient de l'espace Nuitrésa de Marc (Outils → Formulaires pour site web → Codes à intégrer) ; les valeurs
+sont dans `tools/content/shared.json` : `nuitresa_key` (clé publique), `nuitresa_script`, `nuitresa_public`
+(adresse des cadres) et `nuitresa_rooms` (identifiant Nuitrésa et nom de chaque gîte : 1100 et 1101).
+
+- **Page Les gîtes, section « Disponibilités »** : un calendrier public par gîte (cadre
+  `calendrier-multiple-<id>-<clé>.html`, 2 mois, flèches pour avancer), vert = libre, rouge = occupé. Il reflète
+  le planning Nuitrésa, réservations des plateformes comprises. Le cadre envoie sa hauteur par `postMessage`
+  et `js/site.js` l'ajuste (uniquement depuis l'origine `public.nuit-resa.com`). Chargement différé.
+- **Page Réservation** : le formulaire Nuitrésa (`data-nr-version="v2"`), avec l'option « estimation globale des
+  disponibilités » (`data-nr-aggregate-availability="1"`) qui colore en rouge, dans son calendrier, les dates où
+  les deux gîtes sont pris. Choix du gîte, coordonnées et confirmation sont gérés côté Nuitrésa ; le site
+  n'héberge aucune donnée client. Capacité, nuits minimum, acompte et dates fermées sont les réglages des fiches
+  Nuitrésa (menu Hébergements), pas du site.
+- **Page Avis** : le livre d'or public (`avis-<clé>.html`), alimenté par le questionnaire de satisfaction que
+  Nuitrésa envoie après chaque séjour.
+
+La langue des cadres et du formulaire suit celle de la page (FR, EN, DE, ES ; anglais pour les autres). Pour
+changer de clé, d'identifiants de gîtes ou de version du script, modifier `shared.json` et régénérer.
 
 ### Contact
 
@@ -168,8 +181,9 @@ Le détail, écrit pour Marc, est dans `docs/Guide-site-Domaine-du-Geisberg.pdf`
 
 ## Choix techniques (robustesse et vitesse)
 
-- Site statique, sans base de données ni dépendance JavaScript externe (hormis le widget de réservation
-  Nuitrésa, chargé uniquement sur la page Réservation) : rien à mettre à jour, rien qui casse.
+- Site statique, sans base de données ni dépendance JavaScript externe (hormis les cadres Nuitrésa : calendriers
+  sur Les gîtes, formulaire sur Réservation, livre d'or sur Avis — chargés à la demande) : rien à mettre à jour,
+  rien qui casse.
 - Chaque photo existe en plusieurs tailles (`srcset`) et porte ses dimensions : un téléphone ne télécharge
   pas la version 1920 px, et la page ne « saute » pas pendant le chargement. La première photo du bandeau
   est préchargée ; toutes les autres se chargent à la demande.

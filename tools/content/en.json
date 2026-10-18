@@ -172,7 +172,7 @@
     "gite1_h": "Gîte 1",
     "gite2_h": "Gîte 2",
     "dispo_h": "Availability",
-    "dispo_p": "Availability and online booking are on the Booking page: pick your dates and we confirm within 24 hours.",
+    "dispo_p": "Both calendars are updated in real time by our booking system, platforms included: green nights are free, red nights are taken. To book, go to the Booking page.",
     "tour": "Take the 360° virtual tour",
     "identical": "The two gîtes are twins: same rooms, same equipment, same view over the meadow. Simply choose whichever is free on your dates — or both for a larger group.",
     "captions": [
@@ -184,7 +184,8 @@
       "Accessible shower room (Tourisme & Handicap label)",
       "A gîte's terrace in the evening"
     ],
-    "dispo_btn": "Check availability and book"
+    "dispo_btn": "Check availability and book",
+    "cal_ko": "If the calendars do not appear, write to us at"
   },
   "autour": {
     "h1": "Things to do",
@@ -341,7 +342,9 @@
     "avis_h1": "Reviews and labels",
     "where_h": "Where to find us",
     "where_p": "We are also listed on these sites: you can book there, but booking direct remains the simplest and cheapest.",
-    "labels_h": "Our labels"
+    "labels_h": "Our labels",
+    "guestbook_h": "Guest book",
+    "guestbook_p": "Reviews left by our guests after their stay, collected by our booking system."
   },
   "visite": {
     "h1": "360° virtual tour",
