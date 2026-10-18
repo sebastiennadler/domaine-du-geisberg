@@ -87,8 +87,9 @@ section{padding-block:56px}
 .hero .dots{position:absolute;right:max(18px,env(safe-area-inset-right,0px));bottom:18px;z-index:2;display:flex;gap:6px}
 .hero .dots button{width:10px;height:10px;border-radius:50%;border:0;background:rgba(255,255,255,.45);padding:0;cursor:pointer}
 .hero .dots button[aria-current]{background:#fff}
-.page-hero{position:relative;min-height:46vh;display:flex;align-items:flex-end;color:#fff;background:#1E3A2D center/cover}
-.page-hero::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(14,24,18,.82),rgba(14,24,18,.1))}
+.page-hero{position:relative;min-height:min(62vh,620px);display:flex;align-items:flex-end;color:#fff;background:#1E3A2D center 38%/cover no-repeat}
+@media(max-width:700px){.page-hero{min-height:0;aspect-ratio:4/3;background-position:center}.page-hero .wrap{padding-block:24px}.page-hero .lead{font-size:16px;margin-top:8px}}
+.page-hero::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(14,24,18,.8) 0%,rgba(14,24,18,.25) 50%,rgba(14,24,18,0) 100%)}
 .page-hero .wrap{position:relative;z-index:1;width:100%;padding-block:40px}
 .page-hero h1{text-shadow:0 2px 20px rgba(0,0,0,.35)}
 .page-hero .lead{color:#EEF1EA;margin-bottom:0}
