@@ -10,15 +10,15 @@
     ],
     "gites": [
       "The cottages – Domaine du Geisberg",
-      "Two twin 55 m² cottages, 2 bedrooms, 4 guests, private terrace, geothermal heating, Tourisme & Handicap label."
+      "Two twin 60 m² cottages, 2 bedrooms, 5 guests, private terrace, geothermal heating, Tourisme & Handicap label."
     ],
     "gite-1": [
       "Cottage 1 – Domaine du Geisberg",
-      "Cottage 1: 55 m², 2 bedrooms, 4 guests, south-facing terrace, photos and availability."
+      "Cottage 1: 60 m², 2 bedrooms, 5 guests, south-facing terrace, photos and availability."
     ],
     "gite-2": [
       "Cottage 2 – Domaine du Geisberg",
-      "Cottage 2: 55 m², 2 bedrooms, 4 guests, accessible, photos and availability."
+      "Cottage 2: 60 m², 2 bedrooms, 5 guests, accessible, photos and availability."
     ],
     "autour": [
       "Things to do around Varsberg – Domaine du Geisberg",
@@ -84,11 +84,11 @@
     "facts": [
       [
         "2 cottages",
-        "twin 55 m² units with separate entrances"
+        "twin 60 m² units with separate entrances"
       ],
       [
-        "4 guests",
-        "per cottage, 2 bedrooms"
+        "5 guests",
+        "per cottage: 2 per bedroom, 1 in the living room"
       ],
       [
         "2 ha",
@@ -107,8 +107,8 @@
     "intro_more": "Discover the estate",
     "gites_h": "Two twin houses, the same view",
     "gites_lead": "The same comforts on both sides. Book one, or both for a large family.",
-    "gite1_sub": "55 m² · 2 bedrooms · 4 guests · south-facing terrace · parking · wifi",
-    "gite2_sub": "55 m² · 2 bedrooms · 4 guests · terrace · parking · wheelchair accessible",
+    "gite1_sub": "60 m² · 2 bedrooms · 5 guests · south-facing terrace · parking · wifi",
+    "gite2_sub": "60 m² · 2 bedrooms · 5 guests · terrace · parking · wheelchair accessible",
     "see_gite": "See this cottage",
     "around_h": "On foot from the garden, or an hour’s drive",
     "around_lead": "Hiking trails without crossing a road, a lake and water-sports centre 3 km away, and Metz, the Saar and Luxembourg within a day trip.",
@@ -142,15 +142,15 @@
   "gites": {
     "h1": "The cottages",
     "lead": "Two similar semi-detached cottages at garden level, each with a separate entrance, private terrace and parking.",
-    "common": "Each cottage has a living room with fitted kitchen (oven, ceramic hob, microwave, dishwasher, washing machine, freezer), two bedrooms and a shower room with WC, adapted for guests with reduced mobility. Sleeping: four 90 cm beds that can be pushed together, plus a sofa in the living room. Flat-screen TV, wifi, geothermal underfloor heating.",
+    "common": "Each cottage has a living room with fitted kitchen (oven, ceramic hob, microwave, dishwasher, washing machine, freezer), two bedrooms and a shower room with WC, adapted for guests with reduced mobility. Sleeping: four 90 cm beds that can be pushed together in the bedrooms, plus a fifth bed in the living room: 5 guests per cottage. Flat-screen TV, wifi, geothermal underfloor heating.",
     "desc_h": "Layout",
     "equip_h": "Equipment",
     "serv_h": "Services included",
     "desc": [
       "1 living room with fitted kitchen",
-      "2 bedrooms (four 90 × 190 cm beds)",
+      "2 bedrooms (two 90 × 190 cm beds each) + 1 bed in the living room",
       "1 accessible shower room with WC",
-      "4 guests · 55 m²"
+      "5 guests · 60 m²"
     ],
     "equip": [
       "Geothermal underfloor heating",

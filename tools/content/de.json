@@ -10,15 +10,15 @@
     ],
     "gites": [
       "Die Ferienhäuser – Domaine du Geisberg",
-      "Zwei baugleiche Ferienhäuser mit 55 m², 2 Schlafzimmern, 4 Personen, eigener Terrasse, Erdwärmeheizung, Label Tourisme & Handicap."
+      "Zwei baugleiche Ferienhäuser mit 60 m², 2 Schlafzimmern, 5 Personen, eigener Terrasse, Erdwärmeheizung, Label Tourisme & Handicap."
     ],
     "gite-1": [
       "Ferienhaus 1 – Domaine du Geisberg",
-      "Ferienhaus 1: 55 m², 2 Schlafzimmer, 4 Personen, Südterrasse, Fotos und Verfügbarkeit."
+      "Ferienhaus 1: 60 m², 2 Schlafzimmer, 5 Personen, Südterrasse, Fotos und Verfügbarkeit."
     ],
     "gite-2": [
       "Ferienhaus 2 – Domaine du Geisberg",
-      "Ferienhaus 2: 55 m², 2 Schlafzimmer, 4 Personen, barrierefrei, Fotos und Verfügbarkeit."
+      "Ferienhaus 2: 60 m², 2 Schlafzimmer, 5 Personen, barrierefrei, Fotos und Verfügbarkeit."
     ],
     "autour": [
       "Ausflüge rund um Varsberg – Domaine du Geisberg",
@@ -84,11 +84,11 @@
     "facts": [
       [
         "2 Häuser",
-        "baugleich, je 55 m², mit eigenem Eingang"
+        "baugleich, je 60 m², mit eigenem Eingang"
       ],
       [
-        "4 Pers.",
-        "pro Haus, 2 Schlafzimmer"
+        "5 Pers.",
+        "pro Haus: 2 pro Schlafzimmer, 1 im Wohnzimmer"
       ],
       [
         "2 ha",
@@ -107,8 +107,8 @@
     "intro_more": "Das Anwesen entdecken",
     "gites_h": "Zwei Zwillingshäuser, derselbe Blick",
     "gites_lead": "Gleiche Ausstattung auf beiden Seiten. Buchen Sie eines – oder beide für die ganze Familie.",
-    "gite1_sub": "55 m² · 2 Schlafzimmer · 4 Personen · Südterrasse · Parkplatz · WLAN",
-    "gite2_sub": "55 m² · 2 Schlafzimmer · 4 Personen · Terrasse · Parkplatz · barrierefrei",
+    "gite1_sub": "60 m² · 2 Schlafzimmer · 5 Personen · Südterrasse · Parkplatz · WLAN",
+    "gite2_sub": "60 m² · 2 Schlafzimmer · 5 Personen · Terrasse · Parkplatz · barrierefrei",
     "see_gite": "Dieses Haus ansehen",
     "around_h": "Zu Fuß ab dem Garten oder eine Autostunde entfernt",
     "around_lead": "Wanderwege ohne Straßenüberquerung, See und Wassersportzentrum in 3 km, Metz, das Saarland und Luxemburg als Tagesausflug.",
@@ -142,15 +142,15 @@
   "gites": {
     "h1": "Die Ferienhäuser",
     "lead": "Zwei baugleiche Doppelhaushälften auf Gartenniveau mit eigenem Eingang, eigener Terrasse und Parkplatz.",
-    "common": "Jedes Haus hat ein Wohnzimmer mit Einbauküche (Backofen, Cerankochfeld, Mikrowelle, Geschirrspüler, Waschmaschine, Gefrierschrank), zwei Schlafzimmer und ein barrierefreies Duschbad mit WC. Schlafen: vier 90-cm-Betten, die zusammengestellt werden können, plus ein Sofa im Wohnzimmer. Flachbildfernseher, WLAN, Fußbodenheizung mit Erdwärme.",
+    "common": "Jedes Haus hat ein Wohnzimmer mit Einbauküche (Backofen, Cerankochfeld, Mikrowelle, Geschirrspüler, Waschmaschine, Gefrierschrank), zwei Schlafzimmer und ein barrierefreies Duschbad mit WC. Schlafen: vier 90-cm-Betten in den Schlafzimmern (zusammenstellbar) plus ein fünfter Schlafplatz im Wohnzimmer: 5 Personen pro Haus. Flachbildfernseher, WLAN, Fußbodenheizung mit Erdwärme.",
     "desc_h": "Aufteilung",
     "equip_h": "Ausstattung",
     "serv_h": "Inklusive Leistungen",
     "desc": [
       "1 Wohnraum mit Einbauküche",
-      "2 Schlafzimmer (vier Betten 90 × 190 cm)",
+      "2 Schlafzimmer (je zwei Betten 90 × 190 cm) + 1 Schlafplatz im Wohnzimmer",
       "1 barrierefreies Duschbad mit WC",
-      "4 Personen · 55 m²"
+      "5 Personen · 60 m²"
     ],
     "equip": [
       "Fußbodenheizung mit Erdwärme",

@@ -10,15 +10,15 @@
     ],
     "gites": [
       "De huizen – Domaine du Geisberg",
-      "Twee identieke huizen van 55 m², 2 slaapkamers, 4 personen, eigen terras, aardwarmte, label Tourisme & Handicap."
+      "Twee identieke huizen van 60 m², 2 slaapkamers, 5 personen, eigen terras, aardwarmte, label Tourisme & Handicap."
     ],
     "gite-1": [
       "Huis 1 – Domaine du Geisberg",
-      "Huis 1: 55 m², 2 slaapkamers, 4 personen, terras op het zuiden, foto's en beschikbaarheid."
+      "Huis 1: 60 m², 2 slaapkamers, 5 personen, terras op het zuiden, foto's en beschikbaarheid."
     ],
     "gite-2": [
       "Huis 2 – Domaine du Geisberg",
-      "Huis 2: 55 m², 2 slaapkamers, 4 personen, rolstoeltoegankelijk, foto's en beschikbaarheid."
+      "Huis 2: 60 m², 2 slaapkamers, 5 personen, rolstoeltoegankelijk, foto's en beschikbaarheid."
     ],
     "autour": [
       "Uitstapjes rond Varsberg – Domaine du Geisberg",
@@ -84,11 +84,11 @@
     "facts": [
       [
         "2 huizen",
-        "identiek, elk 55 m², met eigen ingang"
+        "identiek, elk 60 m², met eigen ingang"
       ],
       [
-        "4 pers.",
-        "per huis, 2 slaapkamers"
+        "5 pers.",
+        "per huis: 2 per slaapkamer, 1 in de woonkamer"
       ],
       [
         "2 ha",
@@ -107,8 +107,8 @@
     "intro_more": "Het landgoed ontdekken",
     "gites_h": "Twee tweelinghuizen, hetzelfde uitzicht",
     "gites_lead": "Hetzelfde comfort aan beide kanten. Boek er één, of allebei voor de hele familie.",
-    "gite1_sub": "55 m² · 2 slaapkamers · 4 personen · terras op het zuiden · parkeerplaats · wifi",
-    "gite2_sub": "55 m² · 2 slaapkamers · 4 personen · terras · parkeerplaats · rolstoeltoegankelijk",
+    "gite1_sub": "60 m² · 2 slaapkamers · 5 personen · terras op het zuiden · parkeerplaats · wifi",
+    "gite2_sub": "60 m² · 2 slaapkamers · 5 personen · terras · parkeerplaats · rolstoeltoegankelijk",
     "see_gite": "Dit huis bekijken",
     "around_h": "Te voet vanuit de tuin, of een uur rijden",
     "around_lead": "Wandelpaden zonder een weg over te steken, meer en watersportcentrum op 3 km, en Metz, Saarland en Luxemburg als dagtocht.",
@@ -142,15 +142,15 @@
   "gites": {
     "h1": "De huizen",
     "lead": "Twee identieke, geschakelde huizen op tuinniveau, elk met eigen ingang, eigen terras en parkeerplaats.",
-    "common": "Elk huis heeft een woonkamer met open keuken (oven, keramische kookplaat, magnetron, vaatwasser, wasmachine, vriezer), twee slaapkamers en een badkamer met douche en toilet, aangepast voor mensen met beperkte mobiliteit. Slapen: vier bedden van 90 cm die tegen elkaar kunnen, plus een bank in de woonkamer. Flatscreen-tv, wifi, vloerverwarming op aardwarmte.",
+    "common": "Elk huis heeft een woonkamer met open keuken (oven, keramische kookplaat, magnetron, vaatwasser, wasmachine, vriezer), twee slaapkamers en een badkamer met douche en toilet, aangepast voor mensen met beperkte mobiliteit. Slapen: vier bedden van 90 cm in de slaapkamers (tegen elkaar te schuiven) plus een vijfde slaapplaats in de woonkamer: 5 personen per huis. Flatscreen-tv, wifi, vloerverwarming op aardwarmte.",
     "desc_h": "Indeling",
     "equip_h": "Uitrusting",
     "serv_h": "Inbegrepen",
     "desc": [
       "1 woonkamer met open keuken",
-      "2 slaapkamers (vier bedden 90 × 190 cm)",
+      "2 slaapkamers (elk twee bedden 90 × 190 cm) + 1 slaapplaats in de woonkamer",
       "1 toegankelijke badkamer met douche en toilet",
-      "4 personen · 55 m²"
+      "5 personen · 60 m²"
     ],
     "equip": [
       "Vloerverwarming op aardwarmte",

@@ -10,15 +10,15 @@
     ],
     "gites": [
       "Les gîtes – Domaine du Geisberg",
-      "Deux gîtes jumeaux de 55 m², 2 chambres, 4 personnes, terrasse privée, chauffage géothermique, label Tourisme & Handicap."
+      "Deux gîtes jumeaux de 60 m², 2 chambres, 5 personnes, terrasse privée, chauffage géothermique, label Tourisme & Handicap."
     ],
     "gite-1": [
       "Gîte 1 – Domaine du Geisberg",
-      "Gîte 1 : 55 m², 2 chambres, 4 personnes, terrasse plein sud, photos et disponibilités."
+      "Gîte 1 : 60 m², 2 chambres, 5 personnes, terrasse plein sud, photos et disponibilités."
     ],
     "gite-2": [
       "Gîte 2 – Domaine du Geisberg",
-      "Gîte 2 : 55 m², 2 chambres, 4 personnes, accessible, photos et disponibilités."
+      "Gîte 2 : 60 m², 2 chambres, 5 personnes, accessible, photos et disponibilités."
     ],
     "autour": [
       "Tourisme et loisirs autour de Varsberg – Domaine du Geisberg",
@@ -84,11 +84,11 @@
     "facts": [
       [
         "2 gîtes",
-        "jumeaux de 55 m², entrées indépendantes"
+        "jumeaux de 60 m², entrées indépendantes"
       ],
       [
-        "4 pers.",
-        "par gîte, 2 chambres"
+        "5 pers.",
+        "par gîte : 2 par chambre, 1 dans le salon"
       ],
       [
         "2 ha",
@@ -107,8 +107,8 @@
     "intro_more": "Découvrir le domaine",
     "gites_h": "Deux maisons jumelles, même vue",
     "gites_lead": "Mêmes prestations de part et d'autre. Réservez l'un des deux, ou les deux pour une tribu.",
-    "gite1_sub": "55 m² · 2 chambres · 4 personnes · terrasse plein sud · parking · wifi",
-    "gite2_sub": "55 m² · 2 chambres · 4 personnes · terrasse · parking · accessible PMR",
+    "gite1_sub": "60 m² · 2 chambres · 5 personnes · terrasse plein sud · parking · wifi",
+    "gite2_sub": "60 m² · 2 chambres · 5 personnes · terrasse · parking · accessible PMR",
     "see_gite": "Voir ce gîte",
     "around_h": "À pied depuis le jardin, ou à une heure de route",
     "around_lead": "Chemins de randonnée sans traverser de route, lac et base nautique à 3 km, Metz, la Sarre et le Luxembourg à portée de journée.",
@@ -142,15 +142,15 @@
   "gites": {
     "h1": "Les gîtes",
     "lead": "Deux gîtes mitoyens et similaires, en rez-de-jardin, avec entrée indépendante, terrasse et parking privatifs.",
-    "common": "Chaque gîte se compose d'un salon avec cuisine intégrée (four, plaques vitrocéramiques, micro-ondes, lave-vaisselle, lave-linge, congélateur), de deux chambres et d'une salle d'eau avec douche et WC, adaptée aux personnes à mobilité réduite. Le couchage comprend quatre lits de 90 cm pouvant être rapprochés, et un canapé dans le salon. Téléviseur à écran plat, wifi, chauffage au sol par géothermie.",
+    "common": "Chaque gîte se compose d'un salon avec cuisine intégrée (four, plaques vitrocéramiques, micro-ondes, lave-vaisselle, lave-linge, congélateur), de deux chambres et d'une salle d'eau avec douche et WC, adaptée aux personnes à mobilité réduite. Le couchage comprend quatre lits de 90 cm pouvant être rapprochés dans les chambres, et un cinquième couchage dans le salon : 5 personnes par gîte. Téléviseur à écran plat, wifi, chauffage au sol par géothermie.",
     "desc_h": "Descriptif",
     "equip_h": "Équipements",
     "serv_h": "Services inclus",
     "desc": [
       "1 pièce à vivre avec cuisine intégrée",
-      "2 chambres (4 lits de 90 × 190 cm)",
+      "2 chambres (2 lits de 90 × 190 cm chacune) + 1 couchage dans le salon",
       "1 salle d'eau avec douche et WC, accessible",
-      "4 personnes · 55 m²"
+      "5 personnes · 60 m²"
     ],
     "equip": [
       "Chauffage au sol par géothermie",
@@ -302,7 +302,7 @@
   "notes": {
     "hero": "Photos principales : il faut 4 ou 5 photos récentes, en paysage, par beau temps (les gîtes vus de la prairie, la terrasse, la forêt). Ce sont les photos de 2014 en attendant.",
     "h1": "Accroche : à valider ou à reformuler dans vos mots.",
-    "facts": "Chiffres : j'ai repris Gîtes de France (4 personnes, 55 m²). L'ancien site disait 5 couchages et 60 m². Lequel garder ?",
+    "facts": "Chiffres validés : 60 m², 5 personnes (2 par chambre + 1 dans le salon). Reste à confirmer : distances (lac 3 ou 8 km, gare 6 ou 15 km, piscine 3 ou 8 km).",
     "gites": "Photos des gîtes : 6 à 8 photos récentes par gîte (séjour, cuisine, chaque chambre, salle d'eau, terrasse). Un nom pour chaque gîte ?",
     "hosts": "Une photo de vous deux, et 2-3 phrases écrites par vous : depuis quand, ce que vous aimez faire découvrir.",
     "dispo": "Calendrier : il sera relié à Bed Booking (lien iCal à retrouver dans ses réglages). Il n'affichera que libre / occupé.",

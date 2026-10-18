@@ -10,15 +10,15 @@
     ],
     "gites": [
       "Las casas – Domaine du Geisberg",
-      "Dos casas gemelas de 55 m², 2 dormitorios, 4 personas, terraza privada, calefacción geotérmica, sello Tourisme & Handicap."
+      "Dos casas gemelas de 60 m², 2 dormitorios, 5 personas, terraza privada, calefacción geotérmica, sello Tourisme & Handicap."
     ],
     "gite-1": [
       "Casa 1 – Domaine du Geisberg",
-      "Casa 1: 55 m², 2 dormitorios, 4 personas, terraza orientada al sur, fotos y disponibilidad."
+      "Casa 1: 60 m², 2 dormitorios, 5 personas, terraza orientada al sur, fotos y disponibilidad."
     ],
     "gite-2": [
       "Casa 2 – Domaine du Geisberg",
-      "Casa 2: 55 m², 2 dormitorios, 4 personas, accesible, fotos y disponibilidad."
+      "Casa 2: 60 m², 2 dormitorios, 5 personas, accesible, fotos y disponibilidad."
     ],
     "autour": [
       "Qué ver cerca de Varsberg – Domaine du Geisberg",
@@ -84,11 +84,11 @@
     "facts": [
       [
         "2 casas",
-        "gemelas de 55 m², con entradas independientes"
+        "gemelas de 60 m², con entradas independientes"
       ],
       [
-        "4 pers.",
-        "por casa, 2 dormitorios"
+        "5 pers.",
+        "por casa: 2 por dormitorio, 1 en el salón"
       ],
       [
         "2 ha",
@@ -107,8 +107,8 @@
     "intro_more": "Descubrir la finca",
     "gites_h": "Dos casas gemelas, la misma vista",
     "gites_lead": "Las mismas prestaciones a ambos lados. Reserve una, o las dos para toda la familia.",
-    "gite1_sub": "55 m² · 2 dormitorios · 4 personas · terraza al sur · aparcamiento · wifi",
-    "gite2_sub": "55 m² · 2 dormitorios · 4 personas · terraza · aparcamiento · accesible",
+    "gite1_sub": "60 m² · 2 dormitorios · 5 personas · terraza al sur · aparcamiento · wifi",
+    "gite2_sub": "60 m² · 2 dormitorios · 5 personas · terraza · aparcamiento · accesible",
     "see_gite": "Ver esta casa",
     "around_h": "A pie desde el jardín, o a una hora en coche",
     "around_lead": "Senderos sin cruzar carreteras, lago y base náutica a 3 km, y Metz, el Sarre y Luxemburgo a un día de excursión.",
@@ -142,15 +142,15 @@
   "gites": {
     "h1": "Las casas",
     "lead": "Dos casas adosadas y similares, a nivel del jardín, con entrada independiente, terraza y aparcamiento privados.",
-    "common": "Cada casa consta de un salón con cocina integrada (horno, vitrocerámica, microondas, lavavajillas, lavadora, congelador), dos dormitorios y un baño con ducha y WC adaptado a personas con movilidad reducida. Camas: cuatro de 90 cm que pueden juntarse, más un sofá en el salón. Televisor de pantalla plana, wifi, suelo radiante geotérmico.",
+    "common": "Cada casa consta de un salón con cocina integrada (horno, vitrocerámica, microondas, lavavajillas, lavadora, congelador), dos dormitorios y un baño con ducha y WC adaptado a personas con movilidad reducida. Camas: cuatro de 90 cm en los dormitorios (pueden juntarse) más una quinta plaza en el salón: 5 personas por casa. Televisor de pantalla plana, wifi, suelo radiante geotérmico.",
     "desc_h": "Distribución",
     "equip_h": "Equipamiento",
     "serv_h": "Servicios incluidos",
     "desc": [
       "1 salón con cocina integrada",
-      "2 dormitorios (cuatro camas de 90 × 190 cm)",
+      "2 dormitorios (dos camas de 90 × 190 cm cada uno) + 1 cama en el salón",
       "1 baño con ducha y WC, accesible",
-      "4 personas · 55 m²"
+      "5 personas · 60 m²"
     ],
     "equip": [
       "Suelo radiante geotérmico",
