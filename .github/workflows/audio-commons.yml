@@ -1,0 +1,18 @@
+name: Chants d'oiseaux (Wikimedia Commons)
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  audio:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
+      - run: python3 tools/fetch_audio.py
+      - run: |
+          git config user.name "audio-bot"; git config user.email "audio@domainedugeisberg.fr"
+          git add audio tools/credits.json
+          git diff --cached --quiet || (git commit -m "Chants d'oiseaux (Wikimedia Commons)" && git push)
