@@ -6,7 +6,29 @@
 <meta name="description" content="Domaine du Geisberg : deux gîtes ruraux 3 épis à Varsberg (Moselle), sur 2 hectares en lisière de forêt. Terrasse, parking, wifi, animaux acceptés. Réservation en direct.">
 <meta name="robots" content="noindex">
 <link rel="canonical" href="https://www.domainedugeisberg.fr/">
-<style>:root{padding:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<style>:root{padding:0}img{max-width:100%}[hidden]{display:none!important}
+/* ---- Mode notes (annotations pour Marc) ---- */
+.nbtn{position:fixed;right:max(16px,env(safe-area-inset-right,0px));bottom:max(16px,env(safe-area-inset-bottom,0px));z-index:50;min-height:48px;padding:0 18px;border-radius:999px;border:0;background:#C8431F;color:#fff;font:inherit;font-weight:700;font-size:15px;box-shadow:0 6px 20px rgba(0,0,0,.25);cursor:pointer;display:flex;align-items:center;gap:8px}
+.nbtn:focus-visible{outline:3px solid #fff}
+html.notes [data-note]{position:relative;outline:3px dashed #C8431F;outline-offset:6px;border-radius:12px}
+.nbub{position:absolute;top:-14px;left:-14px;z-index:40;width:40px;height:40px;border-radius:50%;background:#C8431F;color:#fff;font-weight:800;font-size:18px;display:none;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(0,0,0,.3);border:3px solid #fff;cursor:pointer;font-family:var(--body)}
+html.notes .nbub{display:flex}
+.ntip{position:absolute;z-index:45;top:30px;left:0;max-width:min(360px,88vw);background:#FFF7E6;color:#1E2520;border:2px solid #C8431F;border-radius:12px;padding:12px 14px;font-size:15px;line-height:1.45;box-shadow:0 10px 30px rgba(0,0,0,.25);display:none}
+html.notes [data-note].open .ntip{display:block}
+.ntip b{display:block;color:#C8431F;margin-bottom:4px;font-size:13px;letter-spacing:.08em;text-transform:uppercase}
+.npanel{display:none;position:fixed;inset:auto 0 0 0;z-index:49;max-height:70vh;overflow:auto;background:#FFF7E6;color:#1E2520;border-top:4px solid #C8431F;padding:16px max(16px,env(safe-area-inset-right,0px)) 80px max(16px,env(safe-area-inset-left,0px));box-shadow:0 -10px 30px rgba(0,0,0,.25)}
+html.notes.panel .npanel{display:block}
+.npanel h2{font-size:24px;margin-bottom:6px;color:#1E2520}
+.npanel p{margin:0 0 12px;font-size:15px}
+.npanel ol{margin:0;padding-left:0;list-style:none;display:grid;gap:8px}
+.npanel li{display:flex;gap:10px;align-items:flex-start;font-size:15px;line-height:1.4}
+.npanel li i{flex:none;width:28px;height:28px;border-radius:50%;background:#C8431F;color:#fff;font-style:normal;font-weight:800;display:grid;place-items:center;font-size:14px}
+.npanel input{width:20px;height:20px;margin-top:3px;accent-color:#294C3A}
+.npanel .done{text-decoration:line-through;opacity:.55}
+.nbanner{display:none;background:#C8431F;color:#fff;text-align:center;padding:10px 16px;font-weight:700;font-size:15px}
+html.notes .nbanner{display:block}
+@media print{.nbtn,.npanel{display:none!important}}
+</style>
 <title>Domaine du Geisberg – Gîtes ruraux à Varsberg, Moselle</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
@@ -146,6 +168,7 @@ footer a{color:inherit}
 @media(prefers-reduced-motion:no-preference){.gite,.around a{transition:transform .2s}.gite:hover,.around a:hover{transform:translateY(-2px)}}
 </style>
 
+<div class="nbanner">Mode « Notes pour Marc » : les bulles rouges indiquent ce qu’il reste à fournir ou à décider. Appuyez sur un numéro pour lire la note.</div>
 <a class="skip" href="#main">Aller au contenu</a>
 <header>
   <div class="wrap">
@@ -178,8 +201,8 @@ footer a{color:inherit}
 <div class="wrap">
 
 <div class="hero">
-  <div class="photo" style="background:none;padding:0;display:block;overflow:hidden"><img src="img/gite-varsberg-2.jpg" alt="Les gîtes du Domaine du Geisberg à Varsberg" loading="lazy" style="width:100%;height:100%;object-fit:cover;border-radius:inherit"></div>
-  <h1>Deux gîtes au calme, entre prairie et forêt</h1>
+  <div class="photo" style="background:none;padding:0;display:block;overflow:hidden" data-note="Photo principale : il faut une photo récente, prise en paysage par beau temps, des deux gîtes vus de la prairie (ou de la terrasse). C’est la première chose que voit le visiteur."><img src="img/gite-varsberg-2.jpg" alt="Les gîtes du Domaine du Geisberg à Varsberg" loading="lazy" style="width:100%;height:100%;object-fit:cover;border-radius:inherit"></div>
+  <h1>Deux gîtes au calme, entre prairie et forêt</h1 data-note="Accroche : à valider ou à reformuler dans vos mots. Une phrase courte, qui dit pourquoi on vient chez vous.">
   <p>Sur la colline qui domine Varsberg, au lieu-dit Vogelsgesang, « le chant des oiseaux ». Deux hectares, des sentiers qui partent du jardin, une terrasse pour chaque gîte.</p>
   <div class="cta">
     <a class="btn p" href="#dispo">Voir les disponibilités</a>
@@ -190,7 +213,7 @@ footer a{color:inherit}
 <section>
   <div class="facts">
     <div class="fact"><b>2 gîtes</b><span>60 m² chacun, entrées indépendantes</span></div>
-    <div class="fact"><b>[4] pers.</b><span>par gîte, [X] chambres</span></div>
+    <div class="fact"><b>[4] pers.</b data-note="À confirmer : 4 personnes (Gîtes de France) ou 5 couchages (ancien site, avec le canapé) ? Et 55 ou 60 m² ?"><span>par gîte, [X] chambres</span></div>
     <div class="fact"><b>2 ha</b><span>de prairies en lisière de forêt</span></div>
     <div class="fact"><b>0 route</b><span>à traverser pour partir à pied, à vélo, à cheval</span></div>
   </div>
@@ -201,7 +224,7 @@ footer a{color:inherit}
   <h2>Deux maisons jumelles, même vue</h2>
   <p class="lead">Mêmes prestations de part et d'autre. Réservez l'un des deux, ou les deux pour une tribu.</p>
   <div class="gites">
-    <a class="gite" href="#gite-1">
+    <a class="gite" href="#gite-1" data-note="Gîte 1 : 6 à 8 photos récentes (séjour, cuisine, chaque chambre, salle de bain, terrasse). Avez-vous un nom pour chaque gîte ?">
       <div class="ph" style="background:none"><img src="img/gite-1-varsberg.jpg" alt="Séjour du gîte 1" loading="lazy" style="width:100%;height:100%;object-fit:cover;border-radius:inherit"></div>
       <div class="in">
         <h3>Gîte 1 · [Nom]</h3>
@@ -209,7 +232,7 @@ footer a{color:inherit}
         <div class="price"><b>dès 300 €</b><span>Voir ce gîte →</span></div>
       </div>
     </a>
-    <a class="gite" href="#gite-2">
+    <a class="gite" href="#gite-2" data-note="Gîte 2 : mêmes photos. Préciser ce qui diffère du gîte 1 (accessibilité PMR, orientation…).">
       <div class="ph" style="background:none"><img src="img/gite-2-varsberg.jpg" alt="Séjour du gîte 2" loading="lazy" style="width:100%;height:100%;object-fit:cover;border-radius:inherit"></div>
       <div class="in">
         <h3>Gîte 2 · [Nom]</h3>
@@ -221,7 +244,7 @@ footer a{color:inherit}
 </section>
 
 <section id="dispo">
-  <div class="dispo">
+  <div class="dispo" data-note="Disponibilités : le calendrier sera relié à votre planning (lien iCal de Bed Booking, à retrouver dans ses réglages). Il n’affichera que libre / occupé, jamais le nom de la plateforme ni les clients.">
     <div class="eyebrow" style="color:#E7C59A">Disponibilités</div>
     <h2>Choisissez vos dates</h2>
     <p>Calendrier synchronisé avec notre planning. Réponse sous 24 h, réservation en direct sans commission.</p>
@@ -249,14 +272,14 @@ footer a{color:inherit}
 
 <section id="domaine">
   <div class="grid2">
-    <div class="mosaic">
+    <div class="mosaic" data-note="Le domaine : 4 photos des extérieurs aux quatre saisons si possible (prairie, forêt, terrasse, vue sur le village). Les anciennes photos sont là en attendant.">
       <div style="background:none;padding:0;overflow:hidden"><img src="img/paysage-varsberg.jpg" alt="Paysage autour de Varsberg" loading="lazy" style="width:100%;height:100%;object-fit:cover;border-radius:inherit"></div><div style="background:none;padding:0;overflow:hidden"><img src="img/Domaine-ext.jpg" alt="Extérieur du domaine" loading="lazy" style="width:100%;height:100%;object-fit:cover;border-radius:inherit"></div><div style="background:none;padding:0;overflow:hidden"><img src="img/gite-varsberg-geisberg-neige-5.jpg" alt="Le domaine sous la neige" loading="lazy" style="width:100%;height:100%;object-fit:cover;border-radius:inherit"></div><div style="background:none;padding:0;overflow:hidden"><img src="img/Domaine-Geisberg-3.jpg" alt="Vue depuis le domaine" loading="lazy" style="width:100%;height:100%;object-fit:cover;border-radius:inherit"></div>
     </div>
     <div class="story">
       <div class="eyebrow">Le domaine</div>
       <h2>Un lieu-dit qui porte bien son nom</h2>
       <p>Vogelsgesang, le chant des oiseaux. Deux hectares de prairies en lisière de forêt, à l'écart du village et à [X] minutes de ses commerces. Les sentiers partent directement du jardin.</p>
-      <p>Agnès et Marc vous accueillent. [2 ou 3 lignes dans leurs mots.]</p>
+      <p>Agnès et Marc vous accueillent. [2 ou 3 lignes dans leurs mots.]</p data-note="Qui êtes-vous : 2 ou 3 phrases simples, écrites par vous (depuis quand, ce que vous aimez faire découvrir, les chevaux, la forêt…).">
       <a href="#domaine" style="font-weight:700">Découvrir le domaine →</a>
     </div>
   </div>
@@ -265,7 +288,7 @@ footer a{color:inherit}
 <section id="autour">
   <div class="eyebrow">Autour</div>
   <h2>À pied depuis le jardin, ou à une heure de route</h2>
-  <div class="around">
+  <div class="around" data-note="Autour : je reprends la liste de l’ancien site (lac de Creutzwald, musée de la mine, Völklingen, Pompidou-Metz…). Dites-moi vos 4 incontournables et les temps de trajet.">
     <a href="#autour"><b>Randonnée et VTT</b><span>Boucles balisées au départ du domaine, forêt du Warndt.</span></a>
     <a href="#autour"><b>Metz et Sarreguemines</b><span>Centre Pompidou-Metz, cathédrale, faïenceries, à [X] min.</span></a>
     <a href="#autour"><b>Allemagne et Luxembourg</b><span>Sarrebruck à [X] min, Luxembourg à [X] min.</span></a>
@@ -276,7 +299,7 @@ footer a{color:inherit}
 <section>
   <div class="eyebrow">Ils sont venus</div>
   <h2>Avis de nos hôtes</h2>
-  <div class="avis">
+  <div class="avis" data-note="Avis : choisissez 3 à 5 avis clients que vous aimez (Gîtes de France, Airbnb, livre d’or) avec prénom et date.">
     <blockquote><span class="st">★★★★★</span><p>[Avis réel, copié de Gîtes de France ou Airbnb avec accord]</p><cite>[Prénom], [mois année]</cite></blockquote>
     <blockquote><span class="st">★★★★★</span><p>[Avis réel]</p><cite>[Prénom], [mois année]</cite></blockquote>
     <blockquote><span class="st">★★★★★</span><p>[Avis réel]</p><cite>[Prénom], [mois année]</cite></blockquote>
@@ -290,14 +313,14 @@ footer a{color:inherit}
       <h2>Simples et sans commission</h2>
       <div class="tar"><span>Week-end (2 nuits)</span><b>300 €</b></div>
       <div class="tar"><span>Semaine</span><b>420 €</b></div>
-      <div class="tar"><span>[Haute saison / fêtes]</span><b>[XXX €]</b></div>
+      <div class="tar"><span>[Haute saison / fêtes]</span data-note="Tarifs : grille par saison, taxe de séjour, caution (300 € chez Gîtes de France), ce qui est inclus (draps, ménage, chauffage), arrhes et conditions d’annulation, heures d’arrivée / départ."><b>[XXX €]</b></div>
       <p class="note">Draps et linge [inclus / en option], ménage [inclus / X €], taxe de séjour en sus. CB et chèques-vacances ANCV acceptés.</p>
     </div>
     <div id="contact">
       <div class="eyebrow">Contact</div>
       <h2>Agnès et Marc</h2>
       <div class="addr">6 rue du Geisberg, 57880 Varsberg<br>Agnès · 06 73 42 05 89<br>Marc · 07 89 56 74 91<br>gitevarsberg@hotmail.com</div>
-      <div class="map">[Carte · accès depuis l'A4, sortie Saint-Avold]</div>
+      <div class="map" data-note="Accès : itinéraire depuis l’A4 (sortie, temps), gares, et autorisation d’afficher une carte. Une photo d’Agnès et Marc serait bienvenue ici.">[Carte · accès depuis l'A4, sortie Saint-Avold]</div>
     </div>
   </div>
 </section>
@@ -324,6 +347,34 @@ footer a{color:inherit}
     var v=dark?'light':'dark';r.setAttribute('data-theme',v);try{localStorage.setItem('theme',v)}catch(e){}
   });
   document.getElementById('f').addEventListener('submit',function(e){e.preventDefault();this.querySelector('button').textContent='Demande envoyée (maquette)'});
+})();
+</script>
+
+<button class="nbtn" id="nbtn" type="button" aria-pressed="false"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M12 20h9M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg><span>Notes pour Marc</span></button>
+<section class="npanel" id="npanel" aria-label="Liste des points à fournir">
+  <h2>Ce qu’il reste à faire</h2>
+  <p>Cochez au fur et à mesure (la liste se souvient de vos coches sur cet appareil). Envoyez les éléments à Sébastien par mail ou WhatsApp.</p>
+  <ol id="nlist"></ol>
+</section>
+<script>
+(function(){
+  var root=document.documentElement,btn=document.getElementById('nbtn'),list=document.getElementById('nlist');
+  var items=Array.prototype.slice.call(document.querySelectorAll('[data-note]'));
+  var done={};try{done=JSON.parse(localStorage.getItem('notes-done')||'{}')}catch(e){}
+  items.forEach(function(el,i){
+    var n=i+1,b=document.createElement('button');b.type='button';b.className='nbub';b.textContent=n;b.setAttribute('aria-label','Note '+n);
+    var t=document.createElement('div');t.className='ntip';t.innerHTML='<b>Note '+n+'</b>'+el.getAttribute('data-note');
+    b.addEventListener('click',function(e){e.preventDefault();e.stopPropagation();var o=el.classList.contains('open');items.forEach(function(x){x.classList.remove('open')});if(!o)el.classList.add('open')});
+    el.appendChild(b);el.appendChild(t);
+    var li=document.createElement('li'),cb=document.createElement('input');cb.type='checkbox';cb.id='nd'+n;cb.checked=!!done[n];
+    var lab=document.createElement('label');lab.htmlFor='nd'+n;lab.innerHTML='<i>'+n+'</i>';var sp=document.createElement('span');sp.textContent=el.getAttribute('data-note');
+    if(cb.checked)sp.classList.add('done');
+    cb.addEventListener('change',function(){done[n]=cb.checked;sp.classList.toggle('done',cb.checked);try{localStorage.setItem('notes-done',JSON.stringify(done))}catch(e){}});
+    li.appendChild(cb);li.appendChild(lab);li.appendChild(sp);list.appendChild(li);
+  });
+  function set(on){root.classList.toggle('notes',on);root.classList.toggle('panel',on);btn.setAttribute('aria-pressed',on);btn.querySelector('span').textContent=on?'Masquer les notes':'Notes pour Marc';if(!on)items.forEach(function(x){x.classList.remove('open')});}
+  btn.addEventListener('click',function(){set(!root.classList.contains('notes'))});
+  if(location.hash==='#notes')set(true);
 })();
 </script>
 </body>
