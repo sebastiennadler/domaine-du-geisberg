@@ -31,7 +31,7 @@
 </section>
 <section class="wrap" id="acces" style="padding-top:0">
   <div class="hosts"{% if lang == 'fr' %} data-note="{{ t.notes.hosts }}"{% endif %}>
-    <div class="photo">{{ pic(s.hosts_photo, t.home.hosts_h, '(min-width: 860px) 520px, 100vw') }}</div>
+    <div class="photo">{{ pic(s.hosts_photo, t.home.hosts_alt, '(min-width: 860px) 520px, 100vw') }}</div>
     <div{% if lang == 'fr' %} data-note="{{ t.notes.access }}"{% endif %}>
       <div class="eyebrow">{{ t.home.hosts_h }}</div>
       <h2 style="margin-bottom:12px">{{ r.access_h }}</h2>

@@ -118,7 +118,8 @@
       "Parking",
       "Wi-Fi",
       "Animaux acceptés"
-    ]
+    ],
+    "hosts_alt": "Agnès, Marc et Urielle devant la maison"
   },
   "domaine": {
     "h1": "Le domaine",
@@ -134,7 +135,7 @@
       "La terrasse d'un gîte",
       "Coucher de soleil sur Varsberg",
       "Les chevaux en hiver",
-      "Notre malinois dans les hautes herbes"
+      "Urielle, notre malinoise, dans les hautes herbes"
     ]
   },
   "gites": {
@@ -311,7 +312,7 @@
     "h1": "Accroche reprise de votre réponse : « Au cœur de la nature… ». À valider.",
     "facts": "Chiffres validés par Marc : 60 m², 4 personnes (2 par chambre) — l'ancien site disait 5 : confirmez 4, ou 5 avec le canapé-lit. Distances validées : lac 6 km, gare de Saint-Avold 15 km, piscine de Creutzwald 7 km.",
     "gites": "Photos des gîtes : 7 photos communes aux deux gîtes (ils sont identiques). Il manque une photo récente du séjour avec le canapé-lit ouvert, si vous en avez une.",
-    "hosts": "Votre texte « depuis 2007 » est en place avec la photo. Donnez-moi le nom du chien pour les légendes.",
+    "hosts": "Votre texte « depuis 2007 » est en place avec la photo d'Agnès, Marc et Urielle.",
     "dispo": "Calendriers Nuitrésa, un par gîte (2 mois, flèches pour avancer) : ils reflètent votre planning Nuitrésa, y compris les réservations Airbnb / Belvilla synchronisées. Vérifiez qu'ils correspondent bien à votre planning. La liste des réglages Nuitrésa à revoir est dans la note du bandeau juste en dessous.",
     "prices": "Tarifs : y a-t-il des tarifs par saison (Noël, été) ? Les conditions (acompte 25 %, annulation) sont celles de Nuitrésa. Caution : 300 € sur le site, 0 € dans Nuitrésa — laquelle est la bonne ?",
     "reviews": "Avis : 6 avis publiés repris (Gîtes de France, Abritel). Vous ne souhaitez pas la mention Airbnb : confirmez-le et je la retire. Le livre d'or Nuitrésa est en bas de la page Avis.",
@@ -383,7 +384,7 @@
       ],
       [
         "Balade en forêt avec les chevaux",
-        "Le chemin forestier qui part du jardin, avec les chevaux et le chien."
+        "Le chemin forestier qui part du jardin, avec les chevaux et Urielle."
       ],
       [
         "Un chevreuil au fond du jardin",
