@@ -127,7 +127,10 @@
     "hosts_h": "Agnès et Marc vous accueillent",
     "hosts": "Labellisés Gîtes de France (3 épis) depuis 2016, Clévacances et Tourisme & Handicap. Nous parlons français, anglais et allemand.",
     "book_h": "Réservez en direct",
-    "book_lead": "Sans commission, avec une réponse sous 24 h. Draps fournis, lits faits à l'arrivée, ménage de fin de séjour offert."
+    "book_lead": "Sans commission, avec une réponse sous 24 h. Draps fournis, lits faits à l'arrivée, ménage de fin de séjour offert.",
+    "diapo_h": "Le domaine en images",
+    "diapo_p": "Chevaux dans la prairie, terrasse au soleil, neige sur la colline : laissez défiler.",
+    "diapo_btn": "Lancer le diaporama"
   },
   "domaine": {
     "h1": "Le domaine",

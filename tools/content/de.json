@@ -127,7 +127,10 @@
     "hosts_h": "Agnès und Marc heißen Sie willkommen",
     "hosts": "Seit 2016 bei Gîtes de France (3 Ähren), Clévacances und Tourisme & Handicap. Wir sprechen Französisch, Englisch und Deutsch.",
     "book_h": "Direkt buchen",
-    "book_lead": "Ohne Provision, Antwort innerhalb von 24 Stunden. Bettwäsche inklusive, Betten bei Ankunft bezogen, Endreinigung inbegriffen."
+    "book_lead": "Ohne Provision, Antwort innerhalb von 24 Stunden. Bettwäsche inklusive, Betten bei Ankunft bezogen, Endreinigung inbegriffen.",
+    "diapo_h": "Das Anwesen in Bildern",
+    "diapo_p": "Pferde auf der Wiese, Terrasse in der Sonne, Schnee auf dem Hügel: einfach laufen lassen.",
+    "diapo_btn": "Diashow starten"
   },
   "domaine": {
     "h1": "Das Anwesen",

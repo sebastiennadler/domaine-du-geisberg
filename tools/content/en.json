@@ -127,7 +127,10 @@
     "hosts_h": "Agnès and Marc welcome you",
     "hosts": "Gîtes de France (3 ears of corn) since 2016, Clévacances and Tourisme & Handicap labels. We speak French, English and German.",
     "book_h": "Book direct",
-    "book_lead": "No commission, with a reply within 24 hours. Linen provided, beds made on arrival, end-of-stay cleaning included."
+    "book_lead": "No commission, with a reply within 24 hours. Linen provided, beds made on arrival, end-of-stay cleaning included.",
+    "diapo_h": "The estate in pictures",
+    "diapo_p": "Horses in the meadow, the terrace in the sun, snow on the hill: let it play.",
+    "diapo_btn": "Start the slideshow"
   },
   "domaine": {
     "h1": "The estate",

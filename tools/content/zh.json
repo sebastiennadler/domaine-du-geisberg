@@ -127,7 +127,10 @@
     "hosts_h": "Agnès 与 Marc 欢迎您",
     "hosts": "自 2016 年起获 Gîtes de France（三麦穗）、Clévacances 及 Tourisme & Handicap 认证。我们讲法语、英语和德语。",
     "book_h": "直接预订",
-    "book_lead": "无佣金，24 小时内回复。提供床品，到达时床铺已铺好，含退房清洁。"
+    "book_lead": "无佣金，24 小时内回复。提供床品，到达时床铺已铺好，含退房清洁。",
+    "diapo_h": "庄园影像",
+    "diapo_p": "草地上的马、阳光下的露台、山上的雪：让它自动播放。",
+    "diapo_btn": "播放幻灯片"
   },
   "domaine": {
     "h1": "庄园",

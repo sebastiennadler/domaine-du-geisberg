@@ -57,7 +57,7 @@
       <div class="backdrop" id="backdrop" hidden></div>
       <nav class="nav" id="nav" aria-label="{{ ui.menu }}">
         <div class="nav-top"><b>{{ s.name }}</b><button class="xbtn" id="menu-close" type="button" aria-label="{{ ui.close }}"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button></div>
-        {% for p in ['index','le-domaine','gites','visite','autour','avis','reservation'] %}
+        {% for p in ['index','le-domaine','gites','diaporama','visite','autour','avis','reservation'] %}
         <a href="{{ p }}.html"{% if p == page %} aria-current="page"{% endif %}>{{ t.nav[p] }}</a>
         {% endfor %}
         <a class="btn btn-p book" href="reservation.html#demande">{{ t.nav.book }}</a>
@@ -78,7 +78,7 @@
   <div class="wrap">
     <div><b>{{ s.name }}</b>{{ s.address }}<br>{{ s.phones[0][0] }} · {{ s.phones[0][1] }} · {{ s.phones[1][0] }} · {{ s.phones[1][1] }}<br><a href="mailto:{{ s.email }}">{{ s.email }}</a></div>
     <div class="logos">{% for img, name, url in s.labels %}<a href="{{ url }}" rel="noopener" target="_blank"><img src="{{ rel }}{{ img }}" alt="" loading="lazy"><span>{{ name }}</span></a>{% endfor %}</div>
-    <div>{{ ui.copyright }}<br><a href="mentions-legales.html">{{ ui.legal }}</a> · <a href="diaporama.html">{{ t.nav.diaporama }}</a> · <a href="mailto:sebastien.nadler@gmail.com">{{ ui.dev_credit }}</a></div>
+    <div>{{ ui.copyright }}<br><a href="mentions-legales.html">{{ ui.legal }}</a> · <a href="mailto:sebastien.nadler@gmail.com">{{ ui.dev_credit }}</a></div>
   </div>
 </footer>
 {% if lang == 'fr' %}

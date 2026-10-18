@@ -127,7 +127,10 @@
     "hosts_h": "Agnès y Marc le dan la bienvenida",
     "hosts": "Gîtes de France (3 espigas) desde 2016, Clévacances y Tourisme & Handicap. Hablamos francés, inglés y alemán.",
     "book_h": "Reserve directamente",
-    "book_lead": "Sin comisión, con respuesta en 24 h. Ropa de cama incluida, camas hechas a la llegada, limpieza final incluida."
+    "book_lead": "Sin comisión, con respuesta en 24 h. Ropa de cama incluida, camas hechas a la llegada, limpieza final incluida.",
+    "diapo_h": "La finca en imágenes",
+    "diapo_p": "Caballos en el prado, terraza al sol, nieve en la colina: déjelo pasar.",
+    "diapo_btn": "Ver el diaporama"
   },
   "domaine": {
     "h1": "La finca",

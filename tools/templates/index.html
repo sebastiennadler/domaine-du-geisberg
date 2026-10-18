@@ -49,6 +49,13 @@
   </div>
 </section>
 
+<section class="wrap" style="padding-top:0">
+  <a class="diapo-teaser" href="diaporama.html">
+    <div class="strip">{% for img in [s.domaine[1], s.gite1[0], s.domaine[3], s.domaine[7]] %}<img src="{{ rel }}{{ img }}" alt="" loading="lazy">{% endfor %}</div>
+    <div class="in"><div class="eyebrow">{{ t.nav.diaporama }}</div><h2>{{ h.diapo_h }}</h2><p>{{ h.diapo_p }}</p><span class="btn btn-g">▶ {{ h.diapo_btn }}</span></div>
+  </a>
+</section>
+
 <section class="wrap" id="gites">
   <div class="sec-head"><div><div class="eyebrow">{{ t.nav.gites }}</div><h2>{{ h.gites_h }}</h2><p class="lead">{{ h.gites_lead }}</p></div></div>
   <div class="cards"{{ note('gites') }}>

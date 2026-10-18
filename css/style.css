@@ -94,7 +94,7 @@ body{padding-bottom:78px}
   .langs a{font-size:17px;padding:6px 4px;min-width:0;min-height:0;border-radius:8px}
   .ctl{order:3}
 }
-@media(min-width:960px) and (max-width:1180px){.nav .book{display:none}.brand span{display:none}.nav>a{padding:10px 8px;font-size:14.5px}}
+@media(min-width:960px) and (max-width:1280px){.nav .book{display:none}.brand span{display:none}.nav>a{padding:10px 7px;font-size:14px}}
 /* ---------- Hero slideshow ---------- */
 .hero{position:relative;min-height:min(82vh,760px);display:flex;align-items:flex-end;color:#fff;overflow:hidden;background:#1E3A2D}
 .hero .slide{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transition:opacity 1.6s ease}
@@ -307,3 +307,17 @@ body.menu-open .nbtn{display:none}
 .hosts .contact-box{grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px}
 .visite{aspect-ratio:16/10;max-height:78vh;border-radius:var(--r);overflow:hidden;background:#0F1612;position:relative}
 .visite iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+
+/* ---------- Accroche diaporama ---------- */
+.diapo-teaser{display:grid;text-decoration:none;color:var(--fg);background:var(--green);color:var(--green-ink);border-radius:var(--r);overflow:hidden}
+@media(min-width:800px){.diapo-teaser{grid-template-columns:1.3fr 1fr;align-items:center}}
+.diapo-teaser .strip{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:3px;aspect-ratio:16/7}
+.diapo-teaser .strip img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.diapo-teaser:hover .strip img{transform:scale(1.04)}
+.diapo-teaser .in{padding:22px 24px 26px}
+@media(min-width:800px){.diapo-teaser .in{padding:28px 34px}}
+.diapo-teaser .eyebrow{color:#E7C59A}
+.diapo-teaser h2{color:inherit;font-size:clamp(24px,3.6vw,32px);margin-bottom:8px}
+.diapo-teaser p{margin:0 0 16px;opacity:.9}
+.diapo-teaser .btn-g{background:var(--copper);color:#fff;border-color:transparent}
+.diapo-teaser:hover{color:var(--green-ink)}
