@@ -12,14 +12,14 @@
 <section class="wrap" style="padding-top:0">
   <p class="lead" style="max-width:none"{% if lang == 'fr' %} data-note="{{ t.notes.facts }}"{% endif %}>{{ g.common }}</p>
   <p class="lead" style="max-width:none">{{ g.identical }}</p>
-  <div class="three" style="margin-top:28px">
+  <div class="three" style="margin-top:28px"{% if lang == 'fr' %} data-note="{{ t.notes.gites_lists }}"{% endif %}>
     <div><h3>{{ g.desc_h }}</h3><ul class="list">{% for x in g.desc %}<li>{{ x }}</li>{% endfor %}</ul></div>
     <div><h3>{{ g.equip_h }}</h3><ul class="list">{% for x in g.equip %}<li>{{ x }}</li>{% endfor %}</ul></div>
     <div><h3>{{ g.serv_h }}</h3><ul class="list">{% for x in g.serv %}<li>{{ x }}</li>{% endfor %}</ul></div>
   </div>
 </section>
 <section class="wrap" style="padding-top:0">
-  <div class="cols" style="align-items:start">
+  <div class="cols" style="align-items:start"{% if lang == 'fr' %} data-note="{{ t.notes.gites_rooms }}"{% endif %}>
     <div><h3 style="margin-bottom:14px">{{ t.extra.rooms_h }}</h3><div class="prices">{% for n, v in t.extra.rooms %}<div><span>{{ n }}</span><b style="font-size:17px;font-family:var(--body)">{{ v }}</b></div>{% endfor %}</div></div>
     <div><h3 style="margin-bottom:14px">{{ t.extra.practical_h }}</h3><ul class="list">{% for x in t.extra.practical %}<li>{{ x }}</li>{% endfor %}</ul></div>
   </div>

@@ -14,11 +14,11 @@
 </section>
 <section class="wrap" style="padding-top:0">
   <h2 style="margin-bottom:18px">{{ a.gallery_h }}</h2>
-  <div class="gallery">{% for id in s.around_gallery %}<a href="{{ src(id) }}" data-cap="{{ a.gallery_caps[loop.index0] }}">{{ pic(id, a.gallery_caps[loop.index0], "(min-width: 700px) 360px, 45vw") }}</a>{% endfor %}</div>
+  <div class="gallery"{% if lang == 'fr' %} data-note="{{ t.notes.around_gal }}"{% endif %}>{% for id in s.around_gallery %}<a href="{{ src(id) }}" data-cap="{{ a.gallery_caps[loop.index0] }}">{{ pic(id, a.gallery_caps[loop.index0], "(min-width: 700px) 360px, 45vw") }}</a>{% endfor %}</div>
 </section>
 <section class="wrap" style="padding-top:0">
   <h2 style="margin-bottom:18px">{{ a.leisure_h }}</h2>
-  <ul class="chips">{% for key, km in s.leisure %}<li>{{ a.leisure[key] }}<small>{{ a.on_site if km == '0' else km }}</small></li>{% endfor %}</ul>
+  <ul class="chips"{% if lang == 'fr' %} data-note="{{ t.notes.leisure }}"{% endif %}>{% for key, km in s.leisure %}<li>{{ a.leisure[key] }}<small>{{ a.on_site if km == '0' else km }}</small></li>{% endfor %}</ul>
 </section>
 <section class="wrap" style="padding-top:0">
   <h2 style="margin-bottom:18px"{% if lang == 'fr' %} data-note="{{ t.notes.autour_links }}"{% endif %}>{{ a.links_h }}</h2>

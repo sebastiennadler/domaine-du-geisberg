@@ -19,7 +19,7 @@
   <div class="dots" aria-hidden="true">{% for id in s.hero %}<button type="button"{{ ' aria-current="true"' if loop.first }}></button>{% endfor %}</div>
 </div>
 
-<section class="wrap" id="gites">
+<section class="wrap" id="gites"{{ note('todo') }}>
   <div class="cols">
     <div class="mosaic"{{ note('gites') }}>
       {% for id in s.gites_home %}<a href="{{ src(id) }}" data-cap="{{ t.gites.captions[s.gites.index(id)] }}">{{ pic(id, t.gites.captions[s.gites.index(id)], '(min-width: 860px) 280px, 45vw') }}</a>{% endfor %}

@@ -15,7 +15,7 @@
 </section>
 <section class="wrap" style="padding-top:0">
   <div class="sec-head"><h2>{{ d.gallery_h }}</h2><a class="more" href="autour.html">{{ t.nav.autour }} →</a></div>
-  <div class="gallery"{% if lang == 'fr' %} data-note="{{ t.notes.hero }}"{% endif %}>
+  <div class="gallery"{% if lang == 'fr' %} data-note="{{ t.notes.domaine_gal }}"{% endif %}>
     {% for id in s.domaine %}<a href="{{ src(id) }}" data-cap="{{ d.captions[loop.index0] }}">{{ pic(id, d.captions[loop.index0], '(min-width: 700px) 360px, 45vw') }}</a>{% endfor %}
   </div>
 </section>
