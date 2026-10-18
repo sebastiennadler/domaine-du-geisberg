@@ -8,6 +8,8 @@
     {% for name, imgs, caps in groups %}{% for img in imgs %}
     <img src="{{ rel }}{{ img }}" alt="{{ caps[loop.index0] if caps else name }}" data-group="{{ name }}" data-cap="{{ caps[loop.index0] if caps else '' }}"{% if loop.first and loop.index0 == 0 and name == d.sections[0] %} class="on"{% endif %} loading="lazy">
     {% endfor %}{% endfor %}
+    <button type="button" class="diapo-x" id="d-exit" aria-label="{{ ui.close }}">×</button>
+    <button type="button" class="diapo-nav p" id="d-prev2" aria-label="{{ ui.prev }}">‹</button><button type="button" class="diapo-nav n" id="d-next2" aria-label="{{ ui.next }}">›</button>
     <div class="cap"><div><b id="diapo-group"></b><span id="diapo-cap"></span></div><span id="diapo-idx"></span></div>
   </div>
   <div class="diapo-ctl">
@@ -23,8 +25,14 @@ function show(n){imgs[i].classList.remove('on');i=(n+imgs.length)%imgs.length;im
 function run(){clearInterval(t);if(on)t=setInterval(function(){show(i+1)},5000);}
 document.getElementById('d-prev').onclick=function(){show(i-1);run()};document.getElementById('d-next').onclick=function(){show(i+1);run()};
 play.onclick=function(){on=!on;play.setAttribute('aria-pressed',on);play.textContent=on?{{ ui.pause|tojson }}:{{ ui.play|tojson }};run()};
-document.getElementById('d-full').onclick=function(){if(box.requestFullscreen)box.requestFullscreen().catch(function(){})};
-box.addEventListener('click',function(){show(i+1);run()});
+function fsOn(){return document.fullscreenElement===box||box.classList.contains('fs')}
+function enter(){if(box.requestFullscreen&&!/iPhone|iPad|iPod/.test(navigator.userAgent)){box.requestFullscreen().catch(function(){box.classList.add('fs');document.body.style.overflow='hidden'})}else{box.classList.add('fs');document.body.style.overflow='hidden'}}
+function exit(){if(document.fullscreenElement){document.exitFullscreen().catch(function(){})}box.classList.remove('fs');document.body.style.overflow=''}
+document.getElementById('d-full').onclick=function(){fsOn()?exit():enter()};
+document.getElementById('d-exit').onclick=function(e){e.stopPropagation();exit()};
+document.getElementById('d-prev2').onclick=function(e){e.stopPropagation();show(i-1);run()};document.getElementById('d-next2').onclick=function(e){e.stopPropagation();show(i+1);run()};
+document.addEventListener('keydown',function(e){if(e.key==='Escape')exit();if(e.key==='ArrowLeft'){show(i-1);run()}if(e.key==='ArrowRight'){show(i+1);run()}if(e.key===' '&&fsOn()){e.preventDefault();play.click()}});
+box.addEventListener('click',function(e){if(e.target.tagName==='BUTTON')return;show(i+1);run()});
 var sx=0;box.addEventListener('touchstart',function(e){sx=e.touches[0].clientX},{passive:true});box.addEventListener('touchend',function(e){var dx=e.changedTouches[0].clientX-sx;if(Math.abs(dx)>50){show(i+(dx<0?1:-1));run()}});
 show(0);run();})();
 </script>

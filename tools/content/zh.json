@@ -35,6 +35,10 @@
     "mentions-legales": [
       "法律声明 – Domaine du Geisberg",
       "法律声明与隐私政策。"
+    ],
+    "avis": [
+      "评价与认证 – Domaine du Geisberg",
+      "客人在 Gîtes de France、Airbnb、Abritel 和 Clévacances 上的评价、我们的认证以及预订渠道。"
     ]
   },
   "nav": {
@@ -45,7 +49,8 @@
     "reservation": "价格与预订",
     "diaporama": "幻灯片",
     "contact": "联系",
-    "book": "预订"
+    "book": "预订",
+    "avis": "评价与认证"
   },
   "ui": {
     "skip": "跳到内容",
@@ -331,6 +336,10 @@
         "6–7 m² · 步入式淋浴，马桶"
       ]
     ],
-    "rooms_h": "逐间介绍"
+    "rooms_h": "逐间介绍",
+    "avis_h1": "评价与认证",
+    "where_h": "在哪里找到我们",
+    "where_p": "我们也在这些网站上：您可以在那里预订，但直接预订仍然最简单、最实惠。",
+    "labels_h": "我们的认证"
   }
 }

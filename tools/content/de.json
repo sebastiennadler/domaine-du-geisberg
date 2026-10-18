@@ -35,6 +35,10 @@
     "mentions-legales": [
       "Impressum – Domaine du Geisberg",
       "Impressum und Datenschutz."
+    ],
+    "avis": [
+      "Bewertungen und Labels – Domaine du Geisberg",
+      "Gästebewertungen auf Gîtes de France, Airbnb, Abritel und Clévacances, unsere Labels und wo Sie buchen können."
     ]
   },
   "nav": {
@@ -45,7 +49,8 @@
     "reservation": "Preise & Buchung",
     "diaporama": "Diashow",
     "contact": "Kontakt",
-    "book": "Buchen"
+    "book": "Buchen",
+    "avis": "Bewertungen & Labels"
   },
   "ui": {
     "skip": "Zum Inhalt springen",
@@ -331,6 +336,10 @@
         "6–7 m² · bodengleiche Dusche, WC"
       ]
     ],
-    "rooms_h": "Raum für Raum"
+    "rooms_h": "Raum für Raum",
+    "avis_h1": "Bewertungen und Labels",
+    "where_h": "Wo Sie uns finden",
+    "where_p": "Wir sind auch auf diesen Seiten gelistet: Sie können dort buchen, aber die Direktbuchung bleibt am einfachsten und günstigsten.",
+    "labels_h": "Unsere Labels"
   }
 }

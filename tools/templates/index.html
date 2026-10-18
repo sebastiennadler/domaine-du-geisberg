@@ -64,7 +64,10 @@
   </div>
 </section>
 
-{% include "_reviews.html" %}
+<section class="wrap"{% if lang == 'fr' %} data-note="{{ t.notes.reviews }}"{% endif %}>
+  <div class="sec-head"><div><div class="eyebrow">{{ t.extra.reviews_eyebrow }}</div><h2>{{ t.extra.reviews_h }}</h2><p class="lead">{{ s.ratings[1][1] }} Airbnb · {{ s.ratings[0][1] }} Abritel · {{ s.ratings[2][1] }} Gîtes de France</p></div><a class="more" href="avis.html">{{ t.nav.avis }} →</a></div>
+  <div class="reviews">{% for r in s.reviews[:3] %}<blockquote><span class="st" aria-label="{{ r.stars }}/5">{{ '★' * r.stars }}{{ '☆' * (5 - r.stars) }}</span><p>{{ r.q }}</p><cite>{{ r.who }} · {{ r.src }} · {{ r.when }}</cite></blockquote>{% endfor %}</div>
+</section>
 
 <section class="wrap">
   <div class="cols rev">
@@ -73,7 +76,7 @@
       <div class="eyebrow">{{ ui.tagline }}</div>
       <h2>{{ h.hosts_h }}</h2>
       <p class="lead" style="max-width:none">{{ h.hosts }}</p>
-      <div class="logos">{% for img, name, url in s.labels %}<a href="{{ url }}" rel="noopener" target="_blank"><img src="{{ rel }}{{ img }}" alt="{{ name }}" loading="lazy"></a>{% endfor %}</div>
+      <div class="logos">{% for img, name, url in s.labels %}<img src="{{ rel }}{{ img }}" alt="{{ name }}" loading="lazy" title="{{ name }}">{% endfor %}</div>
       <div class="contact-box" style="margin-top:22px">
         {% for who, tel, href in s.phones %}<div><small>{{ who }}</small><a href="tel:{{ href }}">{{ tel }}</a></div>{% endfor %}
         <div><small>E-mail</small><a href="mailto:{{ s.email }}">{{ s.email }}</a></div>

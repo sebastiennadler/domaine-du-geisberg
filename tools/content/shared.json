@@ -288,5 +288,37 @@
     ]
   ],
   "checkin": "16:00",
-  "checkout": "10:00"
+  "checkout": "10:00",
+  "platforms": [
+    [
+      "Gîtes de France",
+      "https://www.gites-de-france.com/fr/grand-est/moselle/domaine-du-geisberg-h57g004193",
+      "4,7 / 5"
+    ],
+    [
+      "Clévacances",
+      "https://www.clevacances.com/fr/hebergement/11833-gite-varsberg",
+      "9,5 / 10"
+    ],
+    [
+      "Airbnb – gîte 1",
+      "https://www.airbnb.fr/rooms/23052575",
+      "4,89 / 5"
+    ],
+    [
+      "Airbnb – gîte 2",
+      "https://www.airbnb.fr/rooms/23147555",
+      "4,93 / 5"
+    ],
+    [
+      "Abritel / Expedia – gîte 1",
+      "https://www.expedia.fr/Varsberg-Hotels-Peaceful-Getaway-In-Nature.h101557388.Hotel-Information",
+      "9,2 / 10"
+    ],
+    [
+      "Abritel / Expedia – gîte 2",
+      "https://www.expedia.fr/Varsberg-Hotels-Wheelchair-Friendly-Escape.h112921254.Hotel-Information",
+      "9,0 / 10"
+    ]
+  ]
 }

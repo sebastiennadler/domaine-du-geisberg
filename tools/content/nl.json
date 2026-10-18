@@ -35,6 +35,10 @@
     "mentions-legales": [
       "Juridische informatie – Domaine du Geisberg",
       "Juridische informatie en privacybeleid."
+    ],
+    "avis": [
+      "Beoordelingen en labels – Domaine du Geisberg",
+      "De beoordelingen van onze gasten op Gîtes de France, Airbnb, Abritel en Clévacances, onze labels en waar u kunt boeken."
     ]
   },
   "nav": {
@@ -45,7 +49,8 @@
     "reservation": "Prijzen & reserveren",
     "diaporama": "Diavoorstelling",
     "contact": "Contact",
-    "book": "Reserveren"
+    "book": "Reserveren",
+    "avis": "Beoordelingen & labels"
   },
   "ui": {
     "skip": "Naar de inhoud",
@@ -331,6 +336,10 @@
         "6–7 m² · inloopdouche, toilet"
       ]
     ],
-    "rooms_h": "Kamer voor kamer"
+    "rooms_h": "Kamer voor kamer",
+    "avis_h1": "Beoordelingen en labels",
+    "where_h": "Waar u ons vindt",
+    "where_p": "We staan ook op deze sites: u kunt daar boeken, maar rechtstreeks boeken blijft het eenvoudigst en goedkoopst.",
+    "labels_h": "Onze labels"
   }
 }

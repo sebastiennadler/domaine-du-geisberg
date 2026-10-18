@@ -35,6 +35,10 @@
     "mentions-legales": [
       "Mentions légales – Domaine du Geisberg",
       "Mentions légales et politique de confidentialité."
+    ],
+    "avis": [
+      "Avis et labels – Domaine du Geisberg",
+      "Les avis de nos hôtes sur Gîtes de France, Airbnb, Abritel et Clévacances, nos labels et où nous réserver."
     ]
   },
   "nav": {
@@ -45,7 +49,8 @@
     "reservation": "Tarifs & réservation",
     "diaporama": "Diaporama",
     "contact": "Contact",
-    "book": "Réserver"
+    "book": "Réserver",
+    "avis": "Avis & labels"
   },
   "ui": {
     "skip": "Aller au contenu",
@@ -347,6 +352,10 @@
         "6–7 m² · douche à l'italienne, WC"
       ]
     ],
-    "rooms_h": "Pièce par pièce"
+    "rooms_h": "Pièce par pièce",
+    "avis_h1": "Avis et labels",
+    "where_h": "Où nous trouver",
+    "where_p": "Nous sommes aussi présents sur ces sites : vous pouvez y réserver, mais la réservation en direct reste la plus simple et la moins chère.",
+    "labels_h": "Nos labels"
   }
 }

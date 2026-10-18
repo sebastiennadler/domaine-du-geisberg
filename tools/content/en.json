@@ -35,6 +35,10 @@
     "mentions-legales": [
       "Legal notice – Domaine du Geisberg",
       "Legal notice and privacy policy."
+    ],
+    "avis": [
+      "Reviews and labels – Domaine du Geisberg",
+      "Our guests' reviews on Gîtes de France, Airbnb, Abritel and Clévacances, our labels and where to book."
     ]
   },
   "nav": {
@@ -45,7 +49,8 @@
     "reservation": "Rates & booking",
     "diaporama": "Slideshow",
     "contact": "Contact",
-    "book": "Book"
+    "book": "Book",
+    "avis": "Reviews & labels"
   },
   "ui": {
     "skip": "Skip to content",
@@ -331,6 +336,10 @@
         "6–7 m² · walk-in shower, WC"
       ]
     ],
-    "rooms_h": "Room by room"
+    "rooms_h": "Room by room",
+    "avis_h1": "Reviews and labels",
+    "where_h": "Where to find us",
+    "where_p": "We are also listed on these sites: you can book there, but booking direct remains the simplest and cheapest.",
+    "labels_h": "Our labels"
   }
 }

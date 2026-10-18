@@ -35,6 +35,10 @@
     "mentions-legales": [
       "Informações legais – Domaine du Geisberg",
       "Informações legais e política de privacidade."
+    ],
+    "avis": [
+      "Opiniões e selos – Domaine du Geisberg",
+      "As opiniões dos nossos hóspedes no Gîtes de France, Airbnb, Abritel e Clévacances, os nossos selos e onde reservar."
     ]
   },
   "nav": {
@@ -45,7 +49,8 @@
     "reservation": "Preços e reserva",
     "diaporama": "Diaporama",
     "contact": "Contacto",
-    "book": "Reservar"
+    "book": "Reservar",
+    "avis": "Opiniões e selos"
   },
   "ui": {
     "skip": "Ir para o conteúdo",
@@ -331,6 +336,10 @@
         "6–7 m² · duche ao nível do chão, WC"
       ]
     ],
-    "rooms_h": "Divisão por divisão"
+    "rooms_h": "Divisão por divisão",
+    "avis_h1": "Opiniões e selos",
+    "where_h": "Onde nos encontrar",
+    "where_p": "Também estamos nestes sites: pode reservar lá, mas a reserva direta continua a ser a mais simples e a mais barata.",
+    "labels_h": "Os nossos selos"
   }
 }
