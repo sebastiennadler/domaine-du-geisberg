@@ -9,10 +9,9 @@ SUJETS = {
   "creutzwald-lac": ["Étang de Creutzwald", "Creutzwald lac", "Creutzwald plan d'eau", "Creutzwald"],
   "varsberg-1": ["Varsberg église", "Varsberg Moselle", "Varsberg"],
   "varsberg-2": ["Varsberg village", "Varsberg rue", "Varsberg mairie"],
-  "varsberg-3": ["Varsberg paysage", "Varsberg vue", "Varsberg Warndt"],
   "foret-warndt-1": ["Forêt du Warndt", "Warndt Wald", "Warndt forest"],
   "foret-warndt-2": ["Warndt Moselle forêt", "forêt Creutzwald", "Warndt Saarland Wald"],
-  "champs-moselle": ["champs Moselle paysage", "Moselle countryside fields", "Pays de Nied paysage"],
+  "champs-moselle": ["Boucheporn paysage", "Longeville-lès-Saint-Avold paysage", "Bisten-en-Lorraine"],
 }
 UA = "domaine-du-geisberg-site/1.0 (sebastien.nadler@gmail.com)"
 OK_LIC = ("cc-by", "cc by", "cc0", "public domain", "pd-", "cc-zero")
@@ -32,7 +31,7 @@ for key, terms in SUJETS.items():
             ii = p.get("imageinfo", [{}])[0]; md = ii.get("extmetadata", {})
             lic = (md.get("LicenseShortName", {}).get("value", "") + " " + md.get("License", {}).get("value", "")).lower()
             if ii.get("width", 0) < 1000 or not any(k in lic for k in OK_LIC): continue
-            if any(x in p["title"].lower() for x in ("blason", "wappen", "coat", "logo", "carte", "map", "plan", ".svg", ".png")): continue
+            if any(x in p["title"].lower() for x in ("blason", "wappen", "coat", "logo", "carte", "map", "plan", ".svg", ".png", "pissenlit", "aquarelle", "peinture", "gemälde", "painting", "marais")): continue
             found = (p["title"], ii.get("thumburl") or ii["url"], md.get("Artist", {}).get("value", ""), md.get("LicenseShortName", {}).get("value", ""), ii.get("descriptionurl", ""))
             break
         if found: break
