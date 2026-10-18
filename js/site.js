@@ -88,8 +88,8 @@
 
   /* Mode « Notes pour Marc » : inactif tant qu'on n'appuie pas sur le bouton (ou #notes). */
   var nbtn = document.getElementById('nbtn'), items = Array.prototype.slice.call(document.querySelectorAll('[data-note]'));
-  if (nbtn && items.length) {
-    var list = document.getElementById('nlist'), done = {}; try { done = JSON.parse(localStorage.getItem('notes-done') || '{}'); } catch (e) {}
+  if (nbtn) {
+    var list = document.getElementById('nlist'), done = {}; if (!items.length) { list.innerHTML = '<li>Rien à fournir sur cette page.</li>'; } try { done = JSON.parse(localStorage.getItem('notes-done') || '{}'); } catch (e) {}
     var page = location.pathname.split('/').pop() || 'index.html';
     items.forEach(function (el, i) {
       var n = i + 1, key = page + ':' + n, b = document.createElement('button'); b.type = 'button'; b.className = 'nbub'; b.textContent = n; b.setAttribute('aria-label', 'Note ' + n);

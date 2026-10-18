@@ -17,7 +17,7 @@
   <ul class="chips">{% for key, km in s.leisure %}<li>{{ a.leisure[key] }}<small>{{ a.on_site if km == '0' else km }}</small></li>{% endfor %}</ul>
 </section>
 <section class="wrap" style="padding-top:0">
-  <h2 style="margin-bottom:18px">{{ a.links_h }}</h2>
+  <h2 style="margin-bottom:18px"{% if lang == 'fr' %} data-note="{{ t.notes.autour_links }}"{% endif %}>{{ a.links_h }}</h2>
   <ul class="chips">{% for name, url in s.links %}<li><a href="{{ url }}" rel="noopener" target="_blank">{{ name }}</a></li>{% endfor %}</ul>
 </section>
 {% endblock %}

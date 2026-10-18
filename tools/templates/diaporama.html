@@ -3,7 +3,7 @@
 {% block main %}
 <section class="wrap" style="padding-top:28px">
   <div class="sec-head"><div><div class="eyebrow">{{ ui.tagline }}</div><h1 style="font-size:clamp(30px,5vw,46px)">{{ d.h1 }}</h1><p class="lead" style="margin-bottom:0">{{ d.lead }}</p></div></div>
-  <div class="diapo" id="diapo" aria-live="polite">
+  <div class="diapo" id="diapo" aria-live="polite"{% if lang == 'fr' %} data-note="{{ t.notes.diapo }}"{% endif %}>
     {% set groups = [(d.sections[0], s.domaine, t.domaine.captions), (d.sections[1], s.gite1, none), (d.sections[2], s.gite2, none)] %}
     {% for name, imgs, caps in groups %}{% for img in imgs %}
     <img src="{{ rel }}{{ img }}" alt="{{ caps[loop.index0] if caps else name }}" data-group="{{ name }}" data-cap="{{ caps[loop.index0] if caps else '' }}"{% if loop.first and loop.index0 == 0 and name == d.sections[0] %} class="on"{% endif %} loading="lazy">

@@ -310,7 +310,10 @@
     "reviews": "Avis : j'ai repris 6 avis publiés (Gîtes de France, Abritel). Dites-moi ceux que vous préférez, ou donnez-m'en d'autres (livre d'or).",
     "around": "Autour : la liste vient de l'ancien site. Vos 4 incontournables ? Les temps de trajet sont-ils justes ?",
     "access": "Accès : l'itinéraire est-il correct ? Une consigne pour l'arrivée (clés, heure) ?",
-    "legal": "Mentions légales : SIRET et forme juridique à vérifier."
+    "legal": "Mentions légales : SIRET et forme juridique à vérifier.",
+    "diapo": "Diaporama : il enchaîne les photos du domaine puis de chaque gîte (5 s par photo, pause et plein écran). Envoyez-moi vos photos préférées dans l'ordre où vous voulez les voir, avec une légende courte pour chacune.",
+    "domaine_txt": "Texte « Le domaine » : repris mot pour mot de l'ancien site. À garder, raccourcir ou réécrire ?",
+    "autour_links": "Liens utiles : certains sites de l'ancienne liste ont changé d'adresse ; dites-moi ceux que vous voulez garder."
   },
   "extra": {
     "reviews_eyebrow": "Ils sont venus",
