@@ -46,12 +46,12 @@
     "le-domaine": "Het landgoed",
     "gites": "De gîtes",
     "autour": "Omgeving",
-    "reservation": "Prijzen & reserveren",
-    "diaporama": "Diavoorstelling",
+    "reservation": "Reserveren",
+    "diaporama": "Diashow",
     "contact": "Contact",
     "book": "Reserveren",
-    "avis": "Beoordelingen & labels",
-    "visite": "360°-rondleiding",
+    "avis": "Beoordelingen",
+    "visite": "360°-tour",
     "videos": "Video's"
   },
   "ui": {

@@ -43,15 +43,15 @@
   },
   "nav": {
     "index": "Start",
-    "le-domaine": "Das Anwesen",
-    "gites": "Die Ferienwohnungen",
+    "le-domaine": "Anwesen",
+    "gites": "Unterkünfte",
     "autour": "Umgebung",
-    "reservation": "Preise & Buchung",
+    "reservation": "Buchung",
     "diaporama": "Diashow",
     "contact": "Kontakt",
     "book": "Buchen",
-    "avis": "Bewertungen & Labels",
-    "visite": "360°-Rundgang",
+    "avis": "Bewertungen",
+    "visite": "360°-Tour",
     "videos": "Videos"
   },
   "ui": {

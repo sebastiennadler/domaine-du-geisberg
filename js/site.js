@@ -49,7 +49,7 @@
         setMenu(false);
       });
     nav.addEventListener('click', function (e) {
-      if (e.target.closest('a') && window.innerWidth < 960) setMenu(false);
+      if (e.target.closest('a') && window.innerWidth < 1040) setMenu(false);
     });
     document.addEventListener('keydown', function (e) {
       if (e.key === 'Escape' && nav.classList.contains('open')) {
@@ -57,8 +57,19 @@
         mbtn.focus();
       }
     });
-    matchMedia('(min-width: 960px)').addEventListener('change', function (m) {
+    matchMedia('(min-width: 1040px)').addEventListener('change', function (m) {
       if (m.matches) setMenu(false);
+    });
+  }
+
+  /* Menu déroulant des langues (ordinateur) : se referme quand on clique ailleurs ou avec Échap */
+  var langdd = document.querySelector('.langdd');
+  if (langdd) {
+    document.addEventListener('click', function (e) {
+      if (langdd.open && !langdd.contains(e.target)) langdd.open = false;
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && langdd.open) langdd.open = false;
     });
   }
 
@@ -370,6 +381,7 @@
   /* Fondu des photos chargées à la demande */
   Array.prototype.forEach.call(document.querySelectorAll('img[loading="lazy"]'), function (img) {
     if (img.complete || reduced) return;
+    if (img.closest('.diapo') || img.closest('.hero')) return; // ces images ont déjà leur propre fondu
     img.classList.add('fade');
     img.addEventListener(
       'load',

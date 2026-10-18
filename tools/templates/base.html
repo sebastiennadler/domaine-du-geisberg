@@ -83,15 +83,13 @@
       <div class="backdrop" id="backdrop" hidden></div>
       <nav class="nav" id="nav" aria-label="{{ ui.menu }}">
         <div class="nav-top"><b>{{ s.name }}</b><button class="xbtn" id="menu-close" type="button" aria-label="{{ ui.close }}"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button></div>
-        {% for p in ['index','le-domaine','gites','videos','autour','avis','reservation'] %}
+        {% for p in ['index','le-domaine','gites','videos','diaporama','visite','autour','avis','reservation'] %}
         <a href="{{ p }}.html"{% if p == page %} aria-current="page"{% endif %}>{{ t.nav[p] }}</a>
         {% endfor %}
         <a class="btn btn-p book" href="reservation.html#demande">{{ t.nav.book }}</a>
-        <div class="langs" aria-label="{{ ui.langs }}">
-          {% for code, name, flag, pfx in langs %}
-          <a href="{{ rel }}{{ pfx }}{{ page }}.html" lang="{{ code }}" hreflang="{{ code }}" title="{{ name }}" aria-label="{{ name }}"{% if code == lang %} aria-current="true"{% endif %}>{{ flag }}</a>
-          {% endfor %}
-        </div>
+        {% macro langlinks() %}{% for code, name, flag, pfx in langs %}<a href="{{ rel }}{{ pfx }}{{ page }}.html" lang="{{ code }}" hreflang="{{ code }}" title="{{ name }}" aria-label="{{ name }}"{% if code == lang %} aria-current="true"{% endif %}>{{ flag }}<span class="ln">{{ name }}</span></a>{% endfor %}{% endmacro %}
+        <div class="langs" aria-label="{{ ui.langs }}">{{ langlinks() }}</div>
+        <details class="langdd"><summary aria-label="{{ ui.langs }}">{% for code, name, flag, pfx in langs %}{% if code == lang %}{{ flag }}<span>{{ code | upper }}</span>{% endif %}{% endfor %}</summary><div class="langs" aria-label="{{ ui.langs }}">{{ langlinks() }}</div></details>
       </nav>
     </div>
   </div>
@@ -104,7 +102,7 @@
   <div class="wrap">
     <div><b>{{ s.name }}</b>{{ s.address }}<br>{{ s.phones[0][0] }} · {{ s.phones[0][1] }} · {{ s.phones[1][0] }} · {{ s.phones[1][1] }}<br><a href="mailto:{{ s.email }}">{{ s.email }}</a></div>
     <div class="logos">{% for id, name, link in s.labels %}<a href="{{ link }}" rel="noopener" target="_blank">{{ pic(id, "", "72px") }}<span>{{ name }}</span></a>{% endfor %}</div>
-    <div>{{ ui.copyright }}<br><a href="mentions-legales.html">{{ ui.legal }}</a> · <a href="diaporama.html">{{ t.nav.diaporama }}</a> · <a href="visite.html">{{ t.nav.visite }}</a> · <a href="mailto:sebastien.nadler@gmail.com">{{ ui.dev_credit }}</a></div>
+    <div>{{ ui.copyright }}<br><a href="mentions-legales.html">{{ ui.legal }}</a> · <a href="mailto:sebastien.nadler@gmail.com">{{ ui.dev_credit }}</a></div>
   </div>
 </footer>
 {% if lang == 'fr' %}
