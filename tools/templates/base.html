@@ -7,7 +7,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>{{ m[0] }}</title>
 <meta name="description" content="{{ m[1] }}">
-<meta name="robots" content="noindex, nofollow">{# maquette : retirer avant la mise en ligne sur domainedugeisberg.fr #}
+<meta name="robots" content="noindex, nofollow">
+<meta http-equiv="Cache-Control" content="no-cache">{# maquette : retirer avant la mise en ligne sur domainedugeisberg.fr #}
 <link rel="canonical" href="{{ canonical }}">
 {% for code, name, flag, pfx in langs %}
 <link rel="alternate" hreflang="{{ code }}" href="{{ site_url }}/{{ pfx }}{{ '' if page == 'index' else page + '.html' }}">
@@ -25,7 +26,7 @@
 <script>(function(){try{var t=localStorage.getItem("geisberg-theme");if(t==="dark"||t==="light")document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Nunito+Sans:wght@400;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="{{ rel }}css/style.css">
+<link rel="stylesheet" href="{{ rel }}css/style.css?v={{ assets.css }}">
 <link rel="icon" href="{{ rel }}img/favicon.svg" type="image/svg+xml">
 <script type="application/ld+json">{{ {
   "@context": "https://schema.org", "@type": "LodgingBusiness", "@id": site_url + "/#lodging",
@@ -86,6 +87,6 @@
 <section class="npanel" aria-label="Liste des points à fournir"><h2>Ce qu'il reste à faire sur cette page</h2><p>Cochez au fur et à mesure (mémorisé sur cet appareil). Envoyez les éléments à Sébastien par mail ou WhatsApp.</p><ol id="nlist"></ol></section>
 {% endif %}
 <script>window.GEISBERG_UI={{ {'close': ui.close, 'prev': ui.prev, 'next': ui.next} | tojson }};</script>
-<script src="{{ rel }}js/site.js"></script>
+<script src="{{ rel }}js/site.js?v={{ assets.js }}"></script>
 </body>
 </html>

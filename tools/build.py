@@ -4,7 +4,7 @@
 Usage : python3 tools/build.py
 Sortie : pages FR à la racine, autres langues dans /en, /de, /es, /pt, /nl, /zh.
 """
-import json, os, shutil, sys
+import json, os, shutil, sys, hashlib
 from pathlib import Path
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 
@@ -38,6 +38,10 @@ for code, *_ in LANGS:
         contents[code] = json.loads(p.read_text(encoding="utf-8"))
 
 fr = contents["fr"]
+# empreinte des fichiers CSS/JS : change à chaque modification, ce qui force les navigateurs à recharger
+def digest(path):
+    return hashlib.sha1((ROOT / path).read_bytes()).hexdigest()[:8]
+assets = {"css": digest("css/style.css"), "js": digest("js/site.js")}
 
 def deep_merge(base, over):
     out = dict(base)
@@ -55,7 +59,7 @@ for code, name, flag, prefix in LANGS:
         tpl = env.get_template(f"{page}.html")
         html = tpl.render(
             lang=code, t=c, s=shared, page=page, rel=rel, prefix=prefix, langs=LANGS,
-            site_url=SITE_URL, canonical=f"{SITE_URL}/{prefix}{'' if page=='index' else page+'.html'}",
+            assets=assets, site_url=SITE_URL, canonical=f"{SITE_URL}/{prefix}{'' if page=='index' else page+'.html'}",
             fallback=(code != "fr" and code not in contents),
         )
         (outdir / f"{page}.html").write_text(html, encoding="utf-8")
