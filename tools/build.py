@@ -38,6 +38,9 @@ for code, *_ in LANGS:
         contents[code] = json.loads(p.read_text(encoding="utf-8"))
 
 fr = contents["fr"]
+cred = json.loads((CONTENT.parent / "credits.json").read_text(encoding="utf-8")) if (CONTENT.parent / "credits.json").exists() else {}
+shared["audio_credit"] = cred.get("audio")
+shared["credits"] = [[v["file"].replace("File:", ""), v["author"], v["license"], v["source"]] for k, v in cred.items()]
 # empreinte des fichiers CSS/JS : change à chaque modification, ce qui force les navigateurs à recharger
 def digest(path):
     return hashlib.sha1((ROOT / path).read_bytes()).hexdigest()[:8]

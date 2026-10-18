@@ -304,12 +304,14 @@
   },
   "diapo": {
     "h1": "Diaporama",
-    "lead": "Os gîtes e a propriedade em imagens.",
+    "lead": "Diaporama com canto dos pássaros: Vogelsgesang significa «canto dos pássaros».",
     "sections": [
       "A propriedade",
       "Gîte 1",
       "Gîte 2"
-    ]
+    ],
+    "audio_on": "Canto dos pássaros",
+    "audio_off": "Silenciar os pássaros"
   },
   "legal": {
     "h1": "Informações legais",

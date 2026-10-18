@@ -304,12 +304,14 @@
   },
   "diapo": {
     "h1": "Slideshow",
-    "lead": "The gîtes and the estate in pictures.",
+    "lead": "Slideshow with birdsong — Vogelsgesang means “birdsong”.",
     "sections": [
       "The estate",
       "Gîte 1",
       "Gîte 2"
-    ]
+    ],
+    "audio_on": "Birdsong",
+    "audio_off": "Mute birdsong"
   },
   "legal": {
     "h1": "Legal notice",

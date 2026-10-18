@@ -304,12 +304,14 @@
   },
   "diapo": {
     "h1": "Diashow",
-    "lead": "Die Ferienwohnungen und das Anwesen in Bildern.",
+    "lead": "Diashow mit Vogelgesang — der Flurname Vogelsgesang bedeutet genau das.",
     "sections": [
       "Das Anwesen",
       "Ferienwohnung 1",
       "Ferienwohnung 2"
-    ]
+    ],
+    "audio_on": "Vogelgesang",
+    "audio_off": "Vogelgesang stumm schalten"
   },
   "legal": {
     "h1": "Impressum",

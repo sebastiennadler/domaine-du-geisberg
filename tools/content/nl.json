@@ -304,12 +304,14 @@
   },
   "diapo": {
     "h1": "Diavoorstelling",
-    "lead": "De gîtes en het landgoed in beeld.",
+    "lead": "Diavoorstelling met vogelzang — Vogelsgesang betekent „vogelzang”.",
     "sections": [
       "Het landgoed",
       "Gîte 1",
       "Gîte 2"
-    ]
+    ],
+    "audio_on": "Vogelzang",
+    "audio_off": "Vogelzang dempen"
   },
   "legal": {
     "h1": "Juridische informatie",

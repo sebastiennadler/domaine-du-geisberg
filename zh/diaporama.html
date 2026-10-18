@@ -27,7 +27,7 @@
 <script>(function(){try{var t=localStorage.getItem("geisberg-theme");if(t==="dark"||t==="light")document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Nunito+Sans:wght@400;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../css/style.css?v=72a2b3dc">
+<link rel="stylesheet" href="../css/style.css?v=32442771">
 <link rel="icon" href="../img/favicon.svg" type="image/svg+xml">
 <script type="application/ld+json">{"@context": "https://schema.org", "@id": "https://www.domainedugeisberg.fr/#lodging", "@type": "LodgingBusiness", "address": {"@type": "PostalAddress", "addressCountry": "FR", "addressLocality": "Varsberg", "addressRegion": "Moselle", "postalCode": "57880", "streetAddress": "6 rue du Geisberg"}, "amenityFeature": [{"@type": "LocationFeatureSpecification", "name": "WiFi", "value": true}, {"@type": "LocationFeatureSpecification", "name": "Parking", "value": true}, {"@type": "LocationFeatureSpecification", "name": "Terrasse", "value": true}], "checkinTime": "16:00", "checkoutTime": "10:00", "description": "\u4f4d\u4e8e\u6cd5\u56fd\u6d1b\u6797\u74e6\u5c14\u65af\u8d1d\u683c\uff08Varsberg\uff09\u7684\u4e24\u680b\u4e09\u661f\u7ea7\u4e61\u6751\u5ea6\u5047\u516c\u5bd3\uff0c\u5750\u843d\u5728\u6797\u8fb9 2 \u516c\u9877\u7684\u5e84\u56ed\u4e2d\u3002\u79c1\u4eba\u9732\u53f0\u3001\u505c\u8f66\u4f4d\u3001Wi\u2011Fi\uff0c\u6b22\u8fce\u643a\u5e26\u5ba0\u7269\u3002\u76f4\u63a5\u9884\u8ba2\u3002", "email": "gitevarsberg@hotmail.com", "founder": [{"@type": "Person", "name": "Marc Nadler"}, {"@type": "Person", "name": "Agn\u00e8s Nadler"}], "geo": {"@type": "GeoCoordinates", "latitude": 49.1712729, "longitude": 6.6259474}, "image": ["https://www.domainedugeisberg.fr/img/hero-1.webp", "https://www.domainedugeisberg.fr/img/gite-1/gite-1-01.webp", "https://www.domainedugeisberg.fr/img/gite-2/gite-2-01.webp"], "name": "Domaine du Geisberg", "numberOfRooms": 2, "petsAllowed": true, "priceRange": "300 \u20ac \u2013 420 \u20ac", "starRating": {"@type": "Rating", "bestRating": "5", "name": "3 \u00e9pis G\u00eetes de France", "ratingValue": "3"}, "telephone": "+33789567491", "url": "https://www.domainedugeisberg.fr/"}</script>
 </head>
@@ -73,7 +73,7 @@
 </header>
 <main id="main">
 <section class="wrap" style="padding-top:28px">
-  <div class="sec-head"><div><div class="eyebrow">乡村度假公寓 · 瓦尔斯贝格 · 摩泽尔</div><h1 style="font-size:clamp(30px,5vw,46px)">幻灯片</h1><p class="lead" style="margin-bottom:0">度假公寓与庄园影像。</p></div></div>
+  <div class="sec-head"><div><div class="eyebrow">乡村度假公寓 · 瓦尔斯贝格 · 摩泽尔</div><h1 style="font-size:clamp(30px,5vw,46px)">幻灯片</h1><p class="lead" style="margin-bottom:0">幻灯片配有鸟鸣声——Vogelsgesang 的意思正是“鸟鸣”。</p></div></div>
   <div class="diapo" id="diapo" aria-live="polite">
     <img src="../img/domaine/domaine-01.webp" alt="从草地看度假公寓" data-group="庄园" data-cap="从草地看度假公寓" class="on" loading="lazy">
     <img src="../img/domaine/domaine-02.webp" alt="房前的马" data-group="庄园" data-cap="房前的马" loading="lazy">
@@ -103,18 +103,24 @@
     <div class="cap"><div><b id="diapo-group"></b><span id="diapo-cap"></span></div><span id="diapo-idx"></span></div>
   </div>
   <div class="diapo-ctl">
-    <button type="button" id="d-prev">‹ 上一张</button>
-    <button type="button" id="d-play" aria-pressed="true">暂停</button>
-    <button type="button" id="d-next">下一张 ›</button>
-    <button type="button" id="d-full">全屏</button>
+    <button type="button" id="d-prev" aria-label="上一张" title="上一张"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
+    <button type="button" id="d-play" aria-pressed="true" aria-label="暂停" title="暂停"><svg class="i-pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14M16 5v14"/></svg><svg class="i-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4l13 8-13 8z" fill="currentColor" stroke="none"/></svg></button>
+    <button type="button" id="d-next" aria-label="下一张" title="下一张"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
+    <button type="button" id="d-audio" aria-pressed="false" aria-label="鸟鸣" title="鸟鸣" data-on="鸟鸣" data-off="关闭鸟鸣"><svg class="i-mute" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9H4z"/><path d="M19 9l-4 6M15 9l4 6"/></svg><svg class="i-sound" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9H4z"/><path d="M16 8.5a5 5 0 0 1 0 7M18.5 6a8.5 8.5 0 0 1 0 12"/></svg><span>鸟鸣</span></button>
+    <button type="button" id="d-full" aria-label="全屏" title="全屏"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg></button>
   </div>
+  <audio id="d-bird" loop preload="none" src="../audio/chants-oiseaux.mp3"></audio>
 </section>
 <script>
 (function(){var box=document.getElementById('diapo'),imgs=box.querySelectorAll('img'),g=document.getElementById('diapo-group'),c=document.getElementById('diapo-cap'),ix=document.getElementById('diapo-idx'),play=document.getElementById('d-play'),i=0,t,on=true;
 function show(n){imgs[i].classList.remove('on');i=(n+imgs.length)%imgs.length;imgs[i].classList.add('on');g.textContent=imgs[i].getAttribute('data-group');c.textContent=imgs[i].getAttribute('data-cap');ix.textContent=(i+1)+' / '+imgs.length;}
 function run(){clearInterval(t);if(on)t=setInterval(function(){show(i+1)},5000);}
 document.getElementById('d-prev').onclick=function(){show(i-1);run()};document.getElementById('d-next').onclick=function(){show(i+1);run()};
-play.onclick=function(){on=!on;play.setAttribute('aria-pressed',on);play.textContent=on?"\u6682\u505c":"\u64ad\u653e";run()};
+try{if(localStorage.getItem('geisberg-birds')==='1'){document.getElementById('d-audio').classList.add('hint')}}catch(e){}
+play.onclick=function(){on=!on;play.setAttribute('aria-pressed',on);play.classList.toggle('paused',!on);play.setAttribute('aria-label',on?"\u6682\u505c":"\u64ad\u653e");run()};
+var au=document.getElementById('d-bird'),ab=document.getElementById('d-audio');function setAudio(v){ab.setAttribute('aria-pressed',v);ab.classList.toggle('on',v);ab.querySelector('span').textContent=v?ab.getAttribute('data-off'):ab.getAttribute('data-on');ab.setAttribute('aria-label',ab.querySelector('span').textContent);if(v){au.volume=.6;au.play().catch(function(){setAudio(false)})}else{au.pause()}try{localStorage.setItem('geisberg-birds',v?'1':'0')}catch(e){}}
+ab.onclick=function(){setAudio(ab.getAttribute('aria-pressed')!=='true')};
+document.addEventListener('visibilitychange',function(){if(document.hidden)au.pause();else if(ab.getAttribute('aria-pressed')==='true')au.play().catch(function(){})});
 function fsOn(){return document.fullscreenElement===box||box.classList.contains('fs')}
 function enter(){if(box.requestFullscreen&&!/iPhone|iPad|iPod/.test(navigator.userAgent)){box.requestFullscreen().catch(function(){box.classList.add('fs');document.body.style.overflow='hidden'})}else{box.classList.add('fs');document.body.style.overflow='hidden'}}
 function exit(){if(document.fullscreenElement){document.exitFullscreen().catch(function(){})}box.classList.remove('fs');document.body.style.overflow=''}

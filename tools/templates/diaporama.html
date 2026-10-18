@@ -13,18 +13,24 @@
     <div class="cap"><div><b id="diapo-group"></b><span id="diapo-cap"></span></div><span id="diapo-idx"></span></div>
   </div>
   <div class="diapo-ctl">
-    <button type="button" id="d-prev">‹ {{ ui.prev }}</button>
-    <button type="button" id="d-play" aria-pressed="true">{{ ui.pause }}</button>
-    <button type="button" id="d-next">{{ ui.next }} ›</button>
-    <button type="button" id="d-full">{{ ui.fullscreen }}</button>
+    <button type="button" id="d-prev" aria-label="{{ ui.prev }}" title="{{ ui.prev }}"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
+    <button type="button" id="d-play" aria-pressed="true" aria-label="{{ ui.pause }}" title="{{ ui.pause }}"><svg class="i-pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14M16 5v14"/></svg><svg class="i-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4l13 8-13 8z" fill="currentColor" stroke="none"/></svg></button>
+    <button type="button" id="d-next" aria-label="{{ ui.next }}" title="{{ ui.next }}"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
+    <button type="button" id="d-audio" aria-pressed="false" aria-label="{{ d.audio_on }}" title="{{ d.audio_on }}" data-on="{{ d.audio_on }}" data-off="{{ d.audio_off }}"><svg class="i-mute" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9H4z"/><path d="M19 9l-4 6M15 9l4 6"/></svg><svg class="i-sound" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9H4z"/><path d="M16 8.5a5 5 0 0 1 0 7M18.5 6a8.5 8.5 0 0 1 0 12"/></svg><span>{{ d.audio_on }}</span></button>
+    <button type="button" id="d-full" aria-label="{{ ui.fullscreen }}" title="{{ ui.fullscreen }}"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg></button>
   </div>
+  <audio id="d-bird" loop preload="none" src="{{ rel }}audio/chants-oiseaux.mp3"></audio>
 </section>
 <script>
 (function(){var box=document.getElementById('diapo'),imgs=box.querySelectorAll('img'),g=document.getElementById('diapo-group'),c=document.getElementById('diapo-cap'),ix=document.getElementById('diapo-idx'),play=document.getElementById('d-play'),i=0,t,on=true;
 function show(n){imgs[i].classList.remove('on');i=(n+imgs.length)%imgs.length;imgs[i].classList.add('on');g.textContent=imgs[i].getAttribute('data-group');c.textContent=imgs[i].getAttribute('data-cap');ix.textContent=(i+1)+' / '+imgs.length;}
 function run(){clearInterval(t);if(on)t=setInterval(function(){show(i+1)},5000);}
 document.getElementById('d-prev').onclick=function(){show(i-1);run()};document.getElementById('d-next').onclick=function(){show(i+1);run()};
-play.onclick=function(){on=!on;play.setAttribute('aria-pressed',on);play.textContent=on?{{ ui.pause|tojson }}:{{ ui.play|tojson }};run()};
+try{if(localStorage.getItem('geisberg-birds')==='1'){document.getElementById('d-audio').classList.add('hint')}}catch(e){}
+play.onclick=function(){on=!on;play.setAttribute('aria-pressed',on);play.classList.toggle('paused',!on);play.setAttribute('aria-label',on?{{ ui.pause|tojson }}:{{ ui.play|tojson }});run()};
+var au=document.getElementById('d-bird'),ab=document.getElementById('d-audio');function setAudio(v){ab.setAttribute('aria-pressed',v);ab.classList.toggle('on',v);ab.querySelector('span').textContent=v?ab.getAttribute('data-off'):ab.getAttribute('data-on');ab.setAttribute('aria-label',ab.querySelector('span').textContent);if(v){au.volume=.6;au.play().catch(function(){setAudio(false)})}else{au.pause()}try{localStorage.setItem('geisberg-birds',v?'1':'0')}catch(e){}}
+ab.onclick=function(){setAudio(ab.getAttribute('aria-pressed')!=='true')};
+document.addEventListener('visibilitychange',function(){if(document.hidden)au.pause();else if(ab.getAttribute('aria-pressed')==='true')au.play().catch(function(){})});
 function fsOn(){return document.fullscreenElement===box||box.classList.contains('fs')}
 function enter(){if(box.requestFullscreen&&!/iPhone|iPad|iPod/.test(navigator.userAgent)){box.requestFullscreen().catch(function(){box.classList.add('fs');document.body.style.overflow='hidden'})}else{box.classList.add('fs');document.body.style.overflow='hidden'}}
 function exit(){if(document.fullscreenElement){document.exitFullscreen().catch(function(){})}box.classList.remove('fs');document.body.style.overflow=''}

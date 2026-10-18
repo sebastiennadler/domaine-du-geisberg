@@ -6,7 +6,8 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 UA = "domaine-du-geisberg-site/1.0 (sebastien.nadler@gmail.com)"
 OK_LIC = ("cc0", "public domain", "pd-", "cc-zero", "cc by 4", "cc by 3", "cc by 2", "cc-by-4", "cc-by-3", "cc-by-sa")
-QUERIES = ["dawn chorus birdsong", "Vogelgesang Morgen", "birdsong forest spring", "chant d'oiseaux forêt", "blackbird song", "Amsel Gesang", "nightingale song", "Vogelstimmen Wald"]
+QUERIES = ["dawn chorus birds", "birdsong forest spring", "Vogelgesang Wald", "blackbird Turdus merula song", "nightingale Luscinia song", "Vogelstimmen Morgen", "chant oiseaux forêt", "songbirds morning"]
+KEYS = ("bird", "vogel", "oiseau", "merle", "blackbird", "amsel", "nightingale", "nachtigall", "rossignol", "chorus", "turdus", "luscinia", "erithacus", "robin", "rotkehlchen", "grive", "fauvette", "sylvia", "fringilla", "pinson", "song")
 def get(url):
     return urllib.request.urlopen(urllib.request.Request(url, headers={"User-Agent": UA}), timeout=60).read()
 def api(**p):
@@ -20,6 +21,7 @@ for q in QUERIES:
         t = p["title"]
         if t in seen: continue
         seen.add(t)
+        if not any(k in t.lower() for k in KEYS): continue
         ii = p.get("imageinfo", [{}])[0]; md = ii.get("extmetadata", {})
         lic = (md.get("LicenseShortName", {}).get("value", "") + " " + md.get("License", {}).get("value", "")).lower()
         if not any(k in lic for k in OK_LIC): continue
@@ -29,6 +31,11 @@ for q in QUERIES:
                 src = Path(d) / ("in" + Path(t).suffix.lower()); src.write_bytes(get(ii["url"]))
                 dur = float(subprocess.check_output(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", str(src)]).decode().strip())
                 if not (55 <= dur <= 400): print(f"{t}: durée {dur:.0f}s, écartée"); continue
+                def vol(filt):
+                    o = subprocess.run(["ffmpeg", "-v", "info", "-i", str(src), "-t", "60", "-af", filt + "volumedetect", "-f", "null", "-"], capture_output=True, text=True).stderr
+                    m = re.search(r"mean_volume: (-?[\d.]+) dB", o); return float(m.group(1)) if m else -99
+                ratio = vol("highpass=f=2000,") - vol("")
+                if ratio < -9: print(f"{t}: trop grave ({ratio:.1f} dB), écartée"); continue
                 out = ROOT / "audio" / "chants-oiseaux.mp3"; out.parent.mkdir(exist_ok=True)
                 subprocess.check_call(["ffmpeg", "-y", "-v", "error", "-i", str(src), "-t", "300", "-af", "afade=t=in:d=2,afade=t=out:st=298:d=2,loudnorm=I=-20", "-codec:a", "libmp3lame", "-b:a", "96k", "-ac", "2", str(out)])
         except Exception as e:

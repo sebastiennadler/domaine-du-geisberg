@@ -193,9 +193,16 @@ html[data-theme="dark"] .list li::before{border-color:var(--copper)}
 .diapo img.on{opacity:1}
 .diapo .cap{position:absolute;left:0;right:0;bottom:0;padding:40px 20px 16px;background:linear-gradient(to top,rgba(0,0,0,.75),transparent);color:#fff;font-size:15px;display:flex;justify-content:space-between;gap:12px;align-items:end}
 .diapo .cap b{font-family:var(--display);font-size:20px;display:block}
-.diapo-ctl{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
-.diapo-ctl button{min-height:44px;padding:0 16px;border-radius:999px;border:1px solid var(--line);background:var(--bg2);color:var(--fg);font:inherit;font-weight:700;cursor:pointer}
+.diapo-ctl{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px;align-items:center}
+.diapo-ctl button{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-width:48px;height:48px;padding:0 14px;border-radius:999px;border:1.5px solid var(--line);background:var(--bg2);color:var(--fg);font:inherit;font-weight:700;font-size:14px;cursor:pointer}
 .diapo-ctl button:hover{border-color:var(--fg)}
+.diapo-ctl svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+#d-play{background:var(--green);color:var(--green-ink);border-color:var(--green);min-width:56px}
+#d-play .i-play{display:none}#d-play.paused .i-pause{display:none}#d-play.paused .i-play{display:block}
+#d-audio .i-sound{display:none}#d-audio.on .i-mute{display:none}#d-audio.on .i-sound{display:block}
+#d-audio.on{border-color:var(--copper);color:var(--copper)}
+#d-audio.hint{box-shadow:0 0 0 3px color-mix(in srgb,var(--copper) 30%,transparent)}
+@media(max-width:480px){#d-audio span{display:none}}
 .diapo:fullscreen,.diapo.fs{border-radius:0;max-height:none;aspect-ratio:auto}
 .diapo.fs{position:fixed;inset:0;z-index:300;width:100vw;height:100vh;height:100dvh}
 .diapo .diapo-x{position:absolute;top:max(12px,env(safe-area-inset-top,0px));right:max(12px,env(safe-area-inset-right,0px));z-index:5;width:48px;height:48px;border-radius:50%;border:0;background:rgba(255,255,255,.18);color:#fff;font-size:28px;line-height:1;cursor:pointer;display:none}

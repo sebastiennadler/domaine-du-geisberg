@@ -304,12 +304,14 @@
   },
   "diapo": {
     "h1": "Diaporama",
-    "lead": "Los gîtes y la finca en imágenes.",
+    "lead": "Diaporama con canto de pájaros: Vogelsgesang significa «canto de los pájaros».",
     "sections": [
       "La finca",
       "Gîte 1",
       "Gîte 2"
-    ]
+    ],
+    "audio_on": "Canto de pájaros",
+    "audio_off": "Silenciar los pájaros"
   },
   "legal": {
     "h1": "Aviso legal",

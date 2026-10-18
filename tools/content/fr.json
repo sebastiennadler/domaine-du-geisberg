@@ -304,12 +304,14 @@
   },
   "diapo": {
     "h1": "Diaporama",
-    "lead": "Les gîtes et le domaine en images.",
+    "lead": "Diaporama avec chants d'oiseaux du lieu-dit Vogelsgesang, « le chant des oiseaux ».",
     "sections": [
       "Le domaine",
       "Gîte 1",
       "Gîte 2"
-    ]
+    ],
+    "audio_on": "Chants d'oiseaux",
+    "audio_off": "Couper les chants d'oiseaux"
   },
   "legal": {
     "h1": "Mentions légales",
