@@ -112,11 +112,11 @@
     ],
     "intro_h": "Un lieu-dit qui porte bien son nom",
     "intro": [
-      "Nos deux gîtes sont intégrés en partie basse d'une maison spacieuse, au cœur d'un vaste domaine de deux hectares verdoyants en lisière de forêt, dans un lieu d'exception dit « Vogelsgesang », le chant des oiseaux.",
+      "Nos deux gîtes sont deux appartements aménagés au rez-de-jardin de notre maison, au cœur d'un vaste domaine de deux hectares verdoyants en lisière de forêt, dans un lieu d'exception dit « Vogelsgesang », le chant des oiseaux.",
       "Typique des paysages lorrains, l'environnement se compose d'une nature luxuriante offrant un panorama de toute beauté, dans un contexte empreint de calme et de sérénité."
     ],
     "intro_more": "Découvrir le domaine",
-    "gites_h": "Deux maisons jumelles, même vue",
+    "gites_h": "Deux gîtes jumeaux, même vue",
     "gites_lead": "Mêmes prestations de part et d'autre. Réservez l'un des deux, ou les deux pour une tribu.",
     "gite1_sub": "60 m² · 2 chambres · 5 personnes · terrasse plein sud · parking · wifi",
     "gite2_sub": "60 m² · 2 chambres · 5 personnes · terrasse · parking · accessible PMR",
@@ -152,7 +152,7 @@
   },
   "gites": {
     "h1": "Les gîtes",
-    "lead": "Deux gîtes mitoyens et similaires, en rez-de-jardin, avec entrée indépendante, terrasse et parking privatifs.",
+    "lead": "Deux gîtes mitoyens et similaires, en rez-de-jardin de la maison des propriétaires, avec entrée indépendante, terrasse et parking privatifs.",
     "common": "Chaque gîte se compose d'un salon avec cuisine intégrée (four, plaques vitrocéramiques, micro-ondes, lave-vaisselle, lave-linge, congélateur), de deux chambres et d'une salle d'eau avec douche et WC, adaptée aux personnes à mobilité réduite. Le couchage comprend quatre lits de 90 cm pouvant être rapprochés dans les chambres, et un cinquième couchage dans le salon : 5 personnes par gîte. Téléviseur à écran plat, wifi, chauffage au sol par géothermie.",
     "desc_h": "Descriptif",
     "equip_h": "Équipements",
@@ -269,10 +269,6 @@
       [
         "Week-end (2 nuits)",
         "300 €"
-      ],
-      [
-        "Nuit, à partir de",
-        "64,80 €"
       ]
     ],
     "included": "Inclus : draps et linge, lits faits à l'arrivée, ménage de fin de séjour, électricité et chauffage, wifi, animaux. Caution de 300 €. Taxe de séjour en sus. CB, Visa, MasterCard et chèques-vacances ANCV acceptés.",

@@ -1,24 +1,24 @@
 {
   "meta": {
     "index": [
-      "Domaine du Geisberg – Casas de campo em Varsberg, Mosela",
-      "Duas casas rurais (3 espigas) em Varsberg (Lorena, França), numa propriedade de 2 hectares à beira da floresta. Terraço privado, estacionamento, wi-fi, animais bem-vindos. Reserva direta."
+      "Domaine du Geisberg – Gîtes rurais em Varsberg, Mosela",
+      "Duos gîtes rurais (3 espigas) em Varsberg (Lorena, França), numa propriedade de 2 hectares à beira da floresta. Terraço privado, estacionamento, wi-fi, animais bem-vindos. Reserva direta."
     ],
     "le-domaine": [
       "A propriedade – Domaine du Geisberg",
       "Dois hectares de prados à beira da floresta, no lugar chamado Vogelsgesang, na colina sobre Varsberg."
     ],
     "gites": [
-      "As casas – Domaine du Geisberg",
-      "Duas casas gémeas de 60 m², 2 quartos, 5 pessoas, terraço privado, aquecimento geotérmico, selo Tourisme & Handicap."
+      "Os gîtes – Domaine du Geisberg",
+      "Duos gîtes gémeas de 60 m², 2 quartos, 5 pessoas, terraço privado, aquecimento geotérmico, selo Tourisme & Handicap."
     ],
     "gite-1": [
-      "Casa 1 – Domaine du Geisberg",
-      "Casa 1: 60 m², 2 quartos, 5 pessoas, terraço virado a sul, fotos e disponibilidade."
+      "Gîte 1 – Domaine du Geisberg",
+      "Gîte 1: 60 m², 2 quartos, 5 pessoas, terraço virado a sul, fotos e disponibilidade."
     ],
     "gite-2": [
-      "Casa 2 – Domaine du Geisberg",
-      "Casa 2: 60 m², 2 quartos, 5 pessoas, acessível, fotos e disponibilidade."
+      "Gîte 2 – Domaine du Geisberg",
+      "Gîte 2: 60 m², 2 quartos, 5 pessoas, acessível, fotos e disponibilidade."
     ],
     "autour": [
       "O que visitar perto de Varsberg – Domaine du Geisberg",
@@ -26,11 +26,11 @@
     ],
     "reservation": [
       "Preços, reserva e acesso – Domaine du Geisberg",
-      "Preços das casas, pedido de reserva direta e itinerário para chegar a Varsberg, Mosela."
+      "Preços dos gîtes, pedido de reserva direta e itinerário para chegar a Varsberg, Mosela."
     ],
     "diaporama": [
       "Diaporama – Domaine du Geisberg",
-      "As casas e a propriedade em imagens."
+      "Os gîtes e a propriedade em imagens."
     ],
     "mentions-legales": [
       "Informações legais – Domaine du Geisberg",
@@ -42,13 +42,13 @@
     ],
     "visite": [
       "Visita virtual 360° – Domaine du Geisberg",
-      "Visite as casas do Domaine du Geisberg em 360°, divisão por divisão."
+      "Visite os gîtes do Domaine du Geisberg em 360°, divisão por divisão."
     ]
   },
   "nav": {
     "index": "Início",
     "le-domaine": "A propriedade",
-    "gites": "As casas",
+    "gites": "Os gîtes",
     "autour": "Arredores",
     "reservation": "Preços e reserva",
     "diaporama": "Diaporama",
@@ -62,7 +62,7 @@
     "menu": "Menu",
     "theme": "Alternar tema claro / escuro",
     "langs": "Idiomas",
-    "tagline": "Casas de campo · Varsberg · Mosela",
+    "tagline": "Gîtes rurais · Varsberg · Mosela",
     "call": "Ligar",
     "write": "Escrever",
     "see_map": "Ver no mapa",
@@ -88,18 +88,18 @@
     "dev_credit": "Site: Sébastien Nadler"
   },
   "home": {
-    "h1": "Duas casas tranquilas entre o prado e a floresta",
+    "h1": "Duos gîtes tranquilas entre o prado e a floresta",
     "lead": "Na colina que domina Varsberg, no lugar chamado Vogelsgesang, «o canto dos pássaros». Dois hectares de prados à beira da floresta, trilhos que partem do jardim e um terraço para cada casa.",
     "cta1": "Ver disponibilidade",
-    "cta2": "Descobrir as casas",
+    "cta2": "Descobrir os gîtes",
     "facts": [
       [
-        "2 casas",
+        "2 gîtes",
         "gémeas de 60 m², com entradas independentes"
       ],
       [
         "5 pess.",
-        "por casa: 2 por quarto, 1 na sala"
+        "por gîte: 2 por quarto, 1 na sala"
       ],
       [
         "2 ha",
@@ -112,15 +112,15 @@
     ],
     "intro_h": "Um lugar que faz jus ao nome",
     "intro": [
-      "As nossas duas casas ocupam o rés do chão de uma casa espaçosa, no coração de uma vasta propriedade de dois hectares verdejantes à beira da floresta, num lugar de exceção chamado «Vogelsgesang», o canto dos pássaros.",
+      "Os nossos dois gîtes são dois apartamentos no piso do jardim da nossa casa, no coração de uma vasta propriedade de dois hectares verdejantes à beira da floresta, num lugar de exceção chamado «Vogelsgesang», o canto dos pássaros.",
       "Típica da paisagem da Lorena, a natureza exuberante em redor oferece um panorama de grande beleza, num ambiente de calma e serenidade."
     ],
     "intro_more": "Descobrir a propriedade",
-    "gites_h": "Duas casas gémeas, a mesma vista",
+    "gites_h": "Dois gîtes gémeos, a mesma vista",
     "gites_lead": "As mesmas comodidades de ambos os lados. Reserve uma, ou as duas para toda a família.",
     "gite1_sub": "60 m² · 2 quartos · 5 pessoas · terraço a sul · estacionamento · wi-fi",
     "gite2_sub": "60 m² · 2 quartos · 5 pessoas · terraço · estacionamento · acessível",
-    "see_gite": "Ver esta casa",
+    "see_gite": "Ver este gîte",
     "around_h": "A pé desde o jardim, ou a uma hora de carro",
     "around_lead": "Trilhos sem atravessar estradas, lago e centro náutico a 3 km, e Metz, o Sarre e o Luxemburgo a um dia de passeio.",
     "around_more": "Tudo o que há para ver",
@@ -132,13 +132,13 @@
   "domaine": {
     "h1": "A propriedade",
     "p": [
-      "No coração de uma vasta propriedade de dois hectares verdejantes à beira da floresta, as nossas duas casas ocupam o rés do chão de uma casa espaçosa, num lugar de exceção chamado «Vogelsgesang» (o canto dos pássaros).",
-      "Típica da paisagem da Lorena, a natureza exuberante em redor das casas oferece um panorama de grande beleza, num ambiente de calma e serenidade.",
+      "No coração de uma vasta propriedade de dois hectares verdejantes à beira da floresta, as nossas duos gîtes ocupam o rés do chão de uma casa espaçosa, num lugar de exceção chamado «Vogelsgesang» (o canto dos pássaros).",
+      "Típica da paisagem da Lorena, a natureza exuberante em redor dos gîtes oferece um panorama de grande beleza, num ambiente de calma e serenidade.",
       "Os trilhos de caminhada são numerosos e acessíveis sem atravessar estradas, a pé, de bicicleta ou a cavalo. Há cavalos à disposição dos cavaleiros experientes."
     ],
     "gallery_h": "A propriedade em imagens",
     "captions": [
-      "As casas vistas do prado",
+      "Os gîtes vistas do prado",
       "Os cavalos diante da casa",
       "O jardim e a sua mesa sob as árvores",
       "O terraço de uma casa",
@@ -151,9 +151,9 @@
     ]
   },
   "gites": {
-    "h1": "As casas",
-    "lead": "Duas casas geminadas e semelhantes, ao nível do jardim, com entrada independente, terraço e estacionamento privados.",
-    "common": "Cada casa tem uma sala com cozinha integrada (forno, placa vitrocerâmica, micro-ondas, máquina de lavar loiça, máquina de lavar roupa, congelador), dois quartos e uma casa de banho com duche e WC, adaptada a pessoas com mobilidade reduzida. Camas: quatro de 90 cm nos quartos (podem juntar-se) mais uma quinta cama na sala: 5 pessoas por casa. Televisor de ecrã plano, wi-fi, piso radiante geotérmico.",
+    "h1": "Os gîtes",
+    "lead": "Dois apartamentos semelhantes, ao nível do jardim da casa dos proprietários, com entrada independente, terraço e estacionamento privados.",
+    "common": "Cada casa tem uma sala com cozinha integrada (forno, placa vitrocerâmica, micro-ondas, máquina de lavar loiça, máquina de lavar roupa, congelador), dois quartos e uma casa de banho com duche e WC, adaptada a pessoas com mobilidade reduzida. Camas: quatro de 90 cm nos quartos (podem juntar-se) mais uma quinta cama na sala: 5 pessoas por gîte. Televisor de ecrã plano, wi-fi, piso radiante geotérmico.",
     "desc_h": "Disposição",
     "equip_h": "Equipamento",
     "serv_h": "Serviços incluídos",
@@ -180,12 +180,12 @@
       "Wi-fi gratuito",
       "Estacionamento privado",
       "Animais bem-vindos",
-      "Casa para não fumadores"
+      "Alojamento para não fumadores"
     ],
-    "gite1_h": "Casa 1",
+    "gite1_h": "Gîte 1",
     "gite1_p": "Terraço virado a sul, com vista para o prado.",
-    "gite2_h": "Casa 2",
-    "gite2_p": "Gémea da casa 1, casa de banho com o selo Tourisme & Handicap.",
+    "gite2_h": "Gîte 2",
+    "gite2_p": "Gémeo do gîte 1, casa de banho com o selo Tourisme & Handicap.",
     "dispo_h": "Disponibilidade",
     "dispo_p": "O calendário está sincronizado com o nosso planeamento. Para reservar, envie-nos um pedido com as suas datas.",
     "tour": "Fazer a visita virtual 360°"
@@ -269,10 +269,6 @@
       [
         "Fim de semana (2 noites)",
         "300 €"
-      ],
-      [
-        "Noite, a partir de",
-        "64,80 €"
       ]
     ],
     "included": "Incluído: roupa de cama e de casa, camas feitas à chegada, limpeza final, eletricidade e aquecimento, wi-fi, animais. Caução de 300 €. Taxa turística à parte. Aceitamos cartões e cheques-férias franceses ANCV.",
@@ -284,7 +280,7 @@
     "f_in": "Chegada",
     "f_out": "Partida",
     "f_gite": "Casa",
-    "f_both": "As duas casas",
+    "f_both": "As duos gîtes",
     "f_people": "Pessoas",
     "f_msg": "Mensagem",
     "f_send": "Enviar o pedido",
@@ -305,11 +301,11 @@
   },
   "diapo": {
     "h1": "Diaporama",
-    "lead": "As casas e a propriedade em imagens.",
+    "lead": "Os gîtes e a propriedade em imagens.",
     "sections": [
       "A propriedade",
-      "Casa 1",
-      "Casa 2"
+      "Gîte 1",
+      "Gîte 2"
     ]
   },
   "legal": {
@@ -326,7 +322,7 @@
     "credits": "Desenvolvimento: Sébastien Nadler, 2026. Site estático alojado no GitHub Pages; calendário sincronizado automaticamente; tipos de letra Playfair Display e Nunito Sans (Google Fonts). Fotos: Marc e Agnès Nadler, salvo indicação abaixo.",
     "credits_photo_h": "Créditos fotográficos",
     "owners_h": "Proprietários",
-    "owners": "Marc e Agnès Nadler são os proprietários e gestores das casas do Domaine du Geisberg. São proprietários deste site, dos seus textos e das suas fotografias."
+    "owners": "Marc e Agnès Nadler são os proprietários e gestores dos gîtes do Domaine du Geisberg. São proprietários deste site, dos seus textos e das suas fotografias."
   },
   "extra": {
     "reviews_eyebrow": "Opiniões",
@@ -368,7 +364,7 @@
   },
   "visite": {
     "h1": "Visita virtual a 360°",
-    "lead": "Passeie pelas casas e pela propriedade como se lá estivesse: arraste a imagem, aproxime com dois dedos, passe de uma divisão a outra.",
+    "lead": "Passeie pelos gîtes e pela propriedade como se lá estivesse: arraste a imagem, aproxime com dois dedos, passe de uma divisão a outra.",
     "fallback": "Se a visita não aparecer aqui,",
     "open": "abra-a num novo separador"
   }

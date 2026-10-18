@@ -6,14 +6,14 @@
   "city": "Varsberg",
   "phones": [
     [
-      "Agnès",
-      "+33 6 73 42 05 89",
-      "+33673420589"
-    ],
-    [
       "Marc",
       "+33 7 89 56 74 91",
       "+33789567491"
+    ],
+    [
+      "Agnès",
+      "+33 6 73 42 05 89",
+      "+33673420589"
     ]
   ],
   "email": "gitevarsberg@hotmail.com",
@@ -25,7 +25,6 @@
   "virtual_tour": "http://www.hdmedia.fr/visite-virtuelle/hd/cbpQep88m-gites-du-geisberg-varsberg-57.html",
   "price_week": "420 €",
   "price_weekend": "300 €",
-  "price_night_from": "64,80 €",
   "deposit": "300 €",
   "surface": "60 m²",
   "capacity": 5,

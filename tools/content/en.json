@@ -1,7 +1,7 @@
 {
   "meta": {
     "index": [
-      "Domaine du Geisberg – Holiday cottages in Varsberg, Moselle",
+      "Domaine du Geisberg – Holiday gîtes in Varsberg, Moselle",
       "Two 3-star rural gîtes in Varsberg (Moselle, France) on a 2-hectare estate at the edge of the forest. Private terrace, parking, wifi, pets welcome. Book direct."
     ],
     "le-domaine": [
@@ -9,16 +9,16 @@
       "Two hectares of meadows at the edge of the forest, at the place called Vogelsgesang, on the hill above Varsberg."
     ],
     "gites": [
-      "The cottages – Domaine du Geisberg",
-      "Two twin 60 m² cottages, 2 bedrooms, 5 guests, private terrace, geothermal heating, Tourisme & Handicap label."
+      "The gîtes – Domaine du Geisberg",
+      "Two twin 60 m² gîtes, 2 bedrooms, 5 guests, private terrace, geothermal heating, Tourisme & Handicap label."
     ],
     "gite-1": [
-      "Cottage 1 – Domaine du Geisberg",
-      "Cottage 1: 60 m², 2 bedrooms, 5 guests, south-facing terrace, photos and availability."
+      "Gîte 1 – Domaine du Geisberg",
+      "Gîte 1: 60 m², 2 bedrooms, 5 guests, south-facing terrace, photos and availability."
     ],
     "gite-2": [
-      "Cottage 2 – Domaine du Geisberg",
-      "Cottage 2: 60 m², 2 bedrooms, 5 guests, accessible, photos and availability."
+      "Gîte 2 – Domaine du Geisberg",
+      "Gîte 2: 60 m², 2 bedrooms, 5 guests, accessible, photos and availability."
     ],
     "autour": [
       "Things to do around Varsberg – Domaine du Geisberg",
@@ -26,11 +26,11 @@
     ],
     "reservation": [
       "Rates, booking and directions – Domaine du Geisberg",
-      "Cottage rates, direct booking request and directions to Varsberg, Moselle."
+      "Gîte rates, direct booking request and directions to Varsberg, Moselle."
     ],
     "diaporama": [
       "Slideshow – Domaine du Geisberg",
-      "The cottages and the estate in pictures."
+      "The gîtes and the estate in pictures."
     ],
     "mentions-legales": [
       "Legal notice – Domaine du Geisberg",
@@ -42,13 +42,13 @@
     ],
     "visite": [
       "360° virtual tour – Domaine du Geisberg",
-      "Tour the Domaine du Geisberg cottages in 360°, room by room."
+      "Tour the Domaine du Geisberg gîtes in 360°, room by room."
     ]
   },
   "nav": {
     "index": "Home",
     "le-domaine": "The estate",
-    "gites": "The cottages",
+    "gites": "The gîtes",
     "autour": "Around us",
     "reservation": "Rates & booking",
     "diaporama": "Slideshow",
@@ -62,7 +62,7 @@
     "menu": "Menu",
     "theme": "Switch light / dark theme",
     "langs": "Languages",
-    "tagline": "Holiday cottages · Varsberg · Moselle",
+    "tagline": "Holiday gîtes · Varsberg · Moselle",
     "call": "Call",
     "write": "Write",
     "see_map": "Open the map",
@@ -88,18 +88,18 @@
     "dev_credit": "Website: Sébastien Nadler"
   },
   "home": {
-    "h1": "Two quiet cottages between meadow and forest",
-    "lead": "On the hill above Varsberg, at the place called Vogelsgesang, “birdsong”. Two hectares of meadows at the edge of the forest, footpaths starting from the garden, and a terrace for each cottage.",
+    "h1": "Two quiet gîtes between meadow and forest",
+    "lead": "On the hill above Varsberg, at the place called Vogelsgesang, “birdsong”. Two hectares of meadows at the edge of the forest, footpaths starting from the garden, and a terrace for each gîte.",
     "cta1": "Check availability",
-    "cta2": "Discover the cottages",
+    "cta2": "Discover the gîtes",
     "facts": [
       [
-        "2 cottages",
+        "2 gîtes",
         "twin 60 m² units with separate entrances"
       ],
       [
         "5 guests",
-        "per cottage: 2 per bedroom, 1 in the living room"
+        "per gîte: 2 per bedroom, 1 in the living room"
       ],
       [
         "2 ha",
@@ -112,15 +112,15 @@
     ],
     "intro_h": "A place that lives up to its name",
     "intro": [
-      "Our two cottages occupy the ground floor of a spacious house, in the heart of a vast two-hectare estate of green meadows at the edge of the forest, in an exceptional spot known as “Vogelsgesang”, birdsong.",
+      "Our two gîtes are two apartments on the garden level of our house, in the heart of a vast two-hectare estate of green meadows at the edge of the forest, in an exceptional spot known as “Vogelsgesang”, birdsong.",
       "Typical of the Lorraine countryside, the surroundings are lush and offer a beautiful panorama in a setting of calm and serenity."
     ],
     "intro_more": "Discover the estate",
-    "gites_h": "Two twin houses, the same view",
+    "gites_h": "Two twin gîtes, the same view",
     "gites_lead": "The same comforts on both sides. Book one, or both for a large family.",
     "gite1_sub": "60 m² · 2 bedrooms · 5 guests · south-facing terrace · parking · wifi",
     "gite2_sub": "60 m² · 2 bedrooms · 5 guests · terrace · parking · wheelchair accessible",
-    "see_gite": "See this cottage",
+    "see_gite": "See this gîte",
     "around_h": "On foot from the garden, or an hour’s drive",
     "around_lead": "Hiking trails without crossing a road, a lake and water-sports centre 3 km away, and Metz, the Saar and Luxembourg within a day trip.",
     "around_more": "Everything there is to see",
@@ -132,16 +132,16 @@
   "domaine": {
     "h1": "The estate",
     "p": [
-      "Set in the heart of a vast two-hectare estate of green meadows at the edge of the forest, our two cottages occupy the ground floor of a spacious house in an exceptional spot known as “Vogelsgesang” (birdsong).",
+      "Set in the heart of a vast two-hectare estate of green meadows at the edge of the forest, our two gîtes occupy the ground floor of a spacious house in an exceptional spot known as “Vogelsgesang” (birdsong).",
       "Typical of the Lorraine countryside, the surroundings are lush and offer a beautiful panorama in a setting of calm and serenity.",
       "There are many hiking trails, reachable without crossing a road, on foot, by bike or on horseback. Horses are available for experienced riders."
     ],
     "gallery_h": "The estate in pictures",
     "captions": [
-      "The cottages from the meadow",
+      "The gîtes from the meadow",
       "The horses in front of the house",
       "The garden and its table under the trees",
-      "A cottage terrace",
+      "A gîte terrace",
       "The path leading from the garden",
       "Sunset over Varsberg",
       "The horses in winter",
@@ -151,9 +151,9 @@
     ]
   },
   "gites": {
-    "h1": "The cottages",
-    "lead": "Two similar semi-detached cottages at garden level, each with a separate entrance, private terrace and parking.",
-    "common": "Each cottage has a living room with fitted kitchen (oven, ceramic hob, microwave, dishwasher, washing machine, freezer), two bedrooms and a shower room with WC, adapted for guests with reduced mobility. Sleeping: four 90 cm beds that can be pushed together in the bedrooms, plus a fifth bed in the living room: 5 guests per cottage. Flat-screen TV, wifi, geothermal underfloor heating.",
+    "h1": "The gîtes",
+    "lead": "Two similar holiday apartments at garden level of the owners' house, each with a separate entrance, private terrace and parking.",
+    "common": "Each gîte has a living room with fitted kitchen (oven, ceramic hob, microwave, dishwasher, washing machine, freezer), two bedrooms and a shower room with WC, adapted for guests with reduced mobility. Sleeping: four 90 cm beds that can be pushed together in the bedrooms, plus a fifth bed in the living room: 5 guests per gîte. Flat-screen TV, wifi, geothermal underfloor heating.",
     "desc_h": "Layout",
     "equip_h": "Equipment",
     "serv_h": "Services included",
@@ -182,17 +182,17 @@
       "Pets welcome",
       "Non-smoking"
     ],
-    "gite1_h": "Cottage 1",
+    "gite1_h": "Gîte 1",
     "gite1_p": "South-facing terrace, view over the meadow.",
-    "gite2_h": "Cottage 2",
-    "gite2_p": "Twin of cottage 1, shower room with the Tourisme & Handicap label.",
+    "gite2_h": "Gîte 2",
+    "gite2_p": "Twin of gîte 1, shower room with the Tourisme & Handicap label.",
     "dispo_h": "Availability",
     "dispo_p": "The calendar is synchronised with our bookings. To book, send us a request with your dates.",
     "tour": "Take the 360° virtual tour"
   },
   "autour": {
     "h1": "Things to do",
-    "lead": "Hiking trails start right from the cottage, with no road to cross, on foot, by bike or on horseback. Several remarkable sites are just a few kilometres away.",
+    "lead": "Hiking trails start right from the gîte, with no road to cross, on foot, by bike or on horseback. Several remarkable sites are just a few kilometres away.",
     "sites_h": "Worth seeing nearby",
     "sites": {
       "creutzwald-lac": [
@@ -269,10 +269,6 @@
       [
         "Weekend (2 nights)",
         "€300"
-      ],
-      [
-        "Night, from",
-        "€64.80"
       ]
     ],
     "included": "Included: bed and household linen, beds made on arrival, end-of-stay cleaning, electricity and heating, wifi, pets. Deposit €300. Tourist tax extra. Credit cards and French ANCV holiday vouchers accepted.",
@@ -283,8 +279,8 @@
     "f_phone": "Phone",
     "f_in": "Arrival",
     "f_out": "Departure",
-    "f_gite": "Cottage",
-    "f_both": "Both cottages",
+    "f_gite": "Gîte",
+    "f_both": "Both gîtes",
     "f_people": "Guests",
     "f_msg": "Message",
     "f_send": "Send the request",
@@ -305,11 +301,11 @@
   },
   "diapo": {
     "h1": "Slideshow",
-    "lead": "The cottages and the estate in pictures.",
+    "lead": "The gîtes and the estate in pictures.",
     "sections": [
       "The estate",
-      "Cottage 1",
-      "Cottage 2"
+      "Gîte 1",
+      "Gîte 2"
     ]
   },
   "legal": {
@@ -326,7 +322,7 @@
     "credits": "Development: Sébastien Nadler, 2026. Static website hosted by GitHub Pages; calendar synchronised automatically; typefaces Playfair Display and Nunito Sans (Google Fonts). Photos: Marc and Agnès Nadler, unless stated below.",
     "credits_photo_h": "Photo credits",
     "owners_h": "Owners",
-    "owners": "Marc and Agnès Nadler own and run the Domaine du Geisberg cottages. They own this website, its texts and its photographs."
+    "owners": "Marc and Agnès Nadler own and run the Domaine du Geisberg gîtes. They own this website, its texts and its photographs."
   },
   "extra": {
     "reviews_eyebrow": "Guest reviews",
@@ -368,7 +364,7 @@
   },
   "visite": {
     "h1": "360° virtual tour",
-    "lead": "Walk through the cottages and the estate as if you were there: drag the image, pinch to zoom, move from room to room.",
+    "lead": "Walk through the gîtes and the estate as if you were there: drag the image, pinch to zoom, move from room to room.",
     "fallback": "If the tour does not show here,",
     "open": "open it in a new tab"
   }

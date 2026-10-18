@@ -1,24 +1,24 @@
 {
   "meta": {
     "index": [
-      "Domaine du Geisberg – Ferienhäuser in Varsberg, Mosel",
-      "Zwei Ferienhäuser (3 Ähren) in Varsberg (Lothringen, Frankreich) auf einem 2 Hektar großen Anwesen am Waldrand. Eigene Terrasse, Parkplatz, WLAN, Haustiere willkommen. Direkt buchen."
+      "Domaine du Geisberg – Ferienwohnungen in Varsberg, Mosel",
+      "Zwei Ferienwohnungen (3 Ähren) in Varsberg (Lothringen, Frankreich) auf einem 2 Hektar großen Anwesen am Waldrand. Eigene Terrasse, Parkplatz, WLAN, Haustiere willkommen. Direkt buchen."
     ],
     "le-domaine": [
       "Das Anwesen – Domaine du Geisberg",
       "Zwei Hektar Wiesen am Waldrand, am Ort „Vogelsgesang“, auf dem Hügel über Varsberg."
     ],
     "gites": [
-      "Die Ferienhäuser – Domaine du Geisberg",
-      "Zwei baugleiche Ferienhäuser mit 60 m², 2 Schlafzimmern, 5 Personen, eigener Terrasse, Erdwärmeheizung, Label Tourisme & Handicap."
+      "Die Ferienwohnungen – Domaine du Geisberg",
+      "Zwei baugleiche Ferienwohnungen mit 60 m², 2 Schlafzimmern, 5 Personen, eigener Terrasse, Erdwärmeheizung, Label Tourisme & Handicap."
     ],
     "gite-1": [
-      "Ferienhaus 1 – Domaine du Geisberg",
-      "Ferienhaus 1: 60 m², 2 Schlafzimmer, 5 Personen, Südterrasse, Fotos und Verfügbarkeit."
+      "Ferienwohnung 1 – Domaine du Geisberg",
+      "Ferienwohnung 1: 60 m², 2 Schlafzimmer, 5 Personen, Südterrasse, Fotos und Verfügbarkeit."
     ],
     "gite-2": [
-      "Ferienhaus 2 – Domaine du Geisberg",
-      "Ferienhaus 2: 60 m², 2 Schlafzimmer, 5 Personen, barrierefrei, Fotos und Verfügbarkeit."
+      "Ferienwohnung 2 – Domaine du Geisberg",
+      "Ferienwohnung 2: 60 m², 2 Schlafzimmer, 5 Personen, barrierefrei, Fotos und Verfügbarkeit."
     ],
     "autour": [
       "Ausflüge rund um Varsberg – Domaine du Geisberg",
@@ -26,11 +26,11 @@
     ],
     "reservation": [
       "Preise, Buchung und Anfahrt – Domaine du Geisberg",
-      "Preise der Ferienhäuser, Direktbuchung und Anfahrt nach Varsberg, Mosel."
+      "Preise der Ferienwohnungen, Direktbuchung und Anfahrt nach Varsberg, Mosel."
     ],
     "diaporama": [
       "Diashow – Domaine du Geisberg",
-      "Die Ferienhäuser und das Anwesen in Bildern."
+      "Die Ferienwohnungen und das Anwesen in Bildern."
     ],
     "mentions-legales": [
       "Impressum – Domaine du Geisberg",
@@ -42,13 +42,13 @@
     ],
     "visite": [
       "360°-Rundgang – Domaine du Geisberg",
-      "Besichtigen Sie die Ferienhäuser der Domaine du Geisberg in 360°, Raum für Raum."
+      "Besichtigen Sie die Ferienwohnungen der Domaine du Geisberg in 360°, Raum für Raum."
     ]
   },
   "nav": {
     "index": "Start",
     "le-domaine": "Das Anwesen",
-    "gites": "Die Ferienhäuser",
+    "gites": "Die Ferienwohnungen",
     "autour": "Umgebung",
     "reservation": "Preise & Buchung",
     "diaporama": "Diashow",
@@ -62,7 +62,7 @@
     "menu": "Menü",
     "theme": "Helles / dunkles Design umschalten",
     "langs": "Sprachen",
-    "tagline": "Ferienhäuser · Varsberg · Mosel",
+    "tagline": "Ferienwohnungen · Varsberg · Mosel",
     "call": "Anrufen",
     "write": "Schreiben",
     "see_map": "Karte öffnen",
@@ -88,18 +88,18 @@
     "dev_credit": "Website: Sébastien Nadler"
   },
   "home": {
-    "h1": "Zwei ruhige Ferienhäuser zwischen Wiese und Wald",
+    "h1": "Zwei ruhige Ferienwohnungen zwischen Wiese und Wald",
     "lead": "Auf dem Hügel über Varsberg, am Ort „Vogelsgesang“. Zwei Hektar Wiesen am Waldrand, Wanderwege direkt ab dem Garten und eine eigene Terrasse für jedes Haus.",
     "cta1": "Verfügbarkeit prüfen",
-    "cta2": "Die Ferienhäuser entdecken",
+    "cta2": "Die Ferienwohnungen entdecken",
     "facts": [
       [
-        "2 Häuser",
-        "baugleich, je 60 m², mit eigenem Eingang"
+        "2 Wohnungen",
+        "Wohnungen, je 60 m², mit eigenem Eingang"
       ],
       [
         "5 Pers.",
-        "pro Haus: 2 pro Schlafzimmer, 1 im Wohnzimmer"
+        "pro Wohnung: 2 pro Schlafzimmer, 1 im Wohnzimmer"
       ],
       [
         "2 ha",
@@ -112,15 +112,15 @@
     ],
     "intro_h": "Ein Ort, der seinen Namen verdient",
     "intro": [
-      "Unsere beiden Ferienhäuser liegen im Erdgeschoss eines geräumigen Hauses, inmitten eines zwei Hektar großen, grünen Anwesens am Waldrand, an einem besonderen Ort namens „Vogelsgesang“.",
+      "Unsere beiden Ferienwohnungen liegen im Erdgeschoss eines geräumigen Hauses, inmitten eines zwei Hektar großen, grünen Anwesens am Waldrand, an einem besonderen Ort namens „Vogelsgesang“.",
       "Typisch für die lothringische Landschaft: üppige Natur, ein wunderschöner Rundblick, Ruhe und Gelassenheit."
     ],
     "intro_more": "Das Anwesen entdecken",
-    "gites_h": "Zwei Zwillingshäuser, derselbe Blick",
+    "gites_h": "Zwei Zwillingswohnungen, derselbe Blick",
     "gites_lead": "Gleiche Ausstattung auf beiden Seiten. Buchen Sie eines – oder beide für die ganze Familie.",
     "gite1_sub": "60 m² · 2 Schlafzimmer · 5 Personen · Südterrasse · Parkplatz · WLAN",
     "gite2_sub": "60 m² · 2 Schlafzimmer · 5 Personen · Terrasse · Parkplatz · barrierefrei",
-    "see_gite": "Dieses Haus ansehen",
+    "see_gite": "Diese Wohnung ansehen",
     "around_h": "Zu Fuß ab dem Garten oder eine Autostunde entfernt",
     "around_lead": "Wanderwege ohne Straßenüberquerung, See und Wassersportzentrum in 3 km, Metz, das Saarland und Luxemburg als Tagesausflug.",
     "around_more": "Alles, was es zu sehen gibt",
@@ -132,7 +132,7 @@
   "domaine": {
     "h1": "Das Anwesen",
     "p": [
-      "Inmitten eines weitläufigen, zwei Hektar großen grünen Anwesens am Waldrand liegen unsere beiden Ferienhäuser im Erdgeschoss eines geräumigen Hauses an einem besonderen Ort namens „Vogelsgesang“.",
+      "Inmitten eines weitläufigen, zwei Hektar großen grünen Anwesens am Waldrand liegen unsere beiden Ferienwohnungen im Erdgeschoss eines geräumigen Hauses an einem besonderen Ort namens „Vogelsgesang“.",
       "Typisch für die lothringische Landschaft bietet die üppige Natur rund um die Häuser ein wunderschönes Panorama in ruhiger, friedlicher Umgebung.",
       "Zahlreiche Wanderwege sind ohne Straßenüberquerung erreichbar – zu Fuß, mit dem Rad oder zu Pferd. Für erfahrene Reiter stehen Pferde zur Verfügung."
     ],
@@ -151,9 +151,9 @@
     ]
   },
   "gites": {
-    "h1": "Die Ferienhäuser",
-    "lead": "Zwei baugleiche Doppelhaushälften auf Gartenniveau mit eigenem Eingang, eigener Terrasse und Parkplatz.",
-    "common": "Jedes Haus hat ein Wohnzimmer mit Einbauküche (Backofen, Cerankochfeld, Mikrowelle, Geschirrspüler, Waschmaschine, Gefrierschrank), zwei Schlafzimmer und ein barrierefreies Duschbad mit WC. Schlafen: vier 90-cm-Betten in den Schlafzimmern (zusammenstellbar) plus ein fünfter Schlafplatz im Wohnzimmer: 5 Personen pro Haus. Flachbildfernseher, WLAN, Fußbodenheizung mit Erdwärme.",
+    "h1": "Die Ferienwohnungen",
+    "lead": "Zwei baugleiche Ferienwohnungen auf Gartenniveau im Haus der Eigentümer mit eigenem Eingang, eigener Terrasse und Parkplatz.",
+    "common": "Jedes Haus hat ein Wohnzimmer mit Einbauküche (Backofen, Cerankochfeld, Mikrowelle, Geschirrspüler, Waschmaschine, Gefrierschrank), zwei Schlafzimmer und ein barrierefreies Duschbad mit WC. Schlafen: vier 90-cm-Betten in den Schlafzimmern (zusammenstellbar) plus ein fünfter Schlafplatz im Wohnzimmer: 5 Personen pro Wohnung. Flachbildfernseher, WLAN, Fußbodenheizung mit Erdwärme.",
     "desc_h": "Aufteilung",
     "equip_h": "Ausstattung",
     "serv_h": "Inklusive Leistungen",
@@ -180,12 +180,12 @@
       "Kostenloses WLAN",
       "Privater Parkplatz",
       "Haustiere willkommen",
-      "Nichtraucherhaus"
+      "Nichtraucher"
     ],
-    "gite1_h": "Ferienhaus 1",
+    "gite1_h": "Ferienwohnung 1",
     "gite1_p": "Südterrasse mit Blick auf die Wiese.",
-    "gite2_h": "Ferienhaus 2",
-    "gite2_p": "Zwilling von Haus 1, Duschbad mit dem Label Tourisme & Handicap.",
+    "gite2_h": "Ferienwohnung 2",
+    "gite2_p": "Zwilling von Wohnung 1, Duschbad mit dem Label Tourisme & Handicap.",
     "dispo_h": "Verfügbarkeit",
     "dispo_p": "Der Kalender ist mit unserem Belegungsplan synchronisiert. Senden Sie uns zum Buchen eine Anfrage mit Ihren Daten.",
     "tour": "360°-Rundgang starten"
@@ -269,10 +269,6 @@
       [
         "Wochenende (2 Nächte)",
         "300 €"
-      ],
-      [
-        "Nacht, ab",
-        "64,80 €"
       ]
     ],
     "included": "Inklusive: Bett- und Haushaltswäsche, Betten bei Ankunft bezogen, Endreinigung, Strom und Heizung, WLAN, Haustiere. Kaution 300 €. Kurtaxe zusätzlich. Kreditkarten und französische ANCV-Urlaubsschecks werden akzeptiert.",
@@ -283,8 +279,8 @@
     "f_phone": "Telefon",
     "f_in": "Anreise",
     "f_out": "Abreise",
-    "f_gite": "Ferienhaus",
-    "f_both": "Beide Häuser",
+    "f_gite": "Ferienwohnung",
+    "f_both": "Beide Wohnungen",
     "f_people": "Personen",
     "f_msg": "Nachricht",
     "f_send": "Anfrage senden",
@@ -305,11 +301,11 @@
   },
   "diapo": {
     "h1": "Diashow",
-    "lead": "Die Ferienhäuser und das Anwesen in Bildern.",
+    "lead": "Die Ferienwohnungen und das Anwesen in Bildern.",
     "sections": [
       "Das Anwesen",
-      "Ferienhaus 1",
-      "Ferienhaus 2"
+      "Ferienwohnung 1",
+      "Ferienwohnung 2"
     ]
   },
   "legal": {
@@ -326,7 +322,7 @@
     "credits": "Entwicklung: Sébastien Nadler, 2026. Statische Website, gehostet bei GitHub Pages; Kalender automatisch synchronisiert; Schriften Playfair Display und Nunito Sans (Google Fonts). Fotos: Marc und Agnès Nadler, sofern unten nicht anders angegeben.",
     "credits_photo_h": "Bildnachweise",
     "owners_h": "Eigentümer",
-    "owners": "Marc und Agnès Nadler sind Eigentümer und Betreiber der Ferienhäuser der Domaine du Geisberg. Ihnen gehören diese Website, ihre Texte und Fotos."
+    "owners": "Marc und Agnès Nadler sind Eigentümer und Betreiber der Ferienwohnungen der Domaine du Geisberg. Ihnen gehören diese Website, ihre Texte und Fotos."
   },
   "extra": {
     "reviews_eyebrow": "Gästestimmen",

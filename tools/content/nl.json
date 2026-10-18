@@ -1,24 +1,24 @@
 {
   "meta": {
     "index": [
-      "Domaine du Geisberg – Vakantiehuizen in Varsberg, Moezel",
-      "Twee vakantiehuizen (3 korenaren) in Varsberg (Lotharingen, Frankrijk) op een landgoed van 2 hectare aan de bosrand. Eigen terras, parkeerplaats, wifi, huisdieren welkom. Rechtstreeks boeken."
+      "Domaine du Geisberg – Vakantieappartementen in Varsberg, Moezel",
+      "Twee vakantieappartementen (3 korenaren) in Varsberg (Lotharingen, Frankrijk) op een landgoed van 2 hectare aan de bosrand. Eigen terras, parkeerplaats, wifi, huisdieren welkom. Rechtstreeks boeken."
     ],
     "le-domaine": [
       "Het landgoed – Domaine du Geisberg",
       "Twee hectare weiland aan de bosrand, op de plek Vogelsgesang, op de heuvel boven Varsberg."
     ],
     "gites": [
-      "De huizen – Domaine du Geisberg",
+      "De gîtes – Domaine du Geisberg",
       "Twee identieke huizen van 60 m², 2 slaapkamers, 5 personen, eigen terras, aardwarmte, label Tourisme & Handicap."
     ],
     "gite-1": [
-      "Huis 1 – Domaine du Geisberg",
-      "Huis 1: 60 m², 2 slaapkamers, 5 personen, terras op het zuiden, foto's en beschikbaarheid."
+      "Gîte 1 – Domaine du Geisberg",
+      "Gîte 1: 60 m², 2 slaapkamers, 5 personen, terras op het zuiden, foto's en beschikbaarheid."
     ],
     "gite-2": [
-      "Huis 2 – Domaine du Geisberg",
-      "Huis 2: 60 m², 2 slaapkamers, 5 personen, rolstoeltoegankelijk, foto's en beschikbaarheid."
+      "Gîte 2 – Domaine du Geisberg",
+      "Gîte 2: 60 m², 2 slaapkamers, 5 personen, rolstoeltoegankelijk, foto's en beschikbaarheid."
     ],
     "autour": [
       "Uitstapjes rond Varsberg – Domaine du Geisberg",
@@ -26,11 +26,11 @@
     ],
     "reservation": [
       "Prijzen, reserveren en route – Domaine du Geisberg",
-      "Prijzen van de huizen, rechtstreekse boekingsaanvraag en route naar Varsberg, Moezel."
+      "Prijzen van de gîtes, rechtstreekse boekingsaanvraag en route naar Varsberg, Moezel."
     ],
     "diaporama": [
       "Diavoorstelling – Domaine du Geisberg",
-      "De huizen en het landgoed in beeld."
+      "De gîtes en het landgoed in beeld."
     ],
     "mentions-legales": [
       "Juridische informatie – Domaine du Geisberg",
@@ -42,13 +42,13 @@
     ],
     "visite": [
       "360°-rondleiding – Domaine du Geisberg",
-      "Bezoek de huizen van het Domaine du Geisberg in 360°, kamer voor kamer."
+      "Bezoek de gîtes van het Domaine du Geisberg in 360°, kamer voor kamer."
     ]
   },
   "nav": {
     "index": "Home",
     "le-domaine": "Het landgoed",
-    "gites": "De huizen",
+    "gites": "De gîtes",
     "autour": "Omgeving",
     "reservation": "Prijzen & reserveren",
     "diaporama": "Diavoorstelling",
@@ -62,7 +62,7 @@
     "menu": "Menu",
     "theme": "Licht / donker thema wisselen",
     "langs": "Talen",
-    "tagline": "Vakantiehuizen · Varsberg · Moezel",
+    "tagline": "Vakantieappartementen · Varsberg · Moezel",
     "call": "Bellen",
     "write": "Schrijven",
     "see_map": "Op de kaart bekijken",
@@ -91,15 +91,15 @@
     "h1": "Twee rustige huizen tussen weide en bos",
     "lead": "Op de heuvel boven Varsberg, op de plek Vogelsgesang, „vogelzang”. Twee hectare weiland aan de bosrand, wandelpaden die in de tuin beginnen en een eigen terras voor elk huis.",
     "cta1": "Beschikbaarheid bekijken",
-    "cta2": "De huizen ontdekken",
+    "cta2": "De gîtes ontdekken",
     "facts": [
       [
-        "2 huizen",
+        "2 gîtes",
         "identiek, elk 60 m², met eigen ingang"
       ],
       [
         "5 pers.",
-        "per huis: 2 per slaapkamer, 1 in de woonkamer"
+        "per gîte: 2 per slaapkamer, 1 in de woonkamer"
       ],
       [
         "2 ha",
@@ -112,15 +112,15 @@
     ],
     "intro_h": "Een plek die haar naam eer aandoet",
     "intro": [
-      "Onze twee huizen liggen op de begane grond van een ruime woning, midden op een groen landgoed van twee hectare aan de bosrand, op een bijzondere plek die „Vogelsgesang” heet: vogelzang.",
+      "Onze twee gîtes zijn twee appartementen op de tuinverdieping van ons huis, midden op een groen landgoed van twee hectare aan de bosrand, op een bijzondere plek die „Vogelsgesang” heet: vogelzang.",
       "Typisch voor het Lotharingse landschap: weelderige natuur, een prachtig panorama, rust en sereniteit."
     ],
     "intro_more": "Het landgoed ontdekken",
-    "gites_h": "Twee tweelinghuizen, hetzelfde uitzicht",
+    "gites_h": "Twee identieke gîtes, hetzelfde uitzicht",
     "gites_lead": "Hetzelfde comfort aan beide kanten. Boek er één, of allebei voor de hele familie.",
     "gite1_sub": "60 m² · 2 slaapkamers · 5 personen · terras op het zuiden · parkeerplaats · wifi",
     "gite2_sub": "60 m² · 2 slaapkamers · 5 personen · terras · parkeerplaats · rolstoeltoegankelijk",
-    "see_gite": "Dit huis bekijken",
+    "see_gite": "Deze gîte bekijken",
     "around_h": "Te voet vanuit de tuin, of een uur rijden",
     "around_lead": "Wandelpaden zonder een weg over te steken, meer en watersportcentrum op 3 km, en Metz, Saarland en Luxemburg als dagtocht.",
     "around_more": "Alles wat er te zien is",
@@ -133,12 +133,12 @@
     "h1": "Het landgoed",
     "p": [
       "Midden op een uitgestrekt, groen landgoed van twee hectare aan de bosrand liggen onze twee huizen op de begane grond van een ruime woning, op een bijzondere plek die „Vogelsgesang” (vogelzang) heet.",
-      "Typisch voor het Lotharingse landschap biedt de weelderige natuur rond de huizen een prachtig panorama in een rustige, serene omgeving.",
+      "Typisch voor het Lotharingse landschap biedt de weelderige natuur rond de gîtes een prachtig panorama in een rustige, serene omgeving.",
       "Er zijn veel wandelpaden, bereikbaar zonder een weg over te steken, te voet, per fiets of te paard. Ervaren ruiters kunnen gebruikmaken van paarden."
     ],
     "gallery_h": "Het landgoed in beeld",
     "captions": [
-      "De huizen vanuit de weide",
+      "De gîtes vanuit de weide",
       "De paarden voor het huis",
       "De tuin met tafel onder de bomen",
       "Het terras van een huis",
@@ -151,9 +151,9 @@
     ]
   },
   "gites": {
-    "h1": "De huizen",
-    "lead": "Twee identieke, geschakelde huizen op tuinniveau, elk met eigen ingang, eigen terras en parkeerplaats.",
-    "common": "Elk huis heeft een woonkamer met open keuken (oven, keramische kookplaat, magnetron, vaatwasser, wasmachine, vriezer), twee slaapkamers en een badkamer met douche en toilet, aangepast voor mensen met beperkte mobiliteit. Slapen: vier bedden van 90 cm in de slaapkamers (tegen elkaar te schuiven) plus een vijfde slaapplaats in de woonkamer: 5 personen per huis. Flatscreen-tv, wifi, vloerverwarming op aardwarmte.",
+    "h1": "De gîtes",
+    "lead": "Twee identieke vakantieappartementen op tuinniveau in het huis van de eigenaars, elk met eigen ingang, eigen terras en parkeerplaats.",
+    "common": "Elk huis heeft een woonkamer met open keuken (oven, keramische kookplaat, magnetron, vaatwasser, wasmachine, vriezer), twee slaapkamers en een badkamer met douche en toilet, aangepast voor mensen met beperkte mobiliteit. Slapen: vier bedden van 90 cm in de slaapkamers (tegen elkaar te schuiven) plus een vijfde slaapplaats in de woonkamer: 5 personen per gîte. Flatscreen-tv, wifi, vloerverwarming op aardwarmte.",
     "desc_h": "Indeling",
     "equip_h": "Uitrusting",
     "serv_h": "Inbegrepen",
@@ -182,10 +182,10 @@
       "Huisdieren welkom",
       "Rookvrij"
     ],
-    "gite1_h": "Huis 1",
+    "gite1_h": "Gîte 1",
     "gite1_p": "Terras op het zuiden, uitzicht op de weide.",
-    "gite2_h": "Huis 2",
-    "gite2_p": "Tweeling van huis 1, badkamer met het label Tourisme & Handicap.",
+    "gite2_h": "Gîte 2",
+    "gite2_p": "Tweeling van gîte 1, badkamer met het label Tourisme & Handicap.",
     "dispo_h": "Beschikbaarheid",
     "dispo_p": "De kalender is gekoppeld aan onze planning. Stuur ons een aanvraag met uw data om te reserveren.",
     "tour": "De 360°-rondleiding bekijken"
@@ -269,10 +269,6 @@
       [
         "Weekend (2 nachten)",
         "€ 300"
-      ],
-      [
-        "Nacht, vanaf",
-        "€ 64,80"
       ]
     ],
     "included": "Inbegrepen: bed- en huishoudlinnen, bedden opgemaakt bij aankomst, eindschoonmaak, elektriciteit en verwarming, wifi, huisdieren. Borg € 300. Toeristenbelasting apart. Bankkaarten en Franse ANCV-vakantiecheques worden aanvaard.",
@@ -284,7 +280,7 @@
     "f_in": "Aankomst",
     "f_out": "Vertrek",
     "f_gite": "Huis",
-    "f_both": "Beide huizen",
+    "f_both": "Beide gîtes",
     "f_people": "Personen",
     "f_msg": "Bericht",
     "f_send": "Aanvraag versturen",
@@ -305,11 +301,11 @@
   },
   "diapo": {
     "h1": "Diavoorstelling",
-    "lead": "De huizen en het landgoed in beeld.",
+    "lead": "De gîtes en het landgoed in beeld.",
     "sections": [
       "Het landgoed",
-      "Huis 1",
-      "Huis 2"
+      "Gîte 1",
+      "Gîte 2"
     ]
   },
   "legal": {
@@ -326,7 +322,7 @@
     "credits": "Ontwikkeling: Sébastien Nadler, 2026. Statische website gehost door GitHub Pages; kalender automatisch gesynchroniseerd; lettertypen Playfair Display en Nunito Sans (Google Fonts). Foto's: Marc en Agnès Nadler, tenzij hieronder anders vermeld.",
     "credits_photo_h": "Fotoverantwoording",
     "owners_h": "Eigenaars",
-    "owners": "Marc en Agnès Nadler zijn de eigenaars en uitbaters van de vakantiehuizen van het Domaine du Geisberg. Zij zijn eigenaar van deze website, de teksten en de foto's."
+    "owners": "Marc en Agnès Nadler zijn de eigenaars en uitbaters van de vakantieappartementen van het Domaine du Geisberg. Zij zijn eigenaar van deze website, de teksten en de foto's."
   },
   "extra": {
     "reviews_eyebrow": "Beoordelingen",
@@ -368,7 +364,7 @@
   },
   "visite": {
     "h1": "Virtuele 360°-rondleiding",
-    "lead": "Loop door de huizen en over het landgoed alsof u er bent: sleep het beeld, knijp om te zoomen, ga van kamer naar kamer.",
+    "lead": "Loop door de gîtes en over het landgoed alsof u er bent: sleep het beeld, knijp om te zoomen, ga van kamer naar kamer.",
     "fallback": "Als de rondleiding hier niet verschijnt,",
     "open": "open hem in een nieuw tabblad"
   }
