@@ -185,6 +185,11 @@ section {
   background: var(--copper-2);
   color: #fff;
 }
+/* en thème sombre le cuivre est clair : texte foncé pour rester lisible */
+html[data-theme='dark'] .btn-p,
+html[data-theme='dark'] .btn-p:hover {
+  color: #1f2420;
+}
 .btn-g {
   background: var(--green);
   color: var(--green-ink);
@@ -389,6 +394,15 @@ html[data-theme='dark'] .ibtn .moon {
 }
 .nav .book::after {
   content: none;
+}
+/* le bouton Réserver garde la couleur de texte du bouton, même sur la page Réservation (aria-current) */
+.nav > a.book,
+.nav > a.book[aria-current] {
+  color: #fff;
+}
+html[data-theme='dark'] .nav > a.book,
+html[data-theme='dark'] .nav > a.book[aria-current] {
+  color: #1f2420;
 }
 .langs {
   display: flex;
