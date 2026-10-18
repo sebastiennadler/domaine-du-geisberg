@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Domaine du Geisberg : deux gîtes ruraux 3 épis à Varsberg (Moselle), sur 2 hectares en lisière de forêt. Terrasse, parking, wifi, animaux acceptés. Réservation en direct.">
+<meta name="robots" content="noindex">
+<link rel="canonical" href="https://www.domainedugeisberg.fr/">
+<style>:root{padding:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>Domaine du Geisberg – Gîtes ruraux à Varsberg, Moselle</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+/* Layout: single column mobile-first, max 1100px; structure inspired by anaruizllamazares.com (signature header, short menu, flags, theme toggle, featured block, intro, history, image grid). */
+:root{
+  --bg:#F7F6F2; --bg2:#FFFFFF; --fg:#1E2520; --muted:#5F6A62; --line:#E1E3DC;
+  --green:#294C3A; --green-ink:#F7F6F2; --accent:#9A5B2B;
+  --display:'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+  --body:'Nunito Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){ --bg:#151516; --bg2:#1F2021; --fg:#ECEAE4; --muted:#A8ADA6; --line:#2E3130; --green:#2F5A44; --green-ink:#ECEAE4; --accent:#D6A06A; color-scheme:dark } }
+:root[data-theme="dark"]{ --bg:#151516; --bg2:#1F2021; --fg:#ECEAE4; --muted:#A8ADA6; --line:#2E3130; --green:#2F5A44; --green-ink:#ECEAE4; --accent:#D6A06A; color-scheme:dark }
+
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--body);font-size:17px;line-height:1.55}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
+a{color:inherit}
+img{max-width:100%;display:block}
+h1,h2,h3{font-family:var(--display);font-weight:600;line-height:1.1;margin:0;text-wrap:balance}
+.wrap{max-width:1100px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.skip{position:absolute;left:-999px}
+.skip:focus{left:16px;top:8px;background:var(--bg2);padding:8px;z-index:20}
+
+/* Header */
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:9;background:var(--bg);border-bottom:1px solid var(--line)}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-block:12px}
+.brand{text-decoration:none;display:flex;flex-direction:column;line-height:1.1}
+.brand b{font-family:var(--display);font-size:24px;font-weight:600}
+.brand span{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.ctl{display:flex;gap:4px;align-items:center}
+.ibtn{width:44px;height:44px;border:0;background:none;color:var(--fg);border-radius:8px;display:grid;place-items:center;cursor:pointer}
+.ibtn:hover,.ibtn:focus-visible{background:var(--line);outline:none}
+nav{display:none;flex-direction:column;gap:4px;padding-block:8px 16px;border-top:1px solid var(--line)}
+nav.open{display:flex}
+nav a{text-decoration:none;padding:12px 4px;font-weight:600;font-size:18px}
+.langs{display:flex;flex-wrap:wrap;gap:6px;padding:12px 4px 4px;border-top:1px solid var(--line);margin-top:8px}
+.langs a{font-size:13px;font-weight:700;letter-spacing:.06em;padding:8px 10px;border:1px solid var(--line);border-radius:999px;text-decoration:none;min-height:36px}
+.langs a[aria-current]{background:var(--green);color:var(--green-ink);border-color:var(--green)}
+@media(min-width:900px){
+  nav{display:flex;flex-direction:row;align-items:center;border:0;padding:0;gap:4px}
+  nav a{font-size:16px;padding:10px 12px}
+  .langs{border:0;margin:0;padding:0 0 0 12px;flex-wrap:nowrap}
+  .langs a{padding:6px 8px;min-height:0}
+  #menu{display:none}
+}
+
+/* Hero */
+.hero{padding-block:24px 8px}
+.photo{aspect-ratio:4/3;width:100%;border-radius:12px;background:linear-gradient(160deg,#4E6B55,#294C3A 60%,#1E3A2B);display:grid;place-items:center;color:#D9E2D9;font-size:13px;letter-spacing:.08em;text-transform:uppercase;text-align:center;padding:16px}
+@media(min-width:700px){.photo{aspect-ratio:21/9}}
+.hero h1{font-size:clamp(34px,7vw,60px);margin-top:20px}
+.hero p{font-size:19px;color:var(--muted);max-width:40rem;margin:12px 0 20px}
+.cta{display:flex;flex-direction:column;gap:10px}
+.btn{display:flex;align-items:center;justify-content:center;min-height:50px;padding:0 22px;border-radius:10px;text-decoration:none;font-weight:700;font-size:17px;border:1px solid var(--green)}
+.btn.p{background:var(--green);color:var(--green-ink)}
+.btn.s{background:transparent;color:var(--fg);border-color:var(--line)}
+@media(min-width:600px){.cta{flex-direction:row}}
+
+/* Sections */
+section{padding-block:40px}
+section+section{border-top:1px solid var(--line)}
+.eyebrow{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);font-weight:700;margin-bottom:8px}
+h2{font-size:clamp(28px,5vw,40px);margin-bottom:16px}
+.lead{font-size:18px;color:var(--muted);max-width:40rem;margin:0 0 20px}
+
+/* Facts */
+.facts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+@media(min-width:700px){.facts{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.fact{border-top:2px solid var(--green);padding-top:10px}
+.fact b{font-family:var(--display);font-size:30px;font-weight:600;display:block}
+.fact span{font-size:14px;color:var(--muted)}
+
+/* Gîtes */
+.gites{display:grid;gap:20px}
+@media(min-width:700px){.gites{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.gite{display:block;text-decoration:none;background:var(--bg2);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.gite .ph{aspect-ratio:3/2;background:linear-gradient(150deg,#C9C2B2,#AEB7A9);display:grid;place-items:center;color:#3E433D;font-size:12px;letter-spacing:.08em;text-transform:uppercase}
+.gite .in{padding:18px 18px 20px;display:flex;flex-direction:column;gap:8px}
+.gite h3{font-size:26px}
+.gite p{margin:0;color:var(--muted);font-size:15px}
+.price{display:flex;justify-content:space-between;align-items:baseline;gap:8px;margin-top:6px}
+.price b{font-size:20px}
+.price span{color:var(--accent);font-weight:700}
+
+/* Dispo */
+.dispo{background:var(--green);color:var(--green-ink);border-radius:14px;padding:24px 18px}
+.dispo h2{color:inherit}
+.dispo p{opacity:.9;margin:0 0 16px}
+.form{display:grid;gap:10px}
+@media(min-width:700px){.form{grid-template-columns:1fr 1fr 1fr auto;align-items:end}}
+.form label{display:flex;flex-direction:column;gap:6px;font-size:13px;font-weight:700}
+.form input,.form select{min-height:48px;border-radius:8px;border:1px solid rgba(255,255,255,.35);background:var(--bg);color:var(--fg);padding:0 12px;font:inherit;font-size:16px}
+.form button{min-height:48px;border:0;border-radius:8px;background:var(--accent);color:#fff;font:inherit;font-weight:700;font-size:16px;padding:0 20px;cursor:pointer}
+.cal{margin-top:20px;background:var(--bg);color:var(--fg);border-radius:10px;padding:14px}
+.cal .hd{display:flex;justify-content:space-between;font-weight:700;margin-bottom:10px;font-size:15px}
+.cal .g{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:3px;text-align:center;font-size:14px;font-variant-numeric:tabular-nums}
+.cal .g i{font-style:normal;color:var(--muted);font-size:12px}
+.cal .g s,.cal .g u{text-decoration:none;padding:7px 0;border-radius:4px}
+.cal .g u{background:var(--bg2);border:1px solid var(--line)}
+.cal .g s{background:var(--line);color:var(--muted);text-decoration:line-through}
+.leg{display:flex;gap:14px;font-size:12px;color:var(--muted);margin-top:8px}
+
+/* Domaine */
+.grid2{display:grid;gap:24px}
+@media(min-width:800px){.grid2{grid-template-columns:1fr 1fr;align-items:center}}
+.mosaic{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.mosaic div{aspect-ratio:1;border-radius:10px;background:linear-gradient(150deg,#C9D0C5,#A9B5A8);display:grid;place-items:center;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#3E433D;text-align:center;padding:8px}
+.story p{margin:0 0 14px;font-size:17px}
+
+/* Autour */
+.around{display:grid;gap:12px}
+@media(min-width:700px){.around{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.around a{text-decoration:none;display:flex;flex-direction:column;gap:4px;padding:16px;border:1px solid var(--line);border-radius:12px;background:var(--bg2)}
+.around b{font-size:18px}
+.around span{font-size:15px;color:var(--muted)}
+
+/* Avis */
+.avis{display:grid;gap:12px}
+@media(min-width:700px){.avis{grid-template-columns:repeat(3,minmax(0,1fr))}}
+blockquote{margin:0;padding:18px;border:1px solid var(--line);border-radius:12px;background:var(--bg2);display:flex;flex-direction:column;gap:8px}
+blockquote .st{color:var(--accent);letter-spacing:2px;font-size:15px}
+blockquote p{margin:0;font-style:italic;font-size:16px}
+blockquote cite{font-style:normal;font-size:14px;color:var(--muted)}
+
+/* Contact */
+.contact{display:grid;gap:20px}
+@media(min-width:800px){.contact{grid-template-columns:1fr 1fr}}
+.tar{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid var(--line)}
+.note{font-size:14px;color:var(--muted);margin-top:10px}
+.addr{font-size:17px;line-height:1.7}
+.map{aspect-ratio:16/9;border-radius:10px;background:linear-gradient(150deg,#C9D0C5,#A9B5A8);display:grid;place-items:center;color:#3E433D;font-size:12px;letter-spacing:.08em;text-transform:uppercase;margin-top:14px}
+
+footer{border-top:1px solid var(--line);padding-block:24px;font-size:14px;color:var(--muted)}
+footer .wrap{display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between}
+footer a{color:inherit}
+@media(prefers-reduced-motion:no-preference){.gite,.around a{transition:transform .2s}.gite:hover,.around a:hover{transform:translateY(-2px)}}
+</style>
+
+<a class="skip" href="#main">Aller au contenu</a>
+<header>
+  <div class="wrap">
+    <div class="bar">
+      <a class="brand" href="#"><b>Domaine du Geisberg</b><span>Gîtes · Varsberg · Moselle</span></a>
+      <div class="ctl">
+        <button class="ibtn" id="theme" type="button" aria-label="Changer le thème clair / sombre">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        </button>
+        <button class="ibtn" id="menu" type="button" aria-label="Menu" aria-expanded="false" aria-controls="nav">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+        </button>
+      </div>
+    </div>
+    <nav id="nav" aria-label="Navigation principale">
+      <a href="#gites">Les gîtes</a>
+      <a href="#dispo">Disponibilités</a>
+      <a href="#domaine">Le domaine</a>
+      <a href="#autour">Autour</a>
+      <a href="#tarifs">Tarifs</a>
+      <a href="#contact">Contact</a>
+      <div class="langs" aria-label="Langues">
+        <a href="#" aria-current="page" lang="fr">FR</a><a href="#" lang="en">EN</a><a href="#" lang="de">DE</a><a href="#" lang="es">ES</a><a href="#" lang="pt">PT</a><a href="#" lang="nl">NL</a><a href="#" lang="zh">中文</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+<div class="wrap">
+
+<div class="hero">
+  <div class="photo" style="background:none;padding:0;display:block;overflow:hidden"><img src="img/gite-varsberg-2.jpg" alt="Les gîtes du Domaine du Geisberg à Varsberg" loading="lazy" style="width:100%;height:100%;object-fit:cover;border-radius:inherit"></div>
+  <h1>Deux gîtes au calme, entre prairie et forêt</h1>
+  <p>Sur la colline qui domine Varsberg, au lieu-dit Vogelsgesang, « le chant des oiseaux ». Deux hectares, des sentiers qui partent du jardin, une terrasse pour chaque gîte.</p>
+  <div class="cta">
+    <a class="btn p" href="#dispo">Voir les disponibilités</a>
+    <a class="btn s" href="#gites">Découvrir les gîtes</a>
+  </div>
+</div>
+
+<section>
+  <div class="facts">
+    <div class="fact"><b>2 gîtes</b><span>60 m² chacun, entrées indépendantes</span></div>
+    <div class="fact"><b>[4] pers.</b><span>par gîte, [X] chambres</span></div>
+    <div class="fact"><b>2 ha</b><span>de prairies en lisière de forêt</span></div>
+    <div class="fact"><b>0 route</b><span>à traverser pour partir à pied, à vélo, à cheval</span></div>
+  </div>
+</section>
+
+<section id="gites">
+  <div class="eyebrow">Les gîtes</div>
+  <h2>Deux maisons jumelles, même vue</h2>
+  <p class="lead">Mêmes prestations de part et d'autre. Réservez l'un des deux, ou les deux pour une tribu.</p>
+  <div class="gites">
+    <a class="gite" href="#gite-1">
+      <div class="ph" style="background:none"><img src="img/gite-1-varsberg.jpg" alt="Séjour du gîte 1" loading="lazy" style="width:100%;height:100%;object-fit:cover;border-radius:inherit"></div>
+      <div class="in">
+        <h3>Gîte 1 · [Nom]</h3>
+        <p>60 m² · [X] chambres · terrasse plein sud · parking · wifi · [équipements]</p>
+        <div class="price"><b>dès 300 €</b><span>Voir ce gîte →</span></div>
+      </div>
+    </a>
+    <a class="gite" href="#gite-2">
+      <div class="ph" style="background:none"><img src="img/gite-2-varsberg.jpg" alt="Séjour du gîte 2" loading="lazy" style="width:100%;height:100%;object-fit:cover;border-radius:inherit"></div>
+      <div class="in">
+        <h3>Gîte 2 · [Nom]</h3>
+        <p>60 m² · [X] chambres · terrasse · parking · wifi · accessible PMR</p>
+        <div class="price"><b>dès 300 €</b><span>Voir ce gîte →</span></div>
+      </div>
+    </a>
+  </div>
+</section>
+
+<section id="dispo">
+  <div class="dispo">
+    <div class="eyebrow" style="color:#E7C59A">Disponibilités</div>
+    <h2>Choisissez vos dates</h2>
+    <p>Calendrier synchronisé avec notre planning. Réponse sous 24 h, réservation en direct sans commission.</p>
+    <form class="form" id="f" novalidate>
+      <label>Arrivée<input type="date" id="in"></label>
+      <label>Départ<input type="date" id="out"></label>
+      <label>Gîte<select id="g"><option>Gîte 1</option><option>Gîte 2</option><option>Les deux</option></select></label>
+      <button type="submit">Demander</button>
+    </form>
+    <div class="cal" aria-label="Exemple de calendrier">
+      <div class="hd"><span>Novembre 2026 · Gîte 1</span><span>‹ ›</span></div>
+      <div class="g">
+        <i>L</i><i>M</i><i>M</i><i>J</i><i>V</i><i>S</i><i>D</i>
+        <span></span><span></span><span></span><span></span><span></span><span></span><u>1</u>
+        <u>2</u><u>3</u><u>4</u><u>5</u><u>6</u><u>7</u><u>8</u>
+        <u>9</u><s>10</s><s>11</s><s>12</s><s>13</s><s>14</s><s>15</s>
+        <s>16</s><s>17</s><s>18</s><s>19</s><s>20</s><s>21</s><s>22</s>
+        <u>23</u><u>24</u><u>25</u><u>26</u><u>27</u><u>28</u><u>29</u>
+        <u>30</u>
+      </div>
+      <div class="leg"><span>□ Disponible</span><span>▨ Occupé</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="domaine">
+  <div class="grid2">
+    <div class="mosaic">
+      <div style="background:none;padding:0;overflow:hidden"><img src="img/paysage-varsberg.jpg" alt="Paysage autour de Varsberg" loading="lazy" style="width:100%;height:100%;object-fit:cover;border-radius:inherit"></div><div style="background:none;padding:0;overflow:hidden"><img src="img/Domaine-ext.jpg" alt="Extérieur du domaine" loading="lazy" style="width:100%;height:100%;object-fit:cover;border-radius:inherit"></div><div style="background:none;padding:0;overflow:hidden"><img src="img/gite-varsberg-geisberg-neige-5.jpg" alt="Le domaine sous la neige" loading="lazy" style="width:100%;height:100%;object-fit:cover;border-radius:inherit"></div><div style="background:none;padding:0;overflow:hidden"><img src="img/Domaine-Geisberg-3.jpg" alt="Vue depuis le domaine" loading="lazy" style="width:100%;height:100%;object-fit:cover;border-radius:inherit"></div>
+    </div>
+    <div class="story">
+      <div class="eyebrow">Le domaine</div>
+      <h2>Un lieu-dit qui porte bien son nom</h2>
+      <p>Vogelsgesang, le chant des oiseaux. Deux hectares de prairies en lisière de forêt, à l'écart du village et à [X] minutes de ses commerces. Les sentiers partent directement du jardin.</p>
+      <p>Agnès et Marc vous accueillent. [2 ou 3 lignes dans leurs mots.]</p>
+      <a href="#domaine" style="font-weight:700">Découvrir le domaine →</a>
+    </div>
+  </div>
+</section>
+
+<section id="autour">
+  <div class="eyebrow">Autour</div>
+  <h2>À pied depuis le jardin, ou à une heure de route</h2>
+  <div class="around">
+    <a href="#autour"><b>Randonnée et VTT</b><span>Boucles balisées au départ du domaine, forêt du Warndt.</span></a>
+    <a href="#autour"><b>Metz et Sarreguemines</b><span>Centre Pompidou-Metz, cathédrale, faïenceries, à [X] min.</span></a>
+    <a href="#autour"><b>Allemagne et Luxembourg</b><span>Sarrebruck à [X] min, Luxembourg à [X] min.</span></a>
+    <a href="#autour"><b>Histoire et nature</b><span>Ligne Maginot, étangs, Parc naturel régional de Lorraine.</span></a>
+  </div>
+</section>
+
+<section>
+  <div class="eyebrow">Ils sont venus</div>
+  <h2>Avis de nos hôtes</h2>
+  <div class="avis">
+    <blockquote><span class="st">★★★★★</span><p>[Avis réel, copié de Gîtes de France ou Airbnb avec accord]</p><cite>[Prénom], [mois année]</cite></blockquote>
+    <blockquote><span class="st">★★★★★</span><p>[Avis réel]</p><cite>[Prénom], [mois année]</cite></blockquote>
+    <blockquote><span class="st">★★★★★</span><p>[Avis réel]</p><cite>[Prénom], [mois année]</cite></blockquote>
+  </div>
+</section>
+
+<section id="tarifs">
+  <div class="contact">
+    <div>
+      <div class="eyebrow">Tarifs</div>
+      <h2>Simples et sans commission</h2>
+      <div class="tar"><span>Week-end (2 nuits)</span><b>300 €</b></div>
+      <div class="tar"><span>Semaine</span><b>420 €</b></div>
+      <div class="tar"><span>[Haute saison / fêtes]</span><b>[XXX €]</b></div>
+      <p class="note">Draps et linge [inclus / en option], ménage [inclus / X €], taxe de séjour en sus. CB et chèques-vacances ANCV acceptés.</p>
+    </div>
+    <div id="contact">
+      <div class="eyebrow">Contact</div>
+      <h2>Agnès et Marc</h2>
+      <div class="addr">6 rue du Geisberg, 57880 Varsberg<br>Agnès · 06 73 42 05 89<br>Marc · 07 89 56 74 91<br>gitevarsberg@hotmail.com</div>
+      <div class="map">[Carte · accès depuis l'A4, sortie Saint-Avold]</div>
+    </div>
+  </div>
+</section>
+
+</div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Domaine du Geisberg · Gîtes ruraux à Varsberg (57)</span>
+    <span><a href="#">Mentions légales</a> · <a href="#">Confidentialité</a> · Gîtes de France · Clévacances · Tourisme &amp; Handicap</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var m=document.getElementById('menu'),n=document.getElementById('nav');
+  m.addEventListener('click',function(){var o=n.classList.toggle('open');m.setAttribute('aria-expanded',o)});
+  n.addEventListener('click',function(e){if(e.target.tagName==='A'&&window.innerWidth<900){n.classList.remove('open');m.setAttribute('aria-expanded','false')}});
+  var t=document.getElementById('theme'),r=document.documentElement;
+  try{var s=localStorage.getItem('theme');if(s)r.setAttribute('data-theme',s)}catch(e){}
+  t.addEventListener('click',function(){
+    var dark=r.getAttribute('data-theme')==='dark'||(!r.getAttribute('data-theme')&&matchMedia('(prefers-color-scheme: dark)').matches);
+    var v=dark?'light':'dark';r.setAttribute('data-theme',v);try{localStorage.setItem('theme',v)}catch(e){}
+  });
+  document.getElementById('f').addEventListener('submit',function(e){e.preventDefault();this.querySelector('button').textContent='Demande envoyée (maquette)'});
+})();
+</script>
+</body>
+</html>
