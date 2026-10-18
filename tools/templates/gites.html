@@ -2,11 +2,17 @@
 {% set g = t.gites %}
 {% set days = ['L','M','M','J','V','S','D'] | join(',') if lang == 'fr' else {'en':'M,T,W,T,F,S,S','de':'M,D,M,D,F,S,S','es':'L,M,X,J,V,S,D','pt':'S,T,Q,Q,S,S,D','nl':'M,D,W,D,V,Z,Z','zh':'一,二,三,四,五,六,日'}[lang] %}
 {% block main %}
-<div class="page-hero" style="background-image:url('{{ rel }}{{ s.hero[5] }}')">
+<div class="page-hero" style="background-image:url('{{ src('gites/terrasse-soir') }}')">
   <div class="wrap"><div class="eyebrow" style="color:#E7C59A">{{ ui.tagline }}</div><h1>{{ g.h1 }}</h1><p class="lead">{{ g.lead }}</p></div>
 </div>
 <section class="wrap">
+  <div class="gallery"{% if lang == 'fr' %} data-note="{{ t.notes.gites }}"{% endif %}>
+    {% for id in s.gites %}<a href="{{ src(id) }}" data-cap="{{ g.captions[loop.index0] }}">{{ pic(id, g.captions[loop.index0], '(min-width: 700px) 360px, 45vw') }}</a>{% endfor %}
+  </div>
+</section>
+<section class="wrap" style="padding-top:0">
   <p class="lead" style="max-width:none"{% if lang == 'fr' %} data-note="{{ t.notes.facts }}"{% endif %}>{{ g.common }}</p>
+  <p class="lead" style="max-width:none">{{ g.identical }}</p>
   <div class="three" style="margin-top:28px">
     <div><h3>{{ g.desc_h }}</h3><ul class="list">{% for x in g.desc %}<li>{{ x }}</li>{% endfor %}</ul></div>
     <div><h3>{{ g.equip_h }}</h3><ul class="list">{% for x in g.equip %}<li>{{ x }}</li>{% endfor %}</ul></div>
@@ -19,18 +25,12 @@
     <div><h3 style="margin-bottom:14px">{{ t.extra.practical_h }}</h3><ul class="list">{% for x in t.extra.practical %}<li>{{ x }}</li>{% endfor %}</ul></div>
   </div>
 </section>
-<section class="wrap" style="padding-top:0">
-  <div class="cards"{% if lang == 'fr' %} data-note="{{ t.notes.gites }}"{% endif %}>
-    <a class="card" href="gite-1.html"><div class="ph"><img src="{{ rel }}{{ s.gite1[0] }}" alt="{{ g.gite1_h }}" loading="lazy"></div><div class="in"><h3>{{ g.gite1_h }}</h3><p>{{ g.gite1_p }}</p><div class="row"><b>{{ ui.from }} {{ s.price_weekend }}</b><span>{{ t.home.see_gite }} →</span></div></div></a>
-    <a class="card" href="gite-2.html"><div class="ph"><img src="{{ rel }}{{ s.gite2[0] }}" alt="{{ g.gite2_h }}" loading="lazy"></div><div class="in"><h3>{{ g.gite2_h }}</h3><p>{{ g.gite2_p }}</p><div class="row"><b>{{ ui.from }} {{ s.price_weekend }}</b><span>{{ t.home.see_gite }} →</span></div></div></a>
-  </div>
-</section>
 <section class="wrap" id="dispo" style="padding-top:0">
   <div class="band"{% if lang == 'fr' %} data-note="{{ t.notes.dispo }}"{% endif %}>
-    <div class="eyebrow">{{ g.dispo_h }}</div><h2>{{ g.dispo_h }}</h2><p class="lead" style="color:inherit;opacity:.9">{{ g.dispo_p }}</p>
+    <div class="eyebrow">{{ t.nav.reservation }}</div><h2>{{ g.dispo_h }}</h2><p class="lead" style="color:inherit;opacity:.9">{{ g.dispo_p }}</p>
     <div class="cal-row">
-      {% for name, busy in [(g.gite1_h, s.busy1), (g.gite2_h, s.busy2)] %}
-      <div><h3 style="margin-bottom:10px">{{ name }}</h3>
+      {% for key, name, busy in [('gite-1', g.gite1_h, s.busy1), ('gite-2', g.gite2_h, s.busy2)] %}
+      <div id="{{ key }}"><h3 style="margin-bottom:10px">{{ name }}</h3>
         <div class="cal" data-days="{{ days }}" data-busy="{{ busy }}">
           <div class="hd"><button type="button" class="prev" aria-label="{{ ui.prev }}">‹</button><b></b><button type="button" class="next" aria-label="{{ ui.next }}">›</button></div>
           <div class="g"></div>
@@ -38,8 +38,11 @@
         </div></div>
       {% endfor %}
     </div>
-    <p style="margin:24px 0 0"><a class="btn btn-p" href="reservation.html#demande">{{ t.nav.book }}</a> <a class="btn btn-light" href="visite.html">{{ g.tour }}</a></p>
+    <div class="prices" style="background:var(--bg);color:var(--fg);max-width:420px;margin-top:22px">{% for l, p in t.reservation.prices %}<div><span>{{ l }}</span><b>{{ p }}</b></div>{% endfor %}</div>
+    <p style="margin:24px 0 0"><a class="btn btn-p" href="reservation.html#demande">{{ t.nav.book }}</a> <a class="btn btn-light" href="reservation.html">{{ t.nav.reservation }}</a></p>
   </div>
 </section>
-<section class="wrap" style="padding-top:0"><a class="more" href="avis.html">{{ t.extra.reviews_h }} →</a></section>
+<section class="wrap" style="padding-top:0">
+  <div class="links-row"><a class="more" href="visite.html">{{ g.tour }} →</a><a class="more" href="videos.html">{{ t.nav.videos }} →</a><a class="more" href="avis.html">{{ t.extra.reviews_h }} →</a></div>
+</section>
 {% endblock %}

@@ -563,10 +563,14 @@ body {
 .hero .slide {
   position: absolute;
   inset: 0;
-  background-size: cover;
-  background-position: center;
   opacity: 0;
-  transition: opacity 1.6s ease;
+  transition: opacity 1.8s ease;
+}
+.hero .slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 .hero .slide.on {
   opacity: 1;
@@ -1723,23 +1727,20 @@ body.menu-open .nbtn {
   border-radius: var(--r);
   padding: 22px;
 }
-@media (min-width: 800px) {
+@media (min-width: 860px) {
   .hosts {
-    grid-template-columns: 260px 1fr;
-    gap: 34px;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 36px;
     padding: 28px 34px;
   }
 }
-.hosts .portrait {
-  aspect-ratio: 1;
-  border-radius: 50%;
+.hosts .photo {
+  border-radius: 12px;
   overflow: hidden;
   background: var(--bg3);
-  max-width: 220px;
-  margin: 0 auto;
-  border: 5px solid var(--bg);
+  aspect-ratio: 4/3;
 }
-.hosts .portrait img {
+.hosts .photo img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -1956,4 +1957,136 @@ body.menu-open .totop {
   html.theming * {
     transition: none !important;
   }
+}
+
+/* ---------- Accueil : bandeau « Le domaine », puces compactes ---------- */
+.domaine-band {
+  position: relative;
+  display: block;
+  border-radius: var(--r);
+  overflow: hidden;
+  color: #fff;
+  text-decoration: none;
+  aspect-ratio: 21/9;
+  background: #1e3a2d;
+}
+@media (max-width: 700px) {
+  .domaine-band {
+    aspect-ratio: 4/3;
+  }
+}
+.domaine-band img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.9s ease;
+}
+.domaine-band:hover img {
+  transform: scale(1.03);
+}
+.domaine-band::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(14, 24, 18, 0.82) 0%, rgba(14, 24, 18, 0.2) 55%, rgba(14, 24, 18, 0) 100%);
+}
+.domaine-band .in {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  padding: 22px 20px;
+  max-width: 44rem;
+}
+@media (min-width: 800px) {
+  .domaine-band .in {
+    padding: 34px 40px;
+  }
+}
+.domaine-band .eyebrow {
+  color: #e7c59a;
+}
+.domaine-band h2 {
+  color: #fff;
+  text-shadow: 0 2px 16px rgba(0, 0, 0, 0.35);
+}
+.domaine-band p {
+  color: #eef1ea;
+  margin: 10px 0 12px;
+}
+@media (max-width: 700px) {
+  .domaine-band p {
+    display: none;
+  }
+}
+.domaine-band .more {
+  color: #fff;
+}
+.domaine-band:hover {
+  color: #fff;
+}
+.chips.compact {
+  margin: 4px 0 22px;
+}
+.chips.compact li {
+  font-size: 14px;
+  padding: 6px 12px;
+}
+.cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.links-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px 30px;
+}
+
+/* ---------- Vidéos ---------- */
+.videos {
+  display: grid;
+  gap: 28px;
+}
+@media (min-width: 900px) {
+  .videos {
+    grid-template-columns: 1fr 1fr;
+  }
+  .videos .video.small {
+    grid-column: 1 / -1;
+  }
+}
+.video {
+  margin: 0;
+}
+.video video {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16/9;
+  background: #0f1612;
+  border-radius: var(--r);
+}
+.video.small video {
+  aspect-ratio: 7/4;
+}
+.video figcaption {
+  display: grid;
+  gap: 2px;
+  padding: 12px 2px 0;
+}
+.video figcaption b {
+  font-family: var(--display);
+  font-size: 21px;
+  font-weight: 600;
+}
+.video figcaption span {
+  color: var(--muted);
+}
+.video figcaption small {
+  color: var(--muted);
+  font-size: 13px;
 }

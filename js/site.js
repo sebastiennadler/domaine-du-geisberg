@@ -81,7 +81,7 @@
       if (!matchMedia('(prefers-reduced-motion: reduce)').matches)
         timer = setInterval(function () {
           go(cur + 1);
-        }, 5000);
+        }, 7000);
     }
     dots.forEach(function (d, i) {
       d.addEventListener('click', function () {
@@ -342,7 +342,8 @@
   /* Apparition progressive des blocs à l'entrée dans l'écran, avec un léger décalage entre voisins */
   var revealSel =
     '.sec-head, .fact, .card, .tile, .mosaic > *, .gallery > *, .reviews > *, .hosts, .diapo-teaser, ' +
-    '.strip > *, .logos > *, .cols > *, .prices, .ratings > *, .chips > *, .list > li, .visite, .dispo';
+    '.strip > *, .logos > *, .cols > *, .prices, .ratings > *, .chips > *, .list > li, .visite, .dispo, ' +
+    '.domaine-band, .videos > *, .links-row, .cal-row > *';
   var toReveal = Array.prototype.slice.call(document.querySelectorAll(revealSel));
   if (toReveal.length && 'IntersectionObserver' in window && !reduced) {
     toReveal.forEach(function (el) {

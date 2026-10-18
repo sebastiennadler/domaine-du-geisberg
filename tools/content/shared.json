@@ -34,55 +34,31 @@
   "tva": "FR44 478447790",
   "publisher": "Marc Nadler",
   "hero": [
-    "img/hero-1.webp",
-    "img/hero-2.webp",
-    "img/hero-3.webp",
-    "img/hero-4.webp",
-    "img/hero-5.webp",
-    "img/hero-6.webp"
+    "hero/maison-neige-soir",
+    "hero/maison-prairie",
+    "hero/chevaux-soir"
   ],
   "domaine": [
-    "img/domaine/domaine-01.webp",
-    "img/domaine/domaine-02.webp",
-    "img/domaine/domaine-03.webp",
-    "img/domaine/domaine-04.webp",
-    "img/domaine/domaine-05.webp",
-    "img/domaine/domaine-06.webp",
-    "img/domaine/domaine-07.webp",
-    "img/domaine/domaine-08.webp",
-    "img/domaine/domaine-09.webp",
-    "img/domaine/domaine-10.webp"
-  ],
-  "gite1": [
-    "img/gite-1/gite-1-01.webp",
-    "img/gite-1/gite-1-02.webp",
-    "img/gite-1/gite-1-03.webp",
-    "img/gite-1/gite-1-04.webp",
-    "img/gite-1/gite-1-05.webp",
-    "img/gite-1/gite-1-06.webp"
-  ],
-  "gite2": [
-    "img/gite-2/gite-2-01.webp",
-    "img/gite-2/gite-2-02.webp",
-    "img/gite-2/gite-2-03.webp",
-    "img/gite-2/gite-2-04.webp",
-    "img/gite-2/gite-2-05.webp",
-    "img/gite-2/gite-2-06.webp",
-    "img/gite-2/gite-2-07.webp"
+    "domaine/chemin-collines",
+    "domaine/jardin-table",
+    "domaine/terrasse-parasol",
+    "domaine/coucher-soleil",
+    "domaine/chevaux-hiver",
+    "domaine/chien-prairie"
   ],
   "labels": [
     [
-      "img/logos/gite-france.webp",
+      "logos/gite-france",
       "Gîtes de France",
       "https://www.gites-de-france.com/fr/grand-est/moselle/domaine-du-geisberg-h57g004193"
     ],
     [
-      "img/logos/cle-vacances.webp",
+      "logos/cle-vacances",
       "Clévacances",
       "https://www.clevacances.com/fr/hebergement/11833-gite-varsberg"
     ],
     [
-      "img/logos/tourisme-handicap.webp",
+      "logos/tourisme-handicap",
       "Tourisme & Handicap",
       "https://www.tourisme-handicaps.org/"
     ]
@@ -135,15 +111,15 @@
     ]
   ],
   "site_imgs": {
-    "cimetiere-americain": "img/autour/cimetiere-americain.webp",
-    "musee-mine": "img/autour/musee-mine.webp",
-    "volklingen": "img/autour/volklingen.webp",
-    "bliesbruck": "img/autour/bliesbruck.webp",
-    "pompidou-metz": "img/autour/pompidou-metz.webp",
-    "zoo-amneville": "img/autour/zoo-amneville.webp",
-    "sainte-croix": "img/autour/sainte-croix.webp",
-    "boucle-sarre": "img/autour/boucle-sarre.webp",
-    "creutzwald-lac": "img/autour/creutzwald-lac.webp"
+    "cimetiere-americain": "autour/cimetiere-americain",
+    "musee-mine": "autour/musee-mine",
+    "volklingen": "autour/volklingen",
+    "bliesbruck": "autour/bliesbruck",
+    "pompidou-metz": "autour/pompidou-metz",
+    "zoo-amneville": "autour/zoo-amneville",
+    "sainte-croix": "autour/sainte-croix",
+    "boucle-sarre": "autour/boucle-sarre",
+    "creutzwald-lac": "autour/creutzwald-lac"
   },
   "leisure": [
     [
@@ -330,12 +306,10 @@
     ]
   ],
   "around_gallery": [
-    "img/autour/varsberg-1.webp",
-    "img/autour/varsberg-2.webp",
-    "img/autour/foret-warndt-1.webp",
-    "img/autour/foret-warndt-2.webp",
-    "img/domaine/domaine-04.webp",
-    "img/hero-5.webp"
+    "autour/varsberg-1",
+    "autour/varsberg-2",
+    "autour/foret-warndt-1",
+    "autour/foret-warndt-2"
   ],
   "credits": [
     [
@@ -369,5 +343,45 @@
       "https://commons.wikimedia.org/wiki/File:Borne_entre_la_France_et_l%27Allemagne_(1830),_for%C3%AAt_de_Carling.jpg"
     ]
   ],
-  "virtual_tour_https": "https://www.hdmedia.fr/visite-virtuelle/hd/cbpQep88m-gites-du-geisberg-varsberg-57.html"
+  "virtual_tour_https": "https://www.hdmedia.fr/visite-virtuelle/hd/cbpQep88m-gites-du-geisberg-varsberg-57.html",
+  "gites": [
+    "gites/chambre-lit-double",
+    "gites/sejour-vue-terrasse",
+    "gites/sejour-table",
+    "gites/cuisine",
+    "gites/salle-d-eau",
+    "gites/salle-d-eau-pmr",
+    "gites/terrasse-soir"
+  ],
+  "gites_home": [
+    "gites/chambre-lit-double",
+    "gites/sejour-vue-terrasse",
+    "gites/cuisine",
+    "gites/terrasse-soir"
+  ],
+  "hosts_photo": "domaine/agnes-marc",
+  "videos": [
+    {
+      "id": "chant-des-oiseaux",
+      "poster": "videos/chant-des-oiseaux",
+      "w": 1280,
+      "h": 720,
+      "duration": "46 s"
+    },
+    {
+      "id": "balade-chevaux",
+      "poster": "videos/balade-chevaux",
+      "w": 1280,
+      "h": 720,
+      "duration": "7 s"
+    },
+    {
+      "id": "chevreuil",
+      "poster": "videos/chevreuil",
+      "w": 224,
+      "h": 128,
+      "duration": "1 min 36 s",
+      "small": true
+    }
+  ]
 }

@@ -12,14 +12,6 @@
       "The gîtes – Domaine du Geisberg",
       "Two twin 60 m² gîtes, 2 bedrooms, 5 guests, private terrace, geothermal heating, Tourisme & Handicap label."
     ],
-    "gite-1": [
-      "Gîte 1 – Domaine du Geisberg",
-      "Gîte 1: 60 m², 2 bedrooms, 5 guests, south-facing terrace, photos and availability."
-    ],
-    "gite-2": [
-      "Gîte 2 – Domaine du Geisberg",
-      "Gîte 2: 60 m², 2 bedrooms, 5 guests, accessible, photos and availability."
-    ],
     "autour": [
       "Things to do around Varsberg – Domaine du Geisberg",
       "Hiking from the garden, Creutzwald lake, the mining museum, Völklingen, Centre Pompidou-Metz, the Saar and Luxembourg."
@@ -43,6 +35,10 @@
     "visite": [
       "360° virtual tour – Domaine du Geisberg",
       "Tour the Domaine du Geisberg gîtes in 360°, room by room."
+    ],
+    "videos": [
+      "Videos – Domaine du Geisberg",
+      "Birdsong at dawn, a forest walk with the horses, a roe deer at the bottom of the garden: the estate on video."
     ]
   },
   "nav": {
@@ -55,7 +51,8 @@
     "contact": "Contact",
     "book": "Book",
     "avis": "Reviews & labels",
-    "visite": "360° tour"
+    "visite": "360° tour",
+    "videos": "Videos"
   },
   "ui": {
     "skip": "Skip to content",
@@ -86,7 +83,8 @@
     "notes_hide": "",
     "fallback": "",
     "dev_credit": "Website: Sébastien Nadler",
-    "top": "Back to top"
+    "top": "Back to top",
+    "address": "Address"
   },
   "home": {
     "h1": "Two quiet gîtes between meadow and forest",
@@ -131,7 +129,21 @@
     "book_lead": "No commission, with a reply within 24 hours. Linen provided, beds made on arrival, end-of-stay cleaning included.",
     "diapo_h": "The estate in pictures",
     "diapo_p": "Horses in the meadow, the terrace in the sun, snow on the hill: let it play.",
-    "diapo_btn": "Start the slideshow"
+    "diapo_btn": "Start the slideshow",
+    "hero_alts": [
+      "The house under the snow on a winter evening",
+      "The house from the flowering meadow",
+      "The horses in front of the house at dusk"
+    ],
+    "gites_facts": [
+      "60 m²",
+      "2 bedrooms",
+      "Sleeps 5",
+      "Private terrace",
+      "Parking",
+      "Wi-Fi",
+      "Pets welcome"
+    ]
   },
   "domaine": {
     "h1": "The estate",
@@ -142,16 +154,12 @@
     ],
     "gallery_h": "The estate in pictures",
     "captions": [
-      "The gîtes from the meadow",
-      "The horses in front of the house",
+      "The path from the garden, looking over the hills",
       "The garden and its table under the trees",
-      "A gîte terrace",
-      "The path leading from the garden",
+      "A gîte's terrace",
       "Sunset over Varsberg",
       "The horses in winter",
-      "The house under snow",
-      "View from the terrace",
-      "The Geisberg hill"
+      "Our Malinois in the tall grass"
     ]
   },
   "gites": {
@@ -192,7 +200,17 @@
     "gite2_p": "Twin of gîte 1, shower room with the Tourisme & Handicap label.",
     "dispo_h": "Availability",
     "dispo_p": "The calendar is synchronised with our bookings. To book, send us a request with your dates.",
-    "tour": "Take the 360° virtual tour"
+    "tour": "Take the 360° virtual tour",
+    "identical": "The two gîtes are twins: same rooms, same equipment, same view over the meadow. Simply choose whichever is free on your dates — or both for a larger group.",
+    "captions": [
+      "Bedroom, double bed or two singles",
+      "The living room, opening onto the terrace",
+      "The dining corner and its oak table",
+      "The fitted kitchen",
+      "The shower room, walk-in shower",
+      "Accessible shower room (Tourisme & Handicap label)",
+      "A gîte's terrace in the evening"
+    ]
   },
   "autour": {
     "h1": "Things to do",
@@ -257,9 +275,7 @@
       "Varsberg church",
       "The Lourdes grotto in Varsberg",
       "The Warndt forest in spring",
-      "Border stone of 1830, Carling forest",
-      "The fields around the estate",
-      "Haymaking in the meadow"
+      "Border stone of 1830, Carling forest"
     ]
   },
   "reservation": {
@@ -308,8 +324,7 @@
     "lead": "Slideshow with birdsong — Vogelsgesang means “birdsong”.",
     "sections": [
       "The estate",
-      "Gîte 1",
-      "Gîte 2"
+      "The gîtes"
     ],
     "audio_on": "Birdsong",
     "audio_off": "Mute birdsong"
@@ -373,5 +388,28 @@
     "lead": "Walk through the gîtes and the estate as if you were there: drag the image, pinch to zoom, move from room to room.",
     "fallback": "If the tour does not show here,",
     "open": "open it in a new tab"
+  },
+  "videos": {
+    "h1": "Videos",
+    "lead": "Three short clips shot on the estate, unedited: the sound is the sound of the place.",
+    "clips": [
+      [
+        "Birdsong at dawn",
+        "The meadow at first light, a horse grazing behind the fence, and the chorus of Vogelsgesang."
+      ],
+      [
+        "A forest walk with the horses",
+        "The forest track that starts from the garden, with the horses and the dog."
+      ],
+      [
+        "A roe deer at the bottom of the garden",
+        "Filmed from the terrace, from a distance: roe deer often come by in the early morning."
+      ]
+    ],
+    "download": "Download the video",
+    "small_note": "small format",
+    "more_h": "And also",
+    "diapo_p": "The photos of the estate and the gîtes, with birdsong.",
+    "visite_p": "The 360° virtual tour of the gîtes, room by room."
   }
 }

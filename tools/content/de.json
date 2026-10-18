@@ -12,14 +12,6 @@
       "Die Ferienwohnungen – Domaine du Geisberg",
       "Zwei baugleiche Ferienwohnungen mit 60 m², 2 Schlafzimmern, 5 Personen, eigener Terrasse, Erdwärmeheizung, Label Tourisme & Handicap."
     ],
-    "gite-1": [
-      "Ferienwohnung 1 – Domaine du Geisberg",
-      "Ferienwohnung 1: 60 m², 2 Schlafzimmer, 5 Personen, Südterrasse, Fotos und Verfügbarkeit."
-    ],
-    "gite-2": [
-      "Ferienwohnung 2 – Domaine du Geisberg",
-      "Ferienwohnung 2: 60 m², 2 Schlafzimmer, 5 Personen, barrierefrei, Fotos und Verfügbarkeit."
-    ],
     "autour": [
       "Ausflüge rund um Varsberg – Domaine du Geisberg",
       "Wandern ab dem Garten, Creutzwalder See, Bergbaumuseum, Völklinger Hütte, Centre Pompidou-Metz, Saarland und Luxemburg."
@@ -43,6 +35,10 @@
     "visite": [
       "360°-Rundgang – Domaine du Geisberg",
       "Besichtigen Sie die Ferienwohnungen der Domaine du Geisberg in 360°, Raum für Raum."
+    ],
+    "videos": [
+      "Videos – Domaine du Geisberg",
+      "Vogelgesang am Morgen, ein Waldspaziergang mit den Pferden, ein Reh am Ende des Gartens: das Anwesen im Video."
     ]
   },
   "nav": {
@@ -55,7 +51,8 @@
     "contact": "Kontakt",
     "book": "Buchen",
     "avis": "Bewertungen & Labels",
-    "visite": "360°-Rundgang"
+    "visite": "360°-Rundgang",
+    "videos": "Videos"
   },
   "ui": {
     "skip": "Zum Inhalt springen",
@@ -86,7 +83,8 @@
     "notes_hide": "",
     "fallback": "",
     "dev_credit": "Website: Sébastien Nadler",
-    "top": "Nach oben"
+    "top": "Nach oben",
+    "address": "Adresse"
   },
   "home": {
     "h1": "Zwei ruhige Ferienwohnungen zwischen Wiese und Wald",
@@ -131,7 +129,21 @@
     "book_lead": "Ohne Provision, Antwort innerhalb von 24 Stunden. Bettwäsche inklusive, Betten bei Ankunft bezogen, Endreinigung inbegriffen.",
     "diapo_h": "Das Anwesen in Bildern",
     "diapo_p": "Pferde auf der Wiese, Terrasse in der Sonne, Schnee auf dem Hügel: einfach laufen lassen.",
-    "diapo_btn": "Diashow starten"
+    "diapo_btn": "Diashow starten",
+    "hero_alts": [
+      "Das Haus im Schnee an einem Winterabend",
+      "Das Haus von der blühenden Wiese aus",
+      "Die Pferde vor dem Haus am Abend"
+    ],
+    "gites_facts": [
+      "60 m²",
+      "2 Schlafzimmer",
+      "5 Personen",
+      "Eigene Terrasse",
+      "Parkplatz",
+      "WLAN",
+      "Haustiere willkommen"
+    ]
   },
   "domaine": {
     "h1": "Das Anwesen",
@@ -142,16 +154,12 @@
     ],
     "gallery_h": "Das Anwesen in Bildern",
     "captions": [
-      "Die Häuser von der Wiese aus",
-      "Die Pferde vor dem Haus",
-      "Der Garten mit Tisch unter den Bäumen",
-      "Die Terrasse eines Hauses",
-      "Der Weg ab dem Garten",
+      "Der Weg vom Garten aus, mit Blick auf die Hügel",
+      "Der Garten mit seinem Tisch unter den Bäumen",
+      "Die Terrasse einer Ferienwohnung",
       "Sonnenuntergang über Varsberg",
       "Die Pferde im Winter",
-      "Das Haus im Schnee",
-      "Blick von der Terrasse",
-      "Der Geisberg"
+      "Unser Malinois im hohen Gras"
     ]
   },
   "gites": {
@@ -192,7 +200,17 @@
     "gite2_p": "Zwilling von Wohnung 1, Duschbad mit dem Label Tourisme & Handicap.",
     "dispo_h": "Verfügbarkeit",
     "dispo_p": "Der Kalender ist mit unserem Belegungsplan synchronisiert. Senden Sie uns zum Buchen eine Anfrage mit Ihren Daten.",
-    "tour": "360°-Rundgang starten"
+    "tour": "360°-Rundgang starten",
+    "identical": "Die beiden Ferienwohnungen sind Zwillinge: gleiche Räume, gleiche Ausstattung, gleicher Blick auf die Wiese. Wählen Sie einfach die, die an Ihren Daten frei ist – oder beide für eine größere Gruppe.",
+    "captions": [
+      "Schlafzimmer, Doppelbett oder zwei Einzelbetten",
+      "Der Wohnraum mit Zugang zur Terrasse",
+      "Die Essecke mit Eichentisch",
+      "Die Einbauküche",
+      "Das Duschbad mit ebenerdiger Dusche",
+      "Barrierefreies Duschbad (Label Tourisme & Handicap)",
+      "Die Terrasse einer Ferienwohnung am Abend"
+    ]
   },
   "autour": {
     "h1": "Ausflüge und Freizeit",
@@ -257,9 +275,7 @@
       "Die Kirche von Varsberg",
       "Die Lourdesgrotte in Varsberg",
       "Der Warndt im Frühling",
-      "Grenzstein von 1830, Wald von Carling",
-      "Die Felder rund um das Anwesen",
-      "Heuernte auf der Wiese"
+      "Grenzstein von 1830, Wald von Carling"
     ]
   },
   "reservation": {
@@ -308,8 +324,7 @@
     "lead": "Diashow mit Vogelgesang — der Flurname Vogelsgesang bedeutet genau das.",
     "sections": [
       "Das Anwesen",
-      "Ferienwohnung 1",
-      "Ferienwohnung 2"
+      "Die Ferienwohnungen"
     ],
     "audio_on": "Vogelgesang",
     "audio_off": "Vogelgesang stumm schalten"
@@ -373,5 +388,28 @@
     "lead": "Gehen Sie durch die Häuser und über das Anwesen, als wären Sie da: Bild ziehen, zum Zoomen zwei Finger, von Raum zu Raum wechseln.",
     "fallback": "Falls der Rundgang hier nicht erscheint,",
     "open": "in neuem Tab öffnen"
+  },
+  "videos": {
+    "h1": "Videos",
+    "lead": "Drei kurze Videos vom Anwesen, ungeschnitten: der Ton ist der des Ortes.",
+    "clips": [
+      [
+        "Vogelgesang am Morgen beim Aufwachen",
+        "Die Wiese im ersten Licht, ein Pferd grast hinter dem Zaun, und das Konzert von Vogelsgesang."
+      ],
+      [
+        "Waldspaziergang mit den Pferden",
+        "Der Waldweg, der im Garten beginnt, mit den Pferden und dem Hund."
+      ],
+      [
+        "Ein Reh am Ende des Gartens",
+        "Von der Terrasse aus gefilmt, aus der Ferne: Rehe kommen oft am frühen Morgen."
+      ]
+    ],
+    "download": "Video herunterladen",
+    "small_note": "kleines Format",
+    "more_h": "Und außerdem",
+    "diapo_p": "Die Fotos des Anwesens und der Ferienwohnungen, mit Vogelgesang.",
+    "visite_p": "Der virtuelle 360°-Rundgang durch die Ferienwohnungen, Raum für Raum."
   }
 }

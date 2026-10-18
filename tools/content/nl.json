@@ -12,14 +12,6 @@
       "De gîtes – Domaine du Geisberg",
       "Twee identieke huizen van 60 m², 2 slaapkamers, 5 personen, eigen terras, aardwarmte, label Tourisme & Handicap."
     ],
-    "gite-1": [
-      "Gîte 1 – Domaine du Geisberg",
-      "Gîte 1: 60 m², 2 slaapkamers, 5 personen, terras op het zuiden, foto's en beschikbaarheid."
-    ],
-    "gite-2": [
-      "Gîte 2 – Domaine du Geisberg",
-      "Gîte 2: 60 m², 2 slaapkamers, 5 personen, rolstoeltoegankelijk, foto's en beschikbaarheid."
-    ],
     "autour": [
       "Uitstapjes rond Varsberg – Domaine du Geisberg",
       "Wandelen vanuit de tuin, het meer van Creutzwald, het mijnmuseum, Völklingen, Centre Pompidou-Metz, Saarland en Luxemburg."
@@ -43,6 +35,10 @@
     "visite": [
       "360°-rondleiding – Domaine du Geisberg",
       "Bezoek de gîtes van het Domaine du Geisberg in 360°, kamer voor kamer."
+    ],
+    "videos": [
+      "Video's – Domaine du Geisberg",
+      "Vogelzang bij het ontwaken, een boswandeling met de paarden, een ree achter in de tuin: het landgoed op video."
     ]
   },
   "nav": {
@@ -55,7 +51,8 @@
     "contact": "Contact",
     "book": "Reserveren",
     "avis": "Beoordelingen & labels",
-    "visite": "360°-rondleiding"
+    "visite": "360°-rondleiding",
+    "videos": "Video's"
   },
   "ui": {
     "skip": "Naar de inhoud",
@@ -86,7 +83,8 @@
     "notes_hide": "",
     "fallback": "",
     "dev_credit": "Website: Sébastien Nadler",
-    "top": "Naar boven"
+    "top": "Naar boven",
+    "address": "Adres"
   },
   "home": {
     "h1": "Twee rustige huizen tussen weide en bos",
@@ -131,7 +129,21 @@
     "book_lead": "Zonder commissie, antwoord binnen 24 uur. Beddengoed inbegrepen, bedden opgemaakt bij aankomst, eindschoonmaak inbegrepen.",
     "diapo_h": "Het landgoed in beeld",
     "diapo_p": "Paarden in de weide, het terras in de zon, sneeuw op de heuvel: laat maar lopen.",
-    "diapo_btn": "Diavoorstelling starten"
+    "diapo_btn": "Diavoorstelling starten",
+    "hero_alts": [
+      "Het huis in de sneeuw op een winteravond",
+      "Het huis vanuit de bloeiende weide",
+      "De paarden voor het huis, in de avond"
+    ],
+    "gites_facts": [
+      "60 m²",
+      "2 slaapkamers",
+      "5 personen",
+      "Eigen terras",
+      "Parkeerplaats",
+      "Wifi",
+      "Huisdieren welkom"
+    ]
   },
   "domaine": {
     "h1": "Het landgoed",
@@ -142,16 +154,12 @@
     ],
     "gallery_h": "Het landgoed in beeld",
     "captions": [
-      "De gîtes vanuit de weide",
-      "De paarden voor het huis",
-      "De tuin met tafel onder de bomen",
-      "Het terras van een huis",
-      "Het pad vanuit de tuin",
+      "Het pad vanuit de tuin, met uitzicht op de heuvels",
+      "De tuin en de tafel onder de bomen",
+      "Het terras van een gîte",
       "Zonsondergang boven Varsberg",
       "De paarden in de winter",
-      "Het huis in de sneeuw",
-      "Uitzicht vanaf het terras",
-      "De Geisberg-heuvel"
+      "Onze mechelaar in het hoge gras"
     ]
   },
   "gites": {
@@ -192,7 +200,17 @@
     "gite2_p": "Tweeling van gîte 1, badkamer met het label Tourisme & Handicap.",
     "dispo_h": "Beschikbaarheid",
     "dispo_p": "De kalender is gekoppeld aan onze planning. Stuur ons een aanvraag met uw data om te reserveren.",
-    "tour": "De 360°-rondleiding bekijken"
+    "tour": "De 360°-rondleiding bekijken",
+    "identical": "De twee gîtes zijn tweelingen: dezelfde kamers, dezelfde uitrusting, hetzelfde uitzicht op de weide. Kies gewoon degene die vrij is op uw data, of allebei voor een grote groep.",
+    "captions": [
+      "Slaapkamer, tweepersoonsbed of twee losse bedden",
+      "De woonkamer, met toegang tot het terras",
+      "De eethoek met eiken tafel",
+      "De ingerichte keuken",
+      "De badkamer met inloopdouche",
+      "Toegankelijke badkamer (label Tourisme & Handicap)",
+      "Het terras van een gîte, 's avonds"
+    ]
   },
   "autour": {
     "h1": "Uitstapjes en vrije tijd",
@@ -257,9 +275,7 @@
       "De kerk van Varsberg",
       "De Lourdesgrot van Varsberg",
       "Het Warndt-bos in het voorjaar",
-      "Grenssteen uit 1830, bos van Carling",
-      "De velden rond het landgoed",
-      "Hooien in de weide"
+      "Grenssteen uit 1830, bos van Carling"
     ]
   },
   "reservation": {
@@ -308,8 +324,7 @@
     "lead": "Diavoorstelling met vogelzang — Vogelsgesang betekent „vogelzang”.",
     "sections": [
       "Het landgoed",
-      "Gîte 1",
-      "Gîte 2"
+      "De gîtes"
     ],
     "audio_on": "Vogelzang",
     "audio_off": "Vogelzang dempen"
@@ -373,5 +388,28 @@
     "lead": "Loop door de gîtes en over het landgoed alsof u er bent: sleep het beeld, knijp om te zoomen, ga van kamer naar kamer.",
     "fallback": "Als de rondleiding hier niet verschijnt,",
     "open": "open hem in een nieuw tabblad"
+  },
+  "videos": {
+    "h1": "Video's",
+    "lead": "Drie korte video's, opgenomen op het landgoed, zonder montage: het geluid is dat van de plek zelf.",
+    "clips": [
+      [
+        "Vogelzang bij het ontwaken",
+        "De weide bij het eerste licht, een grazend paard achter het hek, en het concert van Vogelsgesang."
+      ],
+      [
+        "Boswandeling met de paarden",
+        "Het bospad dat bij de tuin begint, met de paarden en de hond."
+      ],
+      [
+        "Een ree achter in de tuin",
+        "Van ver gefilmd vanaf het terras: reeën komen vaak in de vroege ochtend."
+      ]
+    ],
+    "download": "Video downloaden",
+    "small_note": "klein formaat",
+    "more_h": "En ook",
+    "diapo_p": "De foto's van het landgoed en de gîtes, met vogelzang.",
+    "visite_p": "De virtuele 360°-rondleiding door de gîtes, kamer voor kamer."
   }
 }

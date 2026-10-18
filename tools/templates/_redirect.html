@@ -1,0 +1,14 @@
+{# Page de renvoi : l'ancienne adresse (gite-1.html, gite-2.html) mène à la page qui la remplace. #}
+<!DOCTYPE html>
+<html lang="{{ lang }}">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex">
+<meta http-equiv="refresh" content="0; url={{ target }}">
+<link rel="canonical" href="{{ site_url }}/{{ prefix }}{{ target.split('#')[0] }}">
+<title>{{ s.name }}</title>
+</head>
+<body>
+<p><a href="{{ target }}">{{ s.name }} – {{ t.nav.gites }}</a></p>
+</body>
+</html>

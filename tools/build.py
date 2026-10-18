@@ -3,11 +3,18 @@
 
 Usage : python3 tools/build.py
 Sortie : pages FR à la racine, autres langues dans /en, /de, /es, /pt, /nl, /zh.
+
+Les photos sont décrites dans tools/content/images.json (produit par tools/photos.py) ; les
+gabarits les affichent avec la fonction `pic()` définie plus bas, qui écrit un <img> complet
+(srcset, dimensions, chargement différé).
 """
 
-import json, os, shutil, sys, hashlib
+import hashlib
+import json
 from pathlib import Path
+
 from jinja2 import Environment, FileSystemLoader, select_autoescape
+from markupsafe import Markup, escape
 
 ROOT = Path(__file__).resolve().parent.parent
 TPL = ROOT / "tools" / "templates"
@@ -27,8 +34,7 @@ PAGES = [
     "index",
     "le-domaine",
     "gites",
-    "gite-1",
-    "gite-2",
+    "videos",
     "autour",
     "avis",
     "visite",
@@ -36,6 +42,8 @@ PAGES = [
     "diaporama",
     "mentions-legales",
 ]
+# anciennes adresses conservées : chacune renvoie vers la page qui la remplace
+REDIRECTS = {"gite-1": "gites.html#gite-1", "gite-2": "gites.html#gite-2"}
 
 env = Environment(
     loader=FileSystemLoader(str(TPL)),
@@ -45,6 +53,7 @@ env = Environment(
 )
 
 shared = json.loads((CONTENT / "shared.json").read_text(encoding="utf-8"))
+images = json.loads((CONTENT / "images.json").read_text(encoding="utf-8"))
 busy = (
     json.loads((CONTENT / "busy.json").read_text(encoding="utf-8"))
     if (CONTENT / "busy.json").exists()
@@ -86,29 +95,81 @@ def deep_merge(base, over):
     return out
 
 
+def image_helpers(rel):
+    """Fonctions mises à disposition des gabarits pour une langue donnée (rel = chemin vers la racine)."""
+
+    def src(ident, width=None):
+        """URL d'une photo : la plus grande par défaut, ou la version la plus proche de la largeur demandée."""
+        files = images[ident]["files"]  # [[largeur, chemin dans img/], …] du plus grand au plus petit
+        if width:
+            files = sorted(files, key=lambda f: abs(f[0] - width))
+        return f"{rel}img/{files[0][1]}"
+
+    def url(ident, width=None):
+        """Adresse absolue d'une photo (balises Open Graph, données structurées)."""
+        return f"{SITE_URL}/img/{src(ident, width)[len(rel) + 4:]}"
+
+    def pic(ident, alt, sizes="100vw", eager=False, cls="", data=None):
+        """Balise <img> complète : srcset pour que le navigateur choisisse la taille, width/height
+        pour réserver la place avant le chargement, chargement différé sauf si eager=True.
+        `data` : attributs data-* supplémentaires ({'cap': 'Légende'} → data-cap="Légende")."""
+        info = images[ident]
+        attrs = [f'src="{src(ident)}"']
+        if len(info["files"]) > 1:
+            srcset = ", ".join(f"{rel}img/{path} {w}w" for w, path in info["files"])
+            attrs += [f'srcset="{srcset}"', f'sizes="{sizes}"']
+        attrs += [
+            f'width="{info["w"]}"',
+            f'height="{info["h"]}"',
+            f'alt="{escape(alt)}"',
+            'fetchpriority="high" decoding="sync"' if eager else 'loading="lazy" decoding="async"',
+        ]
+        if cls:
+            attrs.append(f'class="{escape(cls)}"')
+        if info.get("pos"):
+            attrs.append(f'style="object-position:{escape(info["pos"])}"')
+        for k, v in (data or {}).items():
+            attrs.append(f'data-{k}="{escape(v)}"')
+        return Markup("<img " + " ".join(attrs) + ">")
+
+    return {"src": src, "url": url, "pic": pic}
+
+
+def write(path, html):
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(html, encoding="utf-8")
+
+
 built = 0
 for code, name, flag, prefix in LANGS:
     c = deep_merge(fr, contents.get(code, {}))  # repli sur le français si une clé manque
     outdir = ROOT / prefix if prefix else ROOT
-    outdir.mkdir(parents=True, exist_ok=True)
     rel = "../" if prefix else ""  # chemin vers la racine (img, css, js)
+    common = dict(
+        lang=code,
+        t=c,
+        s=shared,
+        rel=rel,
+        prefix=prefix,
+        langs=LANGS,
+        assets=assets,
+        site_url=SITE_URL,
+        images=images,
+        **image_helpers(rel),
+    )
     for page in PAGES:
         tpl = env.get_template(f"{page}.html")
         html = tpl.render(
-            lang=code,
-            t=c,
-            s=shared,
             page=page,
-            rel=rel,
-            prefix=prefix,
-            langs=LANGS,
-            assets=assets,
-            site_url=SITE_URL,
             canonical=f"{SITE_URL}/{prefix}{'' if page=='index' else page+'.html'}",
             fallback=(code != "fr" and code not in contents),
+            **common,
         )
-        (outdir / f"{page}.html").write_text(html, encoding="utf-8")
+        write(outdir / f"{page}.html", html)
         built += 1
+    for old, target in REDIRECTS.items():
+        html = env.get_template("_redirect.html").render(target=target, **common)
+        write(outdir / f"{old}.html", html)
 
 # sitemap + robots
 urls = []

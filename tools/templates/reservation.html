@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% set r = t.reservation %}
 {% block main %}
-<div class="page-hero" style="background-image:url('{{ rel }}{{ s.hero[3] }}')">
+<div class="page-hero" style="background-image:url('{{ src('hero/maison-prairie') }}')">
   <div class="wrap"><div class="eyebrow" style="color:#E7C59A">{{ ui.tagline }}</div><h1>{{ r.h1 }}</h1></div>
 </div>
 <section class="wrap">
@@ -10,7 +10,7 @@
       <h2 style="margin-bottom:16px">{{ r.prices_h }}</h2>
       <div class="prices">{% for l, p in r.prices %}<div><span>{{ l }}</span><b>{{ p }}</b></div>{% endfor %}</div>
       <p class="note">{{ r.included }}</p>
-      <div class="logos" style="margin-top:18px">{% for img, name, url in s.labels %}<a href="{{ url }}" rel="noopener" target="_blank"><img src="{{ rel }}{{ img }}" alt="{{ name }}" loading="lazy"></a>{% endfor %}</div>
+      <div class="logos" style="margin-top:18px">{% for id, name, link in s.labels %}<a href="{{ link }}" rel="noopener" target="_blank">{{ pic(id, name, "72px") }}</a>{% endfor %}</div>
     </div>
     <div id="demande">
       <h2 style="margin-bottom:6px">{{ r.form_h }}</h2>
@@ -35,14 +35,15 @@
     </div>
   </div>
 </section>
-<section class="wrap" style="padding-top:0">
-  <div class="cols rev">
-    <div class="frame"><img src="{{ rel }}{{ s.domaine[3] }}" alt="{{ t.domaine.captions[3] }}" loading="lazy"></div>
+<section class="wrap" id="acces" style="padding-top:0">
+  <div class="hosts"{% if lang == 'fr' %} data-note="{{ t.notes.hosts }}"{% endif %}>
+    <div class="photo">{{ pic(s.hosts_photo, t.home.hosts_h, '(min-width: 860px) 520px, 100vw') }}</div>
     <div{% if lang == 'fr' %} data-note="{{ t.notes.access }}"{% endif %}>
+      <div class="eyebrow">{{ t.home.hosts_h }}</div>
       <h2 style="margin-bottom:12px">{{ r.access_h }}</h2>
       {% for p in r.access %}<p>{{ p }}</p>{% endfor %}
       <div class="contact-box" style="margin-top:18px">
-        <div><small>{{ ui.tagline }}</small>{{ s.address }}</div>
+        <div><small>{{ ui.address }}</small>{{ s.address }}</div>
         <div><small>{{ r.gps }}</small>{{ s.gps[0] }}, {{ s.gps[1] }}</div>
         {% for who, tel, href in s.phones %}<div><small>{{ who }}</small><a href="tel:{{ href }}">{{ tel }}</a></div>{% endfor %}
         <div><small>E-mail</small><a href="mailto:{{ s.email }}">{{ s.email }}</a></div>

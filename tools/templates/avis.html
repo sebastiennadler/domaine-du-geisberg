@@ -15,7 +15,7 @@
   <div class="cols" style="align-items:start">
     <div>
       <h2 style="margin-bottom:14px">{{ x.labels_h }}</h2>
-      <div class="logos" style="gap:18px 30px">{% for img, name, url in s.labels %}<a href="{{ url }}" rel="noopener" target="_blank"><img src="{{ rel }}{{ img }}" alt="" loading="lazy"><span>{{ name }}</span></a>{% endfor %}</div>
+      <div class="logos" style="gap:18px 30px">{% for id, name, link in s.labels %}<a href="{{ link }}" rel="noopener" target="_blank">{{ pic(id, "", "72px") }}<span>{{ name }}</span></a>{% endfor %}</div>
     </div>
     <div>
       <h2 style="margin-bottom:8px">{{ x.where_h }}</h2>

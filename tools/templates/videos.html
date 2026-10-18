@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% set v = t.videos %}
+{% block main %}
+<section class="wrap" style="padding-top:28px">
+  <div class="eyebrow">{{ ui.tagline }}</div>
+  <h1 style="font-size:clamp(30px,5vw,46px)">{{ v.h1 }}</h1>
+  <p class="lead">{{ v.lead }}</p>
+  <div class="videos"{% if lang == 'fr' %} data-note="{{ t.notes.videos }}"{% endif %}>
+    {% for vid in s.videos %}{% set tx = v.clips[loop.index0] %}
+    <figure class="video{{ ' small' if vid.small }}">
+      <video controls preload="none" playsinline poster="{{ src(vid.poster) }}" width="{{ vid.w }}" height="{{ vid.h }}"{% if vid.small %} style="max-width:{{ vid.w * 2 }}px"{% endif %}>
+        <source src="{{ rel }}videos/{{ vid.id }}.mp4" type="video/mp4">
+        <a href="{{ rel }}videos/{{ vid.id }}.mp4">{{ v.download }}</a>
+      </video>
+      <figcaption><b>{{ tx[0] }}</b><span>{{ tx[1] }}</span><small>{{ vid.duration }}{% if vid.small %} · {{ v.small_note }}{% endif %}</small></figcaption>
+    </figure>
+    {% endfor %}
+  </div>
+</section>
+<section class="wrap" style="padding-top:0">
+  <div class="sec-head"><h2>{{ v.more_h }}</h2></div>
+  <div class="cards">
+    <a class="card" href="diaporama.html"><div class="ph">{{ pic('domaine/chevaux-hiver', t.domaine.captions[4], '(min-width: 720px) 540px, 100vw') }}</div><div class="in"><h3>{{ t.nav.diaporama }}</h3><p>{{ v.diapo_p }}</p><div class="row"><span>{{ t.home.diapo_btn }} →</span></div></div></a>
+    <a class="card" href="visite.html"><div class="ph">{{ pic('gites/sejour-vue-terrasse', t.gites.captions[2], '(min-width: 720px) 540px, 100vw') }}</div><div class="in"><h3>{{ t.nav.visite }}</h3><p>{{ v.visite_p }}</p><div class="row"><span>{{ ui.virtual_tour }} →</span></div></div></a>
+  </div>
+</section>
+{% endblock %}

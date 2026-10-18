@@ -1,0 +1,113 @@
+[
+ {
+  "id": "hero/maison-neige-soir",
+  "src": "maison-neige-soir.jpeg",
+  "widths": [
+   1920,
+   1280,
+   800
+  ],
+  "pos": "42% 72%"
+ },
+ {
+  "id": "hero/maison-prairie",
+  "src": "maison-prairie.jpeg",
+  "widths": [
+   1920,
+   1280,
+   800
+  ],
+  "pos": "50% 42%"
+ },
+ {
+  "id": "hero/chevaux-soir",
+  "src": "chevaux-soir.webp",
+  "widths": [
+   1920,
+   1280,
+   800
+  ],
+  "pos": "50% 55%"
+ },
+ {
+  "id": "domaine/chemin-collines",
+  "src": "chemin-collines.jpeg"
+ },
+ {
+  "id": "domaine/jardin-table",
+  "src": "jardin-table.webp"
+ },
+ {
+  "id": "domaine/terrasse-parasol",
+  "src": "terrasse-parasol.webp"
+ },
+ {
+  "id": "domaine/coucher-soleil",
+  "src": "coucher-soleil.webp"
+ },
+ {
+  "id": "domaine/chevaux-hiver",
+  "src": "chevaux-hiver.webp"
+ },
+ {
+  "id": "domaine/chien-prairie",
+  "src": "chien-prairie.jpeg"
+ },
+ {
+  "id": "domaine/agnes-marc",
+  "src": "agnes-marc.png",
+  "widths": [
+   1200,
+   600
+  ]
+ },
+ {
+  "id": "gites/chambre-lit-double",
+  "src": "chambre-lit-double.jpeg"
+ },
+ {
+  "id": "gites/sejour-vue-terrasse",
+  "src": "sejour-vue-terrasse.webp"
+ },
+ {
+  "id": "gites/sejour-table",
+  "src": "sejour-table.webp"
+ },
+ {
+  "id": "gites/cuisine",
+  "src": "cuisine.webp"
+ },
+ {
+  "id": "gites/salle-d-eau",
+  "src": "salle-d-eau.webp"
+ },
+ {
+  "id": "gites/salle-d-eau-pmr",
+  "src": "salle-d-eau-pmr.webp"
+ },
+ {
+  "id": "gites/terrasse-soir",
+  "src": "terrasse-soir.webp"
+ },
+ {
+  "id": "videos/chant-des-oiseaux",
+  "src": "video-chant-des-oiseaux.jpg",
+  "widths": [
+   1280
+  ]
+ },
+ {
+  "id": "videos/balade-chevaux",
+  "src": "video-balade-chevaux.jpg",
+  "widths": [
+   1280
+  ]
+ },
+ {
+  "id": "videos/chevreuil",
+  "src": "video-chevreuil.jpg",
+  "widths": [
+   448
+  ]
+ }
+]

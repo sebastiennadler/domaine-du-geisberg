@@ -12,14 +12,6 @@
       "Los gîtes – Domaine du Geisberg",
       "Dos casas gemelas de 60 m², 2 dormitorios, 5 personas, terraza privada, calefacción geotérmica, sello Tourisme & Handicap."
     ],
-    "gite-1": [
-      "Gîte 1 – Domaine du Geisberg",
-      "Gîte 1: 60 m², 2 dormitorios, 5 personas, terraza orientada al sur, fotos y disponibilidad."
-    ],
-    "gite-2": [
-      "Gîte 2 – Domaine du Geisberg",
-      "Gîte 2: 60 m², 2 dormitorios, 5 personas, accesible, fotos y disponibilidad."
-    ],
     "autour": [
       "Qué ver cerca de Varsberg – Domaine du Geisberg",
       "Senderismo desde el jardín, lago de Creutzwald, museo de la mina, Völklingen, Centro Pompidou-Metz, el Sarre y Luxemburgo."
@@ -43,6 +35,10 @@
     "visite": [
       "Visita virtual 360° – Domaine du Geisberg",
       "Visite los gîtes del Domaine du Geisberg en 360°, habitación por habitación."
+    ],
+    "videos": [
+      "Vídeos – Domaine du Geisberg",
+      "El canto de los pájaros al amanecer, un paseo por el bosque con los caballos, un corzo al fondo del jardín: la finca en vídeo."
     ]
   },
   "nav": {
@@ -55,7 +51,8 @@
     "contact": "Contacto",
     "book": "Reservar",
     "avis": "Opiniones y sellos",
-    "visite": "Visita 360°"
+    "visite": "Visita 360°",
+    "videos": "Vídeos"
   },
   "ui": {
     "skip": "Ir al contenido",
@@ -86,7 +83,8 @@
     "notes_hide": "",
     "fallback": "",
     "dev_credit": "Sitio web: Sébastien Nadler",
-    "top": "Volver arriba"
+    "top": "Volver arriba",
+    "address": "Dirección"
   },
   "home": {
     "h1": "Dos casas tranquilas entre el prado y el bosque",
@@ -131,7 +129,21 @@
     "book_lead": "Sin comisión, con respuesta en 24 h. Ropa de cama incluida, camas hechas a la llegada, limpieza final incluida.",
     "diapo_h": "La finca en imágenes",
     "diapo_p": "Caballos en el prado, terraza al sol, nieve en la colina: déjelo pasar.",
-    "diapo_btn": "Ver el diaporama"
+    "diapo_btn": "Ver el diaporama",
+    "hero_alts": [
+      "La casa bajo la nieve, una tarde de invierno",
+      "La casa desde el prado en flor",
+      "Los caballos delante de la casa, al atardecer"
+    ],
+    "gites_facts": [
+      "60 m²",
+      "2 habitaciones",
+      "5 personas",
+      "Terraza privada",
+      "Aparcamiento",
+      "Wi-Fi",
+      "Mascotas bienvenidas"
+    ]
   },
   "domaine": {
     "h1": "La finca",
@@ -142,16 +154,12 @@
     ],
     "gallery_h": "La finca en imágenes",
     "captions": [
-      "Los gîtes desde el prado",
-      "Los caballos delante de la casa",
+      "El camino que sale del jardín, con vistas a las colinas",
       "El jardín y su mesa bajo los árboles",
-      "La terraza de una casa",
-      "El camino que sale del jardín",
-      "Atardecer sobre Varsberg",
+      "La terraza de un gîte",
+      "Puesta de sol sobre Varsberg",
       "Los caballos en invierno",
-      "La casa bajo la nieve",
-      "Vista desde la terraza",
-      "La colina del Geisberg"
+      "Nuestro malinois entre la hierba alta"
     ]
   },
   "gites": {
@@ -192,7 +200,17 @@
     "gite2_p": "Gemelo del gîte 1, baño con el sello Tourisme & Handicap.",
     "dispo_h": "Disponibilidad",
     "dispo_p": "El calendario está sincronizado con nuestro planning. Para reservar, envíenos una solicitud con sus fechas.",
-    "tour": "Hacer la visita virtual 360°"
+    "tour": "Hacer la visita virtual 360°",
+    "identical": "Los dos gîtes son gemelos: las mismas habitaciones, el mismo equipamiento, la misma vista al prado. Elija simplemente el que esté libre en sus fechas, o los dos para un grupo grande.",
+    "captions": [
+      "Habitación, cama doble o dos camas individuales",
+      "El salón, abierto a la terraza",
+      "El rincón comedor y su mesa de roble",
+      "La cocina equipada",
+      "El baño con ducha a ras de suelo",
+      "Baño accesible (sello Tourisme & Handicap)",
+      "La terraza de un gîte, al atardecer"
+    ]
   },
   "autour": {
     "h1": "Turismo y ocio",
@@ -257,9 +275,7 @@
       "La iglesia de Varsberg",
       "La gruta de Lourdes de Varsberg",
       "El bosque del Warndt en primavera",
-      "Mojón fronterizo de 1830, bosque de Carling",
-      "Los campos alrededor de la finca",
-      "La siega del heno en el prado"
+      "Mojón fronterizo de 1830, bosque de Carling"
     ]
   },
   "reservation": {
@@ -308,8 +324,7 @@
     "lead": "Diaporama con canto de pájaros: Vogelsgesang significa «canto de los pájaros».",
     "sections": [
       "La finca",
-      "Gîte 1",
-      "Gîte 2"
+      "Los gîtes"
     ],
     "audio_on": "Canto de pájaros",
     "audio_off": "Silenciar los pájaros"
@@ -373,5 +388,28 @@
     "lead": "Pasee por los gîtes y la finca como si estuviera allí: arrastre la imagen, pellizque para ampliar, pase de una habitación a otra.",
     "fallback": "Si la visita no se muestra aquí,",
     "open": "ábrala en una nueva pestaña"
+  },
+  "videos": {
+    "h1": "Vídeos",
+    "lead": "Tres vídeos cortos grabados en la finca, sin montaje: el sonido es el del lugar.",
+    "clips": [
+      [
+        "El canto de los pájaros al despertar",
+        "El prado al amanecer, un caballo pastando tras la valla y el concierto del paraje Vogelsgesang."
+      ],
+      [
+        "Paseo por el bosque con los caballos",
+        "El camino forestal que sale del jardín, con los caballos y el perro."
+      ],
+      [
+        "Un corzo al fondo del jardín",
+        "Grabado de lejos desde la terraza: los corzos suelen venir de madrugada."
+      ]
+    ],
+    "download": "Descargar el vídeo",
+    "small_note": "formato pequeño",
+    "more_h": "Y también",
+    "diapo_p": "Las fotos de la finca y de los gîtes, con el canto de los pájaros.",
+    "visite_p": "La visita virtual de los gîtes, habitación por habitación, en 360°."
   }
 }

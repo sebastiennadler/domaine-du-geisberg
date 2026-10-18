@@ -16,7 +16,7 @@ jobs:
           echo "# Rapport des liens externes — $(date -u +%Y-%m-%d\ %H:%M) UTC" > docs/liens-rapport.md
           echo "" >> docs/liens-rapport.md
           echo "| Code | Lien |" >> docs/liens-rapport.md; echo "|---|---|" >> docs/liens-rapport.md
-          grep -hoE 'href="https?://[^"]+"' index.html gites.html gite-1.html gite-2.html le-domaine.html autour.html avis.html reservation.html diaporama.html mentions-legales.html | sed 's/href="//;s/"$//' | grep -v 'fonts.g\|sebastiennadler.github.io\|domainedugeisberg.fr' | sort -u > /tmp/liens.txt
+          grep -hoE 'href="https?://[^"]+"' index.html gites.html videos.html le-domaine.html autour.html avis.html reservation.html diaporama.html mentions-legales.html | sed 's/href="//;s/"$//' | grep -v 'fonts.g\|sebastiennadler.github.io\|domainedugeisberg.fr' | sort -u > /tmp/liens.txt
           [ -f tools/liens-candidats.txt ] && cat tools/liens-candidats.txt >> /tmp/liens.txt
           while read -r u; do
             code=$(curl -sL -A "Mozilla/5.0 (Macintosh; Intel Mac OS X 14_0) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.0 Safari/605.1.15" -o /dev/null -w "%{http_code}" --max-time 25 "$u" || echo "ERR")

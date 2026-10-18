@@ -1,0 +1,24 @@
+[
+ {
+  "id": "chant-des-oiseaux",
+  "src": "DSCN9144.MOV",
+  "height": 720,
+  "crf": 26,
+  "poster_at": 20
+ },
+ {
+  "id": "balade-chevaux",
+  "src": "IMG_0179.MOV",
+  "height": 720,
+  "crf": 24,
+  "poster_at": 3
+ },
+ {
+  "id": "chevreuil",
+  "src": "IMG_0126.MOV",
+  "height": 128,
+  "crf": 28,
+  "poster_at": 24,
+  "audio_kbps": 32
+ }
+]
