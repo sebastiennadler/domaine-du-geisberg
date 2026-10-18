@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+{% set h = t.home %}
+{% set n = t.notes if lang == 'fr' else {} %}
+{% macro note(k) %}{% if lang == 'fr' %} data-note="{{ n[k] }}"{% endif %}{% endmacro %}
+{% block main %}
+<div class="hero"{{ note('hero') }}>
+  {% for img in s.hero %}<div class="slide{{ ' on' if loop.first }}" style="background-image:url('{{ rel }}{{ img }}')" role="img" aria-label="{{ s.name }}"></div>{% endfor %}
+  <div class="wrap">
+    <h1{{ note('h1') }}>{{ h.h1 }}</h1>
+    <p>{{ h.lead }}</p>
+    <div class="cta"><a class="btn btn-p" href="gites.html#dispo">{{ h.cta1 }}</a><a class="btn btn-light" href="gites.html">{{ h.cta2 }}</a></div>
+  </div>
+  <div class="dots" aria-hidden="true">{% for img in s.hero %}<button type="button"{{ ' aria-current="true"' if loop.first }}></button>{% endfor %}</div>
+</div>
+
+<section class="wrap" style="padding-block:40px 8px">
+  <div class="facts"{{ note('facts') }}>
+    {% for b, l in h.facts %}<div class="fact"><b>{{ b }}</b><span>{{ l }}</span></div>{% endfor %}
+  </div>
+</section>
+
+<section class="wrap">
+  <div class="cols">
+    <div class="mosaic">
+      {% for img in s.domaine[:4] %}<a href="{{ rel }}{{ img }}" data-cap="{{ t.domaine.captions[loop.index0] }}"><img src="{{ rel }}{{ img }}" alt="{{ t.domaine.captions[loop.index0] }}" loading="lazy"></a>{% endfor %}
+    </div>
+    <div>
+      <div class="eyebrow">{{ t.nav['le-domaine'] }}</div>
+      <h2>{{ h.intro_h }}</h2>
+      <div class="lead" style="max-width:none">{% for p in h.intro %}<p>{{ p }}</p>{% endfor %}</div>
+      <a class="more" href="le-domaine.html">{{ h.intro_more }} →</a>
+    </div>
+  </div>
+</section>
+
+<section class="wrap" id="gites">
+  <div class="sec-head"><div><div class="eyebrow">{{ t.nav.gites }}</div><h2>{{ h.gites_h }}</h2><p class="lead">{{ h.gites_lead }}</p></div></div>
+  <div class="cards"{{ note('gites') }}>
+    <a class="card" href="gite-1.html"><div class="ph"><img src="{{ rel }}{{ s.gite1[0] }}" alt="{{ t.gites.gite1_h }}" loading="lazy"></div><div class="in"><h3>{{ t.gites.gite1_h }}</h3><p>{{ h.gite1_sub }}</p><div class="row"><b>{{ ui.from }} {{ s.price_weekend }}</b><span>{{ h.see_gite }} →</span></div></div></a>
+    <a class="card" href="gite-2.html"><div class="ph"><img src="{{ rel }}{{ s.gite2[0] }}" alt="{{ t.gites.gite2_h }}" loading="lazy"></div><div class="in"><h3>{{ t.gites.gite2_h }}</h3><p>{{ h.gite2_sub }}</p><div class="row"><b>{{ ui.from }} {{ s.price_weekend }}</b><span>{{ h.see_gite }} →</span></div></div></a>
+  </div>
+</section>
+
+<section class="wrap">
+  <div class="band"{{ note('dispo') }}>
+    <div class="cols" style="align-items:center">
+      <div><div class="eyebrow">{{ t.nav.reservation }}</div><h2>{{ h.book_h }}</h2><p class="lead" style="color:inherit;opacity:.9">{{ h.book_lead }}</p>
+        <div class="cta" style="display:flex;flex-wrap:wrap;gap:10px"><a class="btn btn-p" href="reservation.html#demande">{{ t.nav.book }}</a><a class="btn btn-light" href="gites.html#dispo">{{ h.cta1 }}</a></div></div>
+      <div class="cal" data-days="{{ ['L','M','M','J','V','S','D'] | join(',') if lang == 'fr' else {'en':'M,T,W,T,F,S,S','de':'M,D,M,D,F,S,S','es':'L,M,X,J,V,S,D','pt':'S,T,Q,Q,S,S,D','nl':'M,D,W,D,V,Z,Z','zh':'一,二,三,四,五,六,日'}[lang] }}" data-busy="2026-10-16/2026-10-31,2026-11-10/2026-11-23,2026-12-08/2026-12-14,2026-12-19/2026-12-26,2026-12-31/2027-01-03">
+        <div class="hd"><button type="button" class="prev" aria-label="{{ ui.prev }}">‹</button><b></b><button type="button" class="next" aria-label="{{ ui.next }}">›</button></div>
+        <div class="g"></div>
+        <div class="leg"><span><i></i>{{ ui.available }}</span><span><i class="b"></i>{{ ui.booked }}</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="wrap">
+  <div class="sec-head"><div><div class="eyebrow">{{ t.nav.autour }}</div><h2>{{ h.around_h }}</h2><p class="lead">{{ h.around_lead }}</p></div><a class="more" href="autour.html">{{ h.around_more }} →</a></div>
+  <div class="grid3"{{ note('around') }}>
+    {% for key, km, url in s.sites[:6] %}{% set si = t.autour.sites[key] %}
+    <a class="tile" href="autour.html#{{ key }}">{% if key in s.site_imgs %}<div class="ph"><img src="{{ rel }}{{ s.site_imgs[key] }}" alt="{{ si[0] }}" loading="lazy"></div>{% else %}<div class="ph empty">{{ km }}</div>{% endif %}<div class="in"><b>{{ si[0] }}</b><span>{{ si[1] }}</span><br><span class="km">{{ km }}</span></div></a>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="wrap">
+  <div class="cols rev">
+    <div class="frame"><img src="{{ rel }}{{ s.domaine[4] }}" alt="{{ t.domaine.captions[4] }}" loading="lazy"></div>
+    <div{{ note('hosts') }}>
+      <div class="eyebrow">{{ ui.tagline }}</div>
+      <h2>{{ h.hosts_h }}</h2>
+      <p class="lead" style="max-width:none">{{ h.hosts }}</p>
+      <div class="logos">{% for img, name, url in s.labels %}<a href="{{ url }}" rel="noopener" target="_blank"><img src="{{ rel }}{{ img }}" alt="{{ name }}" loading="lazy"></a>{% endfor %}</div>
+      <div class="contact-box" style="margin-top:22px">
+        {% for who, tel, href in s.phones %}<div><small>{{ who }}</small><a href="tel:{{ href }}">{{ tel }}</a></div>{% endfor %}
+        <div><small>E-mail</small><a href="mailto:{{ s.email }}">{{ s.email }}</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

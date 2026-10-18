@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% set d = t.diapo %}
+{% block main %}
+<section class="wrap" style="padding-top:28px">
+  <div class="sec-head"><div><div class="eyebrow">{{ ui.tagline }}</div><h1 style="font-size:clamp(30px,5vw,46px)">{{ d.h1 }}</h1><p class="lead" style="margin-bottom:0">{{ d.lead }}</p></div></div>
+  <div class="diapo" id="diapo" aria-live="polite">
+    {% set groups = [(d.sections[0], s.domaine, t.domaine.captions), (d.sections[1], s.gite1, none), (d.sections[2], s.gite2, none)] %}
+    {% for name, imgs, caps in groups %}{% for img in imgs %}
+    <img src="{{ rel }}{{ img }}" alt="{{ caps[loop.index0] if caps else name }}" data-group="{{ name }}" data-cap="{{ caps[loop.index0] if caps else '' }}"{% if loop.first and loop.index0 == 0 and name == d.sections[0] %} class="on"{% endif %} loading="lazy">
+    {% endfor %}{% endfor %}
+    <div class="cap"><div><b id="diapo-group"></b><span id="diapo-cap"></span></div><span id="diapo-idx"></span></div>
+  </div>
+  <div class="diapo-ctl">
+    <button type="button" id="d-prev">‹ {{ ui.prev }}</button>
+    <button type="button" id="d-play" aria-pressed="true">{{ ui.pause }}</button>
+    <button type="button" id="d-next">{{ ui.next }} ›</button>
+    <button type="button" id="d-full">{{ ui.fullscreen }}</button>
+  </div>
+</section>
+<script>
+(function(){var box=document.getElementById('diapo'),imgs=box.querySelectorAll('img'),g=document.getElementById('diapo-group'),c=document.getElementById('diapo-cap'),ix=document.getElementById('diapo-idx'),play=document.getElementById('d-play'),i=0,t,on=true;
+function show(n){imgs[i].classList.remove('on');i=(n+imgs.length)%imgs.length;imgs[i].classList.add('on');g.textContent=imgs[i].getAttribute('data-group');c.textContent=imgs[i].getAttribute('data-cap');ix.textContent=(i+1)+' / '+imgs.length;}
+function run(){clearInterval(t);if(on)t=setInterval(function(){show(i+1)},5000);}
+document.getElementById('d-prev').onclick=function(){show(i-1);run()};document.getElementById('d-next').onclick=function(){show(i+1);run()};
+play.onclick=function(){on=!on;play.setAttribute('aria-pressed',on);play.textContent=on?{{ ui.pause|tojson }}:{{ ui.play|tojson }};run()};
+document.getElementById('d-full').onclick=function(){if(box.requestFullscreen)box.requestFullscreen().catch(function(){})};
+box.addEventListener('click',function(){show(i+1);run()});
+var sx=0;box.addEventListener('touchstart',function(e){sx=e.touches[0].clientX},{passive:true});box.addEventListener('touchend',function(e){var dx=e.changedTouches[0].clientX-sx;if(Math.abs(dx)>50){show(i+(dx<0?1:-1));run()}});
+show(0);run();})();
+</script>
+{% endblock %}

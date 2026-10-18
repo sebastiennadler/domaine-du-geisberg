@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+{% set l = t.legal %}
+{% block main %}
+<section class="wrap" style="max-width:800px"{% if lang == 'fr' %} data-note="{{ t.notes.legal }}"{% endif %}>
+  <h1 style="font-size:clamp(30px,5vw,46px);margin-bottom:24px">{{ l.h1 }}</h1>
+  {% for k in ['editor','host','ip','privacy','credits'] %}<h2 style="font-size:22px;margin:22px 0 8px">{{ l[k ~ '_h'] }}</h2><p>{{ l[k] }}</p>{% endfor %}
+</section>
+{% endblock %}

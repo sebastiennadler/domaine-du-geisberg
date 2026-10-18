@@ -1,0 +1,224 @@
+{
+  "name": "Domaine du Geisberg",
+  "address": "6 rue du Geisberg, 57880 Varsberg",
+  "street": "6 rue du Geisberg",
+  "postal": "57880",
+  "city": "Varsberg",
+  "phones": [
+    [
+      "Agnès",
+      "+33 6 73 42 05 89",
+      "+33673420589"
+    ],
+    [
+      "Marc",
+      "+33 7 89 56 74 91",
+      "+33789567491"
+    ]
+  ],
+  "email": "gitevarsberg@hotmail.com",
+  "gps": [
+    49.1712729,
+    6.6259474
+  ],
+  "maps_url": "https://www.google.com/maps/search/?api=1&query=49.1712729%2C6.6259474",
+  "virtual_tour": "http://www.hdmedia.fr/visite-virtuelle/hd/cbpQep88m-gites-du-geisberg-varsberg-57.html",
+  "price_week": "420 €",
+  "price_weekend": "300 €",
+  "price_night_from": "64,80 €",
+  "deposit": "300 €",
+  "surface": "55 m²",
+  "capacity": 4,
+  "bedrooms": 2,
+  "beds": "4 × 90 cm",
+  "siret": "478 447 790 00013",
+  "tva": "FR44 478447790",
+  "publisher": "Marc Nadler",
+  "hero": [
+    "img/domaine/photo1.webp",
+    "img/hero-1.webp",
+    "img/hero-3.webp",
+    "img/hero-2.webp",
+    "img/hero-5.webp",
+    "img/hero-4.webp"
+  ],
+  "domaine": [
+    "img/domaine/exterieur.webp",
+    "img/domaine/gite-moselle.webp",
+    "img/domaine/photo1.webp",
+    "img/domaine/paysage-varsberg.webp",
+    "img/hero-2.webp",
+    "img/hero-3.webp",
+    "img/hero-5.webp",
+    "img/domaine/neige.webp",
+    "img/hero-4.webp",
+    "img/hero-1.webp"
+  ],
+  "gite1": [
+    "img/gite-1/sejour.webp",
+    "img/gite-1/g1-1.webp",
+    "img/gite-1/g1-2.webp",
+    "img/gite-1/g1-3.webp",
+    "img/gite-1/g1-4.webp",
+    "img/gite-1/g1-5.webp"
+  ],
+  "gite2": [
+    "img/gite-2/sejour.webp",
+    "img/gite-2/g2-1.webp",
+    "img/gite-2/g2-2.webp",
+    "img/gite-2/g2-3.webp",
+    "img/gite-2/g2-4.webp",
+    "img/gite-2/g2-5.webp",
+    "img/gite-2/g2-6.webp"
+  ],
+  "labels": [
+    [
+      "img/logos/gite-france.webp",
+      "Gîtes de France",
+      "https://www.gites-de-france.com/fr/grand-est/moselle/domaine-du-geisberg-h57g004193"
+    ],
+    [
+      "img/logos/cle-vacances.webp",
+      "Clévacances",
+      "https://www.clevacances.com/fr/hebergement/11833-gite-varsberg"
+    ],
+    [
+      "img/logos/tourisme-handicap.webp",
+      "Tourisme & Handicap",
+      "https://www.tourisme-handicaps.org/"
+    ]
+  ],
+  "sites": [
+    [
+      "creutzwald-lac",
+      "3 km",
+      "https://www.creutzwald.fr/fr/cercle-de-voile.html"
+    ],
+    [
+      "cimetiere-americain",
+      "12 km",
+      "https://www.abmc.gov/Lorraine"
+    ],
+    [
+      "musee-mine",
+      "15 km",
+      "https://www.musee-les-mineurs.fr/"
+    ],
+    [
+      "volklingen",
+      "30 km",
+      "https://voelklinger-huette.org/fr/"
+    ],
+    [
+      "bliesbruck",
+      "40 km",
+      "https://www.archeo57.com/"
+    ],
+    [
+      "pompidou-metz",
+      "47 km",
+      "https://www.centrepompidou-metz.fr/"
+    ],
+    [
+      "zoo-amneville",
+      "55 km",
+      "https://www.zoo-amneville.com/"
+    ],
+    [
+      "sainte-croix",
+      "60 km",
+      "https://parcsaintecroix.com/"
+    ],
+    [
+      "boucle-sarre",
+      "80 km",
+      "https://www.visiter-la-sarre.fr/fr/la-boucle-de-la-sarre"
+    ]
+  ],
+  "site_imgs": {
+    "cimetiere-americain": "img/autour/cimetiere-americain.webp",
+    "musee-mine": "img/autour/musee-mine.webp",
+    "volklingen": "img/autour/volklingen.webp",
+    "bliesbruck": "img/autour/bliesbruck.webp",
+    "pompidou-metz": "img/autour/pompidou-metz.webp",
+    "zoo-amneville": "img/autour/zoo-amneville.webp",
+    "sainte-croix": "img/autour/sainte-croix.webp",
+    "boucle-sarre": "img/autour/boucle-sarre.webp"
+  },
+  "leisure": [
+    [
+      "nautique",
+      "3 km"
+    ],
+    [
+      "piscine",
+      "3 km"
+    ],
+    [
+      "peche",
+      "3 km"
+    ],
+    [
+      "tennis",
+      "3 km"
+    ],
+    [
+      "rando",
+      "0"
+    ],
+    [
+      "equitation",
+      "0"
+    ],
+    [
+      "golf",
+      "15 km"
+    ],
+    [
+      "forets",
+      "0"
+    ],
+    [
+      "gare",
+      "6 km"
+    ],
+    [
+      "commerces",
+      "0"
+    ],
+    [
+      "calypso",
+      "35 km"
+    ]
+  ],
+  "links": [
+    [
+      "Moselle Tourisme",
+      "https://www.moselle-tourisme.com/"
+    ],
+    [
+      "Office de tourisme du Warndt",
+      "https://www.cc-warndt.fr/"
+    ],
+    [
+      "Ville de Creutzwald",
+      "https://www.creutzwald.fr/"
+    ],
+    [
+      "Saint-Avold",
+      "https://www.mairie-saint-avold.fr/"
+    ],
+    [
+      "Gîtes de France",
+      "https://www.gites-de-france.com/"
+    ],
+    [
+      "Visit Luxembourg",
+      "https://www.visitluxembourg.com/"
+    ],
+    [
+      "Strasbourg Tourisme",
+      "https://www.visitstrasbourg.fr/"
+    ]
+  ]
+}

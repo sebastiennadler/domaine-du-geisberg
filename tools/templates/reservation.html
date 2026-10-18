@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% set r = t.reservation %}
+{% block main %}
+<div class="page-hero" style="background-image:url('{{ rel }}{{ s.hero[3] }}')">
+  <div class="wrap"><div class="eyebrow" style="color:#E7C59A">{{ ui.tagline }}</div><h1>{{ r.h1 }}</h1></div>
+</div>
+<section class="wrap">
+  <div class="cols" style="align-items:start">
+    <div{% if lang == 'fr' %} data-note="{{ t.notes.prices }}"{% endif %}>
+      <h2 style="margin-bottom:16px">{{ r.prices_h }}</h2>
+      <div class="prices">{% for l, p in r.prices %}<div><span>{{ l }}</span><b>{{ p }}</b></div>{% endfor %}</div>
+      <p class="note">{{ r.included }}</p>
+      <div class="logos" style="margin-top:18px">{% for img, name, url in s.labels %}<a href="{{ url }}" rel="noopener" target="_blank"><img src="{{ rel }}{{ img }}" alt="{{ name }}" loading="lazy"></a>{% endfor %}</div>
+    </div>
+    <div id="demande">
+      <h2 style="margin-bottom:6px">{{ r.form_h }}</h2>
+      <p class="lead" style="margin-top:0">{{ r.form_p }}</p>
+      <form class="form" id="resa" data-to="{{ s.email }}" data-subject="{{ r.form_h }}">
+        <label>{{ r.f_name }}<input id="f_name" name="name" required autocomplete="name"></label>
+        <label>{{ r.f_email }}<input id="f_email" name="email" type="email" required autocomplete="email"></label>
+        <label>{{ r.f_phone }}<input id="f_phone" name="phone" type="tel" autocomplete="tel"></label>
+        <label>{{ r.f_people }}<input id="f_people" name="people" type="number" min="1" max="8" value="2"></label>
+        <label>{{ r.f_in }}<input id="f_in" name="in" type="date" required></label>
+        <label>{{ r.f_out }}<input id="f_out" name="out" type="date" required></label>
+        <label class="full">{{ r.f_gite }}<select id="f_gite" name="gite"><option>{{ t.gites.gite1_h }}</option><option>{{ t.gites.gite2_h }}</option><option>{{ r.f_both }}</option></select></label>
+        <label class="full">{{ r.f_msg }}<textarea id="f_msg" name="msg"></textarea></label>
+        <div class="full"><button class="btn btn-p" type="submit">{{ r.f_send }}</button></div>
+        <p class="note full" style="margin:0">{{ r.f_note }}</p>
+      </form>
+    </div>
+  </div>
+</section>
+<section class="wrap" style="padding-top:0">
+  <div class="cols rev">
+    <div class="frame"><img src="{{ rel }}{{ s.domaine[3] }}" alt="{{ t.domaine.captions[3] }}" loading="lazy"></div>
+    <div{% if lang == 'fr' %} data-note="{{ t.notes.access }}"{% endif %}>
+      <h2 style="margin-bottom:12px">{{ r.access_h }}</h2>
+      {% for p in r.access %}<p>{{ p }}</p>{% endfor %}
+      <div class="contact-box" style="margin-top:18px">
+        <div><small>{{ ui.tagline }}</small>{{ s.address }}</div>
+        <div><small>{{ r.gps }}</small>{{ s.gps[0] }}, {{ s.gps[1] }}</div>
+        {% for who, tel, href in s.phones %}<div><small>{{ who }}</small><a href="tel:{{ href }}">{{ tel }}</a></div>{% endfor %}
+        <div><small>E-mail</small><a href="mailto:{{ s.email }}">{{ s.email }}</a></div>
+      </div>
+      <p style="margin-top:18px"><a class="btn btn-g" href="{{ s.maps_url }}" rel="noopener" target="_blank">{{ ui.see_map }}</a></p>
+    </div>
+  </div>
+</section>
+{% endblock %}

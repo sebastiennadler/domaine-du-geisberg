@@ -1,0 +1,302 @@
+{
+  "meta": {
+    "index": [
+      "Domaine du Geisberg – Casas rurales en Varsberg, Mosela",
+      "Dos casas rurales (3 espigas) en Varsberg (Lorena, Francia) en una finca de 2 hectáreas junto al bosque. Terraza privada, aparcamiento, wifi, mascotas bienvenidas. Reserva directa."
+    ],
+    "le-domaine": [
+      "La finca – Domaine du Geisberg",
+      "Dos hectáreas de prados al borde del bosque, en el paraje llamado Vogelsgesang, en la colina sobre Varsberg."
+    ],
+    "gites": [
+      "Las casas – Domaine du Geisberg",
+      "Dos casas gemelas de 55 m², 2 dormitorios, 4 personas, terraza privada, calefacción geotérmica, sello Tourisme & Handicap."
+    ],
+    "gite-1": [
+      "Casa 1 – Domaine du Geisberg",
+      "Casa 1: 55 m², 2 dormitorios, 4 personas, terraza orientada al sur, fotos y disponibilidad."
+    ],
+    "gite-2": [
+      "Casa 2 – Domaine du Geisberg",
+      "Casa 2: 55 m², 2 dormitorios, 4 personas, accesible, fotos y disponibilidad."
+    ],
+    "autour": [
+      "Qué ver cerca de Varsberg – Domaine du Geisberg",
+      "Senderismo desde el jardín, lago de Creutzwald, museo de la mina, Völklingen, Centro Pompidou-Metz, el Sarre y Luxemburgo."
+    ],
+    "reservation": [
+      "Tarifas, reserva y cómo llegar – Domaine du Geisberg",
+      "Tarifas de las casas, solicitud de reserva directa e itinerario para llegar a Varsberg, Mosela."
+    ],
+    "diaporama": [
+      "Diaporama – Domaine du Geisberg",
+      "Las casas y la finca en imágenes."
+    ],
+    "mentions-legales": [
+      "Aviso legal – Domaine du Geisberg",
+      "Aviso legal y política de privacidad."
+    ]
+  },
+  "nav": {
+    "index": "Inicio",
+    "le-domaine": "La finca",
+    "gites": "Las casas",
+    "autour": "Alrededores",
+    "reservation": "Tarifas y reserva",
+    "diaporama": "Diaporama",
+    "contact": "Contacto",
+    "book": "Reservar"
+  },
+  "ui": {
+    "skip": "Ir al contenido",
+    "menu": "Menú",
+    "theme": "Cambiar tema claro / oscuro",
+    "langs": "Idiomas",
+    "tagline": "Casas rurales · Varsberg · Mosela",
+    "call": "Llamar",
+    "write": "Escribir",
+    "see_map": "Ver en el mapa",
+    "virtual_tour": "Visita virtual 360°",
+    "from": "desde",
+    "per_week": "la semana",
+    "per_weekend": "el fin de semana",
+    "per_night": "la noche",
+    "available": "Libre",
+    "booked": "Ocupado",
+    "prev": "Anterior",
+    "next": "Siguiente",
+    "pause": "Pausa",
+    "play": "Reproducir",
+    "fullscreen": "Pantalla completa",
+    "close": "Cerrar",
+    "legal": "Aviso legal",
+    "privacy": "Privacidad",
+    "copyright": "Domaine du Geisberg · Casas rurales en Varsberg (Mosela, Francia)",
+    "notes_btn": "",
+    "notes_hide": "",
+    "fallback": ""
+  },
+  "home": {
+    "h1": "Dos casas tranquilas entre el prado y el bosque",
+    "lead": "En la colina que domina Varsberg, en el paraje Vogelsgesang, «el canto de los pájaros». Dos hectáreas de prados junto al bosque, senderos que salen del jardín y una terraza para cada casa.",
+    "cta1": "Ver disponibilidad",
+    "cta2": "Descubrir las casas",
+    "facts": [
+      [
+        "2 casas",
+        "gemelas de 55 m², con entradas independientes"
+      ],
+      [
+        "4 pers.",
+        "por casa, 2 dormitorios"
+      ],
+      [
+        "2 ha",
+        "de prados al borde del bosque"
+      ],
+      [
+        "0 carreteras",
+        "que cruzar para salir a pie, en bici o a caballo"
+      ]
+    ],
+    "intro_h": "Un lugar que hace honor a su nombre",
+    "intro": [
+      "Nuestras dos casas ocupan la planta baja de una casa espaciosa, en el corazón de una gran finca de dos hectáreas verdes al borde del bosque, en un lugar excepcional llamado «Vogelsgesang», el canto de los pájaros.",
+      "Típico del paisaje lorenés, el entorno es de naturaleza exuberante y ofrece un panorama precioso en un ambiente de calma y serenidad."
+    ],
+    "intro_more": "Descubrir la finca",
+    "gites_h": "Dos casas gemelas, la misma vista",
+    "gites_lead": "Las mismas prestaciones a ambos lados. Reserve una, o las dos para toda la familia.",
+    "gite1_sub": "55 m² · 2 dormitorios · 4 personas · terraza al sur · aparcamiento · wifi",
+    "gite2_sub": "55 m² · 2 dormitorios · 4 personas · terraza · aparcamiento · accesible",
+    "see_gite": "Ver esta casa",
+    "around_h": "A pie desde el jardín, o a una hora en coche",
+    "around_lead": "Senderos sin cruzar carreteras, lago y base náutica a 3 km, y Metz, el Sarre y Luxemburgo a un día de excursión.",
+    "around_more": "Todo lo que hay que ver",
+    "hosts_h": "Agnès y Marc le dan la bienvenida",
+    "hosts": "Gîtes de France (3 espigas) desde 2016, Clévacances y Tourisme & Handicap. Hablamos francés, inglés y alemán.",
+    "book_h": "Reserve directamente",
+    "book_lead": "Sin comisión, con respuesta en 24 h. Ropa de cama incluida, camas hechas a la llegada, limpieza final incluida."
+  },
+  "domaine": {
+    "h1": "La finca",
+    "p": [
+      "En el corazón de una gran finca de dos hectáreas verdes al borde del bosque, nuestras dos casas ocupan la planta baja de una casa espaciosa situada en un lugar excepcional llamado «Vogelsgesang» (el canto de los pájaros).",
+      "Típico del paisaje lorenés, el entorno de las casas es de naturaleza exuberante y ofrece un panorama precioso en un ambiente de calma y serenidad.",
+      "Hay numerosos senderos accesibles sin cruzar carreteras, a pie, en bicicleta o a caballo. Se ponen caballos a disposición de los jinetes experimentados."
+    ],
+    "gallery_h": "La finca en imágenes",
+    "captions": [
+      "La terraza y el jardín",
+      "Las casas desde el prado",
+      "La casa y los caballos",
+      "Los campos alrededor de Varsberg",
+      "Un caballo en el prado",
+      "Las casas entre el verde",
+      "La siega del heno en la finca",
+      "La finca bajo la nieve",
+      "La casa en invierno",
+      "Las casas y el prado"
+    ]
+  },
+  "gites": {
+    "h1": "Las casas",
+    "lead": "Dos casas adosadas y similares, a nivel del jardín, con entrada independiente, terraza y aparcamiento privados.",
+    "common": "Cada casa consta de un salón con cocina integrada (horno, vitrocerámica, microondas, lavavajillas, lavadora, congelador), dos dormitorios y un baño con ducha y WC adaptado a personas con movilidad reducida. Camas: cuatro de 90 cm que pueden juntarse, más un sofá en el salón. Televisor de pantalla plana, wifi, suelo radiante geotérmico.",
+    "desc_h": "Distribución",
+    "equip_h": "Equipamiento",
+    "serv_h": "Servicios incluidos",
+    "desc": [
+      "1 salón con cocina integrada",
+      "2 dormitorios (cuatro camas de 90 × 190 cm)",
+      "1 baño con ducha y WC, accesible",
+      "4 personas · 55 m²"
+    ],
+    "equip": [
+      "Suelo radiante geotérmico",
+      "Televisor de pantalla plana",
+      "Lavavajillas, lavadora, congelador",
+      "Vitrocerámica, horno, microondas",
+      "Terraza privada, muebles de jardín, barbacoa",
+      "Equipamiento para bebé (cuna, bañera)",
+      "Bicicletas de montaña a disposición"
+    ],
+    "serv": [
+      "Ropa de cama y de casa incluida",
+      "Camas hechas a la llegada",
+      "Limpieza final incluida",
+      "Electricidad y calefacción incluidas",
+      "Wifi gratuito",
+      "Aparcamiento privado",
+      "Mascotas bienvenidas",
+      "Casa para no fumadores"
+    ],
+    "gite1_h": "Casa 1",
+    "gite1_p": "Terraza orientada al sur, con vistas al prado.",
+    "gite2_h": "Casa 2",
+    "gite2_p": "Gemela de la casa 1, baño con el sello Tourisme & Handicap.",
+    "dispo_h": "Disponibilidad",
+    "dispo_p": "El calendario está sincronizado con nuestro planning. Para reservar, envíenos una solicitud con sus fechas.",
+    "tour": "Hacer la visita virtual 360°"
+  },
+  "autour": {
+    "h1": "Turismo y ocio",
+    "lead": "Los senderos salen directamente de la casa, sin cruzar carreteras, a pie, en bicicleta o a caballo. Varios lugares de interés se encuentran a pocos kilómetros.",
+    "sites_h": "Qué ver en los alrededores",
+    "sites": {
+      "creutzwald-lac": [
+        "Lago y base náutica de Creutzwald",
+        "Vela, baño, pesca y paseos alrededor del lago."
+      ],
+      "cimetiere-americain": [
+        "Cementerio americano de Saint-Avold",
+        "El mayor cementerio militar americano de Europa."
+      ],
+      "musee-mine": [
+        "Museo Les Mineurs Wendel, Petite-Rosselle",
+        "La mina y la vida de los mineros de Lorena."
+      ],
+      "volklingen": [
+        "Acerías de Völklingen",
+        "Patrimonio Mundial de la UNESCO, al otro lado de la frontera."
+      ],
+      "bliesbruck": [
+        "Parque arqueológico de Bliesbruck-Reinheim",
+        "Una ciudad galorromana y sus termas."
+      ],
+      "pompidou-metz": [
+        "Centro Pompidou-Metz",
+        "Arte moderno y contemporáneo, con la catedral de Metz a dos pasos."
+      ],
+      "zoo-amneville": [
+        "Zoo de Amnéville",
+        "Más de 2 000 animales en 18 hectáreas."
+      ],
+      "sainte-croix": [
+        "Parque de animales de Sainte-Croix",
+        "Lobos, osos, ciervos y bisontes en el Parque natural regional de Lorena."
+      ],
+      "boucle-sarre": [
+        "El meandro del Sarre, Mettlach",
+        "La espectacular curva del Sarre, vista desde el mirador de Cloef."
+      ]
+    },
+    "leisure_h": "Ocio",
+    "on_site": "en el lugar",
+    "leisure": {
+      "nautique": "Deportes náuticos",
+      "piscine": "Piscina",
+      "peche": "Pesca",
+      "tennis": "Tenis",
+      "rando": "Senderismo",
+      "equitation": "Equitación",
+      "golf": "Golf de Faulquemont",
+      "forets": "Bosques",
+      "gare": "Estación de Saint-Avold",
+      "commerces": "Panadería, comercios",
+      "calypso": "Calypso Saarbrücken (parque acuático)"
+    },
+    "links_h": "Enlaces útiles"
+  },
+  "reservation": {
+    "h1": "Tarifas, reserva y cómo llegar",
+    "prices_h": "Tarifas",
+    "prices": [
+      [
+        "Semana",
+        "420 €"
+      ],
+      [
+        "Fin de semana (2 noches)",
+        "300 €"
+      ],
+      [
+        "Noche, desde",
+        "64,80 €"
+      ]
+    ],
+    "included": "Incluido: ropa de cama y de casa, camas hechas a la llegada, limpieza final, electricidad y calefacción, wifi, mascotas. Fianza de 300 €. Tasa turística aparte. Se aceptan tarjetas y cheques-vacaciones franceses ANCV.",
+    "form_h": "Solicitud de reserva",
+    "form_p": "Indique sus fechas y la casa deseada; respondemos en 24 h.",
+    "f_name": "Nombre",
+    "f_email": "Correo electrónico",
+    "f_phone": "Teléfono",
+    "f_in": "Llegada",
+    "f_out": "Salida",
+    "f_gite": "Casa",
+    "f_both": "Las dos casas",
+    "f_people": "Personas",
+    "f_msg": "Mensaje",
+    "f_send": "Enviar la solicitud",
+    "f_note": "El formulario abre su programa de correo con la solicitud rellenada. También puede llamarnos.",
+    "access_h": "Cómo llegar al Domaine du Geisberg",
+    "access": [
+      "Varsberg está entre Saint-Avold y Creutzwald, a 40 minutos de Metz y 30 minutos de Saarbrücken.",
+      "En coche: autopista A4 (París–Estrasburgo), salida Saint-Avold / Carling, luego dirección Creutzwald y Varsberg.",
+      "En tren: estación de Saint-Avold a 6 km (línea regional Metz–Forbach)."
+    ],
+    "gps": "Coordenadas GPS"
+  },
+  "diapo": {
+    "h1": "Diaporama",
+    "lead": "Las casas y la finca en imágenes.",
+    "sections": [
+      "La finca",
+      "Casa 1",
+      "Casa 2"
+    ]
+  },
+  "legal": {
+    "h1": "Aviso legal",
+    "editor_h": "Editor del sitio",
+    "editor": "Domaine du Geisberg, 6 rue du Geisberg, 57880 Varsberg, Francia. Director de la publicación: Marc Nadler. SIRET 478 447 790 00013 – IVA FR44 478447790.",
+    "host_h": "Alojamiento web",
+    "host": "Sitio alojado en GitHub Pages (GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, EE. UU.).",
+    "ip_h": "Propiedad intelectual",
+    "ip": "Todos los textos, fotografías y elementos gráficos de este sitio pertenecen al Domaine du Geisberg. Queda prohibida su reproducción sin autorización.",
+    "privacy_h": "Datos personales",
+    "privacy": "Este sitio no utiliza cookies ni recoge datos de navegación. La información enviada por correo electrónico para una solicitud de reserva se usa solo para responderle y nunca se cede a terceros. Puede pedir su supresión en cualquier momento en gitevarsberg@hotmail.com.",
+    "credits_h": "Créditos",
+    "credits": "Diseño: Sébastien Nadler, 2026."
+  }
+}

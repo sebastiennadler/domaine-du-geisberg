@@ -1,0 +1,302 @@
+{
+  "meta": {
+    "index": [
+      "Domaine du Geisberg – Holiday cottages in Varsberg, Moselle",
+      "Two 3-star rural gîtes in Varsberg (Moselle, France) on a 2-hectare estate at the edge of the forest. Private terrace, parking, wifi, pets welcome. Book direct."
+    ],
+    "le-domaine": [
+      "The estate – Domaine du Geisberg",
+      "Two hectares of meadows at the edge of the forest, at the place called Vogelsgesang, on the hill above Varsberg."
+    ],
+    "gites": [
+      "The cottages – Domaine du Geisberg",
+      "Two twin 55 m² cottages, 2 bedrooms, 4 guests, private terrace, geothermal heating, Tourisme & Handicap label."
+    ],
+    "gite-1": [
+      "Cottage 1 – Domaine du Geisberg",
+      "Cottage 1: 55 m², 2 bedrooms, 4 guests, south-facing terrace, photos and availability."
+    ],
+    "gite-2": [
+      "Cottage 2 – Domaine du Geisberg",
+      "Cottage 2: 55 m², 2 bedrooms, 4 guests, accessible, photos and availability."
+    ],
+    "autour": [
+      "Things to do around Varsberg – Domaine du Geisberg",
+      "Hiking from the garden, Creutzwald lake, the mining museum, Völklingen, Centre Pompidou-Metz, the Saar and Luxembourg."
+    ],
+    "reservation": [
+      "Rates, booking and directions – Domaine du Geisberg",
+      "Cottage rates, direct booking request and directions to Varsberg, Moselle."
+    ],
+    "diaporama": [
+      "Slideshow – Domaine du Geisberg",
+      "The cottages and the estate in pictures."
+    ],
+    "mentions-legales": [
+      "Legal notice – Domaine du Geisberg",
+      "Legal notice and privacy policy."
+    ]
+  },
+  "nav": {
+    "index": "Home",
+    "le-domaine": "The estate",
+    "gites": "The cottages",
+    "autour": "Around us",
+    "reservation": "Rates & booking",
+    "diaporama": "Slideshow",
+    "contact": "Contact",
+    "book": "Book"
+  },
+  "ui": {
+    "skip": "Skip to content",
+    "menu": "Menu",
+    "theme": "Switch light / dark theme",
+    "langs": "Languages",
+    "tagline": "Holiday cottages · Varsberg · Moselle",
+    "call": "Call",
+    "write": "Write",
+    "see_map": "Open the map",
+    "virtual_tour": "360° virtual tour",
+    "from": "from",
+    "per_week": "per week",
+    "per_weekend": "per weekend",
+    "per_night": "per night",
+    "available": "Available",
+    "booked": "Booked",
+    "prev": "Previous",
+    "next": "Next",
+    "pause": "Pause",
+    "play": "Play",
+    "fullscreen": "Full screen",
+    "close": "Close",
+    "legal": "Legal notice",
+    "privacy": "Privacy",
+    "copyright": "Domaine du Geisberg · Holiday cottages in Varsberg (Moselle, France)",
+    "notes_btn": "",
+    "notes_hide": "",
+    "fallback": ""
+  },
+  "home": {
+    "h1": "Two quiet cottages between meadow and forest",
+    "lead": "On the hill above Varsberg, at the place called Vogelsgesang, “birdsong”. Two hectares of meadows at the edge of the forest, footpaths starting from the garden, and a terrace for each cottage.",
+    "cta1": "Check availability",
+    "cta2": "Discover the cottages",
+    "facts": [
+      [
+        "2 cottages",
+        "twin 55 m² units with separate entrances"
+      ],
+      [
+        "4 guests",
+        "per cottage, 2 bedrooms"
+      ],
+      [
+        "2 ha",
+        "of meadows at the edge of the forest"
+      ],
+      [
+        "0 roads",
+        "to cross before setting off on foot, by bike or on horseback"
+      ]
+    ],
+    "intro_h": "A place that lives up to its name",
+    "intro": [
+      "Our two cottages occupy the ground floor of a spacious house, in the heart of a vast two-hectare estate of green meadows at the edge of the forest, in an exceptional spot known as “Vogelsgesang”, birdsong.",
+      "Typical of the Lorraine countryside, the surroundings are lush and offer a beautiful panorama in a setting of calm and serenity."
+    ],
+    "intro_more": "Discover the estate",
+    "gites_h": "Two twin houses, the same view",
+    "gites_lead": "The same comforts on both sides. Book one, or both for a large family.",
+    "gite1_sub": "55 m² · 2 bedrooms · 4 guests · south-facing terrace · parking · wifi",
+    "gite2_sub": "55 m² · 2 bedrooms · 4 guests · terrace · parking · wheelchair accessible",
+    "see_gite": "See this cottage",
+    "around_h": "On foot from the garden, or an hour’s drive",
+    "around_lead": "Hiking trails without crossing a road, a lake and water-sports centre 3 km away, and Metz, the Saar and Luxembourg within a day trip.",
+    "around_more": "Everything there is to see",
+    "hosts_h": "Agnès and Marc welcome you",
+    "hosts": "Gîtes de France (3 ears of corn) since 2016, Clévacances and Tourisme & Handicap labels. We speak French, English and German.",
+    "book_h": "Book direct",
+    "book_lead": "No commission, with a reply within 24 hours. Linen provided, beds made on arrival, end-of-stay cleaning included."
+  },
+  "domaine": {
+    "h1": "The estate",
+    "p": [
+      "Set in the heart of a vast two-hectare estate of green meadows at the edge of the forest, our two cottages occupy the ground floor of a spacious house in an exceptional spot known as “Vogelsgesang” (birdsong).",
+      "Typical of the Lorraine countryside, the surroundings are lush and offer a beautiful panorama in a setting of calm and serenity.",
+      "There are many hiking trails, reachable without crossing a road, on foot, by bike or on horseback. Horses are available for experienced riders."
+    ],
+    "gallery_h": "The estate in pictures",
+    "captions": [
+      "The terrace and garden",
+      "The cottages from the meadow",
+      "The house and the horses",
+      "The fields around Varsberg",
+      "A horse in the meadow",
+      "The cottages in the greenery",
+      "Haymaking on the estate",
+      "The estate under snow",
+      "The house in winter",
+      "The cottages and the meadow"
+    ]
+  },
+  "gites": {
+    "h1": "The cottages",
+    "lead": "Two similar semi-detached cottages at garden level, each with a separate entrance, private terrace and parking.",
+    "common": "Each cottage has a living room with fitted kitchen (oven, ceramic hob, microwave, dishwasher, washing machine, freezer), two bedrooms and a shower room with WC, adapted for guests with reduced mobility. Sleeping: four 90 cm beds that can be pushed together, plus a sofa in the living room. Flat-screen TV, wifi, geothermal underfloor heating.",
+    "desc_h": "Layout",
+    "equip_h": "Equipment",
+    "serv_h": "Services included",
+    "desc": [
+      "1 living room with fitted kitchen",
+      "2 bedrooms (four 90 × 190 cm beds)",
+      "1 accessible shower room with WC",
+      "4 guests · 55 m²"
+    ],
+    "equip": [
+      "Geothermal underfloor heating",
+      "Flat-screen TV",
+      "Dishwasher, washing machine, freezer",
+      "Ceramic hob, oven, microwave",
+      "Private terrace, garden furniture, barbecue",
+      "Baby equipment (cot, bath)",
+      "Mountain bikes available"
+    ],
+    "serv": [
+      "Bed and household linen provided",
+      "Beds made on arrival",
+      "End-of-stay cleaning included",
+      "Electricity and heating included",
+      "Free wifi",
+      "Private parking",
+      "Pets welcome",
+      "Non-smoking"
+    ],
+    "gite1_h": "Cottage 1",
+    "gite1_p": "South-facing terrace, view over the meadow.",
+    "gite2_h": "Cottage 2",
+    "gite2_p": "Twin of cottage 1, shower room with the Tourisme & Handicap label.",
+    "dispo_h": "Availability",
+    "dispo_p": "The calendar is synchronised with our bookings. To book, send us a request with your dates.",
+    "tour": "Take the 360° virtual tour"
+  },
+  "autour": {
+    "h1": "Things to do",
+    "lead": "Hiking trails start right from the cottage, with no road to cross, on foot, by bike or on horseback. Several remarkable sites are just a few kilometres away.",
+    "sites_h": "Worth seeing nearby",
+    "sites": {
+      "creutzwald-lac": [
+        "Creutzwald lake and water-sports centre",
+        "Sailing, swimming, fishing and walks around the lake."
+      ],
+      "cimetiere-americain": [
+        "Lorraine American Cemetery, Saint-Avold",
+        "The largest American military cemetery in Europe."
+      ],
+      "musee-mine": [
+        "Les Mineurs Wendel museum, Petite-Rosselle",
+        "The pithead and the life of Lorraine’s miners."
+      ],
+      "volklingen": [
+        "Völklingen Ironworks",
+        "A UNESCO World Heritage site just across the border."
+      ],
+      "bliesbruck": [
+        "Bliesbruck-Reinheim archaeological park",
+        "A Gallo-Roman town and its baths."
+      ],
+      "pompidou-metz": [
+        "Centre Pompidou-Metz",
+        "Modern and contemporary art, with Metz cathedral close by."
+      ],
+      "zoo-amneville": [
+        "Amnéville Zoo",
+        "More than 2,000 animals on 18 hectares."
+      ],
+      "sainte-croix": [
+        "Sainte-Croix wildlife park",
+        "Wolves, bears, deer and bison in the Lorraine Regional Nature Park."
+      ],
+      "boucle-sarre": [
+        "The Saar loop, Mettlach",
+        "The spectacular bend of the Saar, seen from the Cloef viewpoint."
+      ]
+    },
+    "leisure_h": "Leisure",
+    "on_site": "on site",
+    "leisure": {
+      "nautique": "Water sports",
+      "piscine": "Swimming pool",
+      "peche": "Fishing",
+      "tennis": "Tennis",
+      "rando": "Hiking",
+      "equitation": "Horse riding",
+      "golf": "Faulquemont golf course",
+      "forets": "Forests",
+      "gare": "Saint-Avold railway station",
+      "commerces": "Bakery, shops",
+      "calypso": "Calypso Saarbrücken (water park)"
+    },
+    "links_h": "Useful links"
+  },
+  "reservation": {
+    "h1": "Rates, booking and directions",
+    "prices_h": "Rates",
+    "prices": [
+      [
+        "Week",
+        "€420"
+      ],
+      [
+        "Weekend (2 nights)",
+        "€300"
+      ],
+      [
+        "Night, from",
+        "€64.80"
+      ]
+    ],
+    "included": "Included: bed and household linen, beds made on arrival, end-of-stay cleaning, electricity and heating, wifi, pets. Deposit €300. Tourist tax extra. Credit cards and French ANCV holiday vouchers accepted.",
+    "form_h": "Booking request",
+    "form_p": "Tell us your dates and which cottage you would like; we reply within 24 hours.",
+    "f_name": "Name",
+    "f_email": "E-mail",
+    "f_phone": "Phone",
+    "f_in": "Arrival",
+    "f_out": "Departure",
+    "f_gite": "Cottage",
+    "f_both": "Both cottages",
+    "f_people": "Guests",
+    "f_msg": "Message",
+    "f_send": "Send the request",
+    "f_note": "The form opens your e-mail app with the request filled in. You can also call us.",
+    "access_h": "Getting to the Domaine du Geisberg",
+    "access": [
+      "Varsberg lies between Saint-Avold and Creutzwald, 40 minutes from Metz and 30 minutes from Saarbrücken.",
+      "By car: A4 motorway (Paris–Strasbourg), exit Saint-Avold / Carling, then follow Creutzwald and Varsberg.",
+      "By train: Saint-Avold station 6 km away (Metz–Forbach regional line)."
+    ],
+    "gps": "GPS coordinates"
+  },
+  "diapo": {
+    "h1": "Slideshow",
+    "lead": "The cottages and the estate in pictures.",
+    "sections": [
+      "The estate",
+      "Cottage 1",
+      "Cottage 2"
+    ]
+  },
+  "legal": {
+    "h1": "Legal notice",
+    "editor_h": "Publisher",
+    "editor": "Domaine du Geisberg, 6 rue du Geisberg, 57880 Varsberg, France. Publishing director: Marc Nadler. SIRET 478 447 790 00013 – VAT FR44 478447790.",
+    "host_h": "Hosting",
+    "host": "Hosted by GitHub Pages (GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA).",
+    "ip_h": "Intellectual property",
+    "ip": "All texts, photographs and graphics on this site belong to the Domaine du Geisberg. Reproduction without permission is prohibited.",
+    "privacy_h": "Personal data",
+    "privacy": "This site sets no cookies and collects no browsing data. Information sent by e-mail for a booking request is used only to reply to it and is never shared with third parties. You may ask for its deletion at any time at gitevarsberg@hotmail.com.",
+    "credits_h": "Credits",
+    "credits": "Design: Sébastien Nadler, 2026."
+  }
+}

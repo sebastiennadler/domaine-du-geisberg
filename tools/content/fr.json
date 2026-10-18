@@ -1,0 +1,315 @@
+{
+  "meta": {
+    "index": [
+      "Domaine du Geisberg – Gîtes ruraux à Varsberg, Moselle",
+      "Deux gîtes 3 épis à Varsberg (Moselle), sur un domaine de 2 hectares en lisière de forêt. Terrasse privée, parking, wifi, animaux acceptés. Réservation en direct."
+    ],
+    "le-domaine": [
+      "Le domaine – Domaine du Geisberg",
+      "Deux hectares de prairies en lisière de forêt, au lieu-dit Vogelsgesang, sur la colline qui domine Varsberg."
+    ],
+    "gites": [
+      "Les gîtes – Domaine du Geisberg",
+      "Deux gîtes jumeaux de 55 m², 2 chambres, 4 personnes, terrasse privée, chauffage géothermique, label Tourisme & Handicap."
+    ],
+    "gite-1": [
+      "Gîte 1 – Domaine du Geisberg",
+      "Gîte 1 : 55 m², 2 chambres, 4 personnes, terrasse plein sud, photos et disponibilités."
+    ],
+    "gite-2": [
+      "Gîte 2 – Domaine du Geisberg",
+      "Gîte 2 : 55 m², 2 chambres, 4 personnes, accessible, photos et disponibilités."
+    ],
+    "autour": [
+      "Tourisme et loisirs autour de Varsberg – Domaine du Geisberg",
+      "Randonnée au départ du domaine, lac de Creutzwald, musée de la mine, Völklingen, Centre Pompidou-Metz, Sarre et Luxembourg."
+    ],
+    "reservation": [
+      "Tarifs, réservation et accès – Domaine du Geisberg",
+      "Tarifs des gîtes, demande de réservation en direct et itinéraire pour venir à Varsberg, Moselle."
+    ],
+    "diaporama": [
+      "Diaporama – Domaine du Geisberg",
+      "Les gîtes et le domaine en images."
+    ],
+    "mentions-legales": [
+      "Mentions légales – Domaine du Geisberg",
+      "Mentions légales et politique de confidentialité."
+    ]
+  },
+  "nav": {
+    "index": "Accueil",
+    "le-domaine": "Le domaine",
+    "gites": "Les gîtes",
+    "autour": "Autour",
+    "reservation": "Tarifs & réservation",
+    "diaporama": "Diaporama",
+    "contact": "Contact",
+    "book": "Réserver"
+  },
+  "ui": {
+    "skip": "Aller au contenu",
+    "menu": "Menu",
+    "theme": "Changer le thème clair / sombre",
+    "langs": "Langues",
+    "tagline": "Gîtes ruraux · Varsberg · Moselle",
+    "call": "Appeler",
+    "write": "Écrire",
+    "see_map": "Voir sur la carte",
+    "virtual_tour": "Visite virtuelle 360°",
+    "from": "dès",
+    "per_week": "la semaine",
+    "per_weekend": "le week-end",
+    "per_night": "la nuit",
+    "available": "Disponible",
+    "booked": "Occupé",
+    "prev": "Précédent",
+    "next": "Suivant",
+    "pause": "Pause",
+    "play": "Lecture",
+    "fullscreen": "Plein écran",
+    "close": "Fermer",
+    "legal": "Mentions légales",
+    "privacy": "Confidentialité",
+    "copyright": "Domaine du Geisberg · Gîtes ruraux à Varsberg (Moselle)",
+    "notes_btn": "Notes pour Marc",
+    "notes_hide": "Masquer les notes",
+    "fallback": ""
+  },
+  "home": {
+    "h1": "Deux gîtes au calme, entre prairie et forêt",
+    "lead": "Sur la colline qui domine Varsberg, au lieu-dit Vogelsgesang, « le chant des oiseaux ». Deux hectares de prairies en lisière de forêt, des sentiers qui partent du jardin, une terrasse pour chaque gîte.",
+    "cta1": "Voir les disponibilités",
+    "cta2": "Découvrir les gîtes",
+    "facts": [
+      [
+        "2 gîtes",
+        "jumeaux de 55 m², entrées indépendantes"
+      ],
+      [
+        "4 pers.",
+        "par gîte, 2 chambres"
+      ],
+      [
+        "2 ha",
+        "de prairies en lisière de forêt"
+      ],
+      [
+        "0 route",
+        "à traverser pour partir à pied, à vélo ou à cheval"
+      ]
+    ],
+    "intro_h": "Un lieu-dit qui porte bien son nom",
+    "intro": [
+      "Nos deux gîtes sont intégrés en partie basse d'une maison spacieuse, au cœur d'un vaste domaine de deux hectares verdoyants en lisière de forêt, dans un lieu d'exception dit « Vogelsgesang », le chant des oiseaux.",
+      "Typique des paysages lorrains, l'environnement se compose d'une nature luxuriante offrant un panorama de toute beauté, dans un contexte empreint de calme et de sérénité."
+    ],
+    "intro_more": "Découvrir le domaine",
+    "gites_h": "Deux maisons jumelles, même vue",
+    "gites_lead": "Mêmes prestations de part et d'autre. Réservez l'un des deux, ou les deux pour une tribu.",
+    "gite1_sub": "55 m² · 2 chambres · 4 personnes · terrasse plein sud · parking · wifi",
+    "gite2_sub": "55 m² · 2 chambres · 4 personnes · terrasse · parking · accessible PMR",
+    "see_gite": "Voir ce gîte",
+    "around_h": "À pied depuis le jardin, ou à une heure de route",
+    "around_lead": "Chemins de randonnée sans traverser de route, lac et base nautique à 3 km, Metz, la Sarre et le Luxembourg à portée de journée.",
+    "around_more": "Tout ce qu'il y a à voir",
+    "hosts_h": "Agnès et Marc vous accueillent",
+    "hosts": "Labellisés Gîtes de France (3 épis) depuis 2016, Clévacances et Tourisme & Handicap. Nous parlons français, anglais et allemand.",
+    "book_h": "Réservez en direct",
+    "book_lead": "Sans commission, avec une réponse sous 24 h. Draps fournis, lits faits à l'arrivée, ménage de fin de séjour offert."
+  },
+  "domaine": {
+    "h1": "Le domaine",
+    "p": [
+      "Situés au cœur d'un vaste domaine de deux hectares verdoyants en lisière de forêt, nos deux gîtes sont intégrés en partie basse d'une maison spacieuse située dans un lieu d'exception dit « Vogelsgesang » (chant des oiseaux).",
+      "Typique des paysages lorrains, l'environnement autour des gîtes se compose d'une nature luxuriante offrant un panorama de toute beauté dans un contexte empreint de calme et de sérénité.",
+      "Les chemins de randonnée sont nombreux et accessibles sans traversée de route, à pied, à vélo ou à cheval. Des chevaux sont mis à disposition des cavaliers confirmés."
+    ],
+    "gallery_h": "Le domaine en images",
+    "captions": [
+      "La terrasse et le jardin",
+      "Les gîtes vus de la prairie",
+      "La maison et les chevaux",
+      "Les champs autour de Varsberg",
+      "Un cheval dans la prairie",
+      "Les gîtes dans la verdure",
+      "Les foins sur le domaine",
+      "Le domaine sous la neige",
+      "La maison en hiver",
+      "Les gîtes et la prairie"
+    ]
+  },
+  "gites": {
+    "h1": "Les gîtes",
+    "lead": "Deux gîtes mitoyens et similaires, en rez-de-jardin, avec entrée indépendante, terrasse et parking privatifs.",
+    "common": "Chaque gîte se compose d'un salon avec cuisine intégrée (four, plaques vitrocéramiques, micro-ondes, lave-vaisselle, lave-linge, congélateur), de deux chambres et d'une salle d'eau avec douche et WC, adaptée aux personnes à mobilité réduite. Le couchage comprend quatre lits de 90 cm pouvant être rapprochés, et un canapé dans le salon. Téléviseur à écran plat, wifi, chauffage au sol par géothermie.",
+    "desc_h": "Descriptif",
+    "equip_h": "Équipements",
+    "serv_h": "Services inclus",
+    "desc": [
+      "1 pièce à vivre avec cuisine intégrée",
+      "2 chambres (4 lits de 90 × 190 cm)",
+      "1 salle d'eau avec douche et WC, accessible",
+      "4 personnes · 55 m²"
+    ],
+    "equip": [
+      "Chauffage au sol par géothermie",
+      "Téléviseur écran plat",
+      "Lave-vaisselle, lave-linge, congélateur",
+      "Plaques vitrocéramiques, four, micro-ondes",
+      "Terrasse privée, salon de jardin, barbecue",
+      "Équipement bébé (lit, baignoire)",
+      "VTT à disposition"
+    ],
+    "serv": [
+      "Draps et linge de maison fournis",
+      "Lits faits à l'arrivée",
+      "Ménage de fin de séjour offert",
+      "Électricité et chauffage inclus",
+      "Wifi gratuit",
+      "Parking privé",
+      "Animaux acceptés",
+      "Gîte non fumeur"
+    ],
+    "gite1_h": "Gîte 1",
+    "gite1_p": "Terrasse plein sud, vue sur la prairie.",
+    "gite2_h": "Gîte 2",
+    "gite2_p": "Jumeau du gîte 1, salle d'eau labellisée Tourisme & Handicap.",
+    "dispo_h": "Disponibilités",
+    "dispo_p": "Le calendrier est synchronisé avec notre planning. Pour réserver, faites-nous une demande avec vos dates.",
+    "tour": "Faire la visite virtuelle à 360°"
+  },
+  "autour": {
+    "h1": "Tourisme et loisirs",
+    "lead": "Les chemins de randonnée sont accessibles depuis le gîte, sans traversée de route, à pied, à vélo ou à cheval. Plusieurs sites remarquables se trouvent à quelques kilomètres.",
+    "sites_h": "À voir dans les environs",
+    "sites": {
+      "creutzwald-lac": [
+        "Lac et base nautique de Creutzwald",
+        "Voile, baignade, pêche et promenade autour du lac."
+      ],
+      "cimetiere-americain": [
+        "Cimetière américain de Saint-Avold",
+        "Le plus grand cimetière militaire américain d'Europe."
+      ],
+      "musee-mine": [
+        "Musée Les Mineurs Wendel, Petite-Rosselle",
+        "Le carreau de mine et la vie des mineurs de Lorraine."
+      ],
+      "volklingen": [
+        "Aciéries de Völklingen",
+        "Patrimoine mondial de l'UNESCO, de l'autre côté de la frontière."
+      ],
+      "bliesbruck": [
+        "Parc archéologique de Bliesbruck-Reinheim",
+        "Une ville gallo-romaine et ses thermes."
+      ],
+      "pompidou-metz": [
+        "Centre Pompidou-Metz",
+        "Art moderne et contemporain, et la cathédrale de Metz à deux pas."
+      ],
+      "zoo-amneville": [
+        "Zoo d'Amnéville",
+        "Plus de 2 000 animaux sur 18 hectares."
+      ],
+      "sainte-croix": [
+        "Parc animalier de Sainte-Croix",
+        "Loups, ours, cerfs et bisons dans le Parc naturel régional de Lorraine."
+      ],
+      "boucle-sarre": [
+        "La boucle de la Sarre, Mettlach",
+        "Le méandre spectaculaire de la Sarre, à voir depuis la Cloef."
+      ]
+    },
+    "leisure_h": "Loisirs",
+    "on_site": "sur place",
+    "leisure": {
+      "nautique": "Sports nautiques",
+      "piscine": "Piscine",
+      "peche": "Pêche",
+      "tennis": "Tennis",
+      "rando": "Randonnée",
+      "equitation": "Équitation",
+      "golf": "Golf de Faulquemont",
+      "forets": "Forêts",
+      "gare": "Gare de Saint-Avold",
+      "commerces": "Boulangerie, commerces",
+      "calypso": "Calypso Sarrebruck (parc aquatique)"
+    },
+    "links_h": "Liens utiles"
+  },
+  "reservation": {
+    "h1": "Tarifs, réservation et accès",
+    "prices_h": "Tarifs",
+    "prices": [
+      [
+        "Semaine",
+        "420 €"
+      ],
+      [
+        "Week-end (2 nuits)",
+        "300 €"
+      ],
+      [
+        "Nuit, à partir de",
+        "64,80 €"
+      ]
+    ],
+    "included": "Inclus : draps et linge, lits faits à l'arrivée, ménage de fin de séjour, électricité et chauffage, wifi, animaux. Caution de 300 €. Taxe de séjour en sus. CB, Visa, MasterCard et chèques-vacances ANCV acceptés.",
+    "form_h": "Demande de réservation",
+    "form_p": "Indiquez vos dates et le gîte souhaité, nous vous répondons sous 24 h.",
+    "f_name": "Nom",
+    "f_email": "E-mail",
+    "f_phone": "Téléphone",
+    "f_in": "Arrivée",
+    "f_out": "Départ",
+    "f_gite": "Gîte",
+    "f_both": "Les deux gîtes",
+    "f_people": "Personnes",
+    "f_msg": "Message",
+    "f_send": "Envoyer la demande",
+    "f_note": "Le formulaire ouvre votre messagerie avec la demande pré-remplie. Vous pouvez aussi nous appeler.",
+    "access_h": "Venir au Domaine du Geisberg",
+    "access": [
+      "Varsberg se trouve entre Saint-Avold et Creutzwald, à 40 minutes de Metz et 30 minutes de Sarrebruck.",
+      "En voiture : autoroute A4 (Paris–Strasbourg), sortie Saint-Avold / Carling, puis direction Creutzwald et Varsberg.",
+      "En train : gare de Saint-Avold à 6 km (TER Metz–Forbach)."
+    ],
+    "gps": "Coordonnées GPS"
+  },
+  "diapo": {
+    "h1": "Diaporama",
+    "lead": "Les gîtes et le domaine en images.",
+    "sections": [
+      "Le domaine",
+      "Gîte 1",
+      "Gîte 2"
+    ]
+  },
+  "legal": {
+    "h1": "Mentions légales",
+    "editor_h": "Éditeur du site",
+    "editor": "Domaine du Geisberg, 6 rue du Geisberg, 57880 Varsberg. Directeur de la publication : Marc Nadler. SIRET 478 447 790 00013 – TVA intracommunautaire FR44 478447790.",
+    "host_h": "Hébergement",
+    "host": "Site hébergé par GitHub Pages (GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, États-Unis).",
+    "ip_h": "Propriété intellectuelle",
+    "ip": "L'ensemble des textes, photographies et éléments graphiques de ce site est la propriété du Domaine du Geisberg. Toute reproduction sans autorisation est interdite.",
+    "privacy_h": "Données personnelles",
+    "privacy": "Ce site ne dépose aucun cookie et ne collecte aucune donnée de navigation. Les informations transmises par e-mail dans le cadre d'une demande de réservation sont utilisées uniquement pour y répondre et ne sont jamais cédées à des tiers. Vous pouvez demander leur suppression à tout moment à l'adresse gitevarsberg@hotmail.com.",
+    "credits_h": "Crédits",
+    "credits": "Conception : Sébastien Nadler, 2026."
+  },
+  "notes": {
+    "hero": "Photos principales : il faut 4 ou 5 photos récentes, en paysage, par beau temps (les gîtes vus de la prairie, la terrasse, la forêt). Ce sont les photos de 2014 en attendant.",
+    "h1": "Accroche : à valider ou à reformuler dans vos mots.",
+    "facts": "Chiffres : j'ai repris Gîtes de France (4 personnes, 55 m²). L'ancien site disait 5 couchages et 60 m². Lequel garder ?",
+    "gites": "Photos des gîtes : 6 à 8 photos récentes par gîte (séjour, cuisine, chaque chambre, salle d'eau, terrasse). Un nom pour chaque gîte ?",
+    "hosts": "Une photo de vous deux, et 2-3 phrases écrites par vous : depuis quand, ce que vous aimez faire découvrir.",
+    "dispo": "Calendrier : il sera relié à Bed Booking (lien iCal à retrouver dans ses réglages). Il n'affichera que libre / occupé.",
+    "prices": "Tarifs : y a-t-il des tarifs par saison (Noël, été) ? Arrhes, conditions d'annulation, heures d'arrivée et de départ ?",
+    "reviews": "Avis : choisissez 3 à 5 avis clients (Gîtes de France, Airbnb, livre d'or) avec prénom et date.",
+    "around": "Autour : la liste vient de l'ancien site. Vos 4 incontournables ? Les temps de trajet sont-ils justes ?",
+    "access": "Accès : l'itinéraire est-il correct ? Une consigne pour l'arrivée (clés, heure) ?",
+    "legal": "Mentions légales : SIRET et forme juridique à vérifier."
+  }
+}

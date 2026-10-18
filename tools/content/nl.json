@@ -1,0 +1,302 @@
+{
+  "meta": {
+    "index": [
+      "Domaine du Geisberg – Vakantiehuizen in Varsberg, Moezel",
+      "Twee vakantiehuizen (3 korenaren) in Varsberg (Lotharingen, Frankrijk) op een landgoed van 2 hectare aan de bosrand. Eigen terras, parkeerplaats, wifi, huisdieren welkom. Rechtstreeks boeken."
+    ],
+    "le-domaine": [
+      "Het landgoed – Domaine du Geisberg",
+      "Twee hectare weiland aan de bosrand, op de plek Vogelsgesang, op de heuvel boven Varsberg."
+    ],
+    "gites": [
+      "De huizen – Domaine du Geisberg",
+      "Twee identieke huizen van 55 m², 2 slaapkamers, 4 personen, eigen terras, aardwarmte, label Tourisme & Handicap."
+    ],
+    "gite-1": [
+      "Huis 1 – Domaine du Geisberg",
+      "Huis 1: 55 m², 2 slaapkamers, 4 personen, terras op het zuiden, foto's en beschikbaarheid."
+    ],
+    "gite-2": [
+      "Huis 2 – Domaine du Geisberg",
+      "Huis 2: 55 m², 2 slaapkamers, 4 personen, rolstoeltoegankelijk, foto's en beschikbaarheid."
+    ],
+    "autour": [
+      "Uitstapjes rond Varsberg – Domaine du Geisberg",
+      "Wandelen vanuit de tuin, het meer van Creutzwald, het mijnmuseum, Völklingen, Centre Pompidou-Metz, Saarland en Luxemburg."
+    ],
+    "reservation": [
+      "Prijzen, reserveren en route – Domaine du Geisberg",
+      "Prijzen van de huizen, rechtstreekse boekingsaanvraag en route naar Varsberg, Moezel."
+    ],
+    "diaporama": [
+      "Diavoorstelling – Domaine du Geisberg",
+      "De huizen en het landgoed in beeld."
+    ],
+    "mentions-legales": [
+      "Juridische informatie – Domaine du Geisberg",
+      "Juridische informatie en privacybeleid."
+    ]
+  },
+  "nav": {
+    "index": "Home",
+    "le-domaine": "Het landgoed",
+    "gites": "De huizen",
+    "autour": "Omgeving",
+    "reservation": "Prijzen & reserveren",
+    "diaporama": "Diavoorstelling",
+    "contact": "Contact",
+    "book": "Reserveren"
+  },
+  "ui": {
+    "skip": "Naar de inhoud",
+    "menu": "Menu",
+    "theme": "Licht / donker thema wisselen",
+    "langs": "Talen",
+    "tagline": "Vakantiehuizen · Varsberg · Moezel",
+    "call": "Bellen",
+    "write": "Schrijven",
+    "see_map": "Op de kaart bekijken",
+    "virtual_tour": "360°-rondleiding",
+    "from": "vanaf",
+    "per_week": "per week",
+    "per_weekend": "per weekend",
+    "per_night": "per nacht",
+    "available": "Vrij",
+    "booked": "Bezet",
+    "prev": "Vorige",
+    "next": "Volgende",
+    "pause": "Pauze",
+    "play": "Afspelen",
+    "fullscreen": "Volledig scherm",
+    "close": "Sluiten",
+    "legal": "Juridische informatie",
+    "privacy": "Privacy",
+    "copyright": "Domaine du Geisberg · Vakantiehuizen in Varsberg (Moezel, Frankrijk)",
+    "notes_btn": "",
+    "notes_hide": "",
+    "fallback": ""
+  },
+  "home": {
+    "h1": "Twee rustige huizen tussen weide en bos",
+    "lead": "Op de heuvel boven Varsberg, op de plek Vogelsgesang, „vogelzang”. Twee hectare weiland aan de bosrand, wandelpaden die in de tuin beginnen en een eigen terras voor elk huis.",
+    "cta1": "Beschikbaarheid bekijken",
+    "cta2": "De huizen ontdekken",
+    "facts": [
+      [
+        "2 huizen",
+        "identiek, elk 55 m², met eigen ingang"
+      ],
+      [
+        "4 pers.",
+        "per huis, 2 slaapkamers"
+      ],
+      [
+        "2 ha",
+        "weiland aan de bosrand"
+      ],
+      [
+        "0 wegen",
+        "over te steken om te voet, per fiets of te paard te vertrekken"
+      ]
+    ],
+    "intro_h": "Een plek die haar naam eer aandoet",
+    "intro": [
+      "Onze twee huizen liggen op de begane grond van een ruime woning, midden op een groen landgoed van twee hectare aan de bosrand, op een bijzondere plek die „Vogelsgesang” heet: vogelzang.",
+      "Typisch voor het Lotharingse landschap: weelderige natuur, een prachtig panorama, rust en sereniteit."
+    ],
+    "intro_more": "Het landgoed ontdekken",
+    "gites_h": "Twee tweelinghuizen, hetzelfde uitzicht",
+    "gites_lead": "Hetzelfde comfort aan beide kanten. Boek er één, of allebei voor de hele familie.",
+    "gite1_sub": "55 m² · 2 slaapkamers · 4 personen · terras op het zuiden · parkeerplaats · wifi",
+    "gite2_sub": "55 m² · 2 slaapkamers · 4 personen · terras · parkeerplaats · rolstoeltoegankelijk",
+    "see_gite": "Dit huis bekijken",
+    "around_h": "Te voet vanuit de tuin, of een uur rijden",
+    "around_lead": "Wandelpaden zonder een weg over te steken, meer en watersportcentrum op 3 km, en Metz, Saarland en Luxemburg als dagtocht.",
+    "around_more": "Alles wat er te zien is",
+    "hosts_h": "Agnès en Marc heten u welkom",
+    "hosts": "Sinds 2016 bij Gîtes de France (3 korenaren), Clévacances en Tourisme & Handicap. Wij spreken Frans, Engels en Duits.",
+    "book_h": "Rechtstreeks boeken",
+    "book_lead": "Zonder commissie, antwoord binnen 24 uur. Beddengoed inbegrepen, bedden opgemaakt bij aankomst, eindschoonmaak inbegrepen."
+  },
+  "domaine": {
+    "h1": "Het landgoed",
+    "p": [
+      "Midden op een uitgestrekt, groen landgoed van twee hectare aan de bosrand liggen onze twee huizen op de begane grond van een ruime woning, op een bijzondere plek die „Vogelsgesang” (vogelzang) heet.",
+      "Typisch voor het Lotharingse landschap biedt de weelderige natuur rond de huizen een prachtig panorama in een rustige, serene omgeving.",
+      "Er zijn veel wandelpaden, bereikbaar zonder een weg over te steken, te voet, per fiets of te paard. Ervaren ruiters kunnen gebruikmaken van paarden."
+    ],
+    "gallery_h": "Het landgoed in beeld",
+    "captions": [
+      "Het terras en de tuin",
+      "De huizen vanuit de weide",
+      "Het huis en de paarden",
+      "De velden rond Varsberg",
+      "Een paard in de weide",
+      "De huizen in het groen",
+      "Hooien op het landgoed",
+      "Het landgoed in de sneeuw",
+      "Het huis in de winter",
+      "De huizen en de weide"
+    ]
+  },
+  "gites": {
+    "h1": "De huizen",
+    "lead": "Twee identieke, geschakelde huizen op tuinniveau, elk met eigen ingang, eigen terras en parkeerplaats.",
+    "common": "Elk huis heeft een woonkamer met open keuken (oven, keramische kookplaat, magnetron, vaatwasser, wasmachine, vriezer), twee slaapkamers en een badkamer met douche en toilet, aangepast voor mensen met beperkte mobiliteit. Slapen: vier bedden van 90 cm die tegen elkaar kunnen, plus een bank in de woonkamer. Flatscreen-tv, wifi, vloerverwarming op aardwarmte.",
+    "desc_h": "Indeling",
+    "equip_h": "Uitrusting",
+    "serv_h": "Inbegrepen",
+    "desc": [
+      "1 woonkamer met open keuken",
+      "2 slaapkamers (vier bedden 90 × 190 cm)",
+      "1 toegankelijke badkamer met douche en toilet",
+      "4 personen · 55 m²"
+    ],
+    "equip": [
+      "Vloerverwarming op aardwarmte",
+      "Flatscreen-tv",
+      "Vaatwasser, wasmachine, vriezer",
+      "Keramische kookplaat, oven, magnetron",
+      "Eigen terras, tuinmeubelen, barbecue",
+      "Babyuitrusting (bedje, badje)",
+      "Mountainbikes beschikbaar"
+    ],
+    "serv": [
+      "Bed- en huishoudlinnen inbegrepen",
+      "Bedden opgemaakt bij aankomst",
+      "Eindschoonmaak inbegrepen",
+      "Elektriciteit en verwarming inbegrepen",
+      "Gratis wifi",
+      "Eigen parkeerplaats",
+      "Huisdieren welkom",
+      "Rookvrij"
+    ],
+    "gite1_h": "Huis 1",
+    "gite1_p": "Terras op het zuiden, uitzicht op de weide.",
+    "gite2_h": "Huis 2",
+    "gite2_p": "Tweeling van huis 1, badkamer met het label Tourisme & Handicap.",
+    "dispo_h": "Beschikbaarheid",
+    "dispo_p": "De kalender is gekoppeld aan onze planning. Stuur ons een aanvraag met uw data om te reserveren.",
+    "tour": "De 360°-rondleiding bekijken"
+  },
+  "autour": {
+    "h1": "Uitstapjes en vrije tijd",
+    "lead": "De wandelpaden beginnen bij het huis, zonder een weg over te steken, te voet, per fiets of te paard. Verschillende bezienswaardigheden liggen op enkele kilometers.",
+    "sites_h": "De moeite waard in de buurt",
+    "sites": {
+      "creutzwald-lac": [
+        "Meer en watersportcentrum van Creutzwald",
+        "Zeilen, zwemmen, vissen en wandelen rond het meer."
+      ],
+      "cimetiere-americain": [
+        "Amerikaanse begraafplaats Saint-Avold",
+        "De grootste Amerikaanse militaire begraafplaats van Europa."
+      ],
+      "musee-mine": [
+        "Mijnmuseum Les Mineurs Wendel, Petite-Rosselle",
+        "De mijn en het leven van de Lotharingse mijnwerkers."
+      ],
+      "volklingen": [
+        "Völklinger Hütte",
+        "UNESCO-werelderfgoed, net over de grens."
+      ],
+      "bliesbruck": [
+        "Archeologisch park Bliesbruck-Reinheim",
+        "Een Gallo-Romeinse stad met thermen."
+      ],
+      "pompidou-metz": [
+        "Centre Pompidou-Metz",
+        "Moderne en hedendaagse kunst, met de kathedraal van Metz vlakbij."
+      ],
+      "zoo-amneville": [
+        "Zoo van Amnéville",
+        "Meer dan 2 000 dieren op 18 hectare."
+      ],
+      "sainte-croix": [
+        "Dierenpark Sainte-Croix",
+        "Wolven, beren, herten en bizons in het regionale natuurpark Lotharingen."
+      ],
+      "boucle-sarre": [
+        "De Saarlus, Mettlach",
+        "De spectaculaire bocht van de Saar, gezien vanaf uitkijkpunt Cloef."
+      ]
+    },
+    "leisure_h": "Vrije tijd",
+    "on_site": "ter plaatse",
+    "leisure": {
+      "nautique": "Watersport",
+      "piscine": "Zwembad",
+      "peche": "Vissen",
+      "tennis": "Tennis",
+      "rando": "Wandelen",
+      "equitation": "Paardrijden",
+      "golf": "Golfbaan Faulquemont",
+      "forets": "Bossen",
+      "gare": "Station Saint-Avold",
+      "commerces": "Bakker, winkels",
+      "calypso": "Calypso Saarbrücken (waterpark)"
+    },
+    "links_h": "Handige links"
+  },
+  "reservation": {
+    "h1": "Prijzen, reserveren en route",
+    "prices_h": "Prijzen",
+    "prices": [
+      [
+        "Week",
+        "€ 420"
+      ],
+      [
+        "Weekend (2 nachten)",
+        "€ 300"
+      ],
+      [
+        "Nacht, vanaf",
+        "€ 64,80"
+      ]
+    ],
+    "included": "Inbegrepen: bed- en huishoudlinnen, bedden opgemaakt bij aankomst, eindschoonmaak, elektriciteit en verwarming, wifi, huisdieren. Borg € 300. Toeristenbelasting apart. Bankkaarten en Franse ANCV-vakantiecheques worden aanvaard.",
+    "form_h": "Boekingsaanvraag",
+    "form_p": "Geef uw data en het gewenste huis door; wij antwoorden binnen 24 uur.",
+    "f_name": "Naam",
+    "f_email": "E-mail",
+    "f_phone": "Telefoon",
+    "f_in": "Aankomst",
+    "f_out": "Vertrek",
+    "f_gite": "Huis",
+    "f_both": "Beide huizen",
+    "f_people": "Personen",
+    "f_msg": "Bericht",
+    "f_send": "Aanvraag versturen",
+    "f_note": "Het formulier opent uw e-mailprogramma met de ingevulde aanvraag. U kunt ons ook bellen.",
+    "access_h": "Route naar het Domaine du Geisberg",
+    "access": [
+      "Varsberg ligt tussen Saint-Avold en Creutzwald, op 40 minuten van Metz en 30 minuten van Saarbrücken.",
+      "Met de auto: snelweg A4 (Parijs–Straatsburg), afrit Saint-Avold / Carling, dan richting Creutzwald en Varsberg. Vanuit Nederland en België via Luxemburg (A31) of Saarbrücken.",
+      "Met de trein: station Saint-Avold op 6 km (regionale lijn Metz–Forbach)."
+    ],
+    "gps": "GPS-coördinaten"
+  },
+  "diapo": {
+    "h1": "Diavoorstelling",
+    "lead": "De huizen en het landgoed in beeld.",
+    "sections": [
+      "Het landgoed",
+      "Huis 1",
+      "Huis 2"
+    ]
+  },
+  "legal": {
+    "h1": "Juridische informatie",
+    "editor_h": "Uitgever",
+    "editor": "Domaine du Geisberg, 6 rue du Geisberg, 57880 Varsberg, Frankrijk. Verantwoordelijke uitgever: Marc Nadler. SIRET 478 447 790 00013 – btw FR44 478447790.",
+    "host_h": "Hosting",
+    "host": "Gehost door GitHub Pages (GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, VS).",
+    "ip_h": "Intellectueel eigendom",
+    "ip": "Alle teksten, foto's en grafische elementen op deze site zijn eigendom van het Domaine du Geisberg. Reproductie zonder toestemming is verboden.",
+    "privacy_h": "Persoonsgegevens",
+    "privacy": "Deze site plaatst geen cookies en verzamelt geen surfgegevens. Gegevens die per e-mail worden verstuurd voor een boekingsaanvraag worden alleen gebruikt om te antwoorden en nooit aan derden doorgegeven. U kunt op elk moment om verwijdering vragen via gitevarsberg@hotmail.com.",
+    "credits_h": "Credits",
+    "credits": "Ontwerp: Sébastien Nadler, 2026."
+  }
+}

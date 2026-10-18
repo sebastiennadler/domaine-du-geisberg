@@ -1,0 +1,302 @@
+{
+  "meta": {
+    "index": [
+      "Domaine du Geisberg – Ferienhäuser in Varsberg, Mosel",
+      "Zwei Ferienhäuser (3 Ähren) in Varsberg (Lothringen, Frankreich) auf einem 2 Hektar großen Anwesen am Waldrand. Eigene Terrasse, Parkplatz, WLAN, Haustiere willkommen. Direkt buchen."
+    ],
+    "le-domaine": [
+      "Das Anwesen – Domaine du Geisberg",
+      "Zwei Hektar Wiesen am Waldrand, am Ort „Vogelsgesang“, auf dem Hügel über Varsberg."
+    ],
+    "gites": [
+      "Die Ferienhäuser – Domaine du Geisberg",
+      "Zwei baugleiche Ferienhäuser mit 55 m², 2 Schlafzimmern, 4 Personen, eigener Terrasse, Erdwärmeheizung, Label Tourisme & Handicap."
+    ],
+    "gite-1": [
+      "Ferienhaus 1 – Domaine du Geisberg",
+      "Ferienhaus 1: 55 m², 2 Schlafzimmer, 4 Personen, Südterrasse, Fotos und Verfügbarkeit."
+    ],
+    "gite-2": [
+      "Ferienhaus 2 – Domaine du Geisberg",
+      "Ferienhaus 2: 55 m², 2 Schlafzimmer, 4 Personen, barrierefrei, Fotos und Verfügbarkeit."
+    ],
+    "autour": [
+      "Ausflüge rund um Varsberg – Domaine du Geisberg",
+      "Wandern ab dem Garten, Creutzwalder See, Bergbaumuseum, Völklinger Hütte, Centre Pompidou-Metz, Saarland und Luxemburg."
+    ],
+    "reservation": [
+      "Preise, Buchung und Anfahrt – Domaine du Geisberg",
+      "Preise der Ferienhäuser, Direktbuchung und Anfahrt nach Varsberg, Mosel."
+    ],
+    "diaporama": [
+      "Diashow – Domaine du Geisberg",
+      "Die Ferienhäuser und das Anwesen in Bildern."
+    ],
+    "mentions-legales": [
+      "Impressum – Domaine du Geisberg",
+      "Impressum und Datenschutz."
+    ]
+  },
+  "nav": {
+    "index": "Start",
+    "le-domaine": "Das Anwesen",
+    "gites": "Die Ferienhäuser",
+    "autour": "Umgebung",
+    "reservation": "Preise & Buchung",
+    "diaporama": "Diashow",
+    "contact": "Kontakt",
+    "book": "Buchen"
+  },
+  "ui": {
+    "skip": "Zum Inhalt springen",
+    "menu": "Menü",
+    "theme": "Helles / dunkles Design umschalten",
+    "langs": "Sprachen",
+    "tagline": "Ferienhäuser · Varsberg · Mosel",
+    "call": "Anrufen",
+    "write": "Schreiben",
+    "see_map": "Karte öffnen",
+    "virtual_tour": "360°-Rundgang",
+    "from": "ab",
+    "per_week": "pro Woche",
+    "per_weekend": "pro Wochenende",
+    "per_night": "pro Nacht",
+    "available": "Frei",
+    "booked": "Belegt",
+    "prev": "Zurück",
+    "next": "Weiter",
+    "pause": "Pause",
+    "play": "Abspielen",
+    "fullscreen": "Vollbild",
+    "close": "Schließen",
+    "legal": "Impressum",
+    "privacy": "Datenschutz",
+    "copyright": "Domaine du Geisberg · Ferienhäuser in Varsberg (Mosel, Frankreich)",
+    "notes_btn": "",
+    "notes_hide": "",
+    "fallback": ""
+  },
+  "home": {
+    "h1": "Zwei ruhige Ferienhäuser zwischen Wiese und Wald",
+    "lead": "Auf dem Hügel über Varsberg, am Ort „Vogelsgesang“. Zwei Hektar Wiesen am Waldrand, Wanderwege direkt ab dem Garten und eine eigene Terrasse für jedes Haus.",
+    "cta1": "Verfügbarkeit prüfen",
+    "cta2": "Die Ferienhäuser entdecken",
+    "facts": [
+      [
+        "2 Häuser",
+        "baugleich, je 55 m², mit eigenem Eingang"
+      ],
+      [
+        "4 Pers.",
+        "pro Haus, 2 Schlafzimmer"
+      ],
+      [
+        "2 ha",
+        "Wiesen am Waldrand"
+      ],
+      [
+        "0 Straßen",
+        "zu überqueren – zu Fuß, mit dem Rad oder zu Pferd"
+      ]
+    ],
+    "intro_h": "Ein Ort, der seinen Namen verdient",
+    "intro": [
+      "Unsere beiden Ferienhäuser liegen im Erdgeschoss eines geräumigen Hauses, inmitten eines zwei Hektar großen, grünen Anwesens am Waldrand, an einem besonderen Ort namens „Vogelsgesang“.",
+      "Typisch für die lothringische Landschaft: üppige Natur, ein wunderschöner Rundblick, Ruhe und Gelassenheit."
+    ],
+    "intro_more": "Das Anwesen entdecken",
+    "gites_h": "Zwei Zwillingshäuser, derselbe Blick",
+    "gites_lead": "Gleiche Ausstattung auf beiden Seiten. Buchen Sie eines – oder beide für die ganze Familie.",
+    "gite1_sub": "55 m² · 2 Schlafzimmer · 4 Personen · Südterrasse · Parkplatz · WLAN",
+    "gite2_sub": "55 m² · 2 Schlafzimmer · 4 Personen · Terrasse · Parkplatz · barrierefrei",
+    "see_gite": "Dieses Haus ansehen",
+    "around_h": "Zu Fuß ab dem Garten oder eine Autostunde entfernt",
+    "around_lead": "Wanderwege ohne Straßenüberquerung, See und Wassersportzentrum in 3 km, Metz, das Saarland und Luxemburg als Tagesausflug.",
+    "around_more": "Alles, was es zu sehen gibt",
+    "hosts_h": "Agnès und Marc heißen Sie willkommen",
+    "hosts": "Seit 2016 bei Gîtes de France (3 Ähren), Clévacances und Tourisme & Handicap. Wir sprechen Französisch, Englisch und Deutsch.",
+    "book_h": "Direkt buchen",
+    "book_lead": "Ohne Provision, Antwort innerhalb von 24 Stunden. Bettwäsche inklusive, Betten bei Ankunft bezogen, Endreinigung inbegriffen."
+  },
+  "domaine": {
+    "h1": "Das Anwesen",
+    "p": [
+      "Inmitten eines weitläufigen, zwei Hektar großen grünen Anwesens am Waldrand liegen unsere beiden Ferienhäuser im Erdgeschoss eines geräumigen Hauses an einem besonderen Ort namens „Vogelsgesang“.",
+      "Typisch für die lothringische Landschaft bietet die üppige Natur rund um die Häuser ein wunderschönes Panorama in ruhiger, friedlicher Umgebung.",
+      "Zahlreiche Wanderwege sind ohne Straßenüberquerung erreichbar – zu Fuß, mit dem Rad oder zu Pferd. Für erfahrene Reiter stehen Pferde zur Verfügung."
+    ],
+    "gallery_h": "Das Anwesen in Bildern",
+    "captions": [
+      "Terrasse und Garten",
+      "Die Häuser von der Wiese aus",
+      "Das Haus und die Pferde",
+      "Die Felder um Varsberg",
+      "Ein Pferd auf der Wiese",
+      "Die Häuser im Grünen",
+      "Heuernte auf dem Anwesen",
+      "Das Anwesen im Schnee",
+      "Das Haus im Winter",
+      "Die Häuser und die Wiese"
+    ]
+  },
+  "gites": {
+    "h1": "Die Ferienhäuser",
+    "lead": "Zwei baugleiche Doppelhaushälften auf Gartenniveau mit eigenem Eingang, eigener Terrasse und Parkplatz.",
+    "common": "Jedes Haus hat ein Wohnzimmer mit Einbauküche (Backofen, Cerankochfeld, Mikrowelle, Geschirrspüler, Waschmaschine, Gefrierschrank), zwei Schlafzimmer und ein barrierefreies Duschbad mit WC. Schlafen: vier 90-cm-Betten, die zusammengestellt werden können, plus ein Sofa im Wohnzimmer. Flachbildfernseher, WLAN, Fußbodenheizung mit Erdwärme.",
+    "desc_h": "Aufteilung",
+    "equip_h": "Ausstattung",
+    "serv_h": "Inklusive Leistungen",
+    "desc": [
+      "1 Wohnraum mit Einbauküche",
+      "2 Schlafzimmer (vier Betten 90 × 190 cm)",
+      "1 barrierefreies Duschbad mit WC",
+      "4 Personen · 55 m²"
+    ],
+    "equip": [
+      "Fußbodenheizung mit Erdwärme",
+      "Flachbildfernseher",
+      "Geschirrspüler, Waschmaschine, Gefrierschrank",
+      "Cerankochfeld, Backofen, Mikrowelle",
+      "Eigene Terrasse, Gartenmöbel, Grill",
+      "Babyausstattung (Bett, Badewanne)",
+      "Mountainbikes verfügbar"
+    ],
+    "serv": [
+      "Bett- und Haushaltswäsche inklusive",
+      "Betten bei Ankunft bezogen",
+      "Endreinigung inbegriffen",
+      "Strom und Heizung inklusive",
+      "Kostenloses WLAN",
+      "Privater Parkplatz",
+      "Haustiere willkommen",
+      "Nichtraucherhaus"
+    ],
+    "gite1_h": "Ferienhaus 1",
+    "gite1_p": "Südterrasse mit Blick auf die Wiese.",
+    "gite2_h": "Ferienhaus 2",
+    "gite2_p": "Zwilling von Haus 1, Duschbad mit dem Label Tourisme & Handicap.",
+    "dispo_h": "Verfügbarkeit",
+    "dispo_p": "Der Kalender ist mit unserem Belegungsplan synchronisiert. Senden Sie uns zum Buchen eine Anfrage mit Ihren Daten.",
+    "tour": "360°-Rundgang starten"
+  },
+  "autour": {
+    "h1": "Ausflüge und Freizeit",
+    "lead": "Die Wanderwege beginnen direkt am Haus, ohne Straßenüberquerung – zu Fuß, mit dem Rad oder zu Pferd. Mehrere sehenswerte Orte liegen nur wenige Kilometer entfernt.",
+    "sites_h": "Sehenswert in der Umgebung",
+    "sites": {
+      "creutzwald-lac": [
+        "See und Wassersportzentrum Creutzwald",
+        "Segeln, Baden, Angeln und Spaziergänge um den See."
+      ],
+      "cimetiere-americain": [
+        "Amerikanischer Soldatenfriedhof Saint-Avold",
+        "Der größte amerikanische Soldatenfriedhof Europas."
+      ],
+      "musee-mine": [
+        "Bergbaumuseum Les Mineurs Wendel, Petite-Rosselle",
+        "Die Zeche und das Leben der lothringischen Bergleute."
+      ],
+      "volklingen": [
+        "Völklinger Hütte",
+        "UNESCO-Welterbe, gleich hinter der Grenze."
+      ],
+      "bliesbruck": [
+        "Europäischer Kulturpark Bliesbruck-Reinheim",
+        "Eine gallo-römische Stadt mit Thermen."
+      ],
+      "pompidou-metz": [
+        "Centre Pompidou-Metz",
+        "Moderne und zeitgenössische Kunst, die Kathedrale von Metz ganz in der Nähe."
+      ],
+      "zoo-amneville": [
+        "Zoo Amnéville",
+        "Über 2 000 Tiere auf 18 Hektar."
+      ],
+      "sainte-croix": [
+        "Tierpark Sainte-Croix",
+        "Wölfe, Bären, Hirsche und Bisons im Naturpark Lothringen."
+      ],
+      "boucle-sarre": [
+        "Saarschleife, Mettlach",
+        "Die spektakuläre Flussschleife der Saar, vom Aussichtspunkt Cloef aus."
+      ]
+    },
+    "leisure_h": "Freizeit",
+    "on_site": "vor Ort",
+    "leisure": {
+      "nautique": "Wassersport",
+      "piscine": "Schwimmbad",
+      "peche": "Angeln",
+      "tennis": "Tennis",
+      "rando": "Wandern",
+      "equitation": "Reiten",
+      "golf": "Golfplatz Faulquemont",
+      "forets": "Wälder",
+      "gare": "Bahnhof Saint-Avold",
+      "commerces": "Bäckerei, Geschäfte",
+      "calypso": "Calypso Saarbrücken (Erlebnisbad)"
+    },
+    "links_h": "Nützliche Links"
+  },
+  "reservation": {
+    "h1": "Preise, Buchung und Anfahrt",
+    "prices_h": "Preise",
+    "prices": [
+      [
+        "Woche",
+        "420 €"
+      ],
+      [
+        "Wochenende (2 Nächte)",
+        "300 €"
+      ],
+      [
+        "Nacht, ab",
+        "64,80 €"
+      ]
+    ],
+    "included": "Inklusive: Bett- und Haushaltswäsche, Betten bei Ankunft bezogen, Endreinigung, Strom und Heizung, WLAN, Haustiere. Kaution 300 €. Kurtaxe zusätzlich. Kreditkarten und französische ANCV-Urlaubsschecks werden akzeptiert.",
+    "form_h": "Buchungsanfrage",
+    "form_p": "Nennen Sie uns Ihre Daten und das gewünschte Haus – wir antworten innerhalb von 24 Stunden.",
+    "f_name": "Name",
+    "f_email": "E-Mail",
+    "f_phone": "Telefon",
+    "f_in": "Anreise",
+    "f_out": "Abreise",
+    "f_gite": "Ferienhaus",
+    "f_both": "Beide Häuser",
+    "f_people": "Personen",
+    "f_msg": "Nachricht",
+    "f_send": "Anfrage senden",
+    "f_note": "Das Formular öffnet Ihr E-Mail-Programm mit der ausgefüllten Anfrage. Sie können uns auch anrufen.",
+    "access_h": "Anfahrt zur Domaine du Geisberg",
+    "access": [
+      "Varsberg liegt zwischen Saint-Avold und Creutzwald, 40 Minuten von Metz und 30 Minuten von Saarbrücken.",
+      "Mit dem Auto: Autobahn A4 (Paris–Straßburg), Ausfahrt Saint-Avold / Carling, dann Richtung Creutzwald und Varsberg. Aus Deutschland: A6/A620 bis Saarbrücken, dann A4 oder über Creutzwald.",
+      "Mit der Bahn: Bahnhof Saint-Avold in 6 km (Regionalzug Metz–Forbach)."
+    ],
+    "gps": "GPS-Koordinaten"
+  },
+  "diapo": {
+    "h1": "Diashow",
+    "lead": "Die Ferienhäuser und das Anwesen in Bildern.",
+    "sections": [
+      "Das Anwesen",
+      "Ferienhaus 1",
+      "Ferienhaus 2"
+    ]
+  },
+  "legal": {
+    "h1": "Impressum",
+    "editor_h": "Herausgeber",
+    "editor": "Domaine du Geisberg, 6 rue du Geisberg, 57880 Varsberg, Frankreich. Verantwortlich: Marc Nadler. SIRET 478 447 790 00013 – USt-IdNr. FR44 478447790.",
+    "host_h": "Hosting",
+    "host": "Gehostet bei GitHub Pages (GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA).",
+    "ip_h": "Urheberrecht",
+    "ip": "Alle Texte, Fotos und Grafiken dieser Website gehören der Domaine du Geisberg. Jede Vervielfältigung ohne Genehmigung ist untersagt.",
+    "privacy_h": "Datenschutz",
+    "privacy": "Diese Website setzt keine Cookies und erhebt keine Nutzungsdaten. Per E-Mail übermittelte Angaben zu einer Buchungsanfrage werden nur zur Beantwortung verwendet und nie an Dritte weitergegeben. Sie können jederzeit die Löschung unter gitevarsberg@hotmail.com verlangen.",
+    "credits_h": "Gestaltung",
+    "credits": "Gestaltung: Sébastien Nadler, 2026."
+  }
+}

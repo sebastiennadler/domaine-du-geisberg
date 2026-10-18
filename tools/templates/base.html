@@ -1,0 +1,95 @@
+{% set m = t.meta[page] %}
+{% set ui = t.ui %}
+<!DOCTYPE html>
+<html lang="{{ lang }}" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>{{ m[0] }}</title>
+<meta name="description" content="{{ m[1] }}">
+<meta name="robots" content="noindex, nofollow">{# maquette : retirer avant la mise en ligne sur domainedugeisberg.fr #}
+<link rel="canonical" href="{{ canonical }}">
+{% for code, name, flag, pfx in langs %}
+<link rel="alternate" hreflang="{{ code }}" href="{{ site_url }}/{{ pfx }}{{ '' if page == 'index' else page + '.html' }}">
+{% endfor %}
+<link rel="alternate" hreflang="x-default" href="{{ site_url }}/{{ '' if page == 'index' else page + '.html' }}">
+<meta property="og:site_name" content="{{ s.name }}">
+<meta property="og:title" content="{{ m[0] }}">
+<meta property="og:description" content="{{ m[1] }}">
+<meta property="og:type" content="website">
+<meta property="og:url" content="{{ canonical }}">
+<meta property="og:image" content="{{ site_url }}/{{ s.hero[0] }}">
+<meta property="og:locale" content="{{ {'fr':'fr_FR','en':'en_GB','de':'de_DE','es':'es_ES','pt':'pt_PT','nl':'nl_NL','zh':'zh_CN'}[lang] }}">
+<meta name="theme-color" content="#F5F2EA" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#151516" media="(prefers-color-scheme: dark)">
+<script>(function(){try{var t=localStorage.getItem("geisberg-theme");if(t==="dark"||t==="light")document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Nunito+Sans:wght@400;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ rel }}css/style.css">
+<link rel="icon" href="{{ rel }}img/favicon.svg" type="image/svg+xml">
+<script type="application/ld+json">{{ {
+  "@context": "https://schema.org", "@type": "LodgingBusiness", "@id": site_url + "/#lodging",
+  "name": s.name, "url": site_url + "/", "image": [site_url + "/" + s.hero[0], site_url + "/" + s.gite1[0], site_url + "/" + s.gite2[0]],
+  "description": t.meta["index"][1], "telephone": s.phones[0][2], "email": s.email,
+  "address": {"@type": "PostalAddress", "streetAddress": s.street, "postalCode": s.postal, "addressLocality": s.city, "addressRegion": "Moselle", "addressCountry": "FR"},
+  "geo": {"@type": "GeoCoordinates", "latitude": s.gps[0], "longitude": s.gps[1]},
+  "numberOfRooms": 2, "petsAllowed": true, "checkinTime": "16:00", "checkoutTime": "10:00",
+  "amenityFeature": [{"@type": "LocationFeatureSpecification", "name": "WiFi", "value": true}, {"@type": "LocationFeatureSpecification", "name": "Parking", "value": true}, {"@type": "LocationFeatureSpecification", "name": "Terrasse", "value": true}],
+  "priceRange": "64,80 € – 420 €", "starRating": {"@type": "Rating", "ratingValue": "3", "bestRating": "5", "name": "3 épis Gîtes de France"}
+} | tojson }}</script>
+</head>
+<body>
+<a class="skip" href="#main">{{ ui.skip }}</a>
+{% if lang == 'fr' %}<div class="nbanner">Mode « Notes pour Marc » : les bulles rouges indiquent ce qu'il reste à fournir ou à décider. Appuyez sur un numéro pour lire la note.</div>{% endif %}
+<header class="site-header">
+  <div class="wrap">
+    <div class="bar">
+      <a class="brand" href="{{ prefix and rel + prefix or rel }}index.html"><b>{{ s.name }}</b><span>{{ ui.tagline }}</span></a>
+      <div class="ctl">
+        <button class="ibtn" id="theme" type="button" aria-label="{{ ui.theme }}">
+          <svg class="sun" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+          <svg class="moon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></svg>
+        </button>
+        <button class="ibtn" id="menu" type="button" aria-label="{{ ui.menu }}" aria-expanded="false" aria-controls="nav">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+        </button>
+      </div>
+      <nav class="nav" id="nav" aria-label="{{ ui.menu }}">
+        {% for p in ['index','le-domaine','gites','autour','reservation','diaporama'] %}
+        <a href="{{ p }}.html"{% if p == page %} aria-current="page"{% endif %}>{{ t.nav[p] }}</a>
+        {% endfor %}
+        <a class="btn btn-p book" href="reservation.html#demande">{{ t.nav.book }}</a>
+        <div class="langs" aria-label="{{ ui.langs }}">
+          {% for code, name, flag, pfx in langs %}
+          <a href="{{ rel }}{{ pfx }}{{ page }}.html" lang="{{ code }}" hreflang="{{ code }}" title="{{ name }}" aria-label="{{ name }}"{% if code == lang %} aria-current="true"{% endif %}>{{ flag }}</a>
+          {% endfor %}
+        </div>
+      </nav>
+    </div>
+  </div>
+</header>
+<main id="main">
+{% block main %}{% endblock %}
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <div><b>{{ s.name }}</b>{{ s.address }}<br>{{ s.phones[0][0] }} · {{ s.phones[0][1] }}<br>{{ s.phones[1][0] }} · {{ s.phones[1][1] }}<br>{{ s.email }}</div>
+    <ul>
+      {% for p in ['le-domaine','gites','autour','reservation','diaporama'] %}<li><a href="{{ p }}.html">{{ t.nav[p] }}</a></li>{% endfor %}
+      <li><a href="mentions-legales.html">{{ ui.legal }}</a></li>
+    </ul>
+    <ul>
+      {% for img, name, url in s.labels %}<li><a href="{{ url }}" rel="noopener" target="_blank">{{ name }}</a></li>{% endfor %}
+      <li><a href="{{ s.virtual_tour }}" rel="noopener" target="_blank">{{ ui.virtual_tour }}</a></li>
+      <li>© 2026 {{ ui.copyright }}</li>
+    </ul>
+  </div>
+</footer>
+{% if lang == 'fr' %}
+<button class="nbtn" id="nbtn" type="button" aria-pressed="false" data-show="{{ ui.notes_btn }}" data-hide="{{ ui.notes_hide }}"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M12 20h9M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg><span>{{ ui.notes_btn }}</span></button>
+<section class="npanel" aria-label="Liste des points à fournir"><h2>Ce qu'il reste à faire sur cette page</h2><p>Cochez au fur et à mesure (mémorisé sur cet appareil). Envoyez les éléments à Sébastien par mail ou WhatsApp.</p><ol id="nlist"></ol></section>
+{% endif %}
+<script>window.GEISBERG_UI={{ {'close': ui.close, 'prev': ui.prev, 'next': ui.next} | tojson }};</script>
+<script src="{{ rel }}js/site.js"></script>
+</body>
+</html>
