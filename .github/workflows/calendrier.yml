@@ -1,0 +1,48 @@
+name: Mettre à jour le calendrier
+on:
+  schedule:
+    - cron: "23 * * * *"   # toutes les heures
+  workflow_dispatch:
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+concurrency:
+  group: pages
+  cancel-in-progress: false
+jobs:
+  calendrier:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    outputs:
+      changed: ${{ steps.pub.outputs.changed }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: pip install jinja2
+      - name: Lire les flux iCal
+        env:
+          ICAL_GITE1: ${{ secrets.ICAL_GITE1 }}
+          ICAL_GITE2: ${{ secrets.ICAL_GITE2 }}
+        run: python3 tools/fetch_ical.py
+      - name: Régénérer les pages
+        run: python3 tools/build.py
+      - name: Publier si quelque chose a changé
+        id: pub
+        run: |
+          git config user.name "calendrier-bot"
+          git config user.email "calendrier@domainedugeisberg.fr"
+          git add -A
+          if git diff --cached --quiet; then echo "Rien de nouveau."; echo "changed=no" >> "$GITHUB_OUTPUT"; else git commit -m "Calendrier : mise à jour automatique" && git push && echo "changed=yes" >> "$GITHUB_OUTPUT"; fi
+      - if: steps.pub.outputs.changed == 'yes'
+        uses: actions/configure-pages@v5
+      - if: steps.pub.outputs.changed == 'yes'
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+      - if: steps.pub.outputs.changed == 'yes'
+        id: deployment
+        uses: actions/deploy-pages@v4

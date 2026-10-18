@@ -27,6 +27,10 @@ PAGES = ["index", "le-domaine", "gites", "gite-1", "gite-2", "autour", "reservat
 env = Environment(loader=FileSystemLoader(str(TPL)), autoescape=select_autoescape(["html"]), trim_blocks=True, lstrip_blocks=True)
 
 shared = json.loads((CONTENT / "shared.json").read_text(encoding="utf-8"))
+busy = json.loads((CONTENT / "busy.json").read_text(encoding="utf-8")) if (CONTENT / "busy.json").exists() else {}
+shared["busy1"] = ",".join(f"{a}/{b}" for a, b in busy.get("gite1", []))
+shared["busy2"] = ",".join(f"{a}/{b}" for a, b in busy.get("gite2", []))
+shared["busy_updated"] = busy.get("updated", "")
 contents = {}
 for code, *_ in LANGS:
     p = CONTENT / f"{code}.json"

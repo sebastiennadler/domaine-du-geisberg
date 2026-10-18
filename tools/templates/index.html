@@ -46,7 +46,7 @@
     <div class="cols" style="align-items:center">
       <div><div class="eyebrow">{{ t.nav.reservation }}</div><h2>{{ h.book_h }}</h2><p class="lead" style="color:inherit;opacity:.9">{{ h.book_lead }}</p>
         <div class="cta" style="display:flex;flex-wrap:wrap;gap:10px"><a class="btn btn-p" href="reservation.html#demande">{{ t.nav.book }}</a><a class="btn btn-light" href="gites.html#dispo">{{ h.cta1 }}</a></div></div>
-      <div class="cal" data-days="{{ ['L','M','M','J','V','S','D'] | join(',') if lang == 'fr' else {'en':'M,T,W,T,F,S,S','de':'M,D,M,D,F,S,S','es':'L,M,X,J,V,S,D','pt':'S,T,Q,Q,S,S,D','nl':'M,D,W,D,V,Z,Z','zh':'一,二,三,四,五,六,日'}[lang] }}" data-busy="2026-10-16/2026-10-31,2026-11-10/2026-11-23,2026-12-08/2026-12-14,2026-12-19/2026-12-26,2026-12-31/2027-01-03">
+      <div class="cal" data-days="{{ ['L','M','M','J','V','S','D'] | join(',') if lang == 'fr' else {'en':'M,T,W,T,F,S,S','de':'M,D,M,D,F,S,S','es':'L,M,X,J,V,S,D','pt':'S,T,Q,Q,S,S,D','nl':'M,D,W,D,V,Z,Z','zh':'一,二,三,四,五,六,日'}[lang] }}" data-busy="{{ s.busy1 }}">
         <div class="hd"><button type="button" class="prev" aria-label="{{ ui.prev }}">‹</button><b></b><button type="button" class="next" aria-label="{{ ui.next }}">›</button></div>
         <div class="g"></div>
         <div class="leg"><span><i></i>{{ ui.available }}</span><span><i class="b"></i>{{ ui.booked }}</span></div>

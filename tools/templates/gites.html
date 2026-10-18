@@ -29,7 +29,7 @@
   <div class="band"{% if lang == 'fr' %} data-note="{{ t.notes.dispo }}"{% endif %}>
     <div class="eyebrow">{{ g.dispo_h }}</div><h2>{{ g.dispo_h }}</h2><p class="lead" style="color:inherit;opacity:.9">{{ g.dispo_p }}</p>
     <div class="cal-row">
-      {% for name, busy in [(g.gite1_h, '2026-10-16/2026-10-31,2026-11-10/2026-11-23,2026-12-08/2026-12-14,2026-12-19/2026-12-26,2026-12-31/2027-01-03'), (g.gite2_h, '2026-10-16/2026-10-22,2026-11-11/2026-11-15')] %}
+      {% for name, busy in [(g.gite1_h, s.busy1), (g.gite2_h, s.busy2)] %}
       <div><h3 style="margin-bottom:10px">{{ name }}</h3>
         <div class="cal" data-days="{{ days }}" data-busy="{{ busy }}">
           <div class="hd"><button type="button" class="prev" aria-label="{{ ui.prev }}">‹</button><b></b><button type="button" class="next" aria-label="{{ ui.next }}">›</button></div>
