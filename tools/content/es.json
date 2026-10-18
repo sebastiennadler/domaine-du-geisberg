@@ -127,16 +127,16 @@
     ],
     "gallery_h": "La finca en imágenes",
     "captions": [
-      "La terraza y el jardín",
       "Las casas desde el prado",
-      "La casa y los caballos",
-      "Los campos alrededor de Varsberg",
-      "Un caballo en el prado",
-      "Las casas entre el verde",
-      "La siega del heno en la finca",
-      "La finca bajo la nieve",
-      "La casa en invierno",
-      "Las casas y el prado"
+      "Los caballos delante de la casa",
+      "El jardín y su mesa bajo los árboles",
+      "La terraza de una casa",
+      "El camino que sale del jardín",
+      "Atardecer sobre Varsberg",
+      "Los caballos en invierno",
+      "La casa bajo la nieve",
+      "Vista desde la terraza",
+      "La colina del Geisberg"
     ]
   },
   "gites": {
@@ -298,5 +298,39 @@
     "privacy": "Este sitio no utiliza cookies ni recoge datos de navegación. La información enviada por correo electrónico para una solicitud de reserva se usa solo para responderle y nunca se cede a terceros. Puede pedir su supresión en cualquier momento en gitevarsberg@hotmail.com.",
     "credits_h": "Créditos",
     "credits": "Diseño: Sébastien Nadler, 2026."
+  },
+  "extra": {
+    "reviews_eyebrow": "Opiniones",
+    "reviews_h": "Lo que dicen nuestros huéspedes",
+    "reviews_lead": "Más de cien opiniones en las plataformas de reserva, con una media que se mantiene alta.",
+    "rating_reviews": "opiniones",
+    "superhost": "Superanfitriones Airbnb · anfitriones desde 2011 · respondemos en una hora",
+    "practical_h": "Bueno saberlo",
+    "practical": [
+      "Llegada a partir de las 16 h, salida antes de las 10 h",
+      "Panadería a 300 m, restaurante a 1 km, supermercado a 3 km",
+      "Mascotas bienvenidas (máx. 2), sin suplemento",
+      "Cuna, bañera y trona bajo petición",
+      "No fumadores · wifi de fibra"
+    ],
+    "rooms": [
+      [
+        "Salón y cocina abierta",
+        "23–25 m²"
+      ],
+      [
+        "Dormitorio 1",
+        "10 m² · 2 camas 90 × 190"
+      ],
+      [
+        "Dormitorio 2",
+        "13 m² · 2 camas 90 × 190"
+      ],
+      [
+        "Baño accesible",
+        "6–7 m² · ducha a ras de suelo, WC"
+      ]
+    ],
+    "rooms_h": "Habitación por habitación"
   }
 }

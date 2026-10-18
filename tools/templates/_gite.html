@@ -18,6 +18,12 @@
     <div><h3>{{ g.serv_h }}</h3><ul class="list">{% for x in g.serv %}<li>{{ x }}</li>{% endfor %}</ul></div>
   </div>
 </section>
+<section class="wrap" style="padding-top:0">
+  <div class="cols" style="align-items:start">
+    <div><h3 style="margin-bottom:14px">{{ t.extra.rooms_h }}</h3><div class="prices">{% for n, v in t.extra.rooms %}<div><span>{{ n }}</span><b style="font-size:17px;font-family:var(--body)">{{ v }}</b></div>{% endfor %}</div></div>
+    <div><h3 style="margin-bottom:14px">{{ t.extra.practical_h }}</h3><ul class="list">{% for x in t.extra.practical %}<li>{{ x }}</li>{% endfor %}</ul></div>
+  </div>
+</section>
 <section class="wrap" id="dispo" style="padding-top:0">
   <div class="band">
     <div class="cols" style="align-items:center">

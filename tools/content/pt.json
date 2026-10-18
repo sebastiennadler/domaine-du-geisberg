@@ -127,16 +127,16 @@
     ],
     "gallery_h": "A propriedade em imagens",
     "captions": [
-      "O terraço e o jardim",
       "As casas vistas do prado",
-      "A casa e os cavalos",
-      "Os campos em redor de Varsberg",
-      "Um cavalo no prado",
-      "As casas no meio do verde",
-      "A colheita do feno na propriedade",
-      "A propriedade sob a neve",
-      "A casa no inverno",
-      "As casas e o prado"
+      "Os cavalos diante da casa",
+      "O jardim e a sua mesa sob as árvores",
+      "O terraço de uma casa",
+      "O caminho que parte do jardim",
+      "Pôr do sol sobre Varsberg",
+      "Os cavalos no inverno",
+      "A casa sob a neve",
+      "Vista do terraço",
+      "A colina do Geisberg"
     ]
   },
   "gites": {
@@ -298,5 +298,39 @@
     "privacy": "Este site não utiliza cookies nem recolhe dados de navegação. As informações enviadas por e-mail num pedido de reserva são usadas apenas para lhe responder e nunca são cedidas a terceiros. Pode pedir a sua eliminação a qualquer momento para gitevarsberg@hotmail.com.",
     "credits_h": "Créditos",
     "credits": "Conceção: Sébastien Nadler, 2026."
+  },
+  "extra": {
+    "reviews_eyebrow": "Opiniões",
+    "reviews_h": "O que dizem os nossos hóspedes",
+    "reviews_lead": "Mais de cem opiniões nas plataformas de reserva, com uma média que se mantém alta.",
+    "rating_reviews": "opiniões",
+    "superhost": "Superanfitriões Airbnb · anfitriões desde 2011 · respondemos numa hora",
+    "practical_h": "Bom saber",
+    "practical": [
+      "Chegada a partir das 16 h, partida até às 10 h",
+      "Padaria a 300 m, restaurante a 1 km, minimercado a 3 km",
+      "Animais bem-vindos (máx. 2), sem suplemento",
+      "Cama de bebé, banheira e cadeira alta a pedido",
+      "Não fumadores · wi-fi por fibra"
+    ],
+    "rooms": [
+      [
+        "Sala e cozinha aberta",
+        "23–25 m²"
+      ],
+      [
+        "Quarto 1",
+        "10 m² · 2 camas 90 × 190"
+      ],
+      [
+        "Quarto 2",
+        "13 m² · 2 camas 90 × 190"
+      ],
+      [
+        "Casa de banho acessível",
+        "6–7 m² · duche ao nível do chão, WC"
+      ]
+    ],
+    "rooms_h": "Divisão por divisão"
   }
 }

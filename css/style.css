@@ -47,7 +47,7 @@ section{padding-block:56px}
 .site-header{position:sticky;top:0;z-index:60;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:saturate(1.4) blur(12px);border-bottom:1px solid var(--line)}
 .bar{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:66px}
 .brand{text-decoration:none;color:var(--fg);display:flex;flex-direction:column;line-height:1.05}
-.brand b{font-family:var(--display);font-size:22px;font-weight:700;letter-spacing:-.01em}
+.brand b{font-family:var(--display);font-size:22px;font-weight:700;letter-spacing:-.01em;white-space:nowrap}
 .brand span{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-top:3px}
 .ctl{display:flex;gap:2px;align-items:center}
 .ibtn{width:44px;height:44px;border:0;background:none;color:var(--fg);border-radius:10px;display:grid;place-items:center;cursor:pointer}
@@ -246,3 +246,19 @@ html.notes .npanel{display:block}
 .nbanner{display:none;background:#C8431F;color:#fff;text-align:center;padding:10px 16px;font-weight:700;font-size:14px}
 html.notes .nbanner{display:block}
 @media print{.nbtn,.npanel,.site-header .ctl{display:none!important}}
+
+/* ---------- Avis ---------- */
+.ratings{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+@media(min-width:760px){.ratings{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.rating{background:var(--bg2);border:1px solid var(--line);border-radius:12px;padding:16px 18px;display:flex;flex-direction:column;gap:2px}
+.rating b{font-family:var(--display);font-size:30px;line-height:1.1;color:var(--green)}
+html[data-theme="dark"] .rating b{color:var(--copper)}
+.rating span{font-weight:800;font-size:14px}
+.rating small{color:var(--muted);font-size:13px}
+.reviews{display:grid;gap:14px}
+@media(min-width:700px){.reviews{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(min-width:1000px){.reviews{grid-template-columns:repeat(3,minmax(0,1fr))}}
+blockquote{margin:0;padding:20px;border:1px solid var(--line);border-radius:12px;background:var(--bg2);display:flex;flex-direction:column;gap:8px}
+blockquote .st{color:var(--copper);letter-spacing:2px;font-size:15px}
+blockquote p{margin:0;font-style:italic;font-size:16px;line-height:1.5}
+blockquote cite{font-style:normal;font-size:13.5px;color:var(--muted)}

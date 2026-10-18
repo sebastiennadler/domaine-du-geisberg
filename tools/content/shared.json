@@ -35,41 +35,41 @@
   "tva": "FR44 478447790",
   "publisher": "Marc Nadler",
   "hero": [
-    "img/domaine/photo1.webp",
     "img/hero-1.webp",
-    "img/hero-3.webp",
     "img/hero-2.webp",
+    "img/hero-3.webp",
+    "img/hero-4.webp",
     "img/hero-5.webp",
-    "img/hero-4.webp"
+    "img/hero-6.webp"
   ],
   "domaine": [
-    "img/domaine/exterieur.webp",
-    "img/domaine/gite-moselle.webp",
-    "img/domaine/photo1.webp",
-    "img/domaine/paysage-varsberg.webp",
-    "img/hero-2.webp",
-    "img/hero-3.webp",
-    "img/hero-5.webp",
-    "img/domaine/neige.webp",
-    "img/hero-4.webp",
-    "img/hero-1.webp"
+    "img/domaine/domaine-01.webp",
+    "img/domaine/domaine-02.webp",
+    "img/domaine/domaine-03.webp",
+    "img/domaine/domaine-04.webp",
+    "img/domaine/domaine-05.webp",
+    "img/domaine/domaine-06.webp",
+    "img/domaine/domaine-07.webp",
+    "img/domaine/domaine-08.webp",
+    "img/domaine/domaine-09.webp",
+    "img/domaine/domaine-10.webp"
   ],
   "gite1": [
-    "img/gite-1/sejour.webp",
-    "img/gite-1/g1-1.webp",
-    "img/gite-1/g1-2.webp",
-    "img/gite-1/g1-3.webp",
-    "img/gite-1/g1-4.webp",
-    "img/gite-1/g1-5.webp"
+    "img/gite-1/gite-1-01.webp",
+    "img/gite-1/gite-1-02.webp",
+    "img/gite-1/gite-1-03.webp",
+    "img/gite-1/gite-1-04.webp",
+    "img/gite-1/gite-1-05.webp",
+    "img/gite-1/gite-1-06.webp"
   ],
   "gite2": [
-    "img/gite-2/sejour.webp",
-    "img/gite-2/g2-1.webp",
-    "img/gite-2/g2-2.webp",
-    "img/gite-2/g2-3.webp",
-    "img/gite-2/g2-4.webp",
-    "img/gite-2/g2-5.webp",
-    "img/gite-2/g2-6.webp"
+    "img/gite-2/gite-2-01.webp",
+    "img/gite-2/gite-2-02.webp",
+    "img/gite-2/gite-2-03.webp",
+    "img/gite-2/gite-2-04.webp",
+    "img/gite-2/gite-2-05.webp",
+    "img/gite-2/gite-2-06.webp",
+    "img/gite-2/gite-2-07.webp"
   ],
   "labels": [
     [
@@ -220,5 +220,73 @@
       "Strasbourg Tourisme",
       "https://www.visitstrasbourg.fr/"
     ]
-  ]
+  ],
+  "reviews": [
+    {
+      "who": "Nicolas",
+      "when": "2025-08",
+      "stars": 5,
+      "src": "Gîtes de France",
+      "q": "Hôte très accueillant et séjour très agréable. Gîte très calme, bien équipé, très bonne literie, cadre forestier et nombreux sentiers."
+    },
+    {
+      "who": "Kevin",
+      "when": "2025-02",
+      "stars": 5,
+      "src": "Gîtes de France",
+      "q": "Impeccable. Excellent rapport qualité-prix, logement conforme à la description — et merci pour la bouteille de vin de Moselle."
+    },
+    {
+      "who": "Jean",
+      "when": "2026-08",
+      "stars": 4,
+      "src": "Gîtes de France",
+      "q": "Gîtes au calme, propriétaires sympas, confortable."
+    },
+    {
+      "who": "Dieter M.",
+      "when": "2018-10",
+      "stars": 5,
+      "src": "Abritel",
+      "q": "Eine sehr empfehlenswerte, saubere Ferienwohnung in direkter Nähe schöner Wanderwege."
+    },
+    {
+      "who": "Abritel",
+      "when": "2023-11",
+      "stars": 4,
+      "src": "Abritel",
+      "q": "Beautiful views from the terrace. Perfect spot for a relaxing getaway."
+    },
+    {
+      "who": "Abritel",
+      "when": "2026-02",
+      "stars": 5,
+      "src": "Abritel",
+      "q": "Adembenemende uitzichten rondom!"
+    }
+  ],
+  "ratings": [
+    [
+      "Abritel / Expedia",
+      "9,2 / 10",
+      "72"
+    ],
+    [
+      "Airbnb",
+      "4,9 / 5",
+      "32"
+    ],
+    [
+      "Gîtes de France",
+      "4,7 / 5",
+      "3"
+    ],
+    [
+      "Clévacances",
+      "9,5 / 10",
+      "2"
+    ]
+  ],
+  "checkin": "16:00",
+  "checkout": "10:00"
 }

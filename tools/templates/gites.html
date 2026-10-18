@@ -14,6 +14,12 @@
   </div>
 </section>
 <section class="wrap" style="padding-top:0">
+  <div class="cols" style="align-items:start">
+    <div><h3 style="margin-bottom:14px">{{ t.extra.rooms_h }}</h3><div class="prices">{% for n, v in t.extra.rooms %}<div><span>{{ n }}</span><b style="font-size:17px;font-family:var(--body)">{{ v }}</b></div>{% endfor %}</div></div>
+    <div><h3 style="margin-bottom:14px">{{ t.extra.practical_h }}</h3><ul class="list">{% for x in t.extra.practical %}<li>{{ x }}</li>{% endfor %}</ul></div>
+  </div>
+</section>
+<section class="wrap" style="padding-top:0">
   <div class="cards"{% if lang == 'fr' %} data-note="{{ t.notes.gites }}"{% endif %}>
     <a class="card" href="gite-1.html"><div class="ph"><img src="{{ rel }}{{ s.gite1[0] }}" alt="{{ g.gite1_h }}" loading="lazy"></div><div class="in"><h3>{{ g.gite1_h }}</h3><p>{{ g.gite1_p }}</p><div class="row"><b>{{ ui.from }} {{ s.price_weekend }}</b><span>{{ t.home.see_gite }} →</span></div></div></a>
     <a class="card" href="gite-2.html"><div class="ph"><img src="{{ rel }}{{ s.gite2[0] }}" alt="{{ g.gite2_h }}" loading="lazy"></div><div class="in"><h3>{{ g.gite2_h }}</h3><p>{{ g.gite2_p }}</p><div class="row"><b>{{ ui.from }} {{ s.price_weekend }}</b><span>{{ t.home.see_gite }} →</span></div></div></a>
@@ -35,4 +41,5 @@
     <p style="margin:24px 0 0"><a class="btn btn-p" href="reservation.html#demande">{{ t.nav.book }}</a> <a class="btn btn-light" href="{{ s.virtual_tour }}" rel="noopener" target="_blank">{{ g.tour }}</a></p>
   </div>
 </section>
+{% include "_reviews.html" %}
 {% endblock %}

@@ -127,16 +127,16 @@
     ],
     "gallery_h": "Le domaine en images",
     "captions": [
-      "La terrasse et le jardin",
       "Les gîtes vus de la prairie",
-      "La maison et les chevaux",
-      "Les champs autour de Varsberg",
-      "Un cheval dans la prairie",
-      "Les gîtes dans la verdure",
-      "Les foins sur le domaine",
-      "Le domaine sous la neige",
-      "La maison en hiver",
-      "Les gîtes et la prairie"
+      "Les chevaux devant la maison",
+      "Le jardin et sa table sous les arbres",
+      "La terrasse d'un gîte",
+      "Le chemin qui part du jardin",
+      "Coucher de soleil sur Varsberg",
+      "Les chevaux en hiver",
+      "La maison sous la neige",
+      "Vue depuis la terrasse",
+      "La colline du Geisberg"
     ]
   },
   "gites": {
@@ -307,9 +307,43 @@
     "hosts": "Une photo de vous deux, et 2-3 phrases écrites par vous : depuis quand, ce que vous aimez faire découvrir.",
     "dispo": "Calendrier : il sera relié à Bed Booking (lien iCal à retrouver dans ses réglages). Il n'affichera que libre / occupé.",
     "prices": "Tarifs : y a-t-il des tarifs par saison (Noël, été) ? Arrhes, conditions d'annulation, heures d'arrivée et de départ ?",
-    "reviews": "Avis : choisissez 3 à 5 avis clients (Gîtes de France, Airbnb, livre d'or) avec prénom et date.",
+    "reviews": "Avis : j'ai repris 6 avis publiés (Gîtes de France, Abritel). Dites-moi ceux que vous préférez, ou donnez-m'en d'autres (livre d'or).",
     "around": "Autour : la liste vient de l'ancien site. Vos 4 incontournables ? Les temps de trajet sont-ils justes ?",
     "access": "Accès : l'itinéraire est-il correct ? Une consigne pour l'arrivée (clés, heure) ?",
     "legal": "Mentions légales : SIRET et forme juridique à vérifier."
+  },
+  "extra": {
+    "reviews_eyebrow": "Ils sont venus",
+    "reviews_h": "Ce qu'en disent nos hôtes",
+    "reviews_lead": "Plus de cent avis sur les plateformes de réservation, et une moyenne qui ne descend pas.",
+    "rating_reviews": "avis",
+    "superhost": "Superhôte Airbnb · hôtes depuis 2011 · nous répondons dans l'heure",
+    "practical_h": "Bon à savoir",
+    "practical": [
+      "Arrivée à partir de 16 h, départ avant 10 h",
+      "Boulangerie à 300 m, restaurant à 1 km, supérette à 3 km",
+      "Animaux bienvenus (2 maximum), sans supplément",
+      "Lit bébé, baignoire et chaise haute sur demande",
+      "Gîte non fumeur · Wi-Fi fibre"
+    ],
+    "rooms": [
+      [
+        "Séjour et cuisine ouverte",
+        "23–25 m²"
+      ],
+      [
+        "Chambre 1",
+        "10 m² · 2 lits 90 × 190"
+      ],
+      [
+        "Chambre 2",
+        "13 m² · 2 lits 90 × 190"
+      ],
+      [
+        "Salle d'eau accessible",
+        "6–7 m² · douche à l'italienne, WC"
+      ]
+    ],
+    "rooms_h": "Pièce par pièce"
   }
 }

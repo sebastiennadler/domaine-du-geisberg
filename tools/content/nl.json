@@ -127,16 +127,16 @@
     ],
     "gallery_h": "Het landgoed in beeld",
     "captions": [
-      "Het terras en de tuin",
       "De huizen vanuit de weide",
-      "Het huis en de paarden",
-      "De velden rond Varsberg",
-      "Een paard in de weide",
-      "De huizen in het groen",
-      "Hooien op het landgoed",
-      "Het landgoed in de sneeuw",
-      "Het huis in de winter",
-      "De huizen en de weide"
+      "De paarden voor het huis",
+      "De tuin met tafel onder de bomen",
+      "Het terras van een huis",
+      "Het pad vanuit de tuin",
+      "Zonsondergang boven Varsberg",
+      "De paarden in de winter",
+      "Het huis in de sneeuw",
+      "Uitzicht vanaf het terras",
+      "De Geisberg-heuvel"
     ]
   },
   "gites": {
@@ -298,5 +298,39 @@
     "privacy": "Deze site plaatst geen cookies en verzamelt geen surfgegevens. Gegevens die per e-mail worden verstuurd voor een boekingsaanvraag worden alleen gebruikt om te antwoorden en nooit aan derden doorgegeven. U kunt op elk moment om verwijdering vragen via gitevarsberg@hotmail.com.",
     "credits_h": "Credits",
     "credits": "Ontwerp: Sébastien Nadler, 2026."
+  },
+  "extra": {
+    "reviews_eyebrow": "Beoordelingen",
+    "reviews_h": "Wat onze gasten zeggen",
+    "reviews_lead": "Meer dan honderd beoordelingen op de boekingssites, met een gemiddelde dat hoog blijft.",
+    "rating_reviews": "beoordelingen",
+    "superhost": "Airbnb-Superhost · gastheren sinds 2011 · wij antwoorden binnen het uur",
+    "practical_h": "Goed om te weten",
+    "practical": [
+      "Aankomst vanaf 16 u, vertrek voor 10 u",
+      "Bakker op 300 m, restaurant op 1 km, supermarktje op 3 km",
+      "Huisdieren welkom (max. 2), zonder toeslag",
+      "Babybed, badje en kinderstoel op aanvraag",
+      "Rookvrij · glasvezel-wifi"
+    ],
+    "rooms": [
+      [
+        "Woonkamer met open keuken",
+        "23–25 m²"
+      ],
+      [
+        "Slaapkamer 1",
+        "10 m² · 2 bedden 90 × 190"
+      ],
+      [
+        "Slaapkamer 2",
+        "13 m² · 2 bedden 90 × 190"
+      ],
+      [
+        "Toegankelijke badkamer",
+        "6–7 m² · inloopdouche, toilet"
+      ]
+    ],
+    "rooms_h": "Kamer voor kamer"
   }
 }

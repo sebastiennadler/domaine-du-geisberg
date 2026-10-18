@@ -127,16 +127,16 @@
     ],
     "gallery_h": "Das Anwesen in Bildern",
     "captions": [
-      "Terrasse und Garten",
       "Die Häuser von der Wiese aus",
-      "Das Haus und die Pferde",
-      "Die Felder um Varsberg",
-      "Ein Pferd auf der Wiese",
-      "Die Häuser im Grünen",
-      "Heuernte auf dem Anwesen",
-      "Das Anwesen im Schnee",
-      "Das Haus im Winter",
-      "Die Häuser und die Wiese"
+      "Die Pferde vor dem Haus",
+      "Der Garten mit Tisch unter den Bäumen",
+      "Die Terrasse eines Hauses",
+      "Der Weg ab dem Garten",
+      "Sonnenuntergang über Varsberg",
+      "Die Pferde im Winter",
+      "Das Haus im Schnee",
+      "Blick von der Terrasse",
+      "Der Geisberg"
     ]
   },
   "gites": {
@@ -298,5 +298,39 @@
     "privacy": "Diese Website setzt keine Cookies und erhebt keine Nutzungsdaten. Per E-Mail übermittelte Angaben zu einer Buchungsanfrage werden nur zur Beantwortung verwendet und nie an Dritte weitergegeben. Sie können jederzeit die Löschung unter gitevarsberg@hotmail.com verlangen.",
     "credits_h": "Gestaltung",
     "credits": "Gestaltung: Sébastien Nadler, 2026."
+  },
+  "extra": {
+    "reviews_eyebrow": "Gästestimmen",
+    "reviews_h": "Das sagen unsere Gäste",
+    "reviews_lead": "Über hundert Bewertungen auf den Buchungsportalen, mit konstant hohem Durchschnitt.",
+    "rating_reviews": "Bewertungen",
+    "superhost": "Airbnb-Superhost · Gastgeber seit 2011 · Antwort innerhalb einer Stunde",
+    "practical_h": "Gut zu wissen",
+    "practical": [
+      "Anreise ab 16 Uhr, Abreise bis 10 Uhr",
+      "Bäckerei in 300 m, Restaurant 1 km, Minimarkt 3 km",
+      "Haustiere willkommen (max. 2), ohne Aufpreis",
+      "Babybett, Badewanne und Hochstuhl auf Anfrage",
+      "Nichtraucher · Glasfaser-WLAN"
+    ],
+    "rooms": [
+      [
+        "Wohnraum mit offener Küche",
+        "23–25 m²"
+      ],
+      [
+        "Schlafzimmer 1",
+        "10 m² · 2 Betten 90 × 190"
+      ],
+      [
+        "Schlafzimmer 2",
+        "13 m² · 2 Betten 90 × 190"
+      ],
+      [
+        "Barrierefreies Duschbad",
+        "6–7 m² · bodengleiche Dusche, WC"
+      ]
+    ],
+    "rooms_h": "Raum für Raum"
   }
 }

@@ -127,16 +127,16 @@
     ],
     "gallery_h": "The estate in pictures",
     "captions": [
-      "The terrace and garden",
       "The cottages from the meadow",
-      "The house and the horses",
-      "The fields around Varsberg",
-      "A horse in the meadow",
-      "The cottages in the greenery",
-      "Haymaking on the estate",
-      "The estate under snow",
-      "The house in winter",
-      "The cottages and the meadow"
+      "The horses in front of the house",
+      "The garden and its table under the trees",
+      "A cottage terrace",
+      "The path leading from the garden",
+      "Sunset over Varsberg",
+      "The horses in winter",
+      "The house under snow",
+      "View from the terrace",
+      "The Geisberg hill"
     ]
   },
   "gites": {
@@ -298,5 +298,39 @@
     "privacy": "This site sets no cookies and collects no browsing data. Information sent by e-mail for a booking request is used only to reply to it and is never shared with third parties. You may ask for its deletion at any time at gitevarsberg@hotmail.com.",
     "credits_h": "Credits",
     "credits": "Design: Sébastien Nadler, 2026."
+  },
+  "extra": {
+    "reviews_eyebrow": "Guest reviews",
+    "reviews_h": "What our guests say",
+    "reviews_lead": "More than a hundred reviews across booking platforms, and an average that stays high.",
+    "rating_reviews": "reviews",
+    "superhost": "Airbnb Superhost · hosts since 2011 · we reply within the hour",
+    "practical_h": "Good to know",
+    "practical": [
+      "Check-in from 4 pm, check-out by 10 am",
+      "Bakery 300 m away, restaurant 1 km, mini-market 3 km",
+      "Pets welcome (2 max), no extra charge",
+      "Cot, baby bath and high chair on request",
+      "Non-smoking · fibre Wi-Fi"
+    ],
+    "rooms": [
+      [
+        "Living room and open kitchen",
+        "23–25 m²"
+      ],
+      [
+        "Bedroom 1",
+        "10 m² · 2 beds 90 × 190"
+      ],
+      [
+        "Bedroom 2",
+        "13 m² · 2 beds 90 × 190"
+      ],
+      [
+        "Accessible shower room",
+        "6–7 m² · walk-in shower, WC"
+      ]
+    ],
+    "rooms_h": "Room by room"
   }
 }
