@@ -1832,3 +1832,128 @@ body.menu-open .nbtn {
 .diapo-teaser:hover {
   color: var(--green-ink);
 }
+
+/* ---------- Effets dynamiques (discrets ; coupés si le visiteur préfère moins d'animations) ---------- */
+/* Apparition en douceur des blocs quand ils entrent à l'écran (classe posée par site.js) */
+html.js .reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition:
+    opacity 0.7s ease,
+    transform 0.7s cubic-bezier(0.2, 0.7, 0.2, 1);
+  transition-delay: var(--d, 0s);
+}
+html.js .reveal.in {
+  opacity: 1;
+  transform: none;
+}
+/* Très lent zoom sur la photo du bandeau (effet « Ken Burns ») */
+.hero .slide.on {
+  animation: kenburns 7s ease-out forwards;
+}
+@keyframes kenburns {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.06);
+  }
+}
+/* Ombre sous l'en-tête une fois qu'on a commencé à défiler */
+.site-header {
+  transition: box-shadow 0.3s ease;
+}
+.site-header.scrolled {
+  box-shadow: 0 6px 24px rgba(31, 36, 32, 0.1);
+}
+/* Fondu entre thème clair et sombre */
+html.theming,
+html.theming * {
+  transition:
+    background-color 0.45s ease,
+    color 0.45s ease,
+    border-color 0.45s ease !important;
+}
+/* Soulignement animé des liens du menu (ordinateur) */
+@media (min-width: 960px) {
+  .nav > a:not(.book) {
+    background-image: linear-gradient(var(--copper), var(--copper));
+    background-repeat: no-repeat;
+    background-size: 0 2px;
+    background-position: 10px calc(100% - 6px);
+    transition:
+      background-size 0.3s ease,
+      background-color 0.2s;
+  }
+  .nav > a:not(.book):hover,
+  .nav > a:not(.book)[aria-current] {
+    background-size: calc(100% - 20px) 2px;
+  }
+}
+/* Photos chargées à la demande : fondu à l'arrivée */
+img.fade {
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+img.fade.ld {
+  opacity: 1;
+}
+/* Bouton « remonter » */
+.totop {
+  position: fixed;
+  left: 14px;
+  bottom: max(84px, calc(env(safe-area-inset-bottom, 0px) + 74px));
+  z-index: 55;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 1px solid var(--line);
+  background: var(--bg2);
+  color: var(--green);
+  box-shadow: var(--shadow);
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  opacity: 0;
+  transform: translateY(10px);
+  pointer-events: none;
+  transition:
+    opacity 0.3s,
+    transform 0.3s;
+}
+.totop.show {
+  opacity: 1;
+  transform: none;
+  pointer-events: auto;
+}
+.totop:hover {
+  color: var(--copper);
+}
+@media (min-width: 960px) {
+  .totop {
+    left: auto;
+    right: 22px;
+    bottom: 22px;
+  }
+  html[lang='fr'] .totop {
+    right: auto;
+    left: 22px;
+  }
+}
+body.menu-open .totop {
+  display: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  html.js .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  .hero .slide.on {
+    animation: none;
+  }
+  html.theming,
+  html.theming * {
+    transition: none !important;
+  }
+}

@@ -2,6 +2,8 @@
 (function () {
   'use strict';
   var root = document.documentElement;
+  root.classList.add('js');
+  var reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   /* Thème clair / sombre (mémorisé) */
   try {
@@ -334,4 +336,84 @@
     });
     if (location.hash === '#notes') set(true);
   }
+
+  /* ---------- Effets discrets ---------- */
+
+  /* Apparition progressive des blocs à l'entrée dans l'écran, avec un léger décalage entre voisins */
+  var revealSel =
+    '.sec-head, .fact, .card, .tile, .mosaic > *, .gallery > *, .reviews > *, .hosts, .diapo-teaser, ' +
+    '.strip > *, .logos > *, .cols > *, .prices, .ratings > *, .chips > *, .list > li, .visite, .dispo';
+  var toReveal = Array.prototype.slice.call(document.querySelectorAll(revealSel));
+  if (toReveal.length && 'IntersectionObserver' in window && !reduced) {
+    toReveal.forEach(function (el) {
+      var i = Array.prototype.indexOf.call(el.parentNode.children, el);
+      el.classList.add('reveal');
+      el.style.setProperty('--d', Math.min(i, 6) * 0.08 + 's');
+    });
+    var io = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (en) {
+          if (en.isIntersecting) {
+            en.target.classList.add('in');
+            io.unobserve(en.target);
+          }
+        });
+      },
+      { rootMargin: '0px 0px -8% 0px', threshold: 0.08 }
+    );
+    toReveal.forEach(function (el) {
+      io.observe(el);
+    });
+  }
+
+  /* Fondu des photos chargées à la demande */
+  Array.prototype.forEach.call(document.querySelectorAll('img[loading="lazy"]'), function (img) {
+    if (img.complete || reduced) return;
+    img.classList.add('fade');
+    img.addEventListener(
+      'load',
+      function () {
+        img.classList.add('ld');
+      },
+      { once: true }
+    );
+    img.addEventListener(
+      'error',
+      function () {
+        img.classList.add('ld');
+      },
+      { once: true }
+    );
+  });
+
+  /* Ombre de l'en-tête et bouton « remonter » selon le défilement */
+  var header = document.querySelector('.site-header'),
+    totop = document.createElement('button');
+  totop.type = 'button';
+  totop.className = 'totop';
+  totop.setAttribute('aria-label', (window.GEISBERG_UI && GEISBERG_UI.top) || 'Haut de page');
+  totop.innerHTML =
+    '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>';
+  totop.addEventListener('click', function () {
+    window.scrollTo({ top: 0, behavior: reduced ? 'auto' : 'smooth' });
+  });
+  document.body.appendChild(totop);
+  var ticking = false;
+  function onScroll() {
+    var y = window.scrollY || document.documentElement.scrollTop;
+    header && header.classList.toggle('scrolled', y > 8);
+    totop.classList.toggle('show', y > 700);
+    ticking = false;
+  }
+  window.addEventListener(
+    'scroll',
+    function () {
+      if (!ticking) {
+        ticking = true;
+        requestAnimationFrame(onScroll);
+      }
+    },
+    { passive: true }
+  );
+  onScroll();
 })();
