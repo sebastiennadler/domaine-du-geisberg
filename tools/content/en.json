@@ -241,7 +241,16 @@
       "commerces": "Bakery, shops",
       "calypso": "Calypso Saarbrücken (water park)"
     },
-    "links_h": "Useful links"
+    "links_h": "Useful links",
+    "gallery_h": "Varsberg, the Warndt forest and the fields",
+    "gallery_caps": [
+      "Varsberg church",
+      "The Lourdes grotto in Varsberg",
+      "The Warndt forest in spring",
+      "Border stone of 1830, Carling forest",
+      "The fields around the estate",
+      "Haymaking in the meadow"
+    ]
   },
   "reservation": {
     "h1": "Rates, booking and directions",
@@ -302,7 +311,8 @@
     "privacy_h": "Personal data",
     "privacy": "This site sets no cookies and collects no browsing data. Information sent by e-mail for a booking request is used only to reply to it and is never shared with third parties. You may ask for its deletion at any time at gitevarsberg@hotmail.com.",
     "credits_h": "Credits",
-    "credits": "Design: Sébastien Nadler, 2026."
+    "credits": "Design: Sébastien Nadler, 2026.",
+    "credits_photo_h": "Photo credits"
   },
   "extra": {
     "reviews_eyebrow": "Guest reviews",

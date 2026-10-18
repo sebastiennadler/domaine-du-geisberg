@@ -241,7 +241,16 @@
       "commerces": "面包店、商店",
       "calypso": "萨尔布吕肯 Calypso 水上乐园"
     },
-    "links_h": "实用链接"
+    "links_h": "实用链接",
+    "gallery_h": "瓦尔斯贝格、瓦恩特森林与田野",
+    "gallery_caps": [
+      "瓦尔斯贝格教堂",
+      "瓦尔斯贝格的露德圣母洞",
+      "春天的瓦恩特森林",
+      "1830 年的界碑，卡尔林森林",
+      "庄园周围的田野",
+      "草地上的干草"
+    ]
   },
   "reservation": {
     "h1": "价格、预订与交通",
@@ -302,7 +311,8 @@
     "privacy_h": "个人数据",
     "privacy": "本网站不使用 cookie，也不收集浏览数据。通过电子邮件发送的预订申请信息仅用于回复，绝不提供给第三方。您可随时写信至 gitevarsberg@hotmail.com 要求删除。",
     "credits_h": "制作",
-    "credits": "设计：Sébastien Nadler，2026。"
+    "credits": "设计：Sébastien Nadler，2026。",
+    "credits_photo_h": "图片来源"
   },
   "extra": {
     "reviews_eyebrow": "客人评价",

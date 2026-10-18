@@ -241,7 +241,16 @@
       "commerces": "Bäckerei, Geschäfte",
       "calypso": "Calypso Saarbrücken (Erlebnisbad)"
     },
-    "links_h": "Nützliche Links"
+    "links_h": "Nützliche Links",
+    "gallery_h": "Varsberg, der Warndt und die Felder",
+    "gallery_caps": [
+      "Die Kirche von Varsberg",
+      "Die Lourdesgrotte in Varsberg",
+      "Der Warndt im Frühling",
+      "Grenzstein von 1830, Wald von Carling",
+      "Die Felder rund um das Anwesen",
+      "Heuernte auf der Wiese"
+    ]
   },
   "reservation": {
     "h1": "Preise, Buchung und Anfahrt",
@@ -302,7 +311,8 @@
     "privacy_h": "Datenschutz",
     "privacy": "Diese Website setzt keine Cookies und erhebt keine Nutzungsdaten. Per E-Mail übermittelte Angaben zu einer Buchungsanfrage werden nur zur Beantwortung verwendet und nie an Dritte weitergegeben. Sie können jederzeit die Löschung unter gitevarsberg@hotmail.com verlangen.",
     "credits_h": "Gestaltung",
-    "credits": "Gestaltung: Sébastien Nadler, 2026."
+    "credits": "Gestaltung: Sébastien Nadler, 2026.",
+    "credits_photo_h": "Bildnachweise"
   },
   "extra": {
     "reviews_eyebrow": "Gästestimmen",

@@ -241,7 +241,16 @@
       "commerces": "Bakker, winkels",
       "calypso": "Calypso Saarbrücken (waterpark)"
     },
-    "links_h": "Handige links"
+    "links_h": "Handige links",
+    "gallery_h": "Varsberg, het Warndt-bos en de velden",
+    "gallery_caps": [
+      "De kerk van Varsberg",
+      "De Lourdesgrot van Varsberg",
+      "Het Warndt-bos in het voorjaar",
+      "Grenssteen uit 1830, bos van Carling",
+      "De velden rond het landgoed",
+      "Hooien in de weide"
+    ]
   },
   "reservation": {
     "h1": "Prijzen, reserveren en route",
@@ -302,7 +311,8 @@
     "privacy_h": "Persoonsgegevens",
     "privacy": "Deze site plaatst geen cookies en verzamelt geen surfgegevens. Gegevens die per e-mail worden verstuurd voor een boekingsaanvraag worden alleen gebruikt om te antwoorden en nooit aan derden doorgegeven. U kunt op elk moment om verwijdering vragen via gitevarsberg@hotmail.com.",
     "credits_h": "Credits",
-    "credits": "Ontwerp: Sébastien Nadler, 2026."
+    "credits": "Ontwerp: Sébastien Nadler, 2026.",
+    "credits_photo_h": "Fotoverantwoording"
   },
   "extra": {
     "reviews_eyebrow": "Beoordelingen",

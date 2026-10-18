@@ -13,6 +13,10 @@
   </div>
 </section>
 <section class="wrap" style="padding-top:0">
+  <h2 style="margin-bottom:18px">{{ a.gallery_h }}</h2>
+  <div class="gallery">{% for img in s.around_gallery %}<a href="{{ rel }}{{ img }}" data-cap="{{ a.gallery_caps[loop.index0] }}"><img src="{{ rel }}{{ img }}" alt="{{ a.gallery_caps[loop.index0] }}" loading="lazy"></a>{% endfor %}</div>
+</section>
+<section class="wrap" style="padding-top:0">
   <h2 style="margin-bottom:18px">{{ a.leisure_h }}</h2>
   <ul class="chips">{% for key, km in s.leisure %}<li>{{ a.leisure[key] }}<small>{{ a.on_site if km == '0' else km }}</small></li>{% endfor %}</ul>
 </section>

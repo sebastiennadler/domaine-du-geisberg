@@ -241,7 +241,16 @@
       "commerces": "Boulangerie, commerces",
       "calypso": "Calypso Sarrebruck (parc aquatique)"
     },
-    "links_h": "Liens utiles"
+    "links_h": "Liens utiles",
+    "gallery_h": "Varsberg, la forêt du Warndt et les champs",
+    "gallery_caps": [
+      "L'église de Varsberg",
+      "La grotte de Lourdes de Varsberg",
+      "La forêt du Warndt au printemps",
+      "Borne frontière de 1830, forêt de Carling",
+      "Les champs autour du domaine",
+      "Les foins sur la prairie"
+    ]
   },
   "reservation": {
     "h1": "Tarifs, réservation et accès",
@@ -302,7 +311,8 @@
     "privacy_h": "Données personnelles",
     "privacy": "Ce site ne dépose aucun cookie et ne collecte aucune donnée de navigation. Les informations transmises par e-mail dans le cadre d'une demande de réservation sont utilisées uniquement pour y répondre et ne sont jamais cédées à des tiers. Vous pouvez demander leur suppression à tout moment à l'adresse gitevarsberg@hotmail.com.",
     "credits_h": "Crédits",
-    "credits": "Conception : Sébastien Nadler, 2026."
+    "credits": "Conception : Sébastien Nadler, 2026.",
+    "credits_photo_h": "Crédits photographiques"
   },
   "notes": {
     "hero": "Photos principales : il faut 4 ou 5 photos récentes, en paysage, par beau temps (les gîtes vus de la prairie, la terrasse, la forêt). Ce sont les photos de 2014 en attendant.",

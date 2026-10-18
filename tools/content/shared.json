@@ -102,7 +102,7 @@
     [
       "musee-mine",
       "15 km",
-      "https://www.musee-les-mineurs.fr/"
+      "https://parc-explor.com/"
     ],
     [
       "volklingen",
@@ -132,7 +132,7 @@
     [
       "boucle-sarre",
       "80 km",
-      "https://www.visiter-la-sarre.fr/fr/la-boucle-de-la-sarre"
+      "https://www.saarschleife.de/"
     ]
   ],
   "site_imgs": {
@@ -143,7 +143,8 @@
     "pompidou-metz": "img/autour/pompidou-metz.webp",
     "zoo-amneville": "img/autour/zoo-amneville.webp",
     "sainte-croix": "img/autour/sainte-croix.webp",
-    "boucle-sarre": "img/autour/boucle-sarre.webp"
+    "boucle-sarre": "img/autour/boucle-sarre.webp",
+    "creutzwald-lac": "img/autour/creutzwald-lac.webp"
   },
   "leisure": [
     [
@@ -194,23 +195,31 @@
   "links": [
     [
       "Moselle Tourisme",
-      "https://www.moselle-tourisme.com/"
+      "https://www.mosl-tourisme.fr/"
     ],
     [
-      "Office de tourisme du Warndt",
-      "https://www.cc-warndt.fr/"
+      "Communauté de communes du Warndt",
+      "https://www.ccwarndt.fr/"
     ],
     [
       "Ville de Creutzwald",
       "https://www.creutzwald.fr/"
     ],
     [
-      "Saint-Avold",
-      "https://www.mairie-saint-avold.fr/"
+      "Stade nautique de Creutzwald",
+      "https://www.creutzwald.fr/fr/stade-nautique.html"
+    ],
+    [
+      "Ville de Saint-Avold",
+      "https://www.saint-avold.fr/"
     ],
     [
       "Gîtes de France",
       "https://www.gites-de-france.com/"
+    ],
+    [
+      "Tourisme Sarre (Allemagne)",
+      "https://www.urlaub.saarland/"
     ],
     [
       "Visit Luxembourg",
@@ -319,6 +328,46 @@
       "Abritel / Expedia – gîte 2",
       "https://www.expedia.fr/Varsberg-Hotels-Wheelchair-Friendly-Escape.h112921254.Hotel-Information",
       "9,0 / 10"
+    ]
+  ],
+  "around_gallery": [
+    "img/autour/varsberg-1.webp",
+    "img/autour/varsberg-2.webp",
+    "img/autour/foret-warndt-1.webp",
+    "img/autour/foret-warndt-2.webp",
+    "img/domaine/domaine-04.webp",
+    "img/hero-5.webp"
+  ],
+  "credits": [
+    [
+      "Creutzwald.jpeg",
+      "User:AKoenig",
+      "CC BY-SA 3.0",
+      "https://commons.wikimedia.org/wiki/File:Creutzwald.jpeg"
+    ],
+    [
+      "Chevet église Varsberg.JPG",
+      "Kapipelmo",
+      "Public domain",
+      "https://commons.wikimedia.org/wiki/File:Chevet_%C3%A9glise_Varsberg.JPG"
+    ],
+    [
+      "Grotte de Lourdes de Varsberg (Moselle, France).jpg",
+      "Nicolas5788",
+      "CC BY-SA 4.0",
+      "https://commons.wikimedia.org/wiki/File:Grotte_de_Lourdes_de_Varsberg_(Moselle,_France).jpg"
+    ],
+    [
+      "April im Warndt - panoramio.jpg",
+      "Whereismymind",
+      "CC BY 3.0",
+      "https://commons.wikimedia.org/wiki/File:April_im_Warndt_-_panoramio.jpg"
+    ],
+    [
+      "Borne entre la France et l'Allemagne (1830), forêt de Carling.jpg",
+      "Jean-Marc Pascolo",
+      "CC BY-SA 3.0",
+      "https://commons.wikimedia.org/wiki/File:Borne_entre_la_France_et_l%27Allemagne_(1830),_for%C3%AAt_de_Carling.jpg"
     ]
   ]
 }
