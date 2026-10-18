@@ -24,19 +24,43 @@
 <meta name="theme-color" content="#F5F2EA" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#151516" media="(prefers-color-scheme: dark)">
 <script>(function(){try{var t=localStorage.getItem("geisberg-theme");if(t==="dark"||t==="light")document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Nunito+Sans:wght@400;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="{{ rel }}css/style.css?v={{ assets.css }}">
 <link rel="icon" href="{{ rel }}img/favicon.svg" type="image/svg+xml">
-<script type="application/ld+json">{{ {
-  "@context": "https://schema.org", "@type": "LodgingBusiness", "@id": site_url + "/#lodging",
-  "name": s.name, "url": site_url + "/", "image": [site_url + "/" + s.hero[0], site_url + "/" + s.gite1[0], site_url + "/" + s.gite2[0]],
-  "description": t.meta["index"][1], "telephone": s.phones[0][2], "email": s.email,
-  "address": {"@type": "PostalAddress", "streetAddress": s.street, "postalCode": s.postal, "addressLocality": s.city, "addressRegion": "Moselle", "addressCountry": "FR"},
+<script type="application/ld+json">{# Données structurées (schema.org) pour Google : hébergement, adresse, coordonnées, équipements #}
+{{ {
+  "@context": "https://schema.org",
+  "@type": "LodgingBusiness",
+  "@id": site_url + "/#lodging",
+  "name": s.name,
+  "url": site_url + "/",
+  "image": [site_url + "/" + s.hero[0], site_url + "/" + s.gite1[0], site_url + "/" + s.gite2[0]],
+  "description": t.meta["index"][1],
+  "telephone": s.phones[0][2],
+  "email": s.email,
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": s.street,
+    "postalCode": s.postal,
+    "addressLocality": s.city,
+    "addressRegion": "Moselle",
+    "addressCountry": "FR"
+  },
   "geo": {"@type": "GeoCoordinates", "latitude": s.gps[0], "longitude": s.gps[1]},
-  "numberOfRooms": 2, "petsAllowed": true, "founder": [{"@type": "Person", "name": "Marc Nadler"}, {"@type": "Person", "name": "Agnès Nadler"}], "checkinTime": "16:00", "checkoutTime": "10:00",
-  "amenityFeature": [{"@type": "LocationFeatureSpecification", "name": "WiFi", "value": true}, {"@type": "LocationFeatureSpecification", "name": "Parking", "value": true}, {"@type": "LocationFeatureSpecification", "name": "Terrasse", "value": true}],
-  "priceRange": "300 € – 420 €", "starRating": {"@type": "Rating", "ratingValue": "3", "bestRating": "5", "name": "3 épis Gîtes de France"}
+  "numberOfRooms": 2,
+  "petsAllowed": true,
+  "founder": [{"@type": "Person", "name": "Marc Nadler"}, {"@type": "Person", "name": "Agnès Nadler"}],
+  "checkinTime": s.checkin,
+  "checkoutTime": s.checkout,
+  "amenityFeature": [
+    {"@type": "LocationFeatureSpecification", "name": "WiFi", "value": true},
+    {"@type": "LocationFeatureSpecification", "name": "Parking", "value": true},
+    {"@type": "LocationFeatureSpecification", "name": "Terrasse", "value": true}
+  ],
+  "priceRange": s.price_weekend + " – " + s.price_week,
+  "starRating": {"@type": "Rating", "ratingValue": "3", "bestRating": "5", "name": "3 épis Gîtes de France"}
 } | tojson }}</script>
 </head>
 <body>
