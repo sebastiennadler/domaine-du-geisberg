@@ -39,6 +39,10 @@
     "avis": [
       "Bewertungen und Labels – Domaine du Geisberg",
       "Gästebewertungen auf Gîtes de France, Airbnb, Abritel und Clévacances, unsere Labels und wo Sie buchen können."
+    ],
+    "visite": [
+      "360°-Rundgang – Domaine du Geisberg",
+      "Besichtigen Sie die Ferienhäuser der Domaine du Geisberg in 360°, Raum für Raum."
     ]
   },
   "nav": {
@@ -50,7 +54,8 @@
     "diaporama": "Diashow",
     "contact": "Kontakt",
     "book": "Buchen",
-    "avis": "Bewertungen & Labels"
+    "avis": "Bewertungen & Labels",
+    "visite": "360°-Rundgang"
   },
   "ui": {
     "skip": "Zum Inhalt springen",
@@ -76,10 +81,11 @@
     "close": "Schließen",
     "legal": "Impressum",
     "privacy": "Datenschutz",
-    "copyright": "Domaine du Geisberg · Ferienhäuser in Varsberg (Mosel, Frankreich)",
+    "copyright": "© 2026 Marc und Agnès Nadler · Domaine du Geisberg, Varsberg (Mosel, Frankreich) · Alle Rechte vorbehalten",
     "notes_btn": "",
     "notes_hide": "",
-    "fallback": ""
+    "fallback": "",
+    "dev_credit": "Website: Sébastien Nadler"
   },
   "home": {
     "h1": "Zwei ruhige Ferienhäuser zwischen Wiese und Wald",
@@ -270,8 +276,8 @@
       ]
     ],
     "included": "Inklusive: Bett- und Haushaltswäsche, Betten bei Ankunft bezogen, Endreinigung, Strom und Heizung, WLAN, Haustiere. Kaution 300 €. Kurtaxe zusätzlich. Kreditkarten und französische ANCV-Urlaubsschecks werden akzeptiert.",
-    "form_h": "Buchungsanfrage",
-    "form_p": "Nennen Sie uns Ihre Daten und das gewünschte Haus – wir antworten innerhalb von 24 Stunden.",
+    "form_h": "Buchen oder uns schreiben",
+    "form_p": "Eine Buchungsanfrage oder eine Frage: wir antworten innerhalb von 24 Stunden, per E-Mail oder Telefon.",
     "f_name": "Name",
     "f_email": "E-Mail",
     "f_phone": "Telefon",
@@ -282,14 +288,20 @@
     "f_people": "Personen",
     "f_msg": "Nachricht",
     "f_send": "Anfrage senden",
-    "f_note": "Das Formular öffnet Ihr E-Mail-Programm mit der ausgefüllten Anfrage. Sie können uns auch anrufen.",
+    "f_note": "Die Nachricht geht an gitevarsberg@hotmail.com. Ihre Angaben dienen nur der Antwort.",
     "access_h": "Anfahrt zur Domaine du Geisberg",
     "access": [
       "Varsberg liegt zwischen Saint-Avold und Creutzwald, 40 Minuten von Metz und 30 Minuten von Saarbrücken.",
       "Mit dem Auto: Autobahn A4 (Paris–Straßburg), Ausfahrt Saint-Avold / Carling, dann Richtung Creutzwald und Varsberg. Aus Deutschland: A6/A620 bis Saarbrücken, dann A4 oder über Creutzwald.",
       "Mit der Bahn: Bahnhof Saint-Avold in 6 km (Regionalzug Metz–Forbach)."
     ],
-    "gps": "GPS-Koordinaten"
+    "gps": "GPS-Koordinaten",
+    "f_subject": "Betreff",
+    "f_subj_book": "Buchungsanfrage",
+    "f_subj_q": "Frage",
+    "f_ok": "Ihre Nachricht wurde gesendet. Wir antworten innerhalb von 24 Stunden.",
+    "f_ko": "Die Nachricht konnte nicht gesendet werden. Schreiben Sie uns direkt an",
+    "f_sending": "Wird gesendet…"
   },
   "diapo": {
     "h1": "Diashow",
@@ -311,8 +323,10 @@
     "privacy_h": "Datenschutz",
     "privacy": "Diese Website setzt keine Cookies und erhebt keine Nutzungsdaten. Per E-Mail übermittelte Angaben zu einer Buchungsanfrage werden nur zur Beantwortung verwendet und nie an Dritte weitergegeben. Sie können jederzeit die Löschung unter gitevarsberg@hotmail.com verlangen.",
     "credits_h": "Gestaltung",
-    "credits": "Gestaltung: Sébastien Nadler, 2026.",
-    "credits_photo_h": "Bildnachweise"
+    "credits": "Entwicklung: Sébastien Nadler, 2026. Statische Website, gehostet bei GitHub Pages; Kalender automatisch synchronisiert; Schriften Playfair Display und Nunito Sans (Google Fonts). Fotos: Marc und Agnès Nadler, sofern unten nicht anders angegeben.",
+    "credits_photo_h": "Bildnachweise",
+    "owners_h": "Eigentümer",
+    "owners": "Marc und Agnès Nadler sind Eigentümer und Betreiber der Ferienhäuser der Domaine du Geisberg. Ihnen gehören diese Website, ihre Texte und Fotos."
   },
   "extra": {
     "reviews_eyebrow": "Gästestimmen",
@@ -351,5 +365,11 @@
     "where_h": "Wo Sie uns finden",
     "where_p": "Wir sind auch auf diesen Seiten gelistet: Sie können dort buchen, aber die Direktbuchung bleibt am einfachsten und günstigsten.",
     "labels_h": "Unsere Labels"
+  },
+  "visite": {
+    "h1": "Virtueller 360°-Rundgang",
+    "lead": "Gehen Sie durch die Häuser und über das Anwesen, als wären Sie da: Bild ziehen, zum Zoomen zwei Finger, von Raum zu Raum wechseln.",
+    "fallback": "Falls der Rundgang hier nicht erscheint,",
+    "open": "in neuem Tab öffnen"
   }
 }

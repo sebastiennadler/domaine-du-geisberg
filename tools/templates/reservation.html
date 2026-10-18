@@ -15,17 +15,22 @@
     <div id="demande">
       <h2 style="margin-bottom:6px">{{ r.form_h }}</h2>
       <p class="lead" style="margin-top:0">{{ r.form_p }}</p>
-      <form class="form" id="resa" data-to="{{ s.email }}" data-subject="{{ r.form_h }}">
-        <label>{{ r.f_name }}<input id="f_name" name="name" required autocomplete="name"></label>
-        <label>{{ r.f_email }}<input id="f_email" name="email" type="email" required autocomplete="email"></label>
-        <label>{{ r.f_phone }}<input id="f_phone" name="phone" type="tel" autocomplete="tel"></label>
-        <label>{{ r.f_people }}<input id="f_people" name="people" type="number" min="1" max="8" value="2"></label>
-        <label>{{ r.f_in }}<input id="f_in" name="in" type="date" required></label>
-        <label>{{ r.f_out }}<input id="f_out" name="out" type="date" required></label>
-        <label class="full">{{ r.f_gite }}<select id="f_gite" name="gite"><option>{{ t.gites.gite1_h }}</option><option>{{ t.gites.gite2_h }}</option><option>{{ r.f_both }}</option></select></label>
-        <label class="full">{{ r.f_msg }}<textarea id="f_msg" name="msg"></textarea></label>
-        <div class="full"><button class="btn btn-p" type="submit">{{ r.f_send }}</button></div>
-        <p class="note full" style="margin:0">{{ r.f_note }}</p>
+      <form class="form" id="resa" action="https://formsubmit.co/ajax/{{ s.email }}" method="POST" data-to="{{ s.email }}" data-subject="{{ r.form_h }}" data-ok="{{ r.f_ok }}" data-ko="{{ r.f_ko }}" data-sending="{{ r.f_sending }}" data-send="{{ r.f_send }}">
+        <input type="hidden" name="_subject" value="[Site] {{ r.form_h }} – {{ s.name }}">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+        <label class="full">{{ r.f_subject }}<select id="f_subject" name="Objet"><option>{{ r.f_subj_book }}</option><option>{{ r.f_subj_q }}</option></select></label>
+        <label>{{ r.f_name }}<input id="f_name" name="Nom" required autocomplete="name"></label>
+        <label>{{ r.f_email }}<input id="f_email" name="Email" type="email" required autocomplete="email"></label>
+        <label>{{ r.f_phone }}<input id="f_phone" name="Téléphone" type="tel" autocomplete="tel"></label>
+        <label>{{ r.f_people }}<input id="f_people" name="Personnes" type="number" min="1" max="10" value="2"></label>
+        <label>{{ r.f_in }}<input id="f_in" name="Arrivée" type="date"></label>
+        <label>{{ r.f_out }}<input id="f_out" name="Départ" type="date"></label>
+        <label class="full">{{ r.f_gite }}<select id="f_gite" name="Gîte"><option>{{ t.gites.gite1_h }}</option><option>{{ t.gites.gite2_h }}</option><option>{{ r.f_both }}</option></select></label>
+        <label class="full">{{ r.f_msg }}<textarea id="f_msg" name="Message" required></textarea></label>
+        <div class="full"><button class="btn btn-p" type="submit" id="f_btn">{{ r.f_send }}</button></div>
+        <p class="note full" id="f_status" role="status" aria-live="polite" style="margin:0">{{ r.f_note }}</p>
       </form>
     </div>
   </div>

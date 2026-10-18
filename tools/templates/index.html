@@ -33,6 +33,22 @@
   </div>
 </section>
 
+<section class="wrap" style="padding-top:0">
+  <div class="hosts"{{ note('hosts') }}>
+    <div class="portrait"><img src="{{ rel }}{{ s.domaine[1] }}" alt="{{ h.hosts_h }}" loading="lazy"></div>
+    <div>
+      <div class="eyebrow">{{ ui.tagline }}</div>
+      <h2>{{ h.hosts_h }}</h2>
+      <p>{{ h.hosts }}</p>
+      <div class="contact-box">
+        {% for who, tel, href in s.phones %}<div><small>{{ who }}</small><a href="tel:{{ href }}">{{ tel }}</a></div>{% endfor %}
+        <div><small>E-mail</small><a href="mailto:{{ s.email }}">{{ s.email }}</a></div>
+      </div>
+      <div class="logos" style="margin-top:16px">{% for img, name, url in s.labels %}<img src="{{ rel }}{{ img }}" alt="{{ name }}" loading="lazy" title="{{ name }}">{% endfor %}</div>
+    </div>
+  </div>
+</section>
+
 <section class="wrap" id="gites">
   <div class="sec-head"><div><div class="eyebrow">{{ t.nav.gites }}</div><h2>{{ h.gites_h }}</h2><p class="lead">{{ h.gites_lead }}</p></div></div>
   <div class="cards"{{ note('gites') }}>
@@ -69,19 +85,4 @@
   <div class="reviews">{% for r in s.reviews[:3] %}<blockquote><span class="st" aria-label="{{ r.stars }}/5">{{ '★' * r.stars }}{{ '☆' * (5 - r.stars) }}</span><p>{{ r.q }}</p><cite>{{ r.who }} · {{ r.src }} · {{ r.when }}</cite></blockquote>{% endfor %}</div>
 </section>
 
-<section class="wrap">
-  <div class="cols rev">
-    <div class="frame"><img src="{{ rel }}{{ s.domaine[4] }}" alt="{{ t.domaine.captions[4] }}" loading="lazy"></div>
-    <div{{ note('hosts') }}>
-      <div class="eyebrow">{{ ui.tagline }}</div>
-      <h2>{{ h.hosts_h }}</h2>
-      <p class="lead" style="max-width:none">{{ h.hosts }}</p>
-      <div class="logos">{% for img, name, url in s.labels %}<img src="{{ rel }}{{ img }}" alt="{{ name }}" loading="lazy" title="{{ name }}">{% endfor %}</div>
-      <div class="contact-box" style="margin-top:22px">
-        {% for who, tel, href in s.phones %}<div><small>{{ who }}</small><a href="tel:{{ href }}">{{ tel }}</a></div>{% endfor %}
-        <div><small>E-mail</small><a href="mailto:{{ s.email }}">{{ s.email }}</a></div>
-      </div>
-    </div>
-  </div>
-</section>
 {% endblock %}

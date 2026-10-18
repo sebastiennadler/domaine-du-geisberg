@@ -39,6 +39,10 @@
     "avis": [
       "Opiniones y sellos – Domaine du Geisberg",
       "Las opiniones de nuestros huéspedes en Gîtes de France, Airbnb, Abritel y Clévacances, nuestros sellos y dónde reservar."
+    ],
+    "visite": [
+      "Visita virtual 360° – Domaine du Geisberg",
+      "Visite las casas del Domaine du Geisberg en 360°, habitación por habitación."
     ]
   },
   "nav": {
@@ -50,7 +54,8 @@
     "diaporama": "Diaporama",
     "contact": "Contacto",
     "book": "Reservar",
-    "avis": "Opiniones y sellos"
+    "avis": "Opiniones y sellos",
+    "visite": "Visita 360°"
   },
   "ui": {
     "skip": "Ir al contenido",
@@ -76,10 +81,11 @@
     "close": "Cerrar",
     "legal": "Aviso legal",
     "privacy": "Privacidad",
-    "copyright": "Domaine du Geisberg · Casas rurales en Varsberg (Mosela, Francia)",
+    "copyright": "© 2026 Marc y Agnès Nadler · Domaine du Geisberg, Varsberg (Mosela, Francia) · Todos los derechos reservados",
     "notes_btn": "",
     "notes_hide": "",
-    "fallback": ""
+    "fallback": "",
+    "dev_credit": "Sitio web: Sébastien Nadler"
   },
   "home": {
     "h1": "Dos casas tranquilas entre el prado y el bosque",
@@ -270,8 +276,8 @@
       ]
     ],
     "included": "Incluido: ropa de cama y de casa, camas hechas a la llegada, limpieza final, electricidad y calefacción, wifi, mascotas. Fianza de 300 €. Tasa turística aparte. Se aceptan tarjetas y cheques-vacaciones franceses ANCV.",
-    "form_h": "Solicitud de reserva",
-    "form_p": "Indique sus fechas y la casa deseada; respondemos en 24 h.",
+    "form_h": "Reservar o escribirnos",
+    "form_p": "Una solicitud de reserva o una pregunta: respondemos en 24 h, por correo o por teléfono.",
     "f_name": "Nombre",
     "f_email": "Correo electrónico",
     "f_phone": "Teléfono",
@@ -282,14 +288,20 @@
     "f_people": "Personas",
     "f_msg": "Mensaje",
     "f_send": "Enviar la solicitud",
-    "f_note": "El formulario abre su programa de correo con la solicitud rellenada. También puede llamarnos.",
+    "f_note": "El mensaje se envía a gitevarsberg@hotmail.com. Sus datos solo se usan para responderle.",
     "access_h": "Cómo llegar al Domaine du Geisberg",
     "access": [
       "Varsberg está entre Saint-Avold y Creutzwald, a 40 minutos de Metz y 30 minutos de Saarbrücken.",
       "En coche: autopista A4 (París–Estrasburgo), salida Saint-Avold / Carling, luego dirección Creutzwald y Varsberg.",
       "En tren: estación de Saint-Avold a 6 km (línea regional Metz–Forbach)."
     ],
-    "gps": "Coordenadas GPS"
+    "gps": "Coordenadas GPS",
+    "f_subject": "Asunto",
+    "f_subj_book": "Solicitud de reserva",
+    "f_subj_q": "Pregunta",
+    "f_ok": "Su mensaje se ha enviado. Respondemos en 24 h.",
+    "f_ko": "No se pudo enviar el mensaje. Puede escribirnos directamente a",
+    "f_sending": "Enviando…"
   },
   "diapo": {
     "h1": "Diaporama",
@@ -311,8 +323,10 @@
     "privacy_h": "Datos personales",
     "privacy": "Este sitio no utiliza cookies ni recoge datos de navegación. La información enviada por correo electrónico para una solicitud de reserva se usa solo para responderle y nunca se cede a terceros. Puede pedir su supresión en cualquier momento en gitevarsberg@hotmail.com.",
     "credits_h": "Créditos",
-    "credits": "Diseño: Sébastien Nadler, 2026.",
-    "credits_photo_h": "Créditos fotográficos"
+    "credits": "Desarrollo: Sébastien Nadler, 2026. Sitio estático alojado en GitHub Pages; calendario sincronizado automáticamente; tipografías Playfair Display y Nunito Sans (Google Fonts). Fotos: Marc y Agnès Nadler, salvo mención más abajo.",
+    "credits_photo_h": "Créditos fotográficos",
+    "owners_h": "Propietarios",
+    "owners": "Marc y Agnès Nadler son los propietarios y gestores de las casas del Domaine du Geisberg. Son propietarios de este sitio, de sus textos y de sus fotografías."
   },
   "extra": {
     "reviews_eyebrow": "Opiniones",
@@ -351,5 +365,11 @@
     "where_h": "Dónde encontrarnos",
     "where_p": "También estamos en estos sitios: puede reservar allí, pero la reserva directa sigue siendo la más sencilla y económica.",
     "labels_h": "Nuestros sellos"
+  },
+  "visite": {
+    "h1": "Visita virtual en 360°",
+    "lead": "Pasee por las casas y la finca como si estuviera allí: arrastre la imagen, pellizque para ampliar, pase de una habitación a otra.",
+    "fallback": "Si la visita no se muestra aquí,",
+    "open": "ábrala en una nueva pestaña"
   }
 }

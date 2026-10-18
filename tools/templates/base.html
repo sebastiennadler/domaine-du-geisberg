@@ -33,7 +33,7 @@
   "description": t.meta["index"][1], "telephone": s.phones[0][2], "email": s.email,
   "address": {"@type": "PostalAddress", "streetAddress": s.street, "postalCode": s.postal, "addressLocality": s.city, "addressRegion": "Moselle", "addressCountry": "FR"},
   "geo": {"@type": "GeoCoordinates", "latitude": s.gps[0], "longitude": s.gps[1]},
-  "numberOfRooms": 2, "petsAllowed": true, "checkinTime": "16:00", "checkoutTime": "10:00",
+  "numberOfRooms": 2, "petsAllowed": true, "founder": [{"@type": "Person", "name": "Marc Nadler"}, {"@type": "Person", "name": "Agnès Nadler"}], "checkinTime": "16:00", "checkoutTime": "10:00",
   "amenityFeature": [{"@type": "LocationFeatureSpecification", "name": "WiFi", "value": true}, {"@type": "LocationFeatureSpecification", "name": "Parking", "value": true}, {"@type": "LocationFeatureSpecification", "name": "Terrasse", "value": true}],
   "priceRange": "64,80 € – 420 €", "starRating": {"@type": "Rating", "ratingValue": "3", "bestRating": "5", "name": "3 épis Gîtes de France"}
 } | tojson }}</script>
@@ -57,7 +57,7 @@
       <div class="backdrop" id="backdrop" hidden></div>
       <nav class="nav" id="nav" aria-label="{{ ui.menu }}">
         <div class="nav-top"><b>{{ s.name }}</b><button class="xbtn" id="menu-close" type="button" aria-label="{{ ui.close }}"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button></div>
-        {% for p in ['index','le-domaine','gites','autour','avis','reservation','diaporama'] %}
+        {% for p in ['index','le-domaine','gites','visite','autour','avis','reservation'] %}
         <a href="{{ p }}.html"{% if p == page %} aria-current="page"{% endif %}>{{ t.nav[p] }}</a>
         {% endfor %}
         <a class="btn btn-p book" href="reservation.html#demande">{{ t.nav.book }}</a>
@@ -76,16 +76,9 @@
 {% if page != 'reservation' %}<div class="mobile-cta"><a class="btn btn-p" href="reservation.html#demande">{{ t.nav.book }}</a><a class="btn btn-o" href="tel:{{ s.phones[0][2] }}">{{ ui.call }}</a></div>{% endif %}
 <footer class="site-footer">
   <div class="wrap">
-    <div><b>{{ s.name }}</b>{{ s.address }}<br>{{ s.phones[0][0] }} · {{ s.phones[0][1] }}<br>{{ s.phones[1][0] }} · {{ s.phones[1][1] }}<br>{{ s.email }}</div>
-    <ul>
-      {% for p in ['le-domaine','gites','autour','avis','reservation','diaporama'] %}<li><a href="{{ p }}.html">{{ t.nav[p] }}</a></li>{% endfor %}
-      <li><a href="mentions-legales.html">{{ ui.legal }}</a></li>
-    </ul>
-    <ul>
-      {% for img, name, url in s.labels %}<li><a href="{{ url }}" rel="noopener" target="_blank">{{ name }}</a></li>{% endfor %}
-      <li><a href="{{ s.virtual_tour }}" rel="noopener" target="_blank">{{ ui.virtual_tour }}</a></li>
-      <li>© 2026 {{ ui.copyright }}</li>
-    </ul>
+    <div><b>{{ s.name }}</b>{{ s.address }}<br>{{ s.phones[0][0] }} · {{ s.phones[0][1] }} · {{ s.phones[1][0] }} · {{ s.phones[1][1] }}<br><a href="mailto:{{ s.email }}">{{ s.email }}</a></div>
+    <div class="logos">{% for img, name, url in s.labels %}<a href="{{ url }}" rel="noopener" target="_blank"><img src="{{ rel }}{{ img }}" alt="" loading="lazy"><span>{{ name }}</span></a>{% endfor %}</div>
+    <div>{{ ui.copyright }}<br><a href="mentions-legales.html">{{ ui.legal }}</a> · <a href="diaporama.html">{{ t.nav.diaporama }}</a> · <a href="mailto:sebastien.nadler@gmail.com">{{ ui.dev_credit }}</a></div>
   </div>
 </footer>
 {% if lang == 'fr' %}

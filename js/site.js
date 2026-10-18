@@ -82,13 +82,23 @@
     render();
   });
 
-  /* Formulaire de demande → ouvre la messagerie avec un e-mail pré-rempli (pas de serveur) */
+  /* Formulaire : envoi par FormSubmit (AJAX) vers la boîte mail ; repli sur un e-mail pré-rempli si l'envoi échoue. */
   var f = document.getElementById('resa');
   if (f) f.addEventListener('submit', function (e) {
     e.preventDefault();
+    var st = document.getElementById('f_status'), btn = document.getElementById('f_btn');
     var v = function (id) { var el = f.querySelector('#' + id); return el ? el.value : ''; };
-    var body = [v('f_name'), v('f_email'), v('f_phone'), '', v('f_gite') + ' · ' + v('f_in') + ' → ' + v('f_out') + ' · ' + v('f_people'), '', v('f_msg')].join('\n');
-    location.href = 'mailto:' + f.getAttribute('data-to') + '?subject=' + encodeURIComponent(f.getAttribute('data-subject') + ' ' + v('f_in') + ' → ' + v('f_out')) + '&body=' + encodeURIComponent(body);
+    function fallback() {
+      var body = [v('f_subject'), v('f_name'), v('f_email'), v('f_phone'), '', v('f_gite') + ' · ' + v('f_in') + ' → ' + v('f_out') + ' · ' + v('f_people'), '', v('f_msg')].join('\n');
+      st.innerHTML = f.getAttribute('data-ko') + ' <a href="mailto:' + f.getAttribute('data-to') + '">' + f.getAttribute('data-to') + '</a>.';
+      location.href = 'mailto:' + f.getAttribute('data-to') + '?subject=' + encodeURIComponent(f.getAttribute('data-subject') + ' ' + v('f_in') + ' → ' + v('f_out')) + '&body=' + encodeURIComponent(body);
+    }
+    btn.disabled = true; btn.textContent = f.getAttribute('data-sending');
+    var fd = new FormData(f); fd.append('_replyto', v('f_email'));
+    fetch(f.getAttribute('action'), { method: 'POST', body: fd, headers: { 'Accept': 'application/json' } })
+      .then(function (r) { return r.ok ? r.json() : Promise.reject(); })
+      .then(function () { st.textContent = f.getAttribute('data-ok'); f.reset(); btn.textContent = f.getAttribute('data-send'); btn.disabled = false; })
+      .catch(function () { btn.textContent = f.getAttribute('data-send'); btn.disabled = false; fallback(); });
   });
 
   /* Mode « Notes pour Marc » : inactif tant qu'on n'appuie pas sur le bouton (ou #notes). */

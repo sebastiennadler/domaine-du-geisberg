@@ -39,6 +39,10 @@
     "avis": [
       "Avis et labels – Domaine du Geisberg",
       "Les avis de nos hôtes sur Gîtes de France, Airbnb, Abritel et Clévacances, nos labels et où nous réserver."
+    ],
+    "visite": [
+      "Visite virtuelle 360° – Domaine du Geisberg",
+      "Visitez les gîtes du Domaine du Geisberg en 360°, pièce par pièce."
     ]
   },
   "nav": {
@@ -50,7 +54,8 @@
     "diaporama": "Diaporama",
     "contact": "Contact",
     "book": "Réserver",
-    "avis": "Avis & labels"
+    "avis": "Avis & labels",
+    "visite": "Visite 360°"
   },
   "ui": {
     "skip": "Aller au contenu",
@@ -76,10 +81,11 @@
     "close": "Fermer",
     "legal": "Mentions légales",
     "privacy": "Confidentialité",
-    "copyright": "Domaine du Geisberg · Gîtes ruraux à Varsberg (Moselle)",
+    "copyright": "© 2026 Marc et Agnès Nadler · Domaine du Geisberg, Varsberg (Moselle) · Tous droits réservés",
     "notes_btn": "Notes pour Marc",
     "notes_hide": "Masquer les notes",
-    "fallback": ""
+    "fallback": "",
+    "dev_credit": "Site : Sébastien Nadler"
   },
   "home": {
     "h1": "Deux gîtes au calme, entre prairie et forêt",
@@ -270,8 +276,8 @@
       ]
     ],
     "included": "Inclus : draps et linge, lits faits à l'arrivée, ménage de fin de séjour, électricité et chauffage, wifi, animaux. Caution de 300 €. Taxe de séjour en sus. CB, Visa, MasterCard et chèques-vacances ANCV acceptés.",
-    "form_h": "Demande de réservation",
-    "form_p": "Indiquez vos dates et le gîte souhaité, nous vous répondons sous 24 h.",
+    "form_h": "Réserver ou nous écrire",
+    "form_p": "Une demande de réservation, une question : nous vous répondons sous 24 h, par e-mail ou par téléphone.",
     "f_name": "Nom",
     "f_email": "E-mail",
     "f_phone": "Téléphone",
@@ -282,14 +288,20 @@
     "f_people": "Personnes",
     "f_msg": "Message",
     "f_send": "Envoyer la demande",
-    "f_note": "Le formulaire ouvre votre messagerie avec la demande pré-remplie. Vous pouvez aussi nous appeler.",
+    "f_note": "Le message est envoyé à gitevarsberg@hotmail.com. Vos données ne servent qu'à vous répondre.",
     "access_h": "Venir au Domaine du Geisberg",
     "access": [
       "Varsberg se trouve entre Saint-Avold et Creutzwald, à 40 minutes de Metz et 30 minutes de Sarrebruck.",
       "En voiture : autoroute A4 (Paris–Strasbourg), sortie Saint-Avold / Carling, puis direction Creutzwald et Varsberg.",
       "En train : gare de Saint-Avold à 6 km (TER Metz–Forbach)."
     ],
-    "gps": "Coordonnées GPS"
+    "gps": "Coordonnées GPS",
+    "f_subject": "Objet",
+    "f_subj_book": "Demande de réservation",
+    "f_subj_q": "Question",
+    "f_ok": "Votre message a bien été envoyé. Nous vous répondons sous 24 h.",
+    "f_ko": "L'envoi n'a pas abouti. Vous pouvez nous écrire directement à",
+    "f_sending": "Envoi…"
   },
   "diapo": {
     "h1": "Diaporama",
@@ -311,8 +323,10 @@
     "privacy_h": "Données personnelles",
     "privacy": "Ce site ne dépose aucun cookie et ne collecte aucune donnée de navigation. Les informations transmises par e-mail dans le cadre d'une demande de réservation sont utilisées uniquement pour y répondre et ne sont jamais cédées à des tiers. Vous pouvez demander leur suppression à tout moment à l'adresse gitevarsberg@hotmail.com.",
     "credits_h": "Crédits",
-    "credits": "Conception : Sébastien Nadler, 2026.",
-    "credits_photo_h": "Crédits photographiques"
+    "credits": "Développement : Sébastien Nadler, 2026. Site statique, hébergé par GitHub Pages ; calendrier synchronisé automatiquement ; polices Playfair Display et Nunito Sans (Google Fonts). Photos : Marc et Agnès Nadler, sauf mention ci-dessous.",
+    "credits_photo_h": "Crédits photographiques",
+    "owners_h": "Propriétaires",
+    "owners": "Marc et Agnès Nadler sont les propriétaires et exploitants des gîtes du Domaine du Geisberg. Ils sont propriétaires de ce site, de ses textes et de ses photographies."
   },
   "notes": {
     "hero": "Photos principales : il faut 4 ou 5 photos récentes, en paysage, par beau temps (les gîtes vus de la prairie, la terrasse, la forêt). Ce sont les photos de 2014 en attendant.",
@@ -328,7 +342,8 @@
     "legal": "Mentions légales : SIRET et forme juridique à vérifier.",
     "diapo": "Diaporama : il enchaîne les photos du domaine puis de chaque gîte (5 s par photo, pause et plein écran). Envoyez-moi vos photos préférées dans l'ordre où vous voulez les voir, avec une légende courte pour chacune.",
     "domaine_txt": "Texte « Le domaine » : repris mot pour mot de l'ancien site. À garder, raccourcir ou réécrire ?",
-    "autour_links": "Liens utiles : certains sites de l'ancienne liste ont changé d'adresse ; dites-moi ceux que vous voulez garder."
+    "autour_links": "Liens utiles : certains sites de l'ancienne liste ont changé d'adresse ; dites-moi ceux que vous voulez garder.",
+    "visite": "Visite 360° : c'est celle de 2015 (hdmedia). Elle date : la garder, la refaire, ou la retirer ?"
   },
   "extra": {
     "reviews_eyebrow": "Ils sont venus",
@@ -367,5 +382,11 @@
     "where_h": "Où nous trouver",
     "where_p": "Nous sommes aussi présents sur ces sites : vous pouvez y réserver, mais la réservation en direct reste la plus simple et la moins chère.",
     "labels_h": "Nos labels"
+  },
+  "visite": {
+    "h1": "Visite virtuelle à 360°",
+    "lead": "Promenez-vous dans les gîtes et sur le domaine comme si vous y étiez : faites glisser l'image, pincez pour zoomer, passez d'une pièce à l'autre.",
+    "fallback": "Si la visite ne s'affiche pas ici,",
+    "open": "ouvrir la visite dans un nouvel onglet"
   }
 }

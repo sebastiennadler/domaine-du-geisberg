@@ -39,6 +39,10 @@
     "avis": [
       "评价与认证 – Domaine du Geisberg",
       "客人在 Gîtes de France、Airbnb、Abritel 和 Clévacances 上的评价、我们的认证以及预订渠道。"
+    ],
+    "visite": [
+      "360° 虚拟参观 – Domaine du Geisberg",
+      "逐间房 360° 参观 Domaine du Geisberg 的度假屋。"
     ]
   },
   "nav": {
@@ -50,7 +54,8 @@
     "diaporama": "幻灯片",
     "contact": "联系",
     "book": "预订",
-    "avis": "评价与认证"
+    "avis": "评价与认证",
+    "visite": "360° 参观"
   },
   "ui": {
     "skip": "跳到内容",
@@ -76,10 +81,11 @@
     "close": "关闭",
     "legal": "法律声明",
     "privacy": "隐私",
-    "copyright": "Domaine du Geisberg · 法国摩泽尔省瓦尔斯贝格乡村度假屋",
+    "copyright": "© 2026 Marc 与 Agnès Nadler · Domaine du Geisberg，瓦尔斯贝格（法国摩泽尔省）· 保留所有权利",
     "notes_btn": "",
     "notes_hide": "",
-    "fallback": ""
+    "fallback": "",
+    "dev_credit": "网站制作：Sébastien Nadler"
   },
   "home": {
     "h1": "草地与森林之间的两栋宁静度假屋",
@@ -270,8 +276,8 @@
       ]
     ],
     "included": "包含：床品与家居布草、到达时铺好床铺、退房清洁、水电与供暖、Wi‑Fi、宠物。押金 300 €。旅游税另计。接受银行卡及法国 ANCV 度假券。",
-    "form_h": "预订申请",
-    "form_p": "请告知您的日期和想要的度假屋，我们将在 24 小时内回复。",
+    "form_h": "预订或联系我们",
+    "form_p": "预订申请或任何问题：我们将在 24 小时内通过电子邮件或电话回复。",
     "f_name": "姓名",
     "f_email": "电子邮件",
     "f_phone": "电话",
@@ -282,14 +288,20 @@
     "f_people": "人数",
     "f_msg": "留言",
     "f_send": "发送申请",
-    "f_note": "表单将打开您的邮件程序并自动填写申请内容。您也可以致电我们。",
+    "f_note": "留言将发送至 gitevarsberg@hotmail.com，您的信息仅用于回复。",
     "access_h": "前往 Domaine du Geisberg",
     "access": [
       "瓦尔斯贝格位于圣阿沃尔德与克罗茨瓦尔德之间，距梅斯 40 分钟，距萨尔布吕肯 30 分钟。",
       "自驾：A4 高速公路（巴黎–斯特拉斯堡），Saint-Avold / Carling 出口，然后前往 Creutzwald 和 Varsberg。",
       "火车：圣阿沃尔德车站距此 6 公里（梅斯–福尔巴克区域线）。"
     ],
-    "gps": "GPS 坐标"
+    "gps": "GPS 坐标",
+    "f_subject": "主题",
+    "f_subj_book": "预订申请",
+    "f_subj_q": "咨询",
+    "f_ok": "您的留言已发送。我们将在 24 小时内回复。",
+    "f_ko": "发送失败。您可以直接写信至",
+    "f_sending": "发送中…"
   },
   "diapo": {
     "h1": "幻灯片",
@@ -311,8 +323,10 @@
     "privacy_h": "个人数据",
     "privacy": "本网站不使用 cookie，也不收集浏览数据。通过电子邮件发送的预订申请信息仅用于回复，绝不提供给第三方。您可随时写信至 gitevarsberg@hotmail.com 要求删除。",
     "credits_h": "制作",
-    "credits": "设计：Sébastien Nadler，2026。",
-    "credits_photo_h": "图片来源"
+    "credits": "开发：Sébastien Nadler，2026 年。静态网站，托管于 GitHub Pages；日历自动同步；字体 Playfair Display 与 Nunito Sans（Google Fonts）。照片：Marc 与 Agnès Nadler，下文另有说明者除外。",
+    "credits_photo_h": "图片来源",
+    "owners_h": "业主",
+    "owners": "Marc 与 Agnès Nadler 是 Domaine du Geisberg 度假屋的业主和经营者，也是本网站及其文字和照片的所有者。"
   },
   "extra": {
     "reviews_eyebrow": "客人评价",
@@ -351,5 +365,11 @@
     "where_h": "在哪里找到我们",
     "where_p": "我们也在这些网站上：您可以在那里预订，但直接预订仍然最简单、最实惠。",
     "labels_h": "我们的认证"
+  },
+  "visite": {
+    "h1": "360° 虚拟参观",
+    "lead": "身临其境地游览度假屋和庄园：拖动画面、双指缩放、在房间之间切换。",
+    "fallback": "如果此处未显示，",
+    "open": "请在新标签页中打开"
   }
 }

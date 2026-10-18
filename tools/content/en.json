@@ -39,6 +39,10 @@
     "avis": [
       "Reviews and labels – Domaine du Geisberg",
       "Our guests' reviews on Gîtes de France, Airbnb, Abritel and Clévacances, our labels and where to book."
+    ],
+    "visite": [
+      "360° virtual tour – Domaine du Geisberg",
+      "Tour the Domaine du Geisberg cottages in 360°, room by room."
     ]
   },
   "nav": {
@@ -50,7 +54,8 @@
     "diaporama": "Slideshow",
     "contact": "Contact",
     "book": "Book",
-    "avis": "Reviews & labels"
+    "avis": "Reviews & labels",
+    "visite": "360° tour"
   },
   "ui": {
     "skip": "Skip to content",
@@ -76,10 +81,11 @@
     "close": "Close",
     "legal": "Legal notice",
     "privacy": "Privacy",
-    "copyright": "Domaine du Geisberg · Holiday cottages in Varsberg (Moselle, France)",
+    "copyright": "© 2026 Marc and Agnès Nadler · Domaine du Geisberg, Varsberg (Moselle, France) · All rights reserved",
     "notes_btn": "",
     "notes_hide": "",
-    "fallback": ""
+    "fallback": "",
+    "dev_credit": "Website: Sébastien Nadler"
   },
   "home": {
     "h1": "Two quiet cottages between meadow and forest",
@@ -270,8 +276,8 @@
       ]
     ],
     "included": "Included: bed and household linen, beds made on arrival, end-of-stay cleaning, electricity and heating, wifi, pets. Deposit €300. Tourist tax extra. Credit cards and French ANCV holiday vouchers accepted.",
-    "form_h": "Booking request",
-    "form_p": "Tell us your dates and which cottage you would like; we reply within 24 hours.",
+    "form_h": "Book or write to us",
+    "form_p": "A booking request or a question: we reply within 24 hours, by e-mail or phone.",
     "f_name": "Name",
     "f_email": "E-mail",
     "f_phone": "Phone",
@@ -282,14 +288,20 @@
     "f_people": "Guests",
     "f_msg": "Message",
     "f_send": "Send the request",
-    "f_note": "The form opens your e-mail app with the request filled in. You can also call us.",
+    "f_note": "The message goes to gitevarsberg@hotmail.com. Your details are used only to reply to you.",
     "access_h": "Getting to the Domaine du Geisberg",
     "access": [
       "Varsberg lies between Saint-Avold and Creutzwald, 40 minutes from Metz and 30 minutes from Saarbrücken.",
       "By car: A4 motorway (Paris–Strasbourg), exit Saint-Avold / Carling, then follow Creutzwald and Varsberg.",
       "By train: Saint-Avold station 6 km away (Metz–Forbach regional line)."
     ],
-    "gps": "GPS coordinates"
+    "gps": "GPS coordinates",
+    "f_subject": "Subject",
+    "f_subj_book": "Booking request",
+    "f_subj_q": "Question",
+    "f_ok": "Your message has been sent. We reply within 24 hours.",
+    "f_ko": "The message could not be sent. You can write to us directly at",
+    "f_sending": "Sending…"
   },
   "diapo": {
     "h1": "Slideshow",
@@ -311,8 +323,10 @@
     "privacy_h": "Personal data",
     "privacy": "This site sets no cookies and collects no browsing data. Information sent by e-mail for a booking request is used only to reply to it and is never shared with third parties. You may ask for its deletion at any time at gitevarsberg@hotmail.com.",
     "credits_h": "Credits",
-    "credits": "Design: Sébastien Nadler, 2026.",
-    "credits_photo_h": "Photo credits"
+    "credits": "Development: Sébastien Nadler, 2026. Static website hosted by GitHub Pages; calendar synchronised automatically; typefaces Playfair Display and Nunito Sans (Google Fonts). Photos: Marc and Agnès Nadler, unless stated below.",
+    "credits_photo_h": "Photo credits",
+    "owners_h": "Owners",
+    "owners": "Marc and Agnès Nadler own and run the Domaine du Geisberg cottages. They own this website, its texts and its photographs."
   },
   "extra": {
     "reviews_eyebrow": "Guest reviews",
@@ -351,5 +365,11 @@
     "where_h": "Where to find us",
     "where_p": "We are also listed on these sites: you can book there, but booking direct remains the simplest and cheapest.",
     "labels_h": "Our labels"
+  },
+  "visite": {
+    "h1": "360° virtual tour",
+    "lead": "Walk through the cottages and the estate as if you were there: drag the image, pinch to zoom, move from room to room.",
+    "fallback": "If the tour does not show here,",
+    "open": "open it in a new tab"
   }
 }

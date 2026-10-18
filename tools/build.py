@@ -22,7 +22,7 @@ LANGS = [  # ordre demandé : FR, EN, DE, ES, PT, NL, ZH
     ("nl", "Nederlands", "🇳🇱", "nl/"),
     ("zh", "中文", "🇨🇳", "zh/"),
 ]
-PAGES = ["index", "le-domaine", "gites", "gite-1", "gite-2", "autour", "avis", "reservation", "diaporama", "mentions-legales"]
+PAGES = ["index", "le-domaine", "gites", "gite-1", "gite-2", "autour", "avis", "visite", "reservation", "diaporama", "mentions-legales"]
 
 env = Environment(loader=FileSystemLoader(str(TPL)), autoescape=select_autoescape(["html"]), trim_blocks=True, lstrip_blocks=True)
 
