@@ -283,18 +283,12 @@
   var nbtn = document.getElementById('nbtn'),
     items = Array.prototype.slice.call(document.querySelectorAll('[data-note]'));
   if (nbtn) {
-    var list = document.getElementById('nlist'),
-      done = {};
+    var list = document.getElementById('nlist');
     if (!items.length) {
       list.innerHTML = '<li>Rien à fournir sur cette page.</li>';
     }
-    try {
-      done = JSON.parse(localStorage.getItem('notes-done') || '{}');
-    } catch (e) {}
-    var page = location.pathname.split('/').pop() || 'index.html';
     items.forEach(function (el, i) {
       var n = i + 1,
-        key = page + ':' + n,
         b = document.createElement('button');
       b.type = 'button';
       b.className = 'nbub';
@@ -316,25 +310,11 @@
       el.appendChild(b);
       el.appendChild(t);
       var li = document.createElement('li'),
-        cb = document.createElement('input');
-      cb.type = 'checkbox';
-      cb.id = 'nd' + n;
-      cb.checked = !!done[key];
-      var lab = document.createElement('label');
-      lab.htmlFor = 'nd' + n;
-      lab.innerHTML = '<i>' + n + '</i>';
-      var sp = document.createElement('span');
+        num = document.createElement('i'),
+        sp = document.createElement('span');
+      num.textContent = n;
       sp.textContent = el.getAttribute('data-note');
-      if (cb.checked) sp.classList.add('done');
-      cb.addEventListener('change', function () {
-        done[key] = cb.checked;
-        sp.classList.toggle('done', cb.checked);
-        try {
-          localStorage.setItem('notes-done', JSON.stringify(done));
-        } catch (e) {}
-      });
-      li.appendChild(cb);
-      li.appendChild(lab);
+      li.appendChild(num);
       li.appendChild(sp);
       list.appendChild(li);
     });
