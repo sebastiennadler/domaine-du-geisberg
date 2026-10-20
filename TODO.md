@@ -20,8 +20,9 @@ Règles et décisions : `CLAUDE.md`. Plan complet : `docs/PLAN-DU-SITE.md`.
 
 ## 1. Sauvegarde et structure (étape 1)
 
-- [ ] Sauvegarde du site v1 avant toute modification : tag git `v1-2026-10-20` + archive zip du dossier
-      sur le Bureau (`SiteDomaineDuGeisberg-v1-2026-10-20.zip`).
+- [x] Sauvegarde du site v1 avant toute modification (20/10) : archive `SiteDomaineDuGeisberg-v1-2026-10-20.tar.gz`
+      sur le Bureau (104 Mo, sans .git ni vidéos sources), tag git local `v1-2026-10-20` et branche GitHub
+      `sauvegarde-v1-2026-10-20` (commit 9b48899).
 - [ ] Nouvelle structure (`src/`, `assets/`, `tools/`, `tests/`, `dist/`) — voir plan, partie 4.
 - [ ] `build.py` : sortie dans `dist/`, option `--prod` (sans notes, `SITE_URL` définitif), `.htaccess`, 404.
 - [ ] `pages.yml` : construire puis déployer `dist/` ; lancer `check.py` et les tests avant de déployer.

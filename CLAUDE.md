@@ -43,6 +43,9 @@ sont des interprétations en attente de validation.
   fichiers de verrou sur le Mac — ne pas s'en inquiéter, les renommer). Messages de commit en français.
 - Les fichiers sans rapport avec le site ne restent pas dans le dossier du site (déplacés sur le Bureau).
 - Outils ponctuels (scripts de migration) : dans `archives/outils-ponctuels/` (non suivi par git).
+- **Sauvegarde avant toute série de modifications importantes** : archive `.tar.gz` du dossier sur le
+  Bureau + branche `sauvegarde-<version>-<date>` sur GitHub (les tags ne passent pas par le proxy).
+  Sauvegarde v1 faite le 20/10 : `SiteDomaineDuGeisberg-v1-2026-10-20.tar.gz`, branche `sauvegarde-v1-2026-10-20`.
 
 ### Nuitrésa (compte de Marc — identifiants transmis par Sébastien)
 - **Ne JAMAIS envoyer de demande de réservation**, test ou non, par le formulaire Nuitrésa. La seule
