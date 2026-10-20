@@ -1606,7 +1606,7 @@ html[data-theme='dark'] .list li::before {
   padding: 0 14px;
   border-radius: 999px;
   border: 0;
-  background: #c8431f;
+  background: #a8341a; /* contraste ≥ 4,5 avec le blanc (audit axe du 20/10) */
   color: #fff;
   font: inherit;
   font-weight: 800;
