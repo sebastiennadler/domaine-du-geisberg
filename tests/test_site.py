@@ -179,10 +179,9 @@ async def main():
             ok(f'{d}réservation : ordre des sections', await page.evaluate("[...document.querySelectorAll('main section[id]')].map(s=>s.id)") == ['dispo', 'tarifs', 'demande', 'acces'])
         await page.goto(f'{BASE}/reservation.html', wait_until='domcontentloaded')
         ok('réservation : calendriers côte à côte sur ordinateur', await page.evaluate("(()=>{const b=[...document.querySelectorAll('.cal-box')].map(e=>e.getBoundingClientRect());return b.length===2 && Math.abs(b[0].top-b[1].top)<2 && b[1].left>b[0].right})()"))
-        h0 = await page.evaluate("document.getElementById('nr-cal-1100').getBoundingClientRect().height")
         await page.evaluate("window.postMessage({frameId:'nr-cal-1100', height:900}, '*')")
-        await page.wait_for_timeout(200)
-        ok('réservation : un message de hauteur venant d\'ailleurs que Nuitrésa est ignoré', h0 == await page.evaluate("document.getElementById('nr-cal-1100').getBoundingClientRect().height"))
+        await page.wait_for_timeout(300)
+        ok('réservation : un message de hauteur venant d\'ailleurs que Nuitrésa est ignoré', await page.evaluate("document.getElementById('nr-cal-1100').style.height") == '')
         ok('réservation : repli e-mail sous le formulaire', await page.locator('#demande a[href^="mailto:"]').count() == 1)
         ok('réservation : plus de bloc hôtes (un seul chez-soi : accueil)', await page.locator('.hosts').count() == 0)
 
