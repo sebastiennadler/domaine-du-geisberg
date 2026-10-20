@@ -1,5 +1,10 @@
 # Domaine du Geisberg — site des gîtes
 
+> **Où est quoi ?** `CLAUDE.md` = les règles et décisions du projet (source de vérité, lu par Claude Code à
+> chaque session) · `docs/PLAN-DU-SITE.md` = le plan complet du site et de quoi le recréer de zéro ·
+> `TODO.md` = ce qu'il reste à faire · ce `README.md` = la documentation technique : comment modifier un
+> texte ou une photo, régénérer, vérifier, publier.
+
 Site des deux gîtes du Domaine du Geisberg (Marc et Agnès Nadler), 6 rue du Geisberg, 57880 Varsberg (Moselle).
 
 - Site en ligne (maquette) : https://sebastiennadler.github.io/domaine-du-geisberg/
@@ -134,6 +139,14 @@ navigateurs rechargent toujours la dernière version.
 | `liens.yml`            | chaque lundi           | teste tous les liens externes → `docs/liens-rapport.md`                   |
 | `photos-commons.yml`   | à la demande           | récupère des photos libres sur Wikimedia Commons (`tools/fetch_commons.py`) |
 | `audio-commons.yml`    | à la demande           | récupère un enregistrement libre de chants d'oiseaux (`tools/fetch_audio.py`) |
+
+### Tests automatiques (`tests/`)
+
+- `tests/test_site.py` : tests fonctionnels Playwright (Chromium), réseau externe coupé, contre un serveur
+  local : `python3 -m http.server 8111` à la racine du site, puis `python3 tests/test_site.py`
+  (≈ 500 tests, tous doivent être verts).
+- `tests/sweep.py` : balayage de toutes les pages de 320 à 1366 px ; ne doit signaler aucun débordement.
+- Prérequis : `pip install playwright && playwright install chromium`.
 
 ### Disponibilités et réservation (Nuitrésa)
 
