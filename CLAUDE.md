@@ -84,8 +84,8 @@ sont des interprétations en attente de validation.
 - `src/htaccess` (livré dans `dist/.htaccess` par `--prod`) porte HTTPS forcé, HSTS, `frame-ancestors`, etc. ;
   les redirections de l'ancien site y seront ajoutées plus tard (bloc « À COMPLÉTER »).
 - Ancien site (WordPress 5.3 / PHP 7.4, extensions à failles connues, pas de HTTPS forcé, Analytics sans
-  consentement) : constats consignés dans `TODO.md` § 4 (note pour Marc) ; à faire **supprimer** par DECLIC
-  après la bascule.
+  consentement) : constats consignés dans `TODO.md` § 4 (note pour Marc) ; à faire **retirer de la ligne** par
+  DECLIC après la bascule, **en gardant une sauvegarde** hors ligne (Sébastien, 20/10).
 
 ### Qualité, avant toute mise en ligne (GitHub ou DECLIC)
 - `python3 tools/build.py` puis `python3 tools/check.py` : **0 erreur**.
@@ -105,7 +105,9 @@ sont des interprétations en attente de validation.
 - Tout ce qui est dit à Marc par mail à propos du site doit **aussi** figurer dans les notes du site.
 - Ne pas envoyer de mail à la place de Sébastien : préparer le texte, il envoie.
 - **Pas de nouveau mail à Marc pour l'instant** (20/10) : on le laisse tranquille jusqu'à ce que Sébastien
-  décide de lui montrer la v2. Les notes du site continuent d'être tenues à jour.
+  décide de lui montrer la v2. Les notes du site continuent d'être tenues à jour. Exception décidée par
+  Sébastien le 20/10 (soir) : un court mail à Marc contenant le texte à faire suivre à DECLIC (Sébastien n'a
+  pas l'adresse de l'entreprise).
 - Étape référencement : seulement ce qui se fait côté site maintenant (préparer le terrain) ; les
   redirections de l'ancien site et le mail de livraison à DECLIC sont pour plus tard (20/10). Fait le 20/10 :
   titres/descriptions, JSON-LD (offres, fil d'Ariane, FAQ), page Questions fréquentes (7 langues), trois pages

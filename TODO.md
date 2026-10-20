@@ -83,8 +83,9 @@ Règles et décisions : `CLAUDE.md`. Plan complet : `docs/PLAN-DU-SITE.md`.
       casse les clones existants) — ou s'en tenir au changement de mot de passe.
 - [ ] Optionnel : épingler les actions GitHub sur un SHA ; `sandbox` sur les cadres des calendriers Nuitrésa.
 - [ ] Après la bascule : vérifier en ligne les en-têtes (securityheaders.com, observatory.mozilla.org) et
-      le HTTPS (ssllabs.com) ; demander à DECLIC la **suppression complète de l'ancien WordPress**
-      (fichiers, base, extensions) — le laisser en ligne, même sans lien, reste une porte d'entrée.
+      le HTTPS (ssllabs.com) ; demander à DECLIC de **retirer l'ancien WordPress de la ligne** (fichiers,
+      base, extensions) en **gardant une sauvegarde** (archive hors ligne — Sébastien, 20/10) : le laisser en
+      ligne, même sans lien, reste une porte d'entrée.
 
 ## 4. À demander à Marc (questions ouvertes — Sébastien lui transmet quand il le décide)
 
@@ -115,7 +116,8 @@ Sans clé, la ligne va dans la vue d'ensemble de l'accueil.
 - [ ] {faq} Page « Questions fréquentes » : 12 réponses écrites d'après vos directives et l'ancien site (animaux, bébés, horaires, caution 300 €, acompte 25 %, Wi-Fi, commerces). À relire et corriger.
 - [ ] {landing} Trois pages de fond pour Google (gîte accessible PMR, lac de Creutzwald, entre Saint-Avold et Sarrebruck), en français, anglais et allemand : à relire ; signalez toute inexactitude (distances, activités, labels).
 - [ ] Photos : une photo du séjour et une de la façade en été seraient bienvenues.
-- [ ] Sécurité de l'ancien site (constaté le 20/10, en lecture seule) : WordPress 5.3 de 2019 avec PHP 7.4 (plus aucun correctif de sécurité depuis novembre 2022), extensions anciennes à failles connues (Slider Revolution 5.4, Contact Form 7 5.1, Photo Gallery 1.5), pas de HTTPS forcé, aucun en-tête de sécurité, Google Analytics sans bandeau de consentement (RGPD). C'est le type de site le plus visé par les piratages automatiques : une raison de plus pour basculer vite, puis de faire supprimer l'ancien site par DECLIC. Le nouveau site, statique, n'a aucune de ces faiblesses.
+- [ ] Mail pour DECLIC : Sébastien vous a transmis un texte de questions (coordonnées pour les mentions légales, type d'hébergement, accès pour les mises à jour, sauvegarde puis retrait de l'ancien site à la bascule, proposition de collaboration). Merci de le faire suivre à votre ami de DECLIC, en le reformulant si vous voulez, et de demander une réponse directe à Sébastien (vous en copie).
+- [ ] Sécurité de l'ancien site (constaté le 20/10, en lecture seule) : WordPress 5.3 de 2019 avec PHP 7.4 (plus aucun correctif de sécurité depuis novembre 2022), extensions anciennes à failles connues (Slider Revolution 5.4, Contact Form 7 5.1, Photo Gallery 1.5), pas de HTTPS forcé, aucun en-tête de sécurité, Google Analytics sans bandeau de consentement (RGPD). C'est le type de site le plus visé par les piratages automatiques : une raison de plus pour basculer vite, puis de faire retirer l'ancien site de la ligne par DECLIC (en gardant une sauvegarde). Le nouveau site, statique, n'a aucune de ces faiblesses.
 
 ## 5. À faire par Marc dans Nuitrésa
 
@@ -138,7 +140,10 @@ Sans clé, la ligne va dans la vue d'ensemble de l'accueil.
 - [ ] Le `.htaccess` livré (HTTPS forcé, en-têtes de sécurité, cache, 404) est-il pris en compte
       (`AllowOverride`, modules `rewrite`, `headers`, `expires`, `deflate`) ? Le certificat HTTPS couvre-t-il
       `domainedugeisberg.fr` et `www.` ? (HSTS n'est à activer qu'à cette condition.)
-- [ ] À la bascule : supprimer complètement l'ancien WordPress (fichiers, base de données, PHP) — voir § 3 bis.
+- [ ] À la bascule : retirer l'ancien WordPress de la ligne (fichiers, base de données, PHP) en en gardant une
+      sauvegarde hors ligne (archive) — voir § 3 bis.
+- [ ] Sébastien n'a pas l'adresse de DECLIC : le mail de questions passe par Marc, qui le fait suivre à son ami
+      (préparé le 20/10 ; Marc peut le reformuler).
 - [ ] Bouteille à la mer : Sébastien aimerait proposer ses services (développement, sites, automatisation)
       pour des missions ponctuelles — à glisser dans le mail de livraison ou dans un mail séparé.
 

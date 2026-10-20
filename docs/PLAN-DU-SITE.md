@@ -230,8 +230,8 @@ scripts et cadres : site + `public.nuit-resa.com` + `www.hdmedia.fr` ; styles en
 manque de CSP, contient un script en ligne, une note, `noindex` ou `github.io`, ou s'il manque `.htaccess`,
 `404.html`, `sitemap.xml` ou `fonts/`. Le formulaire Nuitrésa (cadre externe) ne peut pas être filtré par le
 site : ses plafonds (1 à 5 personnes, 3 bébés) se règlent dans les fiches de Marc. Ancien site : WordPress 5.3 /
-PHP 7.4, extensions à failles connues, pas de HTTPS forcé, Analytics sans consentement → à faire supprimer par
-DECLIC après la bascule (note pour Marc dans `TODO.md` § 4).
+PHP 7.4, extensions à failles connues, pas de HTTPS forcé, Analytics sans consentement → à faire retirer de la ligne par
+DECLIC après la bascule, avec une sauvegarde hors ligne (note pour Marc dans `TODO.md` § 4).
 
 ## 9. Registre des directives (chronologique)
 
