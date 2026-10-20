@@ -29,7 +29,7 @@ Versions : v1 (site actuel, octobre 2026) → **v2** (structure cible décrite i
 `#f5f2ea`, vert profond `#2b5240` (accent), cuivre `#a2652f` (accent secondaire), thème sombre
 automatique. Titres *Playfair Display* (600/700), texte *Nunito Sans* (400/700/800). Coins arrondis
 14 px, ombres douces, animations discrètes (désactivées si `prefers-reduced-motion`).
-**[À CONFIRMER]** : aligner l'accent cuivre sur le bordeaux du logo pour que le logo s'intègre.
+**Décidé le 20/10** : l'accent cuivre est remplacé par le bordeaux du logo (le logo doit s'intégrer).
 
 ## 2. Contenus (source : `tools/content/`)
 
@@ -46,7 +46,7 @@ automatique. Titres *Playfair Display* (600/700), texte *Nunito Sans* (400/700/8
   moyen pour nous de découvrir d'autres pays et cultures et de faire découvrir à d'autres les richesses de
   notre région et pays. L'usage régulier des langues allemandes et anglaises est un exercice plaisant et
   dépaysant. »
-- Gîtes jumeaux : « Deux gîtes identiques. Réservez l'un des deux, ou les deux pour un groupe. » [À CONFIRMER]
+- Gîtes jumeaux : « Deux gîtes identiques. Réservez l'un des deux, ou les deux pour un groupe. » (validé)
 - Capacité : « de 1 à 4 personnes » (+ couchage d'appoint discret : chauffeuse 90 cm dans le salon).
 
 ### 2.2 Fiche d'un gîte (une seule, les deux sont identiques)
@@ -62,7 +62,7 @@ finition offert (logement rendu propre, vaisselle lavée et rangée). **Non four
 ### 2.3 Tarifs (par gîte)
 Week-end 2 nuits (arrivée vendredi) 300 € · week-end 3 nuits (arrivée vendredi) 350 € · semaine 4 nuits
 (arrivée dimanche à jeudi, minimum 4 nuits hors week-end) 300 € · 5 à 7 nuits 420 €. Acompte 25 %.
-Taxe de séjour en sus. CB, chèques-vacances ANCV. Caution : à trancher (300 € chèque, ou empreinte).
+Taxe de séjour en sus. CB, chèques-vacances ANCV. Caution : 300 € (moyen à choisir par Marc : chèque ou empreinte).
 
 ### 2.4 Autour
 Distances validées : lac de Creutzwald 6 km (base nautique, pêche, tennis), piscine de Creutzwald 7 km,

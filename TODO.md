@@ -7,15 +7,12 @@ Règles et décisions : `CLAUDE.md`. Plan complet : `docs/PLAN-DU-SITE.md`.
 
 - [ ] **Accueil = page de présentation** (hôtes → maison → gîtes → fiche → tiroir équipement → Réserver) et
       plus de page « Les gîtes » séparée. Alternative : garder « Les gîtes » et un accueil court.
-- [ ] **Calendriers des deux gîtes sur la page Réservation**, au-dessus du formulaire (« une page
-      disponibilité avec les deux gîtes »). Alternative : une page « Disponibilités » dédiée.
-- [ ] Texte « gîtes jumeaux » : « Deux gîtes identiques. Réservez l'un des deux, ou les deux pour un
-      groupe. » ou la variante « jumeaux, même vue… tribu ».
-- [ ] Couchage d'appoint : une ligne discrète dans la fiche (« 1 couchage d'appoint possible dans le
-      salon, sur demande ») — ou rien du tout sur le site.
-- [ ] Caution : 300 € par chèque à l'arrivée (site + Nuitrésa) ou empreinte bancaire via Nuitrésa.
-- [ ] Couleurs : aligner l'accent du site sur le bordeaux du logo, ou garder vert/cuivre.
-- [ ] Licence : code en MIT, contenus (photos, textes, logo, nom) tous droits réservés.
+- [x] Calendriers des deux gîtes sur la page Réservation, au-dessus du formulaire (20/10).
+- [x] Texte « gîtes jumeaux » : « Deux gîtes identiques. Réservez l'un des deux, ou les deux pour un groupe. » (20/10).
+- [x] Couchage d'appoint : une ligne discrète dans la fiche (20/10).
+- [x] Caution : 300 € (ancien site) ; règle générale : ce qui n'est pas dans les directives de Marc vient de l'ancien site (20/10).
+- [x] Couleurs : accent aligné sur le bordeaux du logo (20/10).
+- [x] Licence : aucune — tout « tous droits réservés » (20/10).
 - [ ] Menu : « Le domaine & alentours » et « Photos & vidéos » comme noms d'entrées.
 
 ## 1. Sauvegarde et structure (étape 1)

@@ -96,7 +96,8 @@ sont des interprétations en attente de validation.
 - 60 m², 2 chambres (2 lits de 90 × 190 chacune), salle d'eau accessible (douche à l'italienne, WC),
   séjour avec cuisine intégrée, terrasse privée. **Capacité affichée : 4 personnes.**
 - Couchage d'appoint : 1 chauffeuse convertible (90 cm) dans le salon, **à ne pas mettre en avant**
-  (« doit rester exceptionnel ») : une mention discrète dans la fiche, jamais dans les chiffres clés.
+  (« doit rester exceptionnel ») : **une seule ligne discrète dans la fiche** (validé 20/10), jamais dans
+  les chiffres clés.
 - **Un gîte doit pouvoir être réservé même pour une personne seule** (Sébastien, 20/10) : la capacité
   affichée (4) est un maximum, pas un minimum. Le site le dit (« de 1 à 4 personnes ») et Nuitrésa sera
   réglé ensuite par Marc : réservable de **1 à 5 personnes** (bébés en plus, à discuter).
@@ -109,9 +110,8 @@ sont des interprétations en attente de validation.
 - Inclus dans le prix : **lits faits à l'arrivée**, draps fournis, **toutes charges incluses** (électricité,
   eau, chauffage au sol), **ménage de finition offert** (le logement est rendu propre : vaisselle lavée et
   rangée), **serviettes de bain NON fournies**.
-- Texte « gîtes jumeaux » (variante courte de Marc, 19/10) : « Deux gîtes identiques. Réservez l'un des
-  deux, ou les deux pour un groupe. » **[À CONFIRMER]** vs sa première variante « Deux gîtes jumeaux, même
-  vue — Mêmes prestations de part et d'autre. Réservez l'un des deux, ou les deux pour une tribu. »
+- Texte « gîtes jumeaux » (validé par Sébastien le 20/10) : **« Deux gîtes identiques. Réservez l'un des
+  deux, ou les deux pour un groupe. »**
 - Horaires : arrivée à partir de 16 h, départ avant 10 h (comme dans Nuitrésa).
 
 ### Tarifs (Marc, 20/10) — par gîte
@@ -123,8 +123,8 @@ sont des interprétations en attente de validation.
 | 5, 6 ou 7 nuits | — | 420 € |
 
 - Acompte : 25 % (Nuitrésa). Taxe de séjour en sus. CB, Visa, MasterCard, chèques-vacances ANCV.
-- Caution : 300 € sur le site, 0 € dans Nuitrésa — **à trancher par Marc** (chèque à l'arrivée ou
-  empreinte bancaire via Nuitrésa).
+- Caution : **300 €** (information de l'ancien site, retenue le 20/10 faute de directive de Marc) ;
+  Nuitrésa est à 0 € — Marc choisit le moyen (chèque à l'arrivée ou empreinte bancaire via Nuitrésa).
 - Le site affiche cette grille ; c'est Marc qui la reporte dans Nuitrésa (prix selon la durée).
 
 ### Pages et structure
@@ -134,8 +134,8 @@ sont des interprétations en attente de validation.
   y rester. → Interprétation retenue **[À CONFIRMER]** : l'accueil devient la page de présentation
   (hôtes → maison → gîtes → fiche → tiroir « Tout l'équipement » → bouton Réserver) et il n'y a plus de
   page « Les gîtes » séparée.
-- **Disponibilités** : « une page disponibilité avec les deux gîtes » → les deux calendriers (un par
-  gîte) sur la page **Réservation**, au-dessus du formulaire unique **[À CONFIRMER]**.
+- **Disponibilités** : les deux calendriers (un par gîte) sur la page **Réservation**, au-dessus du
+  formulaire unique (validé 20/10).
 - **Page Avis : ne rien changer** (Marc l'aime bien).
 - **Visite 360°** (hdmedia, 2015) : conservée, onglet nommé « Visite du gîte ».
 - Photos : **retirer la photo de nuit de la maison sous la neige** (mur sali) partout — bandeau d'accueil,
@@ -161,11 +161,19 @@ sont des interprétations en attente de validation.
 - Langues : FR (référence), EN, DE, ES, PT, NL, ZH, avec repli FR pour les textes non traduits.
 
 ### Code et licence
-- Code publié en **licence libre (MIT)** ; photos, vidéos, textes, logo et nom : **tous droits réservés**
-  (Marc et Agnès Nadler). **[À CONFIRMER]**
+- **Pas de licence** (validé 20/10) : le dépôt est public (site de travail) mais **tout est « tous droits
+  réservés »** — code, photos, vidéos, textes, logo et nom. Ne pas ajouter de fichier `LICENSE` ; une
+  mention « © Agnès et Marc Nadler — tous droits réservés » dans le README et les mentions légales.
+
+### Règle de repli pour les contenus
+- **Si une information n'est pas dans les directives de Marc, prendre celle de l'ancien site**
+  (`ancien-site/`), et la signaler dans les notes pour qu'il la valide (Sébastien, 20/10).
+
+### Couleurs
+- **Aligner l'accent du site sur le bordeaux du logo** (validé 20/10) : le cuivre `#a2652f` est remplacé
+  par le bordeaux du logo ; les verts du site restent (ils sont proches de ceux du logo).
 
 ## 5. Questions ouvertes
 
-Voir `TODO.md`, section « À confirmer ». Les principales : interprétation « accueil = page de
-présentation », calendriers sur la page Réservation, variante du texte « gîtes jumeaux », caution,
-affichage du couchage d'appoint, licence, couleurs du site alignées sur le logo ou non.
+Voir `TODO.md`, section « À confirmer ». Restent : l'interprétation « accueil = page de présentation »
+(plus de page Les gîtes séparée) et les noms des entrées du menu.
