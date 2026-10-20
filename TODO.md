@@ -1,6 +1,6 @@
 # TODO — ce qu'il reste à faire
 
-Mis à jour le 20/10/2026. Cocher au fur et à mesure ; une ligne terminée reste cochée (historique).
+Mis à jour le 20/10/2026 (soir). Cocher au fur et à mesure ; une ligne terminée reste cochée (historique).
 Règles et décisions : `CLAUDE.md`. Plan complet : `docs/PLAN-DU-SITE.md`.
 
 ## 0. À confirmer par Sébastien (avant de commencer la v2)
@@ -25,7 +25,7 @@ Règles et décisions : `CLAUDE.md`. Plan complet : `docs/PLAN-DU-SITE.md`.
 - [x] `pages.yml` : construit, vérifie (`check.py`), teste (`tests/run.sh`) puis déploie `dist/` (20/10).
 - [x] `tools/package.py` : zip de livraison pour DECLIC dans `livraison/` (20/10).
 - [x] Tests dans `tests/` (`run.sh`, codes de retour) et documentés dans le README (20/10).
-- [ ] Resynchroniser le dossier du Mac avec GitHub (autorisation de suppression : 1re confirmation reçue le 20/10, 2e à obtenir).
+- [x] Resynchroniser le dossier du Mac avec GitHub (autorisation de suppression accordée le 20/10 pour ce dossier).
 
 ## 2. Contenu et pages (étape 2 — v2) — fait le 20/10, en ligne sur le site de travail
 
@@ -49,18 +49,42 @@ Règles et décisions : `CLAUDE.md`. Plan complet : `docs/PLAN-DU-SITE.md`.
 - [ ] Vérifier les effets du bandeau (zoom, inclinaison, parallaxe) sur un vrai écran ; garder ou non
       l'inclinaison (`hero_tilt` dans `shared.json`, une ligne).
 
-## 3. Référencement (étape 3) — seulement ce qui se fait de notre côté, pour préparer le terrain
+## 3. Référencement (étape 3) — seulement ce qui se fait de notre côté, pour préparer le terrain — fait le 20/10
 
-- [ ] Titres et descriptions par page et par langue, un `<h1>` par page, `alt` sur toutes les photos.
-- [ ] JSON-LD enrichi (`priceRange`, offres, équipements, `aggregateRating` sourcé), fil d'Ariane,
-      `VideoObject`, `FAQPage`.
-- [ ] Page « Questions fréquentes » ; pages de fond : gîte accessible PMR Moselle, lac de Creutzwald,
-      entre Saint-Avold et Sarrebruck (textes à faire valider par Marc).
-- [ ] Page 404.
+- [x] Titres (≤ 70 caractères) et descriptions (≤ 160) par page et par langue, un `<h1>` par page, `alt`
+      sur toutes les photos ; cartes Twitter ; test automatique des longueurs.
+- [x] JSON-LD enrichi : `LodgingBusiness` (logo, offres 300 / 350 / 300 / 420, équipements), fil d'Ariane
+      (`BreadcrumbList`), `FAQPage`. `aggregateRating` et `VideoObject` : non ajoutés (les notes des
+      plateformes doivent d'abord être rafraîchies et sourcées — § 4 `{ratings}`).
+- [x] Page « Questions fréquentes » (12 questions, 7 langues) ; pages de fond en FR, EN, DE : gîte accessible
+      PMR Moselle, lac de Creutzwald, entre Saint-Avold et Sarrebruck (textes à faire valider par Marc,
+      § 4 `{landing}` et `{faq}`) ; liens en pied de page.
+- [x] Page 404 (liens absolus, non indexée) ; sitemap avec les versions linguistiques (`xhtml:link`) ;
+      `robots.txt` : interdit sur le site de travail, ouvert dans la version livrée.
 - [ ] **Plus tard** (pas dans l'étape 3 — Sébastien, 20/10) : redirections 301 des adresses de l'ancien
-      site (liste dans `ancien-site/`), `.htaccess` définitif.
+      site (liste dans `ancien-site/`) — l'emplacement est prêt dans `src/htaccess` (bloc « À COMPLÉTER »).
 - [ ] Après bascule : Search Console + sitemap, Bing, fiche Google Business (Marc), lien vers le site
       depuis Gîtes de France, Clévacances, Airbnb, Abritel.
+
+## 3 bis. Sécurité (audit du 20/10, demandé par Sébastien) — corrections faites le 20/10
+
+- [x] Fragment du mot de passe Nuitrésa retiré du test `tests/test_site.py` (il y figurait depuis le 18/10,
+      donc dans l'historique git public — d'où le changement de mot de passe obligatoire, § 5).
+- [x] Polices auto-hébergées (`assets/fonts`, licence OFL) : plus aucun appel à Google Fonts (RGPD, vitesse).
+- [x] Politique de sécurité de contenu (CSP) en `<meta>` sur chaque page, aucun script en ligne
+      (`theme.js`, bloc JSON pour les textes de l'interface, onglets dans `site.js`) ; `referrer` strict.
+- [x] `src/htaccess` livré dans le zip : HTTPS forcé + www, HSTS, `frame-ancestors`, `X-Frame-Options`,
+      `nosniff`, `Referrer-Policy`, `Permissions-Policy`, versions masquées, fichiers cachés interdits,
+      page 404, compression, cache.
+- [x] Garde-fous de `tools/package.py` : refus de livrer si notes, `noindex`, `github.io`, script en ligne,
+      page sans CSP, ou `.htaccess` / 404 / sitemap / polices manquants.
+- [x] Tests : CSP sur chaque page, aucun script ni police externe (hors Nuitrésa), polices servies par le site.
+- [ ] Décision Sébastien : réécrire l'historique git pour effacer le fragment de mot de passe (force-push ;
+      casse les clones existants) — ou s'en tenir au changement de mot de passe.
+- [ ] Optionnel : épingler les actions GitHub sur un SHA ; `sandbox` sur les cadres des calendriers Nuitrésa.
+- [ ] Après la bascule : vérifier en ligne les en-têtes (securityheaders.com, observatory.mozilla.org) et
+      le HTTPS (ssllabs.com) ; demander à DECLIC la **suppression complète de l'ancien WordPress**
+      (fichiers, base, extensions) — le laisser en ligne, même sans lien, reste une porte d'entrée.
 
 ## 4. À demander à Marc (questions ouvertes — Sébastien lui transmet quand il le décide)
 
@@ -87,21 +111,38 @@ Sans clé, la ligne va dans la vue d'ensemble de l'accueil.
 - [ ] {ratings} Notes des plateformes relevées le 18/10 (à rafraîchir avant la mise en ligne). La mention Airbnb doit-elle être retirée ?
 - [ ] {labels} Labels affichés : Gîtes de France, Clévacances, Tourisme & Handicap — toujours valables ?
 - [ ] {guestbook} Livre d'or Nuitrésa : vide tant que les questionnaires de satisfaction ne sont pas revenus (3 à envoyer). Le cacher en attendant ?
-- [ ] {legal} Qui a créé le logo (Synchro, 2014 ?) pour le créditer dans les mentions légales ? SIRET et forme juridique à vérifier.
+- [ ] {legal} Qui a créé le logo (Synchro, 2014 ?) pour le créditer dans les mentions légales ? SIRET et forme juridique à vérifier. L'hébergeur affiché est DECLIC : ses coordonnées exactes sont à obtenir (voir section 6).
+- [ ] {faq} Page « Questions fréquentes » : 12 réponses écrites d'après vos directives et l'ancien site (animaux, bébés, horaires, caution 300 €, acompte 25 %, Wi-Fi, commerces). À relire et corriger.
+- [ ] {landing} Trois pages de fond pour Google (gîte accessible PMR, lac de Creutzwald, entre Saint-Avold et Sarrebruck), en français, anglais et allemand : à relire ; signalez toute inexactitude (distances, activités, labels).
 - [ ] Photos : une photo du séjour et une de la façade en été seraient bienvenues.
+- [ ] Sécurité de l'ancien site (constaté le 20/10, en lecture seule) : WordPress 5.3 de 2019 avec PHP 7.4 (plus aucun correctif de sécurité depuis novembre 2022), extensions anciennes à failles connues (Slider Revolution 5.4, Contact Form 7 5.1, Photo Gallery 1.5), pas de HTTPS forcé, aucun en-tête de sécurité, Google Analytics sans bandeau de consentement (RGPD). C'est le type de site le plus visé par les piratages automatiques : une raison de plus pour basculer vite, puis de faire supprimer l'ancien site par DECLIC. Le nouveau site, statique, n'a aucune de ces faiblesses.
 
 ## 5. À faire par Marc dans Nuitrésa
 
-- [ ] Capacité mini = 1 sur les deux fiches (aujourd'hui 4 : une personne seule ou un couple ne peut pas réserver). Capacité maxi 5 (4 + appoint).
+- [ ] Capacité de chaque gîte : **mini 1, maxi 5** (aujourd'hui mini 4 : une personne seule ou un couple ne peut pas réserver). Le formulaire lit ces valeurs dans vos fiches : au-delà de 5 personnes il refusera lui-même (« Capacité acceptée : de 1 à 5 »). Rien à régler côté site (Sébastien, 20/10).
+- [ ] Bébés : **3 maximum par gîte**, en plus des 5 personnes (« Bébés acceptés » = 3, « hors capacité ») — le champ bébés du formulaire se limitera alors à 3 (Sébastien, 20/10).
 - [ ] Nuits minimum = 2, et la grille par durée : 2 nuits 300 €, 3 nuits 350 €, 4 nuits 300 €, 5 à 7 nuits 420 € (arrivée le vendredi pour les week-ends ; 4 nuits minimum en semaine).
-- [ ] Bébés : combien en plus des 5 personnes ; régler « Bébés acceptés » et « Gestion de la capacité ».
 - [ ] Caution : 300 € (0 € aujourd'hui) ; TVA 10 % à vérifier avec le comptable.
 - [ ] Photos et descriptif des fiches (le descriptif dit « 4/5 personnes » et « vitrocéramique »).
 - [ ] Relier Stripe ou PayPal si le paiement en ligne est souhaité ; puis une seule demande test à votre nom, à refuser ensuite.
-- [ ] Retirer le mot de passe du document Word envoyé par e-mail et le changer dans Nuitrésa.
+- [ ] **Changer le mot de passe Nuitrésa** (Configuration → Mon compte) et le retirer du document Word envoyé par e-mail : obligatoire, il a circulé par mail et un fragment s'est retrouvé dans le dépôt public du site (retiré le 20/10, mais l'historique le garde). Ne jamais transmettre un mot de passe par mail ou dans un document.
 - [ ] Nuitrésa doit être le planning de référence avant la bascule ; l'adresse du site sera changée dans les fiches à ce moment-là.
 
-## 6. Avant la mise en ligne définitive (étape 4)
+## 6. À demander à DECLIC (l'entreprise de l'ami de Marc, qui hébergera le site)
+
+- [ ] Quelle société et quel hébergeur exactement (raison sociale, adresse, téléphone) pour les mentions légales
+      « Hébergement » — le site dit « DECLIC (coordonnées à compléter) » en attendant.
+- [ ] Souhaitent-ils être mentionnés pour la mise en ligne / le déploiement du site (pied de page ou mentions légales) ?
+- [ ] Type d'hébergement (statique suffit), Apache ou autre, HTTPS, accès FTP/SFTP pour Sébastien ; ne rien
+      couper avant le feu vert.
+- [ ] Le `.htaccess` livré (HTTPS forcé, en-têtes de sécurité, cache, 404) est-il pris en compte
+      (`AllowOverride`, modules `rewrite`, `headers`, `expires`, `deflate`) ? Le certificat HTTPS couvre-t-il
+      `domainedugeisberg.fr` et `www.` ? (HSTS n'est à activer qu'à cette condition.)
+- [ ] À la bascule : supprimer complètement l'ancien WordPress (fichiers, base de données, PHP) — voir § 3 bis.
+- [ ] Bouteille à la mer : Sébastien aimerait proposer ses services (développement, sites, automatisation)
+      pour des missions ponctuelles — à glisser dans le mail de livraison ou dans un mail séparé.
+
+## 7. Avant la mise en ligne définitive (étape 4)
 
 - [ ] `build.py --prod` ; `check.py` 0 erreur ; tests verts ; balayage ; relecture des 7 langues.
 - [ ] `tools/package.py` → zip ; livraison à DECLIC ; mise en ligne par DECLIC ; vérification en ligne
@@ -118,3 +159,5 @@ Sans clé, la ligne va dans la vue d'ensemble de l'accueil.
 - [x] 19/10 — Mails préparés (notes, nom de domaine — caduc, plan de simplification) ; SMS calendriers.
 - [x] 20/10 — Réponses de Marc intégrées dans `CLAUDE.md` et `docs/PLAN-DU-SITE.md` ; `TODO.md` créé.
 - [x] 20/10 — Étape 1 (structure) et étape 2 (v2 du contenu) en ligne sur le site de travail.
+- [x] 20/10 — Étape 3 (référencement côté site : titres, descriptions, JSON-LD, FAQ, 3 pages de fond, 404,
+      sitemap) et audit de sécurité (CSP, polices locales, `.htaccess`, garde-fous de livraison).

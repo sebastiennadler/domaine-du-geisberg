@@ -1,4 +1,4 @@
-{% set m = t.meta[page] %}
+{% set m = t.meta[page] if page != '404' else [t.notfound.h1 + ' – ' + s.name, t.notfound.p] %}
 {% set ui = t.ui %}
 {% from "partials/_macros.html" import note with context %}
 <!DOCTYPE html>
@@ -8,13 +8,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>{{ m[0] }}</title>
 <meta name="description" content="{{ m[1] }}">
-<meta name="robots" content="noindex, nofollow">
-<meta http-equiv="Cache-Control" content="no-cache">{# maquette : retirer avant la mise en ligne sur domainedugeisberg.fr #}
-<link rel="canonical" href="{{ canonical }}">
-{% for code, name, flag, pfx in langs %}
+{% if not prod %}<meta name="robots" content="noindex, nofollow">{# site de travail seulement : la version à livrer (build --prod) est indexable #}
+<meta http-equiv="Cache-Control" content="no-cache">{% elif page == '404' %}<meta name="robots" content="noindex">{% endif %}
+{% if page != '404' %}<link rel="canonical" href="{{ canonical }}">
+{% for code, name, flag, pfx in page_langs %}
 <link rel="alternate" hreflang="{{ code }}" href="{{ site_url }}/{{ pfx }}{{ '' if page == 'index' else page + '.html' }}">
 {% endfor %}
-<link rel="alternate" hreflang="x-default" href="{{ site_url }}/{{ '' if page == 'index' else page + '.html' }}">
+<link rel="alternate" hreflang="x-default" href="{{ site_url }}/{{ '' if page == 'index' else page + '.html' }}">{% endif %}
 <meta property="og:site_name" content="{{ s.name }}">
 <meta property="og:title" content="{{ m[0] }}">
 <meta property="og:description" content="{{ m[1] }}">
@@ -22,13 +22,19 @@
 <meta property="og:url" content="{{ canonical }}">
 <meta property="og:image" content="{{ url(s.share_image, 1280) }}">
 <meta property="og:locale" content="{{ {'fr':'fr_FR','en':'en_GB','de':'de_DE','es':'es_ES','pt':'pt_PT','nl':'nl_NL','zh':'zh_CN'}[lang] }}">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ m[0] }}">
+<meta name="twitter:description" content="{{ m[1] }}">
+<meta name="twitter:image" content="{{ url(s.share_image, 1280) }}">
 <meta name="theme-color" content="#F5F2EA" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#151516" media="(prefers-color-scheme: dark)">
-<script>(function(){var d=document.documentElement;d.className=d.className.replace('no-js','js');try{var t=localStorage.getItem("geisberg-theme");if(t==="dark"||t==="light")d.setAttribute("data-theme",t);}catch(e){}})();</script>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Nunito+Sans:wght@400;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="{{ rel }}css/style.css?v={{ assets.css }}">
+{# Sécurité : politique de contenu (CSP). Aucun script en ligne ; seuls Nuitrésa (formulaire, calendriers) et hdmedia
+   (visite 360°) sont autorisés en scripts/cadres. Les styles en ligne restent permis (attributs style, feuille injectée par
+   le widget Nuitrésa). frame-ancestors/HSTS ne passent pas en <meta> : ils sont dans le .htaccess livré à l'hébergeur. #}
+<meta http-equiv="Content-Security-Policy" content="{{ csp | safe }}">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<script src="{{ rel }}js/theme.js?v={{ assets.theme }}"></script>{# minuscule, bloquant exprès : applique le thème mémorisé avant le premier affichage #}
+<link rel="stylesheet" href="{{ rel }}css/style.css?v={{ assets.css }}">{# polices auto-hébergées (assets/fonts), déclarées dans la feuille #}
 <link rel="icon" href="{{ rel }}img/favicon.png" type="image/png" sizes="64x64">
 <link rel="apple-touch-icon" href="{{ rel }}img/apple-touch-icon.png">
 {% block head %}{% endblock %}
@@ -77,6 +83,17 @@
   "priceRange": s.price_weekend + " – " + s.price_week,
   "starRating": {"@type": "Rating", "ratingValue": "3", "bestRating": "5", "name": "3 épis Gîtes de France"}
 } | tojson }}</script>
+{% if page != 'index' and page != '404' %}
+<script type="application/ld+json">{{ {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": t.nav.index, "item": site_url + "/" + prefix},
+    {"@type": "ListItem", "position": 2, "name": m[0].split(' – ')[0], "item": canonical}
+  ]
+} | tojson }}</script>
+{% endif %}
+{% block jsonld %}{% endblock %}
 </head>
 <body>
 <a class="skip" href="#main">{{ ui.skip }}</a>
@@ -101,7 +118,7 @@
         <a href="{{ p }}.html"{% if p == page %} aria-current="page"{% endif %}>{{ t.nav[p] }}</a>
         {% endfor %}
         <a class="btn btn-p book" href="reservation.html#demande">{{ t.nav.book }}</a>
-        {% macro langlinks() %}{% for code, name, flag, pfx in langs %}<a href="{{ rel }}{{ pfx }}{{ page }}.html" lang="{{ code }}" hreflang="{{ code }}" title="{{ name }}" aria-label="{{ name }}"{% if code == lang %} aria-current="true"{% endif %}>{{ flag }}<span class="ln">{{ name }}</span></a>{% endfor %}{% endmacro %}
+        {% macro langlinks() %}{% for code, name, flag, pfx in page_langs %}<a href="{{ rel }}{{ pfx }}{{ 'index' if page == '404' else page }}.html" lang="{{ code }}" hreflang="{{ code }}" title="{{ name }}" aria-label="{{ name }}"{% if code == lang %} aria-current="true"{% endif %}>{{ flag }}<span class="ln">{{ name }}</span></a>{% endfor %}{% endmacro %}
         <div class="langs" aria-label="{{ ui.langs }}">{{ langlinks() }}</div>
         <details class="langdd"><summary aria-label="{{ ui.langs }}">{% for code, name, flag, pfx in langs %}{% if code == lang %}{{ flag }}<span>{{ code | upper }}</span>{% endif %}{% endfor %}</summary><div class="langs" aria-label="{{ ui.langs }}">{{ langlinks() }}</div></details>
       </nav>
@@ -116,14 +133,14 @@
   <div class="wrap">
     <div>{{ pic(s.logo, s.name, '140px', cls='logo logo-light') }}{{ pic(s.logo_dark, '', '140px', cls='logo logo-dark') }}<b>{{ s.name }}</b>{{ s.address }}<br>{{ s.phones[0][0] }} · {{ s.phones[0][1] }} · {{ s.phones[1][0] }} · {{ s.phones[1][1] }}<br><a href="mailto:{{ s.email }}">{{ s.email }}</a></div>
     <div class="logos">{% for id, name, link in s.labels %}<a href="{{ link }}" rel="noopener" target="_blank">{{ pic(id, "", "72px") }}<span>{{ name }}</span></a>{% endfor %}</div>
-    <div>{{ ui.copyright }}<br><a href="mentions-legales.html">{{ ui.legal }}</a> · <a href="mailto:sebastien.nadler@gmail.com">{{ ui.dev_credit }}</a></div>
+    <div class="foot-links"><a href="questions.html">{{ t.nav.questions }}</a>{% for lp in ['gite-accessible-pmr-moselle', 'gite-lac-de-creutzwald', 'gites-saint-avold-sarrebruck'] %}{% if lang in ['fr', 'en', 'de'] %} · <a href="{{ lp }}.html">{{ t.landing[lp].short }}</a>{% endif %}{% endfor %}<br>{{ ui.copyright }}<br><a href="mentions-legales.html">{{ ui.legal }}</a> · <a href="mailto:sebastien.nadler@gmail.com">{{ ui.dev_credit }}</a></div>
   </div>
 </footer>
 {% if notes %}
 <button class="nbtn" id="nbtn" type="button" aria-pressed="false" data-show="{{ ui.notes_btn }}" data-hide="{{ ui.notes_hide }}"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M12 20h9M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg><span>{{ ui.notes_btn }}</span></button>
 <section class="npanel" aria-label="Liste des points à fournir"><h2>Ce qu'il reste à faire sur cette page</h2><p>Envoyez les éléments à Sébastien par mail ou WhatsApp.</p><ol id="nlist"></ol></section>
 {% endif %}
-<script>window.GEISBERG_UI={{ {'close': ui.close, 'prev': ui.prev, 'next': ui.next, 'top': ui.top} | tojson }};</script>
+<script type="application/json" id="ui-strings">{{ {'close': ui.close, 'prev': ui.prev, 'next': ui.next, 'top': ui.top} | tojson }}</script>{# bloc de données (non exécuté), lu par site.js #}
 <script src="{{ rel }}js/site.js?v={{ assets.js }}"></script>
 </body>
 </html>

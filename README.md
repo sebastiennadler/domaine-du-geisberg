@@ -32,14 +32,18 @@ prestataire de Marc), intégré dans la page Réservation.
 │   │   └── images.json           dimensions et tailles de chaque photo (écrit par photos.py, ne pas éditer)
 │   ├── templates/
 │   │   ├── base.html             squelette commun (head, en-tête, pied de page, notes, scripts)
-│   │   ├── pages/                un gabarit Jinja2 par page (index, reservation, le-domaine, medias, avis, mentions-legales)
+│   │   ├── pages/                un gabarit Jinja2 par page (index, reservation, le-domaine, medias, avis, mentions-legales,
+│   │   │                         questions = FAQ, landing.html = les trois pages de fond, 404.html)
 │   │   └── partials/             morceaux réutilisés (_macros.html : notes ; _diapo.html : diaporama ; _redirect.html)
 │   ├── catalog/                  photos.json, videos.json (catalogues), credits.json, liens-candidats.txt
-│   ├── css/style.css             la feuille de styles (couleurs, mise en page, mobile, thème sombre)
-│   └── js/site.js                les scripts (menu, thème, bandeau, galerie, notes, calendriers, effets)
+│   ├── css/style.css             la feuille de styles (polices locales, couleurs, mise en page, mobile, thème sombre)
+│   ├── js/site.js                les scripts (menu, thème, bandeau, galerie, onglets, notes, calendriers, effets)
+│   ├── js/theme.js               minuscule, chargé en premier : applique le thème mémorisé avant l'affichage
+│   └── htaccess                  réglages Apache livrés à l'hébergeur (HTTPS forcé, en-têtes de sécurité, cache, 404)
 ├── assets/
 │   ├── photos-sources/           photos d'origine (JPEG/PNG) : c'est ici qu'on dépose une nouvelle photo ; logo/
 │   ├── img/                      photos WebP GÉNÉRÉES par tools/photos.py (suivies par git)
+│   ├── fonts/                    polices Playfair Display et Nunito Sans (WOFF2, licence OFL) servies par le site
 │   ├── videos-sources/           vidéos d'origine (.MOV, non versionnées : trop lourdes)
 │   ├── videos/                   vidéos MP4 GÉNÉRÉES par tools/videos.py
 │   └── audio/                    fond sonore du diaporama (libre de droits, voir crédits)
@@ -120,14 +124,16 @@ différé) ; `src(id)` donne l'adresse de la plus grande version (visionneuse, f
 
 ```sh
 pip install jinja2 pillow playwright && playwright install chromium   # une seule fois
-python3 tools/build.py      # écrit dist/ : 42 pages (+ 49 renvois), css, js, img, vidéos, sitemap, robots
+python3 tools/build.py      # écrit dist/ : 58 pages (+ 49 renvois), 404, css, js, polices, img, vidéos, sitemap, robots
 python3 tools/check.py      # liens et images cassés, images inutilisées, attributs manquants, poids
-bash tests/run.sh           # tests fonctionnels (≈ 500) + balayage des débordements, contre dist/
+bash tests/run.sh           # tests fonctionnels (≈ 1 000) + balayage des débordements, contre dist/
 ```
 
-Pour regarder le résultat : `python3 -m http.server 8111 --directory dist` puis ouvrir `http://127.0.0.1:8111/`.
+Pour regarder le résultat : `python3 -m http.server 8111 --directory dist` puis ouvrir `http://127.0.0.1:8111/`
+(seule la page 404, aux liens absolus, suppose le préfixe `/domaine-du-geisberg/` du site de travail).
 `dist/` est entièrement régénéré à chaque `build.py` : toute modification faite dedans est perdue.
-`python3 tools/build.py --prod` produit la version à livrer, sans le mode « Notes pour Marc ».
+`python3 tools/build.py --prod` produit la version à livrer : sans le mode « Notes pour Marc », `robots.txt`
+ouvert, liens de la 404 à la racine, et `.htaccess` (copie de `src/htaccess`).
 
 ### 5. Publier
 
@@ -140,7 +146,9 @@ git push
 L'action « Construire, tester et publier » se lance toute seule : elle génère `dist/`, lance `check.py` et les
 tests, et ne publie que si tout est vert. Le site de travail est à jour en trois à cinq minutes.
 Pour l'hébergeur définitif (DECLIC) : `python3 tools/package.py` crée `livraison/domainedugeisberg-<date>.zip`,
-à lui transmettre ; il dépose son contenu à la racine du site.
+à lui transmettre ; il dépose son contenu à la racine du site. Le script refuse de livrer s'il reste une trace
+du site de travail (notes, `noindex`, `github.io`), un script en ligne, une page sans CSP, ou s'il manque
+`.htaccess`, `404.html`, `sitemap.xml` ou les polices.
 Les fichiers CSS et JS portent une empreinte (`style.css?v=…`) calculée à chaque génération, donc les
 navigateurs rechargent toujours la dernière version.
 
@@ -155,10 +163,13 @@ navigateurs rechargent toujours la dernière version.
 
 ### Tests automatiques (`tests/`)
 
-- `bash tests/run.sh` lance un serveur local sur `dist/` puis les deux scripts ; `bash tests/run.sh tests`
-  ou `bash tests/run.sh sweep` pour l'un seulement. Les deux renvoient un code d'erreur en cas d'échec
-  (c'est ce qui bloque la publication dans le workflow GitHub).
-- `tests/test_site.py` : tests fonctionnels Playwright (Chromium), réseau externe coupé (≈ 500 tests).
+- `bash tests/run.sh` lance un serveur local qui sert `dist/` sous `/domaine-du-geisberg/` (comme GitHub
+  Pages) puis les deux scripts ; `bash tests/run.sh tests` ou `bash tests/run.sh sweep` pour l'un seulement.
+  Les deux renvoient un code d'erreur en cas d'échec (c'est ce qui bloque la publication dans le workflow GitHub).
+- `tests/test_site.py` : tests fonctionnels Playwright (Chromium), réseau externe coupé (≈ 1 000 tests) :
+  contenu et traductions, chaque page dans chaque langue (menu, hreflang, CSP, aucun script ni police externe,
+  longueur des titres et descriptions), accueil, réservation, En images, avis, notes, langues, contrastes
+  clair/sombre, FAQ (données structurées), pages de fond, sitemap, 404.
 - `tests/sweep.py` : balayage de toutes les pages de 320 à 1366 px ; ne doit signaler aucun débordement.
 - Prérequis : `pip install playwright && playwright install chromium`.
 
@@ -206,6 +217,24 @@ Ce mode est invisible tant que l'on n'appuie pas sur le bouton ; la version à l
 
 Le détail, écrit pour Marc, est dans `docs/Guide-site-Domaine-du-Geisberg.pdf`.
 
+## Sécurité
+
+- Site statique : aucun formulaire ni donnée personnelle traités ici (la réservation est un cadre Nuitrésa,
+  sur leur domaine) ; aucun secret dans le dépôt (la clé Nuitrésa est publique par nature).
+- Chaque page porte une **politique de sécurité de contenu** (`<meta http-equiv="Content-Security-Policy">`,
+  générée par `build.py`) : scripts et cadres limités au site, à `public.nuit-resa.com` et à `www.hdmedia.fr` ;
+  aucun script en ligne (les textes passés aux scripts sont dans un bloc `application/json`). Pour ajouter un
+  service externe, il faut l'inscrire dans la CSP (`build.py`) et le justifier.
+- Polices servies par le site (`assets/fonts`, WOFF2, licence OFL) : aucune requête vers Google.
+- `src/htaccess` (dans le zip de livraison) : HTTPS forcé et `www` canonique, HSTS, `frame-ancestors` /
+  `X-Frame-Options`, `nosniff`, `Referrer-Policy`, `Permissions-Policy`, versions masquées, fichiers cachés
+  interdits, page 404, compression et cache. GitHub Pages ne permet pas ces en-têtes : le site de travail n'a
+  que la CSP en `<meta>`.
+- Scripts : `site.js` n'écoute les messages (`postMessage`) que de l'origine Nuitrésa et ne redimensionne que
+  les cadres des calendriers ; les liens externes portent `rel="noopener"`.
+- Après la mise en ligne : vérifier les en-têtes sur securityheaders.com / observatory.mozilla.org et le
+  certificat sur ssllabs.com ; faire supprimer l'ancien WordPress par l'hébergeur.
+
 ## Choix techniques (robustesse et vitesse)
 
 - Site statique, sans base de données ni dépendance JavaScript externe (hormis les cadres Nuitrésa : calendriers
@@ -226,4 +255,4 @@ Le détail, écrit pour Marc, est dans `docs/Guide-site-Domaine-du-Geisberg.pdf`
   Clévacances).
 - Photos d'illustration des environs et fond sonore : Wikimedia Commons, auteurs et licences listés dans
   `src/catalog/credits.json` et sur la page Mentions légales.
-- Polices : Playfair Display et Nunito Sans (Google Fonts).
+- Polices : Playfair Display et Nunito Sans (SIL Open Font License, servies par le site — `assets/fonts/LICENCE-POLICES.txt`).

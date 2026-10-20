@@ -36,18 +36,5 @@
     <p class="note" style="margin-top:14px">{{ v.visite_fallback }} <a href="{{ s.virtual_tour_https }}" rel="noopener" target="_blank">{{ v.visite_open }}</a></p>
   </div>
 </section>
-<script>
-(function(){
-/* Onglets : l'ancre choisit l'onglet ; la visite 360° (cadre externe) n'est chargée qu'à l'ouverture de son onglet. */
-var tabs=[].slice.call(document.querySelectorAll('.tabs [role=tab]')),panels=[].slice.call(document.querySelectorAll('.panel'));
-function open(id,push){if(!document.getElementById(id))id='diaporama';tabs.forEach(function(t){t.setAttribute('aria-selected',t.getAttribute('aria-controls')===id)});panels.forEach(function(p){p.hidden=p.id!==id});
- var f=document.querySelector('#visite iframe');if(id==='visite'&&f&&!f.src)f.src=f.getAttribute('data-src');
- if(id!=='diaporama'&&window.geisbergDiapos)window.geisbergDiapos.forEach(function(d){d.pause()});
- if(push)history.replaceState(null,'','#'+id)}
-tabs.forEach(function(t){t.addEventListener('click',function(e){e.preventDefault();open(t.getAttribute('aria-controls'),true);t.focus()})});
-window.addEventListener('hashchange',function(){open(location.hash.slice(1),false)});
-open(location.hash.slice(1)||'diaporama',false);
-
-})();
-</script>
+{# Le script des onglets est dans site.js (section « Onglets ») : aucun script en ligne, politique CSP. #}
 {% endblock %}

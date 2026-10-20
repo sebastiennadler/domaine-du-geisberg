@@ -27,6 +27,24 @@ def run(*cmd):
 
 run("tools/build.py", "--prod")
 run("tools/check.py")
+
+# Garde-fous avant livraison : rien du site de travail ne doit partir chez l'hébergeur.
+problems = []
+for f in DIST.rglob("*.html"):
+    h = f.read_text(encoding="utf-8")
+    redirect = 'http-equiv="refresh"' in h  # pages de renvoi des anciennes adresses : noindex voulu
+    for bad in ("data-note=", 'id="nbtn"', "Notes pour Marc", "github.io") + (() if redirect or f.name == "404.html" else ("noindex",)):
+        if bad in h:
+            problems.append(f"{f.relative_to(DIST)} : contient « {bad} »")
+    if "Content-Security-Policy" not in h:
+        problems.append(f"{f.relative_to(DIST)} : pas de politique de sécurité (CSP)")
+    if "<script>" in h or "<script " in h.replace('<script src=', '').replace('<script type="application/ld+json"', '').replace('<script type="application/json"', '').replace('<script async src=', ''):
+        problems.append(f"{f.relative_to(DIST)} : script en ligne (interdit par la CSP)")
+for must in (".htaccess", "404.html", "sitemap.xml", "robots.txt", "fonts"):
+    if not (DIST / must).exists():
+        problems.append(f"{must} manquant dans dist/")
+if problems:
+    sys.exit("Livraison refusée :\n  - " + "\n  - ".join(problems))
 OUT.mkdir(exist_ok=True)
 stamp = datetime.now().strftime("%Y-%m-%d-%H%M")
 base = OUT / f"domainedugeisberg-{stamp}"

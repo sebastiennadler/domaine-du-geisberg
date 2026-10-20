@@ -26,8 +26,8 @@
 <section class="wrap" id="gites"{{ note('todo') }}>
   <div class="sec-head"><div><div class="eyebrow">{{ h.gites_eyebrow }}</div><h2>{{ h.gites_h }}</h2><p class="lead">{{ h.gites_lead }}</p></div></div>
   <ul class="chips compact facts"{{ note('facts') }}>{% for f in h.facts %}<li>{{ f }}</li>{% endfor %}</ul>
-  <div class="gallery"{{ note('gites') }}>
-    {% for id in s.gites %}<a href="{{ src(id) }}" data-cap="{{ t.gites.captions[loop.index0] }}">{{ pic(id, t.gites.captions[loop.index0], '(min-width: 700px) 360px, 45vw') }}</a>{% endfor %}
+  <div class="gallery cols4"{{ note('gites') }}>
+    {% for id in s.gites %}<a href="{{ src(id) }}" data-cap="{{ t.gites.captions[loop.index0] }}">{{ pic(id, t.gites.captions[loop.index0], '(min-width: 700px) 270px, 45vw') }}</a>{% endfor %}
   </div>
   <p class="lead" style="max-width:none;margin-top:28px">{{ h.gites_p }}</p>
 </section>

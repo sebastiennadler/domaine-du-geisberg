@@ -1,0 +1,14 @@
+{# Page « introuvable » (français, avec les liens vers chaque langue) : servie pour toute adresse inconnue (GitHub Pages
+   automatiquement, Apache via ErrorDocument). build.py la rend avec rel = racine absolue du site, car elle peut
+   s'afficher à n'importe quelle profondeur d'adresse. #}
+{% extends "base.html" %}
+{% set m = ["Page introuvable – " + s.name, "Cette page n'existe pas ou plus."] %}
+{% block main %}
+<section class="wrap" style="padding-top:40px;min-height:50vh">
+  <div class="eyebrow">{{ ui.tagline }}</div>
+  <h1 style="font-size:clamp(30px,5vw,46px)">{{ t.notfound.h1 }}</h1>
+  <p class="lead">{{ t.notfound.p }}</p>
+  <div class="cta"><a class="btn btn-p" href="{{ rel }}index.html">{{ t.nav.index }}</a><a class="btn btn-o" href="{{ rel }}reservation.html#demande">{{ t.nav.book }}</a></div>
+  <p class="note" style="margin-top:28px">{% for code, name, flag, pfx in langs %}<a href="{{ rel }}{{ pfx }}index.html" lang="{{ code }}">{{ flag }} {{ name }}</a>{{ ' · ' if not loop.last }}{% endfor %}</p>
+</section>
+{% endblock %}

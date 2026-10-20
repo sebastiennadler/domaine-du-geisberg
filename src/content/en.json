@@ -2,7 +2,7 @@
   "meta": {
     "index": [
       "Domaine du Geisberg – Holiday gîtes in Varsberg, Moselle",
-      "Two identical 60 m² gîtes in Varsberg (Moselle), in the heart of nature on the edge of the forest: 1 to 4 guests, wheelchair accessible, private terrace, fibre Wi-Fi, pets welcome. Book direct."
+      "Two identical 60 m² gîtes in Varsberg (Moselle), on the edge of the forest: 1 to 4 guests, wheelchair accessible, terrace, fibre Wi-Fi, pets welcome. Book now."
     ],
     "le-domaine": [
       "The estate and surroundings – Domaine du Geisberg",
@@ -23,6 +23,22 @@
     "medias": [
       "In pictures – Domaine du Geisberg",
       "The estate and the gîtes in pictures: slideshow with birdsong, videos filmed on site, 360° virtual tour."
+    ],
+    "questions": [
+      "FAQ – Domaine du Geisberg, gîtes in Varsberg",
+      "Pets, babies, times, deposit, accessibility, weekends, payment, Wi-Fi, linen: answers to the questions we are asked before a booking at the Domaine du Geisberg."
+    ],
+    "gite-accessible-pmr-moselle": [
+      "Wheelchair-accessible gîte in Moselle – Domaine du Geisberg",
+      "Two single-storey gîtes with the Tourisme & Handicap label in Varsberg (Moselle): accessible shower room, walk-in shower, private entrance, terrace, nature."
+    ],
+    "gite-lac-de-creutzwald": [
+      "Gîte near Creutzwald lake – Domaine du Geisberg, Varsberg",
+      "Gîtes 6 km from Creutzwald lake and its water-sports centre, on the edge of the Warndt forest: swimming, sailing, fishing, hiking, a peaceful 2-hectare estate."
+    ],
+    "gites-saint-avold-sarrebruck": [
+      "Gîtes between Saint-Avold and Saarbrücken – Domaine du Geisberg",
+      "Two gîtes in Varsberg, 15 km from Saint-Avold, 30 minutes from Saarbrücken and 40 from Metz: a stay in eastern Moselle, on the German border, or an A4 stopover."
     ]
   },
   "nav": {
@@ -39,7 +55,8 @@
     "visite": "Tour of the gîte",
     "autour": "Around us",
     "alentours": "The surroundings",
-    "legal": "Legal notice"
+    "legal": "Legal notice",
+    "questions": "FAQ"
   },
   "ui": {
     "skip": "Skip to content",
@@ -344,7 +361,7 @@
     "editor_h": "Publisher",
     "editor": "Domaine du Geisberg, 6 rue du Geisberg, 57880 Varsberg, France. Publishing director: Marc Nadler. SIRET 478 447 790 00013 – VAT FR44 478447790.",
     "host_h": "Hosting",
-    "host": "Hosted by GitHub Pages (GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA).",
+    "host": "Hosted by DECLIC (company details to be completed: legal name, address, telephone).",
     "ip_h": "Intellectual property",
     "ip": "All texts, photographs and graphics on this site belong to the Domaine du Geisberg. Reproduction without permission is prohibited.",
     "privacy_h": "Personal data",
@@ -403,5 +420,220 @@
     "visite_lead": "Walk through the gîtes and the estate as if you were there: drag the picture, pinch to zoom, move from room to room.",
     "visite_fallback": "If the tour does not appear here,",
     "visite_open": "open it in a new tab"
+  },
+  "notfound": {
+    "h1": "Page not found",
+    "p": "This page does not exist or no longer exists. Go back to the home page, or to the Booking page to see availability."
+  },
+  "faq": {
+    "h1": "Frequently asked questions",
+    "lead": "Answers to the questions we are asked most often before a booking. For anything else, an e-mail or a phone call is enough.",
+    "more": "See the gîte details",
+    "items": [
+      [
+        "How many people can stay in a gîte?",
+        "Each gîte sleeps 1 to 4 people, in two bedrooms with two 90 × 190 cm beds (which can be pushed together). An extra bed in the living room is possible on request. As the two gîtes are identical, a group can book both: up to 8 people."
+      ],
+      [
+        "Can we bring our dog or cat?",
+        "Yes, pets are welcome, two at most, at no extra charge. They will love the two-hectare estate and the forest paths that start from the garden."
+      ],
+      [
+        "Are the gîtes wheelchair accessible?",
+        "Yes. The gîtes are single-storey, at garden level, with a private entrance and an accessible shower room (walk-in shower, toilet). They hold the Tourisme & Handicap label."
+      ],
+      [
+        "Can we book for a weekend?",
+        "Yes: 2 nights (Friday to Sunday) for €300, or 3 nights (Friday to Monday) for €350. Midweek, the minimum stay is 4 nights, arriving between Sunday and Thursday."
+      ],
+      [
+        "What does the price include?",
+        "Everything except the tourist tax: electricity, water, heating, fibre Wi-Fi, parking, sheets, beds made on arrival and the final cleaning — the gîte is simply left tidy, with the dishes washed and put away. Bath towels are not provided."
+      ],
+      [
+        "How do we book and pay?",
+        "The form on the Booking page offers you the gîte that is free on your dates; we confirm within 24 hours. A 25% deposit is requested on booking, the balance on site. We accept credit cards, Visa, MasterCard and French ANCV holiday vouchers. A €300 security deposit is requested."
+      ],
+      [
+        "What are the check-in and check-out times?",
+        "Check-in from 4 pm, check-out by 10 am. If you arrive late, let us know: we will work something out."
+      ],
+      [
+        "Is there baby equipment?",
+        "Yes: a cot, baby bath and high chair on request, at no extra charge. Just tell us when booking."
+      ],
+      [
+        "Is the Wi-Fi good?",
+        "Yes, the gîtes have a fibre connection. Wi-Fi is free and covers the apartment and the terrace."
+      ],
+      [
+        "Where can we shop?",
+        "The bakery is 300 m away, a restaurant 1 km, a grocery 3 km. The supermarkets of Creutzwald and Saint-Avold are 10 minutes away."
+      ],
+      [
+        "What is there to do around the gîte?",
+        "Walking trails start from the garden without crossing a road. Creutzwald lake and its water-sports centre are 6 km away, the Warndt forest all around; Metz, Saarbrücken and Luxembourg are day trips. See the Estate & surroundings page."
+      ],
+      [
+        "Can we smoke in the gîte?",
+        "No, the gîtes are non-smoking. The private terrace is there for that."
+      ]
+    ]
+  },
+  "landing": {
+    "gite-accessible-pmr-moselle": {
+      "short": "Wheelchair-accessible gîte",
+      "h1": "A wheelchair-accessible gîte in Moselle, in the heart of nature",
+      "lead": "Two single-storey gîtes with the Tourisme & Handicap label, in Varsberg, between forest and meadows.",
+      "photo": "hero/maison-prairie",
+      "photo2": "gites/salle-d-eau-pmr",
+      "photo2_alt": "The accessible shower room: walk-in shower and toilet",
+      "sections": [
+        [
+          "A home designed for everyone",
+          [
+            "Our two gîtes are on the garden level of the house, single-storey, with a private entrance and a parking space by the door. No steps between the car, the terrace and the living room.",
+            "The shower room is accessible: walk-in shower, adapted toilet, room to manoeuvre. The bedrooms, living room and kitchen are open and easy to move around. The gîtes hold the Tourisme & Handicap and Gîtes de France labels."
+          ]
+        ],
+        [
+          "Nature within reach",
+          [
+            "The two-hectare estate lies on the edge of the forest, at a place called Vogelsgesang — “birdsong”. The private terrace looks over the meadow; walking paths start from the garden without crossing a road.",
+            "Creutzwald lake, 6 km away, offers swimming and water sports; Saint-Avold, Metz and Saarbrücken are 15 to 40 minutes away."
+          ]
+        ],
+        [
+          "Book direct",
+          [
+            "The two gîtes are identical: book whichever is free on your dates, or both for a large family. We reply within 24 hours and gladly adapt to your needs: tell us what would help."
+          ]
+        ]
+      ],
+      "facts": [
+        [
+          "Access",
+          "Single-storey, private entrance, parking by the door"
+        ],
+        [
+          "Shower room",
+          "Walk-in shower, toilet, accessible"
+        ],
+        [
+          "Capacity",
+          "1 to 4 people per gîte, 2 identical gîtes"
+        ],
+        [
+          "Labels",
+          "Tourisme & Handicap, Gîtes de France, Clévacances"
+        ],
+        [
+          "Rates",
+          "From €300 for a weekend, €420 for a week, charges included"
+        ]
+      ]
+    },
+    "gite-lac-de-creutzwald": {
+      "short": "Near Creutzwald lake",
+      "h1": "A gîte near Creutzwald lake, on the edge of the Warndt forest",
+      "lead": "6 km from the water-sports centre, two peaceful gîtes on a two-hectare estate.",
+      "photo": "autour/panorama-geisberg",
+      "photo2": "autour/creutzwald-lac",
+      "photo2_alt": "Creutzwald lake",
+      "sections": [
+        [
+          "The lake ten minutes away",
+          [
+            "Creutzwald lake and its water-sports centre are 6 km from the gîte: supervised swimming in summer, sailing, paddle-boarding, fishing, a walk or bike ride around the lake, and a swimming pool in Creutzwald 7 km away. Tennis courts and a water park (Calypso, in Saarbrücken) complete the programme."
+          ]
+        ],
+        [
+          "The Warndt forest all around",
+          [
+            "The estate sits on the hill above Varsberg, on the edge of the Warndt forest, one of the large forests of eastern Moselle. Hiking and mountain-bike trails start from the garden without crossing a road; mountain bikes are available.",
+            "In the evening, dinner is on the terrace facing the meadow, with the horses and the birdsong that gave the place its name: Vogelsgesang."
+          ]
+        ],
+        [
+          "Two identical gîtes",
+          [
+            "60 m² each, 1 to 4 people, two bedrooms, fitted kitchen, accessible shower room, private terrace, fibre Wi-Fi, pets welcome. Book one of them, or both for a group."
+          ]
+        ]
+      ],
+      "facts": [
+        [
+          "Creutzwald lake",
+          "6 km — swimming, sailing, fishing"
+        ],
+        [
+          "Swimming pool",
+          "Creutzwald, 7 km"
+        ],
+        [
+          "Warndt forest",
+          "Trails from the garden"
+        ],
+        [
+          "Capacity",
+          "1 to 4 people per gîte"
+        ],
+        [
+          "Rates",
+          "From €300 for a weekend, €420 for a week"
+        ]
+      ]
+    },
+    "gites-saint-avold-sarrebruck": {
+      "short": "Between Saint-Avold and Saarbrücken",
+      "h1": "Two gîtes between Saint-Avold and Saarbrücken, in Varsberg",
+      "lead": "15 km from Saint-Avold, 30 minutes from Saarbrücken, 40 minutes from Metz: eastern Moselle in peace, a stone's throw from Germany.",
+      "photo": "hero/chevaux-soir",
+      "photo2": "autour/champs-eolienne",
+      "photo2_alt": "The fields above the estate, on the edge of the Warndt forest",
+      "sections": [
+        [
+          "Well placed, and quiet",
+          [
+            "Varsberg is a village in eastern Moselle between Saint-Avold and Creutzwald, a few minutes from the A4 motorway (exit Saint-Avold / Carling) and the German border. An ideal stopover on the Paris–Strasbourg route, or a base for exploring the region.",
+            "Saint-Avold railway station (TER Metz–Forbach) is 15 km away."
+          ]
+        ],
+        [
+          "Worth seeing within an hour",
+          [
+            "The Lorraine American Cemetery in Saint-Avold, the largest in Europe, 15 km away. The Völklingen ironworks, a UNESCO World Heritage site, 28 km. The Wendel mining museum in Petite-Rosselle, 31 km. The Centre Pompidou-Metz and the cathedral, 40 minutes. Saarbrücken, Luxembourg and the Bliesbruck archaeological park as day trips."
+          ]
+        ],
+        [
+          "A stay in the heart of nature",
+          [
+            "Our two identical gîtes are on the garden level of the house, on a two-hectare estate on the edge of the forest: private terrace, fitted kitchen, accessible shower room, fibre Wi-Fi, pets welcome. Hosts since 2007, we speak French, German and English."
+          ]
+        ]
+      ],
+      "facts": [
+        [
+          "Saint-Avold",
+          "15 km — TER station, American cemetery"
+        ],
+        [
+          "Saarbrücken",
+          "30 minutes"
+        ],
+        [
+          "Metz",
+          "40 minutes — Centre Pompidou-Metz"
+        ],
+        [
+          "A4 motorway",
+          "Exit Saint-Avold / Carling"
+        ],
+        [
+          "Rates",
+          "From €300 for a weekend, €420 for a week"
+        ]
+      ]
+    }
   }
 }

@@ -4,9 +4,11 @@ import asyncio, json, re, sys
 from pathlib import Path
 from playwright.async_api import async_playwright
 
-BASE = 'http://127.0.0.1:8111'  # serveur local sur dist/ (voir tests/run.sh)
+BASE = 'http://127.0.0.1:8111/domaine-du-geisberg'  # serveur local sur dist/, sous le même préfixe que GitHub Pages (voir tests/run.sh)
 ROOT = Path(__file__).resolve().parent.parent
-PAGES = ['index', 'reservation', 'le-domaine', 'medias', 'avis', 'mentions-legales']
+PAGES = ['index', 'reservation', 'le-domaine', 'medias', 'avis', 'mentions-legales', 'questions']
+LANDING = ['gite-accessible-pmr-moselle', 'gite-lac-de-creutzwald', 'gites-saint-avold-sarrebruck']  # fr, en, de seulement
+LANDING_DIRS = ['', 'en/', 'de/']
 MENU = ['index', 'reservation', 'le-domaine', 'medias', 'avis']
 DIRS = ['', 'en/', 'de/', 'es/', 'pt/', 'nl/', 'zh/']
 NRL = {'': 'FR', 'en/': 'EN', 'de/': 'DE', 'es/': 'ES', 'pt/': 'EN', 'nl/': 'EN', 'zh/': 'EN'}
@@ -39,12 +41,13 @@ def content_checks():
     for code in ['en', 'de', 'es', 'pt', 'nl', 'zh']:
         d = json.loads((ROOT / f'src/content/{code}.json').read_text(encoding='utf-8'))
         leaves = dict(walk(d))
-        missing = [k for k in fr_leaves if k not in leaves]
+        # les pages de fond (landing + leur meta) n'existent qu'en fr/en/de ; les identifiants de photos ne se traduisent pas
+        missing = [k for k in fr_leaves if k not in leaves and (code in ('en', 'de') or not (k.startswith('/landing/') or k.startswith('/meta/gite')))]
         ok(f'{code} : aucune clé manquante (sinon repli sur le français)', not missing, ', '.join(missing[:5]))
         # une valeur identique au français est suspecte, sauf noms propres, chiffres, adresses, codes
         same = [k for k, v in leaves.items() if k in fr_leaves and v == fr_leaves[k] and len(v) > 14
                 and not re.match(r'^[\d\s€%×,.:–\-h]+$', v) and not any(w in v for w in ['Varsberg', 'Geisberg', 'Nuitr', 'Gîtes de France', 'Clévacances', 'Tourisme & Handicap', 'Urielle', 'Agnès', 'Marc', 'Vogelsgesang', 'Airbnb', 'Abritel', 'http', '@', 'SIRET', 'TVA', 'Saint-Avold', 'Creutzwald', 'Nadler', 'Saarschleife', 'Playfair'])]
-        same = [k for k in same if not k.startswith('/legal') and not k.startswith('/domaine/sites') and '/links' not in k]
+        same = [k for k in same if not k.startswith('/legal') and not k.startswith('/domaine/sites') and '/links' not in k and not k.endswith(('/photo', '/photo2'))]
         ok(f'{code} : pas de texte resté en français', len(same) <= 2, ', '.join(same[:6]))
     todo = (ROOT / 'TODO.md').read_text(encoding='utf-8')
     ok('TODO.md : section « À demander à Marc » avec des clés de page', '## 4. À demander à Marc' in todo and len(re.findall(r'^- \[ \] \{\w+\} ', todo, re.M)) >= 10)
@@ -69,7 +72,7 @@ async def main():
 
         # 1. toutes les pages de toutes les langues : chargement, H1, menu à 5 entrées, logo, sans erreur JS
         for d in DIRS:
-            for pg in PAGES:
+            for pg in PAGES + (LANDING if d in LANDING_DIRS else []):
                 r = await page.goto(f'{BASE}/{d}{pg}.html', wait_until='domcontentloaded')
                 ok(f'{d}{pg}: HTTP 200', r.status == 200)
                 h1 = await page.locator('h1').count()
@@ -85,8 +88,29 @@ async def main():
                 logos = await page.evaluate("[...document.querySelectorAll('.brand img.logo')].map(i=>getComputedStyle(i).display)")
                 ok(f'{d}{pg}: logo clair affiché, sombre masqué', logos == ['block', 'none'], json.dumps(logos))
                 ok(f'{d}{pg}: favicon et icône Apple', await page.locator('link[rel="icon"][href$="favicon.png"]').count() == 1 and await page.locator('link[rel="apple-touch-icon"]').count() == 1)
-                ok(f'{d}{pg}: canonical + 7 hreflang + x-default', await page.locator('link[rel="canonical"]').count() == 1 and await page.locator('link[rel="alternate"][hreflang]').count() == 8)
-        ok('aucune erreur JavaScript sur les 42 pages', not js_errors, '; '.join(js_errors[:3]))
+                nalt = 4 if pg in LANDING else 8
+                ok(f'{d}{pg}: canonical + hreflang ({nalt - 1} langues + x-default)', await page.locator('link[rel="canonical"]').count() == 1 and await page.locator('link[rel="alternate"][hreflang]').count() == nalt)
+                # sécurité : politique CSP, aucun script en ligne, polices et scripts locaux seulement
+                csp = await page.get_attribute('meta[http-equiv="Content-Security-Policy"]', 'content')
+                ok(f'{d}{pg}: politique CSP', csp is not None and "script-src 'self' https://public.nuit-resa.com" in csp and "object-src 'none'" in csp)
+                inline = await page.evaluate("[...document.scripts].filter(s=>!s.src && !['application/ld+json','application/json'].includes(s.type)).length")
+                ok(f'{d}{pg}: aucun script en ligne', inline == 0, str(inline))
+                ext = await page.evaluate("[...document.querySelectorAll('script[src], link[rel=stylesheet][href], link[rel=preconnect]')].map(e=>e.src||e.href).filter(u=>!u.startsWith(location.origin) && !u.startsWith('https://public.nuit-resa.com'))")
+                ok(f'{d}{pg}: ni police ni script externe (hors Nuitrésa)', not ext, json.dumps(ext))
+                ok(f'{d}{pg}: theme.js chargé avant la feuille de style', await page.locator('head script[src*="js/theme.js"] + link[rel=stylesheet]').count() == 1)
+                # référencement : titre et description de longueur raisonnable
+                title = await page.title()
+                desc = await page.get_attribute('meta[name=description]', 'content')
+                ok(f'{d}{pg}: titre ≤ 70 et description ≤ 160 caractères', len(title) <= 70 and len(desc) <= 160, f'{len(title)} / {len(desc)}')
+        ok('aucune erreur JavaScript sur toutes les pages', not js_errors, '; '.join(js_errors[:3]))
+
+        # 1b. polices auto-hébergées : chargées depuis le site (réseau externe coupé, elles doivent quand même être disponibles)
+        await page.goto(f'{BASE}/index.html', wait_until='load')
+        await page.evaluate('document.fonts.ready')
+        fonts = await page.evaluate("[document.fonts.check(\"700 20px 'Playfair Display'\"), document.fonts.check(\"400 16px 'Nunito Sans'\"), document.fonts.check(\"800 16px 'Nunito Sans'\")]")
+        ok('polices Playfair Display et Nunito Sans servies par le site', all(fonts), json.dumps(fonts))
+        h1font = await page.evaluate("getComputedStyle(document.querySelector('h1')).fontFamily")
+        ok('H1 en Playfair Display', 'Playfair' in h1font, h1font)
 
         # 2. renvois des anciennes adresses, dans deux langues
         for d in ['', 'de/']:
@@ -231,7 +255,9 @@ async def main():
         ok('notes : pastilles et panneau après le clic', await page.is_visible('.nbub') and await page.is_visible('.npanel'))
         nn = await page.evaluate("[...document.querySelectorAll('[data-note]')].map(e=>e.getAttribute('data-note'))")
         ok('notes accueil : vue d\'ensemble (sans clé dans le TODO) + notes sur la fiche, l\'avis, les hôtes', any(n.startswith("Vue d'ensemble") for n in nn) and len(nn) >= 5, str(len(nn)))
-        ok('notes : aucune ne contient le mot de passe', not any('Uriellea' in n for n in nn))
+        # Sécurité : aucun identifiant ni mot de passe dans les notes (on cherche les formes « mot de passe : xxx »,
+        # « login : xxx » — jamais la valeur elle-même, qui ne doit exister nulle part dans le dépôt).
+        ok('notes : aucune ne contient un identifiant ou un mot de passe', not any(re.search(r'(mot de passe|password|login|identifiant)\s*[:=]\s*\S', n, re.I) for n in nn))
         for pg, must in [('reservation', 'Nuitrésa — à faire par Marc'), ('mentions-legales', 'logo'), ('medias', 'vidéos'), ('le-domaine', 'retraite'), ('avis', 'Airbnb')]:
             await page.goto(f'{BASE}/{pg}.html', wait_until='domcontentloaded')
             nn = await page.evaluate("[...document.querySelectorAll('[data-note]')].map(e=>e.getAttribute('data-note'))")
@@ -247,6 +273,31 @@ async def main():
         ok('langues : le menu déroulant s\'ouvre', await page.get_attribute('.langdd', 'open') is not None)
         await page.click('h1')
         ok('langues : clic ailleurs referme le menu', await page.get_attribute('.langdd', 'open') is None)
+
+        # 12. référencement : FAQ (données structurées), pages de fond en fr/en/de seulement, pied de page, sitemap, 404
+        await page.goto(f'{BASE}/questions.html', wait_until='domcontentloaded')
+        faq = await page.evaluate("JSON.parse([...document.querySelectorAll('script[type=\"application/ld+json\"]')].map(s=>s.textContent).find(t=>t.includes('FAQPage')))")
+        ok('FAQ : données structurées FAQPage avec 12 questions', faq['@type'] == 'FAQPage' and len(faq['mainEntity']) == 12 and all(q['acceptedAnswer']['text'] for q in faq['mainEntity']))
+        ok('FAQ : 12 tiroirs, le premier ouvert', await page.locator('.faq details').count() == 12 and await page.get_attribute('.faq details', 'open') is not None)
+        bc = await page.evaluate("[...document.querySelectorAll('script[type=\"application/ld+json\"]')].some(s=>s.textContent.includes('BreadcrumbList'))")
+        ok('FAQ : fil d\'Ariane (BreadcrumbList)', bc)
+        foot = await page.evaluate("[...document.querySelectorAll('.foot-links a')].map(a=>a.getAttribute('href'))")
+        ok('pied de page FR : FAQ + 3 pages de fond + mentions légales', foot[:4] == ['questions.html'] + [l + '.html' for l in LANDING] and 'mentions-legales.html' in foot, json.dumps(foot))
+        await page.goto(f'{BASE}/es/questions.html', wait_until='domcontentloaded')
+        foot = await page.evaluate("[...document.querySelectorAll('.foot-links a')].map(a=>a.getAttribute('href'))")
+        ok('pied de page ES : FAQ sans pages de fond', foot[0] == 'questions.html' and not any(l in h for h in foot for l in LANDING), json.dumps(foot))
+        r = await page.goto(f'{BASE}/es/gite-lac-de-creutzwald.html', wait_until='domcontentloaded')
+        ok('pages de fond : absentes en espagnol (404)', r.status == 404)
+        await page.goto(f'{BASE}/de/gite-accessible-pmr-moselle.html', wait_until='domcontentloaded')
+        ok('page de fond DE : H1, photo d\'illustration, faits, bouton Réserver', await page.locator('h1').count() == 1 and await page.locator('.page-hero img').count() >= 1 and await page.locator('dl.fiche div').count() >= 4 and await page.locator('a.btn[href="reservation.html#demande"]').count() >= 1)
+        sm = (ROOT / 'dist/sitemap.xml').read_text(encoding='utf-8')
+        ok('sitemap : versions linguistiques (xhtml:link) et pages de fond, sans mentions légales', 'xhtml:link rel="alternate" hreflang="de"' in sm and 'gite-lac-de-creutzwald.html' in sm and 'mentions-legales' not in sm and sm.count('<url>') >= 7 * 7 - 7 + 9)
+        rb = (ROOT / 'dist/robots.txt').read_text(encoding='utf-8')
+        ok('robots.txt : site de travail interdit aux moteurs (la version livrée les autorise)', 'Disallow: /' in rb)
+        r = await page.goto(f'{BASE}/404.html', wait_until='domcontentloaded')
+        ok('404 : page présente, non indexée, titre, liens absolus vers l\'accueil de chaque langue', r.status == 200 and await page.locator('meta[name=robots]').count() == 1 and 'introuvable' in (await page.title()).lower() and await page.locator('main a[href="/domaine-du-geisberg/index.html"]').count() >= 1 and await page.locator('main a[href="/domaine-du-geisberg/zh/index.html"]').count() == 1)
+        ok('404 : feuille de style et logo en chemin absolu', await page.locator('link[rel=stylesheet][href^="/domaine-du-geisberg/css/"]').count() == 1)
+        ok('404 : pas de canonical ni de hreflang', await page.locator('link[rel=canonical], link[rel=alternate][hreflang]').count() == 0)
 
         # 11. modes clair et sombre : contraste du texte courant, des boutons et des liens sur chaque page
         JS_CONTRAST = """(() => {
@@ -264,7 +315,7 @@ async def main():
           return bad;
         })()"""
         for theme in ['light', 'dark']:
-            for pg in PAGES:
+            for pg in PAGES + LANDING + ['404']:
                 await page.goto(f'{BASE}/{pg}.html', wait_until='domcontentloaded')
                 await page.evaluate(f"document.documentElement.setAttribute('data-theme','{theme}'); document.querySelectorAll('.reveal').forEach(e=>e.classList.add('in'))")
                 await page.wait_for_timeout(100)

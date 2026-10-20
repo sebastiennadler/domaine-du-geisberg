@@ -1,0 +1,27 @@
+{# Page de fond pour le référencement : un sujet, un mot-clé (gîte accessible PMR, lac de Creutzwald, entre Saint-Avold et Sarrebruck).
+   Contenu dans <langue>.json → landing[page] : short, h1, lead, photo, sections [[titre, paragraphe…]], facts, cta. #}
+{% extends "base.html" %}
+{% set l = t.landing[page] %}
+{% block main %}
+<div class="page-hero">{{ pic(l.photo, l.h1, '100vw', eager=True, cls='bg') }}
+  <div class="wrap"><div class="eyebrow" style="color:#E7C59A">{{ ui.tagline }}</div><h1>{{ l.h1 }}</h1><p class="lead">{{ l.lead }}</p></div>
+</div>
+<section class="wrap"{{ note('landing') }}>
+  <div class="cols" style="align-items:start">
+    <div>
+      {% for title, paragraphs in l.sections %}
+      <h2 style="margin:0 0 10px">{{ title }}</h2>
+      {% for p in paragraphs %}<p class="lead" style="max-width:none;margin:0 0 14px">{{ p }}</p>{% endfor %}
+      {% endfor %}
+      <div class="cta" style="margin-top:8px"><a class="btn btn-p" href="reservation.html#demande">{{ t.nav.book }}</a><a class="btn btn-o" href="index.html#gites">{{ ui.see_gites }}</a></div>
+    </div>
+    <div>
+      <div class="frame" style="aspect-ratio:4/3">{{ pic(l.photo2, l.photo2_alt, '(min-width: 860px) 540px, 100vw') }}</div>
+      <dl class="fiche" style="margin-top:18px">{% for k, v in l.facts %}<div><dt>{{ k }}</dt><dd>{{ v }}</dd></div>{% endfor %}</dl>
+    </div>
+  </div>
+</section>
+<section class="wrap" style="padding-top:0">
+  <div class="links-row"><a class="more" href="questions.html">{{ t.nav.questions }} →</a><a class="more" href="le-domaine.html#alentours">{{ t.nav.alentours }} →</a><a class="more" href="avis.html">{{ t.nav.avis }} →</a></div>
+</section>
+{% endblock %}

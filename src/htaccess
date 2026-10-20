@@ -1,0 +1,75 @@
+# Domaine du Geisberg — réglages Apache pour l'hébergement définitif (DECLIC).
+# Le site est 100 % statique : aucun PHP, aucune base de données, aucun formulaire traité ici.
+# Ce fichier est copié dans dist/.htaccess par « tools/build.py --prod » (donc dans le zip de livraison) ;
+# il se modifie dans src/htaccess. Chaque bloc est protégé par <IfModule> : si un module manque chez
+# l'hébergeur, le bloc est ignoré sans casser le site.
+
+AddDefaultCharset UTF-8
+<IfModule mod_mime.c>
+  AddType image/webp .webp
+  AddType font/woff2 .woff2
+  AddType application/manifest+json .webmanifest
+</IfModule>
+
+# ---------------------------------------------------------------------------------------------------
+# 1. HTTPS obligatoire et adresse canonique www.domainedugeisberg.fr (redirections 301)
+# ---------------------------------------------------------------------------------------------------
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteCond %{HTTPS} !=on
+  RewriteCond %{HTTP:X-Forwarded-Proto} !=https
+  RewriteRule ^ https://www.domainedugeisberg.fr%{REQUEST_URI} [R=301,L]
+  RewriteCond %{HTTP_HOST} ^domainedugeisberg\.fr$ [NC]
+  RewriteRule ^ https://www.domainedugeisberg.fr%{REQUEST_URI} [R=301,L]
+
+  # Redirections des adresses de l'ancien site (WordPress) : À COMPLÉTER AU MOMENT DE LA BASCULE (TODO.md § 3).
+  # Exemple : RewriteRule ^gites/?$ /index.html#gites [R=301,L,NE]
+</IfModule>
+
+# ---------------------------------------------------------------------------------------------------
+# 2. En-têtes de sécurité (la politique de contenu détaillée est dans chaque page, balise <meta> CSP)
+# ---------------------------------------------------------------------------------------------------
+<IfModule mod_headers.c>
+  # HTTPS imposé au navigateur pendant un an (à activer seulement quand le HTTPS fonctionne sur www. et sans www.)
+  Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
+  # pas d'inclusion du site dans un cadre ailleurs (vol d'interface), pas de devinette de type MIME
+  Header always set Content-Security-Policy "frame-ancestors 'self'"
+  Header always set X-Frame-Options "SAMEORIGIN"
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set Permissions-Policy "camera=(), microphone=(), geolocation=(), payment=(), usb=(), interest-cohort=()"
+  Header always set Cross-Origin-Opener-Policy "same-origin-allow-popups"
+  # ne pas annoncer les versions logicielles
+  Header always unset X-Powered-By
+  Header always unset Server
+</IfModule>
+
+# ---------------------------------------------------------------------------------------------------
+# 3. Fichiers cachés et sources : jamais servis
+# ---------------------------------------------------------------------------------------------------
+<IfModule mod_authz_core.c>
+  <FilesMatch "^\.">
+    Require all denied
+  </FilesMatch>
+</IfModule>
+Options -Indexes
+
+# ---------------------------------------------------------------------------------------------------
+# 4. Page 404, compression et cache (css/js portent une empreinte ?v=…, les images et polices ne changent pas de nom)
+# ---------------------------------------------------------------------------------------------------
+ErrorDocument 404 /404.html
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css text/plain text/xml application/javascript application/json image/svg+xml
+</IfModule>
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType text/html "access plus 1 hour"
+  ExpiresByType text/css "access plus 30 days"
+  ExpiresByType application/javascript "access plus 30 days"
+  ExpiresByType image/webp "access plus 1 year"
+  ExpiresByType image/png "access plus 1 year"
+  ExpiresByType image/jpeg "access plus 1 year"
+  ExpiresByType font/woff2 "access plus 1 year"
+  ExpiresByType video/mp4 "access plus 1 year"
+  ExpiresByType audio/mpeg "access plus 1 year"
+</IfModule>

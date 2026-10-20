@@ -2,15 +2,15 @@
   "meta": {
     "index": [
       "Domaine du Geisberg – Casas rurales en Varsberg, Mosela",
-      "Dos gîtes idénticos de 60 m² en Varsberg (Mosela), en plena naturaleza y junto al bosque: de 1 a 4 personas, accesibles, terraza privada, Wi-Fi de fibra, mascotas bienvenidas. Reserva directa."
+      "Dos gîtes idénticos de 60 m² en Varsberg (Mosela), junto al bosque: 1 a 4 personas, accesibles, terraza, Wi-Fi de fibra, mascotas bienvenidas. Reserva directa."
     ],
     "le-domaine": [
       "La finca y los alrededores – Domaine du Geisberg",
-      "Dos hectáreas de prados junto al bosque, en el paraje de Vogelsgesang, y todo lo que hay que ver cerca: lago de Creutzwald, bosque del Warndt, Völklingen, Metz, el Sarre."
+      "Dos hectáreas de prados junto al bosque, en el paraje de Vogelsgesang, y todo lo que hay que ver cerca: lago de Creutzwald, bosque del Warndt, Völklingen, Metz."
     ],
     "reservation": [
       "Disponibilidad, tarifas y reserva – Domaine du Geisberg",
-      "Calendarios de los dos gîtes, tarifas (fin de semana desde 300 €, semana 420 €), solicitud de reserva directa e itinerario para llegar a Varsberg, entre Saint-Avold y Creutzwald."
+      "Calendarios de los dos gîtes, tarifas (fin de semana desde 300 €, semana 420 €), solicitud de reserva directa e itinerario para llegar a Varsberg (Mosela)."
     ],
     "mentions-legales": [
       "Aviso legal – Domaine du Geisberg",
@@ -23,6 +23,10 @@
     "medias": [
       "En imágenes – Domaine du Geisberg",
       "La finca y los gîtes en imágenes: diaporama con canto de pájaros, vídeos grabados in situ, visita virtual en 360°."
+    ],
+    "questions": [
+      "Preguntas frecuentes – Domaine du Geisberg, Varsberg",
+      "Mascotas, bebés, horarios, fianza, accesibilidad, fines de semana, pago, wifi, ropa de cama: respuestas a las preguntas que nos hacen antes de reservar."
     ]
   },
   "nav": {
@@ -39,7 +43,8 @@
     "visite": "Visita del gîte",
     "autour": "Alrededores",
     "alentours": "Los alrededores",
-    "legal": "Aviso legal"
+    "legal": "Aviso legal",
+    "questions": "Preguntas frecuentes"
   },
   "ui": {
     "skip": "Ir al contenido",
@@ -344,7 +349,7 @@
     "editor_h": "Editor del sitio",
     "editor": "Domaine du Geisberg, 6 rue du Geisberg, 57880 Varsberg, Francia. Director de la publicación: Marc Nadler. SIRET 478 447 790 00013 – IVA FR44 478447790.",
     "host_h": "Alojamiento web",
-    "host": "Sitio alojado en GitHub Pages (GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, EE. UU.).",
+    "host": "Sitio alojado por DECLIC (datos por completar: razón social, dirección, teléfono).",
     "ip_h": "Propiedad intelectual",
     "ip": "Todos los textos, fotografías y elementos gráficos de este sitio pertenecen al Domaine du Geisberg. Queda prohibida su reproducción sin autorización.",
     "privacy_h": "Datos personales",
@@ -403,5 +408,64 @@
     "visite_lead": "Pasee por los gîtes y la finca como si estuviera allí: arrastre la imagen, pellizque para ampliar, pase de una habitación a otra.",
     "visite_fallback": "Si la visita no aparece aquí,",
     "visite_open": "ábrala en una nueva pestaña"
+  },
+  "notfound": {
+    "h1": "Página no encontrada",
+    "p": "Esta página no existe o ya no existe. Vuelva a la página de inicio o a la página de Reservas para ver la disponibilidad."
+  },
+  "faq": {
+    "h1": "Preguntas frecuentes",
+    "lead": "Respuestas a las preguntas que más nos hacen antes de una reserva. Para cualquier otra duda, basta con un correo o una llamada.",
+    "more": "Ver la ficha de las casas",
+    "items": [
+      [
+        "¿Cuántas personas pueden alojarse en cada casa?",
+        "Cada casa acoge de 1 a 4 personas, en dos dormitorios con dos camas de 90 × 190 cm (que se pueden juntar). Una cama supletoria en el salón es posible bajo petición. Como las dos casas son idénticas, un grupo puede reservar ambas: hasta 8 personas."
+      ],
+      [
+        "¿Podemos traer a nuestro perro o gato?",
+        "Sí, las mascotas son bienvenidas, dos como máximo, sin suplemento. Disfrutarán de la finca de dos hectáreas y de los senderos del bosque que salen del jardín."
+      ],
+      [
+        "¿Las casas son accesibles en silla de ruedas?",
+        "Sí. Las casas están en planta baja, a nivel del jardín, con entrada independiente y cuarto de baño accesible (ducha a ras de suelo, inodoro). Tienen el sello Tourisme & Handicap."
+      ],
+      [
+        "¿Se puede reservar un fin de semana?",
+        "Sí: 2 noches (de viernes a domingo) por 300 €, o 3 noches (de viernes a lunes) por 350 €. Entre semana, la estancia mínima es de 4 noches, con llegada de domingo a jueves."
+      ],
+      [
+        "¿Qué incluye el precio?",
+        "Todo salvo la tasa turística: electricidad, agua, calefacción, wifi por fibra, aparcamiento, sábanas, camas hechas a la llegada y limpieza final; la casa se deja simplemente ordenada, con la vajilla lavada y guardada. Las toallas de baño no se proporcionan."
+      ],
+      [
+        "¿Cómo se reserva y se paga?",
+        "El formulario de la página Reservas le propone la casa libre en sus fechas; confirmamos en 24 horas. Al reservar se pide un anticipo del 25 %, y el resto en el lugar. Aceptamos tarjeta de crédito, Visa, MasterCard y cheques vacaciones ANCV franceses. Se solicita una fianza de 300 €."
+      ],
+      [
+        "¿Cuáles son los horarios de llegada y salida?",
+        "Llegada a partir de las 16 h, salida antes de las 10 h. Si llega tarde, avísenos: encontraremos una solución."
+      ],
+      [
+        "¿Hay equipamiento para bebés?",
+        "Sí: cuna, bañera y trona bajo petición, sin suplemento. Basta con indicarlo al reservar."
+      ],
+      [
+        "¿El wifi funciona bien?",
+        "Sí, las casas tienen conexión de fibra. El wifi es gratuito y cubre el apartamento y la terraza."
+      ],
+      [
+        "¿Dónde se puede hacer la compra?",
+        "La panadería está a 300 m, un restaurante a 1 km y una tienda de alimentación a 3 km. Los supermercados de Creutzwald y Saint-Avold están a 10 minutos."
+      ],
+      [
+        "¿Qué se puede hacer en los alrededores?",
+        "Los senderos salen del jardín sin cruzar ninguna carretera. El lago de Creutzwald y su base náutica están a 6 km, el bosque del Warndt rodea la finca; Metz, Saarbrücken y Luxemburgo son excursiones de un día. Vea la página La finca y los alrededores."
+      ],
+      [
+        "¿Se puede fumar en la casa?",
+        "No, las casas son para no fumadores. Para eso está la terraza privada."
+      ]
+    ]
   }
 }

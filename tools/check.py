@@ -44,12 +44,20 @@ class Collector(HTMLParser):
                 self.img_issues.append((a.get("src", "?"), missing))
 
 
+BASE_PATHS = ("/domaine-du-geisberg/", "/")  # racines absolues possibles (site de travail GitHub Pages, hébergeur)
+
+
 def local(url):
-    """Chemin relatif local, ou None si l'URL est externe / mailto / tel / ancre."""
+    """Chemin relatif local, ou None si l'URL est externe / mailto / tel / ancre.
+    Un chemin absolu (page 404) est ramené à la racine de dist/."""
     u = urlsplit(url)
     if u.scheme or url.startswith(("#", "mailto:", "tel:", "data:")):
         return None
-    return unquote(u.path), u.fragment
+    path = unquote(u.path)
+    for base in BASE_PATHS:
+        if path.startswith(base):
+            return str(ROOT / path[len(base):]), u.fragment
+    return path, u.fragment
 
 
 errors, warnings = [], []

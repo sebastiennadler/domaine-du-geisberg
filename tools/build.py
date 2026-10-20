@@ -33,7 +33,7 @@ DIST = ROOT / "dist"
 SITE_URL = "https://www.domainedugeisberg.fr"
 
 # dossiers copiés tels quels dans dist/ : (source, nom dans dist/)
-STATIC = [(SRC / "css", "css"), (SRC / "js", "js"), (ASSETS / "img", "img"),
+STATIC = [(SRC / "css", "css"), (SRC / "js", "js"), (ASSETS / "img", "img"), (ASSETS / "fonts", "fonts"),
           (ASSETS / "videos", "videos"), (ASSETS / "audio", "audio")]
 
 LANGS = [  # ordre demandé : FR, EN, DE, ES, PT, NL, ZH
@@ -45,7 +45,26 @@ LANGS = [  # ordre demandé : FR, EN, DE, ES, PT, NL, ZH
     ("nl", "Nederlands", "🇳🇱", "nl/"),
     ("zh", "中文", "🇨🇳", "zh/"),
 ]
-PAGES = ["index", "reservation", "le-domaine", "medias", "avis", "mentions-legales"]
+PAGES = ["index", "reservation", "le-domaine", "medias", "avis", "mentions-legales", "questions",
+         "gite-accessible-pmr-moselle", "gite-lac-de-creutzwald", "gites-saint-avold-sarrebruck"]
+# pages de fond (référencement) : seulement dans les langues des marchés visés ; les autres pages existent en 7 langues
+PAGE_LANGS = {
+    "gite-accessible-pmr-moselle": ["fr", "en", "de"],
+    "gite-lac-de-creutzwald": ["fr", "en", "de"],
+    "gites-saint-avold-sarrebruck": ["fr", "en", "de"],
+}
+# gabarit utilisé par page quand ce n'est pas pages/<page>.html
+PAGE_TEMPLATE = {
+    "gite-accessible-pmr-moselle": "pages/landing.html",
+    "gite-lac-de-creutzwald": "pages/landing.html",
+    "gites-saint-avold-sarrebruck": "pages/landing.html",
+}
+NO_SITEMAP = {"mentions-legales"}
+
+
+def langs_for(page):
+    return [l for l in LANGS if l[0] in PAGE_LANGS.get(page, [c for c, *_ in LANGS])]
+
 # anciennes adresses conservées : chacune renvoie vers la page (et l'ancre) qui la remplace, avec le libellé du menu
 REDIRECTS = {
     "gites": ("index.html#gites", "gites"),
@@ -81,7 +100,8 @@ def marc_notes_from_todo():
         if not m:
             continue
         key = m.group(1) or ("widget" if section.startswith("5.") else "todo")
-        notes.setdefault(key, []).append(m.group(2).strip())
+        text = re.sub(r"\*\*(.+?)\*\*", r"\1", m.group(2)).replace("`", "").strip()  # sans la mise en forme Markdown
+        notes.setdefault(key, []).append(text)
     out = {}
     for key, items in notes.items():
         head = "Nuitrésa — à faire par Marc :" if key == "widget" else ("Vue d'ensemble — ce qu'il reste à faire :" if key == "todo" else None)
@@ -133,7 +153,28 @@ def main():
     def digest(path):
         return hashlib.sha1(path.read_bytes()).hexdigest()[:8]
 
-    assets = {"css": digest(SRC / "css" / "style.css"), "js": digest(SRC / "js" / "site.js")}
+    assets = {"css": digest(SRC / "css" / "style.css"), "js": digest(SRC / "js" / "site.js"),
+              "theme": digest(SRC / "js" / "theme.js")}
+
+    # Politique de sécurité de contenu (CSP), posée en <meta> dans chaque page (GitHub Pages n'accepte pas d'en-têtes ;
+    # le .htaccess livré à l'hébergeur ajoute ce que le <meta> ne peut pas porter : frame-ancestors, HSTS).
+    # Règle : aucun script en ligne dans les gabarits ; tout script est un fichier de js/ ou vient des hôtes ci-dessous.
+    nr = shared["nuitresa_public"]
+    tour = "https://" + shared["virtual_tour_https"].split("/")[2]
+    csp = "; ".join([
+        "default-src 'self'",
+        f"script-src 'self' {nr}",  # site.js, theme.js + chargeur du formulaire Nuitrésa
+        "style-src 'self' 'unsafe-inline'",  # attributs style des gabarits + feuille injectée par le widget Nuitrésa
+        f"img-src 'self' data: {nr}",
+        "font-src 'self'",
+        "media-src 'self'",
+        f"frame-src {nr} {tour}",  # formulaire et calendriers Nuitrésa, visite 360°
+        f"connect-src 'self' {nr}",
+        "object-src 'none'",
+        "base-uri 'self'",
+        "form-action 'self'",
+        "upgrade-insecure-requests",
+    ])
 
     def deep_merge(base, over):
         out = dict(base)
@@ -201,40 +242,63 @@ def main():
             images=images,
             notes=(code == "fr" and not opts.prod),  # mode « Notes pour Marc » : FR, site de travail seulement
             marc_notes=marc_notes,
+            prod=opts.prod,
+            csp=csp,
             nr_lang={"fr": "FR", "en": "EN", "de": "DE", "es": "ES"}.get(code, "EN"),  # langues des cadres Nuitrésa
             **image_helpers(rel),
         )
         for page in PAGES:
-            tpl = env.get_template(f"pages/{page}.html")
+            if code not in [l[0] for l in langs_for(page)]:
+                continue
+            tpl = env.get_template(PAGE_TEMPLATE.get(page, f"pages/{page}.html"))
             html = tpl.render(
                 page=page,
+                page_langs=langs_for(page),
                 canonical=f"{SITE_URL}/{prefix}{'' if page=='index' else page+'.html'}",
                 fallback=(code != "fr" and code not in contents),
                 **common,
             )
             write(outdir / f"{page}.html", html)
             built += 1
+        if code == "fr":
+            # page « introuvable » (GitHub Pages la sert automatiquement ; sur un autre hébergeur : ErrorDocument 404 /404.html)
+            # Servie à n'importe quelle profondeur d'adresse : tous ses liens sont absolus (racine du site de travail
+            # « /domaine-du-geisberg/ » sur GitHub Pages, « / » chez l'hébergeur).
+            base_path = "/" if opts.prod else "/domaine-du-geisberg/"
+            html = env.get_template("pages/404.html").render(page="404", page_langs=LANGS, canonical=f"{SITE_URL}/404.html",
+                                                            fallback=False, **dict(common, rel=base_path, **image_helpers(base_path)))
+            write(DIST / "404.html", html)
         for old, (target, label_key) in REDIRECTS.items():
             html = env.get_template("partials/_redirect.html").render(target=target, label=c["nav"][label_key], **common)
             write(outdir / f"{old}.html", html)
 
-    # sitemap + robots
-    urls = []
-    for code, name, flag, prefix in LANGS:
-        for page in PAGES:
-            if page == "mentions-legales":
-                continue
-            urls.append(f"{SITE_URL}/{prefix}{'' if page=='index' else page+'.html'}")
+    # sitemap (avec les versions linguistiques de chaque page, pour Google) + robots
+    def loc(prefix, page):
+        return f"{SITE_URL}/{prefix}{'' if page=='index' else page+'.html'}"
+
     sm = [
         '<?xml version="1.0" encoding="UTF-8"?>',
-        '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
+        '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">',
     ]
-    sm += [f"  <url><loc>{u}</loc></url>" for u in urls]
+    for page in PAGES:
+        if page in NO_SITEMAP:
+            continue
+        alts = [(code, prefix) for code, name, flag, prefix in langs_for(page)]
+        for code, prefix in alts:
+            sm.append(f"  <url><loc>{loc(prefix, page)}</loc>")
+            for c2, p2 in alts:
+                sm.append(f'    <xhtml:link rel="alternate" hreflang="{c2}" href="{loc(p2, page)}"/>')
+            sm.append(f'    <xhtml:link rel="alternate" hreflang="x-default" href="{loc("", page)}"/>')
+            sm.append("  </url>")
     sm.append("</urlset>")
     (DIST / "sitemap.xml").write_text("\n".join(sm) + "\n", encoding="utf-8")
-    (DIST / "robots.txt").write_text(
-        f"User-agent: *\nAllow: /\nSitemap: {SITE_URL}/sitemap.xml\n", encoding="utf-8"
-    )
+    if opts.prod:
+        (DIST / "robots.txt").write_text(f"User-agent: *\nAllow: /\nSitemap: {SITE_URL}/sitemap.xml\n", encoding="utf-8")
+    else:  # site de travail : hors des moteurs de recherche (pas de contenu en double avec le site définitif)
+        (DIST / "robots.txt").write_text("User-agent: *\nDisallow: /\n", encoding="utf-8")
+    if opts.prod:
+        # réglages Apache pour l'hébergeur (HTTPS forcé, en-têtes de sécurité, cache) : version livrée seulement
+        shutil.copy(SRC / "htaccess", DIST / ".htaccess")
     mode = "version à livrer (sans notes)" if opts.prod else "site de travail (avec notes)"
     print(f"{built} pages générées dans dist/ — {mode} ({len(contents)} langues traduites, repli FR pour les autres)")
 

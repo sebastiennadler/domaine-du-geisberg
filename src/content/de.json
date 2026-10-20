@@ -2,7 +2,7 @@
   "meta": {
     "index": [
       "Domaine du Geisberg – Ferienwohnungen in Varsberg, Lothringen",
-      "Zwei identische Ferienwohnungen (60 m²) in Varsberg (Moselle), mitten in der Natur am Waldrand: 1 bis 4 Personen, barrierefrei, eigene Terrasse, Glasfaser-WLAN, Haustiere willkommen. Direkt buchen."
+      "Zwei identische Ferienwohnungen (60 m²) in Varsberg (Lothringen), am Waldrand: 1 bis 4 Personen, barrierefrei, Terrasse, Glasfaser-WLAN, Haustiere willkommen."
     ],
     "le-domaine": [
       "Das Anwesen und die Umgebung – Domaine du Geisberg",
@@ -10,7 +10,7 @@
     ],
     "reservation": [
       "Verfügbarkeit, Preise und Buchung – Domaine du Geisberg",
-      "Belegungskalender beider Wohnungen, Preise (Wochenende ab 300 €, Woche 420 €), Buchungsanfrage ohne Vermittler und Anfahrt nach Varsberg, zwischen Saint-Avold und Creutzwald."
+      "Belegungskalender beider Wohnungen, Preise (Wochenende ab 300 €, Woche 420 €), Buchungsanfrage ohne Vermittler und Anfahrt nach Varsberg (Lothringen)."
     ],
     "mentions-legales": [
       "Impressum – Domaine du Geisberg",
@@ -23,6 +23,22 @@
     "medias": [
       "In Bildern – Domaine du Geisberg",
       "Anwesen und Ferienwohnungen in Bildern: Diashow mit Vogelgesang, vor Ort gedrehte Videos, virtueller 360°-Rundgang."
+    ],
+    "questions": [
+      "Häufige Fragen – Domaine du Geisberg, Varsberg",
+      "Haustiere, Babys, Zeiten, Kaution, Barrierefreiheit, Wochenende, Zahlung, WLAN, Wäsche: Antworten auf die Fragen, die uns vor einer Buchung gestellt werden."
+    ],
+    "gite-accessible-pmr-moselle": [
+      "Barrierefreie Ferienwohnung in Lothringen – Domaine du Geisberg",
+      "Zwei ebenerdige Ferienwohnungen mit dem Label Tourisme & Handicap in Varsberg (Lothringen): barrierefreies Duschbad, eigener Eingang, Terrasse, Natur."
+    ],
+    "gite-lac-de-creutzwald": [
+      "Ferienwohnung am Creutzwalder See – Domaine du Geisberg",
+      "Ferienwohnungen 6 km vom Creutzwalder See und seinem Wassersportzentrum, am Rand des Warndt: Baden, Segeln, Angeln, Wandern, die Ruhe eines 2-Hektar-Anwesens."
+    ],
+    "gites-saint-avold-sarrebruck": [
+      "Ferienwohnungen zwischen Saint-Avold und Saarbrücken – Geisberg",
+      "Zwei Ferienwohnungen in Varsberg, 15 km von Saint-Avold, 30 Minuten von Saarbrücken und 40 von Metz: Urlaub in Ostlothringen oder Zwischenstopp an der A4."
     ]
   },
   "nav": {
@@ -39,7 +55,8 @@
     "visite": "Rundgang",
     "autour": "Umgebung",
     "alentours": "Die Umgebung",
-    "legal": "Impressum"
+    "legal": "Impressum",
+    "questions": "Häufige Fragen"
   },
   "ui": {
     "skip": "Zum Inhalt springen",
@@ -344,7 +361,7 @@
     "editor_h": "Herausgeber",
     "editor": "Domaine du Geisberg, 6 rue du Geisberg, 57880 Varsberg, Frankreich. Verantwortlich: Marc Nadler. SIRET 478 447 790 00013 – USt-IdNr. FR44 478447790.",
     "host_h": "Hosting",
-    "host": "Gehostet bei GitHub Pages (GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA).",
+    "host": "Gehostet bei DECLIC (Angaben zu ergänzen: Firma, Anschrift, Telefon).",
     "ip_h": "Urheberrecht",
     "ip": "Alle Texte, Fotos und Grafiken dieser Website gehören der Domaine du Geisberg. Jede Vervielfältigung ohne Genehmigung ist untersagt.",
     "privacy_h": "Datenschutz",
@@ -403,5 +420,220 @@
     "visite_lead": "Gehen Sie durch die Wohnungen und über das Anwesen, als wären Sie da: Bild ziehen, zum Zoomen auseinanderziehen, von Raum zu Raum wechseln.",
     "visite_fallback": "Wird der Rundgang hier nicht angezeigt,",
     "visite_open": "in einem neuen Tab öffnen"
+  },
+  "notfound": {
+    "h1": "Seite nicht gefunden",
+    "p": "Diese Seite gibt es nicht oder nicht mehr. Zurück zur Startseite, oder zur Buchungsseite für die Verfügbarkeit."
+  },
+  "faq": {
+    "h1": "Häufige Fragen",
+    "lead": "Antworten auf die Fragen, die uns vor einer Buchung am häufigsten gestellt werden. Für alles andere genügt eine E-Mail oder ein Anruf.",
+    "more": "Zur Beschreibung der Wohnungen",
+    "items": [
+      [
+        "Wie viele Personen können in einer Wohnung übernachten?",
+        "Jede Wohnung ist für 1 bis 4 Personen gedacht, in zwei Schlafzimmern mit je zwei Betten von 90 × 190 cm (zusammenstellbar). Ein Zusatzbett im Wohnraum ist auf Anfrage möglich. Da beide Wohnungen identisch sind, kann eine Gruppe beide buchen: bis zu 8 Personen."
+      ],
+      [
+        "Dürfen wir Hund oder Katze mitbringen?",
+        "Ja, Haustiere sind willkommen, höchstens zwei, ohne Aufpreis. Das zwei Hektar große Anwesen und die Waldwege, die am Garten beginnen, werden ihnen gefallen."
+      ],
+      [
+        "Sind die Wohnungen barrierefrei?",
+        "Ja. Die Wohnungen sind ebenerdig im Gartengeschoss, mit eigenem Eingang und barrierefreiem Duschbad (bodengleiche Dusche, WC). Sie tragen das Label Tourisme & Handicap."
+      ],
+      [
+        "Kann man ein Wochenende buchen?",
+        "Ja: 2 Nächte (Freitag bis Sonntag) für 300 €, oder 3 Nächte (Freitag bis Montag) für 350 €. Unter der Woche beträgt der Mindestaufenthalt 4 Nächte, mit Anreise zwischen Sonntag und Donnerstag."
+      ],
+      [
+        "Was ist im Preis enthalten?",
+        "Alles außer der Kurtaxe: Strom, Wasser, Heizung, Glasfaser-WLAN, Parkplatz, Bettwäsche, bezogene Betten bei Anreise und die Endreinigung – die Wohnung wird einfach aufgeräumt übergeben, Geschirr gespült und weggeräumt. Badetücher sind nicht inklusive."
+      ],
+      [
+        "Wie buchen und bezahlen wir?",
+        "Das Formular auf der Buchungsseite schlägt Ihnen die an Ihren Daten freie Wohnung vor; wir bestätigen innerhalb von 24 Stunden. Bei der Buchung wird eine Anzahlung von 25 % fällig, der Rest vor Ort. Wir akzeptieren Kreditkarten, Visa, MasterCard und französische ANCV-Urlaubsschecks. Eine Kaution von 300 € wird verlangt."
+      ],
+      [
+        "Wann sind An- und Abreise?",
+        "Anreise ab 16 Uhr, Abreise bis 10 Uhr. Wenn Sie spät ankommen, sagen Sie uns Bescheid: wir finden eine Lösung."
+      ],
+      [
+        "Gibt es Babyausstattung?",
+        "Ja: Kinderbett, Babybadewanne und Hochstuhl auf Anfrage, ohne Aufpreis. Sagen Sie es uns einfach bei der Buchung."
+      ],
+      [
+        "Ist das WLAN gut?",
+        "Ja, die Wohnungen haben Glasfaseranschluss. Das WLAN ist kostenlos und deckt Wohnung und Terrasse ab."
+      ],
+      [
+        "Wo kann man einkaufen?",
+        "Die Bäckerei ist 300 m entfernt, ein Restaurant 1 km, ein Lebensmittelgeschäft 3 km. Die Supermärkte von Creutzwald und Saint-Avold sind 10 Minuten entfernt."
+      ],
+      [
+        "Was kann man in der Umgebung unternehmen?",
+        "Wanderwege beginnen am Garten, ohne Straßenüberquerung. Der Creutzwalder See mit Wassersportzentrum ist 6 km entfernt, der Warndt liegt rundherum; Metz, Saarbrücken und Luxemburg sind Tagesausflüge. Siehe die Seite Das Anwesen & die Umgebung."
+      ],
+      [
+        "Darf man in der Wohnung rauchen?",
+        "Nein, die Wohnungen sind Nichtraucherwohnungen. Dafür gibt es die eigene Terrasse."
+      ]
+    ]
+  },
+  "landing": {
+    "gite-accessible-pmr-moselle": {
+      "short": "Barrierefreie Ferienwohnung",
+      "h1": "Eine barrierefreie Ferienwohnung in Lothringen, mitten in der Natur",
+      "lead": "Zwei ebenerdige Ferienwohnungen mit dem Label Tourisme & Handicap, in Varsberg, zwischen Wald und Wiesen.",
+      "photo": "hero/maison-prairie",
+      "photo2": "gites/salle-d-eau-pmr",
+      "photo2_alt": "Das barrierefreie Duschbad: bodengleiche Dusche und WC",
+      "sections": [
+        [
+          "Eine Wohnung für alle",
+          [
+            "Unsere beiden Wohnungen liegen ebenerdig im Gartengeschoss des Hauses, mit eigenem Eingang und Parkplatz vor der Tür. Keine Stufe zwischen Auto, Terrasse und Wohnraum.",
+            "Das Duschbad ist barrierefrei: bodengleiche Dusche, angepasstes WC, Bewegungsfläche. Schlafzimmer, Wohnraum und Küche sind offen und leicht zu befahren. Die Wohnungen tragen die Labels Tourisme & Handicap und Gîtes de France."
+          ]
+        ],
+        [
+          "Die Natur vor der Tür",
+          [
+            "Das zwei Hektar große Anwesen liegt am Waldrand, an einem Ort namens Vogelsgesang. Die eigene Terrasse blickt auf die Wiese; Spazierwege beginnen am Garten, ohne Straßenüberquerung.",
+            "Der Creutzwalder See, 6 km entfernt, bietet Baden und Wassersport; Saint-Avold, Metz und Saarbrücken sind 15 bis 40 Minuten entfernt."
+          ]
+        ],
+        [
+          "Direkt buchen",
+          [
+            "Beide Wohnungen sind identisch: Buchen Sie die an Ihren Daten freie, oder beide für eine große Familie. Wir antworten innerhalb von 24 Stunden und stellen uns gern auf Ihre Bedürfnisse ein: Sagen Sie uns, was Ihnen hilft."
+          ]
+        ]
+      ],
+      "facts": [
+        [
+          "Zugang",
+          "Ebenerdig, eigener Eingang, Parkplatz vor der Tür"
+        ],
+        [
+          "Duschbad",
+          "Bodengleiche Dusche, WC, barrierefrei"
+        ],
+        [
+          "Belegung",
+          "1 bis 4 Personen pro Wohnung, 2 identische Wohnungen"
+        ],
+        [
+          "Labels",
+          "Tourisme & Handicap, Gîtes de France, Clévacances"
+        ],
+        [
+          "Preise",
+          "Ab 300 € pro Wochenende, 420 € pro Woche, Nebenkosten inklusive"
+        ]
+      ]
+    },
+    "gite-lac-de-creutzwald": {
+      "short": "Am Creutzwalder See",
+      "h1": "Eine Ferienwohnung am Creutzwalder See, am Rand des Warndt",
+      "lead": "6 km vom Wassersportzentrum, zwei ruhige Wohnungen auf einem zwei Hektar großen Anwesen.",
+      "photo": "autour/panorama-geisberg",
+      "photo2": "autour/creutzwald-lac",
+      "photo2_alt": "Der Creutzwalder See",
+      "sections": [
+        [
+          "Der See in zehn Minuten",
+          [
+            "Der Creutzwalder See mit seinem Wassersportzentrum ist 6 km von der Wohnung entfernt: bewachtes Baden im Sommer, Segeln, Stand-up-Paddling, Angeln, Seerunde zu Fuß oder mit dem Rad, dazu ein Schwimmbad in Creutzwald (7 km). Tennisplätze und ein Erlebnisbad (Calypso in Saarbrücken) ergänzen das Programm."
+          ]
+        ],
+        [
+          "Der Warndt rundherum",
+          [
+            "Das Anwesen liegt auf dem Hügel über Varsberg, am Rand des Warndt, eines der großen Waldgebiete Ostlothringens. Wander- und Mountainbikewege beginnen am Garten, ohne Straßenüberquerung; Mountainbikes stehen zur Verfügung.",
+            "Abends isst man auf der Terrasse mit Blick auf die Wiese, mit den Pferden und dem Vogelgesang, der dem Ort seinen Namen gab: Vogelsgesang."
+          ]
+        ],
+        [
+          "Zwei identische Wohnungen",
+          [
+            "Je 60 m², 1 bis 4 Personen, zwei Schlafzimmer, Einbauküche, barrierefreies Duschbad, eigene Terrasse, Glasfaser-WLAN, Haustiere willkommen. Buchen Sie eine der beiden – oder beide für eine Gruppe."
+          ]
+        ]
+      ],
+      "facts": [
+        [
+          "Creutzwalder See",
+          "6 km – Baden, Segeln, Angeln"
+        ],
+        [
+          "Schwimmbad",
+          "Creutzwald, 7 km"
+        ],
+        [
+          "Warndt",
+          "Wege ab dem Garten"
+        ],
+        [
+          "Belegung",
+          "1 bis 4 Personen pro Wohnung"
+        ],
+        [
+          "Preise",
+          "Ab 300 € pro Wochenende, 420 € pro Woche"
+        ]
+      ]
+    },
+    "gites-saint-avold-sarrebruck": {
+      "short": "Zwischen Saint-Avold und Saarbrücken",
+      "h1": "Zwei Ferienwohnungen zwischen Saint-Avold und Saarbrücken, in Varsberg",
+      "lead": "15 km von Saint-Avold, 30 Minuten von Saarbrücken, 40 Minuten von Metz: der Osten Lothringens in aller Ruhe, direkt hinter der Grenze.",
+      "photo": "hero/chevaux-soir",
+      "photo2": "autour/champs-eolienne",
+      "photo2_alt": "Die Felder oberhalb des Anwesens, am Rand des Warndt",
+      "sections": [
+        [
+          "Gut gelegen und ruhig",
+          [
+            "Varsberg ist ein Dorf in Ostlothringen zwischen Saint-Avold und Creutzwald, wenige Minuten von der Autobahn A4 (Ausfahrt Saint-Avold / Carling) und der deutschen Grenze. Ideal als Zwischenstopp auf der Strecke Paris–Straßburg oder als Ausgangspunkt für die Region.",
+            "Der Bahnhof Saint-Avold (TER Metz–Forbach) ist 15 km entfernt."
+          ]
+        ],
+        [
+          "Sehenswertes in weniger als einer Stunde",
+          [
+            "Der amerikanische Soldatenfriedhof von Saint-Avold, der größte Europas, 15 km. Die Völklinger Hütte, UNESCO-Welterbe, 28 km. Das Bergbaumuseum Les Mineurs Wendel in Petite-Rosselle, 31 km. Das Centre Pompidou-Metz und die Kathedrale, 40 Minuten. Saarbrücken, Luxemburg und der Archäologiepark Bliesbruck als Tagesausflüge."
+          ]
+        ],
+        [
+          "Urlaub mitten in der Natur",
+          [
+            "Unsere beiden identischen Wohnungen liegen im Gartengeschoss des Hauses auf einem zwei Hektar großen Anwesen am Waldrand: eigene Terrasse, Einbauküche, barrierefreies Duschbad, Glasfaser-WLAN, Haustiere willkommen. Als Gastgeber seit 2007 sprechen wir Französisch, Deutsch und Englisch."
+          ]
+        ]
+      ],
+      "facts": [
+        [
+          "Saint-Avold",
+          "15 km – Bahnhof, amerikanischer Soldatenfriedhof"
+        ],
+        [
+          "Saarbrücken",
+          "30 Minuten"
+        ],
+        [
+          "Metz",
+          "40 Minuten – Centre Pompidou-Metz"
+        ],
+        [
+          "Autobahn A4",
+          "Ausfahrt Saint-Avold / Carling"
+        ],
+        [
+          "Preise",
+          "Ab 300 € pro Wochenende, 420 € pro Woche"
+        ]
+      ]
+    }
   }
 }

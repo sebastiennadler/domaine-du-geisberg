@@ -25,6 +25,9 @@ sont des interprétations en attente de validation.
   **Marc** = propriétaire, valide les contenus, règle Nuitrésa ; **Claude** = exécute, documente, alerte.
 - **Site de travail** : GitHub Pages — `https://sebastiennadler.github.io/domaine-du-geisberg/`
   (dépôt `sebastiennadler/domaine-du-geisberg`). C'est là que Marc relit et valide.
+- **Mentions légales** : l'hébergeur affiché est **DECLIC** (jamais GitHub, qui n'est que le site de travail) ;
+  ses coordonnées exactes et sa mention éventuelle pour le déploiement sont à lui demander (`TODO.md` § 6).
+  Sébastien souhaite aussi lui proposer ses services (missions ponctuelles) — à mentionner dans le mail.
 - **Mise en ligne définitive** : l'hébergeur actuel (DECLIC) est conservé. Sébastien lui **fournit le site**
   (dossier de fichiers statiques) et DECLIC le met en ligne sur `domainedugeisberg.fr`. **Pas de transfert
   de nom de domaine** ni de changement d'hébergeur pour l'instant (« plus tard on verra »).
@@ -59,8 +62,30 @@ sont des interprétations en attente de validation.
   Tout le reste (capacité, nuits minimum, tarifs, caution, TVA, photos…) est **à faire par Marc** ; le site
   se contente de le signaler dans les notes.
 - Laisser le lien vers **l'ancien site** dans les fiches Nuitrésa jusqu'à la bascule.
-- Le **mot de passe** Nuitrésa ne doit apparaître nulle part (notes, dépôt, docs, messages). Se déconnecter
-  de Nuitrésa en fin de session. (Marc doit le retirer du document Word envoyé et le changer.)
+- Le **mot de passe** Nuitrésa ne doit apparaître nulle part (notes, dépôt, docs, messages, **tests**) — pas
+  même un fragment : un test en contenait un du 18 au 20/10 (dépôt public, historique conservé), d'où le
+  changement de mot de passe rendu obligatoire pour Marc (`TODO.md` § 5). Se déconnecter de Nuitrésa en fin
+  de session.
+- Le formulaire Nuitrésa est un cadre d'un autre domaine : le site ne peut pas filtrer ses champs (personnes,
+  bébés). Les plafonds viennent des fiches de Marc (`capacity_min/max`, `babies_max`) : **1 à 5 personnes,
+  3 bébés** par gîte, à régler par Marc (Sébastien, 20/10).
+
+### Sécurité (audit du 20/10, règles permanentes)
+- **Aucun secret dans le dépôt** (public) : ni mot de passe, ni fragment, ni jeton ; les seules valeurs
+  présentes sont publiques par nature (clé Nuitrésa, coordonnées des gîtes, adresse de Sébastien — qu'il a
+  choisi de laisser en clair dans le pied de page, 20/10).
+- **Aucun script en ligne** dans les gabarits : tout script est un fichier de `src/js/` (ou le chargeur
+  Nuitrésa) ; les données passent par des blocs `application/json`. La **CSP** générée par `build.py`
+  (balise `<meta>`) n'autorise que le site, `public.nuit-resa.com` et `hdmedia.fr` ; tout nouveau service
+  externe doit y être ajouté (et justifié). `tools/package.py` refuse de livrer sinon.
+- **Polices auto-hébergées** (`assets/fonts`, OFL) : jamais de Google Fonts ni d'autre ressource tierce qui
+  transmettrait l'adresse des visiteurs (RGPD) ; pas de statistiques (Analytics) sans décision explicite et
+  bandeau de consentement.
+- `src/htaccess` (livré dans `dist/.htaccess` par `--prod`) porte HTTPS forcé, HSTS, `frame-ancestors`, etc. ;
+  les redirections de l'ancien site y seront ajoutées plus tard (bloc « À COMPLÉTER »).
+- Ancien site (WordPress 5.3 / PHP 7.4, extensions à failles connues, pas de HTTPS forcé, Analytics sans
+  consentement) : constats consignés dans `TODO.md` § 4 (note pour Marc) ; à faire **supprimer** par DECLIC
+  après la bascule.
 
 ### Qualité, avant toute mise en ligne (GitHub ou DECLIC)
 - `python3 tools/build.py` puis `python3 tools/check.py` : **0 erreur**.
@@ -82,7 +107,11 @@ sont des interprétations en attente de validation.
 - **Pas de nouveau mail à Marc pour l'instant** (20/10) : on le laisse tranquille jusqu'à ce que Sébastien
   décide de lui montrer la v2. Les notes du site continuent d'être tenues à jour.
 - Étape référencement : seulement ce qui se fait côté site maintenant (préparer le terrain) ; les
-  redirections de l'ancien site et le mail de livraison à DECLIC sont pour plus tard (20/10).
+  redirections de l'ancien site et le mail de livraison à DECLIC sont pour plus tard (20/10). Fait le 20/10 :
+  titres/descriptions, JSON-LD (offres, fil d'Ariane, FAQ), page Questions fréquentes (7 langues), trois pages
+  de fond (FR/EN/DE), 404, sitemap multilingue.
+- Mettre en avant les failles de l'ancien site dans les notes pour Marc, si elles sont plus critiques que
+  celles du nouveau — pour accélérer la bascule (Sébastien, 20/10).
 
 ## 3. Notes pour Marc (mode « Notes ») et TODO.md
 
@@ -193,6 +222,8 @@ sont des interprétations en attente de validation.
 ### Référencement
 - **Carte blanche** à Claude ; plusieurs pages si utile au référencement.
 - Langues : FR (référence), EN, DE, ES, PT, NL, ZH, avec repli FR pour les textes non traduits.
+- Pages de fond (`landing`) : FR, EN et DE seulement (marchés visés) ; FAQ et 404 : toutes les langues.
+  Titres ≤ 70 caractères, descriptions ≤ 160 (test automatique). `mentions-legales` hors sitemap.
 
 ### Code et licence
 - **Pas de licence** (validé 20/10) : le dépôt est public (site de travail) mais **tout est « tous droits

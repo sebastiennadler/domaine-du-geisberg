@@ -98,12 +98,15 @@ Menu (5 entrées + bouton « Réserver » toujours visible + langues + thème) :
 | 5 | **Avis** | `avis.html` | **Inchangée** : notes des plateformes, 6 avis, labels, « où réserver », livre d'or Nuitrésa. |
 | — | Mentions légales | `mentions-legales.html` | Éditeur, hébergeur, propriété intellectuelle, données, crédits. Lien en pied de page seulement. |
 | — | Redirections | `gites.html`, `diaporama.html`, `videos.html`, `visite.html`, `autour.html`, `gite-1.html`, `gite-2.html` | Pages de redirection (meta refresh + lien) vers leur nouveau « chez-soi », pour ne casser aucun lien existant. |
+| — | Questions fréquentes | `questions.html` | 12 questions / réponses en tiroirs (`t.faq.items`), données structurées `FAQPage`, 7 langues. Lien en pied de page. **Fait le 20/10.** |
+| — | Pages de fond (référencement) | `gite-accessible-pmr-moselle.html`, `gite-lac-de-creutzwald.html`, `gites-saint-avold-sarrebruck.html` | Un gabarit (`pages/landing.html`), contenu `t.landing[page]` : titre, accroche, photo de bandeau, 3 sections, photo secondaire, faits (dl), boutons. **FR, EN, DE seulement** (`PAGE_LANGS` dans `build.py`). Liens en pied de page. **Fait le 20/10.** |
+| — | Page 404 | `404.html` (racine) | Français, liens absolus (racine du site de travail ou « / » en `--prod`) vers l'accueil de chaque langue, `noindex`, sans canonical. GitHub Pages la sert automatiquement, Apache via `ErrorDocument` (`.htaccess`). **Fait le 20/10.** |
 
 Pied de page (toutes pages) : logo, adresse, téléphones, e-mail, labels (petits), langues, mentions
 légales, « Notes pour Marc » (FR).
 
-Pages de fond pour le référencement (partie 6), ajoutées si utile : « Gîte accessible PMR en Moselle »,
-« Gîte près du lac de Creutzwald », « Gîtes entre Saint-Avold et Sarrebruck ».
+Pied de page : lien « Questions fréquentes » dans toutes les langues ; liens vers les trois pages de fond
+en FR, EN et DE.
 
 ## 4. Structure du code (v2 cible, claire et réutilisable)
 
@@ -146,16 +149,22 @@ Migration v1 → v2 : **faite le 20/10** (étape 1) — pages générées identi
 Pour chaque langue (FR à la racine, autres dans `/en/`, `/de/`… ) et chaque page : rendu Jinja2 de
 `base.html` + gabarit de page avec `t` (textes de la langue, repli FR), `s` (données), `images`, helpers
 `pic()` (balise `<picture>` responsive avec `srcset`, dimensions, `loading="lazy"` sauf le bandeau),
-`src()`/`url()`, `nr_lang` (langue des cadres Nuitrésa : FR, EN, DE, ES, sinon EN). Empreinte des
-fichiers CSS/JS dans l'URL (`?v=<hash>`) pour le cache. Puis `sitemap.xml` (toutes langues, hreflang),
-`robots.txt`, pages de redirection, `.htaccess` (partie 7).
+`src()`/`url()`, `nr_lang` (langue des cadres Nuitrésa : FR, EN, DE, ES, sinon EN), `csp` (politique de
+sécurité, partie 8 bis), `prod`. Empreinte des fichiers CSS/JS dans l'URL (`?v=<hash>`) pour le cache. Puis
+`sitemap.xml` (toutes langues, `xhtml:link` hreflang par page, sans mentions légales), `robots.txt`
+(`Disallow: /` sur le site de travail, `Allow` en `--prod`), pages de redirection, `404.html`, et en `--prod`
+`.htaccess` (copie de `src/htaccess`). `PAGES`, `PAGE_LANGS` (pages limitées à certaines langues),
+`PAGE_TEMPLATE` (gabarit partagé) et `NO_SITEMAP` pilotent la liste des pages.
 
 Le `head` de chaque page : `<title>` et `meta description` par page et par langue (`meta` dans
 `<langue>.json`), `canonical`, `hreflang` × 7 + `x-default`, Open Graph (titre, description, image = logo
-ou photo de la maison, locale), icônes, préchargement de la première photo du bandeau, **JSON-LD**
-`LodgingBusiness` (nom, adresse, GPS, téléphone, e-mail, horaires, équipements, images, fondateurs, prix).
+ou photo de la maison, locale), cartes Twitter, icônes, préchargement de la première photo du bandeau,
+`referrer` strict, **CSP**, **JSON-LD** `LodgingBusiness` (nom, adresse, GPS, téléphone, e-mail, horaires,
+équipements, images, fondateurs, logo, offres 300 / 350 / 300 / 420) + `BreadcrumbList` (hors accueil) ;
+bloc `jsonld` par page (`FAQPage` sur la FAQ). Aucun script en ligne : `js/theme.js` (bloquant, minuscule)
+puis la feuille de style ; les textes de l'interface vont dans `<script type="application/json" id="ui-strings">`.
 
-## 6. Référencement (plan — carte blanche)
+## 6. Référencement (plan — carte blanche) — points 1 à 3 faits côté site le 20/10 (sauf redirections 301)
 
 1. **Technique** : un `<title>` unique par page (« Gîtes ruraux à Varsberg, Moselle — Domaine du
    Geisberg »), descriptions de 150 caractères, un seul `<h1>` par page, hiérarchie h2/h3, `alt`
@@ -182,9 +191,11 @@ ou photo de la maison, locale), icônes, préchargement de la première photo du
   de `dist/` (HTML des 7 langues, css, js, img, videos, audio, sitemap, robots, `.htaccess`, 404).
   Avant de livrer : `SITE_URL` = `https://www.domainedugeisberg.fr`, retirer le bouton « Notes pour Marc »
   (option `--prod` du build), contrôles de la partie 8.
-- **`.htaccess`** (si DECLIC est sous Apache — à leur demander) : redirection HTTP → HTTPS et
-  `domainedugeisberg.fr` → `www`, redirections 301 des anciennes adresses du site 2014 vers les nouvelles
-  pages, page 404, cache long pour `img/css/js` (empreintes dans les URL), compression.
+- **`.htaccess`** (`src/htaccess`, livré en `--prod` ; si DECLIC est sous Apache — à leur demander) :
+  redirection HTTP → HTTPS et `domainedugeisberg.fr` → `www`, en-têtes de sécurité (HSTS, `frame-ancestors`,
+  `X-Frame-Options`, `nosniff`, `Referrer-Policy`, `Permissions-Policy`, versions masquées), fichiers cachés
+  interdits, page 404, cache long pour `img/css/js/fonts` (empreintes dans les URL), compression ; les
+  redirections 301 des anciennes adresses du site 2014 y seront ajoutées plus tard (bloc « À COMPLÉTER »).
 - **À demander à DECLIC** : type d'hébergement (statique suffit), Apache ou autre, HTTPS (Let's Encrypt),
   un accès FTP/SFTP pour Sébastien (sinon livraison par zip à chaque mise à jour), ne rien couper avant
   le feu vert.
@@ -199,12 +210,28 @@ ou photo de la maison, locale), icônes, préchargement de la première photo du
 - `tools/check.py` : liens internes, fichiers référencés, dimensions des images, poids de l'accueil,
   pages générées seulement. 0 erreur exigé.
 - `tests/test_site.py` (Playwright, Chromium, réseau externe coupé, serveur local `python3 -m http.server`
-  sur `dist/`) : pages des 7 langues, menu et tiroir mobile, bandeau, galerie / visionneuse, diaporama,
-  vidéos, cadres Nuitrésa par langue, livre d'or, boutons Réserver, notes pour Marc (présence, panneau,
-  absence de secrets), langues, redirections. ≈ 500 tests, tous verts.
+  servant `dist/` sous `/domaine-du-geisberg/`) : contenu et traductions, pages des 7 langues (menu, hreflang,
+  CSP, aucun script ni police externe, longueurs titre/description), polices locales, menu et tiroir mobile,
+  bandeau, galerie / visionneuse, diaporama, vidéos, cadres Nuitrésa par langue, livre d'or, boutons Réserver,
+  notes pour Marc (présence, panneau, absence de secrets), langues, contrastes clair/sombre, FAQ, pages de fond,
+  sitemap, 404, redirections. ≈ 1 000 tests, tous verts.
 - `tests/sweep.py` : aucune largeur de 320 à 1366 px ne provoque de défilement horizontal.
 - Vérification visuelle dans le navigateur (ordinateur + mobile) après chaque mise en ligne.
 - Automatique : liens externes chaque lundi (`liens.yml`, rapport `docs/liens-rapport.md`).
+
+## 8 bis. Sécurité (audit du 20/10)
+
+Règles : aucun secret dans le dépôt public (ni fragment : un test en contenait un du 18 au 20/10 → mot de
+passe Nuitrésa à changer par Marc) ; aucun script en ligne ; CSP générée par `build.py` (`default-src 'self'` ;
+scripts et cadres : site + `public.nuit-resa.com` + `www.hdmedia.fr` ; styles en ligne tolérés pour les attributs
+`style` et la feuille injectée par le widget Nuitrésa ; `object-src 'none'`, `base-uri`, `form-action`,
+`upgrade-insecure-requests`) ; polices auto-hébergées (`assets/fonts`, OFL, sous-ensembles latin + latin-ext,
+`@font-face` dans `style.css`) ; `.htaccess` (partie 7) ; `tools/package.py` refuse de livrer si une page
+manque de CSP, contient un script en ligne, une note, `noindex` ou `github.io`, ou s'il manque `.htaccess`,
+`404.html`, `sitemap.xml` ou `fonts/`. Le formulaire Nuitrésa (cadre externe) ne peut pas être filtré par le
+site : ses plafonds (1 à 5 personnes, 3 bébés) se règlent dans les fiches de Marc. Ancien site : WordPress 5.3 /
+PHP 7.4, extensions à failles connues, pas de HTTPS forcé, Analytics sans consentement → à faire supprimer par
+DECLIC après la bascule (note pour Marc dans `TODO.md` § 4).
 
 ## 9. Registre des directives (chronologique)
 
@@ -222,3 +249,4 @@ cas de doute ou de contradiction et tenir `CLAUDE.md` à jour.
 | 20/10 | Marc | Accueil : photo Agnès-Marc-Urielle ≈ 4 s puis maison, puis photos + description des gîtes sur la même page, équipements possibles sur la même page ; induction ; OK 5 entrées (à voir monté) ; 4 personnes + 1 appoint 90 cm (chauffeuse) ; plus d'équitation, chevaux à la retraite ; grille tarifaire (300/350/300/420) ; page Avis inchangée ; rester chez DECLIC (facturé jusqu'au 30/11/2027), bascule faite par DECLIC ; inclus : lits faits, charges, ménage de finition (logement rendu propre), serviettes non fournies ; référencement : carte blanche, plusieurs pages si utile ; utiliser le logo. |
 | 20/10 | Sébastien (soir) | Calendriers uniquement sur Réservation ; notes pour Marc alimentées par `TODO.md` (référence unique, « au bon endroit ») ; vérifier toutes les langues et la qualité des traductions ; vérifier modes sombre et clair ; bandeau : partir de loin puis zoomer, zoom + déplacement, 4 s fixes sur la photo des hôtes, parallaxe légère (3D) ; pas de licence ; caution 300 € (repli ancien site) ; accent bordeaux ; pas de mail à Marc pour l'instant ; référencement côté site seulement ; redirections et mail DECLIC plus tard. |
 | 20/10 | Sébastien | Retirer la photo de nuit de la maison (mur sali) ; on garde l'hébergeur, on fournit le site, DECLIC le met en ligne ; GitHub reste le site de travail ; un gîte doit être réservable pour une personne seule ; `CLAUDE.md` = source de vérité, `TODO.md`, plan complet, structure de code claire et réutilisable ; demander confirmation avant de corriger une directive contredite. |
+| 20/10 | Sébastien (nuit) | Les 60 personnes / 12 bébés du formulaire viennent de Nuitrésa : limiter à 5 personnes et 3 bébés par gîte (réglage des fiches par Marc) ; audit complet de la sécurité du site ; mettre en avant les failles de l'ancien site dans les notes pour Marc si elles sont plus critiques (pour accélérer la bascule) ; l'adresse e-mail de Sébastien reste en clair dans le pied de page ; mentions légales : l'hébergeur affiché est DECLIC, jamais GitHub ; questions à poser à DECLIC (hébergeur, mention, collaboration). |

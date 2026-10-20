@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% set q = t.faq %}
+{% block jsonld %}
+{# Données structurées FAQPage (schema.org) : chaque question/réponse, pour les résultats enrichis de Google #}
+{% set ns = namespace(items=[]) %}
+{% for question, answer in q['items'] %}{% set ns.items = ns.items + [{"@type": "Question", "name": question, "acceptedAnswer": {"@type": "Answer", "text": answer}}] %}{% endfor %}
+<script type="application/ld+json">{{ {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": ns.items} | tojson }}</script>
+{% endblock %}
+{% block main %}
+<section class="wrap" style="padding-top:28px">
+  <div class="eyebrow">{{ ui.tagline }}</div>
+  <h1 style="font-size:clamp(30px,5vw,46px)">{{ q.h1 }}</h1>
+  <p class="lead">{{ q.lead }}</p>
+  <div class="faq"{{ note('faq') }}>
+    {% for question, answer in q['items'] %}
+    <details class="drawer"{{ ' open' if loop.first }}><summary><span>{{ question }}</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary><div class="drawer-in"><p>{{ answer }}</p></div></details>
+    {% endfor %}
+  </div>
+  <p style="margin-top:28px"><a class="btn btn-p" href="reservation.html#demande">{{ t.nav.book }}</a> <a class="btn btn-o" href="index.html#fiche">{{ q.more }}</a></p>
+</section>
+{% endblock %}

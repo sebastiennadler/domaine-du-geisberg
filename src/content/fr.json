@@ -2,15 +2,15 @@
   "meta": {
     "index": [
       "Domaine du Geisberg – Gîtes ruraux à Varsberg, Moselle",
-      "Deux gîtes identiques de 60 m² à Varsberg (Moselle), au cœur de la nature et en lisière de forêt : de 1 à 4 personnes, accessibles PMR, terrasse privée, Wi-Fi fibre, animaux acceptés. Réservation en direct."
+      "Deux gîtes identiques de 60 m² à Varsberg (Moselle), en lisière de forêt : 1 à 4 personnes, accès PMR, terrasse, Wi-Fi fibre, animaux acceptés. Réservez direct."
     ],
     "le-domaine": [
       "Le domaine et les alentours – Domaine du Geisberg",
-      "Deux hectares de prairies en lisière de forêt au lieu-dit Vogelsgesang, et tout ce qu'il y a à voir autour : lac de Creutzwald, forêt du Warndt, Völklingen, Metz, la Sarre."
+      "Deux hectares de prairies en lisière de forêt au lieu-dit Vogelsgesang, et tout ce qu'il y a à voir autour : lac de Creutzwald, forêt du Warndt, Völklingen."
     ],
     "reservation": [
       "Disponibilités, tarifs et réservation – Domaine du Geisberg",
-      "Calendriers des deux gîtes, tarifs (week-end dès 300 €, semaine 420 €), demande de réservation en direct et itinéraire pour venir à Varsberg, entre Saint-Avold et Creutzwald."
+      "Calendriers des deux gîtes, tarifs (week-end dès 300 €, semaine 420 €), demande de réservation en direct et itinéraire pour venir à Varsberg (Moselle)."
     ],
     "mentions-legales": [
       "Mentions légales – Domaine du Geisberg",
@@ -23,6 +23,22 @@
     "medias": [
       "En images – Domaine du Geisberg",
       "Le domaine et les gîtes en images : diaporama avec les chants d'oiseaux, vidéos prises sur place, visite virtuelle à 360°."
+    ],
+    "questions": [
+      "Questions fréquentes – Domaine du Geisberg, gîtes à Varsberg",
+      "Animaux, bébés, horaires, caution, accessibilité, week-end, paiement, Wi-Fi, linge : les réponses aux questions posées avant de réserver un gîte."
+    ],
+    "gite-accessible-pmr-moselle": [
+      "Gîte accessible PMR en Moselle – Domaine du Geisberg, Varsberg",
+      "Deux gîtes de plain-pied labellisés Tourisme & Handicap à Varsberg (Moselle) : salle d'eau accessible, douche à l'italienne, entrée indépendante, terrasse."
+    ],
+    "gite-lac-de-creutzwald": [
+      "Gîte près du lac de Creutzwald – Domaine du Geisberg, Varsberg",
+      "Gîtes à 6 km du lac de Creutzwald et de sa base nautique, en lisière de la forêt du Warndt : baignade, voile, pêche, randonnée, au calme d'un domaine de 2 ha."
+    ],
+    "gites-saint-avold-sarrebruck": [
+      "Gîtes entre Saint-Avold et Sarrebruck – Domaine du Geisberg",
+      "Deux gîtes à Varsberg, à 15 km de Saint-Avold, 30 min de Sarrebruck et 40 min de Metz : séjour en Moselle-Est, à la frontière allemande, ou étape sur l'A4."
     ]
   },
   "nav": {
@@ -39,7 +55,8 @@
     "visite": "Visite du gîte",
     "autour": "Autour",
     "alentours": "Les alentours",
-    "legal": "Mentions légales"
+    "legal": "Mentions légales",
+    "questions": "Questions fréquentes"
   },
   "ui": {
     "skip": "Aller au contenu",
@@ -344,7 +361,7 @@
     "editor_h": "Éditeur du site",
     "editor": "Domaine du Geisberg, 6 rue du Geisberg, 57880 Varsberg. Directeur de la publication : Marc Nadler. SIRET 478 447 790 00013 – TVA intracommunautaire FR44 478447790.",
     "host_h": "Hébergement",
-    "host": "Site hébergé par GitHub Pages (GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, États-Unis).",
+    "host": "Site hébergé par DECLIC (coordonnées à compléter : raison sociale, adresse, téléphone).",
     "ip_h": "Propriété intellectuelle",
     "ip": "L'ensemble des textes, photographies et éléments graphiques de ce site est la propriété du Domaine du Geisberg. Toute reproduction sans autorisation est interdite.",
     "privacy_h": "Données personnelles",
@@ -403,5 +420,220 @@
     "visite_lead": "Promenez-vous dans les gîtes et sur le domaine comme si vous y étiez : faites glisser l'image, pincez pour zoomer, passez d'une pièce à l'autre.",
     "visite_fallback": "Si la visite ne s'affiche pas ici,",
     "visite_open": "ouvrir la visite dans un nouvel onglet"
+  },
+  "notfound": {
+    "h1": "Page introuvable",
+    "p": "Cette page n'existe pas ou plus. Retrouvez l'accueil, ou la page Réservation pour voir les disponibilités."
+  },
+  "faq": {
+    "h1": "Questions fréquentes",
+    "lead": "Les réponses aux questions que l'on nous pose le plus souvent avant de réserver. Pour le reste, un e-mail ou un coup de fil suffit.",
+    "more": "Voir la fiche des gîtes",
+    "items": [
+      [
+        "Combien de personnes peuvent loger dans un gîte ?",
+        "Chaque gîte accueille de 1 à 4 personnes, dans deux chambres de deux lits de 90 × 190 cm (rapprochables en lit double). Un couchage d'appoint dans le salon est possible sur demande. Les deux gîtes étant identiques, un groupe peut réserver les deux : jusqu'à 8 personnes."
+      ],
+      [
+        "Peut-on venir avec son chien ou son chat ?",
+        "Oui, les animaux sont les bienvenus, deux au maximum, sans supplément. Le domaine de deux hectares et les chemins de forêt qui partent du jardin leur plairont."
+      ],
+      [
+        "Les gîtes sont-ils accessibles aux personnes à mobilité réduite ?",
+        "Oui. Les gîtes sont de plain-pied, au rez-de-jardin, avec une entrée indépendante et une salle d'eau accessible (douche à l'italienne, WC). Ils sont labellisés Tourisme & Handicap."
+      ],
+      [
+        "Peut-on réserver pour un week-end ?",
+        "Oui : 2 nuits (du vendredi au dimanche) pour 300 €, ou 3 nuits (du vendredi au lundi) pour 350 €. En semaine, le séjour minimum est de 4 nuits, avec une arrivée du dimanche au jeudi."
+      ],
+      [
+        "Que comprend le prix ?",
+        "Tout, hors taxe de séjour : l'électricité, l'eau, le chauffage, le Wi-Fi fibre, le parking, les draps, les lits faits à l'arrivée et le ménage de finition — le gîte est simplement rendu propre, vaisselle lavée et rangée. Les serviettes de bain ne sont pas fournies."
+      ],
+      [
+        "Comment réserver et payer ?",
+        "Le formulaire de la page Réservation vous propose le gîte libre à vos dates ; nous confirmons sous 24 h. Un acompte de 25 % est demandé à la réservation, le solde sur place. Nous acceptons les cartes bancaires, Visa, MasterCard et les chèques-vacances ANCV. Une caution de 300 € est demandée."
+      ],
+      [
+        "À quelle heure arrive-t-on et repart-on ?",
+        "L'arrivée se fait à partir de 16 h et le départ avant 10 h. Si vous arrivez tard, prévenez-nous : nous nous organisons."
+      ],
+      [
+        "Y a-t-il un équipement pour les bébés ?",
+        "Oui : lit bébé, baignoire et chaise haute sur demande, sans supplément. Dites-le-nous à la réservation."
+      ],
+      [
+        "Le Wi-Fi est-il bon ?",
+        "Oui, les gîtes sont raccordés à la fibre. Le Wi-Fi est gratuit et couvre le logement et la terrasse."
+      ],
+      [
+        "Où faire ses courses ?",
+        "La boulangerie est à 300 m, un restaurant à 1 km, une supérette à 3 km. Les supermarchés de Creutzwald et de Saint-Avold sont à 10 minutes."
+      ],
+      [
+        "Que faire autour du gîte ?",
+        "Des chemins de randonnée partent du jardin, sans traverser de route. Le lac de Creutzwald et sa base nautique sont à 6 km, la forêt du Warndt tout autour ; Metz, Sarrebruck et le Luxembourg se visitent à la journée. Voir la page Le domaine & alentours."
+      ],
+      [
+        "Peut-on fumer dans le gîte ?",
+        "Non, les gîtes sont non fumeurs. La terrasse privée est là pour ça."
+      ]
+    ]
+  },
+  "landing": {
+    "gite-accessible-pmr-moselle": {
+      "short": "Gîte accessible PMR",
+      "h1": "Un gîte accessible PMR en Moselle, en pleine nature",
+      "lead": "Deux gîtes de plain-pied labellisés Tourisme & Handicap, à Varsberg, entre forêt et prairies.",
+      "photo": "hero/maison-prairie",
+      "photo2": "gites/salle-d-eau-pmr",
+      "photo2_alt": "La salle d'eau accessible : douche à l'italienne et WC",
+      "sections": [
+        [
+          "Un logement pensé pour tous",
+          [
+            "Nos deux gîtes sont au rez-de-jardin de la maison, de plain-pied, avec une entrée indépendante et une place de parking devant la porte. Aucune marche entre la voiture, la terrasse et le séjour.",
+            "La salle d'eau est accessible : douche à l'italienne, WC adaptés, espace de manœuvre. Les chambres, le séjour et la cuisine sont ouverts et faciles à parcourir. Les gîtes sont labellisés Tourisme & Handicap et Gîtes de France."
+          ]
+        ],
+        [
+          "La nature à portée de main",
+          [
+            "Le domaine de deux hectares est en lisière de forêt, au lieu-dit Vogelsgesang, « le chant des oiseaux ». La terrasse privée donne sur la prairie ; des chemins de promenade partent du jardin, sans traverser de route.",
+            "Le lac de Creutzwald, à 6 km, propose baignade et base nautique ; Saint-Avold, Metz et Sarrebruck sont à 15 à 40 minutes."
+          ]
+        ],
+        [
+          "Réserver en direct",
+          [
+            "Les deux gîtes sont identiques : réservez celui qui est libre à vos dates, ou les deux pour une famille nombreuse. Nous répondons sous 24 h et nous nous adaptons volontiers à vos besoins : dites-nous ce qui vous serait utile."
+          ]
+        ]
+      ],
+      "facts": [
+        [
+          "Accès",
+          "De plain-pied, entrée indépendante, parking devant la porte"
+        ],
+        [
+          "Salle d'eau",
+          "Douche à l'italienne, WC, accessible"
+        ],
+        [
+          "Capacité",
+          "De 1 à 4 personnes par gîte, 2 gîtes identiques"
+        ],
+        [
+          "Labels",
+          "Tourisme & Handicap, Gîtes de France, Clévacances"
+        ],
+        [
+          "Tarifs",
+          "À partir de 300 € le week-end, 420 € la semaine, charges comprises"
+        ]
+      ]
+    },
+    "gite-lac-de-creutzwald": {
+      "short": "Près du lac de Creutzwald",
+      "h1": "Un gîte près du lac de Creutzwald, en lisière de la forêt du Warndt",
+      "lead": "À 6 km de la base nautique, deux gîtes au calme sur un domaine de deux hectares.",
+      "photo": "autour/panorama-geisberg",
+      "photo2": "autour/creutzwald-lac",
+      "photo2_alt": "Le lac de Creutzwald",
+      "sections": [
+        [
+          "Le lac à dix minutes",
+          [
+            "Le lac de Creutzwald et sa base nautique sont à 6 km du gîte : baignade surveillée l'été, voile, paddle, pêche, tour du lac à pied ou à vélo, et une piscine à Creutzwald à 7 km. Un tennis et un parc aquatique (Calypso, à Sarrebruck) complètent le programme."
+          ]
+        ],
+        [
+          "La forêt du Warndt tout autour",
+          [
+            "Le domaine est posé sur la colline qui domine Varsberg, en lisière de la forêt du Warndt, l'un des grands massifs de Moselle-Est. Les chemins de randonnée et de VTT partent du jardin, sans traverser de route ; des VTT sont à votre disposition.",
+            "Le soir, on dîne sur la terrasse face à la prairie, avec les chevaux et le chant des oiseaux qui a donné son nom au lieu-dit : Vogelsgesang."
+          ]
+        ],
+        [
+          "Deux gîtes identiques",
+          [
+            "60 m² chacun, de 1 à 4 personnes, deux chambres, cuisine équipée, salle d'eau accessible, terrasse privée, Wi-Fi fibre, animaux bienvenus. Réservez l'un des deux, ou les deux pour un groupe."
+          ]
+        ]
+      ],
+      "facts": [
+        [
+          "Lac de Creutzwald",
+          "6 km — baignade, voile, pêche"
+        ],
+        [
+          "Piscine",
+          "Creutzwald, 7 km"
+        ],
+        [
+          "Forêt du Warndt",
+          "Chemins au départ du jardin"
+        ],
+        [
+          "Capacité",
+          "De 1 à 4 personnes par gîte"
+        ],
+        [
+          "Tarifs",
+          "À partir de 300 € le week-end, 420 € la semaine"
+        ]
+      ]
+    },
+    "gites-saint-avold-sarrebruck": {
+      "short": "Entre Saint-Avold et Sarrebruck",
+      "h1": "Deux gîtes entre Saint-Avold et Sarrebruck, à Varsberg",
+      "lead": "À 15 km de Saint-Avold, 30 minutes de Sarrebruck, 40 minutes de Metz : la Moselle-Est au calme, à deux pas de l'Allemagne.",
+      "photo": "hero/chevaux-soir",
+      "photo2": "autour/champs-eolienne",
+      "photo2_alt": "Les champs au-dessus du domaine, en lisière de la forêt du Warndt",
+      "sections": [
+        [
+          "Bien placés, au calme",
+          [
+            "Varsberg est un village de Moselle-Est entre Saint-Avold et Creutzwald, à quelques minutes de l'autoroute A4 (sortie Saint-Avold / Carling) et de la frontière allemande. Une étape idéale sur la route Paris–Strasbourg, ou un point de départ pour visiter la région.",
+            "La gare de Saint-Avold (TER Metz–Forbach) est à 15 km."
+          ]
+        ],
+        [
+          "À voir à moins d'une heure",
+          [
+            "Le cimetière américain de Saint-Avold, le plus grand d'Europe, à 15 km. Les aciéries de Völklingen, patrimoine mondial de l'UNESCO, à 28 km. Le musée des mineurs Wendel à Petite-Rosselle, à 31 km. Le Centre Pompidou-Metz et la cathédrale, à 40 minutes. Sarrebruck, le Luxembourg et le parc archéologique de Bliesbruck à la journée."
+          ]
+        ],
+        [
+          "Un séjour en pleine nature",
+          [
+            "Nos deux gîtes identiques sont au rez-de-jardin de la maison, sur un domaine de deux hectares en lisière de forêt : terrasse privée, cuisine équipée, salle d'eau accessible, Wi-Fi fibre, animaux bienvenus. Hôtes depuis 2007, nous parlons français, allemand et anglais."
+          ]
+        ]
+      ],
+      "facts": [
+        [
+          "Saint-Avold",
+          "15 km — gare TER, cimetière américain"
+        ],
+        [
+          "Sarrebruck",
+          "30 minutes"
+        ],
+        [
+          "Metz",
+          "40 minutes — Centre Pompidou-Metz"
+        ],
+        [
+          "Autoroute A4",
+          "Sortie Saint-Avold / Carling"
+        ],
+        [
+          "Tarifs",
+          "À partir de 300 € le week-end, 420 € la semaine"
+        ]
+      ]
+    }
   }
 }

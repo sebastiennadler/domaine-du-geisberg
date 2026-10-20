@@ -5,8 +5,9 @@
 import asyncio, re, json, sys
 from playwright.async_api import async_playwright
 
-BASE = 'http://127.0.0.1:8111'  # serveur local sur dist/ (voir tests/run.sh)
-PAGES = ['index', 'reservation', 'le-domaine', 'medias', 'avis', 'mentions-legales']
+BASE = 'http://127.0.0.1:8111/domaine-du-geisberg'  # serveur local sur dist/ (voir tests/run.sh)
+PAGES = ['index', 'reservation', 'le-domaine', 'medias', 'avis', 'mentions-legales', 'questions']
+LANDING = ['gite-accessible-pmr-moselle', 'gite-lac-de-creutzwald', 'gites-saint-avold-sarrebruck']  # fr, en, de
 DIRS = ['', 'en/', 'de/', 'es/', 'pt/', 'nl/', 'zh/']
 WIDTHS = [320, 360, 390, 430, 600, 768, 834, 1024, 1140, 1366]
 
@@ -56,7 +57,7 @@ async def main():
             async def block(route): await route.abort()
             await page.route(re.compile(r'^(?!http://127\.0\.0\.1).*'), block)
             for d in DIRS:
-                for pg in PAGES:
+                for pg in PAGES + (LANDING if d in ('', 'en/', 'de/') else []) + (['404'] if d == '' else []):
                     await page.goto(f'{BASE}/{d}{pg}.html', wait_until='domcontentloaded')
                     await page.evaluate("document.querySelectorAll('.reveal').forEach(e=>e.classList.add('in'))")
                     if w < 1040:  # ouvrir le tiroir mobile pour vérifier aussi son contenu

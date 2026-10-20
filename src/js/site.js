@@ -4,6 +4,12 @@
   var root = document.documentElement;
   root.classList.add('js');
   var reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  /* Textes de l'interface (Fermer, Précédent…) : bloc JSON écrit par base.html, pas de script en ligne (CSP). */
+  var UI = {};
+  try {
+    var uiEl = document.getElementById('ui-strings');
+    if (uiEl) UI = JSON.parse(uiEl.textContent) || {};
+  } catch (e) {}
 
   /* Thème clair / sombre (mémorisé) */
   try {
@@ -372,7 +378,7 @@
     lb.className = 'lb';
     lb.setAttribute('role', 'dialog');
     lb.setAttribute('aria-modal', 'true');
-    var L = window.GEISBERG_UI || {};
+    var L = UI;
     lb.innerHTML =
       '<img alt=""><figcaption></figcaption><button class="x" aria-label="' +
       (L.close || 'Fermer') +
@@ -504,6 +510,41 @@
     if (h > 0 && f && f.classList.contains('nr-cal')) f.style.height = h + 20 + 'px';
   });
 
+  /* ---------- Onglets de la page « En images » ---------- */
+  /* L'ancre choisit l'onglet (#diaporama, #videos, #visite) ; la visite 360° (cadre externe) n'est chargée qu'à l'ouverture
+     de son onglet ; les diaporamas se mettent en pause quand on quitte le leur. */
+  var tabs = Array.prototype.slice.call(document.querySelectorAll('.tabs [role=tab]')),
+    panels = Array.prototype.slice.call(document.querySelectorAll('.panel[role=tabpanel]'));
+  if (tabs.length && panels.length) {
+    var openTab = function (id, push) {
+      if (!document.getElementById(id)) id = panels[0].id;
+      tabs.forEach(function (t) {
+        t.setAttribute('aria-selected', t.getAttribute('aria-controls') === id);
+      });
+      panels.forEach(function (p) {
+        p.hidden = p.id !== id;
+      });
+      var f = document.querySelector('#visite iframe');
+      if (id === 'visite' && f && !f.src) f.src = f.getAttribute('data-src');
+      if (id !== 'diaporama' && window.geisbergDiapos)
+        window.geisbergDiapos.forEach(function (d) {
+          d.pause();
+        });
+      if (push) history.replaceState(null, '', '#' + id);
+    };
+    tabs.forEach(function (t) {
+      t.addEventListener('click', function (e) {
+        e.preventDefault();
+        openTab(t.getAttribute('aria-controls'), true);
+        t.focus();
+      });
+    });
+    window.addEventListener('hashchange', function () {
+      openTab(location.hash.slice(1), false);
+    });
+    openTab(location.hash.slice(1) || panels[0].id, false);
+  }
+
   /* ---------- Effets discrets ---------- */
 
   /* Apparition progressive des blocs à l'entrée dans l'écran, avec un léger décalage entre voisins */
@@ -560,7 +601,7 @@
     totop = document.createElement('button');
   totop.type = 'button';
   totop.className = 'totop';
-  totop.setAttribute('aria-label', (window.GEISBERG_UI && GEISBERG_UI.top) || 'Haut de page');
+  totop.setAttribute('aria-label', UI.top || 'Haut de page');
   totop.innerHTML =
     '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>';
   totop.addEventListener('click', function () {

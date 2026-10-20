@@ -4,6 +4,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="robots" content="noindex">
+<meta http-equiv="Content-Security-Policy" content="{{ csp | safe }}">
 <meta http-equiv="refresh" content="0; url={{ target }}">
 <link rel="canonical" href="{{ site_url }}/{{ prefix }}{{ target.split('#')[0] }}">
 <title>{{ s.name }}</title>

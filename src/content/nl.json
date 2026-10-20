@@ -2,15 +2,15 @@
   "meta": {
     "index": [
       "Domaine du Geisberg – Vakantiewoningen in Varsberg, Moezel",
-      "Twee identieke gîtes van 60 m² in Varsberg (Moezel), midden in de natuur aan de bosrand: 1 tot 4 personen, rolstoeltoegankelijk, eigen terras, glasvezel-wifi, huisdieren welkom. Rechtstreeks reserveren."
+      "Twee identieke gîtes van 60 m² in Varsberg (Moezel), aan de bosrand: 1 tot 4 personen, rolstoeltoegankelijk, terras, glasvezel-wifi, huisdieren welkom."
     ],
     "le-domaine": [
       "Het landgoed en de omgeving – Domaine du Geisberg",
-      "Twee hectare weiland aan de bosrand bij Vogelsgesang, en alles wat er in de buurt te zien is: het meer van Creutzwald, het Warndt-bos, Völklingen, Metz, het Saarland."
+      "Twee hectare weiland aan de bosrand bij Vogelsgesang, en alles wat er in de buurt te zien is: het meer van Creutzwald, het Warndt-bos, Völklingen, Metz."
     ],
     "reservation": [
       "Beschikbaarheid, prijzen en reserveren – Domaine du Geisberg",
-      "Kalenders van beide gîtes, prijzen (weekend vanaf € 300, week € 420), rechtstreekse reserveringsaanvraag en routebeschrijving naar Varsberg, tussen Saint-Avold en Creutzwald."
+      "Kalenders van beide gîtes, prijzen (weekend vanaf € 300, week € 420), rechtstreekse reserveringsaanvraag en routebeschrijving naar Varsberg (Moezel)."
     ],
     "mentions-legales": [
       "Juridische informatie – Domaine du Geisberg",
@@ -23,6 +23,10 @@
     "medias": [
       "In beeld – Domaine du Geisberg",
       "Het landgoed en de gîtes in beeld: diavoorstelling met vogelzang, ter plaatse gefilmde video's, virtuele 360°-rondleiding."
+    ],
+    "questions": [
+      "Veelgestelde vragen – Domaine du Geisberg, Varsberg",
+      "Huisdieren, baby's, tijden, borg, toegankelijkheid, weekends, betaling, wifi, linnen: antwoorden op de vragen die wij krijgen vóór een boeking."
     ]
   },
   "nav": {
@@ -39,7 +43,8 @@
     "visite": "Rondleiding",
     "autour": "Omgeving",
     "alentours": "De omgeving",
-    "legal": "Juridische informatie"
+    "legal": "Juridische informatie",
+    "questions": "Veelgestelde vragen"
   },
   "ui": {
     "skip": "Naar de inhoud",
@@ -344,7 +349,7 @@
     "editor_h": "Uitgever",
     "editor": "Domaine du Geisberg, 6 rue du Geisberg, 57880 Varsberg, Frankrijk. Verantwoordelijke uitgever: Marc Nadler. SIRET 478 447 790 00013 – btw FR44 478447790.",
     "host_h": "Hosting",
-    "host": "Gehost door GitHub Pages (GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, VS).",
+    "host": "Gehost door DECLIC (gegevens aan te vullen: bedrijfsnaam, adres, telefoon).",
     "ip_h": "Intellectueel eigendom",
     "ip": "Alle teksten, foto's en grafische elementen op deze site zijn eigendom van het Domaine du Geisberg. Reproductie zonder toestemming is verboden.",
     "privacy_h": "Persoonsgegevens",
@@ -403,5 +408,64 @@
     "visite_lead": "Loop door de gîtes en over het landgoed alsof u er bent: sleep het beeld, knijp om te zoomen, ga van kamer naar kamer.",
     "visite_fallback": "Verschijnt de rondleiding hier niet,",
     "visite_open": "open hem dan in een nieuw tabblad"
+  },
+  "notfound": {
+    "h1": "Pagina niet gevonden",
+    "p": "Deze pagina bestaat niet of niet meer. Ga terug naar de startpagina, of naar de pagina Reserveren voor de beschikbaarheid."
+  },
+  "faq": {
+    "h1": "Veelgestelde vragen",
+    "lead": "Antwoorden op de vragen die wij het vaakst krijgen vóór een boeking. Voor al het andere volstaat een e-mail of een telefoontje.",
+    "more": "Bekijk de beschrijving van de woningen",
+    "items": [
+      [
+        "Hoeveel personen kunnen er in een woning verblijven?",
+        "Elke woning is geschikt voor 1 tot 4 personen, in twee slaapkamers met elk twee bedden van 90 × 190 cm (die tegen elkaar kunnen). Een extra bed in de woonkamer is op aanvraag mogelijk. Omdat de twee woningen identiek zijn, kan een groep ze allebei boeken: tot 8 personen."
+      ],
+      [
+        "Mogen onze hond of kat mee?",
+        "Ja, huisdieren zijn welkom, maximaal twee, zonder toeslag. Ze zullen genieten van het landgoed van twee hectare en de bospaden die bij de tuin beginnen."
+      ],
+      [
+        "Zijn de woningen rolstoeltoegankelijk?",
+        "Ja. De woningen zijn gelijkvloers, op tuinniveau, met een eigen ingang en een toegankelijke badkamer (inloopdouche, toilet). Ze dragen het label Tourisme & Handicap."
+      ],
+      [
+        "Kunnen we een weekend boeken?",
+        "Ja: 2 nachten (vrijdag tot zondag) voor € 300, of 3 nachten (vrijdag tot maandag) voor € 350. Doordeweeks is het minimumverblijf 4 nachten, met aankomst tussen zondag en donderdag."
+      ],
+      [
+        "Wat is in de prijs inbegrepen?",
+        "Alles behalve de toeristenbelasting: elektriciteit, water, verwarming, glasvezel-wifi, parkeerplaats, lakens, opgemaakte bedden bij aankomst en de eindschoonmaak – de woning wordt gewoon netjes achtergelaten, met de afwas gedaan en opgeruimd. Badhanddoeken zijn niet inbegrepen."
+      ],
+      [
+        "Hoe reserveren en betalen we?",
+        "Het formulier op de pagina Reserveren stelt u de woning voor die vrij is op uw data; wij bevestigen binnen 24 uur. Bij de boeking wordt een aanbetaling van 25 % gevraagd, de rest ter plaatse. Wij aanvaarden creditcards, Visa, MasterCard en Franse ANCV-vakantiecheques. Er wordt een borg van € 300 gevraagd."
+      ],
+      [
+        "Wat zijn de aankomst- en vertrektijden?",
+        "Aankomst vanaf 16.00 uur, vertrek vóór 10.00 uur. Komt u laat aan, laat het ons weten: we vinden een oplossing."
+      ],
+      [
+        "Is er babyuitrusting?",
+        "Ja: een kinderbed, babybad en kinderstoel op aanvraag, zonder toeslag. Geef het gewoon door bij de boeking."
+      ],
+      [
+        "Is de wifi goed?",
+        "Ja, de woningen hebben een glasvezelaansluiting. De wifi is gratis en dekt het appartement en het terras."
+      ],
+      [
+        "Waar kunnen we boodschappen doen?",
+        "De bakker is op 300 m, een restaurant op 1 km, een kruidenier op 3 km. De supermarkten van Creutzwald en Saint-Avold liggen op 10 minuten."
+      ],
+      [
+        "Wat is er te doen in de omgeving?",
+        "Wandelpaden beginnen bij de tuin zonder een weg over te steken. Het meer van Creutzwald met zijn watersportcentrum ligt op 6 km, het Warndt-bos eromheen; Metz, Saarbrücken en Luxemburg zijn dagtochten. Zie de pagina Het landgoed & de omgeving."
+      ],
+      [
+        "Mag er in de woning gerookt worden?",
+        "Nee, de woningen zijn rookvrij. Daarvoor is er het eigen terras."
+      ]
+    ]
   }
 }

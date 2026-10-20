@@ -5,9 +5,13 @@
 set -uo pipefail
 cd "$(dirname "$0")/.."
 [ -d dist ] || { echo "dist/ absent : lancer d'abord python3 tools/build.py"; exit 1; }
-python3 -m http.server 8111 --bind 127.0.0.1 --directory dist >/dev/null 2>&1 &
+# dist/ est servi sous /domaine-du-geisberg/ comme sur GitHub Pages (la page 404 utilise des chemins absolus)
+pkill -f "^python3 -m http.server 8111" 2>/dev/null || true   # serveur d'un lancement précédent resté ouvert
+WWW=$(mktemp -d)
+ln -s "$PWD/dist" "$WWW/domaine-du-geisberg"
+python3 -m http.server 8111 --bind 127.0.0.1 --directory "$WWW" >/dev/null 2>&1 &
 SERVER=$!
-trap 'kill $SERVER 2>/dev/null || true' EXIT
+trap 'kill $SERVER 2>/dev/null || true; rm -rf "$WWW"' EXIT
 sleep 1
 status=0
 if [ "${1:-all}" != "sweep" ]; then
