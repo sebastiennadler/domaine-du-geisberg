@@ -64,7 +64,7 @@ def api(**p):
     return json.loads(get("https://commons.wikimedia.org/w/api.php?" + urllib.parse.urlencode(p)))
 
 
-credits = json.loads((ROOT / "tools/credits.json").read_text())
+credits = json.loads((ROOT / "src/catalog/credits.json").read_text())
 if "audio" in credits:
     print("déjà présent")
     sys.exit(0)
@@ -145,7 +145,7 @@ for q in QUERIES:
                 if ratio < -9:
                     print(f"{t}: trop grave ({ratio:.1f} dB), écartée")
                     continue
-                out = ROOT / "audio" / "chants-oiseaux.mp3"
+                out = ROOT / "assets/audio" / "chants-oiseaux.mp3"
                 out.parent.mkdir(exist_ok=True)
                 subprocess.check_call(
                     [
@@ -178,7 +178,7 @@ for q in QUERIES:
             "source": ii.get("descriptionurl", ""),
             "seconds": round(min(dur, 300)),
         }
-        (ROOT / "tools/credits.json").write_text(json.dumps(credits, ensure_ascii=False, indent=1) + "\n")
+        (ROOT / "src/catalog/credits.json").write_text(json.dumps(credits, ensure_ascii=False, indent=1) + "\n")
         print(f"OK {t} ({lic}, {dur:.0f}s)")
         sys.exit(0)
 print("rien trouvé", file=sys.stderr)

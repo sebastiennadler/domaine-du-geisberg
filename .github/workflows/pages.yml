@@ -1,4 +1,4 @@
-name: Publier sur GitHub Pages
+name: Construire, tester et publier (GitHub Pages)
 on:
   push:
     branches: [main]
@@ -11,18 +11,34 @@ concurrency:
   group: pages
   cancel-in-progress: true
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - name: Dépendances
+        run: |
+          pip install -q jinja2 markupsafe pillow playwright
+          python3 -m playwright install --with-deps chromium
+      - name: Générer le site de travail (dist/)
+        run: python3 tools/build.py
+      - name: Vérifier les pages (liens, images, poids)
+        run: python3 tools/check.py
+      - name: Tests fonctionnels et balayage des débordements
+        run: bash tests/run.sh
       - uses: actions/configure-pages@v5
         with:
           enablement: true
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: .
+          path: dist
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
       - id: deployment
         uses: actions/deploy-pages@v4

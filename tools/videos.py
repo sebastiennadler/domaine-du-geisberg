@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
-"""Prépare les vidéos du site : lit les originaux (.MOV) dans videos-sources/, écrit des MP4
-légers dans videos/ et une image d'affiche (poster) dans photos-sources/, que tools/photos.py
+"""Prépare les vidéos du site : lit les originaux (.MOV) dans assets/videos-sources/, écrit des MP4
+légers dans assets/videos/ et une image d'affiche (poster) dans assets/photos-sources/, que tools/photos.py
 transforme ensuite en WebP.
 
 Usage : python3 tools/videos.py            (ne refait que ce qui a changé)
         python3 tools/videos.py --force    (refait tout)
 
-Le catalogue est tools/videos.json : identifiant, fichier source, hauteur maximale et instant
+Le catalogue est src/catalog/videos.json : identifiant, fichier source, hauteur maximale et instant
 de l'affiche. Nécessite ffmpeg (brew install ffmpeg).
 
 Réglages choisis pour un site statique sans serveur vidéo :
@@ -22,10 +22,10 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-SRC = ROOT / "videos-sources"
-OUT = ROOT / "videos"
-POSTERS = ROOT / "photos-sources"
-CATALOG = ROOT / "tools" / "videos.json"
+SRC = ROOT / "assets" / "videos-sources"
+OUT = ROOT / "assets" / "videos"
+POSTERS = ROOT / "assets" / "photos-sources"
+CATALOG = ROOT / "src" / "catalog" / "videos.json"
 
 
 def run(cmd):

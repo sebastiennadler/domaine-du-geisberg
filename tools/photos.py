@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
-"""Prépare les photos du site : lit les originaux dans photos-sources/, écrit des WebP
-redimensionnés dans img/ et note leurs dimensions dans tools/content/images.json.
+"""Prépare les photos du site : lit les originaux dans assets/photos-sources/, écrit des WebP
+redimensionnés dans assets/img/ et note leurs dimensions dans src/content/images.json.
 
 Usage : python3 tools/photos.py            (ne refait que ce qui a changé)
         python3 tools/photos.py --force    (refait tout)
 
-Le catalogue est tools/photos.json : pour chaque photo, un identifiant (qui devient le
+Le catalogue est src/catalog/photos.json : pour chaque photo, un identifiant (qui devient le
 chemin dans img/), le fichier source, les largeurs à produire et, au besoin, "pos" : le point de
 la photo à garder visible quand elle est recadrée (bandeau d'accueil), ex. "40% 70%". Les gabarits (templates)
 affichent ensuite chaque photo avec `pic()` (voir tools/build.py), qui écrit un <img> avec
@@ -24,10 +24,10 @@ from pathlib import Path
 from PIL import Image, ImageOps
 
 ROOT = Path(__file__).resolve().parent.parent
-SRC = ROOT / "photos-sources"
-OUT = ROOT / "img"
-CATALOG = ROOT / "tools" / "photos.json"
-MANIFEST = ROOT / "tools" / "content" / "images.json"
+SRC = ROOT / "assets" / "photos-sources"
+OUT = ROOT / "assets" / "img"
+CATALOG = ROOT / "src" / "catalog" / "photos.json"
+MANIFEST = ROOT / "src" / "content" / "images.json"
 STATIC_DIRS = ["autour", "logos"]
 
 DEFAULT_WIDTHS = [1600, 800]

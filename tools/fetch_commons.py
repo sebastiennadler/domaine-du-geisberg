@@ -30,7 +30,7 @@ def api(**params):
 
 
 credits = (
-    json.loads((ROOT / "tools/credits.json").read_text()) if (ROOT / "tools/credits.json").exists() else {}
+    json.loads((ROOT / "src/catalog/credits.json").read_text()) if (ROOT / "src/catalog/credits.json").exists() else {}
 )
 for key, terms in SUJETS.items():
     if key in credits:
@@ -93,10 +93,10 @@ for key, terms in SUJETS.items():
     im = Image.open(io.BytesIO(get(url))).convert("RGB")
     if im.width > 1600:
         im = im.resize((1600, int(im.height * 1600 / im.width)))
-    out = ROOT / "img/autour" / f"{key}.webp"
+    out = ROOT / "assets/img/autour" / f"{key}.webp"
     im.save(out, "WEBP", quality=80, method=6)
     import re
 
     credits[key] = {"file": title, "author": re.sub(r"<[^>]+>", "", artist), "license": lic, "source": page}
     print(f"{key}: {title} ({lic})")
-(ROOT / "tools/credits.json").write_text(json.dumps(credits, ensure_ascii=False, indent=1) + "\n")
+(ROOT / "src/catalog/credits.json").write_text(json.dumps(credits, ensure_ascii=False, indent=1) + "\n")

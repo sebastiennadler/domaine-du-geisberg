@@ -2,7 +2,7 @@
 import asyncio, json, re
 from playwright.async_api import async_playwright
 
-BASE = 'http://127.0.0.1:8111'
+BASE = 'http://127.0.0.1:8111'  # serveur local sur dist/ (voir tests/run.sh)
 PAGES = ['index', 'le-domaine', 'gites', 'videos', 'diaporama', 'visite', 'autour', 'avis', 'reservation', 'mentions-legales']
 DIRS = ['', 'en/', 'de/', 'es/', 'pt/', 'nl/', 'zh/']
 results = []
@@ -219,5 +219,6 @@ async def main():
     for name, good, detail in results:
         print(('OK   ' if good else 'ÉCHEC') + ' ' + name + (f'  [{detail}]' if detail and not good else ''))
     print(f'\n{len(results) - len(bad)} tests réussis, {len(bad)} échec(s)')
+    return len(bad)
 
-asyncio.run(main())
+sys.exit(1 if asyncio.run(main()) else 0)

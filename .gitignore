@@ -1,7 +1,9 @@
 __pycache__/
 *.pyc
 .DS_Store
-videos-sources/
+dist/
+livraison/
+assets/videos-sources/
 ancien-site/*.tgz
 archives/
 _to_delete/

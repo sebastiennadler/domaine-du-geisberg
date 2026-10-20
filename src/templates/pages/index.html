@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+{% set h = t.home %}
+{% set n = t.notes if notes else {} %}
+{% macro note(k) %}{% if notes %} data-note="{{ n[k] }}"{% endif %}{% endmacro %}
+{% block head %}
+{# la première photo du bandeau est la plus grande image de la page : on la demande dès l'en-tête #}
+<link rel="preload" as="image" imagesrcset="{% for w, path in images[s.hero[0]].files %}{{ rel }}img/{{ path }} {{ w }}w{{ ', ' if not loop.last }}{% endfor %}" imagesizes="100vw">
+{% endblock %}
+{% block main %}
+<div class="hero"{{ note('hero') }}>
+  {% for id in s.hero %}
+  <div class="slide{{ ' on' if loop.first }}">{{ pic(id, h.hero_alts[loop.index0], '100vw', eager=loop.first) }}</div>
+  {% endfor %}
+  <div class="wrap">
+    <h1{{ note('h1') }}>{{ h.h1 }}</h1>
+    <p>{{ h.lead }}</p>
+    <div class="cta"><a class="btn btn-p" href="reservation.html#demande">{{ h.cta1 }}</a><a class="btn btn-light" href="gites.html">{{ h.cta2 }}</a></div>
+  </div>
+  <div class="dots" aria-hidden="true">{% for id in s.hero %}<button type="button"{{ ' aria-current="true"' if loop.first }}></button>{% endfor %}</div>
+</div>
+
+<section class="wrap" id="gites"{{ note('todo') }}>
+  <div class="cols">
+    <div class="mosaic"{{ note('gites') }}>
+      {% for id in s.gites_home %}<a href="{{ src(id) }}" data-cap="{{ t.gites.captions[s.gites.index(id)] }}">{{ pic(id, t.gites.captions[s.gites.index(id)], '(min-width: 860px) 280px, 45vw') }}</a>{% endfor %}
+    </div>
+    <div>
+      <div class="eyebrow">{{ t.nav.gites }}</div>
+      <h2>{{ h.gites_h }}</h2>
+      <p class="lead" style="max-width:none">{{ h.gites_lead }}</p>
+      <ul class="chips compact"{{ note('facts') }}>{% for f in h.gites_facts %}<li>{{ f }}</li>{% endfor %}</ul>
+      <div class="cta"><a class="btn btn-g" href="gites.html">{{ h.cta2 }}</a><a class="btn btn-o" href="reservation.html#demande">{{ h.cta1 }}</a></div>
+    </div>
+  </div>
+</section>
+
+<section class="wrap" style="padding-top:0">
+  <a class="domaine-band" href="le-domaine.html">
+    {{ pic('domaine/chemin-collines', t.domaine.captions[0], '(min-width: 1140px) 1104px, 100vw') }}
+    <div class="in"><div class="eyebrow">{{ t.nav['le-domaine'] }}</div><h2>{{ h.intro_h }}</h2><p>{{ h.intro[0] }}</p><span class="more">{{ h.intro_more }} →</span></div>
+  </a>
+</section>
+
+<section class="wrap"{% if notes %} data-note="{{ t.notes.reviews }}"{% endif %}>
+  <div class="sec-head"><div><div class="eyebrow">{{ t.extra.reviews_eyebrow }}</div><h2>{{ t.extra.reviews_h }}</h2><p class="lead">{{ t.extra.reviews_lead }}</p></div><a class="more" href="avis.html">{{ t.nav.avis }} →</a></div>
+  <div class="reviews">{% for r in s.reviews[:3] %}<blockquote><span class="st" aria-label="{{ r.stars }}/5">{{ '★' * r.stars }}{{ '☆' * (5 - r.stars) }}</span><p>{{ r.q }}</p><cite>{{ r.who }} · {{ r.src }} · {{ r.when }}</cite></blockquote>{% endfor %}</div>
+</section>
+
+<section class="wrap" id="contact" style="padding-top:0">
+  <div class="hosts"{{ note('hosts') }}>
+    <div class="photo">{{ pic(s.hosts_photo, h.hosts_alt, '(min-width: 860px) 520px, 100vw') }}</div>
+    <div>
+      <div class="eyebrow">{{ t.nav.contact }}</div>
+      <h2>{{ h.hosts_h }}</h2>
+      <p>{{ h.hosts }}</p>
+      <div class="contact-box">
+        {% for who, tel, href in s.phones %}<div><small>{{ who }}</small><a href="tel:{{ href }}">{{ tel }}</a></div>{% endfor %}
+        <div><small>E-mail</small><a href="mailto:{{ s.email }}">{{ s.email }}</a></div>
+        <div><small>{{ ui.address }}</small>{{ s.address }}</div>
+      </div>
+      <div class="cta" style="margin-top:20px"><a class="btn btn-p" href="reservation.html#demande">{{ t.nav.book }}</a><a class="btn btn-o" href="reservation.html#acces">{{ t.reservation.access_h }}</a></div>
+      <div class="logos" style="margin-top:20px">{% for id, name, link in s.labels %}{{ pic(id, name, "72px") }}{% endfor %}</div>
+    </div>
+  </div>
+</section>
+{% endblock %}

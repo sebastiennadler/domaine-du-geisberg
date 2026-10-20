@@ -5,7 +5,7 @@
 import asyncio, re, json, sys
 from playwright.async_api import async_playwright
 
-BASE = 'http://127.0.0.1:8111'
+BASE = 'http://127.0.0.1:8111'  # serveur local sur dist/ (voir tests/run.sh)
 PAGES = ['index', 'le-domaine', 'gites', 'videos', 'diaporama', 'visite', 'autour', 'avis', 'reservation', 'mentions-legales']
 DIRS = ['', 'en/', 'de/', 'es/', 'pt/', 'nl/', 'zh/']
 WIDTHS = [320, 360, 390, 430, 600, 768, 834, 1024, 1140, 1366]
@@ -71,5 +71,6 @@ async def main():
         print('Aucun débordement détecté.')
     for (kind, txt, where), pages in sorted(issues.items(), key=lambda x: -len(x[1])):
         print(f'{kind:22} | {txt[:45]:45} | {where[:40]:40} | {len(pages)} cas, ex. {pages[0]}, {pages[-1]}')
+    return len(issues)
 
-asyncio.run(main())
+sys.exit(1 if asyncio.run(main()) else 0)

@@ -14,5 +14,5 @@ jobs:
       - run: python3 tools/fetch_commons.py
       - run: |
           git config user.name "photos-bot"; git config user.email "photos@domainedugeisberg.fr"
-          git add img tools/credits.json
+          git add assets/img src/catalog/credits.json
           git diff --cached --quiet || (git commit -m "Photos libres ajoutées (Wikimedia Commons)" && git push)

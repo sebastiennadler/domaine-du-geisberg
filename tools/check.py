@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Vérifie le site généré : liens et images cassés, fichiers d'images inutilisés, attributs
+"""Vérifie le site généré dans dist/ : liens et images cassés, fichiers d'images inutilisés, attributs
 manquants sur les images (alt, width/height), poids des pages. À lancer après tools/build.py.
 
 Usage : python3 tools/check.py
@@ -12,7 +12,7 @@ from html.parser import HTMLParser
 from pathlib import Path
 from urllib.parse import unquote, urlsplit
 
-ROOT = Path(__file__).resolve().parent.parent
+ROOT = Path(__file__).resolve().parent.parent / "dist"  # on vérifie ce qui sera publié
 LANG_DIRS = ["", "en", "de", "es", "pt", "nl", "zh"]
 IMG_EXT = {".webp", ".jpg", ".jpeg", ".png", ".svg"}
 
@@ -55,11 +55,10 @@ def local(url):
 errors, warnings = [], []
 used_files = set()
 pages = []
-# seules les pages produites par build.py sont vérifiées (un fichier HTML déposé par ailleurs dans le dossier est ignoré)
-GENERATED = {"index", "le-domaine", "gites", "videos", "autour", "avis", "visite", "reservation", "diaporama", "mentions-legales", "gite-1", "gite-2"}
+if not ROOT.exists():
+    sys.exit("dist/ absent : lancer d'abord python3 tools/build.py")
 for d in LANG_DIRS:
-    found = sorted((ROOT / d).glob("*.html")) if d else sorted(ROOT.glob("*.html"))
-    pages += [f for f in found if f.stem in GENERATED]
+    pages += sorted((ROOT / d).glob("*.html")) if d else sorted(ROOT.glob("*.html"))
 
 for page in pages:
     c = Collector()
