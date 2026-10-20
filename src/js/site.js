@@ -88,19 +88,29 @@
       sl.style.setProperty('--dur', (parseInt(sl.getAttribute('data-dur'), 10) || 7000) + 1800 + 'ms');
     });
     function go(i) {
-      slides[cur].classList.remove('on');
-      dots[cur] && dots[cur].removeAttribute('aria-current');
-      cur = (i + slides.length) % slides.length;
-      var img = slides[cur].querySelector('img');
-      if (img) {
-        /* relance l'animation « de loin vers le près » à chaque passage */
-        img.style.animation = 'none';
-        void img.offsetWidth;
-        img.style.animation = '';
+      var next = (i + slides.length) % slides.length,
+        img = slides[next].querySelector('img');
+      /* on attend que la photo suivante soit décodée : jamais de fondu vers une photo pas encore chargée */
+      var ready = img && img.decode ? img.decode().catch(function () {}) : Promise.resolve();
+      var done = false;
+      function swap() {
+        if (done) return;
+        done = true;
+        slides[cur].classList.remove('on');
+        dots[cur] && dots[cur].removeAttribute('aria-current');
+        cur = next;
+        if (img) {
+          /* relance l'animation « de loin vers le près » à chaque passage */
+          img.style.animation = 'none';
+          void img.offsetWidth;
+          img.style.animation = '';
+        }
+        slides[cur].classList.add('on');
+        dots[cur] && dots[cur].setAttribute('aria-current', 'true');
+        start();
       }
-      slides[cur].classList.add('on');
-      dots[cur] && dots[cur].setAttribute('aria-current', 'true');
-      start();
+      ready.then(swap);
+      setTimeout(swap, 2500);
     }
     function start() {
       clearTimeout(timer);

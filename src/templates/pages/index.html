@@ -10,7 +10,7 @@
 <div class="hero" id="hero" data-tilt="{{ 'on' if s.hero_tilt else 'off' }}" data-parallax="{{ 'on' if s.hero_parallax else 'off' }}"{{ note('hero') }}>
   <div class="layer">
   {% for sl in s.hero_slides %}
-  <div class="slide{{ ' on' if loop.first }}" data-dur="{{ sl.dur }}" data-move="{{ sl.move }}">{{ pic(sl.id, h.hero_alts[loop.index0], '100vw', eager=loop.first) }}</div>
+  <div class="slide{{ ' on' if loop.first }}" data-dur="{{ sl.dur }}" data-move="{{ sl.move }}">{{ pic(sl.id, h.hero_alts[loop.index0], '100vw', eager=(loop.index0 < 2)) }}</div>
   {% endfor %}
   </div>
   <div class="wrap">
