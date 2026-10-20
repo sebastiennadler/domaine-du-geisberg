@@ -45,16 +45,20 @@ Règles et décisions : `CLAUDE.md`. Plan complet : `docs/PLAN-DU-SITE.md`.
 - [ ] Nouvelles photos envoyées par Marc : trier, intégrer (gîtes, maison en été, séjour).
 - [ ] Traductions des nouveaux textes dans les 6 autres langues.
 - [ ] Notes pour Marc refaites page par page (toujours exhaustives, vue d'ensemble sur l'accueil).
-- [ ] Tests mis à jour ; balayage ; vérification visuelle ; mise en ligne sur GitHub ; mail à Marc.
+- [ ] Tests mis à jour ; balayage ; vérification visuelle ; mise en ligne sur GitHub.
+      **Pas de mail à Marc pour l'instant** (on le laisse tranquille — Sébastien, 20/10) : Sébastien lui
+      montrera la v2 quand il le décidera.
 
-## 3. Référencement (étape 3)
+## 3. Référencement (étape 3) — seulement ce qui se fait de notre côté, pour préparer le terrain
 
 - [ ] Titres et descriptions par page et par langue, un `<h1>` par page, `alt` sur toutes les photos.
 - [ ] JSON-LD enrichi (`priceRange`, offres, équipements, `aggregateRating` sourcé), fil d'Ariane,
       `VideoObject`, `FAQPage`.
 - [ ] Page « Questions fréquentes » ; pages de fond : gîte accessible PMR Moselle, lac de Creutzwald,
       entre Saint-Avold et Sarrebruck (textes à faire valider par Marc).
-- [ ] Redirections 301 des adresses de l'ancien site (liste dans `ancien-site/`), page 404.
+- [ ] Page 404.
+- [ ] **Plus tard** (pas dans l'étape 3 — Sébastien, 20/10) : redirections 301 des adresses de l'ancien
+      site (liste dans `ancien-site/`), `.htaccess` définitif.
 - [ ] Après bascule : Search Console + sitemap, Bing, fiche Google Business (Marc), lien vers le site
       depuis Gîtes de France, Clévacances, Airbnb, Abritel.
 
@@ -75,6 +79,7 @@ Règles et décisions : `CLAUDE.md`. Plan complet : `docs/PLAN-DU-SITE.md`.
 - [ ] `build.py --prod` ; `check.py` 0 erreur ; tests verts ; balayage ; relecture des 7 langues.
 - [ ] `tools/package.py` → zip ; livraison à DECLIC ; mise en ligne par DECLIC ; vérification en ligne
       (HTTPS, langues, formulaire, calendriers, redirections, 404).
+- [ ] **Plus tard** : le mail à DECLIC pour la livraison (Sébastien, 20/10) — pas avant que le site soit prêt.
 - [ ] Adresse du nouveau site dans Nuitrésa (fiches des gîtes) et sur les plateformes.
 - [ ] Site de travail GitHub : `noindex` ou conservation en préproduction (décider).
 - [ ] Mettre à jour `docs/PLAN-DU-SITE.md` (registre) et archiver la v2 (tag `v2-<date>`).

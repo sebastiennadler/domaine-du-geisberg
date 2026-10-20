@@ -69,6 +69,10 @@ sont des interprétations en attente de validation.
   « Je t'embrasse »). Mails à des tiers : vouvoiement, sauf indication.
 - Tout ce qui est dit à Marc par mail à propos du site doit **aussi** figurer dans les notes du site.
 - Ne pas envoyer de mail à la place de Sébastien : préparer le texte, il envoie.
+- **Pas de nouveau mail à Marc pour l'instant** (20/10) : on le laisse tranquille jusqu'à ce que Sébastien
+  décide de lui montrer la v2. Les notes du site continuent d'être tenues à jour.
+- Étape référencement : seulement ce qui se fait côté site maintenant (préparer le terrain) ; les
+  redirections de l'ancien site et le mail de livraison à DECLIC sont pour plus tard (20/10).
 
 ## 3. Notes pour Marc (mode « Notes »)
 
