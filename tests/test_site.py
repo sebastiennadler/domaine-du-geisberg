@@ -146,6 +146,7 @@ async def main():
         await page.wait_for_timeout(500)
         ok('diaporama : s\'ouvre en superposition, photos chargées', await page.evaluate("!document.getElementById('home-diapo').hidden && [...document.querySelectorAll('#home-diapo img')].every(i=>i.src)"))
         ok('diaporama : légende et compteur', await page.evaluate("document.querySelector('#home-diapo [data-idx]').textContent") == '1 / 17')
+        ok('diaporama : la zone des photos occupe l\'écran (pas réduite à zéro)', await page.evaluate("document.querySelector('#home-diapo .diapo').getBoundingClientRect().height") > 500)
         ok('diaporama : photo de nuit absente', await page.evaluate("[...document.querySelectorAll('#home-diapo img')].every(i=>!i.src.includes('neige'))"))
         await page.keyboard.press('ArrowRight')
         await page.wait_for_timeout(100)
