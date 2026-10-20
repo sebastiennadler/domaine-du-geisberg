@@ -2515,3 +2515,11 @@ html[data-theme='dark'] .list.minus li::before {
 .cals + .note {
   margin-top: 12px;
 }
+
+/* Sur les écrans étroits, le lien « voir tout » d'un titre de section peut passer sur deux lignes (textes longs : NL, DE) */
+@media (max-width: 480px) {
+  .sec-head .more {
+    white-space: normal;
+    max-width: 100%;
+  }
+}
