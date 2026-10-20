@@ -59,6 +59,7 @@ async def main():
             for d in DIRS:
                 for pg in PAGES + (LANDING if d in ('', 'en/', 'de/') else []) + (['404'] if d == '' else []):
                     await page.goto(f'{BASE}/{d}{pg}.html', wait_until='domcontentloaded')
+                    await page.evaluate("document.fonts.ready")  # mesurer avec les vraies polices, pas celles de repli (plus larges)
                     await page.evaluate("document.querySelectorAll('.reveal').forEach(e=>e.classList.add('in'))")
                     if w < 1040:  # ouvrir le tiroir mobile pour vérifier aussi son contenu
                         pass

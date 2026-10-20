@@ -2392,7 +2392,7 @@ html[data-theme='dark'] .site-footer .logo-dark {
 }
 .fiche > div {
   display: grid;
-  grid-template-columns: 112px 1fr;
+  grid-template-columns: 124px 1fr; /* assez pour « Creutzwalder See » en gras (pages de fond DE) */
   gap: 12px;
   padding: 11px 14px;
   border-top: 1px solid var(--line);
