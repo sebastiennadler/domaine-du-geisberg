@@ -214,7 +214,8 @@ puis la feuille de style ; les textes de l'interface vont dans `<script type="ap
   CSP, aucun script ni police externe, longueurs titre/description), polices locales, menu et tiroir mobile,
   bandeau, galerie / visionneuse, diaporama, vidéos, cadres Nuitrésa par langue, livre d'or, boutons Réserver,
   notes pour Marc (présence, panneau, absence de secrets), langues, contrastes clair/sombre, FAQ, pages de fond,
-  sitemap, 404, redirections. ≈ 1 000 tests, tous verts.
+  sitemap, 404, redirections, audit d'accessibilité axe-core (WCAG 2.1 A/AA, deux thèmes, FR et DE, zéro
+  violation). ≈ 1 040 tests, tous verts.
 - `tests/sweep.py` : aucune largeur de 320 à 1366 px ne provoque de défilement horizontal.
 - Vérification visuelle dans le navigateur (ordinateur + mobile) après chaque mise en ligne.
 - Automatique : liens externes chaque lundi (`liens.yml`, rapport `docs/liens-rapport.md`).

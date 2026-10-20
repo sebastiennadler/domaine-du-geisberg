@@ -53,7 +53,7 @@ prestataire de Marc), intégré dans la page Réservation.
 │   ├── package.py                livraison pour l'hébergeur : build --prod + check + zip dans livraison/
 │   ├── photos.py / videos.py     photos → WebP en plusieurs tailles ; vidéos → MP4 légers + affiches
 │   └── fetch_commons.py, fetch_audio.py   médias libres (Wikimedia Commons)
-├── tests/                        test_site.py (fonctionnel), sweep.py (débordements), run.sh (les deux)
+├── tests/                        test_site.py (fonctionnel + accessibilité), sweep.py (débordements), run.sh (les deux), vendor/ (axe-core)
 ├── dist/                         le site GÉNÉRÉ (non suivi par git) : ce qui est publié et livré
 ├── livraison/                    archives zip pour l'hébergeur (non suivi)
 ├── ancien-site/                  copie de l'ancien site (textes, photos) pour référence
@@ -169,7 +169,9 @@ navigateurs rechargent toujours la dernière version.
 - `tests/test_site.py` : tests fonctionnels Playwright (Chromium), réseau externe coupé (≈ 1 000 tests) :
   contenu et traductions, chaque page dans chaque langue (menu, hreflang, CSP, aucun script ni police externe,
   longueur des titres et descriptions), accueil, réservation, En images, avis, notes, langues, contrastes
-  clair/sombre, FAQ (données structurées), pages de fond, sitemap, 404.
+  clair/sombre, FAQ (données structurées), pages de fond, sitemap, 404, et un audit d'accessibilité
+  **axe-core** (WCAG 2.1 A/AA + bonnes pratiques) sur chaque page en clair et en sombre, FR et DE —
+  zéro violation exigée (`tests/vendor/axe.min.js`, licence MPL 2.0).
 - `tests/sweep.py` : balayage de toutes les pages de 320 à 1366 px ; ne doit signaler aucun débordement.
 - Prérequis : `pip install playwright && playwright install chromium`.
 

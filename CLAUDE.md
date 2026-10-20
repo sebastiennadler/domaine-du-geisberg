@@ -97,6 +97,8 @@ sont des interprétations en attente de validation.
   qui retombe sur le français par oubli (Sébastien, 20/10).
 - **Mode sombre et mode clair** : vérifiés page par page (captures dans les deux modes, contrastes du texte,
   des boutons, des cadres Nuitrésa et du logo) (Sébastien, 20/10).
+- **Accessibilité** : audit axe-core (WCAG 2.1 A/AA) intégré aux tests, zéro violation exigée ; `alt` sur
+  toutes les images, structure sémantique, clavier, contrastes ≥ 4,5:1 dans les deux thèmes (Sébastien, 20/10).
 - Rien ne part en ligne sans ces contrôles.
 
 ### Communication

@@ -299,6 +299,25 @@ async def main():
         ok('404 : feuille de style et logo en chemin absolu', await page.locator('link[rel=stylesheet][href^="/domaine-du-geisberg/css/"]').count() == 1)
         ok('404 : pas de canonical ni de hreflang', await page.locator('link[rel=canonical], link[rel=alternate][hreflang]').count() == 0)
 
+        # 13. accessibilité : audit axe-core (WCAG 2.1 A/AA + bonnes pratiques) sur chaque page, deux thèmes, deux langues.
+        # Contexte à part : l'injection du script d'audit est un script en ligne, interdit par la CSP du site.
+        actx = await b.new_context(viewport={'width': 1280, 'height': 800}, bypass_csp=True)
+        apage = await actx.new_page()
+        await apage.route(re.compile(r'^(?!http://127\.0\.0\.1).*'), block)
+        axe = str(ROOT / 'tests/vendor/axe.min.js')
+        for theme in ['light', 'dark']:
+            for d in ['', 'de/']:
+                for pg in PAGES + LANDING + (['404'] if d == '' else []):
+                    await apage.goto(f'{BASE}/{d}{pg}.html', wait_until='load')
+                    # animations figées : axe mesure des couleurs stables, pas un fondu en cours
+                    await apage.add_style_tag(content='*,*::before,*::after{transition:none!important;animation:none!important} .reveal{opacity:1!important;transform:none!important}')
+                    await apage.evaluate(f"document.documentElement.setAttribute('data-theme','{theme}'); document.querySelectorAll('.reveal').forEach(e=>e.classList.add('in'))")
+                    await apage.add_script_tag(path=axe)
+                    res = await apage.evaluate("axe.run(document, {runOnly:{type:'tag', values:['wcag2a','wcag2aa','wcag21a','wcag21aa','best-practice']}})")
+                    viol = [f"{v['id']} ({v['impact']}) : {v['nodes'][0]['html'][:60]}" for v in res['violations']]
+                    ok(f'accessibilité {theme} {d}{pg} : aucune violation axe-core', not viol, ' | '.join(viol[:3]))
+        await actx.close()
+
         # 11. modes clair et sombre : contraste du texte courant, des boutons et des liens sur chaque page
         JS_CONTRAST = """(() => {
           const parse = c => { const m = c.match(/-?\\d+(\\.\\d+)?/g).map(Number); return c.startsWith('color(srgb') ? m.slice(0,3).map(v => v*255) : m.slice(0,3) };
