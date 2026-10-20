@@ -148,9 +148,9 @@ sont des interprétations en attente de validation.
 - **Menu à 5 entrées** : accepté « à voir une fois monté ».
 - **Accueil** : d'abord la photo d'Agnès, Marc et Urielle (environ 4 secondes, « à voir »), puis les photos
   de la maison, puis les **photos et la description des gîtes sur la même page** ; les équipements peuvent
-  y rester. → Interprétation retenue **[À CONFIRMER]** : l'accueil devient la page de présentation
+  y rester. → **Validé par Sébastien le 20/10** : l'accueil devient la page de présentation
   (hôtes → maison → gîtes → fiche → tiroir « Tout l'équipement » → bouton Réserver) et il n'y a plus de
-  page « Les gîtes » séparée.
+  page « Les gîtes » séparée (`gites.html` redirige vers l'accueil).
 - **Disponibilités** : les deux calendriers (un par gîte) sur la page **Réservation**, au-dessus du
   formulaire unique (validé 20/10) — **et nulle part ailleurs** : ni sur l'accueil ni sur une page Gîtes
   (Sébastien, 20/10).
@@ -163,8 +163,10 @@ sont des interprétations en attente de validation.
   Urielle, puis les autres photos avec **zoom + déplacement** (effet Ken Burns) : chaque photo **part de
   loin** (échelle 1, photo entière) puis zoome lentement en glissant vers son point focal, quitte à zoomer
   plus qu'aujourd'hui — jamais l'inverse. Durée réglable par photo. Effet 3D : **parallaxe légère** du
-  bandeau (plans photo / voile / titre à vitesses différentes) retenue ; inclinaison à la souris
-  [À CONFIRMER] ; vraie 3D par carte de profondeur écartée.
+  bandeau (plans photo / voile / titre à vitesses différentes) retenue ; **inclinaison à la souris
+  acceptée à l'essai** (20/10) — Sébastien teste, donc **retour arrière facile** : un interrupteur
+  `hero_tilt` (et `hero_parallax`) dans `shared.json`, une ligne à passer à `false` ; vraie 3D par carte de
+  profondeur écartée.
 - Distances validées : lac de Creutzwald 6 km, piscine de Creutzwald 7 km, gare de Saint-Avold 15 km,
   cimetière américain 15 km, Völklingen 28 km, musée des mineurs 31 km, Centre Pompidou-Metz 40 km,
   Bliesbruck 61 km. Restent à confirmer : zoo d'Amnéville, Sainte-Croix, boucle de la Sarre.
@@ -199,5 +201,5 @@ sont des interprétations en attente de validation.
 
 ## 5. Questions ouvertes
 
-Voir `TODO.md`, section « À confirmer ». Restent : l'interprétation « accueil = page de présentation »
-(plus de page Les gîtes séparée) et les noms des entrées du menu.
+Voir `TODO.md`, section « À confirmer ». Reste : les noms des entrées du menu (« Le domaine & alentours »,
+« Photos & vidéos »), à valider sur la maquette.

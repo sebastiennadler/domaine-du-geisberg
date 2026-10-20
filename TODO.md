@@ -5,8 +5,7 @@ Règles et décisions : `CLAUDE.md`. Plan complet : `docs/PLAN-DU-SITE.md`.
 
 ## 0. À confirmer par Sébastien (avant de commencer la v2)
 
-- [ ] **Accueil = page de présentation** (hôtes → maison → gîtes → fiche → tiroir équipement → Réserver) et
-      plus de page « Les gîtes » séparée. Alternative : garder « Les gîtes » et un accueil court.
+- [x] Accueil = page de présentation, plus de page « Les gîtes » séparée (20/10).
 - [x] Calendriers des deux gîtes sur la page Réservation, au-dessus du formulaire (20/10).
 - [x] Texte « gîtes jumeaux » : « Deux gîtes identiques. Réservez l'un des deux, ou les deux pour un groupe. » (20/10).
 - [x] Couchage d'appoint : une ligne discrète dans la fiche (20/10).
@@ -14,7 +13,7 @@ Règles et décisions : `CLAUDE.md`. Plan complet : `docs/PLAN-DU-SITE.md`.
 - [x] Couleurs : accent aligné sur le bordeaux du logo (20/10).
 - [x] Licence : aucune — tout « tous droits réservés » (20/10).
 - [ ] Menu : « Le domaine & alentours » et « Photos & vidéos » comme noms d'entrées.
-- [ ] Bandeau d'accueil : inclinaison 3D qui suit la souris (option 2), en plus de la parallaxe légère ?
+- [x] Bandeau d'accueil : inclinaison 3D à la souris, à l'essai, avec interrupteur pour revenir en arrière (20/10).
 
 ## 1. Sauvegarde et structure (étape 1)
 
@@ -26,7 +25,7 @@ Règles et décisions : `CLAUDE.md`. Plan complet : `docs/PLAN-DU-SITE.md`.
 - [x] `pages.yml` : construit, vérifie (`check.py`), teste (`tests/run.sh`) puis déploie `dist/` (20/10).
 - [x] `tools/package.py` : zip de livraison pour DECLIC dans `livraison/` (20/10).
 - [x] Tests dans `tests/` (`run.sh`, codes de retour) et documentés dans le README (20/10).
-- [ ] Resynchroniser le dossier du Mac avec GitHub (demande d'autorisation de suppression, double confirmation).
+- [ ] Resynchroniser le dossier du Mac avec GitHub (autorisation de suppression : 1re confirmation reçue le 20/10, 2e à obtenir).
 
 ## 2. Contenu et pages (étape 2 — v2)
 
