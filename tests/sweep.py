@@ -6,7 +6,7 @@ import asyncio, re, json, sys
 from playwright.async_api import async_playwright
 
 BASE = 'http://127.0.0.1:8111'  # serveur local sur dist/ (voir tests/run.sh)
-PAGES = ['index', 'le-domaine', 'gites', 'videos', 'diaporama', 'visite', 'autour', 'avis', 'reservation', 'mentions-legales']
+PAGES = ['index', 'reservation', 'le-domaine', 'medias', 'avis', 'mentions-legales']
 DIRS = ['', 'en/', 'de/', 'es/', 'pt/', 'nl/', 'zh/']
 WIDTHS = [320, 360, 390, 430, 600, 768, 834, 1024, 1140, 1366]
 
@@ -15,7 +15,7 @@ JS = r"""
   const out = [];
   const vw = document.documentElement.clientWidth;
   if (document.documentElement.scrollWidth > vw + 1) out.push(['page', 'défilement horizontal', document.documentElement.scrollWidth - vw]);
-  const skip = (el) => el.closest('.nav, .lb, .npanel, .ntip, .langdd .langs, details:not([open]) > :not(summary)');
+  const skip = (el) => el.closest('.nav, .lb, .npanel, .ntip, .langdd .langs, .brand-txt, .visually-hidden, .diapo-overlay[hidden], details:not([open]) > :not(summary)');
   const sel = 'a, span, b, small, p, li, h1, h2, h3, cite, label, button, summary, dt, dd, figcaption, blockquote';
   for (const el of document.querySelectorAll(sel)) {
     if (skip(el)) continue;

@@ -1,15 +1,5 @@
 [
  {
-  "id": "hero/maison-neige-soir",
-  "src": "maison-neige-soir.jpeg",
-  "widths": [
-   1920,
-   1280,
-   800
-  ],
-  "pos": "42% 72%"
- },
- {
   "id": "hero/maison-prairie",
   "src": "maison-prairie.jpeg",
   "widths": [
@@ -28,6 +18,15 @@
    800
   ],
   "pos": "50% 55%"
+ },
+ {
+  "id": "hero/agnes-marc",
+  "src": "agnes-marc.png",
+  "widths": [
+   1448,
+   800
+  ],
+  "pos": "35% 42%"
  },
  {
   "id": "domaine/chemin-collines",
@@ -127,5 +126,13 @@
  {
   "id": "autour/chemin-hiver",
   "src": "autour-chemin-hiver.jpg"
+ },
+ {
+  "id": "gites/chambre-deux-lits",
+  "src": "chambre-deux-lits.jpeg",
+  "widths": [
+   1600,
+   800
+  ]
  }
 ]

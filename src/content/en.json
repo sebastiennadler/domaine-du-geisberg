@@ -2,27 +2,15 @@
   "meta": {
     "index": [
       "Domaine du Geisberg – Holiday gîtes in Varsberg, Moselle",
-      "Two 3-star rural gîtes in Varsberg (Moselle, France) on a 2-hectare estate at the edge of the forest. Private terrace, parking, wifi, pets welcome. Book direct."
+      "Two identical 60 m² gîtes in Varsberg (Moselle), in the heart of nature on the edge of the forest: 1 to 4 guests, wheelchair accessible, private terrace, fibre Wi-Fi, pets welcome. Book direct."
     ],
     "le-domaine": [
-      "The estate – Domaine du Geisberg",
-      "Two hectares of meadows at the edge of the forest, at the place called Vogelsgesang, on the hill above Varsberg."
-    ],
-    "gites": [
-      "The gîtes – Domaine du Geisberg",
-      "Two twin 60 m² gîtes, 2 bedrooms, 4 guests, private terrace, geothermal heating, Tourisme & Handicap label."
-    ],
-    "autour": [
-      "Things to do around Varsberg – Domaine du Geisberg",
-      "Hiking from the garden, Creutzwald lake, the mining museum, Völklingen, Centre Pompidou-Metz, the Saar and Luxembourg."
+      "The estate and surroundings – Domaine du Geisberg",
+      "Two hectares of meadows on the edge of the forest at Vogelsgesang, and everything to see nearby: Creutzwald lake, the Warndt forest, Völklingen, Metz, the Saar."
     ],
     "reservation": [
-      "Rates, booking and directions – Domaine du Geisberg",
-      "Gîte rates, direct booking request and directions to Varsberg, Moselle."
-    ],
-    "diaporama": [
-      "Slideshow – Domaine du Geisberg",
-      "The gîtes and the estate in pictures."
+      "Availability, rates and booking – Domaine du Geisberg",
+      "Calendars for both gîtes, rates (weekends from €300, €420 per week), direct booking request and directions to Varsberg, between Saint-Avold and Creutzwald."
     ],
     "mentions-legales": [
       "Legal notice – Domaine du Geisberg",
@@ -32,27 +20,26 @@
       "Reviews and labels – Domaine du Geisberg",
       "Our guests' reviews on Gîtes de France, Airbnb, Abritel and Clévacances, our labels and where to book."
     ],
-    "visite": [
-      "360° virtual tour – Domaine du Geisberg",
-      "Tour the Domaine du Geisberg gîtes in 360°, room by room."
-    ],
-    "videos": [
-      "Videos – Domaine du Geisberg",
-      "Birdsong at dawn, a forest walk with the horses, a roe deer at the bottom of the garden: the estate on video."
+    "medias": [
+      "In pictures – Domaine du Geisberg",
+      "The estate and the gîtes in pictures: slideshow with birdsong, videos filmed on site, 360° virtual tour."
     ]
   },
   "nav": {
     "index": "Home",
-    "le-domaine": "The estate",
-    "gites": "The gîtes",
-    "autour": "Around us",
     "reservation": "Booking",
-    "diaporama": "Slideshow",
-    "contact": "Contact",
-    "book": "Book",
+    "le-domaine": "The estate & surroundings",
+    "medias": "In pictures",
     "avis": "Reviews",
+    "book": "Book",
+    "contact": "Contact",
+    "gites": "The gîtes",
+    "videos": "Videos",
+    "diaporama": "Slideshow",
     "visite": "Tour of the gîte",
-    "videos": "Videos"
+    "autour": "Around us",
+    "alentours": "The surroundings",
+    "legal": "Legal notice"
   },
   "ui": {
     "skip": "Skip to content",
@@ -84,49 +71,149 @@
     "fallback": "",
     "dev_credit": "Website: Sébastien Nadler",
     "top": "Back to top",
-    "address": "Address"
+    "address": "Address",
+    "equip_all": "Everything that's provided",
+    "equip_close": "Close",
+    "tabs": "Tabs",
+    "prices_more": "See the rates",
+    "see_gites": "See the gîtes",
+    "read_more": "Read more",
+    "not_included": "Not provided",
+    "included": "Included"
   },
   "home": {
     "h1": "In the heart of nature",
-    "lead": "Two exceptional gîtes right next to the forest, on the hill above Varsberg, at the place called Vogelsgesang, “birdsong”.",
-    "cta1": "Check availability",
-    "cta2": "Discover the gîtes",
-    "intro_h": "A place that lives up to its name",
-    "intro": [
-      "Our two gîtes are two apartments on the garden level of our house, in the heart of a vast two-hectare estate of green meadows at the edge of the forest, in an exceptional spot known as “Vogelsgesang”, birdsong.",
-      "Typical of the Lorraine countryside, the surroundings are lush and offer a beautiful panorama in a setting of calm and serenity."
-    ],
-    "intro_more": "Discover the estate",
-    "gites_h": "Two twin gîtes, the same view",
-    "gites_lead": "The same comforts on both sides. Book one, or both for a large family.",
-    "around_h": "On foot from the garden, or an hour’s drive",
-    "around_lead": "Hiking trails without crossing a road, a lake and water-sports centre 6 km away, and Metz, the Saar and Luxembourg within a day trip.",
-    "around_more": "Everything there is to see",
-    "hosts_h": "Agnès and Marc welcome you",
-    "hosts": "Since 2007, the year our gîtes opened, we have enjoyed sharing our way of life with guests of all nationalities and discovering theirs. It is a way for us to get to know other countries and cultures, and to show others the riches of our region and our country. Using German and English regularly is a pleasant change of scenery.",
-    "diapo_btn": "Start the slideshow",
+    "lead": "Two exceptional gîtes right next to the forest, on the hill above Varsberg, at a place called Vogelsgesang — “birdsong”.",
+    "cta1": "Book",
+    "cta2": "See the gîtes",
     "hero_alts": [
-      "The house under the snow on a winter evening",
+      "Agnès, Marc and Urielle in front of the house",
       "The house from the flowering meadow",
-      "The horses in front of the house at dusk"
+      "The horses in front of the house at dusk",
+      "Sunset over Varsberg"
     ],
-    "gites_facts": [
+    "facts": [
+      "2 identical gîtes",
       "60 m²",
-      "2 bedrooms",
-      "Sleeps 4",
-      "Private terrace",
-      "Parking",
-      "Wi-Fi",
-      "Pets welcome"
+      "1 to 4 guests",
+      "Wheelchair accessible",
+      "Pets welcome",
+      "Fibre Wi-Fi"
     ],
-    "hosts_alt": "Agnès, Marc and Urielle in front of the house"
+    "gites_eyebrow": "The gîtes",
+    "gites_h": "Two identical gîtes",
+    "gites_lead": "Book one of them — or both for a group.",
+    "gites_p": "Each gîte is a 60 m² garden-level apartment in the house, with its own entrance, terrace and parking: a living room with fitted kitchen, two bedrooms with two beds each, and a wheelchair-accessible shower room. Both are laid out and equipped the same way, with the same view over the meadow.",
+    "fiche_h": "The essentials",
+    "fiche": [
+      [
+        "Capacity",
+        "1 to 4 guests: 2 bedrooms with 2 beds (90 × 190 cm). An extra bed in the living room is possible on request."
+      ],
+      [
+        "Size",
+        "60 m², garden level, private entrance, private terrace"
+      ],
+      [
+        "Shower room",
+        "Walk-in shower and toilet, wheelchair accessible (Tourisme & Handicap label)"
+      ],
+      [
+        "Kitchen",
+        "Open onto the living room: induction hob, oven, microwave, dishwasher, washing machine, freezer"
+      ],
+      [
+        "Comfort",
+        "Geothermal underfloor heating, flat-screen TV, fibre Wi-Fi"
+      ],
+      [
+        "Outside",
+        "Garden furniture, barbecue, private parking, mountain bikes available"
+      ],
+      [
+        "Pets",
+        "Welcome, 2 at most, no extra charge"
+      ],
+      [
+        "Times",
+        "Check-in from 4 pm, check-out by 10 am"
+      ],
+      [
+        "Rates",
+        "From €300 for a weekend, €420 for a week, all charges included"
+      ]
+    ],
+    "equip_h": "Everything that's provided",
+    "equip_groups": [
+      [
+        "Living room and kitchen",
+        [
+          "Sofa and dining area",
+          "Flat-screen TV",
+          "Induction hob, oven, microwave",
+          "Dishwasher, washing machine, freezer",
+          "Coffee maker, kettle, toaster",
+          "Full set of crockery and utensils"
+        ]
+      ],
+      [
+        "Bedrooms",
+        [
+          "2 bedrooms with 2 beds of 90 × 190 cm (can be pushed together)",
+          "Beds made on arrival, sheets provided",
+          "Extra bed possible in the living room, on request",
+          "Cot, baby bath and high chair on request"
+        ]
+      ],
+      [
+        "Shower room",
+        [
+          "Walk-in shower, toilet",
+          "Wheelchair accessible",
+          "Bath towels not provided"
+        ]
+      ],
+      [
+        "Outside",
+        [
+          "Private terrace with garden furniture",
+          "Barbecue",
+          "Private parking",
+          "Mountain bikes available"
+        ]
+      ],
+      [
+        "Comfort and services",
+        [
+          "Geothermal underfloor heating",
+          "Fibre Wi-Fi",
+          "No-smoking gîte",
+          "Pets welcome (2 at most), no extra charge",
+          "Bakery 300 m away, restaurant 1 km, grocery 3 km"
+        ]
+      ]
+    ],
+    "review_eyebrow": "They came",
+    "review_h": "What our guests say",
+    "review_more": "See all reviews",
+    "hosts_eyebrow": "Your hosts",
+    "hosts_h": "Agnès and Marc welcome you",
+    "hosts": "Since 2007, the year we opened our gîtes, we have enjoyed sharing our way of life with guests from all over the world, and discovering theirs. It is our way of discovering other countries and cultures, and of showing others the riches of our region and country. Using German and English regularly is a pleasant change of scene.",
+    "hosts_alt": "Agnès, Marc and Urielle in front of the house",
+    "teasers_h": "Going further",
+    "domaine_h": "The estate & surroundings",
+    "domaine_p": "Two hectares of meadows on the edge of the forest, walking trails that start from the garden, and everything there is to see within an hour.",
+    "medias_h": "In pictures",
+    "medias_p": "The slideshow with birdsong, three videos filmed on site and the 360° virtual tour.",
+    "more": "Discover"
   },
   "domaine": {
-    "h1": "The estate",
+    "h1": "The estate & surroundings",
+    "lead": "Two hectares of meadows on the edge of the forest, at a place called Vogelsgesang, and everything there is to see within an hour.",
     "p": [
-      "Set in the heart of a vast two-hectare estate of green meadows at the edge of the forest, our two gîtes occupy the ground floor of a spacious house in an exceptional spot known as “Vogelsgesang” (birdsong).",
-      "Typical of the Lorraine countryside, the surroundings are lush and offer a beautiful panorama in a setting of calm and serenity.",
-      "There are many hiking trails, reachable without crossing a road, on foot, by bike or on horseback. Horses are available for experienced riders."
+      "Set in a vast, green two-hectare estate on the edge of the forest, our two gîtes occupy the lower floor of a spacious house in an exceptional spot known as “Vogelsgesang” — birdsong.",
+      "Typical of the Lorraine countryside, the surroundings offer lush nature and a beautiful panorama, in an atmosphere of calm and serenity.",
+      "There are many walking trails, reachable without crossing a road, on foot or by bike. Our horses, now retired, will watch you go by from the meadow."
     ],
     "gallery_h": "The estate in pictures",
     "captions": [
@@ -136,62 +223,22 @@
       "Sunset over Varsberg",
       "The horses in winter",
       "Urielle, our Malinois, in the tall grass"
-    ]
-  },
-  "gites": {
-    "h1": "The gîtes",
-    "lead": "Two similar holiday apartments at garden level of the owners' house, each with a separate entrance, private terrace and parking.",
-    "common": "Each gîte has a living room with fitted kitchen (oven, ceramic hob, microwave, dishwasher, washing machine, freezer), two bedrooms and a shower room with WC, adapted for guests with reduced mobility. Sleeping: four 90 cm beds that can be pushed together in the bedrooms: 4 guests per gîte. Flat-screen TV, wifi, geothermal underfloor heating.",
-    "desc_h": "Layout",
-    "equip_h": "Equipment",
-    "serv_h": "Services included",
-    "desc": [
-      "1 living room with fitted kitchen",
-      "2 bedrooms (two 90 × 190 cm beds each)",
-      "1 accessible shower room with WC",
-      "4 guests · 60 m²"
     ],
-    "equip": [
-      "Geothermal underfloor heating",
-      "Flat-screen TV",
-      "Dishwasher, washing machine, freezer",
-      "Ceramic hob, oven, microwave",
-      "Private terrace, garden furniture, barbecue",
-      "Baby equipment (cot, bath)",
-      "Mountain bikes available"
-    ],
-    "serv": [
-      "Bed and household linen provided",
-      "Beds made on arrival",
-      "End-of-stay cleaning included",
-      "Electricity and heating included",
-      "Free wifi",
-      "Private parking",
-      "Pets welcome",
-      "Non-smoking"
-    ],
-    "gite1_h": "Gîte 1",
-    "gite2_h": "Gîte 2",
-    "dispo_h": "Availability",
-    "dispo_p": "Both calendars are updated in real time by our booking system, platforms included: green nights are free, red nights are taken. To book, go to the Booking page.",
-    "tour": "Take the 360° virtual tour",
-    "identical": "The two gîtes are twins: same rooms, same equipment, same view over the meadow. Simply choose whichever is free on your dates — or both for a larger group.",
-    "captions": [
-      "Bedroom, double bed or two singles",
-      "The living room, opening onto the terrace",
-      "The dining corner and its oak table",
-      "The fitted kitchen",
-      "The shower room, walk-in shower",
-      "Accessible shower room (Tourisme & Handicap label)",
-      "A gîte's terrace in the evening"
-    ],
-    "dispo_btn": "Check availability and book",
-    "cal_ko": "If the calendars do not appear, write to us at"
-  },
-  "autour": {
-    "h1": "Things to do",
-    "lead": "Hiking trails start right from the gîte, with no road to cross, on foot, by bike or on horseback. Several remarkable sites are just a few kilometres away.",
+    "around_h": "The surroundings",
+    "around_lead": "Several remarkable sites are a few kilometres away; Metz, the Saar and Luxembourg are within a day trip.",
     "sites_h": "Worth seeing nearby",
+    "leisure_h": "Leisure",
+    "on_site": "on site",
+    "links_h": "Useful links",
+    "around_gallery_h": "Varsberg, the Warndt forest and the fields",
+    "around_gallery_caps": [
+      "The fields above the estate, on the edge of the Warndt forest",
+      "The path along the orchard on a frosty morning",
+      "Varsberg church",
+      "The Lourdes grotto in Varsberg",
+      "The Warndt forest in spring",
+      "Border stone from 1830, Carling forest"
+    ],
     "sites": {
       "creutzwald-lac": [
         "Creutzwald lake and water-sports centre",
@@ -230,66 +277,67 @@
         "The spectacular bend of the Saar, seen from the Cloef viewpoint."
       ]
     },
-    "leisure_h": "Leisure",
-    "on_site": "on site",
     "leisure": {
       "nautique": "Water sports",
       "piscine": "Swimming pool",
       "peche": "Fishing",
       "tennis": "Tennis",
       "rando": "Hiking",
-      "equitation": "Horse riding",
       "golf": "Faulquemont golf course",
       "forets": "Forests",
       "gare": "Saint-Avold railway station",
       "commerces": "Bakery, shops",
       "calypso": "Calypso Saarbrücken (water park)"
-    },
-    "links_h": "Useful links",
-    "gallery_h": "Varsberg, the Warndt forest and the fields",
-    "gallery_caps": [
-      "The fields above the estate, on the edge of the Warndt forest",
-      "The lane along the orchard on a frosty morning",
-      "Varsberg church",
-      "The Lourdes grotto in Varsberg",
-      "The Warndt forest in spring",
-      "Border stone of 1830, Carling forest"
+    }
+  },
+  "gites": {
+    "captions": [
+      "Bedroom, double bed or two single beds",
+      "Twin bedroom",
+      "The living room, opening onto the terrace",
+      "The dining area and its oak table",
+      "The fitted kitchen",
+      "The shower room, walk-in shower",
+      "Accessible shower room (Tourisme & Handicap label)",
+      "A gîte's terrace in the evening"
     ]
   },
   "reservation": {
-    "h1": "Rates, booking and directions",
+    "h1": "Availability, rates and booking",
+    "dispo_h": "Availability",
+    "dispo_p": "One calendar per gîte, updated in real time by our booking system, platforms included: green nights are free, red nights are taken.",
+    "cal_ko": "If the calendars do not appear, write to us at",
     "prices_h": "Rates",
-    "prices": [
-      [
-        "Week",
-        "€420"
-      ],
-      [
-        "Weekend (2 nights)",
-        "€300"
-      ]
+    "prices_p": "Per gîte, all charges included. Both gîtes are the same price.",
+    "prices": {
+      "we2": "Weekend, 2 nights — arrival on Friday",
+      "we3": "Weekend, 3 nights — Friday to Monday",
+      "mid4": "4 nights midweek — arrival Sunday to Thursday",
+      "week": "5, 6 or 7 nights"
+    },
+    "prices_note": "Midweek, 4 nights minimum. 25% deposit on booking, €300 security deposit, tourist tax extra. Credit cards, Visa, MasterCard and ANCV holiday vouchers accepted.",
+    "included_h": "Included in the price",
+    "included": [
+      "Beds made on arrival, sheets provided",
+      "All charges: electricity, water, underfloor heating",
+      "Final cleaning offered — the gîte is left tidy, dishes washed and put away",
+      "Fibre Wi-Fi, parking, pets (2 at most)"
     ],
-    "included": "Included: bed and household linen, beds made on arrival, end-of-stay cleaning, electricity and heating, wifi, pets. Deposit €300. Tourist tax extra. Credit cards and French ANCV holiday vouchers accepted.",
+    "not_included_h": "Not provided",
+    "not_included": [
+      "Bath towels",
+      "Tourist tax, paid on site"
+    ],
     "form_h": "Book online",
-    "form_p": "Pick your dates and the gîte, leave your details: we confirm within 24 hours. For a simple question, an e-mail or a call is enough.",
+    "form_p": "Choose your dates and the number of guests; the form offers you whichever gîte is free. Leave your details and we confirm within 24 hours. For a simple question, an e-mail or a phone call is enough.",
     "access_h": "Getting to the Domaine du Geisberg",
     "access": [
       "Varsberg lies between Saint-Avold and Creutzwald, 40 minutes from Metz and 30 minutes from Saarbrücken.",
-      "By car: A4 motorway (Paris–Strasbourg), exit Saint-Avold / Carling, then follow Creutzwald and Varsberg.",
-      "By train: Saint-Avold station 15 km away (Metz–Forbach regional line)."
+      "By car: A4 motorway (Paris–Strasbourg), exit Saint-Avold / Carling, then towards Creutzwald and Varsberg.",
+      "By train: Saint-Avold station, 15 km away (TER Metz–Forbach)."
     ],
     "gps": "GPS coordinates",
     "widget_ko": "If the form does not appear, write to us at"
-  },
-  "diapo": {
-    "h1": "Slideshow",
-    "lead": "Slideshow with birdsong — Vogelsgesang means “birdsong”.",
-    "sections": [
-      "The estate",
-      "The gîtes"
-    ],
-    "audio_on": "Birdsong",
-    "audio_off": "Mute birdsong"
   },
   "legal": {
     "h1": "Legal notice",
@@ -313,33 +361,6 @@
     "reviews_lead": "More than a hundred reviews across booking platforms, and an average that stays high.",
     "rating_reviews": "reviews",
     "superhost": "Airbnb Superhost · hosts since 2011 · we reply within the hour",
-    "practical_h": "Good to know",
-    "practical": [
-      "Check-in from 4 pm, check-out by 10 am",
-      "Bakery 300 m away, restaurant 1 km, mini-market 3 km",
-      "Pets welcome (2 max), no extra charge",
-      "Cot, baby bath and high chair on request",
-      "Non-smoking · fibre Wi-Fi"
-    ],
-    "rooms": [
-      [
-        "Living room and open kitchen",
-        "23–25 m²"
-      ],
-      [
-        "Bedroom 1",
-        "10 m² · 2 beds 90 × 190"
-      ],
-      [
-        "Bedroom 2",
-        "13 m² · 2 beds 90 × 190"
-      ],
-      [
-        "Accessible shower room",
-        "6–7 m² · walk-in shower, WC"
-      ]
-    ],
-    "rooms_h": "Room by room",
     "avis_h1": "Reviews and labels",
     "where_h": "Where to find us",
     "where_p": "We are also listed on these sites: you can book there, but booking direct remains the simplest and cheapest.",
@@ -347,15 +368,22 @@
     "guestbook_h": "Guest book",
     "guestbook_p": "Reviews left by our guests after their stay, collected by our booking system."
   },
-  "visite": {
-    "h1": "360° virtual tour",
-    "lead": "Walk through the gîtes and the estate as if you were there: drag the image, pinch to zoom, move from room to room.",
-    "fallback": "If the tour does not show here,",
-    "open": "open it in a new tab"
-  },
-  "videos": {
-    "h1": "Videos",
-    "lead": "Three short clips shot on the estate, unedited: the sound is the sound of the place.",
+  "medias": {
+    "h1": "In pictures",
+    "lead": "The estate and the gîtes in pictures: the slideshow with birdsong, three short videos filmed on site, and the 360° virtual tour.",
+    "tabs": [
+      "Slideshow",
+      "Videos",
+      "Tour of the gîte"
+    ],
+    "diapo_lead": "Slideshow with the birdsong of Vogelsgesang — “birdsong”.",
+    "sections": [
+      "The estate",
+      "The gîtes"
+    ],
+    "audio_on": "Birdsong",
+    "audio_off": "Turn off the birdsong",
+    "videos_lead": "Three short videos filmed on the estate, unedited: the sound is that of the place.",
     "clips": [
       [
         "Birdsong at dawn",
@@ -367,13 +395,13 @@
       ],
       [
         "A roe deer at the bottom of the garden",
-        "Filmed from the terrace, from a distance: roe deer often come by in the early morning."
+        "Filmed from afar from the terrace: roe deer often come in the early morning."
       ]
     ],
     "download": "Download the video",
     "small_note": "small format",
-    "more_h": "And also",
-    "diapo_p": "The photos of the estate and the gîtes, with birdsong.",
-    "visite_p": "The 360° virtual tour of the gîtes, room by room."
+    "visite_lead": "Walk through the gîtes and the estate as if you were there: drag the picture, pinch to zoom, move from room to room.",
+    "visite_fallback": "If the tour does not appear here,",
+    "visite_open": "open it in a new tab"
   }
 }

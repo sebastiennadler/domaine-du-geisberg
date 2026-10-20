@@ -1,5 +1,6 @@
 /* Domaine du Geisberg — feuille de styles
-   Palette : lin clair / vert forêt / cuivre. Thème sombre au bouton ☀/☾ (data-theme sur <html>). */
+   Palette : lin clair / vert forêt / bordeaux (accent repris du logo, décidé le 20/10 ; la variable garde son
+   ancien nom --copper pour ne pas toucher aux règles). Thème sombre au bouton ☀/☾ (data-theme sur <html>). */
 :root {
   --bg: #f5f2ea;
   --bg2: #ffffff;
@@ -10,8 +11,8 @@
   --green: #2b5240;
   --green-2: #1e3a2d;
   --green-ink: #f5f2ea;
-  --copper: #a2652f;
-  --copper-2: #7e4c21;
+  --copper: #7a1f2b; /* bordeaux du logo */
+  --copper-2: #5e1521;
   --display: 'Playfair Display', Georgia, 'Times New Roman', serif;
   --body: 'Nunito Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
   --r: 14px;
@@ -28,8 +29,8 @@ html[data-theme='dark'] {
   --green: #3b6b52;
   --green-2: #2b5240;
   --green-ink: #eceae3;
-  --copper: #d6a06a;
-  --copper-2: #e8be92;
+  --copper: #d4727f; /* bordeaux éclairci pour le fond sombre */
+  --copper-2: #e59aa5;
   --shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
   color-scheme: dark;
 }
@@ -186,9 +187,16 @@ section {
   color: #fff;
 }
 /* en thème sombre le cuivre est clair : texte foncé pour rester lisible */
-html[data-theme='dark'] .btn-p,
+html[data-theme='dark'] .btn-p {
+  background: #9e3a48; /* bordeaux plus profond : texte blanc lisible (contraste > 7) */
+  color: #fff;
+}
 html[data-theme='dark'] .btn-p:hover {
-  color: #1f2420;
+  background: #b14a58;
+  color: #fff;
+}
+html[data-theme='dark'] .btn-g {
+  color: #fff;
 }
 .btn-g {
   background: var(--green);
@@ -777,7 +785,7 @@ body {
 }
 
 /* ---------- Chiffres clés ---------- */
-.facts {
+.facts-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 22px 18px;
@@ -1212,39 +1220,39 @@ html[data-theme='dark'] .list li::before {
   stroke-linecap: round;
   stroke-linejoin: round;
 }
-#d-play {
+.diapo-ctl [data-play] {
   background: var(--green);
   color: var(--green-ink);
   border-color: var(--green);
   min-width: 56px;
 }
-#d-play .i-play {
+.diapo-ctl [data-play] .i-play {
   display: none;
 }
-#d-play.paused .i-pause {
+.diapo-ctl [data-play].paused .i-pause {
   display: none;
 }
-#d-play.paused .i-play {
+.diapo-ctl [data-play].paused .i-play {
   display: block;
 }
-#d-audio .i-sound {
+.diapo-ctl [data-audio] .i-sound {
   display: none;
 }
-#d-audio.on .i-mute {
+.diapo-ctl [data-audio].on .i-mute {
   display: none;
 }
-#d-audio.on .i-sound {
+.diapo-ctl [data-audio].on .i-sound {
   display: block;
 }
-#d-audio.on {
+.diapo-ctl [data-audio].on {
   border-color: var(--copper);
   color: var(--copper);
 }
-#d-audio.hint {
+.diapo-ctl [data-audio].hint {
   box-shadow: 0 0 0 3px color-mix(in srgb, var(--copper) 30%, transparent);
 }
 @media (max-width: 480px) {
-  #d-audio span {
+  .diapo-ctl [data-audio] span {
     display: none;
   }
 }
@@ -2156,4 +2164,354 @@ body.menu-open .totop {
   .mbtn {
     padding: 0 9px;
   }
+}
+
+/* ====================================================================================================
+   v2 (20/10) — logo, accueil « page de présentation », bandeau zoom + déplacement, tiroir, onglets, diaporama
+   ==================================================================================================== */
+
+/* Logo dans l'en-tête et le pied de page : image claire ou sombre selon le thème, nom en texte caché (lecteurs d'écran, Google) */
+.brand {
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+.brand .logo {
+  display: block;
+  height: 58px;
+  width: auto;
+}
+@media (min-width: 700px) {
+  .brand .logo {
+    height: 84px;
+  }
+  .bar {
+    min-height: 96px;
+  }
+}
+.brand-txt {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+}
+.site-footer .logo {
+  display: block;
+  width: 150px;
+  height: auto;
+  margin-bottom: 12px;
+}
+/* une seule version du logo à la fois : claire par défaut, sombre quand le thème sombre est actif */
+.brand .logo-dark,
+.site-footer .logo-dark,
+html[data-theme='dark'] .brand .logo-light,
+html[data-theme='dark'] .site-footer .logo-light {
+  display: none;
+}
+html[data-theme='dark'] .brand .logo-dark,
+html[data-theme='dark'] .site-footer .logo-dark {
+  display: block;
+}
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+}
+
+/* Bandeau : un calque qui reçoit l'inclinaison (souris) et la parallaxe (défilement) ; chaque photo part de loin
+   (échelle 1) et zoome lentement en glissant vers son point focal (data-move). Durée par photo : --dur (JS). */
+.hero {
+  perspective: 1200px;
+}
+.hero .layer {
+  position: absolute;
+  inset: 0;
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+.hero[data-tilt='on'] .layer,
+.hero[data-parallax='on'] .layer {
+  transform: scale(1.04);
+}
+.hero .slide img {
+  transform-origin: center center;
+}
+.hero .slide.on[data-move='left'] img {
+  animation: kb-left var(--dur, 8s) ease-out forwards;
+}
+.hero .slide.on[data-move='right'] img {
+  animation: kb-right var(--dur, 8s) ease-out forwards;
+}
+.hero .slide.on[data-move='up'] img {
+  animation: kb-up var(--dur, 8s) ease-out forwards;
+}
+@keyframes kb-left {
+  from { transform: scale(1) translate3d(0, 0, 0); }
+  to { transform: scale(1.22) translate3d(-4%, -2%, 0); }
+}
+@keyframes kb-right {
+  from { transform: scale(1) translate3d(0, 0, 0); }
+  to { transform: scale(1.22) translate3d(4%, -1.5%, 0); }
+}
+@keyframes kb-up {
+  from { transform: scale(1) translate3d(0, 0, 0); }
+  to { transform: scale(1.2) translate3d(0, -4%, 0); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero .slide.on img {
+    animation: none !important;
+  }
+}
+.hero .play-diapo {
+  position: absolute;
+  left: max(18px, env(safe-area-inset-left, 0px));
+  bottom: 18px;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  background: rgba(14, 24, 18, 0.45);
+  color: #fff;
+  font: 700 14px/1 var(--body);
+  cursor: pointer;
+  backdrop-filter: blur(6px);
+}
+.hero .play-diapo:hover {
+  background: rgba(14, 24, 18, 0.7);
+}
+.hero .play-diapo svg {
+  width: 14px;
+  height: 14px;
+}
+
+/* Chiffres clés de l'accueil : puces compactes sur une ligne */
+.chips.facts {
+  margin: 0 0 22px;
+}
+.chips.facts li {
+  font-weight: 700;
+}
+
+/* Fiche « L'essentiel » : liste de définitions en deux colonnes compactes */
+.fiche {
+  margin: 0;
+  display: grid;
+  gap: 0;
+  border: 1px solid var(--line);
+  border-radius: var(--r);
+  overflow: hidden;
+  background: var(--bg2);
+}
+.fiche > div {
+  display: grid;
+  grid-template-columns: 112px 1fr;
+  gap: 12px;
+  padding: 11px 14px;
+  border-top: 1px solid var(--line);
+  font-size: 15px;
+  line-height: 1.45;
+}
+.fiche > div:first-child {
+  border-top: 0;
+}
+.fiche dt {
+  font-weight: 800;
+  color: var(--copper);
+  letter-spacing: 0.02em;
+}
+.fiche dd {
+  margin: 0;
+}
+@media (max-width: 420px) {
+  .fiche > div {
+    grid-template-columns: 1fr;
+    gap: 2px;
+  }
+}
+
+/* Tiroir « Tout l'équipement » (fermé par défaut) */
+.drawer {
+  border: 1px solid var(--line);
+  border-radius: var(--r);
+  background: var(--bg2);
+}
+.drawer summary {
+  list-style: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 16px 18px;
+  font: 800 17px/1.2 var(--body);
+  color: var(--fg);
+}
+.drawer summary::-webkit-details-marker {
+  display: none;
+}
+.drawer summary svg {
+  transition: transform 0.25s ease;
+  flex: none;
+}
+.drawer[open] summary svg {
+  transform: rotate(180deg);
+}
+.drawer-in {
+  padding: 0 18px 16px;
+}
+.drawer-in h4 {
+  margin: 14px 0 6px;
+  font-size: 14px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--copper);
+}
+.drawer-in .list {
+  margin: 0;
+}
+.list.minus li::before,
+html[data-theme='dark'] .list.minus li::before {
+  content: '';
+  width: 12px;
+  height: 0;
+  border-left: 0;
+  border-bottom: 2.5px solid var(--muted);
+  transform: none;
+  top: 13px;
+}
+.incl h3 {
+  margin: 0 0 10px;
+}
+
+/* Un seul avis sur l'accueil */
+.reviews.one {
+  grid-template-columns: minmax(0, 1fr);
+}
+.reviews.one blockquote {
+  max-width: 760px;
+}
+
+/* Aperçus « pour aller plus loin » */
+.teasers {
+  display: grid;
+  gap: 20px;
+}
+@media (min-width: 760px) {
+  .teasers {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+.teaser {
+  position: relative;
+  display: block;
+  border-radius: var(--r);
+  overflow: hidden;
+  min-height: 300px;
+  color: #fff;
+  text-decoration: none;
+  box-shadow: var(--shadow);
+  background: #1e3a2d;
+}
+.teaser img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+.teaser:hover img {
+  transform: scale(1.04);
+}
+.teaser .in {
+  position: relative;
+  z-index: 1;
+  padding: 150px 22px 22px;
+  background: linear-gradient(to top, rgba(14, 24, 18, 0.9), rgba(14, 24, 18, 0.1) 70%, transparent);
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+.teaser h3 {
+  color: #fff;
+  margin: 0 0 6px;
+}
+.teaser p {
+  margin: 0 0 10px;
+  color: #eef1ea;
+}
+.teaser .more {
+  color: #fff;
+  align-self: flex-start;
+}
+
+/* Page « En images » : onglets */
+.tabs {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin: 8px 0 22px;
+  border-bottom: 1px solid var(--line);
+}
+.tabs a {
+  padding: 10px 16px;
+  border-radius: 10px 10px 0 0;
+  text-decoration: none;
+  font-weight: 800;
+  color: var(--muted);
+  border-bottom: 3px solid transparent;
+  margin-bottom: -1px;
+}
+.tabs a[aria-selected='true'] {
+  color: var(--copper);
+  border-bottom-color: var(--copper);
+}
+.tabs a:hover {
+  color: var(--fg);
+}
+
+/* Bandeau secondaire plus bas (alentours) */
+.page-hero.small {
+  min-height: min(40vh, 380px);
+  aspect-ratio: auto; /* sur mobile, .page-hero impose 4/3 : ici la hauteur suit le texte, jamais la largeur */
+  margin-top: 8px;
+}
+.page-hero.small h2 {
+  color: #fff;
+  font-size: clamp(28px, 4.5vw, 40px);
+  margin: 0;
+}
+
+/* Diaporama en superposition (accueil) : même composant que la page En images, en plein écran */
+.diapo-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  background: #0f1612;
+  display: flex;
+  flex-direction: column;
+}
+.diapo-overlay[hidden] {
+  display: none;
+}
+.diapo-overlay .diapo {
+  flex: 1;
+  border-radius: 0;
+  aspect-ratio: auto;
+  max-height: none;
+}
+.diapo-overlay .diapo-ctl {
+  margin: 0;
+  padding: 10px;
+  background: #0f1612;
+}
+.cals + .note {
+  margin-top: 12px;
 }

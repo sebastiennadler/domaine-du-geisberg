@@ -34,9 +34,10 @@
   "tva": "FR44 478447790",
   "publisher": "Marc Nadler",
   "hero": [
-    "hero/maison-neige-soir",
+    "hero/agnes-marc",
     "hero/maison-prairie",
-    "hero/chevaux-soir"
+    "hero/chevaux-soir",
+    "domaine/coucher-soleil"
   ],
   "domaine": [
     "domaine/chemin-collines",
@@ -140,10 +141,6 @@
     ],
     [
       "rando",
-      "0"
-    ],
-    [
-      "equitation",
       "0"
     ],
     [
@@ -348,17 +345,12 @@
   "virtual_tour_https": "https://www.hdmedia.fr/visite-virtuelle/hd/cbpQep88m-gites-du-geisberg-varsberg-57.html",
   "gites": [
     "gites/chambre-lit-double",
+    "gites/chambre-deux-lits",
     "gites/sejour-vue-terrasse",
     "gites/sejour-table",
     "gites/cuisine",
     "gites/salle-d-eau",
     "gites/salle-d-eau-pmr",
-    "gites/terrasse-soir"
-  ],
-  "gites_home": [
-    "gites/chambre-lit-double",
-    "gites/sejour-vue-terrasse",
-    "gites/cuisine",
     "gites/terrasse-soir"
   ],
   "hosts_photo": "domaine/agnes-marc",
@@ -398,5 +390,52 @@
       "1101",
       "Gîte 2"
     ]
-  ]
+  ],
+  "hero_slides": [
+    {
+      "id": "hero/agnes-marc",
+      "dur": 4000,
+      "move": "none"
+    },
+    {
+      "id": "hero/maison-prairie",
+      "dur": 7500,
+      "move": "left"
+    },
+    {
+      "id": "hero/chevaux-soir",
+      "dur": 7500,
+      "move": "right"
+    },
+    {
+      "id": "domaine/coucher-soleil",
+      "dur": 7500,
+      "move": "up"
+    }
+  ],
+  "hero_tilt": true,
+  "hero_parallax": true,
+  "logo": "logos/geisberg",
+  "logo_dark": "logos/geisberg-sombre",
+  "share_image": "hero/maison-prairie",
+  "capacity_min": 1,
+  "prices": [
+    [
+      "we2",
+      "300 €"
+    ],
+    [
+      "we3",
+      "350 €"
+    ],
+    [
+      "mid4",
+      "300 €"
+    ],
+    [
+      "week",
+      "420 €"
+    ]
+  ],
+  "featured_review": 0
 }

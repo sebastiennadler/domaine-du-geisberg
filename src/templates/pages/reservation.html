@@ -4,22 +4,38 @@
 <div class="page-hero">{{ pic('hero/maison-prairie', '', '100vw', eager=True, cls='bg') }}
   <div class="wrap"><div class="eyebrow" style="color:#E7C59A">{{ ui.tagline }}</div><h1>{{ r.h1 }}</h1></div>
 </div>
-<section class="wrap">
-  <div class="cols" style="align-items:start">
-    <div{% if notes %} data-note="{{ t.notes.prices }}"{% endif %}>
-      <h2 style="margin-bottom:16px">{{ r.prices_h }}</h2>
-      <div class="prices">{% for l, p in r.prices %}<div><span>{{ l }}</span><b>{{ p }}</b></div>{% endfor %}</div>
-      <p class="note">{{ r.included }}</p>
-      <div class="logos" style="margin-top:18px">{% for id, name, link in s.labels %}<a href="{{ link }}" rel="noopener" target="_blank">{{ pic(id, name, "72px") }}</a>{% endfor %}</div>
+
+<section class="wrap" id="dispo">
+  <div class="sec-head"><div><h2>{{ r.dispo_h }}</h2><p class="lead">{{ r.dispo_p }}</p></div></div>
+  {# Calendriers publics Nuitrésa, un par gîte (identifiants dans shared.json → nuitresa_rooms). Le cadre envoie sa hauteur
+     par postMessage (frameId = id du cadre) ; site.js l'ajuste. Chargement différé : rien n'est demandé avant d'arriver ici. #}
+  <div class="cals"{{ note('dispo') }}>
+    {% for cid, name in s.nuitresa_rooms %}
+    <div class="cal-box"><h3>{{ name }}</h3>
+      <iframe id="nr-cal-{{ cid }}" class="nr-cal" src="{{ s.nuitresa_public }}/calendrier-multiple-{{ cid }}-{{ s.nuitresa_key }}.html?l={{ nr_lang }}&amp;nb_mois=2&amp;id=nr-cal-{{ cid }}" width="100%" height="430" loading="lazy" scrolling="no" title="{{ r.dispo_h }} – {{ name }}"></iframe>
     </div>
-    <div>
-      <h2 style="margin-bottom:6px">{{ r.form_h }}</h2>
-      <p class="lead" style="margin-top:0">{{ r.form_p }}</p>
-      <p><a class="btn btn-p" href="#demande">{{ t.nav.book }}</a></p>
+    {% endfor %}
+  </div>
+  <p class="note" style="margin-top:12px">{{ r.cal_ko }} <a href="mailto:{{ s.email }}">{{ s.email }}</a>.</p>
+</section>
+
+<section class="wrap" id="tarifs" style="padding-top:0">
+  <div class="cols" style="align-items:start">
+    <div{{ note('prices') }}>
+      <h2 style="margin-bottom:6px">{{ r.prices_h }}</h2>
+      <p class="note" style="margin:0 0 14px">{{ r.prices_p }}</p>
+      <div class="prices">{% for key, price in s.prices %}<div><span>{{ r.prices[key] }}</span><b>{{ price }}</b></div>{% endfor %}</div>
+      <p class="note" style="margin-top:14px">{{ r.prices_note }}</p>
+    </div>
+    <div class="incl"{{ note('included') }}>
+      <h3>{{ r.included_h }}</h3><ul class="list">{% for x in r.included %}<li>{{ x }}</li>{% endfor %}</ul>
+      <h3 style="margin-top:18px">{{ r.not_included_h }}</h3><ul class="list minus">{% for x in r.not_included %}<li>{{ x }}</li>{% endfor %}</ul>
     </div>
   </div>
 </section>
-<section class="wrap" id="demande" style="padding-top:0"{% if notes %} data-note="{{ t.notes.widget }}"{% endif %}>
+
+<section class="wrap" id="demande" style="padding-top:0"{{ note('widget') }}>
+  <div class="sec-head"><div><h2>{{ r.form_h }}</h2><p class="lead">{{ r.form_p }}</p></div></div>
   {# Réservation en ligne : widget Nuitrésa (prestataire de Marc). La clé est publique, le script dessine un cadre (iframe).
      data-nr-aggregate-availability : le calendrier du formulaire colore les dates d'après les deux gîtes (option du générateur Nuitrésa). #}
   <div class="widget">
@@ -29,20 +45,19 @@
   </div>
   <p class="note" style="margin-top:14px">{{ r.widget_ko }} <a href="mailto:{{ s.email }}">{{ s.email }}</a>.</p>
 </section>
+
 <section class="wrap" id="acces" style="padding-top:0">
-  <div class="hosts"{% if notes %} data-note="{{ t.notes.hosts }}"{% endif %}>
-    <div class="photo">{{ pic(s.hosts_photo, t.home.hosts_alt, '(min-width: 860px) 520px, 100vw') }}</div>
-    <div{% if notes %} data-note="{{ t.notes.access }}"{% endif %}>
-      <div class="eyebrow">{{ t.home.hosts_h }}</div>
+  <div class="cols" style="align-items:start"{{ note('access') }}>
+    <div>
       <h2 style="margin-bottom:12px">{{ r.access_h }}</h2>
       {% for p in r.access %}<p>{{ p }}</p>{% endfor %}
-      <div class="contact-box" style="margin-top:18px">
-        <div><small>{{ ui.address }}</small>{{ s.address }}</div>
-        <div><small>{{ r.gps }}</small>{{ s.gps[0] }}, {{ s.gps[1] }}</div>
-        {% for who, tel, href in s.phones %}<div><small>{{ who }}</small><a href="tel:{{ href }}">{{ tel }}</a></div>{% endfor %}
-        <div><small>E-mail</small><a href="mailto:{{ s.email }}">{{ s.email }}</a></div>
-      </div>
       <p style="margin-top:18px"><a class="btn btn-g" href="{{ s.maps_url }}" rel="noopener" target="_blank">{{ ui.see_map }}</a></p>
+    </div>
+    <div class="contact-box">
+      <div><small>{{ ui.address }}</small>{{ s.address }}</div>
+      <div><small>{{ r.gps }}</small>{{ s.gps[0] }}, {{ s.gps[1] }}</div>
+      {% for who, tel, href in s.phones %}<div><small>{{ who }}</small><a href="tel:{{ href }}">{{ tel }}</a></div>{% endfor %}
+      <div><small>E-mail</small><a href="mailto:{{ s.email }}">{{ s.email }}</a></div>
     </div>
   </div>
 </section>

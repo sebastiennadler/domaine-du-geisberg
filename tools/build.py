@@ -45,20 +45,49 @@ LANGS = [  # ordre demandé : FR, EN, DE, ES, PT, NL, ZH
     ("nl", "Nederlands", "🇳🇱", "nl/"),
     ("zh", "中文", "🇨🇳", "zh/"),
 ]
-PAGES = [
-    "index",
-    "le-domaine",
-    "gites",
-    "videos",
-    "autour",
-    "avis",
-    "visite",
-    "reservation",
-    "diaporama",
-    "mentions-legales",
-]
-# anciennes adresses conservées : chacune renvoie vers la page qui la remplace
-REDIRECTS = {"gite-1": "gites.html", "gite-2": "gites.html"}
+PAGES = ["index", "reservation", "le-domaine", "medias", "avis", "mentions-legales"]
+# anciennes adresses conservées : chacune renvoie vers la page (et l'ancre) qui la remplace, avec le libellé du menu
+REDIRECTS = {
+    "gites": ("index.html#gites", "gites"),
+    "gite-1": ("index.html#gites", "gites"),
+    "gite-2": ("index.html#gites", "gites"),
+    "autour": ("le-domaine.html#alentours", "alentours"),
+    "diaporama": ("medias.html#diaporama", "diaporama"),
+    "videos": ("medias.html#videos", "videos"),
+    "visite": ("medias.html#visite", "visite"),
+}
+TODO = ROOT / "TODO.md"
+
+
+def marc_notes_from_todo():
+    """Lit TODO.md et renvoie {clé: texte} pour le mode « Notes pour Marc ».
+
+    Dans les sections « À demander à Marc » et « À faire par Marc dans Nuitrésa », une ligne
+    `- [ ] {clé} texte` accroche la question à l'élément de page portant note('clé') dans les gabarits
+    (ex. {facts} = chiffres clés de l'accueil, {widget} = formulaire). Une ligne sans clé va dans la
+    vue d'ensemble de l'accueil ({todo}). Plusieurs lignes pour une même clé sont numérotées."""
+    import re
+
+    if not TODO.exists():
+        return {}
+    notes, section = {}, None
+    for line in TODO.read_text(encoding="utf-8").splitlines():
+        if line.startswith("## "):
+            section = line[3:]
+            continue
+        if not section or not (section.startswith("4.") or section.startswith("5.")):
+            continue
+        m = re.match(r"^- \[ \] (?:\{(\w+)\} )?(.+)$", line.strip())
+        if not m:
+            continue
+        key = m.group(1) or ("widget" if section.startswith("5.") else "todo")
+        notes.setdefault(key, []).append(m.group(2).strip())
+    out = {}
+    for key, items in notes.items():
+        head = "Nuitrésa — à faire par Marc :" if key == "widget" else ("Vue d'ensemble — ce qu'il reste à faire :" if key == "todo" else None)
+        body = "\n".join(f"{i}. {x}" for i, x in enumerate(items, 1)) if len(items) > 1 else items[0]
+        out[key] = (head + "\n" + body) if head else body
+    return out
 
 
 def main():
@@ -82,6 +111,7 @@ def main():
         if p.exists():
             contents[code] = json.loads(p.read_text(encoding="utf-8"))
     fr = contents["fr"]
+    marc_notes = marc_notes_from_todo() if not opts.prod else {}
 
     cred_file = CATALOG / "credits.json"
     cred = json.loads(cred_file.read_text(encoding="utf-8")) if cred_file.exists() else {}
@@ -170,6 +200,7 @@ def main():
             site_url=SITE_URL,
             images=images,
             notes=(code == "fr" and not opts.prod),  # mode « Notes pour Marc » : FR, site de travail seulement
+            marc_notes=marc_notes,
             nr_lang={"fr": "FR", "en": "EN", "de": "DE", "es": "ES"}.get(code, "EN"),  # langues des cadres Nuitrésa
             **image_helpers(rel),
         )
@@ -183,8 +214,8 @@ def main():
             )
             write(outdir / f"{page}.html", html)
             built += 1
-        for old, target in REDIRECTS.items():
-            html = env.get_template("partials/_redirect.html").render(target=target, **common)
+        for old, (target, label_key) in REDIRECTS.items():
+            html = env.get_template("partials/_redirect.html").render(target=target, label=c["nav"][label_key], **common)
             write(outdir / f"{old}.html", html)
 
     # sitemap + robots

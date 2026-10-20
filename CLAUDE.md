@@ -101,7 +101,10 @@ sont des interprétations en attente de validation.
 ### Identité
 - **Logo officiel** fourni le 20/10 (maison dessinée, bordeaux et verts, « Domaine du Geisberg — Gîtes
   ruraux Varsberg ») : **à utiliser**, « sans abuser, mais à mettre en avant » — en-tête, favicon, pied de
-  page, image de partage. Source : `assets/photos-sources/logo/logo-geisberg.png`.
+  page, image de partage. Source : `assets/photos-sources/logo/logo-geisberg.png` (recadré et version pour
+  le mode sombre à côté). **Crédit du créateur du logo** : inconnu (l'ancien site ne crédite que Synchro,
+  2014, pour l'hébergement) — question posée à Marc dans `TODO.md`, à publier dans les mentions légales
+  dès qu'on le sait (Sébastien, 20/10).
 - Accroche : **« Au cœur de la nature, deux gîtes d'exception à proximité immédiate de la forêt »**.
 - Texte des hôtes « Depuis 2007, année d'ouverture de nos gîtes… » (texte de Marc, 18/10), avec la photo
   d'Agnès, Marc et **Urielle** (la chienne, une malinoise). Les chevaux sont **à la retraite** : il n'y a
@@ -145,7 +148,8 @@ sont des interprétations en attente de validation.
 - Le site affiche cette grille ; c'est Marc qui la reporte dans Nuitrésa (prix selon la durée).
 
 ### Pages et structure
-- **Menu à 5 entrées** : accepté « à voir une fois monté ».
+- **Menu à 5 entrées** : Accueil · Réservation · Le domaine & alentours · **En images** · Avis, plus le
+  bouton Réserver. « En images » (décidé 20/10) remplace « Photos & vidéos » pour inclure la visite 360°.
 - **Accueil** : d'abord la photo d'Agnès, Marc et Urielle (environ 4 secondes, « à voir »), puis les photos
   de la maison, puis les **photos et la description des gîtes sur la même page** ; les équipements peuvent
   y rester. → **Validé par Sébastien le 20/10** : l'accueil devient la page de présentation
@@ -154,6 +158,10 @@ sont des interprétations en attente de validation.
 - **Disponibilités** : les deux calendriers (un par gîte) sur la page **Réservation**, au-dessus du
   formulaire unique (validé 20/10) — **et nulle part ailleurs** : ni sur l'accueil ni sur une page Gîtes
   (Sébastien, 20/10).
+- **Diaporama** : « les deux, sans doublon » (20/10) — le bandeau de l'accueil est le diaporama d'ambiance ;
+  un bouton « Diaporama » sur le bandeau ouvre le diaporama complet (lecture/pause, précédent/suivant,
+  chants d'oiseaux, plein écran, clavier, gestes) en superposition, photos chargées au clic ; la page
+  « En images » le propose aussi en premier onglet. Un seul composant (`partials/_diapo.html` + `site.js`).
 - **Page Avis : ne rien changer** (Marc l'aime bien).
 - **Visite 360°** (hdmedia, 2015) : conservée, onglet nommé « Visite du gîte ».
 - Photos : **retirer la photo de nuit de la maison sous la neige** (mur sali) partout — bandeau d'accueil,
@@ -201,5 +209,5 @@ sont des interprétations en attente de validation.
 
 ## 5. Questions ouvertes
 
-Voir `TODO.md`, section « À confirmer ». Reste : les noms des entrées du menu (« Le domaine & alentours »,
-« Photos & vidéos »), à valider sur la maquette.
+Voir `TODO.md`. Aucune décision structurante en attente côté Sébastien ; restent les questions à Marc
+(section 4 du TODO) et le verdict sur l'inclinaison 3D du bandeau après essai sur un vrai écran.

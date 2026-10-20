@@ -1,4 +1,4 @@
-{# Page de renvoi : l'ancienne adresse (gite-1.html, gite-2.html) mène à la page qui la remplace. #}
+{# Page de renvoi : une ancienne adresse (gites.html, diaporama.html…) mène à la page qui la remplace. #}
 <!DOCTYPE html>
 <html lang="{{ lang }}">
 <head>
@@ -9,6 +9,6 @@
 <title>{{ s.name }}</title>
 </head>
 <body>
-<p><a href="{{ target }}">{{ s.name }} – {{ t.nav.gites }}</a></p>
+<p><a href="{{ target }}">{{ s.name }} – {{ label }}</a></p>
 </body>
 </html>

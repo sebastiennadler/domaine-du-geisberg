@@ -1,28 +1,16 @@
 {
   "meta": {
     "index": [
-      "Domaine du Geisberg – Ferienwohnungen in Varsberg, Mosel",
-      "Zwei Ferienwohnungen (3 Ähren) in Varsberg (Lothringen, Frankreich) auf einem 2 Hektar großen Anwesen am Waldrand. Eigene Terrasse, Parkplatz, WLAN, Haustiere willkommen. Direkt buchen."
+      "Domaine du Geisberg – Ferienwohnungen in Varsberg, Lothringen",
+      "Zwei identische Ferienwohnungen (60 m²) in Varsberg (Moselle), mitten in der Natur am Waldrand: 1 bis 4 Personen, barrierefrei, eigene Terrasse, Glasfaser-WLAN, Haustiere willkommen. Direkt buchen."
     ],
     "le-domaine": [
-      "Das Anwesen – Domaine du Geisberg",
-      "Zwei Hektar Wiesen am Waldrand, am Ort „Vogelsgesang“, auf dem Hügel über Varsberg."
-    ],
-    "gites": [
-      "Die Ferienwohnungen – Domaine du Geisberg",
-      "Zwei baugleiche Ferienwohnungen mit 60 m², 2 Schlafzimmern, 4 Personen, eigener Terrasse, Erdwärmeheizung, Label Tourisme & Handicap."
-    ],
-    "autour": [
-      "Ausflüge rund um Varsberg – Domaine du Geisberg",
-      "Wandern ab dem Garten, Creutzwalder See, Bergbaumuseum, Völklinger Hütte, Centre Pompidou-Metz, Saarland und Luxemburg."
+      "Das Anwesen und die Umgebung – Domaine du Geisberg",
+      "Zwei Hektar Wiesen am Waldrand im Vogelsgesang, und alles, was es in der Nähe zu sehen gibt: Creutzwalder See, Warndt, Völklingen, Metz, das Saarland."
     ],
     "reservation": [
-      "Preise, Buchung und Anfahrt – Domaine du Geisberg",
-      "Preise der Ferienwohnungen, Direktbuchung und Anfahrt nach Varsberg, Mosel."
-    ],
-    "diaporama": [
-      "Diashow – Domaine du Geisberg",
-      "Die Ferienwohnungen und das Anwesen in Bildern."
+      "Verfügbarkeit, Preise und Buchung – Domaine du Geisberg",
+      "Belegungskalender beider Wohnungen, Preise (Wochenende ab 300 €, Woche 420 €), Buchungsanfrage ohne Vermittler und Anfahrt nach Varsberg, zwischen Saint-Avold und Creutzwald."
     ],
     "mentions-legales": [
       "Impressum – Domaine du Geisberg",
@@ -32,27 +20,26 @@
       "Bewertungen und Labels – Domaine du Geisberg",
       "Gästebewertungen auf Gîtes de France, Airbnb, Abritel und Clévacances, unsere Labels und wo Sie buchen können."
     ],
-    "visite": [
-      "360°-Rundgang – Domaine du Geisberg",
-      "Besichtigen Sie die Ferienwohnungen der Domaine du Geisberg in 360°, Raum für Raum."
-    ],
-    "videos": [
-      "Videos – Domaine du Geisberg",
-      "Vogelgesang am Morgen, ein Waldspaziergang mit den Pferden, ein Reh am Ende des Gartens: das Anwesen im Video."
+    "medias": [
+      "In Bildern – Domaine du Geisberg",
+      "Anwesen und Ferienwohnungen in Bildern: Diashow mit Vogelgesang, vor Ort gedrehte Videos, virtueller 360°-Rundgang."
     ]
   },
   "nav": {
-    "index": "Start",
-    "le-domaine": "Anwesen",
-    "gites": "Unterkünfte",
-    "autour": "Umgebung",
+    "index": "Startseite",
     "reservation": "Buchung",
-    "diaporama": "Diashow",
-    "contact": "Kontakt",
-    "book": "Buchen",
+    "le-domaine": "Das Anwesen & die Umgebung",
+    "medias": "In Bildern",
     "avis": "Bewertungen",
+    "book": "Buchen",
+    "contact": "Kontakt",
+    "gites": "Die Ferienwohnungen",
+    "videos": "Videos",
+    "diaporama": "Diashow",
     "visite": "Rundgang",
-    "videos": "Videos"
+    "autour": "Umgebung",
+    "alentours": "Die Umgebung",
+    "legal": "Impressum"
   },
   "ui": {
     "skip": "Zum Inhalt springen",
@@ -84,114 +71,174 @@
     "fallback": "",
     "dev_credit": "Website: Sébastien Nadler",
     "top": "Nach oben",
-    "address": "Adresse"
+    "address": "Adresse",
+    "equip_all": "Die komplette Ausstattung",
+    "equip_close": "Einklappen",
+    "tabs": "Reiter",
+    "prices_more": "Zu den Preisen",
+    "see_gites": "Die Wohnungen ansehen",
+    "read_more": "Weiterlesen",
+    "not_included": "Nicht enthalten",
+    "included": "Inklusive"
   },
   "home": {
     "h1": "Mitten in der Natur",
-    "lead": "Zwei außergewöhnliche Ferienwohnungen direkt am Wald, auf dem Hügel über Varsberg, am Ort „Vogelsgesang“.",
-    "cta1": "Verfügbarkeit prüfen",
-    "cta2": "Die Ferienwohnungen entdecken",
-    "intro_h": "Ein Ort, der seinen Namen verdient",
-    "intro": [
-      "Unsere beiden Ferienwohnungen liegen im Erdgeschoss eines geräumigen Hauses, inmitten eines zwei Hektar großen, grünen Anwesens am Waldrand, an einem besonderen Ort namens „Vogelsgesang“.",
-      "Typisch für die lothringische Landschaft: üppige Natur, ein wunderschöner Rundblick, Ruhe und Gelassenheit."
-    ],
-    "intro_more": "Das Anwesen entdecken",
-    "gites_h": "Zwei Zwillingswohnungen, derselbe Blick",
-    "gites_lead": "Gleiche Ausstattung auf beiden Seiten. Buchen Sie eines – oder beide für die ganze Familie.",
-    "around_h": "Zu Fuß ab dem Garten oder eine Autostunde entfernt",
-    "around_lead": "Wanderwege ohne Straßenüberquerung, See und Wassersportzentrum in 6 km, Metz, das Saarland und Luxemburg als Tagesausflug.",
-    "around_more": "Alles, was es zu sehen gibt",
-    "hosts_h": "Agnès und Marc heißen Sie willkommen",
-    "hosts": "Seit 2007, dem Jahr der Eröffnung unserer Ferienwohnungen, teilen wir gern unsere Lebensart mit Gästen aus aller Welt und lernen die ihre kennen. So entdecken wir andere Länder und Kulturen und zeigen anderen die Schätze unserer Region und unseres Landes. Der regelmäßige Gebrauch von Deutsch und Englisch ist für uns eine angenehme Abwechslung.",
-    "diapo_btn": "Diashow starten",
+    "lead": "Zwei außergewöhnliche Ferienwohnungen direkt am Wald, auf dem Hügel über Varsberg, an einem Ort namens Vogelsgesang.",
+    "cta1": "Buchen",
+    "cta2": "Die Wohnungen ansehen",
     "hero_alts": [
-      "Das Haus im Schnee an einem Winterabend",
+      "Agnès, Marc und Urielle vor dem Haus",
       "Das Haus von der blühenden Wiese aus",
-      "Die Pferde vor dem Haus am Abend"
+      "Die Pferde vor dem Haus am Abend",
+      "Sonnenuntergang über Varsberg"
     ],
-    "gites_facts": [
+    "facts": [
+      "2 identische Wohnungen",
       "60 m²",
-      "2 Schlafzimmer",
-      "4 Personen",
-      "Eigene Terrasse",
-      "Parkplatz",
-      "WLAN",
-      "Haustiere willkommen"
+      "1 bis 4 Personen",
+      "Barrierefrei",
+      "Haustiere willkommen",
+      "Glasfaser-WLAN"
     ],
-    "hosts_alt": "Agnès, Marc und Urielle vor dem Haus"
+    "gites_eyebrow": "Die Ferienwohnungen",
+    "gites_h": "Zwei identische Ferienwohnungen",
+    "gites_lead": "Buchen Sie eine der beiden – oder beide für eine Gruppe.",
+    "gites_p": "Jede Wohnung ist ein 60 m² großes Gartengeschoss-Apartment im Haus mit eigenem Eingang, Terrasse und Parkplatz: Wohnraum mit Einbauküche, zwei Schlafzimmer mit je zwei Betten und ein barrierefreies Duschbad. Beide sind gleich eingerichtet und ausgestattet, mit demselben Blick auf die Wiese.",
+    "fiche_h": "Das Wesentliche",
+    "fiche": [
+      [
+        "Belegung",
+        "1 bis 4 Personen: 2 Schlafzimmer mit je 2 Betten (90 × 190 cm). Ein Zusatzbett im Wohnraum ist auf Anfrage möglich."
+      ],
+      [
+        "Fläche",
+        "60 m², Gartengeschoss, eigener Eingang, eigene Terrasse"
+      ],
+      [
+        "Duschbad",
+        "Bodengleiche Dusche und WC, barrierefrei (Label Tourisme & Handicap)"
+      ],
+      [
+        "Küche",
+        "Offen zum Wohnraum: Induktionskochfeld, Backofen, Mikrowelle, Geschirrspüler, Waschmaschine, Gefrierschrank"
+      ],
+      [
+        "Komfort",
+        "Fußbodenheizung mit Erdwärme, Flachbildfernseher, Glasfaser-WLAN"
+      ],
+      [
+        "Außen",
+        "Gartenmöbel, Grill, eigener Parkplatz, Mountainbikes zur Verfügung"
+      ],
+      [
+        "Haustiere",
+        "Willkommen, höchstens 2, ohne Aufpreis"
+      ],
+      [
+        "Zeiten",
+        "Anreise ab 16 Uhr, Abreise bis 10 Uhr"
+      ],
+      [
+        "Preise",
+        "Ab 300 € pro Wochenende, 420 € pro Woche, alle Nebenkosten inklusive"
+      ]
+    ],
+    "equip_h": "Die komplette Ausstattung",
+    "equip_groups": [
+      [
+        "Wohnraum und Küche",
+        [
+          "Sofa und Essbereich",
+          "Flachbildfernseher",
+          "Induktionskochfeld, Backofen, Mikrowelle",
+          "Geschirrspüler, Waschmaschine, Gefrierschrank",
+          "Kaffeemaschine, Wasserkocher, Toaster",
+          "Vollständiges Geschirr und Küchenutensilien"
+        ]
+      ],
+      [
+        "Schlafzimmer",
+        [
+          "2 Schlafzimmer mit je 2 Betten von 90 × 190 cm (zusammenstellbar)",
+          "Betten bei Anreise bezogen, Bettwäsche inklusive",
+          "Zusatzbett im Wohnraum auf Anfrage möglich",
+          "Kinderbett, Babybadewanne und Hochstuhl auf Anfrage"
+        ]
+      ],
+      [
+        "Duschbad",
+        [
+          "Bodengleiche Dusche, WC",
+          "Barrierefrei",
+          "Badetücher nicht inklusive"
+        ]
+      ],
+      [
+        "Außen",
+        [
+          "Eigene Terrasse mit Gartenmöbeln",
+          "Grill",
+          "Eigener Parkplatz",
+          "Mountainbikes zur Verfügung"
+        ]
+      ],
+      [
+        "Komfort und Service",
+        [
+          "Fußbodenheizung mit Erdwärme",
+          "Glasfaser-WLAN",
+          "Nichtraucherwohnung",
+          "Haustiere willkommen (höchstens 2), ohne Aufpreis",
+          "Bäckerei in 300 m, Restaurant in 1 km, Lebensmittelgeschäft in 3 km"
+        ]
+      ]
+    ],
+    "review_eyebrow": "Sie waren da",
+    "review_h": "Das sagen unsere Gäste",
+    "review_more": "Alle Bewertungen ansehen",
+    "hosts_eyebrow": "Ihre Gastgeber",
+    "hosts_h": "Agnès und Marc heißen Sie willkommen",
+    "hosts": "Seit 2007, dem Jahr der Eröffnung unserer Ferienwohnungen, teilen wir gern unsere Lebensart mit Gästen aus aller Welt und lernen die ihre kennen. So entdecken wir andere Länder und Kulturen und zeigen anderen die Schätze unserer Region und unseres Landes. Regelmäßig Deutsch und Englisch zu sprechen ist für uns eine angenehme Abwechslung.",
+    "hosts_alt": "Agnès, Marc und Urielle vor dem Haus",
+    "teasers_h": "Mehr entdecken",
+    "domaine_h": "Das Anwesen & die Umgebung",
+    "domaine_p": "Zwei Hektar Wiesen am Waldrand, Wanderwege, die am Garten beginnen, und alles, was es in einer Stunde Umkreis zu sehen gibt.",
+    "medias_h": "In Bildern",
+    "medias_p": "Die Diashow mit Vogelgesang, drei vor Ort gedrehte Videos und der virtuelle 360°-Rundgang.",
+    "more": "Entdecken"
   },
   "domaine": {
-    "h1": "Das Anwesen",
+    "h1": "Das Anwesen & die Umgebung",
+    "lead": "Zwei Hektar Wiesen am Waldrand, an einem Ort namens Vogelsgesang, und alles, was es in einer Stunde Umkreis zu sehen gibt.",
     "p": [
-      "Inmitten eines weitläufigen, zwei Hektar großen grünen Anwesens am Waldrand liegen unsere beiden Ferienwohnungen im Erdgeschoss eines geräumigen Hauses an einem besonderen Ort namens „Vogelsgesang“.",
-      "Typisch für die lothringische Landschaft bietet die üppige Natur rund um die Häuser ein wunderschönes Panorama in ruhiger, friedlicher Umgebung.",
-      "Zahlreiche Wanderwege sind ohne Straßenüberquerung erreichbar – zu Fuß, mit dem Rad oder zu Pferd. Für erfahrene Reiter stehen Pferde zur Verfügung."
+      "Inmitten eines weitläufigen, grünen Anwesens von zwei Hektar am Waldrand liegen unsere beiden Ferienwohnungen im Untergeschoss eines geräumigen Hauses, an einem außergewöhnlichen Ort namens „Vogelsgesang“.",
+      "Typisch für die lothringische Landschaft bietet die Umgebung üppige Natur und ein wunderschönes Panorama, in einer Atmosphäre der Ruhe und Gelassenheit.",
+      "Zahlreiche Wanderwege sind ohne Straßenüberquerung erreichbar, zu Fuß oder mit dem Rad. Unsere Pferde, heute im Ruhestand, schauen Ihnen von der Wiese aus zu."
     ],
     "gallery_h": "Das Anwesen in Bildern",
     "captions": [
       "Der Weg vom Garten aus, mit Blick auf die Hügel",
       "Der Garten mit seinem Tisch unter den Bäumen",
-      "Die Terrasse einer Ferienwohnung",
+      "Die Terrasse einer Wohnung",
       "Sonnenuntergang über Varsberg",
       "Die Pferde im Winter",
       "Urielle, unsere Malinois-Hündin, im hohen Gras"
-    ]
-  },
-  "gites": {
-    "h1": "Die Ferienwohnungen",
-    "lead": "Zwei baugleiche Ferienwohnungen auf Gartenniveau im Haus der Eigentümer mit eigenem Eingang, eigener Terrasse und Parkplatz.",
-    "common": "Jedes Haus hat ein Wohnzimmer mit Einbauküche (Backofen, Cerankochfeld, Mikrowelle, Geschirrspüler, Waschmaschine, Gefrierschrank), zwei Schlafzimmer und ein barrierefreies Duschbad mit WC. Schlafen: vier 90-cm-Betten in den Schlafzimmern (zusammenstellbar): 4 Personen pro Wohnung. Flachbildfernseher, WLAN, Fußbodenheizung mit Erdwärme.",
-    "desc_h": "Aufteilung",
-    "equip_h": "Ausstattung",
-    "serv_h": "Inklusive Leistungen",
-    "desc": [
-      "1 Wohnraum mit Einbauküche",
-      "2 Schlafzimmer (je zwei Betten 90 × 190 cm)",
-      "1 barrierefreies Duschbad mit WC",
-      "4 Personen · 60 m²"
     ],
-    "equip": [
-      "Fußbodenheizung mit Erdwärme",
-      "Flachbildfernseher",
-      "Geschirrspüler, Waschmaschine, Gefrierschrank",
-      "Cerankochfeld, Backofen, Mikrowelle",
-      "Eigene Terrasse, Gartenmöbel, Grill",
-      "Babyausstattung (Bett, Badewanne)",
-      "Mountainbikes verfügbar"
+    "around_h": "Die Umgebung",
+    "around_lead": "Mehrere sehenswerte Orte liegen wenige Kilometer entfernt; Metz, das Saarland und Luxemburg sind Tagesausflüge.",
+    "sites_h": "Sehenswert in der Nähe",
+    "leisure_h": "Freizeit",
+    "on_site": "vor Ort",
+    "links_h": "Nützliche Links",
+    "around_gallery_h": "Varsberg, der Warndt und die Felder",
+    "around_gallery_caps": [
+      "Die Felder oberhalb des Anwesens, am Rand des Warndt",
+      "Der Weg am Obstgarten entlang an einem Frostmorgen",
+      "Die Kirche von Varsberg",
+      "Die Lourdes-Grotte von Varsberg",
+      "Der Warndt im Frühling",
+      "Grenzstein von 1830, Wald von Carling"
     ],
-    "serv": [
-      "Bett- und Haushaltswäsche inklusive",
-      "Betten bei Ankunft bezogen",
-      "Endreinigung inbegriffen",
-      "Strom und Heizung inklusive",
-      "Kostenloses WLAN",
-      "Privater Parkplatz",
-      "Haustiere willkommen",
-      "Nichtraucher"
-    ],
-    "gite1_h": "Ferienwohnung 1",
-    "gite2_h": "Ferienwohnung 2",
-    "dispo_h": "Verfügbarkeit",
-    "dispo_p": "Beide Kalender werden von unserem Buchungssystem in Echtzeit aktualisiert, Plattformen eingeschlossen: grüne Nächte sind frei, rote Nächte belegt. Zum Buchen gehen Sie auf die Seite Buchung.",
-    "tour": "360°-Rundgang starten",
-    "identical": "Die beiden Ferienwohnungen sind Zwillinge: gleiche Räume, gleiche Ausstattung, gleicher Blick auf die Wiese. Wählen Sie einfach die, die an Ihren Daten frei ist – oder beide für eine größere Gruppe.",
-    "captions": [
-      "Schlafzimmer, Doppelbett oder zwei Einzelbetten",
-      "Der Wohnraum mit Zugang zur Terrasse",
-      "Die Essecke mit Eichentisch",
-      "Die Einbauküche",
-      "Das Duschbad mit ebenerdiger Dusche",
-      "Barrierefreies Duschbad (Label Tourisme & Handicap)",
-      "Die Terrasse einer Ferienwohnung am Abend"
-    ],
-    "dispo_btn": "Verfügbarkeit prüfen und buchen",
-    "cal_ko": "Werden die Kalender nicht angezeigt, schreiben Sie uns an"
-  },
-  "autour": {
-    "h1": "Ausflüge und Freizeit",
-    "lead": "Die Wanderwege beginnen direkt am Haus, ohne Straßenüberquerung – zu Fuß, mit dem Rad oder zu Pferd. Mehrere sehenswerte Orte liegen nur wenige Kilometer entfernt.",
-    "sites_h": "Sehenswert in der Umgebung",
     "sites": {
       "creutzwald-lac": [
         "See und Wassersportzentrum Creutzwald",
@@ -230,66 +277,67 @@
         "Die spektakuläre Flussschleife der Saar, vom Aussichtspunkt Cloef aus."
       ]
     },
-    "leisure_h": "Freizeit",
-    "on_site": "vor Ort",
     "leisure": {
       "nautique": "Wassersport",
       "piscine": "Schwimmbad",
       "peche": "Angeln",
       "tennis": "Tennis",
       "rando": "Wandern",
-      "equitation": "Reiten",
       "golf": "Golfplatz Faulquemont",
       "forets": "Wälder",
       "gare": "Bahnhof Saint-Avold",
       "commerces": "Bäckerei, Geschäfte",
       "calypso": "Calypso Saarbrücken (Erlebnisbad)"
-    },
-    "links_h": "Nützliche Links",
-    "gallery_h": "Varsberg, der Warndt und die Felder",
-    "gallery_caps": [
-      "Die Felder oberhalb des Anwesens, am Rand des Warndt-Waldes",
-      "Der Weg entlang der Obstwiese an einem frostigen Morgen",
-      "Die Kirche von Varsberg",
-      "Die Lourdesgrotte in Varsberg",
-      "Der Warndt im Frühling",
-      "Grenzstein von 1830, Wald von Carling"
+    }
+  },
+  "gites": {
+    "captions": [
+      "Schlafzimmer, Doppelbett oder zwei Einzelbetten",
+      "Schlafzimmer mit zwei Betten",
+      "Der Wohnraum, offen zur Terrasse",
+      "Der Essbereich mit Eichentisch",
+      "Die Einbauküche",
+      "Das Duschbad mit bodengleicher Dusche",
+      "Barrierefreies Duschbad (Label Tourisme & Handicap)",
+      "Die Terrasse einer Wohnung am Abend"
     ]
   },
   "reservation": {
-    "h1": "Preise, Buchung und Anfahrt",
+    "h1": "Verfügbarkeit, Preise und Buchung",
+    "dispo_h": "Verfügbarkeit",
+    "dispo_p": "Ein Kalender pro Wohnung, von unserem Buchungssystem in Echtzeit aktualisiert, Plattformen eingeschlossen: grüne Nächte sind frei, rote belegt.",
+    "cal_ko": "Werden die Kalender nicht angezeigt, schreiben Sie uns an",
     "prices_h": "Preise",
-    "prices": [
-      [
-        "Woche",
-        "420 €"
-      ],
-      [
-        "Wochenende (2 Nächte)",
-        "300 €"
-      ]
+    "prices_p": "Pro Wohnung, alle Nebenkosten inklusive. Beide Wohnungen kosten gleich viel.",
+    "prices": {
+      "we2": "Wochenende, 2 Nächte – Anreise Freitag",
+      "we3": "Wochenende, 3 Nächte – Freitag bis Montag",
+      "mid4": "4 Nächte unter der Woche – Anreise Sonntag bis Donnerstag",
+      "week": "5, 6 oder 7 Nächte"
+    },
+    "prices_note": "Unter der Woche mindestens 4 Nächte. 25 % Anzahlung bei der Buchung, 300 € Kaution, Kurtaxe zusätzlich. Kreditkarten, Visa, MasterCard und französische ANCV-Urlaubsschecks werden angenommen.",
+    "included_h": "Im Preis enthalten",
+    "included": [
+      "Betten bei Anreise bezogen, Bettwäsche inklusive",
+      "Alle Nebenkosten: Strom, Wasser, Fußbodenheizung",
+      "Endreinigung inklusive – die Wohnung wird aufgeräumt übergeben, Geschirr gespült und weggeräumt",
+      "Glasfaser-WLAN, Parkplatz, Haustiere (höchstens 2)"
     ],
-    "included": "Inklusive: Bett- und Haushaltswäsche, Betten bei Ankunft bezogen, Endreinigung, Strom und Heizung, WLAN, Haustiere. Kaution 300 €. Kurtaxe zusätzlich. Kreditkarten und französische ANCV-Urlaubsschecks werden akzeptiert.",
+    "not_included_h": "Nicht enthalten",
+    "not_included": [
+      "Badetücher",
+      "Kurtaxe, vor Ort zu zahlen"
+    ],
     "form_h": "Online buchen",
-    "form_p": "Wählen Sie Ihre Daten und die Wohnung und hinterlassen Sie Ihre Kontaktdaten: wir bestätigen innerhalb von 24 Stunden. Für eine einfache Frage genügt eine E-Mail oder ein Anruf.",
+    "form_p": "Wählen Sie Ihre Daten und die Personenzahl; das Formular schlägt Ihnen die freie Wohnung vor. Hinterlassen Sie Ihre Kontaktdaten, wir bestätigen innerhalb von 24 Stunden. Für eine einfache Frage genügt eine E-Mail oder ein Anruf.",
     "access_h": "Anfahrt zur Domaine du Geisberg",
     "access": [
       "Varsberg liegt zwischen Saint-Avold und Creutzwald, 40 Minuten von Metz und 30 Minuten von Saarbrücken.",
-      "Mit dem Auto: Autobahn A4 (Paris–Straßburg), Ausfahrt Saint-Avold / Carling, dann Richtung Creutzwald und Varsberg. Aus Deutschland: A6/A620 bis Saarbrücken, dann A4 oder über Creutzwald.",
-      "Mit der Bahn: Bahnhof Saint-Avold in 15 km (Regionalzug Metz–Forbach)."
+      "Mit dem Auto: Autobahn A4 (Paris–Straßburg), Ausfahrt Saint-Avold / Carling, dann Richtung Creutzwald und Varsberg.",
+      "Mit dem Zug: Bahnhof Saint-Avold, 15 km entfernt (TER Metz–Forbach)."
     ],
     "gps": "GPS-Koordinaten",
     "widget_ko": "Wird das Formular nicht angezeigt, schreiben Sie uns an"
-  },
-  "diapo": {
-    "h1": "Diashow",
-    "lead": "Diashow mit Vogelgesang — der Flurname Vogelsgesang bedeutet genau das.",
-    "sections": [
-      "Das Anwesen",
-      "Die Ferienwohnungen"
-    ],
-    "audio_on": "Vogelgesang",
-    "audio_off": "Vogelgesang stumm schalten"
   },
   "legal": {
     "h1": "Impressum",
@@ -313,33 +361,6 @@
     "reviews_lead": "Über hundert Bewertungen auf den Buchungsportalen, mit konstant hohem Durchschnitt.",
     "rating_reviews": "Bewertungen",
     "superhost": "Airbnb-Superhost · Gastgeber seit 2011 · Antwort innerhalb einer Stunde",
-    "practical_h": "Gut zu wissen",
-    "practical": [
-      "Anreise ab 16 Uhr, Abreise bis 10 Uhr",
-      "Bäckerei in 300 m, Restaurant 1 km, Minimarkt 3 km",
-      "Haustiere willkommen (max. 2), ohne Aufpreis",
-      "Babybett, Badewanne und Hochstuhl auf Anfrage",
-      "Nichtraucher · Glasfaser-WLAN"
-    ],
-    "rooms": [
-      [
-        "Wohnraum mit offener Küche",
-        "23–25 m²"
-      ],
-      [
-        "Schlafzimmer 1",
-        "10 m² · 2 Betten 90 × 190"
-      ],
-      [
-        "Schlafzimmer 2",
-        "13 m² · 2 Betten 90 × 190"
-      ],
-      [
-        "Barrierefreies Duschbad",
-        "6–7 m² · bodengleiche Dusche, WC"
-      ]
-    ],
-    "rooms_h": "Raum für Raum",
     "avis_h1": "Bewertungen und Labels",
     "where_h": "Wo Sie uns finden",
     "where_p": "Wir sind auch auf diesen Seiten gelistet: Sie können dort buchen, aber die Direktbuchung bleibt am einfachsten und günstigsten.",
@@ -347,19 +368,26 @@
     "guestbook_h": "Gästebuch",
     "guestbook_p": "Bewertungen, die unsere Gäste nach ihrem Aufenthalt hinterlassen haben, gesammelt von unserem Buchungssystem."
   },
-  "visite": {
-    "h1": "Virtueller 360°-Rundgang",
-    "lead": "Gehen Sie durch die Häuser und über das Anwesen, als wären Sie da: Bild ziehen, zum Zoomen zwei Finger, von Raum zu Raum wechseln.",
-    "fallback": "Falls der Rundgang hier nicht erscheint,",
-    "open": "in neuem Tab öffnen"
-  },
-  "videos": {
-    "h1": "Videos",
-    "lead": "Drei kurze Videos vom Anwesen, ungeschnitten: der Ton ist der des Ortes.",
+  "medias": {
+    "h1": "In Bildern",
+    "lead": "Anwesen und Ferienwohnungen in Bildern: die Diashow mit Vogelgesang, drei kurze vor Ort gedrehte Videos und der virtuelle 360°-Rundgang.",
+    "tabs": [
+      "Diashow",
+      "Videos",
+      "Rundgang"
+    ],
+    "diapo_lead": "Diashow mit dem Vogelgesang des Ortes, der danach benannt ist.",
+    "sections": [
+      "Das Anwesen",
+      "Die Ferienwohnungen"
+    ],
+    "audio_on": "Vogelgesang",
+    "audio_off": "Vogelgesang ausschalten",
+    "videos_lead": "Drei kurze, ungeschnittene Videos vom Anwesen: der Ton ist der des Ortes.",
     "clips": [
       [
-        "Vogelgesang am Morgen beim Aufwachen",
-        "Die Wiese im ersten Licht, ein Pferd grast hinter dem Zaun, und das Konzert von Vogelsgesang."
+        "Vogelgesang am Morgen",
+        "Die Wiese im ersten Licht, ein Pferd hinter dem Zaun, und das Konzert des Vogelsgesangs."
       ],
       [
         "Waldspaziergang mit den Pferden",
@@ -367,13 +395,13 @@
       ],
       [
         "Ein Reh am Ende des Gartens",
-        "Von der Terrasse aus gefilmt, aus der Ferne: Rehe kommen oft am frühen Morgen."
+        "Von weitem von der Terrasse gefilmt: Rehe kommen oft am frühen Morgen."
       ]
     ],
     "download": "Video herunterladen",
     "small_note": "kleines Format",
-    "more_h": "Und außerdem",
-    "diapo_p": "Die Fotos des Anwesens und der Ferienwohnungen, mit Vogelgesang.",
-    "visite_p": "Der virtuelle 360°-Rundgang durch die Ferienwohnungen, Raum für Raum."
+    "visite_lead": "Gehen Sie durch die Wohnungen und über das Anwesen, als wären Sie da: Bild ziehen, zum Zoomen auseinanderziehen, von Raum zu Raum wechseln.",
+    "visite_fallback": "Wird der Rundgang hier nicht angezeigt,",
+    "visite_open": "in einem neuen Tab öffnen"
   }
 }

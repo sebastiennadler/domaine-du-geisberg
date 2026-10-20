@@ -81,6 +81,8 @@ Sainte-Croix, boucle de la Sarre. Sur place : randonnée, forêts, commerces à 
 
 ## 3. Pages et navigation (v2 cible)
 
+Notes pour Marc : elles viennent de `TODO.md` (`- [ ] {clé} texte` dans les sections 4 et 5) ; `build.py` les injecte via la macro `note('clé')` des gabarits (`partials/_macros.html`), en FR et hors `--prod`.
+
 Principe : **simple en surface, complet en profondeur**. Chaque information n'a qu'un seul « chez-soi » ;
 les autres pages y renvoient. L'essentiel (quoi, combien, réserver) tient en trois écrans ; le détail
 est dans des tiroirs (`<details>`) ou des pages de fond.
@@ -89,10 +91,10 @@ Menu (5 entrées + bouton « Réserver » toujours visible + langues + thème) :
 
 | # | Page | Fichier | Contenu, dans l'ordre |
 |---|---|---|---|
-| 1 | **Accueil** (présentation) | `index.html` | Bandeau : photo d'Agnès, Marc et Urielle ≈ 4 s, puis photos de la maison (fondu). Accroche + 2 boutons (Voir les gîtes / Réserver). Chiffres clés : 2 gîtes identiques · 60 m² · de 1 à 4 personnes · accessible PMR · animaux. Galerie des gîtes (7 photos communes) + 2 phrases. Fiche unique (2 colonnes) + tiroir « Tout l'équipement » + « Inclus / non fourni ». Un seul avis (le meilleur) + lien Avis. Hôtes « depuis 2007 » + coordonnées. Aperçus (photo + 2 lignes + lien) : Le domaine & alentours, Photos & vidéos. **[À CONFIRMER]** |
-| 2 | **Réservation** | `reservation.html` | Disponibilités : 2 calendriers Nuitrésa (Gîte 1, Gîte 2). Tarifs (grille 2.3) + inclus. Formulaire Nuitrésa unique (option estimation globale). Accès (itinéraire, train, carte) + consigne d'arrivée. |
+| 1 | **Accueil** (présentation) | `index.html` | Bandeau : photo d'Agnès, Marc et Urielle ≈ 4 s, puis photos de la maison (fondu). Accroche + 2 boutons (Voir les gîtes / Réserver). Chiffres clés : 2 gîtes identiques · 60 m² · de 1 à 4 personnes · accessible PMR · animaux. Galerie des gîtes (7 photos communes) + 2 phrases. Fiche unique (9 lignes, dont tarifs « à partir de ») + tiroir « Tout l'équipement » (5 groupes). Un seul avis (`featured_review` dans shared.json) + lien Avis. Hôtes « depuis 2007 » + coordonnées. Aperçus (photo + 2 lignes + lien) : Le domaine & alentours, En images. Bouton « Diaporama » sur le bandeau (superposition). **Fait le 20/10.** |
+| 2 | **Réservation** | `reservation.html` | Disponibilités : 2 calendriers Nuitrésa (Gîte 1, Gîte 2). Tarifs (grille 2.3) + inclus / non fourni. Formulaire Nuitrésa unique (option estimation globale). Accès (itinéraire, train, carte, coordonnées). **Fait le 20/10.** |
 | 3 | **Le domaine & alentours** | `le-domaine.html` | Texte « Le domaine » (à raccourcir ?), galerie du domaine (6 photos), les 6 sites incontournables avec distances et photos, loisirs (puces avec km), liens utiles. |
-| 4 | **Photos & vidéos** | `medias.html` | Trois onglets : Diaporama (plein écran, 5 s, pause, audio), Vidéos (3 clips), Visite du gîte (360° hdmedia). |
+| 4 | **En images** | `medias.html` | Trois onglets : Diaporama (plein écran, 5 s, pause, audio), Vidéos (3 clips), Visite du gîte (360° hdmedia). Le même diaporama s'ouvre en superposition depuis le bouton du bandeau d'accueil. |
 | 5 | **Avis** | `avis.html` | **Inchangée** : notes des plateformes, 6 avis, labels, « où réserver », livre d'or Nuitrésa. |
 | — | Mentions légales | `mentions-legales.html` | Éditeur, hébergeur, propriété intellectuelle, données, crédits. Lien en pied de page seulement. |
 | — | Redirections | `gites.html`, `diaporama.html`, `videos.html`, `visite.html`, `autour.html`, `gite-1.html`, `gite-2.html` | Pages de redirection (meta refresh + lien) vers leur nouveau « chez-soi », pour ne casser aucun lien existant. |

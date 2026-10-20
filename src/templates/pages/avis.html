@@ -5,19 +5,19 @@
   <div class="eyebrow">{{ x.reviews_eyebrow }}</div>
   <h1 style="font-size:clamp(30px,5vw,46px)">{{ x.avis_h1 }}</h1>
   <p class="lead">{{ x.reviews_lead }}</p>
-  <div class="ratings"{% if notes %} data-note="{{ t.notes.ratings }}"{% endif %}>{% for name, score, n in s.ratings %}<div class="rating"><b>{{ score }}</b><span>{{ name }}</span><small>{{ n }} {{ x.rating_reviews }}</small></div>{% endfor %}</div>
+  <div class="ratings"{{ note('ratings') }}>{% for name, score, n in s.ratings %}<div class="rating"><b>{{ score }}</b><span>{{ name }}</span><small>{{ n }} {{ x.rating_reviews }}</small></div>{% endfor %}</div>
   <p class="note" style="margin:12px 0 26px">{{ x.superhost }}</p>
-  <div class="reviews"{% if notes %} data-note="{{ t.notes.reviews }}"{% endif %}>
+  <div class="reviews"{{ note('reviews') }}>
     {% for r in s.reviews %}<blockquote><span class="st" aria-label="{{ r.stars }}/5">{{ '★' * r.stars }}{{ '☆' * (5 - r.stars) }}</span><p>{{ r.q }}</p><cite>{{ r.who }} · {{ r.src }} · {{ r.when }}</cite></blockquote>{% endfor %}
   </div>
 </section>
 <section class="wrap" style="padding-top:0">
   <div class="cols" style="align-items:start">
-    <div{% if notes %} data-note="{{ t.notes.labels }}"{% endif %}>
+    <div{{ note('labels') }}>
       <h2 style="margin-bottom:14px">{{ x.labels_h }}</h2>
       <div class="logos" style="gap:18px 30px">{% for id, name, link in s.labels %}<a href="{{ link }}" rel="noopener" target="_blank">{{ pic(id, "", "72px") }}<span>{{ name }}</span></a>{% endfor %}</div>
     </div>
-    <div{% if notes %} data-note="{{ t.notes.platforms }}"{% endif %}>
+    <div{{ note('platforms') }}>
       <h2 style="margin-bottom:8px">{{ x.where_h }}</h2>
       <p class="note" style="margin:0 0 12px">{{ x.where_p }}</p>
       <div class="prices">{% for name, url, score in s.platforms %}<div><a href="{{ url }}" rel="noopener" target="_blank">{{ name }}</a><b style="font-size:17px;font-family:var(--body)">{{ score }}</b></div>{% endfor %}</div>
@@ -29,7 +29,7 @@
   {# Livre d'or public Nuitrésa : les avis recueillis par le questionnaire de satisfaction envoyé après chaque séjour. #}
   <h2 style="margin-bottom:8px">{{ x.guestbook_h }}</h2>
   <p class="note" style="margin:0 0 14px">{{ x.guestbook_p }}</p>
-  <div class="widget" style="min-height:0"{% if notes %} data-note="{{ t.notes.guestbook }}"{% endif %}>
+  <div class="widget" style="min-height:0"{{ note('guestbook') }}>
     <iframe class="nr-guestbook" src="{{ s.nuitresa_public }}/avis-{{ s.nuitresa_key }}.html" width="100%" height="500" loading="lazy" title="{{ x.guestbook_h }}"></iframe>
   </div>
 </section>

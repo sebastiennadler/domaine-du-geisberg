@@ -32,8 +32,8 @@ prestataire de Marc), intégré dans la page Réservation.
 │   │   └── images.json           dimensions et tailles de chaque photo (écrit par photos.py, ne pas éditer)
 │   ├── templates/
 │   │   ├── base.html             squelette commun (head, en-tête, pied de page, notes, scripts)
-│   │   ├── pages/                un gabarit Jinja2 par page (index.html, gites.html, …)
-│   │   └── partials/             morceaux réutilisés (_redirect.html…)
+│   │   ├── pages/                un gabarit Jinja2 par page (index, reservation, le-domaine, medias, avis, mentions-legales)
+│   │   └── partials/             morceaux réutilisés (_macros.html : notes ; _diapo.html : diaporama ; _redirect.html)
 │   ├── catalog/                  photos.json, videos.json (catalogues), credits.json, liens-candidats.txt
 │   ├── css/style.css             la feuille de styles (couleurs, mise en page, mobile, thème sombre)
 │   └── js/site.js                les scripts (menu, thème, bandeau, galerie, notes, calendriers, effets)
@@ -120,7 +120,7 @@ différé) ; `src(id)` donne l'adresse de la plus grande version (visionneuse, f
 
 ```sh
 pip install jinja2 pillow playwright && playwright install chromium   # une seule fois
-python3 tools/build.py      # écrit dist/ : 70 pages (+ 14 renvois), css, js, img, vidéos, sitemap, robots
+python3 tools/build.py      # écrit dist/ : 42 pages (+ 49 renvois), css, js, img, vidéos, sitemap, robots
 python3 tools/check.py      # liens et images cassés, images inutilisées, attributs manquants, poids
 bash tests/run.sh           # tests fonctionnels (≈ 500) + balayage des débordements, contre dist/
 ```
@@ -192,7 +192,8 @@ une réservation par le widget.
 ## Mode « Notes pour Marc »
 
 Sur les pages françaises, un petit bouton en bas à droite affiche des bulles numérotées : ce qu'il reste à
-fournir ou à décider (photos récentes, tarifs, accès OVH…). Les textes sont dans la clé `notes` de `fr.json`.
+fournir ou à décider. Les textes viennent de `TODO.md` (sections « À demander à Marc » et « À faire par Marc
+dans Nuitrésa ») : une ligne `- [ ] {clé} texte` s'affiche à l'endroit de la page qui porte `note('clé')`.
 Ce mode est invisible tant que l'on n'appuie pas sur le bouton ; la version à livrer (`--prod`) ne le contient pas.
 
 ## Mise en ligne définitive (liste de contrôle)

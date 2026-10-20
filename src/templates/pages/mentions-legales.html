@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% set l = t.legal %}
 {% block main %}
-<section class="wrap" style="max-width:800px"{% if notes %} data-note="{{ t.notes.legal }}"{% endif %}>
+<section class="wrap" style="max-width:800px"{{ note('legal') }}>
   <h1 style="font-size:clamp(30px,5vw,46px);margin-bottom:24px">{{ l.h1 }}</h1>
   {% for k in ['owners','editor','host','ip','privacy','credits'] %}<h2 style="font-size:22px;margin:22px 0 8px">{{ l[k ~ '_h'] }}</h2><p>{{ l[k] }}</p>{% endfor %}
   <h2 style="font-size:22px;margin:22px 0 8px">{{ l.credits_photo_h }}</h2><ul class="list">{% for f, a, lic, src in s.credits %}<li><a href="{{ src }}" rel="noopener" target="_blank">{{ f }}</a> — {{ a }}, {{ lic }}, Wikimedia Commons</li>{% endfor %}</ul>

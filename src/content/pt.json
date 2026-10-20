@@ -1,28 +1,16 @@
 {
   "meta": {
     "index": [
-      "Domaine du Geisberg – Gîtes rurais em Varsberg, Mosela",
-      "Duos gîtes rurais (3 espigas) em Varsberg (Lorena, França), numa propriedade de 2 hectares à beira da floresta. Terraço privado, estacionamento, wi-fi, animais bem-vindos. Reserva direta."
+      "Domaine du Geisberg – Casas de campo em Varsberg, Mosela",
+      "Dois gîtes idênticos de 60 m² em Varsberg (Mosela), em plena natureza e à beira da floresta: de 1 a 4 pessoas, acessíveis, terraço privado, Wi-Fi de fibra, animais bem-vindos. Reserva direta."
     ],
     "le-domaine": [
-      "A propriedade – Domaine du Geisberg",
-      "Dois hectares de prados à beira da floresta, no lugar chamado Vogelsgesang, na colina sobre Varsberg."
-    ],
-    "gites": [
-      "Os gîtes – Domaine du Geisberg",
-      "Duos gîtes gémeas de 60 m², 2 quartos, 4 pessoas, terraço privado, aquecimento geotérmico, selo Tourisme & Handicap."
-    ],
-    "autour": [
-      "O que visitar perto de Varsberg – Domaine du Geisberg",
-      "Caminhadas a partir do jardim, lago de Creutzwald, museu da mina, Völklingen, Centro Pompidou-Metz, o Sarre e o Luxemburgo."
+      "A quinta e os arredores – Domaine du Geisberg",
+      "Dois hectares de prados à beira da floresta, no lugar de Vogelsgesang, e tudo o que há para ver por perto: lago de Creutzwald, floresta do Warndt, Völklingen, Metz, o Sarre."
     ],
     "reservation": [
-      "Preços, reserva e acesso – Domaine du Geisberg",
-      "Preços dos gîtes, pedido de reserva direta e itinerário para chegar a Varsberg, Mosela."
-    ],
-    "diaporama": [
-      "Diaporama – Domaine du Geisberg",
-      "Os gîtes e a propriedade em imagens."
+      "Disponibilidade, preços e reserva – Domaine du Geisberg",
+      "Calendários dos dois gîtes, preços (fim de semana desde 300 €, semana 420 €), pedido de reserva direta e itinerário para Varsberg, entre Saint-Avold e Creutzwald."
     ],
     "mentions-legales": [
       "Informações legais – Domaine du Geisberg",
@@ -32,27 +20,26 @@
       "Opiniões e selos – Domaine du Geisberg",
       "As opiniões dos nossos hóspedes no Gîtes de France, Airbnb, Abritel e Clévacances, os nossos selos e onde reservar."
     ],
-    "visite": [
-      "Visita virtual 360° – Domaine du Geisberg",
-      "Visite os gîtes do Domaine du Geisberg em 360°, divisão por divisão."
-    ],
-    "videos": [
-      "Vídeos – Domaine du Geisberg",
-      "O canto dos pássaros ao acordar, um passeio na floresta com os cavalos, um corço ao fundo do jardim: a propriedade em vídeo."
+    "medias": [
+      "Em imagens – Domaine du Geisberg",
+      "A quinta e os gîtes em imagens: diaporama com canto dos pássaros, vídeos filmados no local, visita virtual a 360°."
     ]
   },
   "nav": {
     "index": "Início",
-    "le-domaine": "A propriedade",
-    "gites": "Os gîtes",
-    "autour": "Arredores",
     "reservation": "Reserva",
-    "diaporama": "Diaporama",
-    "contact": "Contacto",
-    "book": "Reservar",
+    "le-domaine": "A quinta e os arredores",
+    "medias": "Em imagens",
     "avis": "Opiniões",
-    "visite": "Visita do gîte",
-    "videos": "Vídeos"
+    "book": "Reservar",
+    "contact": "Contacto",
+    "gites": "Os gîtes",
+    "videos": "Vídeos",
+    "diaporama": "Diaporama",
+    "visite": "Visita ao gîte",
+    "autour": "Arredores",
+    "alentours": "Os arredores",
+    "legal": "Aviso legal"
   },
   "ui": {
     "skip": "Ir para o conteúdo",
@@ -84,114 +71,174 @@
     "fallback": "",
     "dev_credit": "Site: Sébastien Nadler",
     "top": "Voltar ao topo",
-    "address": "Morada"
+    "address": "Morada",
+    "equip_all": "Todo o equipamento",
+    "equip_close": "Fechar",
+    "tabs": "Separadores",
+    "prices_more": "Ver os preços",
+    "see_gites": "Ver os gîtes",
+    "read_more": "Ler mais",
+    "not_included": "Não incluído",
+    "included": "Incluído"
   },
   "home": {
     "h1": "No coração da natureza",
-    "lead": "Dois gîtes de exceção mesmo ao lado da floresta, na colina que domina Varsberg, no lugar chamado Vogelsgesang, «o canto dos pássaros».",
-    "cta1": "Ver disponibilidade",
-    "cta2": "Descobrir os gîtes",
-    "intro_h": "Um lugar que faz jus ao nome",
-    "intro": [
-      "Os nossos dois gîtes são dois apartamentos no piso do jardim da nossa casa, no coração de uma vasta propriedade de dois hectares verdejantes à beira da floresta, num lugar de exceção chamado «Vogelsgesang», o canto dos pássaros.",
-      "Típica da paisagem da Lorena, a natureza exuberante em redor oferece um panorama de grande beleza, num ambiente de calma e serenidade."
-    ],
-    "intro_more": "Descobrir a propriedade",
-    "gites_h": "Dois gîtes gémeos, a mesma vista",
-    "gites_lead": "As mesmas comodidades de ambos os lados. Reserve uma, ou as duas para toda a família.",
-    "around_h": "A pé desde o jardim, ou a uma hora de carro",
-    "around_lead": "Trilhos sem atravessar estradas, lago e centro náutico a 6 km, e Metz, o Sarre e o Luxemburgo a um dia de passeio.",
-    "around_more": "Tudo o que há para ver",
-    "hosts_h": "Agnès e Marc dão-lhe as boas-vindas",
-    "hosts": "Desde 2007, ano de abertura dos nossos gîtes, gostamos de partilhar a nossa forma de viver com hóspedes de todas as nacionalidades e de descobrir a deles. É uma maneira de conhecer outros países e culturas, e de dar a conhecer as riquezas da nossa região e do nosso país. Praticar regularmente o alemão e o inglês é um exercício agradável que nos faz viajar.",
-    "diapo_btn": "Ver o diaporama",
+    "lead": "Dois gîtes de exceção mesmo ao lado da floresta, na colina que domina Varsberg, no lugar de Vogelsgesang, «o canto dos pássaros».",
+    "cta1": "Reservar",
+    "cta2": "Ver os gîtes",
     "hero_alts": [
-      "A casa sob a neve, numa noite de inverno",
-      "A casa vista do prado em flor",
-      "Os cavalos diante da casa, ao entardecer"
+      "Agnès, Marc e Urielle em frente à casa",
+      "A casa vista do prado florido",
+      "Os cavalos em frente à casa, ao entardecer",
+      "Pôr do sol sobre Varsberg"
     ],
-    "gites_facts": [
+    "facts": [
+      "2 gîtes idênticos",
       "60 m²",
-      "2 quartos",
-      "4 pessoas",
-      "Terraço privativo",
-      "Estacionamento",
-      "Wi-Fi",
-      "Animais bem-vindos"
+      "De 1 a 4 pessoas",
+      "Acessível",
+      "Animais bem-vindos",
+      "Wi-Fi de fibra"
     ],
-    "hosts_alt": "Agnès, Marc e Urielle em frente à casa"
+    "gites_eyebrow": "Os gîtes",
+    "gites_h": "Dois gîtes idênticos",
+    "gites_lead": "Reserve um dos dois, ou os dois para um grupo.",
+    "gites_p": "Cada gîte é um apartamento de 60 m² ao nível do jardim, com entrada independente, terraço e estacionamento: uma sala com cozinha integrada, dois quartos de duas camas e uma casa de banho acessível a pessoas com mobilidade reduzida. Os dois são organizados e equipados da mesma forma, com a mesma vista sobre o prado.",
+    "fiche_h": "O essencial",
+    "fiche": [
+      [
+        "Capacidade",
+        "De 1 a 4 pessoas: 2 quartos de 2 camas (90 × 190 cm). Cama extra na sala, a pedido."
+      ],
+      [
+        "Área",
+        "60 m², ao nível do jardim, entrada independente, terraço privado"
+      ],
+      [
+        "Casa de banho",
+        "Duche ao nível do chão e sanita, acessível (selo Tourisme & Handicap)"
+      ],
+      [
+        "Cozinha",
+        "Integrada na sala: placa de indução, forno, micro-ondas, máquina de lavar loiça, máquina de lavar roupa, congelador"
+      ],
+      [
+        "Conforto",
+        "Piso radiante geotérmico, televisor de ecrã plano, Wi-Fi de fibra"
+      ],
+      [
+        "Exterior",
+        "Mobiliário de jardim, churrasqueira, estacionamento privado, bicicletas de montanha à disposição"
+      ],
+      [
+        "Animais",
+        "Bem-vindos, 2 no máximo, sem suplemento"
+      ],
+      [
+        "Horários",
+        "Chegada a partir das 16 h, partida até às 10 h"
+      ],
+      [
+        "Preços",
+        "A partir de 300 € ao fim de semana, 420 € à semana, despesas incluídas"
+      ]
+    ],
+    "equip_h": "Todo o equipamento",
+    "equip_groups": [
+      [
+        "Sala e cozinha",
+        [
+          "Sofá e zona de refeições",
+          "Televisor de ecrã plano",
+          "Placa de indução, forno, micro-ondas",
+          "Máquina de lavar loiça, máquina de lavar roupa, congelador",
+          "Máquina de café, chaleira, torradeira",
+          "Loiça e utensílios completos"
+        ]
+      ],
+      [
+        "Quartos",
+        [
+          "2 quartos de 2 camas de 90 × 190 cm (juntáveis)",
+          "Camas feitas à chegada, lençóis incluídos",
+          "Cama extra na sala, a pedido",
+          "Berço, banheira de bebé e cadeira alta a pedido"
+        ]
+      ],
+      [
+        "Casa de banho",
+        [
+          "Duche ao nível do chão, sanita",
+          "Acessível a pessoas com mobilidade reduzida",
+          "Toalhas de banho não incluídas"
+        ]
+      ],
+      [
+        "Exterior",
+        [
+          "Terraço privado com mobiliário de jardim",
+          "Churrasqueira",
+          "Estacionamento privado",
+          "Bicicletas de montanha à disposição"
+        ]
+      ],
+      [
+        "Conforto e serviços",
+        [
+          "Piso radiante geotérmico",
+          "Wi-Fi de fibra",
+          "Gîte para não fumadores",
+          "Animais bem-vindos (2 no máximo), sem suplemento",
+          "Padaria a 300 m, restaurante a 1 km, minimercado a 3 km"
+        ]
+      ]
+    ],
+    "review_eyebrow": "Estiveram cá",
+    "review_h": "O que dizem os nossos hóspedes",
+    "review_more": "Ver todas as opiniões",
+    "hosts_eyebrow": "Os seus anfitriões",
+    "hosts_h": "Agnès e Marc dão-lhe as boas-vindas",
+    "hosts": "Desde 2007, ano em que abrimos os nossos gîtes, gostamos de partilhar a nossa forma de viver com hóspedes de todas as nacionalidades e de descobrir a deles. É a nossa maneira de conhecer outros países e culturas e de dar a conhecer as riquezas da nossa região e do nosso país. Praticar regularmente o alemão e o inglês é um exercício agradável e que nos leva longe.",
+    "hosts_alt": "Agnès, Marc e Urielle em frente à casa",
+    "teasers_h": "Para ir mais longe",
+    "domaine_h": "A quinta e os arredores",
+    "domaine_p": "Dois hectares de prados à beira da floresta, trilhos que partem do jardim e tudo o que há para ver a menos de uma hora.",
+    "medias_h": "Em imagens",
+    "medias_p": "O diaporama com canto dos pássaros, três vídeos filmados no local e a visita virtual a 360°.",
+    "more": "Descobrir"
   },
   "domaine": {
-    "h1": "A propriedade",
+    "h1": "A quinta e os arredores",
+    "lead": "Dois hectares de prados à beira da floresta, no lugar de Vogelsgesang, e tudo o que há para ver a menos de uma hora.",
     "p": [
-      "No coração de uma vasta propriedade de dois hectares verdejantes à beira da floresta, as nossas duos gîtes ocupam o rés do chão de uma casa espaçosa, num lugar de exceção chamado «Vogelsgesang» (o canto dos pássaros).",
-      "Típica da paisagem da Lorena, a natureza exuberante em redor dos gîtes oferece um panorama de grande beleza, num ambiente de calma e serenidade.",
-      "Os trilhos de caminhada são numerosos e acessíveis sem atravessar estradas, a pé, de bicicleta ou a cavalo. Há cavalos à disposição dos cavaleiros experientes."
+      "Situados no coração de uma vasta quinta verdejante de dois hectares à beira da floresta, os nossos dois gîtes ocupam o piso inferior de uma casa espaçosa, num lugar de exceção chamado «Vogelsgesang», o canto dos pássaros.",
+      "Típico das paisagens da Lorena, o ambiente oferece uma natureza exuberante e um panorama de grande beleza, num contexto de calma e serenidade.",
+      "Os trilhos de caminhada são numerosos e acessíveis sem atravessar estradas, a pé ou de bicicleta. Os nossos cavalos, hoje reformados, vê-lo-ão passar a partir do prado."
     ],
-    "gallery_h": "A propriedade em imagens",
+    "gallery_h": "A quinta em imagens",
     "captions": [
       "O caminho que parte do jardim, com vista para as colinas",
-      "O jardim e a sua mesa sob as árvores",
+      "O jardim e a sua mesa debaixo das árvores",
       "O terraço de um gîte",
       "Pôr do sol sobre Varsberg",
       "Os cavalos no inverno",
       "A Urielle, a nossa malinois, no meio da erva alta"
-    ]
-  },
-  "gites": {
-    "h1": "Os gîtes",
-    "lead": "Dois apartamentos semelhantes, ao nível do jardim da casa dos proprietários, com entrada independente, terraço e estacionamento privados.",
-    "common": "Cada casa tem uma sala com cozinha integrada (forno, placa vitrocerâmica, micro-ondas, máquina de lavar loiça, máquina de lavar roupa, congelador), dois quartos e uma casa de banho com duche e WC, adaptada a pessoas com mobilidade reduzida. Camas: quatro de 90 cm nos quartos (podem juntar-se): 4 pessoas por gîte. Televisor de ecrã plano, wi-fi, piso radiante geotérmico.",
-    "desc_h": "Disposição",
-    "equip_h": "Equipamento",
-    "serv_h": "Serviços incluídos",
-    "desc": [
-      "1 sala com cozinha integrada",
-      "2 quartos (duas camas de 90 × 190 cm cada)",
-      "1 casa de banho com duche e WC, acessível",
-      "4 pessoas · 60 m²"
     ],
-    "equip": [
-      "Piso radiante geotérmico",
-      "Televisor de ecrã plano",
-      "Máquina de lavar loiça, máquina de lavar roupa, congelador",
-      "Placa vitrocerâmica, forno, micro-ondas",
-      "Terraço privado, mobiliário de jardim, churrasqueira",
-      "Equipamento para bebé (cama, banheira)",
-      "Bicicletas de montanha à disposição"
+    "around_h": "Os arredores",
+    "around_lead": "Vários locais notáveis ficam a poucos quilómetros; Metz, o Sarre e o Luxemburgo visitam-se num dia.",
+    "sites_h": "Para ver nos arredores",
+    "leisure_h": "Lazer",
+    "on_site": "no local",
+    "links_h": "Ligações úteis",
+    "around_gallery_h": "Varsberg, a floresta do Warndt e os campos",
+    "around_gallery_caps": [
+      "Os campos acima da quinta, na orla da floresta do Warndt",
+      "O caminho ao longo do pomar, numa manhã de geada",
+      "A igreja de Varsberg",
+      "A gruta de Lourdes de Varsberg",
+      "A floresta do Warndt na primavera",
+      "Marco fronteiriço de 1830, floresta de Carling"
     ],
-    "serv": [
-      "Roupa de cama e de casa incluída",
-      "Camas feitas à chegada",
-      "Limpeza final incluída",
-      "Eletricidade e aquecimento incluídos",
-      "Wi-fi gratuito",
-      "Estacionamento privado",
-      "Animais bem-vindos",
-      "Alojamento para não fumadores"
-    ],
-    "gite1_h": "Gîte 1",
-    "gite2_h": "Gîte 2",
-    "dispo_h": "Disponibilidade",
-    "dispo_p": "Os nossos dois calendários são atualizados em tempo real pelo nosso sistema de reservas, plataformas incluídas: noites a verde livres, a vermelho ocupadas. Para reservar, vá à página Reserva.",
-    "tour": "Fazer a visita virtual 360°",
-    "identical": "Os dois gîtes são gémeos: as mesmas divisões, o mesmo equipamento, a mesma vista para o prado. Escolha simplesmente o que estiver livre nas suas datas, ou os dois para um grupo grande.",
-    "captions": [
-      "Quarto, cama de casal ou duas camas individuais",
-      "A sala, aberta para o terraço",
-      "O cantinho das refeições e a sua mesa de carvalho",
-      "A cozinha equipada",
-      "A casa de banho com duche ao nível do chão",
-      "Casa de banho acessível (selo Tourisme & Handicap)",
-      "O terraço de um gîte, ao entardecer"
-    ],
-    "dispo_btn": "Ver disponibilidade e reservar",
-    "cal_ko": "Se os calendários não aparecerem, escreva-nos para"
-  },
-  "autour": {
-    "h1": "Turismo e lazer",
-    "lead": "Os trilhos partem diretamente da casa, sem atravessar estradas, a pé, de bicicleta ou a cavalo. Vários locais de interesse ficam a poucos quilómetros.",
-    "sites_h": "A ver nos arredores",
     "sites": {
       "creutzwald-lac": [
         "Lago e centro náutico de Creutzwald",
@@ -230,66 +277,67 @@
         "A curva espetacular do Sarre, vista do miradouro de Cloef."
       ]
     },
-    "leisure_h": "Lazer",
-    "on_site": "no local",
     "leisure": {
       "nautique": "Desportos náuticos",
       "piscine": "Piscina",
       "peche": "Pesca",
       "tennis": "Ténis",
       "rando": "Caminhadas",
-      "equitation": "Equitação",
       "golf": "Golfe de Faulquemont",
       "forets": "Florestas",
       "gare": "Estação de Saint-Avold",
       "commerces": "Padaria, comércio",
       "calypso": "Calypso Saarbrücken (parque aquático)"
-    },
-    "links_h": "Ligações úteis",
-    "gallery_h": "Varsberg, a floresta do Warndt e os campos",
-    "gallery_caps": [
-      "Os campos acima da propriedade, à beira da floresta do Warndt",
-      "O caminho ao longo do pomar, numa manhã de geada",
-      "A igreja de Varsberg",
-      "A gruta de Lourdes de Varsberg",
-      "A floresta do Warndt na primavera",
-      "Marco fronteiriço de 1830, floresta de Carling"
+    }
+  },
+  "gites": {
+    "captions": [
+      "Quarto, cama de casal ou duas camas separadas",
+      "Quarto de duas camas",
+      "A sala, aberta para o terraço",
+      "A zona de refeições com a mesa de carvalho",
+      "A cozinha equipada",
+      "A casa de banho, duche ao nível do chão",
+      "Casa de banho acessível (selo Tourisme & Handicap)",
+      "O terraço de um gîte, ao entardecer"
     ]
   },
   "reservation": {
-    "h1": "Preços, reserva e acesso",
+    "h1": "Disponibilidade, preços e reserva",
+    "dispo_h": "Disponibilidade",
+    "dispo_p": "Um calendário por gîte, atualizado em tempo real pelo nosso sistema de reservas, plataformas incluídas: a verde as noites livres, a vermelho as ocupadas.",
+    "cal_ko": "Se os calendários não aparecerem, escreva-nos para",
     "prices_h": "Preços",
-    "prices": [
-      [
-        "Semana",
-        "420 €"
-      ],
-      [
-        "Fim de semana (2 noites)",
-        "300 €"
-      ]
+    "prices_p": "Por gîte, despesas incluídas. Os dois gîtes têm o mesmo preço.",
+    "prices": {
+      "we2": "Fim de semana, 2 noites — chegada à sexta-feira",
+      "we3": "Fim de semana, 3 noites — de sexta a segunda",
+      "mid4": "4 noites durante a semana — chegada de domingo a quinta",
+      "week": "5, 6 ou 7 noites"
+    },
+    "prices_note": "Durante a semana, mínimo de 4 noites. Sinal de 25 % na reserva, caução de 300 €, taxa turística à parte. Aceitam-se cartões, Visa, MasterCard e cheques-férias ANCV.",
+    "included_h": "Incluído no preço",
+    "included": [
+      "Camas feitas à chegada, lençóis incluídos",
+      "Todas as despesas: eletricidade, água, piso radiante",
+      "Limpeza final oferecida — o gîte é entregue arrumado, com a loiça lavada e guardada",
+      "Wi-Fi de fibra, estacionamento, animais (2 no máximo)"
     ],
-    "included": "Incluído: roupa de cama e de casa, camas feitas à chegada, limpeza final, eletricidade e aquecimento, wi-fi, animais. Caução de 300 €. Taxa turística à parte. Aceitamos cartões e cheques-férias franceses ANCV.",
+    "not_included_h": "Não incluído",
+    "not_included": [
+      "Toalhas de banho",
+      "Taxa turística, paga no local"
+    ],
     "form_h": "Reservar online",
-    "form_p": "Escolha as suas datas e o gîte, deixe os seus contactos: confirmamos em 24 h. Para uma simples pergunta, basta um e-mail ou um telefonema.",
+    "form_p": "Escolha as datas e o número de pessoas; o formulário propõe-lhe o gîte livre. Deixe os seus contactos e confirmamos em 24 h. Para uma simples pergunta, basta um e-mail ou um telefonema.",
     "access_h": "Como chegar ao Domaine du Geisberg",
     "access": [
       "Varsberg fica entre Saint-Avold e Creutzwald, a 40 minutos de Metz e 30 minutos de Saarbrücken.",
-      "De carro: autoestrada A4 (Paris–Estrasburgo), saída Saint-Avold / Carling, depois direção Creutzwald e Varsberg.",
-      "De comboio: estação de Saint-Avold a 15 km (linha regional Metz–Forbach)."
+      "De carro: autoestrada A4 (Paris–Estrasburgo), saída Saint-Avold / Carling, depois em direção a Creutzwald e Varsberg.",
+      "De comboio: estação de Saint-Avold a 15 km (TER Metz–Forbach)."
     ],
     "gps": "Coordenadas GPS",
     "widget_ko": "Se o formulário não aparecer, escreva-nos para"
-  },
-  "diapo": {
-    "h1": "Diaporama",
-    "lead": "Diaporama com canto dos pássaros: Vogelsgesang significa «canto dos pássaros».",
-    "sections": [
-      "A propriedade",
-      "Os gîtes"
-    ],
-    "audio_on": "Canto dos pássaros",
-    "audio_off": "Silenciar os pássaros"
   },
   "legal": {
     "h1": "Informações legais",
@@ -313,33 +361,6 @@
     "reviews_lead": "Mais de cem opiniões nas plataformas de reserva, com uma média que se mantém alta.",
     "rating_reviews": "opiniões",
     "superhost": "Superanfitriões Airbnb · anfitriões desde 2011 · respondemos numa hora",
-    "practical_h": "Bom saber",
-    "practical": [
-      "Chegada a partir das 16 h, partida até às 10 h",
-      "Padaria a 300 m, restaurante a 1 km, minimercado a 3 km",
-      "Animais bem-vindos (máx. 2), sem suplemento",
-      "Cama de bebé, banheira e cadeira alta a pedido",
-      "Não fumadores · wi-fi por fibra"
-    ],
-    "rooms": [
-      [
-        "Sala e cozinha aberta",
-        "23–25 m²"
-      ],
-      [
-        "Quarto 1",
-        "10 m² · 2 camas 90 × 190"
-      ],
-      [
-        "Quarto 2",
-        "13 m² · 2 camas 90 × 190"
-      ],
-      [
-        "Casa de banho acessível",
-        "6–7 m² · duche ao nível do chão, WC"
-      ]
-    ],
-    "rooms_h": "Divisão por divisão",
     "avis_h1": "Opiniões e selos",
     "where_h": "Onde nos encontrar",
     "where_p": "Também estamos nestes sites: pode reservar lá, mas a reserva direta continua a ser a mais simples e a mais barata.",
@@ -347,19 +368,26 @@
     "guestbook_h": "Livro de visitas",
     "guestbook_p": "As opiniões deixadas pelos nossos hóspedes após a estadia, recolhidas pelo nosso sistema de reservas."
   },
-  "visite": {
-    "h1": "Visita virtual a 360°",
-    "lead": "Passeie pelos gîtes e pela propriedade como se lá estivesse: arraste a imagem, aproxime com dois dedos, passe de uma divisão a outra.",
-    "fallback": "Se a visita não aparecer aqui,",
-    "open": "abra-a num novo separador"
-  },
-  "videos": {
-    "h1": "Vídeos",
-    "lead": "Três vídeos curtos filmados na propriedade, sem montagem: o som é o do lugar.",
+  "medias": {
+    "h1": "Em imagens",
+    "lead": "A quinta e os gîtes em imagens: o diaporama com canto dos pássaros, três vídeos curtos filmados no local e a visita virtual a 360°.",
+    "tabs": [
+      "Diaporama",
+      "Vídeos",
+      "Visita ao gîte"
+    ],
+    "diapo_lead": "Diaporama com o canto dos pássaros do lugar de Vogelsgesang, «o canto dos pássaros».",
+    "sections": [
+      "A quinta",
+      "Os gîtes"
+    ],
+    "audio_on": "Canto dos pássaros",
+    "audio_off": "Desligar o canto dos pássaros",
+    "videos_lead": "Três vídeos curtos filmados na quinta, sem montagem: o som é o do lugar.",
     "clips": [
       [
-        "O canto dos pássaros ao acordar",
-        "O prado ao nascer do dia, um cavalo a pastar atrás da vedação e o concerto do lugar chamado Vogelsgesang."
+        "Canto dos pássaros ao amanhecer",
+        "O prado ao romper do dia, um cavalo a pastar atrás da vedação e o concerto de Vogelsgesang."
       ],
       [
         "Passeio na floresta com os cavalos",
@@ -367,13 +395,13 @@
       ],
       [
         "Um corço ao fundo do jardim",
-        "Filmado de longe a partir do terraço: os corços aparecem muitas vezes de manhã cedo."
+        "Filmado de longe a partir do terraço: os corços aparecem muitas vezes de madrugada."
       ]
     ],
     "download": "Descarregar o vídeo",
     "small_note": "formato pequeno",
-    "more_h": "E também",
-    "diapo_p": "As fotos da propriedade e dos gîtes, com o canto dos pássaros.",
-    "visite_p": "A visita virtual dos gîtes, divisão a divisão, em 360°."
+    "visite_lead": "Passeie pelos gîtes e pela quinta como se lá estivesse: arraste a imagem, faça zoom com dois dedos, passe de uma divisão a outra.",
+    "visite_fallback": "Se a visita não aparecer aqui,",
+    "visite_open": "abra-a num novo separador"
   }
 }

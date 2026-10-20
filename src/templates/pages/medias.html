@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% set v = t.medias %}
+{% block main %}
+<section class="wrap" style="padding-top:28px">
+  <div class="eyebrow">{{ ui.tagline }}</div>
+  <h1 style="font-size:clamp(30px,5vw,46px)">{{ v.h1 }}</h1>
+  <p class="lead">{{ v.lead }}</p>
+  {# Trois onglets (diaporama, vidéos, visite 360°). L'onglet ouvert suit l'ancre (#diaporama, #videos, #visite). #}
+  <div class="tabs" role="tablist" aria-label="{{ ui.tabs }}">
+    {% for id in ['diaporama', 'videos', 'visite'] %}<a role="tab" id="tab-{{ id }}" href="#{{ id }}" aria-controls="{{ id }}" aria-selected="{{ 'true' if loop.first else 'false' }}">{{ v.tabs[loop.index0] }}</a>{% endfor %}
+  </div>
+
+  <div class="panel" id="diaporama" role="tabpanel" aria-labelledby="tab-diaporama">
+    <p class="lead" style="margin-top:0">{{ v.diapo_lead }}</p>
+    {% set note_attr = note('diapo') %}{% include 'partials/_diapo.html' %}
+  </div>
+
+  <div class="panel" id="videos" role="tabpanel" aria-labelledby="tab-videos" hidden>
+    <p class="lead" style="margin-top:0">{{ v.videos_lead }}</p>
+    <div class="videos"{{ note('videos') }}>
+      {% for vid in s.videos %}{% set tx = v.clips[loop.index0] %}
+      <figure class="video{{ ' small' if vid.get('small') }}">
+        <video controls preload="none" playsinline poster="{{ src(vid.poster) }}" width="{{ vid.w }}" height="{{ vid.h }}"{% if vid.get('small') %} style="max-width:{{ vid.w * 2 }}px"{% endif %}>
+          <source src="{{ rel }}videos/{{ vid.id }}.mp4" type="video/mp4">
+          <a href="{{ rel }}videos/{{ vid.id }}.mp4">{{ v.download }}</a>
+        </video>
+        <figcaption><b>{{ tx[0] }}</b><span>{{ tx[1] }}</span><small>{{ vid.duration }}{% if vid.get('small') %} · {{ v.small_note }}{% endif %}</small></figcaption>
+      </figure>
+      {% endfor %}
+    </div>
+  </div>
+
+  <div class="panel" id="visite" role="tabpanel" aria-labelledby="tab-visite" hidden>
+    <p class="lead" style="margin-top:0">{{ v.visite_lead }}</p>
+    <div class="visite"{{ note('visite') }}><iframe data-src="{{ s.virtual_tour_https }}" title="{{ v.tabs[2] }}" loading="lazy" allowfullscreen allow="fullscreen; gyroscope; accelerometer"></iframe></div>
+    <p class="note" style="margin-top:14px">{{ v.visite_fallback }} <a href="{{ s.virtual_tour_https }}" rel="noopener" target="_blank">{{ v.visite_open }}</a></p>
+  </div>
+</section>
+<script>
+(function(){
+/* Onglets : l'ancre choisit l'onglet ; la visite 360° (cadre externe) n'est chargée qu'à l'ouverture de son onglet. */
+var tabs=[].slice.call(document.querySelectorAll('.tabs [role=tab]')),panels=[].slice.call(document.querySelectorAll('.panel'));
+function open(id,push){if(!document.getElementById(id))id='diaporama';tabs.forEach(function(t){t.setAttribute('aria-selected',t.getAttribute('aria-controls')===id)});panels.forEach(function(p){p.hidden=p.id!==id});
+ var f=document.querySelector('#visite iframe');if(id==='visite'&&f&&!f.src)f.src=f.getAttribute('data-src');
+ if(id!=='diaporama'&&window.geisbergDiapos)window.geisbergDiapos.forEach(function(d){d.pause()});
+ if(push)history.replaceState(null,'','#'+id)}
+tabs.forEach(function(t){t.addEventListener('click',function(e){e.preventDefault();open(t.getAttribute('aria-controls'),true);t.focus()})});
+window.addEventListener('hashchange',function(){open(location.hash.slice(1),false)});
+open(location.hash.slice(1)||'diaporama',false);
+
+})();
+</script>
+{% endblock %}

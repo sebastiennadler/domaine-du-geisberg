@@ -73,35 +73,287 @@
     });
   }
 
-  /* Diaporama d'accueil (fondu toutes les 5 s) */
+  /* Bandeau d'accueil : la photo des hôtes reste fixe (data-dur, ~4 s), puis chaque photo part de loin et zoome
+     en glissant (animation CSS, durée --dur = durée de la photo + fondu). Inclinaison à la souris (data-tilt) et
+     parallaxe au défilement (data-parallax) sur le calque des photos : interrupteurs dans shared.json. */
   var hero = document.querySelector('.hero');
   if (hero) {
     var slides = hero.querySelectorAll('.slide'),
       dots = hero.querySelectorAll('.dots button'),
+      layer = hero.querySelector('.layer'),
       cur = 0,
-      timer;
+      timer,
+      reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    slides.forEach(function (sl) {
+      sl.style.setProperty('--dur', (parseInt(sl.getAttribute('data-dur'), 10) || 7000) + 1800 + 'ms');
+    });
     function go(i) {
       slides[cur].classList.remove('on');
       dots[cur] && dots[cur].removeAttribute('aria-current');
       cur = (i + slides.length) % slides.length;
+      var img = slides[cur].querySelector('img');
+      if (img) {
+        /* relance l'animation « de loin vers le près » à chaque passage */
+        img.style.animation = 'none';
+        void img.offsetWidth;
+        img.style.animation = '';
+      }
       slides[cur].classList.add('on');
       dots[cur] && dots[cur].setAttribute('aria-current', 'true');
+      start();
     }
     function start() {
-      clearInterval(timer);
-      if (!matchMedia('(prefers-reduced-motion: reduce)').matches)
-        timer = setInterval(function () {
+      clearTimeout(timer);
+      if (!reduced && slides.length > 1)
+        timer = setTimeout(function () {
           go(cur + 1);
-        }, 7000);
+        }, parseInt(slides[cur].getAttribute('data-dur'), 10) || 7000);
     }
     dots.forEach(function (d, i) {
       d.addEventListener('click', function () {
         go(i);
-        start();
       });
     });
-    if (slides.length > 1) start();
+    start();
+    document.addEventListener('visibilitychange', function () {
+      if (document.hidden) clearTimeout(timer);
+      else start();
+    });
+
+    /* Inclinaison 3D à la souris + parallaxe : un seul transform, recalculé au plus une fois par image */
+    var tilt = hero.getAttribute('data-tilt') === 'on' && matchMedia('(hover: hover) and (pointer: fine)').matches,
+      para = hero.getAttribute('data-parallax') === 'on',
+      rx = 0,
+      ry = 0,
+      tx = 0,
+      ty = 0,
+      py = 0,
+      raf = null;
+    function paint() {
+      raf = null;
+      rx += (tx - rx) * 0.08;
+      ry += (ty - ry) * 0.08;
+      if (layer)
+        layer.style.transform =
+          'translate3d(0,' + py.toFixed(1) + 'px,0) rotateX(' + rx.toFixed(2) + 'deg) rotateY(' + ry.toFixed(2) + 'deg) scale(1.06)';
+      var txt = hero.querySelector('.wrap');
+      if (txt && para) txt.style.transform = 'translate3d(0,' + (py * 0.45).toFixed(1) + 'px,0)';
+      if (Math.abs(tx - rx) > 0.02 || Math.abs(ty - ry) > 0.02) raf = requestAnimationFrame(paint);
+    }
+    function ask() {
+      if (!raf) raf = requestAnimationFrame(paint);
+    }
+    if (!reduced && (tilt || para)) {
+      if (tilt) {
+        hero.addEventListener('mousemove', function (e) {
+          var r = hero.getBoundingClientRect();
+          ty = ((e.clientX - r.left) / r.width - 0.5) * 5; /* ±2,5° */
+          tx = -((e.clientY - r.top) / r.height - 0.5) * 3.5;
+          ask();
+        });
+        hero.addEventListener('mouseleave', function () {
+          tx = ty = 0;
+          ask();
+        });
+      }
+      if (para) {
+        var onScroll = function () {
+          var y = window.scrollY || 0;
+          py = Math.min(y, hero.offsetHeight) * 0.25;
+          ask();
+        };
+        window.addEventListener('scroll', onScroll, { passive: true });
+        onScroll();
+      }
+    }
+
+    /* Bouton « Diaporama » : ouvre le diaporama complet en superposition, photos chargées à ce moment-là */
+    var openBtn = document.getElementById('open-diapo'),
+      overlay = document.getElementById('home-diapo');
+    if (openBtn && overlay) {
+      openBtn.addEventListener('click', function () {
+        overlay.querySelectorAll('img[data-src]').forEach(function (im) {
+          im.src = im.getAttribute('data-src');
+          im.removeAttribute('data-src');
+        });
+        overlay.hidden = false;
+        document.body.style.overflow = 'hidden';
+        clearTimeout(timer);
+        var app = overlay.querySelector('.diapo-app');
+        if (app && app.geisbergDiapo) app.geisbergDiapo.open();
+      });
+    }
   }
+
+  /* Diaporama (page En images et superposition de l'accueil) : fondu toutes les 5 s, pause, plein écran,
+     chants d'oiseaux, clavier et gestes. Un composant par élément .diapo-app. */
+  window.geisbergDiapos = [];
+  Array.prototype.slice.call(document.querySelectorAll('.diapo-app')).forEach(function (app) {
+    var box = app.querySelector('.diapo'),
+      imgs = box.querySelectorAll('img'),
+      g = box.querySelector('b[data-group]'),
+      c = box.querySelector('span[data-cap]'),
+      ix = box.querySelector('[data-idx]'),
+      play = app.querySelector('.diapo-ctl [data-play]'),
+      au = app.querySelector('audio'),
+      ab = app.querySelector('[data-audio]'),
+      overlayBox = app.closest('.diapo-overlay'),
+      i = 0,
+      t,
+      on = true;
+    function show(n) {
+      imgs[i].classList.remove('on');
+      i = (n + imgs.length) % imgs.length;
+      imgs[i].classList.add('on');
+      g.textContent = imgs[i].getAttribute('data-group');
+      c.textContent = imgs[i].getAttribute('data-cap');
+      ix.textContent = i + 1 + ' / ' + imgs.length;
+    }
+    function run() {
+      clearInterval(t);
+      if (on)
+        t = setInterval(function () {
+          show(i + 1);
+        }, 5000);
+    }
+    function setPlay(v) {
+      on = v;
+      play.setAttribute('aria-pressed', on);
+      play.classList.toggle('paused', !on);
+      play.setAttribute('aria-label', on ? app.getAttribute('data-label-pause') : app.getAttribute('data-label-play'));
+      run();
+    }
+    function setAudio(v) {
+      ab.setAttribute('aria-pressed', v);
+      ab.classList.toggle('on', v);
+      ab.querySelector('span').textContent = v ? ab.getAttribute('data-off') : ab.getAttribute('data-on');
+      ab.setAttribute('aria-label', ab.querySelector('span').textContent);
+      if (v) {
+        au.volume = 0.6;
+        au.play().catch(function () {
+          setAudio(false);
+        });
+      } else au.pause();
+      try {
+        localStorage.setItem('geisberg-birds', v ? '1' : '0');
+      } catch (e) {}
+    }
+    function fsOn() {
+      return document.fullscreenElement === box || box.classList.contains('fs');
+    }
+    function enter() {
+      if (box.requestFullscreen && !/iPhone|iPad|iPod/.test(navigator.userAgent)) {
+        box.requestFullscreen().catch(function () {
+          box.classList.add('fs');
+          document.body.style.overflow = 'hidden';
+        });
+      } else {
+        box.classList.add('fs');
+        document.body.style.overflow = 'hidden';
+      }
+    }
+    function exit() {
+      if (document.fullscreenElement) document.exitFullscreen().catch(function () {});
+      box.classList.remove('fs');
+      if (!overlayBox || overlayBox.hidden) document.body.style.overflow = '';
+    }
+    function close() {
+      exit();
+      setPlay(false);
+      if (ab.getAttribute('aria-pressed') === 'true') setAudio(false);
+      if (overlayBox) {
+        overlayBox.hidden = true;
+        document.body.style.overflow = '';
+      }
+    }
+    app.querySelectorAll('[data-prev]').forEach(function (b) {
+      b.onclick = function (e) {
+        e.stopPropagation();
+        show(i - 1);
+        run();
+      };
+    });
+    app.querySelectorAll('[data-next]').forEach(function (b) {
+      b.onclick = function (e) {
+        e.stopPropagation();
+        show(i + 1);
+        run();
+      };
+    });
+    play.onclick = function () {
+      setPlay(!on);
+    };
+    ab.onclick = function () {
+      setAudio(ab.getAttribute('aria-pressed') !== 'true');
+    };
+    try {
+      if (localStorage.getItem('geisberg-birds') === '1') ab.classList.add('hint');
+    } catch (e) {}
+    app.querySelector('[data-full]').onclick = function () {
+      fsOn() ? exit() : enter();
+    };
+    app.querySelector('[data-x]').onclick = function (e) {
+      e.stopPropagation();
+      overlayBox ? close() : exit();
+    };
+    var closeBtn = app.querySelector('[data-close]');
+    if (closeBtn) closeBtn.onclick = close;
+    document.addEventListener('visibilitychange', function () {
+      if (document.hidden) au.pause();
+      else if (ab.getAttribute('aria-pressed') === 'true') au.play().catch(function () {});
+    });
+    document.addEventListener('keydown', function (e) {
+      if (overlayBox && overlayBox.hidden) return;
+      if (e.key === 'Escape') overlayBox ? close() : exit();
+      if (box.offsetParent === null && !fsOn()) return;
+      if (e.key === 'ArrowLeft') {
+        show(i - 1);
+        run();
+      }
+      if (e.key === 'ArrowRight') {
+        show(i + 1);
+        run();
+      }
+      if (e.key === ' ' && fsOn()) {
+        e.preventDefault();
+        play.click();
+      }
+    });
+    box.addEventListener('click', function (e) {
+      if (e.target.tagName === 'BUTTON') return;
+      show(i + 1);
+      run();
+    });
+    var sx = 0;
+    box.addEventListener(
+      'touchstart',
+      function (e) {
+        sx = e.touches[0].clientX;
+      },
+      { passive: true }
+    );
+    box.addEventListener('touchend', function (e) {
+      var dx = e.changedTouches[0].clientX - sx;
+      if (Math.abs(dx) > 50) {
+        show(i + (dx < 0 ? 1 : -1));
+        run();
+      }
+    });
+    app.geisbergDiapo = {
+      pause: function () {
+        if (on) setPlay(false);
+        if (ab.getAttribute('aria-pressed') === 'true') setAudio(false);
+      },
+      open: function () {
+        show(0);
+        setPlay(true);
+      },
+    };
+    window.geisbergDiapos.push(app.geisbergDiapo);
+    show(0);
+    if (overlayBox) on = false;
+    else run();
+  });
 
   /* Galerie → visionneuse */
   var links = Array.prototype.slice.call(document.querySelectorAll('.gallery a, .mosaic a'));
@@ -248,7 +500,7 @@
   var revealSel =
     '.sec-head, .fact, .card, .tile, .mosaic > *, .gallery > *, .reviews > *, .hosts, .diapo-teaser, ' +
     '.strip > *, .logos > *, .cols > *, .prices, .ratings > *, .chips > *, .list > li, .visite, .dispo, ' +
-    '.domaine-band, .videos > *, .links-row, .cal-box';
+    '.videos > *, .links-row, .cal-box, .teaser, .fiche, .drawer, .incl, .tabs';
   var toReveal = Array.prototype.slice.call(document.querySelectorAll(revealSel));
   if (toReveal.length && 'IntersectionObserver' in window && !reduced) {
     toReveal.forEach(function (el) {

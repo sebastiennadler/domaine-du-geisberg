@@ -1,28 +1,16 @@
 {
   "meta": {
     "index": [
-      "Domaine du Geisberg – Vakantieappartementen in Varsberg, Moezel",
-      "Twee vakantieappartementen (3 korenaren) in Varsberg (Lotharingen, Frankrijk) op een landgoed van 2 hectare aan de bosrand. Eigen terras, parkeerplaats, wifi, huisdieren welkom. Rechtstreeks boeken."
+      "Domaine du Geisberg – Vakantiewoningen in Varsberg, Moezel",
+      "Twee identieke gîtes van 60 m² in Varsberg (Moezel), midden in de natuur aan de bosrand: 1 tot 4 personen, rolstoeltoegankelijk, eigen terras, glasvezel-wifi, huisdieren welkom. Rechtstreeks reserveren."
     ],
     "le-domaine": [
-      "Het landgoed – Domaine du Geisberg",
-      "Twee hectare weiland aan de bosrand, op de plek Vogelsgesang, op de heuvel boven Varsberg."
-    ],
-    "gites": [
-      "De gîtes – Domaine du Geisberg",
-      "Twee identieke huizen van 60 m², 2 slaapkamers, 4 personen, eigen terras, aardwarmte, label Tourisme & Handicap."
-    ],
-    "autour": [
-      "Uitstapjes rond Varsberg – Domaine du Geisberg",
-      "Wandelen vanuit de tuin, het meer van Creutzwald, het mijnmuseum, Völklingen, Centre Pompidou-Metz, Saarland en Luxemburg."
+      "Het landgoed en de omgeving – Domaine du Geisberg",
+      "Twee hectare weiland aan de bosrand bij Vogelsgesang, en alles wat er in de buurt te zien is: het meer van Creutzwald, het Warndt-bos, Völklingen, Metz, het Saarland."
     ],
     "reservation": [
-      "Prijzen, reserveren en route – Domaine du Geisberg",
-      "Prijzen van de gîtes, rechtstreekse boekingsaanvraag en route naar Varsberg, Moezel."
-    ],
-    "diaporama": [
-      "Diavoorstelling – Domaine du Geisberg",
-      "De gîtes en het landgoed in beeld."
+      "Beschikbaarheid, prijzen en reserveren – Domaine du Geisberg",
+      "Kalenders van beide gîtes, prijzen (weekend vanaf € 300, week € 420), rechtstreekse reserveringsaanvraag en routebeschrijving naar Varsberg, tussen Saint-Avold en Creutzwald."
     ],
     "mentions-legales": [
       "Juridische informatie – Domaine du Geisberg",
@@ -32,27 +20,26 @@
       "Beoordelingen en labels – Domaine du Geisberg",
       "De beoordelingen van onze gasten op Gîtes de France, Airbnb, Abritel en Clévacances, onze labels en waar u kunt boeken."
     ],
-    "visite": [
-      "360°-rondleiding – Domaine du Geisberg",
-      "Bezoek de gîtes van het Domaine du Geisberg in 360°, kamer voor kamer."
-    ],
-    "videos": [
-      "Video's – Domaine du Geisberg",
-      "Vogelzang bij het ontwaken, een boswandeling met de paarden, een ree achter in de tuin: het landgoed op video."
+    "medias": [
+      "In beeld – Domaine du Geisberg",
+      "Het landgoed en de gîtes in beeld: diavoorstelling met vogelzang, ter plaatse gefilmde video's, virtuele 360°-rondleiding."
     ]
   },
   "nav": {
     "index": "Home",
-    "le-domaine": "Het landgoed",
-    "gites": "De gîtes",
-    "autour": "Omgeving",
     "reservation": "Reserveren",
-    "diaporama": "Diashow",
-    "contact": "Contact",
-    "book": "Reserveren",
+    "le-domaine": "Het landgoed & de omgeving",
+    "medias": "In beeld",
     "avis": "Beoordelingen",
+    "book": "Reserveren",
+    "contact": "Contact",
+    "gites": "De gîtes",
+    "videos": "Video's",
+    "diaporama": "Diavoorstelling",
     "visite": "Rondleiding",
-    "videos": "Video's"
+    "autour": "Omgeving",
+    "alentours": "De omgeving",
+    "legal": "Juridische informatie"
   },
   "ui": {
     "skip": "Naar de inhoud",
@@ -84,114 +71,174 @@
     "fallback": "",
     "dev_credit": "Website: Sébastien Nadler",
     "top": "Naar boven",
-    "address": "Adres"
+    "address": "Adres",
+    "equip_all": "Alle voorzieningen",
+    "equip_close": "Sluiten",
+    "tabs": "Tabbladen",
+    "prices_more": "Prijzen bekijken",
+    "see_gites": "De gîtes bekijken",
+    "read_more": "Lees meer",
+    "not_included": "Niet inbegrepen",
+    "included": "Inbegrepen"
   },
   "home": {
     "h1": "Midden in de natuur",
-    "lead": "Twee bijzondere gîtes pal naast het bos, op de heuvel boven Varsberg, op de plek Vogelsgesang, „vogelzang”.",
-    "cta1": "Beschikbaarheid bekijken",
-    "cta2": "De gîtes ontdekken",
-    "intro_h": "Een plek die haar naam eer aandoet",
-    "intro": [
-      "Onze twee gîtes zijn twee appartementen op de tuinverdieping van ons huis, midden op een groen landgoed van twee hectare aan de bosrand, op een bijzondere plek die „Vogelsgesang” heet: vogelzang.",
-      "Typisch voor het Lotharingse landschap: weelderige natuur, een prachtig panorama, rust en sereniteit."
-    ],
-    "intro_more": "Het landgoed ontdekken",
-    "gites_h": "Twee identieke gîtes, hetzelfde uitzicht",
-    "gites_lead": "Hetzelfde comfort aan beide kanten. Boek er één, of allebei voor de hele familie.",
-    "around_h": "Te voet vanuit de tuin, of een uur rijden",
-    "around_lead": "Wandelpaden zonder een weg over te steken, meer en watersportcentrum op 6 km, en Metz, Saarland en Luxemburg als dagtocht.",
-    "around_more": "Alles wat er te zien is",
-    "hosts_h": "Agnès en Marc heten u welkom",
-    "hosts": "Sinds 2007, het jaar waarin onze gîtes opengingen, delen we graag onze manier van leven met gasten van alle nationaliteiten en ontdekken we die van hen. Zo leren we andere landen en culturen kennen en laten we anderen de rijkdommen van onze streek en ons land ontdekken. Regelmatig Duits en Engels spreken is een prettige afwisseling.",
-    "diapo_btn": "Diavoorstelling starten",
+    "lead": "Twee bijzondere gîtes vlak bij het bos, op de heuvel boven Varsberg, op een plek die Vogelsgesang heet.",
+    "cta1": "Reserveren",
+    "cta2": "De gîtes bekijken",
     "hero_alts": [
-      "Het huis in de sneeuw op een winteravond",
+      "Agnès, Marc en Urielle voor het huis",
       "Het huis vanuit de bloeiende weide",
-      "De paarden voor het huis, in de avond"
+      "De paarden voor het huis, in de avond",
+      "Zonsondergang boven Varsberg"
     ],
-    "gites_facts": [
+    "facts": [
+      "2 identieke gîtes",
       "60 m²",
-      "2 slaapkamers",
-      "4 personen",
-      "Eigen terras",
-      "Parkeerplaats",
-      "Wifi",
-      "Huisdieren welkom"
+      "1 tot 4 personen",
+      "Rolstoeltoegankelijk",
+      "Huisdieren welkom",
+      "Glasvezel-wifi"
     ],
-    "hosts_alt": "Agnès, Marc en Urielle voor het huis"
+    "gites_eyebrow": "De gîtes",
+    "gites_h": "Twee identieke gîtes",
+    "gites_lead": "Reserveer een van de twee, of allebei voor een groep.",
+    "gites_p": "Elke gîte is een appartement van 60 m² op tuinniveau van het huis, met eigen ingang, terras en parkeerplaats: een woonkamer met ingebouwde keuken, twee slaapkamers met elk twee bedden en een rolstoeltoegankelijke badkamer. Beide zijn op dezelfde manier ingericht en uitgerust, met hetzelfde uitzicht op de weide.",
+    "fiche_h": "Het belangrijkste",
+    "fiche": [
+      [
+        "Capaciteit",
+        "1 tot 4 personen: 2 slaapkamers met 2 bedden (90 × 190 cm). Een extra bed in de woonkamer is op aanvraag mogelijk."
+      ],
+      [
+        "Oppervlakte",
+        "60 m², op tuinniveau, eigen ingang, eigen terras"
+      ],
+      [
+        "Badkamer",
+        "Inloopdouche en toilet, rolstoeltoegankelijk (label Tourisme & Handicap)"
+      ],
+      [
+        "Keuken",
+        "Open naar de woonkamer: inductiekookplaat, oven, magnetron, vaatwasser, wasmachine, vriezer"
+      ],
+      [
+        "Comfort",
+        "Geothermische vloerverwarming, flatscreen-tv, glasvezel-wifi"
+      ],
+      [
+        "Buiten",
+        "Tuinmeubelen, barbecue, eigen parkeerplaats, mountainbikes beschikbaar"
+      ],
+      [
+        "Huisdieren",
+        "Welkom, maximaal 2, zonder toeslag"
+      ],
+      [
+        "Tijden",
+        "Aankomst vanaf 16.00 uur, vertrek vóór 10.00 uur"
+      ],
+      [
+        "Prijzen",
+        "Vanaf € 300 per weekend, € 420 per week, alle kosten inbegrepen"
+      ]
+    ],
+    "equip_h": "Alle voorzieningen",
+    "equip_groups": [
+      [
+        "Woonkamer en keuken",
+        [
+          "Bank en eethoek",
+          "Flatscreen-tv",
+          "Inductiekookplaat, oven, magnetron",
+          "Vaatwasser, wasmachine, vriezer",
+          "Koffiezetapparaat, waterkoker, broodrooster",
+          "Compleet servies en keukengerei"
+        ]
+      ],
+      [
+        "Slaapkamers",
+        [
+          "2 slaapkamers met 2 bedden van 90 × 190 cm (tegen elkaar te schuiven)",
+          "Bedden opgemaakt bij aankomst, lakens inbegrepen",
+          "Extra bed in de woonkamer op aanvraag",
+          "Kinderbed, babybad en kinderstoel op aanvraag"
+        ]
+      ],
+      [
+        "Badkamer",
+        [
+          "Inloopdouche, toilet",
+          "Rolstoeltoegankelijk",
+          "Badhanddoeken niet inbegrepen"
+        ]
+      ],
+      [
+        "Buiten",
+        [
+          "Eigen terras met tuinmeubelen",
+          "Barbecue",
+          "Eigen parkeerplaats",
+          "Mountainbikes beschikbaar"
+        ]
+      ],
+      [
+        "Comfort en service",
+        [
+          "Geothermische vloerverwarming",
+          "Glasvezel-wifi",
+          "Rookvrije gîte",
+          "Huisdieren welkom (maximaal 2), zonder toeslag",
+          "Bakker op 300 m, restaurant op 1 km, supermarkt op 3 km"
+        ]
+      ]
+    ],
+    "review_eyebrow": "Ze waren hier",
+    "review_h": "Wat onze gasten zeggen",
+    "review_more": "Alle beoordelingen bekijken",
+    "hosts_eyebrow": "Uw gastheren",
+    "hosts_h": "Agnès en Marc heten u welkom",
+    "hosts": "Sinds 2007, het jaar waarin we onze gîtes openden, delen we graag onze manier van leven met gasten uit alle landen en ontdekken we de hunne. Zo leren we andere landen en culturen kennen en laten we anderen de rijkdom van onze streek en ons land zien. Regelmatig Duits en Engels spreken is een aangename afwisseling.",
+    "hosts_alt": "Agnès, Marc en Urielle voor het huis",
+    "teasers_h": "Verder kijken",
+    "domaine_h": "Het landgoed & de omgeving",
+    "domaine_p": "Twee hectare weiland aan de bosrand, wandelpaden die bij de tuin beginnen en alles wat er binnen een uur te zien is.",
+    "medias_h": "In beeld",
+    "medias_p": "De diavoorstelling met vogelzang, drie ter plaatse gefilmde video's en de virtuele 360°-rondleiding.",
+    "more": "Ontdekken"
   },
   "domaine": {
-    "h1": "Het landgoed",
+    "h1": "Het landgoed & de omgeving",
+    "lead": "Twee hectare weiland aan de bosrand, op een plek die Vogelsgesang heet, en alles wat er binnen een uur te zien is.",
     "p": [
-      "Midden op een uitgestrekt, groen landgoed van twee hectare aan de bosrand liggen onze twee huizen op de begane grond van een ruime woning, op een bijzondere plek die „Vogelsgesang” (vogelzang) heet.",
-      "Typisch voor het Lotharingse landschap biedt de weelderige natuur rond de gîtes een prachtig panorama in een rustige, serene omgeving.",
-      "Er zijn veel wandelpaden, bereikbaar zonder een weg over te steken, te voet, per fiets of te paard. Ervaren ruiters kunnen gebruikmaken van paarden."
+      "Midden op een groot, groen landgoed van twee hectare aan de bosrand liggen onze twee gîtes op de benedenverdieping van een ruim huis, op een bijzondere plek die „Vogelsgesang“ heet.",
+      "Typisch voor het Lotharingse landschap biedt de omgeving weelderige natuur en een prachtig panorama, in een sfeer van rust en sereniteit.",
+      "Er zijn veel wandelpaden, bereikbaar zonder een weg over te steken, te voet of met de fiets. Onze paarden, inmiddels met pensioen, kijken u vanuit de weide na."
     ],
     "gallery_h": "Het landgoed in beeld",
     "captions": [
       "Het pad vanuit de tuin, met uitzicht op de heuvels",
-      "De tuin en de tafel onder de bomen",
+      "De tuin met de tafel onder de bomen",
       "Het terras van een gîte",
       "Zonsondergang boven Varsberg",
       "De paarden in de winter",
       "Urielle, onze Mechelse herder, in het hoge gras"
-    ]
-  },
-  "gites": {
-    "h1": "De gîtes",
-    "lead": "Twee identieke vakantieappartementen op tuinniveau in het huis van de eigenaars, elk met eigen ingang, eigen terras en parkeerplaats.",
-    "common": "Elk huis heeft een woonkamer met open keuken (oven, keramische kookplaat, magnetron, vaatwasser, wasmachine, vriezer), twee slaapkamers en een badkamer met douche en toilet, aangepast voor mensen met beperkte mobiliteit. Slapen: vier bedden van 90 cm in de slaapkamers (tegen elkaar te schuiven): 4 personen per gîte. Flatscreen-tv, wifi, vloerverwarming op aardwarmte.",
-    "desc_h": "Indeling",
-    "equip_h": "Uitrusting",
-    "serv_h": "Inbegrepen",
-    "desc": [
-      "1 woonkamer met open keuken",
-      "2 slaapkamers (elk twee bedden 90 × 190 cm)",
-      "1 toegankelijke badkamer met douche en toilet",
-      "4 personen · 60 m²"
     ],
-    "equip": [
-      "Vloerverwarming op aardwarmte",
-      "Flatscreen-tv",
-      "Vaatwasser, wasmachine, vriezer",
-      "Keramische kookplaat, oven, magnetron",
-      "Eigen terras, tuinmeubelen, barbecue",
-      "Babyuitrusting (bedje, badje)",
-      "Mountainbikes beschikbaar"
+    "around_h": "De omgeving",
+    "around_lead": "Verschillende bezienswaardigheden liggen op enkele kilometers; Metz, het Saarland en Luxemburg zijn dagtochten.",
+    "sites_h": "Te zien in de buurt",
+    "leisure_h": "Vrije tijd",
+    "on_site": "ter plaatse",
+    "links_h": "Nuttige links",
+    "around_gallery_h": "Varsberg, het Warndt-bos en de velden",
+    "around_gallery_caps": [
+      "De velden boven het landgoed, aan de rand van het Warndt-bos",
+      "Het pad langs de boomgaard op een vorstige ochtend",
+      "De kerk van Varsberg",
+      "De Lourdesgrot van Varsberg",
+      "Het Warndt-bos in de lente",
+      "Grenssteen uit 1830, bos van Carling"
     ],
-    "serv": [
-      "Bed- en huishoudlinnen inbegrepen",
-      "Bedden opgemaakt bij aankomst",
-      "Eindschoonmaak inbegrepen",
-      "Elektriciteit en verwarming inbegrepen",
-      "Gratis wifi",
-      "Eigen parkeerplaats",
-      "Huisdieren welkom",
-      "Rookvrij"
-    ],
-    "gite1_h": "Gîte 1",
-    "gite2_h": "Gîte 2",
-    "dispo_h": "Beschikbaarheid",
-    "dispo_p": "Onze twee kalenders worden in realtime bijgewerkt door ons reserveringssysteem, platforms inbegrepen: groene nachten zijn vrij, rode nachten bezet. Reserveren doet u via de pagina Reserveren.",
-    "tour": "De 360°-rondleiding bekijken",
-    "identical": "De twee gîtes zijn tweelingen: dezelfde kamers, dezelfde uitrusting, hetzelfde uitzicht op de weide. Kies gewoon degene die vrij is op uw data, of allebei voor een grote groep.",
-    "captions": [
-      "Slaapkamer, tweepersoonsbed of twee losse bedden",
-      "De woonkamer, met toegang tot het terras",
-      "De eethoek met eiken tafel",
-      "De ingerichte keuken",
-      "De badkamer met inloopdouche",
-      "Toegankelijke badkamer (label Tourisme & Handicap)",
-      "Het terras van een gîte, 's avonds"
-    ],
-    "dispo_btn": "Beschikbaarheid bekijken en reserveren",
-    "cal_ko": "Verschijnen de kalenders niet, schrijf ons dan op"
-  },
-  "autour": {
-    "h1": "Uitstapjes en vrije tijd",
-    "lead": "De wandelpaden beginnen bij het huis, zonder een weg over te steken, te voet, per fiets of te paard. Verschillende bezienswaardigheden liggen op enkele kilometers.",
-    "sites_h": "De moeite waard in de buurt",
     "sites": {
       "creutzwald-lac": [
         "Meer en watersportcentrum van Creutzwald",
@@ -230,66 +277,67 @@
         "De spectaculaire bocht van de Saar, gezien vanaf uitkijkpunt Cloef."
       ]
     },
-    "leisure_h": "Vrije tijd",
-    "on_site": "ter plaatse",
     "leisure": {
       "nautique": "Watersport",
       "piscine": "Zwembad",
       "peche": "Vissen",
       "tennis": "Tennis",
       "rando": "Wandelen",
-      "equitation": "Paardrijden",
       "golf": "Golfbaan Faulquemont",
       "forets": "Bossen",
       "gare": "Station Saint-Avold",
       "commerces": "Bakker, winkels",
       "calypso": "Calypso Saarbrücken (waterpark)"
-    },
-    "links_h": "Handige links",
-    "gallery_h": "Varsberg, het Warndt-bos en de velden",
-    "gallery_caps": [
-      "De velden boven het landgoed, aan de rand van het Warndt-bos",
-      "Het pad langs de boomgaard op een vorstige ochtend",
-      "De kerk van Varsberg",
-      "De Lourdesgrot van Varsberg",
-      "Het Warndt-bos in het voorjaar",
-      "Grenssteen uit 1830, bos van Carling"
+    }
+  },
+  "gites": {
+    "captions": [
+      "Slaapkamer, tweepersoonsbed of twee aparte bedden",
+      "Slaapkamer met twee bedden",
+      "De woonkamer, open naar het terras",
+      "De eethoek met eikenhouten tafel",
+      "De ingerichte keuken",
+      "De badkamer met inloopdouche",
+      "Toegankelijke badkamer (label Tourisme & Handicap)",
+      "Het terras van een gîte, in de avond"
     ]
   },
   "reservation": {
-    "h1": "Prijzen, reserveren en route",
+    "h1": "Beschikbaarheid, prijzen en reserveren",
+    "dispo_h": "Beschikbaarheid",
+    "dispo_p": "Eén kalender per gîte, in realtime bijgewerkt door ons reserveringssysteem, platforms inbegrepen: groene nachten zijn vrij, rode nachten bezet.",
+    "cal_ko": "Verschijnen de kalenders niet, schrijf ons dan op",
     "prices_h": "Prijzen",
-    "prices": [
-      [
-        "Week",
-        "€ 420"
-      ],
-      [
-        "Weekend (2 nachten)",
-        "€ 300"
-      ]
+    "prices_p": "Per gîte, alle kosten inbegrepen. Beide gîtes hebben dezelfde prijs.",
+    "prices": {
+      "we2": "Weekend, 2 nachten — aankomst op vrijdag",
+      "we3": "Weekend, 3 nachten — van vrijdag tot maandag",
+      "mid4": "4 nachten doordeweeks — aankomst zondag tot donderdag",
+      "week": "5, 6 of 7 nachten"
+    },
+    "prices_note": "Doordeweeks minimaal 4 nachten. Aanbetaling van 25 % bij reservering, borg van € 300, toeristenbelasting apart. Bankkaarten, Visa, MasterCard en Franse ANCV-vakantiecheques worden aanvaard.",
+    "included_h": "Inbegrepen in de prijs",
+    "included": [
+      "Bedden opgemaakt bij aankomst, lakens inbegrepen",
+      "Alle kosten: elektriciteit, water, vloerverwarming",
+      "Eindschoonmaak inbegrepen — de gîte wordt netjes achtergelaten, met de afwas gedaan en opgeruimd",
+      "Glasvezel-wifi, parkeerplaats, huisdieren (maximaal 2)"
     ],
-    "included": "Inbegrepen: bed- en huishoudlinnen, bedden opgemaakt bij aankomst, eindschoonmaak, elektriciteit en verwarming, wifi, huisdieren. Borg € 300. Toeristenbelasting apart. Bankkaarten en Franse ANCV-vakantiecheques worden aanvaard.",
+    "not_included_h": "Niet inbegrepen",
+    "not_included": [
+      "Badhanddoeken",
+      "Toeristenbelasting, ter plaatse te betalen"
+    ],
     "form_h": "Online reserveren",
-    "form_p": "Kies uw data en de gîte en laat uw gegevens achter: wij bevestigen binnen 24 uur. Voor een eenvoudige vraag volstaat een e-mail of telefoontje.",
-    "access_h": "Route naar het Domaine du Geisberg",
+    "form_p": "Kies uw data en het aantal personen; het formulier stelt u de vrije gîte voor. Laat uw gegevens achter, wij bevestigen binnen 24 uur. Voor een eenvoudige vraag volstaat een e-mail of een telefoontje.",
+    "access_h": "Naar het Domaine du Geisberg",
     "access": [
-      "Varsberg ligt tussen Saint-Avold en Creutzwald, op 40 minuten van Metz en 30 minuten van Saarbrücken.",
-      "Met de auto: snelweg A4 (Parijs–Straatsburg), afrit Saint-Avold / Carling, dan richting Creutzwald en Varsberg. Vanuit Nederland en België via Luxemburg (A31) of Saarbrücken.",
-      "Met de trein: station Saint-Avold op 15 km (regionale lijn Metz–Forbach)."
+      "Varsberg ligt tussen Saint-Avold en Creutzwald, 40 minuten van Metz en 30 minuten van Saarbrücken.",
+      "Met de auto: snelweg A4 (Parijs–Straatsburg), afrit Saint-Avold / Carling, dan richting Creutzwald en Varsberg.",
+      "Met de trein: station Saint-Avold op 15 km (TER Metz–Forbach)."
     ],
     "gps": "GPS-coördinaten",
     "widget_ko": "Verschijnt het formulier niet, schrijf ons dan op"
-  },
-  "diapo": {
-    "h1": "Diavoorstelling",
-    "lead": "Diavoorstelling met vogelzang — Vogelsgesang betekent „vogelzang”.",
-    "sections": [
-      "Het landgoed",
-      "De gîtes"
-    ],
-    "audio_on": "Vogelzang",
-    "audio_off": "Vogelzang dempen"
   },
   "legal": {
     "h1": "Juridische informatie",
@@ -313,33 +361,6 @@
     "reviews_lead": "Meer dan honderd beoordelingen op de boekingssites, met een gemiddelde dat hoog blijft.",
     "rating_reviews": "beoordelingen",
     "superhost": "Airbnb-Superhost · gastheren sinds 2011 · wij antwoorden binnen het uur",
-    "practical_h": "Goed om te weten",
-    "practical": [
-      "Aankomst vanaf 16 u, vertrek voor 10 u",
-      "Bakker op 300 m, restaurant op 1 km, supermarktje op 3 km",
-      "Huisdieren welkom (max. 2), zonder toeslag",
-      "Babybed, badje en kinderstoel op aanvraag",
-      "Rookvrij · glasvezel-wifi"
-    ],
-    "rooms": [
-      [
-        "Woonkamer met open keuken",
-        "23–25 m²"
-      ],
-      [
-        "Slaapkamer 1",
-        "10 m² · 2 bedden 90 × 190"
-      ],
-      [
-        "Slaapkamer 2",
-        "13 m² · 2 bedden 90 × 190"
-      ],
-      [
-        "Toegankelijke badkamer",
-        "6–7 m² · inloopdouche, toilet"
-      ]
-    ],
-    "rooms_h": "Kamer voor kamer",
     "avis_h1": "Beoordelingen en labels",
     "where_h": "Waar u ons vindt",
     "where_p": "We staan ook op deze sites: u kunt daar boeken, maar rechtstreeks boeken blijft het eenvoudigst en goedkoopst.",
@@ -347,19 +368,26 @@
     "guestbook_h": "Gastenboek",
     "guestbook_p": "Beoordelingen die onze gasten na hun verblijf achterlieten, verzameld door ons reserveringssysteem."
   },
-  "visite": {
-    "h1": "Virtuele 360°-rondleiding",
-    "lead": "Loop door de gîtes en over het landgoed alsof u er bent: sleep het beeld, knijp om te zoomen, ga van kamer naar kamer.",
-    "fallback": "Als de rondleiding hier niet verschijnt,",
-    "open": "open hem in een nieuw tabblad"
-  },
-  "videos": {
-    "h1": "Video's",
-    "lead": "Drie korte video's, opgenomen op het landgoed, zonder montage: het geluid is dat van de plek zelf.",
+  "medias": {
+    "h1": "In beeld",
+    "lead": "Het landgoed en de gîtes in beeld: de diavoorstelling met vogelzang, drie korte ter plaatse gefilmde video's en de virtuele 360°-rondleiding.",
+    "tabs": [
+      "Diavoorstelling",
+      "Video's",
+      "Rondleiding"
+    ],
+    "diapo_lead": "Diavoorstelling met de vogelzang van Vogelsgesang, de plek die ernaar genoemd is.",
+    "sections": [
+      "Het landgoed",
+      "De gîtes"
+    ],
+    "audio_on": "Vogelzang",
+    "audio_off": "Vogelzang uitzetten",
+    "videos_lead": "Drie korte, ongemonteerde video's van het landgoed: het geluid is dat van de plek zelf.",
     "clips": [
       [
         "Vogelzang bij het ontwaken",
-        "De weide bij het eerste licht, een grazend paard achter het hek, en het concert van Vogelsgesang."
+        "De weide bij het eerste licht, een grazend paard achter het hek en het concert van Vogelsgesang."
       ],
       [
         "Boswandeling met de paarden",
@@ -372,8 +400,8 @@
     ],
     "download": "Video downloaden",
     "small_note": "klein formaat",
-    "more_h": "En ook",
-    "diapo_p": "De foto's van het landgoed en de gîtes, met vogelzang.",
-    "visite_p": "De virtuele 360°-rondleiding door de gîtes, kamer voor kamer."
+    "visite_lead": "Loop door de gîtes en over het landgoed alsof u er bent: sleep het beeld, knijp om te zoomen, ga van kamer naar kamer.",
+    "visite_fallback": "Verschijnt de rondleiding hier niet,",
+    "visite_open": "open hem dan in een nieuw tabblad"
   }
 }

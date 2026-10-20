@@ -1,0 +1,23 @@
+{# Diaporama (photos du domaine puis des gîtes) : utilisé sur la page En images et, en superposition, sur l'accueil.
+   Paramètre `lazy` : les photos ne sont chargées qu'à l'ouverture (data-src). Initialisé par site.js (.diapo-app). #}
+{% set v = t.medias %}
+{% set groups = [(v.sections[0], s.hero_slides[1:] | map(attribute='id') | list + s.domaine, t.home.hero_alts[1:] + t.domaine.captions), (v.sections[1], s.gites, t.gites.captions)] %}
+<div class="diapo-app" data-label-pause="{{ ui.pause }}" data-label-play="{{ ui.play }}">
+  <div class="diapo" aria-live="polite"{{ note_attr | default('') | safe }}>
+    {% for name, ids, caps in groups %}{% for id in ids %}
+    {% if lazy | default(false) %}<img data-src="{{ src(id) }}" alt="{{ caps[loop.index0] }}" width="{{ images[id].w }}" height="{{ images[id].h }}" data-group="{{ name }}" data-cap="{{ caps[loop.index0] }}">{% else %}{{ pic(id, caps[loop.index0], '100vw', cls=('on' if loop.first and name == v.sections[0] else ''), data={'group': name, 'cap': caps[loop.index0]}) }}{% endif %}
+    {% endfor %}{% endfor %}
+    <button type="button" class="diapo-x" data-x aria-label="{{ ui.close }}">×</button>
+    <button type="button" class="diapo-nav p" data-prev aria-label="{{ ui.prev }}">‹</button><button type="button" class="diapo-nav n" data-next aria-label="{{ ui.next }}">›</button>
+    <div class="cap"><div><b data-group></b><span data-cap></span></div><span data-idx></span></div>
+  </div>
+  <div class="diapo-ctl">
+    <button type="button" data-prev aria-label="{{ ui.prev }}" title="{{ ui.prev }}"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
+    <button type="button" data-play aria-pressed="true" aria-label="{{ ui.pause }}" title="{{ ui.pause }}"><svg class="i-pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14M16 5v14"/></svg><svg class="i-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4l13 8-13 8z" fill="currentColor" stroke="none"/></svg></button>
+    <button type="button" data-next aria-label="{{ ui.next }}" title="{{ ui.next }}"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
+    <button type="button" data-audio aria-pressed="false" aria-label="{{ v.audio_on }}" title="{{ v.audio_on }}" data-on="{{ v.audio_on }}" data-off="{{ v.audio_off }}"><svg class="i-mute" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9H4z"/><path d="M19 9l-4 6M15 9l4 6"/></svg><svg class="i-sound" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9H4z"/><path d="M16 8.5a5 5 0 0 1 0 7M18.5 6a8.5 8.5 0 0 1 0 12"/></svg><span>{{ v.audio_on }}</span></button>
+    <button type="button" data-full aria-label="{{ ui.fullscreen }}" title="{{ ui.fullscreen }}"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg></button>
+    {% if overlay | default(false) %}<button type="button" data-close class="btn btn-light" style="margin-left:auto">{{ ui.close }}</button>{% endif %}
+  </div>
+  <audio loop preload="none" src="{{ rel }}audio/chants-oiseaux.mp3"></audio>
+</div>

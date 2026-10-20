@@ -1,0 +1,3 @@
+{# Macros communes aux gabarits. #}
+{# note(k) : accroche une « note pour Marc » (texte venu de TODO.md) à l'élément, en FR et hors version --prod. #}
+{% macro note(k) %}{% if notes and marc_notes.get(k) %} data-note="{{ marc_notes[k] }}"{% endif %}{% endmacro %}

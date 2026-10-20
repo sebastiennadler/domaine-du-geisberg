@@ -1,10 +1,18 @@
-"""Tests fonctionnels du site généré (copie locale servie sur 127.0.0.1:8111)."""
+"""Tests fonctionnels du site généré dans dist/ (servi sur 127.0.0.1:8111, voir tests/run.sh).
+Réseau externe coupé : les cadres Nuitrésa, les polices et la visite 360° ne sont pas chargés."""
 import asyncio, json, re, sys
+from pathlib import Path
 from playwright.async_api import async_playwright
 
 BASE = 'http://127.0.0.1:8111'  # serveur local sur dist/ (voir tests/run.sh)
-PAGES = ['index', 'le-domaine', 'gites', 'videos', 'diaporama', 'visite', 'autour', 'avis', 'reservation', 'mentions-legales']
+ROOT = Path(__file__).resolve().parent.parent
+PAGES = ['index', 'reservation', 'le-domaine', 'medias', 'avis', 'mentions-legales']
+MENU = ['index', 'reservation', 'le-domaine', 'medias', 'avis']
 DIRS = ['', 'en/', 'de/', 'es/', 'pt/', 'nl/', 'zh/']
+NRL = {'': 'FR', 'en/': 'EN', 'de/': 'DE', 'es/': 'ES', 'pt/': 'EN', 'nl/': 'EN', 'zh/': 'EN'}
+KEY = 'e8dc8870f783d664870e89ac71801620'
+REDIRECTS = {'gites': 'index.html#gites', 'gite-1': 'index.html#gites', 'gite-2': 'index.html#gites', 'autour': 'le-domaine.html#alentours',
+             'diaporama': 'medias.html#diaporama', 'videos': 'medias.html#videos', 'visite': 'medias.html#visite'}
 results = []
 
 
@@ -12,13 +20,46 @@ def ok(name, cond, detail=''):
     results.append((name, bool(cond), detail)); print(("ok " if cond else "KO ") + name, flush=True)
 
 
+def walk(o, p=''):
+    """Toutes les feuilles (clé → valeur texte) d'un JSON de contenu."""
+    if isinstance(o, dict):
+        for k, v in o.items():
+            yield from walk(v, f'{p}/{k}')
+    elif isinstance(o, list):
+        for i, v in enumerate(o):
+            yield from walk(v, f'{p}[{i}]')
+    elif isinstance(o, str):
+        yield p, o
+
+
+# --- contrôles sur les fichiers de contenu (sans navigateur) ---
+def content_checks():
+    fr = json.loads((ROOT / 'src/content/fr.json').read_text(encoding='utf-8'))
+    fr_leaves = dict(walk(fr))
+    for code in ['en', 'de', 'es', 'pt', 'nl', 'zh']:
+        d = json.loads((ROOT / f'src/content/{code}.json').read_text(encoding='utf-8'))
+        leaves = dict(walk(d))
+        missing = [k for k in fr_leaves if k not in leaves]
+        ok(f'{code} : aucune clé manquante (sinon repli sur le français)', not missing, ', '.join(missing[:5]))
+        # une valeur identique au français est suspecte, sauf noms propres, chiffres, adresses, codes
+        same = [k for k, v in leaves.items() if k in fr_leaves and v == fr_leaves[k] and len(v) > 14
+                and not re.match(r'^[\d\s€%×,.:–\-h]+$', v) and not any(w in v for w in ['Varsberg', 'Geisberg', 'Nuitr', 'Gîtes de France', 'Clévacances', 'Tourisme & Handicap', 'Urielle', 'Agnès', 'Marc', 'Vogelsgesang', 'Airbnb', 'Abritel', 'http', '@', 'SIRET', 'TVA', 'Saint-Avold', 'Creutzwald', 'Nadler', 'Saarschleife', 'Playfair'])]
+        same = [k for k in same if not k.startswith('/legal') and not k.startswith('/domaine/sites') and '/links' not in k]
+        ok(f'{code} : pas de texte resté en français', len(same) <= 2, ', '.join(same[:6]))
+    todo = (ROOT / 'TODO.md').read_text(encoding='utf-8')
+    ok('TODO.md : section « À demander à Marc » avec des clés de page', '## 4. À demander à Marc' in todo and len(re.findall(r'^- \[ \] \{\w+\} ', todo, re.M)) >= 10)
+    for code in ['fr', 'en', 'de', 'es', 'pt', 'nl', 'zh']:
+        txt = (ROOT / f'src/content/{code}.json').read_text(encoding='utf-8')
+        ok(f'{code} : ni surfaces par pièce, ni vitrocéramique, ni équitation sur place', 'm² ·' not in txt and 'itrocéram' not in txt and 'Vitrokeram' not in txt and '"equitation"' not in txt)
+
+
 async def main():
+    content_checks()
     async with async_playwright() as p:
         b = await p.chromium.launch()
         ctx = await b.new_context(viewport={'width': 1280, 'height': 800})
         page = await ctx.new_page()
         page.set_default_timeout(15000)
-        # pas de réseau externe ici (polices, iframe hdmedia) : on coupe tout ce qui n'est pas local
         async def block(route):
             await route.abort()
         await page.route(re.compile(r'^(?!http://127\.0\.0\.1).*'), block)
@@ -26,50 +67,93 @@ async def main():
         page.on('pageerror', lambda e: js_errors.append(str(e)))
         page.on('console', lambda m: js_errors.append(m.text) if m.type == 'error' and 'Failed to load' not in m.text else None)
 
-        # 1. toutes les pages de toutes les langues : chargement, H1, menu complet, sans erreur JS
+        # 1. toutes les pages de toutes les langues : chargement, H1, menu à 5 entrées, logo, sans erreur JS
         for d in DIRS:
             for pg in PAGES:
                 r = await page.goto(f'{BASE}/{d}{pg}.html', wait_until='domcontentloaded')
                 ok(f'{d}{pg}: HTTP 200', r.status == 200)
                 h1 = await page.locator('h1').count()
                 ok(f'{d}{pg}: un H1', h1 == 1, f'{h1} h1')
-                nav = await page.locator('nav.nav > a').count()
-                ok(f'{d}{pg}: menu 9 entrées + Réserver', nav == 10, f'{nav}')
-                if pg != 'mentions-legales':  # pas dans le menu
+                nav = await page.evaluate("[...document.querySelectorAll('nav.nav > a:not(.book)')].map(a=>a.getAttribute('href'))")
+                ok(f'{d}{pg}: menu 5 entrées', nav == [m + '.html' for m in MENU], json.dumps(nav))
+                ok(f'{d}{pg}: bouton Réserver du menu', await page.get_attribute('nav.nav > a.book', 'href') == 'reservation.html#demande')
+                if pg in MENU:
                     cur = await page.locator('nav.nav > a[aria-current="page"]').count()
                     ok(f'{d}{pg}: entrée de menu active', cur == 1, f'{cur}')
                 lang = await page.get_attribute('html', 'lang')
                 ok(f'{d}{pg}: attribut lang', lang == (d.strip('/') or 'fr'), lang)
-        ok('aucune erreur JavaScript sur les 70 pages', not js_errors, '; '.join(js_errors[:3]))
+                logos = await page.evaluate("[...document.querySelectorAll('.brand img.logo')].map(i=>getComputedStyle(i).display)")
+                ok(f'{d}{pg}: logo clair affiché, sombre masqué', logos == ['block', 'none'], json.dumps(logos))
+                ok(f'{d}{pg}: favicon et icône Apple', await page.locator('link[rel="icon"][href$="favicon.png"]').count() == 1 and await page.locator('link[rel="apple-touch-icon"]').count() == 1)
+                ok(f'{d}{pg}: canonical + 7 hreflang + x-default', await page.locator('link[rel="canonical"]').count() == 1 and await page.locator('link[rel="alternate"][hreflang]').count() == 8)
+        ok('aucune erreur JavaScript sur les 42 pages', not js_errors, '; '.join(js_errors[:3]))
 
-        # 2. renvois gite-1 / gite-2
-        await page.goto(f'{BASE}/gite-1.html', wait_until='domcontentloaded')
-        await page.wait_for_timeout(500)
-        ok('gite-1.html renvoie vers gites.html', page.url.endswith('/gites.html'), page.url)
-        await page.goto(f'{BASE}/de/gite-2.html', wait_until='domcontentloaded')
-        await page.wait_for_timeout(500)
-        ok('de/gite-2.html renvoie vers de/gites.html', page.url.endswith('/de/gites.html'), page.url)
+        # 2. renvois des anciennes adresses, dans deux langues
+        for d in ['', 'de/']:
+            for old, target in REDIRECTS.items():
+                await page.goto(f'{BASE}/{d}{old}.html', wait_until='domcontentloaded')
+                await page.wait_for_timeout(400)
+                ok(f'{d}{old}.html renvoie vers {target}', page.url.endswith(f'/{d}{target}'), page.url)
 
-        # 3. accueil : bandeau, points, thème, visionneuse, menu mobile
-        await page.goto(f'{BASE}/index.html', wait_until='domcontentloaded')
-        ok('bandeau : 3 diapositives', await page.locator('.hero .slide').count() == 3)
-        ok('bandeau : première diapositive visible', 'on' in (await page.get_attribute('.hero .slide:nth-child(1)', 'class')))
+        # 3. accueil : bandeau (durées, mouvement), points, thème, logo sombre, galerie, tiroir, avis unique, aperçus
+        await page.goto(f'{BASE}/index.html', wait_until='load')
+        ok('bandeau : 4 diapositives', await page.locator('.hero .slide').count() == 4)
+        ok('bandeau : la photo des hôtes en premier, fixe, 4 s', await page.evaluate("(()=>{const s=document.querySelector('.hero .slide');return s.classList.contains('on')&&s.getAttribute('data-dur')==='4000'&&s.getAttribute('data-move')==='none'&&s.querySelector('img').alt.includes('Urielle')})()"))
+        ok('bandeau : première photo sans animation', await page.evaluate("getComputedStyle(document.querySelector('.hero .slide.on img')).animationName") == 'none')
+        ok('bandeau : interrupteurs inclinaison / parallaxe présents', await page.get_attribute('#hero', 'data-tilt') in ('on', 'off') and await page.get_attribute('#hero', 'data-parallax') in ('on', 'off'))
         await page.click('.hero .dots button:nth-child(2)')
+        await page.wait_for_timeout(200)
         ok('bandeau : clic sur un point change la diapositive', 'on' in (await page.get_attribute('.hero .slide:nth-child(2)', 'class')))
+        ok('bandeau : les photos suivantes partent de loin et zooment (animation)', (await page.evaluate("getComputedStyle(document.querySelector('.hero .slide.on img')).animationName")).startswith('kb-'))
+        ok('bandeau : plus de photo de nuit (mur sali)', await page.evaluate("[...document.querySelectorAll('.hero img')].every(i=>!i.src.includes('neige'))"))
+        await page.mouse.move(300, 300)
+        await page.wait_for_timeout(400)
+        tr = await page.evaluate("document.querySelector('.hero .layer').style.transform")
+        ok('bandeau : inclinaison à la souris (quand hero_tilt est activé)', ('rotate' in tr) == (await page.get_attribute('#hero', 'data-tilt') == 'on'), tr[:60])
         await page.click('#theme')
         ok('bouton thème → sombre', await page.get_attribute('html', 'data-theme') == 'dark')
+        logos = await page.evaluate("[...document.querySelectorAll('.brand img.logo')].map(i=>getComputedStyle(i).display)")
+        ok('thème sombre : logo sombre affiché, clair masqué', logos == ['none', 'block'], json.dumps(logos))
         await page.click('#theme')
         ok('bouton thème → clair', await page.get_attribute('html', 'data-theme') == 'light')
-        await page.click('.mosaic a:first-child')
+        facts = await page.evaluate("[...document.querySelectorAll('.chips.facts li')].map(l=>l.textContent)")
+        ok('chiffres clés : de 1 à 4 personnes, jamais 5', any('1 à 4' in f for f in facts) and not any('5' in f for f in facts), json.dumps(facts))
+        ok('galerie des gîtes : 8 photos, dont la chambre à deux lits', await page.locator('#gites .gallery a').count() == 8 and await page.locator('#gites .gallery img[src*="deux-lits"]').count() == 1)
+        await page.click('#gites .gallery a:first-child')
         await page.wait_for_timeout(300)
-        ok('visionneuse : s\'ouvre au clic sur la mosaïque', await page.is_visible('.lb.open'))
+        ok('visionneuse : s\'ouvre au clic sur la galerie', await page.is_visible('.lb.open'))
         src1 = await page.get_attribute('.lb img', 'src')
         await page.keyboard.press('ArrowRight')
         src2 = await page.get_attribute('.lb img', 'src')
         ok('visionneuse : flèche droite = photo suivante', src1 != src2)
         await page.keyboard.press('Escape')
         ok('visionneuse : Échap ferme', not await page.is_visible('.lb.open'))
+        fiche = await page.evaluate("[...document.querySelectorAll('.fiche dt')].map(d=>d.textContent)")
+        ok('fiche : 9 lignes, sans surfaces par pièce', len(fiche) == 9 and not any('Pièce' in f for f in fiche), json.dumps(fiche))
+        ok('fiche : induction, Wi-Fi fibre, couchage d\'appoint discret', await page.evaluate("(()=>{const t=document.querySelector('.fiche').textContent;return t.includes('induction')&&t.includes('Wi-Fi fibre')&&t.includes('appoint')})()"))
+        ok('tiroir équipement fermé par défaut', not await page.evaluate("document.querySelector('.drawer').open"))
+        await page.click('.drawer summary')
+        ok('tiroir équipement : s\'ouvre, 5 groupes', await page.evaluate("document.querySelector('.drawer').open") and await page.locator('.drawer-in h4').count() == 5)
+        ok('un seul avis sur l\'accueil + lien vers tous les avis', await page.locator('#avis blockquote').count() == 1 and await page.get_attribute('#avis a.more', 'href') == 'avis.html')
+        ok('pas de calendrier Nuitrésa sur l\'accueil', await page.locator('iframe.nr-cal').count() == 0)
+        ok('pas de tableau des tarifs sur l\'accueil (un seul chez-soi : Réservation)', await page.locator('.prices').count() == 0)
+        ok('aperçus : domaine & alentours, En images', await page.evaluate("[...document.querySelectorAll('.teaser')].map(a=>a.getAttribute('href'))") == ['le-domaine.html', 'medias.html'])
         ok('bouton remonter présent', await page.locator('.totop').count() == 1)
+        # diaporama en superposition
+        ok('diaporama : photos non chargées avant le clic', await page.evaluate("[...document.querySelectorAll('#home-diapo img')].every(i=>!i.getAttribute('src'))"))
+        await page.click('#open-diapo')
+        await page.wait_for_timeout(500)
+        ok('diaporama : s\'ouvre en superposition, photos chargées', await page.evaluate("!document.getElementById('home-diapo').hidden && [...document.querySelectorAll('#home-diapo img')].every(i=>i.src)"))
+        ok('diaporama : légende et compteur', await page.evaluate("document.querySelector('#home-diapo [data-idx]').textContent") == '1 / 17')
+        ok('diaporama : photo de nuit absente', await page.evaluate("[...document.querySelectorAll('#home-diapo img')].every(i=>!i.src.includes('neige'))"))
+        await page.keyboard.press('ArrowRight')
+        await page.wait_for_timeout(100)
+        ok('diaporama : flèche droite = photo suivante', await page.evaluate("document.querySelector('#home-diapo [data-idx]').textContent") == '2 / 17')
+        await page.click('#home-diapo [data-play]')
+        ok('diaporama : bouton pause', await page.get_attribute('#home-diapo [data-play]', 'aria-pressed') == 'false')
+        await page.keyboard.press('Escape')
+        await page.wait_for_timeout(200)
+        ok('diaporama : Échap ferme la superposition', await page.evaluate("document.getElementById('home-diapo').hidden && document.body.style.overflow===''"))
         # menu mobile
         await page.set_viewport_size({'width': 390, 'height': 844})
         await page.click('#menu')
@@ -81,137 +165,112 @@ async def main():
         ok('barre Réserver / Appeler visible sur mobile', await page.is_visible('.mobile-cta'))
         await page.set_viewport_size({'width': 1280, 'height': 800})
 
-        # 4. gîtes : galerie, calendriers Nuitrésa (un par gîte, langue du cadre), bandeau → réservation
-        KEY = 'e8dc8870f783d664870e89ac71801620'
-        NRL = [('', 'FR'), ('en/', 'EN'), ('de/', 'DE'), ('es/', 'ES'), ('pt/', 'EN'), ('nl/', 'EN'), ('zh/', 'EN')]
-        for d, nrl in NRL:
-            await page.goto(f'{BASE}/{d}gites.html', wait_until='domcontentloaded')
+        # 4. réservation : deux calendriers (langue du cadre), tarifs, inclus / non fourni, widget unique, accès
+        for d in DIRS:
+            await page.goto(f'{BASE}/{d}reservation.html', wait_until='domcontentloaded')
             srcs = await page.evaluate("[...document.querySelectorAll('#dispo iframe.nr-cal')].map(f=>f.getAttribute('src'))")
-            ok(f'{d}gîtes : 2 calendriers Nuitrésa (gîte 1100 et 1101)', len(srcs) == 2 and '/calendrier-multiple-1100-' + KEY in srcs[0] and '/calendrier-multiple-1101-' + KEY in srcs[1], json.dumps(srcs))
-            ok(f'{d}gîtes : calendriers en {nrl}, 2 mois, id transmis', all(f'?l={nrl}&nb_mois=2&id=nr-cal-' in x for x in srcs), json.dumps(srcs))
-            ok(f'{d}gîtes : calendriers chargés à la demande, avec titre', await page.evaluate("[...document.querySelectorAll('iframe.nr-cal')].every(f=>f.loading==='lazy' && f.title && f.id===new URL(f.src).searchParams.get('id'))"))
-        await page.goto(f'{BASE}/gites.html', wait_until='domcontentloaded')
-        ok('gîtes : plus aucun calendrier maison', await page.locator('.cal').count() == 0)
-        ok('gîtes : galerie de 7 photos', await page.locator('.gallery a').count() == 7)
-        ok('gîtes : bandeau #dispo', await page.locator('#dispo').count() == 1)
-        ok('gîtes : bouton du bandeau → reservation.html#demande', await page.get_attribute('#dispo .band a.btn', 'href') == 'reservation.html#demande')
-        leads = await page.evaluate("[...document.querySelectorAll('p.lead, .list li')].map(e=>[...e.childNodes].filter(n=>n.nodeType===3).map(n=>n.textContent).join('')).join(' ')")
-        ok('gîtes : 4 personnes (jamais 5) dans les textes', '4 personnes' in leads and '5 personnes' not in leads)
-        await page.evaluate("document.querySelectorAll('.reveal').forEach(e=>e.classList.add('in'))")
-        await page.wait_for_timeout(900)
-        ok('gîtes : calendriers côte à côte sur ordinateur', await page.evaluate("(()=>{const b=[...document.querySelectorAll('.cal-box')].map(e=>e.getBoundingClientRect());return b.length===2 && Math.abs(b[0].top-b[1].top)<2 && b[1].left>b[0].right})()"))
-        await page.set_viewport_size({'width': 390, 'height': 844})
-        ok('gîtes : calendriers empilés sur mobile, sans débordement', await page.evaluate("(()=>{const b=[...document.querySelectorAll('.cal-box')].map(e=>e.getBoundingClientRect());return b.length===2 && b[1].top>b[0].bottom-1 && b[1].right<=391 && document.documentElement.scrollWidth<=390})()"))
-        await page.set_viewport_size({'width': 1280, 'height': 800})
-        # hauteur ajustée par message (simulation du message que le cadre Nuitrésa envoie) ; message d'une autre origine ignoré
+            ok(f'{d}réservation : 2 calendriers Nuitrésa (gîtes 1100 et 1101) en {NRL[d]}', len(srcs) == 2 and '/calendrier-multiple-1100-' + KEY in srcs[0] and '/calendrier-multiple-1101-' + KEY in srcs[1] and all(f'?l={NRL[d]}&nb_mois=2&id=nr-cal-' in x for x in srcs), json.dumps(srcs))
+            w = await page.locator('.nuit-resa-widget').count()
+            ok(f'{d}réservation : un seul formulaire Nuitrésa, langue {NRL[d]}, estimation globale', w == 1 and await page.get_attribute('.nuit-resa-widget', 'data-nr-lang') == NRL[d] and await page.get_attribute('.nuit-resa-widget', 'data-nr-aggregate-availability') == '1')
+            prices = await page.evaluate("[...document.querySelectorAll('#tarifs .prices b')].map(b=>b.textContent)")
+            ok(f'{d}réservation : grille 300 / 350 / 300 / 420 €', prices == ['300 €', '350 €', '300 €', '420 €'], json.dumps(prices))
+            ok(f'{d}réservation : inclus (4) et non fourni (2)', await page.locator('.incl .list:not(.minus) li').count() == 4 and await page.locator('.incl .list.minus li').count() == 2)
+            ok(f'{d}réservation : ordre des sections', await page.evaluate("[...document.querySelectorAll('main section[id]')].map(s=>s.id)") == ['dispo', 'tarifs', 'demande', 'acces'])
+        await page.goto(f'{BASE}/reservation.html', wait_until='domcontentloaded')
+        ok('réservation : calendriers côte à côte sur ordinateur', await page.evaluate("(()=>{const b=[...document.querySelectorAll('.cal-box')].map(e=>e.getBoundingClientRect());return b.length===2 && Math.abs(b[0].top-b[1].top)<2 && b[1].left>b[0].right})()"))
         h0 = await page.evaluate("document.getElementById('nr-cal-1100').getBoundingClientRect().height")
         await page.evaluate("window.postMessage({frameId:'nr-cal-1100', height:900}, '*')")
         await page.wait_for_timeout(200)
-        h1 = await page.evaluate("document.getElementById('nr-cal-1100').getBoundingClientRect().height")
-        ok('gîtes : un message de hauteur venant d\'ailleurs que Nuitrésa est ignoré', h0 == h1 == 430, f'{h0} → {h1}')
+        ok('réservation : un message de hauteur venant d\'ailleurs que Nuitrésa est ignoré', h0 == await page.evaluate("document.getElementById('nr-cal-1100').getBoundingClientRect().height"))
+        ok('réservation : repli e-mail sous le formulaire', await page.locator('#demande a[href^="mailto:"]').count() == 1)
+        ok('réservation : plus de bloc hôtes (un seul chez-soi : accueil)', await page.locator('.hosts').count() == 0)
 
-        # 5. diaporama : les photos défilent, une seule visible, audio
-        await page.goto(f'{BASE}/diaporama.html', wait_until='domcontentloaded')
-        await page.wait_for_timeout(800)
-        async def visible_imgs():
-            return await page.evaluate("[...document.querySelectorAll('#diapo img')].filter(i=>getComputedStyle(i).opacity==='1').map(i=>i.getAttribute('data-cap'))")
-        v0 = await visible_imgs()
-        ok('diaporama : exactement une photo visible', len(v0) == 1, json.dumps(v0, ensure_ascii=False))
-        cap0 = await page.text_content('#diapo-cap')
-        ok('diaporama : légende = photo visible', v0 and v0[0] == cap0, f'{v0} / {cap0}')
-        await page.click('#d-next')
-        await page.wait_for_timeout(1500)
-        v1 = await visible_imgs()
-        ok('diaporama : bouton suivant change la photo', len(v1) == 1 and v1 != v0, json.dumps(v1, ensure_ascii=False))
-        await page.wait_for_timeout(5500)
-        v2 = await visible_imgs()
-        ok('diaporama : défilement automatique (5 s)', len(v2) == 1 and v2 != v1, json.dumps(v2, ensure_ascii=False))
-        await page.click('#d-play')
-        ok('diaporama : pause', await page.get_attribute('#d-play', 'aria-pressed') == 'false')
-        au = await page.evaluate("(async()=>{document.getElementById('d-audio').click();await new Promise(r=>setTimeout(r,1500));var a=document.getElementById('d-bird');return {paused:a.paused,err:a.error&&a.error.code,rs:a.readyState}})()")
-        ok('diaporama : chants d\'oiseaux se lancent', not au['paused'] and not au['err'], json.dumps(au))
-        ok('diaporama : 15 photos (3 bandeau + 6 domaine + 7 gîtes) — 16 attendu ?', await page.locator('#diapo img').count() in (15, 16), str(await page.locator('#diapo img').count()))
+        # 5. tous les boutons « Réserver » du site pointent vers reservation.html#demande
+        for pg in ['index', 'le-domaine', 'medias', 'avis']:
+            await page.goto(f'{BASE}/{pg}.html', wait_until='domcontentloaded')
+            bad = await page.evaluate("[...document.querySelectorAll('a.btn-p, a.book')].filter(a=>!a.getAttribute('href').startsWith('reservation.html#demande')).map(a=>a.getAttribute('href'))")
+            ok(f'{pg} : boutons Réserver → reservation.html#demande', not bad, json.dumps(bad))
 
-        # 6. vidéos
-        await page.goto(f'{BASE}/videos.html', wait_until='domcontentloaded')
-        ok('vidéos : 3 lecteurs', await page.locator('video').count() == 3)
-        ok('vidéos : preload=none (rien téléchargé avant lecture)', await page.evaluate("[...document.querySelectorAll('video')].every(v=>v.preload==='none')"))
-        # (la lecture H.264 est testée dans le vrai navigateur sur le site en ligne : Chromium de test n'a pas le codec)
-        srcs = await page.evaluate("[...document.querySelectorAll('video source')].map(s=>s.getAttribute('src'))")
-        ok('vidéos : 3 sources MP4 distinctes', len(set(srcs)) == 3 and all(x.endswith('.mp4') for x in srcs), json.dumps(srcs))
-        ok('vidéos : affiche (poster) sur chaque lecteur', await page.evaluate("[...document.querySelectorAll('video')].every(v=>v.poster)"))
+        # 6. domaine & alentours : texte adapté (plus d'équitation), galeries, sites, loisirs, liens
+        await page.goto(f'{BASE}/le-domaine.html', wait_until='domcontentloaded')
+        txt = await page.evaluate("document.querySelector('#domaine').textContent")
+        ok('domaine : chevaux à la retraite, plus d\'équitation', 'retraite' in txt and 'cavaliers confirmés' not in txt)
+        ok('domaine : galerie 6 photos (Urielle)', await page.locator('#domaine ~ section .gallery a').count() >= 6 and 'Urielle' in (await page.evaluate("document.querySelector('[data-cap*=Urielle]')?.getAttribute('data-cap') || ''")))
+        ok('alentours : ancre #alentours, 9 sites, loisirs sans équitation', await page.locator('#alentours').count() == 1 and await page.locator('.grid3 .tile').count() == 9 and not await page.evaluate("[...document.querySelectorAll('.chips li')].some(l=>/[ée]quitation|riding|Reiten|equitación|equitação|paardrijden|骑马/i.test(l.textContent))"))
+        ok('alentours : liens utiles', await page.locator('.chips li a[target=_blank]').count() >= 5)
 
-        # 7. visite 360° : iframe https
-        await page.goto(f'{BASE}/visite.html', wait_until='domcontentloaded')
-        src = await page.get_attribute('.visite iframe', 'src')
-        ok('visite : iframe en https', src and src.startswith('https://'), src)
+        # 7. En images : onglets, diaporama partagé, vidéos, visite 360° chargée à l'ouverture
+        await page.goto(f'{BASE}/medias.html', wait_until='load')
+        ok('en images : 3 onglets, diaporama ouvert par défaut', await page.locator('.tabs [role=tab]').count() == 3 and await page.evaluate("[...document.querySelectorAll('.panel')].map(p=>p.hidden)") == [False, True, True])
+        ok('diaporama : 17 photos, une seule visible, sans photo de nuit', await page.locator('.diapo img').count() == 17 and await page.locator('.diapo img.on').count() == 1 and await page.evaluate("[...document.querySelectorAll('.diapo img')].every(i=>!i.src.includes('neige'))"))
+        ok('diaporama : légende « Le domaine »', await page.evaluate("document.querySelector('.diapo b[data-group]').textContent") == 'Le domaine')
+        await page.click('.diapo-ctl [data-next]')
+        ok('diaporama : bouton suivant', await page.evaluate("document.querySelector('.diapo [data-idx]').textContent") == '2 / 17')
+        ok('diaporama : audio en pause par défaut', await page.evaluate("document.querySelector('.diapo-app audio').paused"))
+        await page.click('#tab-videos')
+        ok('onglet vidéos : 3 vidéos avec affiche et sous-titre', await page.evaluate("[...document.querySelectorAll('.panel')].map(p=>p.hidden)") == [True, False, True] and await page.locator('#videos video[poster]').count() == 3 and await page.locator('#videos figcaption b').count() == 3)
+        ok('onglet vidéos : diaporama mis en pause', await page.get_attribute('.diapo-ctl [data-play]', 'aria-pressed') == 'false')
+        ok('visite 360° : cadre non chargé tant que l\'onglet est fermé', await page.evaluate("!document.querySelector('#visite iframe').src"))
+        await page.click('#tab-visite')
+        ok('visite 360° : cadre https chargé à l\'ouverture de l\'onglet, lien de repli', await page.evaluate("document.querySelector('#visite iframe').src.startsWith('https://www.hdmedia.fr/')") and await page.locator('#visite a[target=_blank]').count() == 1)
+        await page.goto(f'{BASE}/medias.html#visite', wait_until='load')
+        ok('en images : l\'ancre #visite ouvre le bon onglet', await page.evaluate("[...document.querySelectorAll('.panel')].map(p=>p.hidden)") == [True, True, False])
 
-        # 8. réservation : widget Nuitrésa (un seul), langue du widget, repli e-mail
-        for d, nrl in [('', 'FR'), ('en/', 'EN'), ('de/', 'DE'), ('es/', 'ES'), ('pt/', 'EN'), ('nl/', 'EN'), ('zh/', 'EN')]:
-            await page.goto(f'{BASE}/{d}reservation.html', wait_until='domcontentloaded')
-            ok(f'{d}réservation : un seul widget Nuitrésa', await page.locator('.nuit-resa-widget').count() == 1)
-            ok(f'{d}réservation : clé publique et version v2', await page.get_attribute('.nuit-resa-widget', 'data-nr-key') == 'e8dc8870f783d664870e89ac71801620' and await page.get_attribute('.nuit-resa-widget', 'data-nr-version') == 'v2')
-            ok(f'{d}réservation : langue du widget = {nrl}', await page.get_attribute('.nuit-resa-widget', 'data-nr-lang') == nrl)
-            ok(f'{d}réservation : script Nuitrésa chargé en async', await page.evaluate("!!document.querySelector('script[async][src^=\"https://public.nuit-resa.com/js/nuit-resa-widget-v2.js\"]')"))
-            ok(f'{d}réservation : plus de formulaire maison ni de calendrier', await page.locator('#resa, .cal').count() == 0)
-            ok(f'{d}réservation : option « disponibilités globales » du formulaire', await page.get_attribute('.nuit-resa-widget', 'data-nr-aggregate-availability') == '1' and await page.get_attribute('.nuit-resa-widget', 'data-nr-params') == 'ad=1')
-            ok(f'{d}réservation : repli e-mail sous le widget', await page.locator('#demande a[href=\"mailto:gitevarsberg@hotmail.com\"]').count() == 1)
-        await page.goto(f'{BASE}/reservation.html', wait_until='domcontentloaded')
-        ok('réservation : ancre #demande (cible des boutons Réserver)', await page.locator('#demande').count() == 1)
-        ok('réservation : ancre #acces (photo Agnès et Marc)', await page.locator('#acces .hosts img').count() == 1)
-        ok('réservation : aucune trace d\'identifiant/mot de passe', 'Uriellea' not in (await page.content()))
-        # 8b. tous les boutons « Réserver » du site pointent vers reservation.html#demande
-        for d in DIRS:
-            await page.goto(f'{BASE}/{d}index.html', wait_until='domcontentloaded')
-            hrefs = await page.evaluate("[...document.querySelectorAll('a.book, .mobile-cta a.btn-p')].map(a=>a.getAttribute('href'))")
-            ok(f'{d}accueil : boutons Réserver → reservation.html#demande', hrefs and all(h == 'reservation.html#demande' for h in hrefs), json.dumps(hrefs))
-
-        # 8c. avis : livre d'or Nuitrésa
+        # 8. avis : inchangée (notes, 6 avis, labels, plateformes, livre d'or)
         for d in DIRS:
             await page.goto(f'{BASE}/{d}avis.html', wait_until='domcontentloaded')
             src = await page.get_attribute('#livre-d-or iframe.nr-guestbook', 'src')
-            ok(f'{d}avis : livre d\'or Nuitrésa (chargé à la demande)', src == 'https://public.nuit-resa.com/avis-' + KEY + '.html' and await page.get_attribute('#livre-d-or iframe', 'loading') == 'lazy', str(src))
-            ok(f'{d}avis : 6 avis + titre du livre d\'or', await page.locator('.reviews blockquote').count() == 6 and (await page.text_content('#livre-d-or h2')).strip() != '')
+            ok(f'{d}avis : 4 notes, 6 avis, 3 labels, 6 plateformes, livre d\'or', await page.locator('.rating').count() == 4 and await page.locator('.reviews blockquote').count() == 6 and await page.locator('.logos a').count() >= 3 and await page.locator('.prices div').count() == 6 and src == 'https://public.nuit-resa.com/avis-' + KEY + '.html')
 
-        # 9. notes pour Marc (FR seulement)
+        # 9. notes pour Marc (FR seulement) : venues de TODO.md, au bon endroit, sans mot de passe
         await page.goto(f'{BASE}/index.html', wait_until='domcontentloaded')
+        ok('notes : bouton présent en français', await page.locator('#nbtn').count() == 1)
+        ok('notes : invisibles tant que le bouton n\'est pas pressé', not await page.is_visible('.nbub'))
         await page.click('#nbtn')
-        ok('notes : mode activé', 'notes' in (await page.get_attribute('html', 'class')))
-        n = await page.locator('.nbub').count()
-        ok('notes : pastilles présentes sur l\'accueil', n >= 3, str(n))
-        await page.goto(f'{BASE}/en/index.html', wait_until='domcontentloaded')
-        ok('notes : absentes en anglais', await page.locator('#nbtn').count() == 0)
-        await page.goto(f'{BASE}/gites.html', wait_until='domcontentloaded')
-        await page.click('#nbtn')
+        ok('notes : pastilles et panneau après le clic', await page.is_visible('.nbub') and await page.is_visible('.npanel'))
         nn = await page.evaluate("[...document.querySelectorAll('[data-note]')].map(e=>e.getAttribute('data-note'))")
-        ok('notes gîtes : note « réglages Nuitrésa » avec ses 8 points', any(n.startswith('Réglages Nuitrésa') and n.count('\n') >= 8 for n in nn), str(len(nn)))
-        ok('notes gîtes : retours à la ligne conservés à l\'affichage', await page.evaluate("getComputedStyle(document.querySelector('.ntip')).whiteSpace === 'pre-line'"))
-        ok('notes : aucune note ne contient le mot de passe lui-même', not any('Uriellea' in n for n in nn))
-        ok('notes gîtes : point sécurité (mot de passe à retirer du document et à changer)', any('Sécurité : le mot de passe' in n for n in nn))
-        # chaque page FR a des notes et son panneau les liste toutes ; aucune n'est vide
-        for pg in PAGES:
+        ok('notes accueil : vue d\'ensemble (sans clé dans le TODO) + notes sur la fiche, l\'avis, les hôtes', any(n.startswith("Vue d'ensemble") for n in nn) and len(nn) >= 5, str(len(nn)))
+        ok('notes : aucune ne contient le mot de passe', not any('Uriellea' in n for n in nn))
+        for pg, must in [('reservation', 'Nuitrésa — à faire par Marc'), ('mentions-legales', 'logo'), ('medias', 'vidéos'), ('le-domaine', 'retraite'), ('avis', 'Airbnb')]:
             await page.goto(f'{BASE}/{pg}.html', wait_until='domcontentloaded')
-            n_attr = await page.locator('[data-note]').count()
-            n_list = await page.locator('#nlist li').count()
-            empty = await page.evaluate("[...document.querySelectorAll('[data-note]')].some(e=>e.getAttribute('data-note').trim().length < 20)")
-            ok(f'notes {pg} : {n_attr} note(s), toutes listées dans le panneau, aucune vide', n_attr >= 1 and n_list == n_attr and not empty, f'{n_attr} / {n_list}')
-        await page.goto(f'{BASE}/index.html', wait_until='domcontentloaded')
-        todo = await page.evaluate("[...document.querySelectorAll('[data-note]')].map(e=>e.getAttribute('data-note')).find(n=>n.startsWith(\"VUE D'ENSEMBLE\"))")
-        ok('notes accueil : vue d\'ensemble (Nuitrésa urgent, à confirmer, à envoyer, mise en ligne)', bool(todo) and all(k in todo for k in ['URGENT', '4 à 5 personnes', 'canapé-lit', 'OVH', 'Sécurité']))
-        await page.goto(f'{BASE}/reservation.html', wait_until='domcontentloaded')
-        wn = await page.evaluate("document.querySelector('#demande').getAttribute('data-note')")
-        ok('notes réservation : capacité mini 4 et 4 nuits signalées sur le formulaire', wn.startswith('URGENT') and 'Capacité mini = 4' in wn and 'nuits minimum = 4' in wn and 'une seule demande test' in wn)
-        await page.goto(f'{BASE}/index.html', wait_until='domcontentloaded')
-        ok('notes : le mot « Urielle » remplace « le chien » dans les légendes', 'Urielle' in (await page.evaluate("document.querySelector('.hosts img').alt")))
+            nn = await page.evaluate("[...document.querySelectorAll('[data-note]')].map(e=>e.getAttribute('data-note'))")
+            ok(f'notes {pg} : présentes et au bon endroit ({must})', any(must in n for n in nn), str(len(nn)))
+        await page.goto(f'{BASE}/en/index.html', wait_until='domcontentloaded')
+        ok('notes : absentes en anglais', await page.locator('#nbtn, [data-note]').count() == 0)
 
         # 10. langues : chaque drapeau mène à la même page dans l'autre langue
-        await page.goto(f'{BASE}/gites.html', wait_until='domcontentloaded')
+        await page.goto(f'{BASE}/medias.html', wait_until='domcontentloaded')
         hrefs = await page.evaluate("[...document.querySelectorAll('.langs a')].map(a=>a.getAttribute('href'))")
-        ok('langues : 7 liens (×2 : rangée mobile + menu ordinateur), vers gites.html', len(hrefs) == 14 and all(h.endswith('gites.html') for h in hrefs), json.dumps(hrefs))
+        ok('langues : 7 liens (×2), vers medias.html', len(hrefs) == 14 and all(h.endswith('medias.html') for h in hrefs), json.dumps(hrefs))
         await page.click('.langdd summary')
         ok('langues : le menu déroulant s\'ouvre', await page.get_attribute('.langdd', 'open') is not None)
         await page.click('h1')
         ok('langues : clic ailleurs referme le menu', await page.get_attribute('.langdd', 'open') is None)
+
+        # 11. modes clair et sombre : contraste du texte courant, des boutons et des liens sur chaque page
+        JS_CONTRAST = """(() => {
+          const parse = c => { const m = c.match(/-?\\d+(\\.\\d+)?/g).map(Number); return c.startsWith('color(srgb') ? m.slice(0,3).map(v => v*255) : m.slice(0,3) };
+          const lum = c => { const [r,g,b] = parse(c).map(v => { v/=255; return v<=0.03928? v/12.92 : Math.pow((v+0.055)/1.055,2.4)}); return 0.2126*r+0.7152*g+0.0722*b };
+          const alpha = c => { const m = c.match(/\\/\\s*([\\d.]+)\\)$|,\\s*([\\d.]+)\\)$/); return m ? parseFloat(m[1] || m[2]) : 1 };
+          const bgOf = el => { let e = el; while (e) { const c = getComputedStyle(e).backgroundColor; if (c && c !== 'transparent' && alpha(c) > 0.5) return c; e = e.parentElement } return getComputedStyle(document.body).backgroundColor };
+          const bad = [];
+          for (const el of document.querySelectorAll('main p, main li, main dd, main dt, main h2, main h3, .btn, .site-footer a, nav.nav > a')) {
+            if (!el.offsetParent || el.closest('.hero, .page-hero, .teaser, .diapo, .diapo-overlay')) continue;
+            const cs = getComputedStyle(el); const fg = lum(cs.color), bg = lum(bgOf(el));
+            const ratio = (Math.max(fg,bg)+0.05)/(Math.min(fg,bg)+0.05);
+            if (ratio < 4.5) bad.push(el.tagName + (el.className ? '.' + String(el.className).split(' ')[0] : '') + ' ' + ratio.toFixed(1));
+          }
+          return bad;
+        })()"""
+        for theme in ['light', 'dark']:
+            for pg in PAGES:
+                await page.goto(f'{BASE}/{pg}.html', wait_until='domcontentloaded')
+                await page.evaluate(f"document.documentElement.setAttribute('data-theme','{theme}'); document.querySelectorAll('.reveal').forEach(e=>e.classList.add('in'))")
+                await page.wait_for_timeout(100)
+                bad = await page.evaluate(JS_CONTRAST)
+                ok(f'contraste {theme} {pg} : texte, boutons et liens ≥ 4,5:1', not bad, ', '.join(bad[:4]))
+                bgc = await page.evaluate("getComputedStyle(document.body).backgroundColor")
+                ok(f'fond {theme} {pg} appliqué', (bgc == 'rgb(21, 21, 22)') == (theme == 'dark'), bgc)
 
         await b.close()
 

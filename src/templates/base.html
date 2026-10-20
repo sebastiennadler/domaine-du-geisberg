@@ -1,5 +1,6 @@
 {% set m = t.meta[page] %}
 {% set ui = t.ui %}
+{% from "partials/_macros.html" import note with context %}
 <!DOCTYPE html>
 <html lang="{{ lang }}" data-theme="light" class="no-js">
 <head>
@@ -19,7 +20,7 @@
 <meta property="og:description" content="{{ m[1] }}">
 <meta property="og:type" content="website">
 <meta property="og:url" content="{{ canonical }}">
-<meta property="og:image" content="{{ url(s.hero[0], 1280) }}">
+<meta property="og:image" content="{{ url(s.share_image, 1280) }}">
 <meta property="og:locale" content="{{ {'fr':'fr_FR','en':'en_GB','de':'de_DE','es':'es_ES','pt':'pt_PT','nl':'nl_NL','zh':'zh_CN'}[lang] }}">
 <meta name="theme-color" content="#F5F2EA" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#151516" media="(prefers-color-scheme: dark)">
@@ -28,7 +29,8 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Nunito+Sans:wght@400;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="{{ rel }}css/style.css?v={{ assets.css }}">
-<link rel="icon" href="{{ rel }}img/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="{{ rel }}img/favicon.png" type="image/png" sizes="64x64">
+<link rel="apple-touch-icon" href="{{ rel }}img/apple-touch-icon.png">
 {% block head %}{% endblock %}
 <script type="application/ld+json">{# Données structurées (schema.org) pour Google : hébergement, adresse, coordonnées, équipements #}
 {{ {
@@ -37,7 +39,8 @@
   "@id": site_url + "/#lodging",
   "name": s.name,
   "url": site_url + "/",
-  "image": [url(s.hero[0], 1280), url(s.gites[0]), url(s.gites[2])],
+  "image": [url(s.share_image, 1280), url(s.gites[0]), url(s.gites[2])],
+  "logo": url(s.logo),
   "description": t.meta["index"][1],
   "telephone": s.phones[0][2],
   "email": s.email,
@@ -52,13 +55,24 @@
   "geo": {"@type": "GeoCoordinates", "latitude": s.gps[0], "longitude": s.gps[1]},
   "numberOfRooms": 2,
   "petsAllowed": true,
+  "makesOffer": [
+    {"@type": "Offer", "name": t.reservation.prices.we2, "price": "300", "priceCurrency": "EUR"},
+    {"@type": "Offer", "name": t.reservation.prices.we3, "price": "350", "priceCurrency": "EUR"},
+    {"@type": "Offer", "name": t.reservation.prices.mid4, "price": "300", "priceCurrency": "EUR"},
+    {"@type": "Offer", "name": t.reservation.prices.week, "price": "420", "priceCurrency": "EUR"}
+  ],
   "founder": [{"@type": "Person", "name": "Marc Nadler"}, {"@type": "Person", "name": "Agnès Nadler"}],
   "checkinTime": s.checkin,
   "checkoutTime": s.checkout,
   "amenityFeature": [
     {"@type": "LocationFeatureSpecification", "name": "WiFi", "value": true},
     {"@type": "LocationFeatureSpecification", "name": "Parking", "value": true},
-    {"@type": "LocationFeatureSpecification", "name": "Terrasse", "value": true}
+    {"@type": "LocationFeatureSpecification", "name": "Terrasse", "value": true},
+    {"@type": "LocationFeatureSpecification", "name": "Accessible aux personnes à mobilité réduite", "value": true},
+    {"@type": "LocationFeatureSpecification", "name": "Cuisine équipée", "value": true},
+    {"@type": "LocationFeatureSpecification", "name": "Lave-linge", "value": true},
+    {"@type": "LocationFeatureSpecification", "name": "Chauffage géothermique", "value": true},
+    {"@type": "LocationFeatureSpecification", "name": "Barbecue", "value": true}
   ],
   "priceRange": s.price_weekend + " – " + s.price_week,
   "starRating": {"@type": "Rating", "ratingValue": "3", "bestRating": "5", "name": "3 épis Gîtes de France"}
@@ -70,7 +84,7 @@
 <header class="site-header">
   <div class="wrap">
     <div class="bar">
-      <a class="brand" href="{{ prefix and rel + prefix or rel }}index.html"><b>{{ s.name }}</b><span>{{ ui.tagline }}</span></a>
+      <a class="brand" href="{{ prefix and rel + prefix or rel }}index.html" aria-label="{{ s.name }}">{{ pic(s.logo, s.name, '(min-width: 700px) 150px, 112px', eager=True, cls='logo logo-light') }}{{ pic(s.logo_dark, '', '(min-width: 700px) 150px, 112px', eager=True, cls='logo logo-dark') }}<span class="brand-txt"><b>{{ s.name }}</b><span>{{ ui.tagline }}</span></span></a>
       <div class="ctl">
         <button class="ibtn" id="theme" type="button" aria-label="{{ ui.theme }}">
           <svg class="sun" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
@@ -83,7 +97,7 @@
       <div class="backdrop" id="backdrop" hidden></div>
       <nav class="nav" id="nav" aria-label="{{ ui.menu }}">
         <div class="nav-top"><b>{{ s.name }}</b><button class="xbtn" id="menu-close" type="button" aria-label="{{ ui.close }}"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button></div>
-        {% for p in ['index','le-domaine','gites','videos','diaporama','visite','autour','avis','reservation'] %}
+        {% for p in ['index','reservation','le-domaine','medias','avis'] %}
         <a href="{{ p }}.html"{% if p == page %} aria-current="page"{% endif %}>{{ t.nav[p] }}</a>
         {% endfor %}
         <a class="btn btn-p book" href="reservation.html#demande">{{ t.nav.book }}</a>
@@ -100,7 +114,7 @@
 {% if page != 'reservation' %}<div class="mobile-cta"><a class="btn btn-p" href="reservation.html#demande">{{ t.nav.book }}</a><a class="btn btn-o" href="tel:{{ s.phones[0][2] }}">{{ ui.call }}</a></div>{% endif %}
 <footer class="site-footer">
   <div class="wrap">
-    <div><b>{{ s.name }}</b>{{ s.address }}<br>{{ s.phones[0][0] }} · {{ s.phones[0][1] }} · {{ s.phones[1][0] }} · {{ s.phones[1][1] }}<br><a href="mailto:{{ s.email }}">{{ s.email }}</a></div>
+    <div>{{ pic(s.logo, s.name, '140px', cls='logo logo-light') }}{{ pic(s.logo_dark, '', '140px', cls='logo logo-dark') }}<b>{{ s.name }}</b>{{ s.address }}<br>{{ s.phones[0][0] }} · {{ s.phones[0][1] }} · {{ s.phones[1][0] }} · {{ s.phones[1][1] }}<br><a href="mailto:{{ s.email }}">{{ s.email }}</a></div>
     <div class="logos">{% for id, name, link in s.labels %}<a href="{{ link }}" rel="noopener" target="_blank">{{ pic(id, "", "72px") }}<span>{{ name }}</span></a>{% endfor %}</div>
     <div>{{ ui.copyright }}<br><a href="mentions-legales.html">{{ ui.legal }}</a> · <a href="mailto:sebastien.nadler@gmail.com">{{ ui.dev_credit }}</a></div>
   </div>
