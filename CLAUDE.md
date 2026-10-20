@@ -104,6 +104,8 @@ sont des interprétations en attente de validation.
   « Je t'embrasse »). Mails à des tiers : vouvoiement, sauf indication.
 - Tout ce qui est dit à Marc par mail à propos du site doit **aussi** figurer dans les notes du site.
 - Ne pas envoyer de mail à la place de Sébastien : préparer le texte, il envoie.
+- Quand Marc doit écrire à un tiers (DECLIC…), **ne jamais lui dicter le texte** : lui donner les points à
+  aborder et le laisser rédiger à sa façon (Sébastien, 20/10).
 - **Pas de nouveau mail à Marc pour l'instant** (20/10) : on le laisse tranquille jusqu'à ce que Sébastien
   décide de lui montrer la v2. Les notes du site continuent d'être tenues à jour. Exception décidée par
   Sébastien le 20/10 (soir) : un court mail à Marc contenant le texte à faire suivre à DECLIC (Sébastien n'a
