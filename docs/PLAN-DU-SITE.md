@@ -21,7 +21,7 @@ Versions : v1 (site actuel, octobre 2026) → **v2** (structure cible décrite i
 | Labels | Gîtes de France, Clévacances, Tourisme & Handicap |
 | Plateformes | Gîtes de France, Clévacances, Airbnb (gîte 1 et 2), Abritel / Expedia (gîte 1 et 2) ; Superhôte Airbnb |
 | Réservation | Nuitrésa (clé publique `e8dc8870f783d664870e89ac71801620`, gîtes 1100 et 1101) |
-| Logo | `photos-sources/logo/logo-geisberg.png` — maison dessinée, bordeaux `#7a1f2b` env., vert olive `#5b6b2f` env., vert clair `#a8c45a` env. |
+| Logo | `assets/photos-sources/logo/logo-geisberg.png` — maison dessinée, bordeaux `#7a1f2b` env., vert olive `#5b6b2f` env., vert clair `#a8c45a` env. |
 | Accroche | « Au cœur de la nature, deux gîtes d'exception à proximité immédiate de la forêt » |
 | Mentions légales | SIRET 478 447 790 00013 · TVA FR44 478447790 · éditeur Marc Nadler · hébergeur DECLIC (GitHub Pages pour le site de travail) |
 
@@ -31,7 +31,7 @@ automatique. Titres *Playfair Display* (600/700), texte *Nunito Sans* (400/700/8
 14 px, ombres douces, animations discrètes (désactivées si `prefers-reduced-motion`).
 **Décidé le 20/10** : l'accent cuivre est remplacé par le bordeaux du logo (le logo doit s'intégrer).
 
-## 2. Contenus (source : `tools/content/`)
+## 2. Contenus (source : `src/content/`)
 
 - `shared.json` : données communes à toutes les langues (nom, adresse, téléphones, e-mail, GPS, tarifs,
   capacité, SIRET, listes de photos par section, labels, plateformes et notes, avis, distances, liens,
@@ -125,7 +125,8 @@ tools/
   photos.py  videos.py    dérivés d'images / de vidéos          fetch_commons.py, fetch_audio.py : médias libres
   package.py              crée la livraison pour DECLIC : zip de dist/ horodaté
 tests/
-  test_site.py            tests fonctionnels Playwright (≈ 500, réseau coupé, serveur local sur dist/)
+  run.sh                  serveur local sur dist/ + les deux scripts (code de retour non nul en cas d'échec)
+  test_site.py            tests fonctionnels Playwright (≈ 500, réseau coupé)
   sweep.py                balayage des débordements, toutes pages, 320 → 1366 px
 dist/                     généré, NON suivi par git ; c'est ce qui est publié (GitHub Pages) et livré (DECLIC)
 .github/workflows/        pages.yml (build + tests + déploiement de dist/), liens.yml (lundi : liens externes),
@@ -136,9 +137,7 @@ Règles : contenu ≠ gabarit ≠ style ≠ script (jamais de texte en dur dans 
 gabarit ; un composant réutilisé = un partial ; toute donnée = `shared.json` ; tout texte = `<langue>.json`.
 Le HTML généré ne se modifie jamais à la main. Python 3 + Jinja2 + Pillow ; Node uniquement pour Playwright.
 
-Migration v1 → v2 : déplacer `tools/content` → `src/content`, `tools/templates` → `src/templates`,
-`css` `js` → `src/`, `img` `photos-sources` `videos` `audio` → `assets/`, sortir le HTML généré de la
-racine vers `dist/` (et adapter `pages.yml` pour déployer `dist/`), rapatrier les tests dans `tests/`.
+Migration v1 → v2 : **faite le 20/10** (étape 1) — pages générées identiques à la v1 octet pour octet.
 
 ## 5. Génération (`tools/build.py`)
 
@@ -219,4 +218,5 @@ cas de doute ou de contradiction et tenir `CLAUDE.md` à jour.
 | 19/10 | Marc | Photos des gîtes : ne pas insister sur le lit du salon (exceptionnel) ; 4 personnes ; il corrigera Nuitrésa ; plaque à induction ; pas de surfaces par pièce ; Wi-Fi fibre ; textes « gîtes jumeaux » (2 variantes) ; une page disponibilité avec les deux gîtes ; « Agnès et Marc vous accueillent » en accueil, puis photos de la maison et des gîtes ; Nuitrésa référence début 2027 ou à la bascule. |
 | 19/10 | Sébastien | Hébergement : analyse GitHub ; code ouvert envisagé (contenus protégés) ; surfaces par pièce retirées ; visite 360° conservée ; mails à Marc et au prestataire préparés (devenus caducs le 20/10 pour le domaine). |
 | 20/10 | Marc | Accueil : photo Agnès-Marc-Urielle ≈ 4 s puis maison, puis photos + description des gîtes sur la même page, équipements possibles sur la même page ; induction ; OK 5 entrées (à voir monté) ; 4 personnes + 1 appoint 90 cm (chauffeuse) ; plus d'équitation, chevaux à la retraite ; grille tarifaire (300/350/300/420) ; page Avis inchangée ; rester chez DECLIC (facturé jusqu'au 30/11/2027), bascule faite par DECLIC ; inclus : lits faits, charges, ménage de finition (logement rendu propre), serviettes non fournies ; référencement : carte blanche, plusieurs pages si utile ; utiliser le logo. |
+| 20/10 | Sébastien (soir) | Calendriers uniquement sur Réservation ; notes pour Marc alimentées par `TODO.md` (référence unique, « au bon endroit ») ; vérifier toutes les langues et la qualité des traductions ; vérifier modes sombre et clair ; bandeau : partir de loin puis zoomer, zoom + déplacement, 4 s fixes sur la photo des hôtes, parallaxe légère (3D) ; pas de licence ; caution 300 € (repli ancien site) ; accent bordeaux ; pas de mail à Marc pour l'instant ; référencement côté site seulement ; redirections et mail DECLIC plus tard. |
 | 20/10 | Sébastien | Retirer la photo de nuit de la maison (mur sali) ; on garde l'hébergeur, on fournit le site, DECLIC le met en ligne ; GitHub reste le site de travail ; un gîte doit être réservable pour une personne seule ; `CLAUDE.md` = source de vérité, `TODO.md`, plan complet, structure de code claire et réutilisable ; demander confirmation avant de corriger une directive contredite. |

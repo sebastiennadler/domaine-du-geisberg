@@ -1,5 +1,5 @@
 """Tests fonctionnels du site généré (copie locale servie sur 127.0.0.1:8111)."""
-import asyncio, json, re
+import asyncio, json, re, sys
 from playwright.async_api import async_playwright
 
 BASE = 'http://127.0.0.1:8111'  # serveur local sur dist/ (voir tests/run.sh)

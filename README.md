@@ -20,43 +20,51 @@ prestataire de Marc), intégré dans la page Réservation.
 
 ```
 .
-├── index.html, gites.html, …    pages françaises GÉNÉRÉES (ne pas modifier à la main)
-├── en/ de/ es/ pt/ nl/ zh/       mêmes pages dans les six autres langues (générées)
-├── gite-1.html, gite-2.html      anciennes adresses : renvoient vers gites.html (générées aussi)
-├── sitemap.xml, robots.txt       générés aussi
-├── css/style.css                 la feuille de styles (couleurs, mise en page, mobile, thème sombre)
-├── js/site.js                    les scripts (menu, thème, bandeau, galerie, notes, effets)
-├── img/                          photos WebP GÉNÉRÉES par tools/photos.py : hero/, domaine/, gites/, videos/
-│                                 (affiches), plus autour/ et logos/ (taille unique)
-├── videos/                       vidéos MP4 GÉNÉRÉES par tools/videos.py
-├── photos-sources/               photos d'origine (JPEG/PNG) : c'est ici qu'on dépose une nouvelle photo
-├── videos-sources/               vidéos d'origine (.MOV, non versionnées : trop lourdes)
-├── audio/chants-oiseaux.mp3      fond sonore du diaporama (libre de droits, voir crédits)
-├── tools/
-│   ├── build.py                  génère toutes les pages  →  python3 tools/build.py
-│   ├── photos.py / photos.json   catalogue des photos → WebP en plusieurs tailles + images.json
-│   ├── videos.py / videos.json   catalogue des vidéos → MP4 légers + affiches
-│   ├── check.py                  vérifie le site généré (liens, images, attributs, poids)
-│   ├── templates/                modèles Jinja2 (un par page + base.html commun)
+├── CLAUDE.md                     règles et décisions du projet (source de vérité)
+├── TODO.md                       ce qu'il reste à faire, dont les points à demander à Marc
+├── README.md                     ce document
+├── docs/                         PLAN-DU-SITE.md (plan complet), guide PDF, étude des plateformes, rapport des liens
+├── src/                          TOUT ce que l'on modifie à la main
 │   ├── content/
 │   │   ├── shared.json           données communes à toutes les langues : adresse, téléphones, tarifs,
-│   │   │                         listes de photos (identifiants du catalogue), sites à visiter, avis…
-│   │   ├── images.json           dimensions et tailles de chaque photo (écrit par photos.py, ne pas éditer)
-│   │   └── fr.json … zh.json     tous les TEXTES, une langue par fichier (le français sert de repli)
-│   ├── credits.json              attributions des photos et de l'audio récupérés sur Wikimedia Commons
-│   ├── fetch_commons.py          cherche des photos libres (lac, village, forêt…) sur Wikimedia Commons
-│   ├── fetch_audio.py            cherche un enregistrement libre de chants d'oiseaux
-│   └── liens-candidats.txt       liens supplémentaires à tester par le vérificateur de liens
-├── docs/                         documents pour Marc : guide PDF, étude des plateformes, rapport des liens
-├── ancien-site/                  archive de l'ancien site (images d'origine, scripts de récupération)
-└── .github/workflows/            automatisations GitHub Actions (voir plus bas)
+│   │   │                         listes de photos (identifiants du catalogue), sites à visiter, avis, Nuitrésa…
+│   │   ├── fr.json … zh.json     tous les TEXTES, une langue par fichier (le français sert de repli)
+│   │   └── images.json           dimensions et tailles de chaque photo (écrit par photos.py, ne pas éditer)
+│   ├── templates/
+│   │   ├── base.html             squelette commun (head, en-tête, pied de page, notes, scripts)
+│   │   ├── pages/                un gabarit Jinja2 par page (index.html, gites.html, …)
+│   │   └── partials/             morceaux réutilisés (_redirect.html…)
+│   ├── catalog/                  photos.json, videos.json (catalogues), credits.json, liens-candidats.txt
+│   ├── css/style.css             la feuille de styles (couleurs, mise en page, mobile, thème sombre)
+│   └── js/site.js                les scripts (menu, thème, bandeau, galerie, notes, calendriers, effets)
+├── assets/
+│   ├── photos-sources/           photos d'origine (JPEG/PNG) : c'est ici qu'on dépose une nouvelle photo ; logo/
+│   ├── img/                      photos WebP GÉNÉRÉES par tools/photos.py (suivies par git)
+│   ├── videos-sources/           vidéos d'origine (.MOV, non versionnées : trop lourdes)
+│   ├── videos/                   vidéos MP4 GÉNÉRÉES par tools/videos.py
+│   └── audio/                    fond sonore du diaporama (libre de droits, voir crédits)
+├── tools/
+│   ├── build.py                  génère le site dans dist/  →  python3 tools/build.py  (ou --prod)
+│   ├── check.py                  vérifie dist/ (liens, images, attributs, poids)
+│   ├── package.py                livraison pour l'hébergeur : build --prod + check + zip dans livraison/
+│   ├── photos.py / videos.py     photos → WebP en plusieurs tailles ; vidéos → MP4 légers + affiches
+│   └── fetch_commons.py, fetch_audio.py   médias libres (Wikimedia Commons)
+├── tests/                        test_site.py (fonctionnel), sweep.py (débordements), run.sh (les deux)
+├── dist/                         le site GÉNÉRÉ (non suivi par git) : ce qui est publié et livré
+├── livraison/                    archives zip pour l'hébergeur (non suivi)
+├── ancien-site/                  copie de l'ancien site (textes, photos) pour référence
+└── .github/workflows/            pages.yml (construit, teste, publie dist/), liens.yml (liens externes, le lundi),
+                                  photos-commons.yml, audio-commons.yml
 ```
+
+Règle d'or : on ne modifie que `src/`, `assets/photos-sources/`, `tools/` et les documents ; `dist/` est
+régénéré à chaque fois et n'est jamais retouché à la main.
 
 ## Modifier le site
 
 ### 1. Changer un texte
 
-Les textes sont dans `tools/content/<langue>.json`. Chaque fichier a la même structure :
+Les textes sont dans `src/content/<langue>.json`. Chaque fichier a la même structure :
 
 | Clé           | Contenu                                                                 |
 |---------------|-------------------------------------------------------------------------|
@@ -77,17 +85,17 @@ Les textes sont dans `tools/content/<langue>.json`. Chaque fichier a la même st
 Une clé absente dans une langue reprend automatiquement la valeur française.
 
 Ce qui est commun à toutes les langues (téléphones, e-mail, tarifs, surface, capacité, listes de photos,
-sites à visiter avec leurs liens, avis, notes des plateformes) est dans `tools/content/shared.json`.
+sites à visiter avec leurs liens, avis, notes des plateformes) est dans `src/content/shared.json`.
 
 ### 2. Ajouter ou remplacer des photos
 
-1. Déposer la photo d'origine (JPEG ou PNG, telle que sortie de l'appareil) dans `photos-sources/`, avec un
+1. Déposer la photo d'origine (JPEG ou PNG, telle que sortie de l'appareil) dans `assets/photos-sources/`, avec un
    nom parlant : `terrasse-ete.jpeg`.
-2. L'inscrire au catalogue `tools/photos.json` : un identifiant (`"gites/terrasse-ete"` → le dossier et le
-   nom dans `img/`), le fichier source, et éventuellement les largeurs à produire (par défaut 1600 et 800 px ;
+2. L'inscrire au catalogue `src/catalog/photos.json` : un identifiant (`"gites/terrasse-ete"` → le dossier et le
+   nom dans `assets/img/`), le fichier source, et éventuellement les largeurs à produire (par défaut 1600 et 800 px ;
    1920 / 1280 / 800 pour le bandeau d'accueil) ou `"pos"`, le point de la photo à garder visible quand elle
    est recadrée (`"42% 72%"`).
-3. `python3 tools/photos.py` : écrit les WebP dans `img/` (sans les métadonnées de l'appareil) et note
+3. `python3 tools/photos.py` : écrit les WebP dans `assets/img/` (sans les métadonnées de l'appareil) et note
    leurs dimensions dans `images.json`.
 4. Ajouter l'identifiant dans la liste voulue de `shared.json` (`hero`, `domaine`, `gites`, `gites_home`,
    `around_gallery`, `site_imgs`, `hosts_photo`) et sa légende, au même rang, dans chaque `<langue>.json`
@@ -100,24 +108,26 @@ différé) ; `src(id)` donne l'adresse de la plus grande version (visionneuse, f
 
 ### 3. Ajouter une vidéo
 
-1. Déposer le fichier d'origine dans `videos-sources/` (dossier non versionné : garder une copie ailleurs).
-2. L'inscrire dans `tools/videos.json` : identifiant, fichier, hauteur maximale (720 par défaut), instant de
+1. Déposer le fichier d'origine dans `assets/videos-sources/` (dossier non versionné : garder une copie ailleurs).
+2. L'inscrire dans `src/catalog/videos.json` : identifiant, fichier, hauteur maximale (720 par défaut), instant de
    l'affiche en secondes.
-3. `python3 tools/videos.py` (nécessite ffmpeg : `brew install ffmpeg`) : écrit un MP4 léger dans `videos/`
-   et son affiche dans `photos-sources/` ; puis `python3 tools/photos.py` pour l'affiche en WebP.
+3. `python3 tools/videos.py` (nécessite ffmpeg : `brew install ffmpeg`) : écrit un MP4 léger dans `assets/videos/`
+   et son affiche dans `assets/photos-sources/` ; puis `python3 tools/photos.py` pour l'affiche en WebP.
 4. Ajouter la vidéo dans `shared.json` (`videos`) et son titre + sa description dans `videos.clips` de chaque
    `<langue>.json`, au même rang.
 
 ### 4. Régénérer et vérifier les pages
 
 ```sh
-pip install jinja2 pillow   # une seule fois
-python3 tools/build.py      # écrit les 70 pages (+ 14 renvois), le sitemap et robots.txt
+pip install jinja2 pillow playwright && playwright install chromium   # une seule fois
+python3 tools/build.py      # écrit dist/ : 70 pages (+ 14 renvois), css, js, img, vidéos, sitemap, robots
 python3 tools/check.py      # liens et images cassés, images inutilisées, attributs manquants, poids
+bash tests/run.sh           # tests fonctionnels (≈ 500) + balayage des débordements, contre dist/
 ```
 
-Ouvrir ensuite `index.html` dans un navigateur pour vérifier. Les pages HTML du dépôt sont des fichiers générés :
-toute modification faite directement dedans sera écrasée au prochain `build.py`.
+Pour regarder le résultat : `python3 -m http.server 8111 --directory dist` puis ouvrir `http://127.0.0.1:8111/`.
+`dist/` est entièrement régénéré à chaque `build.py` : toute modification faite dedans est perdue.
+`python3 tools/build.py --prod` produit la version à livrer, sans le mode « Notes pour Marc ».
 
 ### 5. Publier
 
@@ -127,7 +137,10 @@ git commit -m "Description du changement"
 git push
 ```
 
-L'action « Publier sur GitHub Pages » se lance toute seule et le site est à jour en une à deux minutes.
+L'action « Construire, tester et publier » se lance toute seule : elle génère `dist/`, lance `check.py` et les
+tests, et ne publie que si tout est vert. Le site de travail est à jour en trois à cinq minutes.
+Pour l'hébergeur définitif (DECLIC) : `python3 tools/package.py` crée `livraison/domainedugeisberg-<date>.zip`,
+à lui transmettre ; il dépose son contenu à la racine du site.
 Les fichiers CSS et JS portent une empreinte (`style.css?v=…`) calculée à chaque génération, donc les
 navigateurs rechargent toujours la dernière version.
 
@@ -142,22 +155,23 @@ navigateurs rechargent toujours la dernière version.
 
 ### Tests automatiques (`tests/`)
 
-- `tests/test_site.py` : tests fonctionnels Playwright (Chromium), réseau externe coupé, contre un serveur
-  local : `python3 -m http.server 8111` à la racine du site, puis `python3 tests/test_site.py`
-  (≈ 500 tests, tous doivent être verts).
+- `bash tests/run.sh` lance un serveur local sur `dist/` puis les deux scripts ; `bash tests/run.sh tests`
+  ou `bash tests/run.sh sweep` pour l'un seulement. Les deux renvoient un code d'erreur en cas d'échec
+  (c'est ce qui bloque la publication dans le workflow GitHub).
+- `tests/test_site.py` : tests fonctionnels Playwright (Chromium), réseau externe coupé (≈ 500 tests).
 - `tests/sweep.py` : balayage de toutes les pages de 320 à 1366 px ; ne doit signaler aucun débordement.
 - Prérequis : `pip install playwright && playwright install chromium`.
 
 ### Disponibilités et réservation (Nuitrésa)
 
 Tout vient de l'espace Nuitrésa de Marc (Outils → Formulaires pour site web → Codes à intégrer) ; les valeurs
-sont dans `tools/content/shared.json` : `nuitresa_key` (clé publique), `nuitresa_script`, `nuitresa_public`
+sont dans `src/content/shared.json` : `nuitresa_key` (clé publique), `nuitresa_script`, `nuitresa_public`
 (adresse des cadres) et `nuitresa_rooms` (identifiant Nuitrésa et nom de chaque gîte : 1100 et 1101).
 
 - **Page Les gîtes, section « Disponibilités »** : un calendrier public par gîte (cadre
   `calendrier-multiple-<id>-<clé>.html`, 2 mois, flèches pour avancer), vert = libre, rouge = occupé. Il reflète
   le planning Nuitrésa, réservations des plateformes comprises. Le cadre envoie sa hauteur par `postMessage`
-  et `js/site.js` l'ajuste (uniquement depuis l'origine `public.nuit-resa.com`). Chargement différé.
+  et `src/js/site.js` l'ajuste (uniquement depuis l'origine `public.nuit-resa.com`). Chargement différé.
 - **Page Réservation** : le formulaire Nuitrésa (`data-nr-version="v2"`), avec l'option « estimation globale des
   disponibilités » (`data-nr-aggregate-availability="1"`) qui colore en rouge, dans son calendrier, les dates où
   les deux gîtes sont pris. Choix du gîte, coordonnées et confirmation sont gérés côté Nuitrésa ; le site
@@ -179,16 +193,15 @@ une réservation par le widget.
 
 Sur les pages françaises, un petit bouton en bas à droite affiche des bulles numérotées : ce qu'il reste à
 fournir ou à décider (photos récentes, tarifs, accès OVH…). Les textes sont dans la clé `notes` de `fr.json`.
-Ce mode est invisible tant que l'on n'appuie pas sur le bouton ; il sera retiré à la mise en ligne définitive.
+Ce mode est invisible tant que l'on n'appuie pas sur le bouton ; la version à livrer (`--prod`) ne le contient pas.
 
 ## Mise en ligne définitive (liste de contrôle)
 
-1. Dans `tools/templates/base.html`, retirer la balise `<meta name="robots" content="noindex, nofollow">`
-   et la balise `Cache-Control` (toutes deux marquées « maquette »).
-2. Retirer le bouton et le script du mode notes (`base.html`, bloc `{% if lang == 'fr' %}` en bas de page).
-3. Faire pointer le domaine `domainedugeisberg.fr` vers GitHub Pages (fichier `CNAME` + réglage DNS chez
-   l'hébergeur du domaine), puis activer *Enforce HTTPS* dans `Settings → Pages`.
-4. Régénérer, publier, puis déclarer le sitemap dans Google Search Console.
+1. `TODO.md`, section « Avant la mise en ligne définitive » : tout coché.
+2. `python3 tools/package.py` : version sans notes, vérifiée, archivée dans `livraison/`.
+3. Transmettre l'archive à DECLIC (hébergeur conservé), qui la dépose sur `domainedugeisberg.fr`.
+4. Vérifier en ligne (HTTPS, 7 langues, formulaire, calendriers), puis déclarer le sitemap dans Google
+   Search Console et mettre l'adresse du site dans Nuitrésa et sur les plateformes.
 
 Le détail, écrit pour Marc, est dans `docs/Guide-site-Domaine-du-Geisberg.pdf`.
 
@@ -211,5 +224,5 @@ Le détail, écrit pour Marc, est dans `docs/Guide-site-Domaine-du-Geisberg.pdf`
 - Photos et vidéos du domaine et des gîtes : Marc et Agnès Nadler (et photos publiées sur Gîtes de France,
   Clévacances).
 - Photos d'illustration des environs et fond sonore : Wikimedia Commons, auteurs et licences listés dans
-  `tools/credits.json` et sur la page Mentions légales.
+  `src/catalog/credits.json` et sur la page Mentions légales.
 - Polices : Playfair Display et Nunito Sans (Google Fonts).

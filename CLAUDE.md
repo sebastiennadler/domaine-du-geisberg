@@ -38,9 +38,13 @@ sont des interprétations en attente de validation.
   l'avancement ; le prévenir quand une tâche est interrompue.
 - **Ne jamais supprimer** un fichier ou un dossier sur son Mac sans **double confirmation explicite**.
   À défaut : déplacer (sur le Bureau, ou dans `_to_delete/`).
-- Le dossier du site sur le Mac (`~/Desktop/SiteDomaineDuGeisberg`) est la **source de vérité du dépôt** :
-  on commite sur le Mac, on pousse vers GitHub via un bundle depuis le cloud (git ne peut pas effacer ses
-  fichiers de verrou sur le Mac — ne pas s'en inquiéter, les renommer). Messages de commit en français.
+- **Dépôt** : la branche `main` sur GitHub est la référence ; Claude travaille dans son clone cloud, commite
+  et pousse (messages de commit en français). Le dossier du Mac (`~/Desktop/SiteDomaineDuGeisberg`) est une
+  copie de travail à resynchroniser (`git pull`) — ce qui exige l'autorisation de supprimer des fichiers dans
+  ce dossier (git l'exige pour ses verrous et pour remplacer des fichiers) : à demander avec la double
+  confirmation. Tant qu'elle n'est pas accordée, les fichiers sont recopiés dans le dossier sans git.
+- Un changement important se fait sur une **branche** (`etape-N-…`), fusionnée dans `main` seulement quand
+  `check.py` et les tests sont verts : le site de travail n'est jamais cassé.
 - Les fichiers sans rapport avec le site ne restent pas dans le dossier du site (déplacés sur le Bureau).
 - Outils ponctuels (scripts de migration) : dans `archives/outils-ponctuels/` (non suivi par git).
 - **Sauvegarde avant toute série de modifications importantes** : archive `.tar.gz` du dossier sur le
@@ -60,8 +64,14 @@ sont des interprétations en attente de validation.
 
 ### Qualité, avant toute mise en ligne (GitHub ou DECLIC)
 - `python3 tools/build.py` puis `python3 tools/check.py` : **0 erreur**.
-- Tests Playwright (`tests/test_site.py`) tous verts, balayage des débordements (`tests/sweep.py`)
-  de 320 à 1366 px sans débordement, vérification visuelle dans le navigateur (ordinateur et mobile).
+- `bash tests/run.sh` : tests Playwright (`tests/test_site.py`) tous verts, balayage des débordements
+  (`tests/sweep.py`) de 320 à 1366 px sans débordement ; vérification visuelle dans le navigateur
+  (ordinateur et mobile). Le workflow GitHub refait ces contrôles et ne publie que s'ils passent.
+- **Toutes les langues** : chaque page vérifiée dans les 7 langues ; les 6 traductions relues pour être
+  irréprochables (naturelles, idiomatiques, cohérentes avec le français validé) ; un test signale toute clé
+  qui retombe sur le français par oubli (Sébastien, 20/10).
+- **Mode sombre et mode clair** : vérifiés page par page (captures dans les deux modes, contrastes du texte,
+  des boutons, des cadres Nuitrésa et du logo) (Sébastien, 20/10).
 - Rien ne part en ligne sans ces contrôles.
 
 ### Communication
@@ -74,21 +84,24 @@ sont des interprétations en attente de validation.
 - Étape référencement : seulement ce qui se fait côté site maintenant (préparer le terrain) ; les
   redirections de l'ancien site et le mail de livraison à DECLIC sont pour plus tard (20/10).
 
-## 3. Notes pour Marc (mode « Notes »)
+## 3. Notes pour Marc (mode « Notes ») et TODO.md
 
-- Bouton « Notes pour Marc » en bas à droite de chaque page, **en français seulement**, inactif par défaut.
-  Pastilles numérotées sur les éléments concernés + panneau récapitulatif en bas.
-- Les notes sont **exhaustives sur toutes les pages**, mises à jour à chaque changement, et signalent
-  aussi les **problèmes** (réglages Nuitrésa, contradictions entre le site et Nuitrésa, sécurité).
-- L'accueil porte une note « Vue d'ensemble » qui résume tout ce qu'il reste à faire côté Marc.
-- Les textes sont dans `tools/content/fr.json` → `notes`, accrochés par `data-note` dans les gabarits.
+- **`TODO.md` est la référence unique** de ce qu'il reste à faire (décidé le 20/10), avec deux sections
+  dédiées à Marc : « À demander à Marc » (questions ouvertes) et « À faire par Marc dans Nuitrésa ».
+- Le mode « Notes pour Marc » du site (bouton en bas à droite, **en français seulement**, inactif par
+  défaut, pastilles numérotées sur les éléments concernés + panneau récapitulatif) **affiche les points du
+  TODO, au bon endroit de la page** : à partir de l'étape 2, chaque point de la section « À demander à
+  Marc » porte une étiquette de page/élément et `build.py` les injecte dans les gabarits — plus de textes
+  de notes en double dans `fr.json`. Jusque-là, les notes existantes (`src/content/fr.json` → `notes`)
+  restent telles quelles.
+- La version à livrer (`build.py --prod`) ne contient pas ce mode.
 
 ## 4. Décisions de contenu validées (par Marc, sauf mention)
 
 ### Identité
 - **Logo officiel** fourni le 20/10 (maison dessinée, bordeaux et verts, « Domaine du Geisberg — Gîtes
   ruraux Varsberg ») : **à utiliser**, « sans abuser, mais à mettre en avant » — en-tête, favicon, pied de
-  page, image de partage. Source : `photos-sources/logo/logo-geisberg.png`.
+  page, image de partage. Source : `assets/photos-sources/logo/logo-geisberg.png`.
 - Accroche : **« Au cœur de la nature, deux gîtes d'exception à proximité immédiate de la forêt »**.
 - Texte des hôtes « Depuis 2007, année d'ouverture de nos gîtes… » (texte de Marc, 18/10), avec la photo
   d'Agnès, Marc et **Urielle** (la chienne, une malinoise). Les chevaux sont **à la retraite** : il n'y a
@@ -139,12 +152,19 @@ sont des interprétations en attente de validation.
   (hôtes → maison → gîtes → fiche → tiroir « Tout l'équipement » → bouton Réserver) et il n'y a plus de
   page « Les gîtes » séparée.
 - **Disponibilités** : les deux calendriers (un par gîte) sur la page **Réservation**, au-dessus du
-  formulaire unique (validé 20/10).
+  formulaire unique (validé 20/10) — **et nulle part ailleurs** : ni sur l'accueil ni sur une page Gîtes
+  (Sébastien, 20/10).
 - **Page Avis : ne rien changer** (Marc l'aime bien).
 - **Visite 360°** (hdmedia, 2015) : conservée, onglet nommé « Visite du gîte ».
 - Photos : **retirer la photo de nuit de la maison sous la neige** (mur sali) partout — bandeau d'accueil,
   diaporama, partage. Ne pas insister sur le lit du salon dans les photos. Marc a envoyé des photos
   récentes (à abonder).
+- **Bandeau d'accueil** (Sébastien, 20/10) : d'abord **4 secondes fixes** sur la photo d'Agnès, Marc et
+  Urielle, puis les autres photos avec **zoom + déplacement** (effet Ken Burns) : chaque photo **part de
+  loin** (échelle 1, photo entière) puis zoome lentement en glissant vers son point focal, quitte à zoomer
+  plus qu'aujourd'hui — jamais l'inverse. Durée réglable par photo. Effet 3D : **parallaxe légère** du
+  bandeau (plans photo / voile / titre à vitesses différentes) retenue ; inclinaison à la souris
+  [À CONFIRMER] ; vraie 3D par carte de profondeur écartée.
 - Distances validées : lac de Creutzwald 6 km, piscine de Creutzwald 7 km, gare de Saint-Avold 15 km,
   cimetière américain 15 km, Völklingen 28 km, musée des mineurs 31 km, Centre Pompidou-Metz 40 km,
   Bliesbruck 61 km. Restent à confirmer : zoo d'Amnéville, Sainte-Croix, boucle de la Sarre.
@@ -154,7 +174,7 @@ sont des interprétations en attente de validation.
 ### Réservation et Nuitrésa (côté site)
 - Nuitrésa remplace Bed Booking. Le site intègre : le **formulaire v2** (un seul pour les deux gîtes,
   option « estimation globale des disponibilités »), les **calendriers publics** par gîte (ids 1100 et
-  1101) et le **livre d'or**. Clé et identifiants dans `tools/content/shared.json`.
+  1101) et le **livre d'or**. Clé et identifiants dans `src/content/shared.json`.
 - Le site reste **100 % statique** : aucune donnée client, aucun paiement ne transite par lui.
 - Réglages Nuitrésa à faire par Marc (listés dans les notes) : capacité mini 1 ; nuits minimum 2 (règle
   week-end / 4 nuits en semaine par la grille tarifaire) ; bébés ; caution ; TVA (avec le comptable) ;
