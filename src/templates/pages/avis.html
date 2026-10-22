@@ -15,12 +15,13 @@
   <div class="cols" style="align-items:start">
     <div{{ note('labels') }}>
       <h2 style="margin-bottom:14px">{{ x.labels_h }}</h2>
-      <div class="logos" style="gap:18px 30px">{% for id, name, link in s.labels %}<a href="{{ link }}" rel="noopener" target="_blank">{{ pic(id, "", "72px") }}<span>{{ name }}</span></a>{% endfor %}</div>
+      <div class="logos" style="gap:18px 30px">{% for id, name, link in s.labels %}<span class="label">{{ pic(id, "", "72px") }}<span>{{ name }}</span></span>{% endfor %}</div>
     </div>
     <div{{ note('platforms') }}>
       <h2 style="margin-bottom:8px">{{ x.where_h }}</h2>
       <p class="note" style="margin:0 0 12px">{{ x.where_p }}</p>
-      <div class="prices">{% for name, url, score in s.platforms %}<div><a href="{{ url }}" rel="noopener" target="_blank">{{ name }}</a><b style="font-size:17px;font-family:var(--body)">{{ score }}</b></div>{% endfor %}</div>
+      {# noms des plateformes sans lien (Marc, 22/10) : les notes restent, le visiteur réserve ici #}
+      <div class="prices">{% for name, url, score in s.platforms %}<div><span>{{ name }}</span><b style="font-size:17px;font-family:var(--body)">{{ score }}</b></div>{% endfor %}</div>
       <p style="margin-top:18px"><a class="btn btn-p" href="reservation.html#demande">{{ t.nav.book }}</a></p>
     </div>
   </div>

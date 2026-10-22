@@ -124,6 +124,13 @@ async def main():
         ok('bandeau : 4 diapositives', await page.locator('.hero .slide').count() == 4)
         ok('bandeau : la photo des hôtes en premier, fixe, 4 s', await page.evaluate("(()=>{const s=document.querySelector('.hero .slide');return s.classList.contains('on')&&s.getAttribute('data-dur')==='4000'&&s.getAttribute('data-move')==='none'&&s.querySelector('img').alt.includes('Urielle')})()"))
         ok('bandeau : première photo sans animation', await page.evaluate("getComputedStyle(document.querySelector('.hero .slide.on img')).animationName") == 'none')
+        # texte selon la photo : « Agnès et Marc vous accueillent » d'abord, l'accroche (h1) ensuite — le h1 reste unique
+        cp = await page.evaluate("[...document.querySelectorAll('.hero .copy')].map(c=>c.dataset.copy+':'+c.classList.contains('on'))")
+        ok('bandeau : texte des hôtes sur la photo des hôtes', cp == ['hosts:true', 'gites:false'] and await page.locator('.hero .copy-hosts .title').inner_text() == 'Agnès et Marc vous accueillent', json.dumps(cp))
+        await page.wait_for_timeout(5200)
+        cp = await page.evaluate("[...document.querySelectorAll('.hero .copy')].map(c=>c.dataset.copy+':'+c.classList.contains('on'))")
+        ok('bandeau : accroche des gîtes (h1) sur les photos suivantes', cp == ['hosts:false', 'gites:true'] and await page.locator('.hero h1').count() == 1, json.dumps(cp))
+        await page.goto(f'{BASE}/index.html', wait_until='load')  # repartir de la première photo pour la suite
         ok('bandeau : interrupteurs inclinaison / parallaxe présents', await page.get_attribute('#hero', 'data-tilt') in ('on', 'off') and await page.get_attribute('#hero', 'data-parallax') in ('on', 'off'))
         await page.click('.hero .dots button:nth-child(2)')
         await page.wait_for_timeout(200)
@@ -222,7 +229,7 @@ async def main():
         ok('domaine : chevaux à la retraite, plus d\'équitation', 'retraite' in txt and 'cavaliers confirmés' not in txt)
         ok('domaine : galerie 6 photos (Urielle)', await page.locator('#domaine ~ section .gallery a').count() >= 6 and 'Urielle' in (await page.evaluate("document.querySelector('[data-cap*=Urielle]')?.getAttribute('data-cap') || ''")))
         ok('alentours : ancre #alentours, 9 sites, loisirs sans équitation', await page.locator('#alentours').count() == 1 and await page.locator('.grid3 .tile').count() == 9 and not await page.evaluate("[...document.querySelectorAll('.chips li')].some(l=>/[ée]quitation|riding|Reiten|equitación|equitação|paardrijden|骑马/i.test(l.textContent))"))
-        ok('alentours : liens utiles', await page.locator('.chips li a[target=_blank]').count() >= 5)
+        ok('alentours : liens utiles, ouverts dans la même fenêtre', await page.locator('.chips li a').count() >= 5 and await page.locator('a[target=_blank]').count() == 0)
 
         # 7. En images : onglets, diaporama partagé, vidéos, visite 360° chargée à l'ouverture
         await page.goto(f'{BASE}/medias.html', wait_until='load')
@@ -237,7 +244,7 @@ async def main():
         ok('onglet vidéos : diaporama mis en pause', await page.get_attribute('.diapo-ctl [data-play]', 'aria-pressed') == 'false')
         ok('visite 360° : cadre non chargé tant que l\'onglet est fermé', await page.evaluate("!document.querySelector('#visite iframe').src"))
         await page.click('#tab-visite')
-        ok('visite 360° : cadre https chargé à l\'ouverture de l\'onglet, lien de repli', await page.evaluate("document.querySelector('#visite iframe').src.startsWith('https://www.hdmedia.fr/')") and await page.locator('#visite a[target=_blank]').count() == 1)
+        ok('visite 360° : cadre https chargé à l\'ouverture de l\'onglet, lien de repli', await page.evaluate("document.querySelector('#visite iframe').src.startsWith('https://www.hdmedia.fr/')") and await page.locator('#visite a[href^="https://www.hdmedia.fr/"]').count() == 1)
         await page.goto(f'{BASE}/medias.html#visite', wait_until='load')
         ok('en images : l\'ancre #visite ouvre le bon onglet', await page.evaluate("[...document.querySelectorAll('.panel')].map(p=>p.hidden)") == [True, True, False])
 
@@ -245,7 +252,7 @@ async def main():
         for d in DIRS:
             await page.goto(f'{BASE}/{d}avis.html', wait_until='domcontentloaded')
             src = await page.get_attribute('#livre-d-or iframe.nr-guestbook', 'src')
-            ok(f'{d}avis : 4 notes, 6 avis, 3 labels, 6 plateformes, livre d\'or', await page.locator('.rating').count() == 4 and await page.locator('.reviews blockquote').count() == 6 and await page.locator('.logos a').count() >= 3 and await page.locator('.prices div').count() == 6 and src == 'https://public.nuit-resa.com/avis-' + KEY + '.html')
+            ok(f'{d}avis : 4 notes, 6 avis, 3 labels, 6 plateformes, livre d\'or', await page.locator('.rating').count() == 4 and await page.locator('.reviews blockquote').count() == 6 and await page.locator('.logos .label').count() >= 3 and await page.locator('.logos a, .prices a').count() == 0 and await page.locator('.prices div').count() == 6 and src == 'https://public.nuit-resa.com/avis-' + KEY + '.html')
 
         # 9. notes pour Marc (FR seulement) : venues de TODO.md, au bon endroit, sans mot de passe
         await page.goto(f'{BASE}/index.html', wait_until='domcontentloaded')

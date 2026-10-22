@@ -132,7 +132,7 @@
 <footer class="site-footer">
   <div class="wrap">
     <div>{{ pic(s.logo, s.name, '140px', cls='logo logo-light') }}{{ pic(s.logo_dark, '', '140px', cls='logo logo-dark') }}<b>{{ s.name }}</b>{{ s.address }}<br>{{ s.phones[0][0] }} · {{ s.phones[0][1] }} · {{ s.phones[1][0] }} · {{ s.phones[1][1] }}<br><a href="mailto:{{ s.email }}">{{ s.email }}</a></div>
-    <div class="logos">{% for id, name, link in s.labels %}<a href="{{ link }}" rel="noopener" target="_blank">{{ pic(id, "", "72px") }}<span>{{ name }}</span></a>{% endfor %}</div>
+    <div class="logos">{# logos des labels, sans lien : décision de Marc (22/10), aucun lien vers les plateformes #}{% for id, name, link in s.labels %}<span class="label">{{ pic(id, "", "72px") }}<span>{{ name }}</span></span>{% endfor %}</div>
     <div class="foot-links"><a href="questions.html">{{ t.nav.questions }}</a>{% for lp in ['gite-accessible-pmr-moselle', 'gite-lac-de-creutzwald', 'gites-saint-avold-sarrebruck'] %}{% if lang in ['fr', 'en', 'de'] %} · <a href="{{ lp }}.html">{{ t.landing[lp].short }}</a>{% endif %}{% endfor %}<br>{{ ui.copyright }}<br><a href="mentions-legales.html">{{ ui.legal }}</a> · <a href="mailto:sebastien.nadler@gmail.com">{{ ui.dev_credit }}</a></div>
   </div>
 </footer>

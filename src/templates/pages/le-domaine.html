@@ -27,7 +27,7 @@
   <div class="sec-head"><h2>{{ d.sites_h }}</h2></div>
   <div class="grid3"{{ note('around') }}>
     {% for key, km, url in s.sites %}{% set si = d.sites[key] %}
-    <a class="tile" id="{{ key }}" href="{{ url }}" rel="noopener" target="_blank">{% if key in s.site_imgs %}<div class="ph">{{ pic(s.site_imgs[key], si[0], "(min-width: 980px) 360px, (min-width: 640px) 50vw, 100vw") }}</div>{% else %}<div class="ph empty">{{ km }}</div>{% endif %}<div class="in"><b>{{ si[0] }}</b><span>{{ si[1] }}</span><br><span class="km">{{ km }}</span></div></a>
+    <a class="tile" id="{{ key }}" href="{{ url }}">{% if key in s.site_imgs %}<div class="ph">{{ pic(s.site_imgs[key], si[0], "(min-width: 980px) 360px, (min-width: 640px) 50vw, 100vw") }}</div>{% else %}<div class="ph empty">{{ km }}</div>{% endif %}<div class="in"><b>{{ si[0] }}</b><span>{{ si[1] }}</span><br><span class="km">{{ km }}</span></div></a>
     {% endfor %}
   </div>
 </section>
@@ -41,6 +41,6 @@
 </section>
 <section class="wrap" style="padding-top:0">
   <h2 style="margin-bottom:18px"{{ note('links') }}>{{ d.links_h }}</h2>
-  <ul class="chips">{% for name, url in s.links %}<li><a href="{{ url }}" rel="noopener" target="_blank">{{ name }}</a></li>{% endfor %}</ul>
+  <ul class="chips">{% for name, url in s.links %}<li><a href="{{ url }}">{{ name }}</a></li>{% endfor %}</ul>
 </section>
 {% endblock %}

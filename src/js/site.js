@@ -113,11 +113,20 @@
         }
         slides[cur].classList.add('on');
         dots[cur] && dots[cur].setAttribute('aria-current', 'true');
+        showCopy(slides[cur].getAttribute('data-copy'));
         start();
       }
       ready.then(swap);
       setTimeout(swap, 2500);
     }
+    /* texte du bandeau selon la photo : « Agnès et Marc vous accueillent » sur la photo des hôtes, l'accroche sinon */
+    var copies = hero.querySelectorAll('.copy');
+    function showCopy(which) {
+      copies.forEach(function (c) {
+        c.classList.toggle('on', c.getAttribute('data-copy') === (which || 'gites'));
+      });
+    }
+    showCopy(slides[cur].getAttribute('data-copy'));
     function start() {
       clearTimeout(timer);
       if (!reduced && slides.length > 1)

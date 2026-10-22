@@ -95,7 +95,7 @@ prices, included, widget, access · domaine : domaine_txt, domaine_gal, around, 
 médias : diapo, videos, visite · avis : ratings, reviews, labels, platforms, guestbook · mentions : legal).
 Sans clé, la ligne va dans la vue d'ensemble de l'accueil.
 
-- [ ] {hero} Le bandeau commence par votre photo (4 s), puis la maison depuis la prairie, les chevaux au soir, le coucher de soleil. Cet ordre vous convient-il ? Avez-vous une photo récente de la façade en été ?
+- [ ] {hero} Le bandeau commence par votre photo (4 s) avec « Agnès et Marc vous accueillent » (fait le 22/10), puis la maison depuis la prairie, les chevaux au soir, le coucher de soleil avec l'accroche des gîtes. Cet ordre vous convient-il ? Avez-vous une photo récente de la façade en été ?
 - [ ] {facts} Le site affiche « de 1 à 4 personnes » (couchage d'appoint mentionné discrètement dans la fiche). D'accord ?
 - [ ] {gites} 8 photos communes aux deux gîtes, dont la chambre à deux lits. Manque une photo récente du séjour ; les photos envoyées le 18/10 sont-elles toutes intégrées ?
 - [ ] {fiche} Fiche de l'essentiel : vérifiez chaque ligne (induction, Wi-Fi fibre, horaires 16 h / 10 h, 2 animaux maximum, boulangerie 300 m, restaurant 1 km, supérette 3 km).
@@ -110,7 +110,7 @@ Sans clé, la ligne va dans la vue d'ensemble de l'accueil.
 - [ ] {videos} Titres des trois vidéos à valider. D'autres vidéos (drone, saisons, intérieur) ?
 - [ ] {visite} La visite virtuelle date de 2015 : on la garde, comme convenu. Prévoir de nouvelles photos à 360° un jour ?
 - [ ] {ratings} Notes des plateformes relevées le 18/10 (à rafraîchir avant la mise en ligne). La mention Airbnb doit-elle être retirée ?
-- [ ] {labels} Labels affichés : Gîtes de France, Clévacances, Tourisme & Handicap — toujours valables ?
+- [ ] {labels} Labels affichés : Gîtes de France, Clévacances, Tourisme & Handicap — toujours valables ? Comme demandé (22/10), plus aucun lien vers ces sites ni vers Airbnb / Abritel : les logos et les notes restent, sans lien. Faut-il aussi retirer les liens vers les sites touristiques (page Le domaine & alentours : lac, Völklingen, offices de tourisme…) ? Pour l'instant ils restent, ouverts dans la même fenêtre.
 - [ ] {guestbook} Livre d'or Nuitrésa : vide tant que les questionnaires de satisfaction ne sont pas revenus (3 à envoyer). Le cacher en attendant ?
 - [ ] {legal} Qui a créé le logo (Synchro, 2014 ?) pour le créditer dans les mentions légales ? SIRET et forme juridique à vérifier. L'hébergeur affiché est DECLIC : ses coordonnées exactes sont à obtenir (voir section 6).
 - [ ] {faq} Page « Questions fréquentes » : 12 réponses écrites d'après vos directives et l'ancien site (animaux, bébés, horaires, caution 300 €, acompte 25 %, Wi-Fi, commerces). À relire et corriger.

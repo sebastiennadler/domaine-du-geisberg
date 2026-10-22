@@ -395,7 +395,8 @@
     {
       "id": "hero/agnes-marc",
       "dur": 4000,
-      "move": "none"
+      "move": "none",
+      "copy": "hosts"
     },
     {
       "id": "hero/maison-prairie",

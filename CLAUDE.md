@@ -197,7 +197,13 @@ sont des interprétations en attente de validation.
   un bouton « Diaporama » sur le bandeau ouvre le diaporama complet (lecture/pause, précédent/suivant,
   chants d'oiseaux, plein écran, clavier, gestes) en superposition, photos chargées au clic ; la page
   « En images » le propose aussi en premier onglet. Un seul composant (`partials/_diapo.html` + `site.js`).
-- **Page Avis : ne rien changer** (Marc l'aime bien).
+- **Page Avis : ne rien changer** (Marc l'aime bien) — sauf les liens, retirés le 22/10 (voir « Liens »).
+- **Liens** (Marc, 22/10) : **aucun lien vers les plateformes de réservation ni vers les sites des labels**
+  (Gîtes de France, Clévacances, Airbnb, Abritel…) — logos et notes affichés sans lien. Les liens utiles au
+  visiteur (sites touristiques, mairie, carte, visite 360°) restent, et **tout lien s'ouvre dans la même
+  fenêtre** (pas de `target="_blank"`), pour pouvoir revenir en arrière. Les liens sortants n'apportent
+  rien au référencement (seuls les liens entrants comptent). Question ouverte à Marc : retirer aussi les
+  liens touristiques ? (`TODO.md` § 4 `{labels}`).
 - **Visite 360°** (hdmedia, 2015) : conservée, onglet nommé « Visite du gîte ».
 - Photos : **retirer la photo de nuit de la maison sous la neige** (mur sali) partout — bandeau d'accueil,
   diaporama, partage. Ne pas insister sur le lit du salon dans les photos. Marc a envoyé des photos
@@ -210,6 +216,10 @@ sont des interprétations en attente de validation.
   acceptée à l'essai** (20/10) — Sébastien teste, donc **retour arrière facile** : un interrupteur
   `hero_tilt` (et `hero_parallax`) dans `shared.json`, une ligne à passer à `false` ; vraie 3D par carte de
   profondeur écartée.
+- **Texte du bandeau selon la photo** (Marc, 22/10) : sur la photo d'Agnès, Marc et Urielle, « Agnès et
+  Marc vous accueillent » + une ligne ; sur les autres photos, l'accroche des gîtes. Le `<h1>` reste
+  l'accroche (unique, toujours dans la page) ; le texte des hôtes est un paragraphe stylé. Diapositive
+  marquée `copy: "hosts"` dans `shared.json` ; sans JavaScript, l'accroche s'affiche.
 - Distances validées : lac de Creutzwald 6 km, piscine de Creutzwald 7 km, gare de Saint-Avold 15 km,
   cimetière américain 15 km, Völklingen 28 km, musée des mineurs 31 km, Centre Pompidou-Metz 40 km,
   Bliesbruck 61 km. Restent à confirmer : zoo d'Amnéville, Sainte-Croix, boucle de la Sarre.

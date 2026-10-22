@@ -10,12 +10,17 @@
 <div class="hero" id="hero" data-tilt="{{ 'on' if s.hero_tilt else 'off' }}" data-parallax="{{ 'on' if s.hero_parallax else 'off' }}"{{ note('hero') }}>
   <div class="layer">
   {% for sl in s.hero_slides %}
-  <div class="slide{{ ' on' if loop.first }}" data-dur="{{ sl.dur }}" data-move="{{ sl.move }}">{{ pic(sl.id, h.hero_alts[loop.index0], '100vw', eager=(loop.index0 < 2)) }}</div>
+  <div class="slide{{ ' on' if loop.first }}" data-dur="{{ sl.dur }}" data-move="{{ sl.move }}" data-copy="{{ sl.get('copy', 'gites') }}">{{ pic(sl.id, h.hero_alts[loop.index0], '100vw', eager=(loop.index0 < 2)) }}</div>
   {% endfor %}
   </div>
+  {# Deux textes qui alternent avec les photos (Marc, 22/10) : « Agnès et Marc vous accueillent » sur la photo des hôtes
+     (diapositives marquées copy = "hosts" dans shared.json), l'accroche des gîtes (le <h1>, qui reste le titre de la page)
+     sur les autres. Sans JavaScript, c'est l'accroche qui s'affiche. #}
   <div class="wrap">
-    <h1{{ note('h1') }}>{{ h.h1 }}</h1>
-    <p>{{ h.lead }}</p>
+    <div class="copies">
+      <div class="copy copy-hosts" data-copy="hosts"><p class="title">{{ h.hosts_h }}</p><p>{{ h.hero_hosts_p }}</p></div>
+      <div class="copy on" data-copy="gites"><h1{{ note('h1') }}>{{ h.h1 }}</h1><p>{{ h.lead }}</p></div>
+    </div>
     <div class="cta"><a class="btn btn-p" href="reservation.html#demande">{{ h.cta1 }}</a><a class="btn btn-light" href="#gites">{{ h.cta2 }}</a></div>
   </div>
   <div class="dots" aria-hidden="true">{% for sl in s.hero_slides %}<button type="button"{{ ' aria-current="true"' if loop.first }}></button>{% endfor %}</div>

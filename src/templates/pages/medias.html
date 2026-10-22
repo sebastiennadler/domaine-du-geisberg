@@ -33,7 +33,7 @@
   <div class="panel" id="visite" role="tabpanel" aria-labelledby="tab-visite" hidden>
     <p class="lead" style="margin-top:0">{{ v.visite_lead }}</p>
     <div class="visite"{{ note('visite') }}><iframe data-src="{{ s.virtual_tour_https }}" title="{{ v.tabs[2] }}" loading="lazy" allowfullscreen allow="fullscreen; gyroscope; accelerometer"></iframe></div>
-    <p class="note" style="margin-top:14px">{{ v.visite_fallback }} <a href="{{ s.virtual_tour_https }}" rel="noopener" target="_blank">{{ v.visite_open }}</a></p>
+    <p class="note" style="margin-top:14px">{{ v.visite_fallback }} <a href="{{ s.virtual_tour_https }}">{{ v.visite_open }}</a></p>
   </div>
 </section>
 {# Le script des onglets est dans site.js (section « Onglets ») : aucun script en ligne, politique CSP. #}
