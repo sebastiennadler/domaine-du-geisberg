@@ -95,7 +95,7 @@ prices, included, widget, access · domaine : domaine_txt, domaine_gal, around, 
 médias : diapo, videos, visite · avis : ratings, reviews, labels, platforms, guestbook · mentions : legal).
 Sans clé, la ligne va dans la vue d'ensemble de l'accueil.
 
-- [ ] {hero} Le bandeau commence par votre photo (4 s) avec « Agnès et Marc vous accueillent » (fait le 22/10), puis la maison depuis la prairie, les chevaux au soir, le coucher de soleil avec l'accroche des gîtes. Cet ordre vous convient-il ? Avez-vous une photo récente de la façade en été ?
+- [ ] {hero} Le bandeau commence par votre photo (7 s) avec « Agnès et Marc vous accueillent » (fait le 22/10), puis la maison depuis la prairie, les chevaux au soir, le coucher de soleil avec l'accroche des gîtes. Cet ordre vous convient-il ? Avez-vous une photo récente de la façade en été ?
 - [ ] {facts} Le site affiche « de 1 à 4 personnes » (couchage d'appoint mentionné discrètement dans la fiche). D'accord ?
 - [ ] {gites} 8 photos communes aux deux gîtes, dont la chambre à deux lits. Manque une photo récente du séjour ; les photos envoyées le 18/10 sont-elles toutes intégrées ?
 - [ ] {fiche} Fiche de l'essentiel : vérifiez chaque ligne (induction, Wi-Fi fibre, horaires 16 h / 10 h, 2 animaux maximum, boulangerie 300 m, restaurant 1 km, supérette 3 km).

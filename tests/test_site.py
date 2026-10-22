@@ -122,12 +122,12 @@ async def main():
         # 3. accueil : bandeau (durées, mouvement), points, thème, logo sombre, galerie, tiroir, avis unique, aperçus
         await page.goto(f'{BASE}/index.html', wait_until='load')
         ok('bandeau : 4 diapositives', await page.locator('.hero .slide').count() == 4)
-        ok('bandeau : la photo des hôtes en premier, fixe, 4 s', await page.evaluate("(()=>{const s=document.querySelector('.hero .slide');return s.classList.contains('on')&&s.getAttribute('data-dur')==='4000'&&s.getAttribute('data-move')==='none'&&s.querySelector('img').alt.includes('Urielle')})()"))
+        ok('bandeau : la photo des hôtes en premier, fixe, 7 s', await page.evaluate("(()=>{const s=document.querySelector('.hero .slide');return s.classList.contains('on')&&s.getAttribute('data-dur')==='7000'&&s.getAttribute('data-move')==='none'&&s.querySelector('img').alt.includes('Urielle')})()"))
         ok('bandeau : première photo sans animation', await page.evaluate("getComputedStyle(document.querySelector('.hero .slide.on img')).animationName") == 'none')
         # texte selon la photo : « Agnès et Marc vous accueillent » d'abord, l'accroche (h1) ensuite — le h1 reste unique
         cp = await page.evaluate("[...document.querySelectorAll('.hero .copy')].map(c=>c.dataset.copy+':'+c.classList.contains('on'))")
         ok('bandeau : texte des hôtes sur la photo des hôtes', cp == ['hosts:true', 'gites:false'] and await page.locator('.hero .copy-hosts .title').inner_text() == 'Agnès et Marc vous accueillent', json.dumps(cp))
-        await page.wait_for_timeout(5200)
+        await page.wait_for_timeout(8200)
         cp = await page.evaluate("[...document.querySelectorAll('.hero .copy')].map(c=>c.dataset.copy+':'+c.classList.contains('on'))")
         ok('bandeau : accroche des gîtes (h1) sur les photos suivantes', cp == ['hosts:false', 'gites:true'] and await page.locator('.hero h1').count() == 1, json.dumps(cp))
         await page.goto(f'{BASE}/index.html', wait_until='load')  # repartir de la première photo pour la suite

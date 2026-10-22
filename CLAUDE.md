@@ -208,7 +208,7 @@ sont des interprétations en attente de validation.
 - Photos : **retirer la photo de nuit de la maison sous la neige** (mur sali) partout — bandeau d'accueil,
   diaporama, partage. Ne pas insister sur le lit du salon dans les photos. Marc a envoyé des photos
   récentes (à abonder).
-- **Bandeau d'accueil** (Sébastien, 20/10) : d'abord **4 secondes fixes** sur la photo d'Agnès, Marc et
+- **Bandeau d'accueil** (Sébastien, 20/10) : d'abord **7 secondes fixes** (4 + 3, Sébastien 22/10) sur la photo d'Agnès, Marc et
   Urielle, puis les autres photos avec **zoom + déplacement** (effet Ken Burns) : chaque photo **part de
   loin** (échelle 1, photo entière) puis zoome lentement en glissant vers son point focal, quitte à zoomer
   plus qu'aujourd'hui — jamais l'inverse. Durée réglable par photo. Effet 3D : **parallaxe légère** du

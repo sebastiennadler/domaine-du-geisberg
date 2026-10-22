@@ -394,7 +394,7 @@
   "hero_slides": [
     {
       "id": "hero/agnes-marc",
-      "dur": 4000,
+      "dur": 7000,
       "move": "none",
       "copy": "hosts"
     },
