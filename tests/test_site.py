@@ -254,23 +254,13 @@ async def main():
             src = await page.get_attribute('#livre-d-or iframe.nr-guestbook', 'src')
             ok(f'{d}avis : 4 notes, 6 avis, 3 labels, 6 plateformes, livre d\'or', await page.locator('.rating').count() == 4 and await page.locator('.reviews blockquote').count() == 6 and await page.locator('.logos .label').count() >= 3 and await page.locator('.logos a, .prices a').count() == 0 and await page.locator('.prices div').count() == 6 and src == 'https://public.nuit-resa.com/avis-' + KEY + '.html')
 
-        # 9. notes pour Marc (FR seulement) : venues de TODO.md, au bon endroit, sans mot de passe
-        await page.goto(f'{BASE}/index.html', wait_until='domcontentloaded')
-        ok('notes : bouton présent en français', await page.locator('#nbtn').count() == 1)
-        ok('notes : invisibles tant que le bouton n\'est pas pressé', not await page.is_visible('.nbub'))
-        await page.click('#nbtn')
-        ok('notes : pastilles et panneau après le clic', await page.is_visible('.nbub') and await page.is_visible('.npanel'))
-        nn = await page.evaluate("[...document.querySelectorAll('[data-note]')].map(e=>e.getAttribute('data-note'))")
-        ok('notes accueil : vue d\'ensemble (sans clé dans le TODO) + notes sur la fiche, l\'avis, les hôtes', any(n.startswith("Vue d'ensemble") for n in nn) and len(nn) >= 5, str(len(nn)))
-        # Sécurité : aucun identifiant ni mot de passe dans les notes (on cherche les formes « mot de passe : xxx »,
-        # « login : xxx » — jamais la valeur elle-même, qui ne doit exister nulle part dans le dépôt).
-        ok('notes : aucune ne contient un identifiant ou un mot de passe', not any(re.search(r'(mot de passe|password|login|identifiant)\s*[:=]\s*\S', n, re.I) for n in nn))
-        for pg, must in [('reservation', 'Nuitrésa — à faire par Marc'), ('mentions-legales', 'logo'), ('medias', 'vidéos'), ('le-domaine', 'retraite'), ('avis', 'Airbnb')]:
+        # 9. notes pour Marc : désactivées par défaut depuis le 01/11 (vers la version finale) ; le mécanisme reste
+        # disponible avec « build.py --notes ». Le TODO reste la référence ; aucun secret n'y figure.
+        for pg in ['index', 'reservation', 'avis']:
             await page.goto(f'{BASE}/{pg}.html', wait_until='domcontentloaded')
-            nn = await page.evaluate("[...document.querySelectorAll('[data-note]')].map(e=>e.getAttribute('data-note'))")
-            ok(f'notes {pg} : présentes et au bon endroit ({must})', any(must in n for n in nn), str(len(nn)))
-        await page.goto(f'{BASE}/en/index.html', wait_until='domcontentloaded')
-        ok('notes : absentes en anglais', await page.locator('#nbtn, [data-note]').count() == 0)
+            ok(f'notes {pg} : aucune note ni bouton sur le site de travail', await page.locator('#nbtn, [data-note], .nbanner').count() == 0)
+        todo = (ROOT / 'TODO.md').read_text(encoding='utf-8')
+        ok('TODO : aucun identifiant ni mot de passe', not re.search(r'(mot de passe|password|login|identifiant)\s*[:=]\s*\S', todo, re.I))
 
         # 10. langues : chaque drapeau mène à la même page dans l'autre langue
         await page.goto(f'{BASE}/medias.html', wait_until='domcontentloaded')

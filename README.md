@@ -202,7 +202,7 @@ Les coordonnées (téléphones, e-mail, adresse) sont dans `shared.json` et appa
 Réservation et le pied de page. Il n'y a plus de formulaire maison : une question passe par e-mail ou téléphone,
 une réservation par le widget.
 
-## Mode « Notes pour Marc »
+## Mode « Notes pour Marc » (désactivé par défaut depuis le 01/11 : `python3 tools/build.py --notes` pour le réactiver)
 
 Sur les pages françaises, un petit bouton en bas à droite affiche des bulles numérotées : ce qu'il reste à
 fournir ou à décider. Les textes viennent de `TODO.md` (sections « À demander à Marc » et « À faire par Marc

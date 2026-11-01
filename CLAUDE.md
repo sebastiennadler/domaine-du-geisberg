@@ -129,7 +129,9 @@ sont des interprétations en attente de validation.
   Marc » porte une étiquette de page/élément et `build.py` les injecte dans les gabarits — plus de textes
   de notes en double dans `fr.json`. Jusque-là, les notes existantes (`src/content/fr.json` → `notes`)
   restent telles quelles.
-- La version à livrer (`build.py --prod`) ne contient pas ce mode.
+- **Depuis le 01/11 (Sébastien) : le mode « Notes pour Marc » n'est plus affiché**, même sur le site de travail,
+  pour tendre vers la version finale. Le mécanisme reste dans le code (`build.py --notes` le réactive, FR
+  seulement) ; `TODO.md` reste la référence unique. La version à livrer (`--prod`) ne le contient jamais.
 
 ## 4. Décisions de contenu validées (par Marc, sauf mention)
 
@@ -231,9 +233,10 @@ sont des interprétations en attente de validation.
   option « estimation globale des disponibilités »), les **calendriers publics** par gîte (ids 1100 et
   1101) et le **livre d'or**. Clé et identifiants dans `src/content/shared.json`.
 - Le site reste **100 % statique** : aucune donnée client, aucun paiement ne transite par lui.
-- Réglages Nuitrésa à faire par Marc (listés dans les notes) : capacité mini 1 ; nuits minimum 2 (règle
-  week-end / 4 nuits en semaine par la grille tarifaire) ; bébés ; caution ; TVA (avec le comptable) ;
-  photos et descriptif des fiches ; adresse du site à la bascule.
+- Réglages Nuitrésa à faire par Marc (`TODO.md` § 5) : capacité 1–5 ; nuits minimum 2 (règle week-end / 4 nuits
+  en semaine par la grille tarifaire) ; bébés ; caution ; TVA (avec le comptable) ; photos et descriptif des
+  fiches ; adresse du site à la bascule ; **paiement par carte et empreinte de caution = Stripe** (constaté le
+  01/11 : PayPal sans clé, cautions désactivées, Premium actif).
 
 ### Référencement
 - **Carte blanche** à Claude ; plusieurs pages si utile au référencement.

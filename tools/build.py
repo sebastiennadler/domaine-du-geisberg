@@ -3,7 +3,8 @@
 (src/content/*.json) + fichiers statiques (src/css, src/js, assets/img, assets/videos, assets/audio).
 
 Usage : python3 tools/build.py            site de travail (avec le mode « Notes pour Marc »)
-        python3 tools/build.py --prod     version à livrer (sans les notes)
+        python3 tools/build.py --notes    site de travail avec le mode « Notes pour Marc » (désactivé par défaut depuis le 01/11)
+        python3 tools/build.py --prod     version à livrer
 
 Sortie : dist/ — pages FR à la racine, autres langues dans /en, /de, /es, /pt, /nl, /zh, plus
 sitemap.xml, robots.txt et .nojekyll. Le dossier dist/ est recréé à chaque exécution et n'est pas suivi
@@ -112,7 +113,8 @@ def marc_notes_from_todo():
 
 def main():
     args = argparse.ArgumentParser(description=__doc__.split("\n")[0])
-    args.add_argument("--prod", action="store_true", help="version à livrer : sans le mode « Notes pour Marc »")
+    args.add_argument("--prod", action="store_true", help="version à livrer (robots ouvert, liens 404 à la racine, .htaccess)")
+    args.add_argument("--notes", action="store_true", help="afficher le mode « Notes pour Marc » (FR) ; incompatible avec --prod")
     opts = args.parse_args()
 
     env = Environment(
@@ -131,7 +133,8 @@ def main():
         if p.exists():
             contents[code] = json.loads(p.read_text(encoding="utf-8"))
     fr = contents["fr"]
-    marc_notes = marc_notes_from_todo() if not opts.prod else {}
+    show_notes = opts.notes and not opts.prod  # depuis le 01/11, les notes ne s'affichent plus par défaut (vers la version finale)
+    marc_notes = marc_notes_from_todo() if show_notes else {}
 
     cred_file = CATALOG / "credits.json"
     cred = json.loads(cred_file.read_text(encoding="utf-8")) if cred_file.exists() else {}
@@ -240,7 +243,7 @@ def main():
             assets=assets,
             site_url=SITE_URL,
             images=images,
-            notes=(code == "fr" and not opts.prod),  # mode « Notes pour Marc » : FR, site de travail seulement
+            notes=(code == "fr" and show_notes),  # mode « Notes pour Marc » : FR, seulement avec --notes
             marc_notes=marc_notes,
             prod=opts.prod,
             csp=csp,
@@ -299,7 +302,7 @@ def main():
     if opts.prod:
         # réglages Apache pour l'hébergeur (HTTPS forcé, en-têtes de sécurité, cache) : version livrée seulement
         shutil.copy(SRC / "htaccess", DIST / ".htaccess")
-    mode = "version à livrer (sans notes)" if opts.prod else "site de travail (avec notes)"
+    mode = "version à livrer" if opts.prod else ("site de travail (avec notes)" if show_notes else "site de travail")
     print(f"{built} pages générées dans dist/ — {mode} ({len(contents)} langues traduites, repli FR pour les autres)")
 
 

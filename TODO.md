@@ -1,6 +1,6 @@
 # TODO — ce qu'il reste à faire
 
-Mis à jour le 20/10/2026 (soir). Cocher au fur et à mesure ; une ligne terminée reste cochée (historique).
+Mis à jour le 01/11/2026. Mode « Notes pour Marc » retiré du site de travail le 01/11 (réactivable : `build.py --notes`) ; ce fichier reste la référence. Cocher au fur et à mesure ; une ligne terminée reste cochée (historique).
 Règles et décisions : `CLAUDE.md`. Plan complet : `docs/PLAN-DU-SITE.md`.
 
 ## 0. À confirmer par Sébastien (avant de commencer la v2)
@@ -126,7 +126,8 @@ Sans clé, la ligne va dans la vue d'ensemble de l'accueil.
 - [ ] Nuits minimum = 2, et la grille par durée : 2 nuits 300 €, 3 nuits 350 €, 4 nuits 300 €, 5 à 7 nuits 420 € (arrivée le vendredi pour les week-ends ; 4 nuits minimum en semaine).
 - [ ] Caution : 300 € (0 € aujourd'hui) ; TVA 10 % à vérifier avec le comptable.
 - [ ] Photos et descriptif des fiches (le descriptif dit « 4/5 personnes » et « vitrocéramique »).
-- [ ] Relier Stripe ou PayPal si le paiement en ligne est souhaité ; puis une seule demande test à votre nom, à refuser ensuite.
+- [ ] **Paiement par carte et empreinte de caution** (vérifié le 01/11 dans le compte, rien modifié) : aujourd'hui le service de paiement est PayPal **sans clé** (donc aucun paiement en ligne ne fonctionne), « Carte bancaire » n'est pas coché, et les cautions bancaires sont **désactivées** — Nuitrésa ne les propose qu'avec **Stripe**. À faire : (1) créer un compte Stripe au nom des gîtes (stripe.com, gratuit, frais par paiement) ; (2) Administration → Comptabilité : service de paiement = Stripe, coller la clé secrète, cocher « Carte bancaire » dans les moyens acceptés, « Gestion des cautions » = activée avec 300 € ; (3) une seule réservation test à votre nom, puis l'annuler. L'abonnement Premium (mensuel, renouvelé le 17 novembre) est déjà en place.
+- [ ] Identifiants Nuitrésa : ils sont dans le Word `Reponses-de-Marc-nouveau-site.docx` (dossier du site sur le Mac de Sébastien, non publié) ; à mettre à jour ou supprimer après le changement de mot de passe.
 - [ ] **Changer le mot de passe Nuitrésa** (Configuration → Mon compte) et le retirer du document Word envoyé par e-mail : obligatoire, il a circulé par mail et un fragment s'est retrouvé dans le dépôt public du site (retiré le 20/10, mais l'historique le garde). Ne jamais transmettre un mot de passe par mail ou dans un document.
 - [ ] Nuitrésa doit être le planning de référence avant la bascule ; l'adresse du site sera changée dans les fiches à ce moment-là.
 
