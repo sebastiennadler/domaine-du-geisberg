@@ -1,4 +1,4 @@
-# Rapport des liens externes — 2026-11-02 16:29 UTC
+# Rapport des liens externes — 2026-11-09 16:49 UTC
 
 | Code | Lien |
 |---|---|
@@ -26,7 +26,7 @@
 | 200 | https://www.saint-avold.fr/ |
 | 200 | https://www.urlaub.saarland/ |
 | 200 | https://www.visitluxembourg.com/ |
-| 200 | https://www.visitstrasbourg.fr/ |
+| 403 | https://www.visitstrasbourg.fr/ |
 | 200 | https://www.zoo-amneville.com/ |
 | 200 | https://parc-explor.com/ |
 | 200 | https://www.mosl-tourisme.fr/ |
@@ -39,6 +39,6 @@
 | 200 | https://www.mettlach.de/ |
 | 200 | https://www.urlaub.saarland/ |
 | 000ERR | https://www.musee-les-mineurs.fr/ |
-| 200 | https://www.visitstrasbourg.fr/ |
+| 403 | https://www.visitstrasbourg.fr/ |
 | 200 | https://www.creutzwald.fr/fr/stade-nautique.html |
 | 404 | https://www.creutzwald.fr/fr/le-lac.html |
